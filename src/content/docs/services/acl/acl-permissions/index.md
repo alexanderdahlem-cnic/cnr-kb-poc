@@ -16,25 +16,12 @@ The list of objects and the respective operations is derived from the API struct
 
 ACL can be managed via API through several commands:
 
-**AddAcl**
-
-Add location rights for a given user or group.
-
-**ModifyAcl**
-
-Modify location rights for a given user or group.
-
-**DeleteAcl**
-
-Remove location rights for a given user or group.
-
-**StatusAcl**
-
-Shows granted rights for a specific location of a given user or group.
-
-**QueryACLList**
-
-Shows all locations with granted rights of a given user or group.
+| **AddAcl** | Add location rights for a given user or group. |
+| --- | --- |
+| **ModifyAcl** | Modify location rights for a given user or group. |
+| **DeleteAcl** | Remove location rights for a given user or group. |
+| **StatusAcl** | Shows granted rights for a specific location of a given user or group. |
+| **QueryACLList** | Shows all locations with granted rights of a given user or group. |
 
 ## Locations and Rights
 

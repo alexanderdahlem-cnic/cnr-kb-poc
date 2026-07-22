@@ -30,7 +30,7 @@ KeyDNS DNSSEC supports two kinds of key rollovers:
 
 Only one ZSK and one KSK rollover can be active at the same time. To update the domain name with the relevant keydata or DS (delegation signer) data, please follow the CentralNic Reseller manual. Please use always the KSK (flag: 257) and not the ZSK for updating the parent zone.
 
-For a step-by-step guide to KSK Rollovers, please visit [KSK-Rollovers](ksk-rollovers).
+For a step-by-step guide to KSK Rollovers, please visit [KSK-Rollovers](../ksk-rollovers/).
 
 ## DNSSEC policy
 

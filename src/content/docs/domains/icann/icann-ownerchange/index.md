@@ -83,7 +83,7 @@ An OwnerChange approve or reject verifies the contact automatically (Skips Conta
 ## Unreachable Email Address/Offline Process
 
 If the email address of the old registrant is invalid or not working any more (i.e., the FOA Mail sent to the losing registrant can't be approved) a special form is required, which can be generated through our [formgenerator](https://formgenerator.net/gtld/generic::irtp).  
-A signed copy of this form plus documents proving the signature and contact relation must be supplied to your sponsoring registrar for review. Please fax the documents to +49 (0)6894 93 96 865 or send them by email to [fax@centralnicreseller.com](mailto=fax@centralnicreseller.com).  
+A signed copy of this form plus documents proving the signature and contact relation must be supplied to your sponsoring registrar for review. Please fax the documents to +49 (0)6894 93 96 865 or send them by email to [fax@centralnicreseller.com](https://kb.centralnicreseller.com/domains/icann/mailto=fax@centralnicreseller.com).  
 This process will update the registrant's current email address and impose the 60-day transfer lock. Due to the circumstances of this procedure, _this transfer lock cannot be removed ahead prematurely!_  
   
 Please make sure that all documents are compiled into a single .pdf file, one form per file, with the form showing the barcode as first page.

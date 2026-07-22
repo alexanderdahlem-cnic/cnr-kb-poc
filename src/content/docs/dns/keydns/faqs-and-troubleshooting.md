@@ -6,7 +6,7 @@ title: "FAQs &amp; Troubleshooting"
 
 First of all, you should verify that the data in the domain's zone is correct (e.g. the A record points to the right IP address) and that the server that is experiencing issues is configured correctly to accept incoming traffic.
 
-If the zone data is correct, you should then confirm that the domain in question is using only the nameservers provided by CentralNic Reseller and listed [here](keydns-upgrade-to-anycast).
+If the zone data is correct, you should then confirm that the domain in question is using only the nameservers provided by CentralNic Reseller and listed [here](../keydns-upgrade-to-anycast/).
 
 All 3 nameservers should be listed in the domain's WHOIS. If any are missing, or if there are additional 3rd party nameservers, please update the domain in question to only list all 3 of the CentralNic Reseller nameservers. In case you are using vanity nameservers, you should also test replacing them with the hostnames of the CentralNic Reseller nameservers.
 

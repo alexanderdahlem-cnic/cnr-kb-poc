@@ -8,9 +8,10 @@
  * Usage: node scripts/migrate.mjs /path/to/gcus-cnr-kb-static
  */
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
-import { join, dirname, relative, basename } from 'node:path';
+import { join, dirname, relative, basename, posix } from 'node:path';
 import * as cheerio from 'cheerio';
 import TurndownService from 'turndown';
+import { gfm } from 'turndown-plugin-gfm';
 
 const SRC_REPO = process.argv[2];
 if (!SRC_REPO) {
@@ -21,17 +22,25 @@ const KB_ROOT = join(SRC_REPO, 'resources/views/cnr/kb');
 const OUT_ROOT = join(process.cwd(), 'src/content/docs');
 
 // Sections to migrate for the POC. Everything else (esp. domains/tlds) skipped.
-const INCLUDE = ['help', 'dns', 'ssl', 'services', 'domains'];
+const INCLUDE = ['help', 'dns', 'ssl', 'services', 'domains', 'api'];
 // Within domains, skip the mass TLD pages.
 const SKIP_DIRS = ['domains/tlds'];
+
+// Any host serving the legacy KB — used as the fallback target for links to
+// pages we did NOT migrate (so there are no dead internal links in the POC).
+const LEGACY_ORIGIN = 'https://kb.centralnicreseller.com';
+
+// old-URL-path -> new-slug, populated before conversion (see run section).
+let LINK_MAP = new Map();
 
 const td = new TurndownService({
   headingStyle: 'atx',
   codeBlockStyle: 'fenced',
   bulletListMarker: '-',
 });
-// Keep tables readable (turndown drops them by default without a plugin;
-// convert simple tables to GFM manually).
+// GFM plugin: converts <table> to Markdown pipe tables, plus strikethrough etc.
+// (Header promotion for header-less legacy tables is done in cheerio, below.)
+td.use(gfm);
 td.addRule('stripAnchors', {
   filter: (node) => node.nodeName === 'A' && !node.getAttribute('href'),
   replacement: (content) => content,
@@ -75,22 +84,77 @@ function outPathFor(bladePath) {
   return join(OUT_ROOT, rel + '.md');
 }
 
-function rewriteLink(href) {
+/** Legacy URL path a blade file was served at, e.g. '/api/api-command/AddCertificate'. */
+function oldPathFor(bladePath) {
+  return '/' + relative(KB_ROOT, bladePath).replace(/\.blade\.php$/, '');
+}
+
+/**
+ * New Starlight route slug for a blade file, e.g. 'api/api-command/addcertificate'.
+ * Astro lowercases route slugs, so we lowercase here too — otherwise links keep
+ * the original file casing and 404 on case-sensitive hosts (GitHub Pages). '' = home.
+ */
+function slugFor(bladePath) {
+  return relative(OUT_ROOT, outPathFor(bladePath))
+    .replace(/\.md$/, '')
+    .replace(/\/index$/, '')
+    .replace(/^index$/, '')
+    .toLowerCase();
+}
+
+/**
+ * Resolve a legacy href against the current page and rewrite it:
+ *  - migrated target -> a correct RELATIVE link to the new route (base-independent)
+ *  - un-migrated internal target -> absolute link to the legacy origin (no dead links)
+ *  - external / mailto / same-page anchor -> left as-is
+ */
+function resolveLink(pageOld, pageSlug, href) {
   if (!href) return href;
-  if (/^(https?:|mailto:|tel:|#)/i.test(href)) return href;
-  // strip .html, index.html -> ./
-  let h = href.replace(/index\.html$/i, '').replace(/\.html(#.*)?$/i, '$1');
-  return h;
+  if (/^(https?:|mailto:|tel:|data:)/i.test(href)) return href;
+  if (href.startsWith('#')) return href; // same-page anchor
+
+  const hashIdx = href.indexOf('#');
+  const frag = hashIdx >= 0 ? href.slice(hashIdx) : '';
+  let pathPart = (hashIdx >= 0 ? href.slice(0, hashIdx) : href).split('?')[0];
+  pathPart = pathPart.replace(/index\.html$/i, '').replace(/\.html$/i, '');
+
+  // Absolute legacy path this link points to.
+  let abs = pathPart.startsWith('/')
+    ? posix.normalize(pathPart)
+    : posix.normalize(posix.join(posix.dirname(pageOld), pathPart || '.'));
+  abs = abs.replace(/\/+$/, '') || '/';
+
+  const candidates = [abs];
+  if (abs.endsWith('/index')) candidates.push(abs.replace(/\/index$/, ''));
+  if (abs === '/') candidates.push('/index');
+
+  for (const c of candidates) {
+    if (LINK_MAP.has(c)) {
+      const targetSlug = LINK_MAP.get(c);
+      let rel = posix.relative('/' + pageSlug, '/' + targetSlug);
+      if (rel === '') rel = '.';
+      return rel.replace(/\/?$/, '/') + frag; // trailing slash for Starlight routes
+    }
+  }
+  // Not migrated -> keep it working by pointing at the legacy origin.
+  return LEGACY_ORIGIN + abs + frag;
 }
 
 function convert(bladePath) {
+  const pageOld = oldPathFor(bladePath);
+  const pageSlug = slugFor(bladePath);
   const raw = readFileSync(bladePath, 'utf8');
 
   // Header of the @extends(...) call holds the meta.
   const header = raw.slice(0, raw.indexOf('@section') === -1 ? 400 : raw.indexOf('@section'));
   let title = extractParam(header, 'documentTitle');
   const description = extractParam(header, 'metaDescription');
-  title = title.replace(/\s*[-–]\s*CentralNic Reseller Knowledge Base\s*$/i, '').trim();
+  title = title
+    .replace(/\s*[-–|]\s*CentralNic Reseller Knowledge Base\s*$/i, '')
+    .replace(/\s*[-–|]\s*CentralNic Reseller\s*$/i, '')
+    .replace(/\s*[-–|]\s*(API|EPP)\s+Command\s*$/i, '') // "AddCertificate - API Command"
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 
   // Content section.
   const secStart = raw.indexOf("@section('content')");
@@ -98,10 +162,12 @@ function convert(bladePath) {
   let body = raw.slice(secStart + "@section('content')".length);
   body = body.replace(/@endsection[\s\S]*$|@stop[\s\S]*$/, '');
 
-  // Drop blade directives / components we can't render without Laravel.
+  // Drop blade directives / comments / components we can't render without Laravel.
   body = body
+    .replace(/\{\{--[\s\S]*?--\}\}/g, '') // {{-- blade comments --}}
     .replace(/@php[\s\S]*?@endphp/g, '')
     .replace(/@(include|extends|section|endsection|stop|yield|component|endcomponent|slot|endslot|if|elseif|else|endif|foreach|endforeach|for|endfor|isset|endisset)\b[^\n]*/g, '')
+    .replace(/\{\{[^}]*\}\}/g, '') // {{ $echo }} expressions
     .replace(/<\/?x-[^>]*>/g, '');
 
   const $ = cheerio.load(body, null, false);
@@ -113,9 +179,25 @@ function convert(bladePath) {
   // Drop leftover empty anchor spans.
   scope.find('span.anchor').remove();
 
-  // Rewrite internal links.
+  // Normalise tables so the GFM plugin emits proper Markdown tables:
+  //  - unwrap <span> inside cells (turndown keeps them otherwise)
+  //  - if a table has no <th>, promote its first row's <td> cells to <th>
+  scope.find('table').each((_, table) => {
+    const $t = $(table);
+    $t.find('td span, th span').each((_, s) => $(s).replaceWith($(s).html() || ''));
+    if ($t.find('th').length === 0) {
+      const firstRow = $t.find('tr').first();
+      firstRow.find('td').each((_, td) => {
+        const $td = $(td);
+        const th = $('<th>').html($td.html() || '');
+        $td.replaceWith(th);
+      });
+    }
+  });
+
+  // Rewrite internal links (map-based; falls back to the legacy origin).
   scope.find('a[href]').each((_, el) => {
-    $(el).attr('href', rewriteLink($(el).attr('href')));
+    $(el).attr('href', resolveLink(pageOld, pageSlug, $(el).attr('href')));
   });
 
   // Rewrite image sources to root-absolute public paths; drop unknown ones.
@@ -187,12 +269,20 @@ for (const s of sections) {
   } catch {}
 }
 
-for (const f of files) {
+// Files we will actually migrate (after SKIP filtering).
+const toMigrate = files.filter((f) => {
   const rel = relative(KB_ROOT, f);
-  if (SKIP_DIRS.some((d) => rel.startsWith(d + '/'))) {
-    skipped++;
-    continue;
-  }
+  return !SKIP_DIRS.some((d) => rel.startsWith(d + '/'));
+});
+skipped += files.length - toMigrate.length;
+
+// Build the link map BEFORE converting, so links can resolve to real targets.
+LINK_MAP = new Map();
+for (const f of toMigrate) LINK_MAP.set(oldPathFor(f), slugFor(f));
+LINK_MAP.set('/index', ''); // homepage
+LINK_MAP.set('/', '');
+
+for (const f of toMigrate) {
   const result = convert(f);
   if (!result) {
     skipped++;

@@ -54,7 +54,8 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### Attributes
 
-**The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.**
+| **The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.** |  |
+| --- | --- |
 
 ### RenewCertificate
 
@@ -72,7 +73,8 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### Attributes
 
-**The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.**
+| **The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.** |  |
+| --- | --- |
 
 ### ModifyCertificate
 
@@ -88,7 +90,8 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### Attributes
 
-**The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.**
+| **The parameter APPROVERMAIL can be stated as well, but will be overwritten by APPROVEREMAIL0 if used.** |  |
+| --- | --- |
 
 ### ReissueCertificate
 
@@ -107,7 +110,8 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### Attributes
 
-**The parameter REISSUEEMAIL can be stated as well, but will be overwritten by REISSUEEMAIL0 if used.**
+| **The parameter REISSUEEMAIL can be stated as well, but will be overwritten by REISSUEEMAIL0 if used.** |  |
+| --- | --- |
 
 ### StatusCertificate
 
@@ -130,4 +134,5 @@ property[crt san][0-24]=
 
 ### Attributes
 
-**The response of StatusCertificate shows the SAN domains including their order. The parameters for defining email addresses APPROVEREMAIL\[0-24\] and REISSUEEMAIL\[0-24\] follow this order, i.e. stating APPROVEREMAIL0 sets the approver email address for DOMAIN0, etc.**
+| **The response of StatusCertificate shows the SAN domains including their order. The parameters for defining email addresses APPROVEREMAIL\[0-24\] and REISSUEEMAIL\[0-24\] follow this order, i.e. stating APPROVEREMAIL0 sets the approver email address for DOMAIN0, etc.** |  |
+| --- | --- |

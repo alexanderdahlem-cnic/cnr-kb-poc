@@ -6,41 +6,16 @@ These trademark properties can be updated (realtime to TMCH if trademark has bee
 
 ## Trademark API-Commands
 
-[AddTrademark](../../api/api-command/AddTrademark)
-
-Submit a trademark validation request to TMCH
-
-[DeleteTrademark](../../api/api-command/DeleteTrademark)
-
-Delete trademark entry
-
-[GetTrademarkLabels](../../api/api-command/GetTrademarkLabels)
-
-Gather labels of a trademark
-
-[ModifyTrademark](../../api/api-command/ModifyTrademark)
-
-Modifies trademark information
-
-[QueryTrademarkList](../../api/api-command/QueryTrademarkList)
-
-Query list of trademarks in account
-
-[RenewTrademark](../../api/api-command/RenewTrademark)
-
-RenewTrademark
-
-[SetTrademarkRenewalmode](../../api/api-command/SetTrademarkRenewalmode)
-
-SetTrademarkRenewalmode
-
-[StatusTrademark](../../api/api-command/StatusTrademark)
-
-StatusTrademark
-
-[TransferTrademark](../../api/api-command/TransferTrademark)
-
-Transfer a trademark
+| [AddTrademark](../../../api/api-command/addtrademark/) | Submit a trademark validation request to TMCH |
+| --- | --- |
+| [DeleteTrademark](../../../api/api-command/deletetrademark/) | Delete trademark entry |
+| [GetTrademarkLabels](../../../api/api-command/gettrademarklabels/) | Gather labels of a trademark |
+| [ModifyTrademark](../../../api/api-command/modifytrademark/) | Modifies trademark information |
+| [QueryTrademarkList](../../../api/api-command/querytrademarklist/) | Query list of trademarks in account |
+| [RenewTrademark](../../../api/api-command/renewtrademark/) | RenewTrademark |
+| [SetTrademarkRenewalmode](../../../api/api-command/settrademarkrenewalmode/) | SetTrademarkRenewalmode |
+| [StatusTrademark](../../../api/api-command/statustrademark/) | StatusTrademark |
+| [TransferTrademark](../../../api/api-command/transfertrademark/) | Transfer a trademark |
 
 **Note**
 

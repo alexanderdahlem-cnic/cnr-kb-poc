@@ -39,6 +39,5 @@ property[total][0] = 3
 
 ### Attributes
 
-**username**
-
-(TEXT) - Mandatory. "username" is either name of a user or a group.
+| **username** | (TEXT) - Mandatory. "username" is either name of a user or a group. |
+| --- | --- |

@@ -24,7 +24,7 @@ Processing of private data will be limited to a certain extent, especially with 
 
 An Opt-in to disclose data is available for all contact handles (Owner, Admin, Tech, Billing). The underlying technical process is very similar to contact verification, i.e. the registrant will receive a mail to approve or decline disclosure of her or his data in Whois. This will allow each individual contact holder to select for a particular contact handle whether he wishes his data to be disclosed in the Whois. Please note that even if a contact decides to disclose his details in our system, this does not mean that the registry controlling the Whois output will also disclose this data. Work is currently ongoing at ICANN to harmonize this approach.
 
-Further details in the dedicated article [Opt-in to Disclose Data in Whois](../domains/contact-handles/opt-in-to-disclose-data-in-whois).
+Further details in the dedicated article [Opt-in to Disclose Data in Whois](../../domains/contact-handles/opt-in-to-disclose-data-in-whois/).
 
 ### Data in ccTLD Whois
 

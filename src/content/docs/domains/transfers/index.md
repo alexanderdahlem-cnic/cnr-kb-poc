@@ -6,25 +6,25 @@ title: "Transfer"
 
 ## Internal Transfers
 
-_How to perform internal transfers within CentralNic Reseller_](transfers/internal-transfers "Internal Transfers")
+_How to perform internal transfers within CentralNic Reseller_](internal-transfers/ "Internal Transfers")
 
 [
 
 ## Response Changelog
 
-_Changes on transfer responses_](transfers/transfer-response-changelog "Transfer Response Changelog")
+_Changes on transfer responses_](transfer-response-changelog/ "Transfer Response Changelog")
 
 [
 
 ## GDPR
 
-_Transfers from and to other registrars_](transfers/gdpr "GDPR")
+_Transfers from and to other registrars_](gdpr/ "GDPR")
 
 [
 
 ## Transfer Lock
 
-_Default transfer lock applied to all registered and transferred-in domains_](transfers/transfer-lock "Transfer Lock")
+_Default transfer lock applied to all registered and transferred-in domains_](transfer-lock/ "Transfer Lock")
 
 ## Changing Contact Handles during Transfers
 

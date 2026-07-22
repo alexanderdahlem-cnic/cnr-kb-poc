@@ -29,6 +29,6 @@ Google will use this information on behalf of the operator of this website for t
 
 The IP-address, that your browser conveys within the scope of Google Analytics, will not be associated with any other data held by Google. You may refuse the use of cookies by selecting the appropriate settings on your browser, however please note that if you do this you may not be able to use the full functionality of this website. You can also opt-out from being tracked by Google Analytics with effect for the future by downloading and installing Google Analytics Opt-out Browser Addon for your current web browser: [https://tools.google.com/dlpage/gaoptout?hl=en](https://tools.google.com/dlpage/gaoptout?hl=en).
 
-As an alternative to the browser Addon or within browsers on mobile devices, you can [click this link](javascript:gaOptout\(\)) in order to opt-out from being tracked by Google Analytics within this website in the future (the opt-out applies only for the browser in which you set it and within this domain).
+As an alternative to the browser Addon or within browsers on mobile devices, you can [click this link](https://kb.centralnicreseller.com/help/about/javascript:gaOptout\(\)) in order to opt-out from being tracked by Google Analytics within this website in the future (the opt-out applies only for the browser in which you set it and within this domain).
 
 An opt-out cookie will be stored on your device, which means that you'll have to click this link again if you delete your cookies.

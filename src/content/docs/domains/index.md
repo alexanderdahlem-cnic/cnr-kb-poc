@@ -7,76 +7,76 @@ description: "● TLDs ● TMCH ● Claim Notification ● Premium Domain Handli
 
 ## TLD List
 
-_Country code, Generic and Fulfillment Top Level Domains_](domains/tlds "TLDs")
+_Country code, Generic and Fulfillment Top Level Domains_](tlds/ "TLDs")
 
 [
 
 ## TMCH
 
-_Trademark Clearinghouse_](domains/tmch "Trademark Clearinghouse")
+_Trademark Clearinghouse_](tmch/ "Trademark Clearinghouse")
 
 [
 
 ## Claim Notification
 
-_Claims Notifications for Live Registrations_](domains/claim-notification "Claim Notification")
+_Claims Notifications for Live Registrations_](claim-notification/ "Claim Notification")
 
 [
 
 ## Premium Domains
 
-_Premium Domain Handling_](domains/premium-domains "Premium Domain Handling")
+_Premium Domain Handling_](premium-domains/ "Premium Domain Handling")
 
 [
 
 ## Applications
 
-_Application API-Commands_](domains/applications "Application Systems")
+_Application API-Commands_](applications/ "Application Systems")
 
 [
 
 ## Renewal System
 
-_Domain Renewal System_](domains/renewal-system "The CentralNic Reseller Renewal System")
+_Domain Renewal System_](renewal-system/ "The CentralNic Reseller Renewal System")
 
 [
 
 ## Transfers
 
-_Information about Transfers through CentralNic Reseller_](domains/transfers "Transfer")
+_Information about Transfers through CentralNic Reseller_](transfers/ "Transfer")
 
 [
 
 ## Tags & Comments
 
-_Tags and Comments for Domains_](domains/tags-and-comments "Domain Tags")
+_Tags and Comments for Domains_](tags-and-comments/ "Domain Tags")
 
 [
 
 ## Contact Handles
 
-_Contact related commands and information_](domains/contact-handles "Managing Contacts")
+_Contact related commands and information_](contact-handles/ "Managing Contacts")
 
 [
 
 ## ICANN
 
-_ICANN Policies and Resources_](domains/icann "ICANN Policies & Resources")
+_ICANN Policies and Resources_](icann/ "ICANN Policies & Resources")
 
 [
 
 ## Status
 
-_Domain status and description_](domains/status "EPP Status Codes")
+_Domain status and description_](status/ "EPP Status Codes")
 
 [
 
 ## Backorders
 
-_Backorder introduction_](domains/backorders "Backorders")
+_Backorder introduction_](https://kb.centralnicreseller.com/domains/backorders "Backorders")
 
 [
 
 ## NIS2-Compliance
 
-_NIS2Relevant information_](domains/NIS2-Compliance "NIS2-Compliance")
+_NIS2Relevant information_](nis2-compliance/ "NIS2-Compliance")

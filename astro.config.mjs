@@ -1,6 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+// Curated sidebar with humanised, capitalised labels — generated from the
+// content tree by scripts/gen-sidebar.mjs (run after migration).
+import sidebar from './src/sidebar.json' with { type: 'json' };
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,39 +26,7 @@ export default defineConfig({
           href: 'https://www.centralnicreseller.com',
         },
       ],
-      sidebar: [
-        { label: 'Home', link: '/' },
-        {
-          label: 'Help',
-          autogenerate: { directory: 'help' },
-          collapsed: true,
-        },
-        {
-          label: 'Domains',
-          autogenerate: { directory: 'domains' },
-          collapsed: true,
-        },
-        {
-          label: 'DNS',
-          autogenerate: { directory: 'dns' },
-          collapsed: true,
-        },
-        {
-          label: 'SSL',
-          autogenerate: { directory: 'ssl' },
-          collapsed: true,
-        },
-        {
-          label: 'Services',
-          autogenerate: { directory: 'services' },
-          collapsed: true,
-        },
-        {
-          label: 'API',
-          autogenerate: { directory: 'api' },
-          collapsed: true,
-        },
-      ],
+      sidebar,
       // Silence missing-favicon etc. during POC; safe defaults.
       customCss: ['./src/styles/custom.css'],
     }),

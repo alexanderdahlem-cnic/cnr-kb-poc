@@ -33,12 +33,12 @@ What happens at the registry?
 
 ## GDPR
 
-With the introduction of [GDPR](../../../help/gdpr) all registrars are required to publish information about how to get in touch with contacts of a domain, i.e. registrant (owner), administrative contact (admin), technical contact (tech) and billing contact (billing). As default our Whois server is publishing the URL https://www.domain-contact.org where a domain name can be entered and a contact selected to send a message to.
+With the introduction of [GDPR](../../../../help/gdpr/) all registrars are required to publish information about how to get in touch with contacts of a domain, i.e. registrant (owner), administrative contact (admin), technical contact (tech) and billing contact (billing). As default our Whois server is publishing the URL https://www.domain-contact.org where a domain name can be entered and a contact selected to send a message to.
 
 Furthermore, we're obliged by policy to display a generic contact email address in Whois as well. We're using info@domain-contact.org. This email address can not be changed out of policy reasons.  
 All mails to this address will answer with a default auto responder message, asking the original sender to visit https://www.domain-contact.org
 
-More information about this topic: [https://kb.centralnicreseller.com/help/gdpr/contact-to-an-undisclosed-entity](../../../help/gdpr/contact-to-an-undisclosed-entity)
+More information about this topic: [https://kb.centralnicreseller.com/help/gdpr/contact-to-an-undisclosed-entity](../../../../help/gdpr/contact-to-an-undisclosed-entity/)
 
 How does it look like?
 

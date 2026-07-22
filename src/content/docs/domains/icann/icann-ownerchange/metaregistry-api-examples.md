@@ -11,46 +11,46 @@ In Designated Agent Mode it is possible to override the Designated Agent Mode fo
 
 ## Modify Domain
 
-](../ownerchange-api-examples "OwnerChange: Modify Domain")
+](../../ownerchange-api-examples/ "OwnerChange: Modify Domain")
 
 [
 
 ## ActivateOwnerChange
 
-](../ownerchange-api-examples/ownerchange-activateownerchange "OwnerChange: ActivateOwnerChange")
+](../../ownerchange-api-examples/ownerchange-activateownerchange/ "OwnerChange: ActivateOwnerChange")
 
 [
 
 ## StatusDomain
 
-](../ownerchange-api-examples/ownerchange-statusdomain "OwnerChange: StatusDomain")
+](../../ownerchange-api-examples/ownerchange-statusdomain/ "OwnerChange: StatusDomain")
 
 [
 
 ## QueryOwnerChangeList
 
-](../ownerchange-api-examples/ownerchange-queryownerchangelist "OwnerChange: QueryOwnerChangeList")
+](../../ownerchange-api-examples/ownerchange-queryownerchangelist/ "OwnerChange: QueryOwnerChangeList")
 
 [
 
 ## StatusOwnerChange
 
-](../ownerchange-api-examples/ownerchange-statusownerchange "OwnerChange: StatusOwnerChange")
+](../../ownerchange-api-examples/ownerchange-statusownerchange/ "OwnerChange: StatusOwnerChange")
 
 [
 
 ## ModifyContact
 
-](../ownerchange-api-examples/ownerchange-modifycontact "OwnerChange: ModifyContact")
+](../../ownerchange-api-examples/ownerchange-modifycontact/ "OwnerChange: ModifyContact")
 
 [
 
 ## StatusContact
 
-](../ownerchange-api-examples/ownerchange-statuscontact "OwnerChange: StatusContact")
+](../../ownerchange-api-examples/ownerchange-statuscontact/ "OwnerChange: StatusContact")
 
 [
 
 ## ResendNotification
 
-](../ownerchange-api-examples/ownerchange-resendnotification "OwnerChange: ResendNotification")
+](../../ownerchange-api-examples/ownerchange-resendnotification/ "OwnerChange: ResendNotification")

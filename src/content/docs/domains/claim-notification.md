@@ -40,17 +40,12 @@ X-LAUNCH-ACCEPTED-DATE = 2014-02-07 00:00:00
 
 ### Attributes
 
-**X-LAUNCH-NOTICE-ID**
-
-(NOTICE ID) Out of the Claims Notice, XML field tmNotice:id  
-
-**X-LAUNCH-EXPIRY-DATE**
-
-(EXPIRY DATE) Out of the Claims Notice, XML field tmNotice:notAfter  
-
-**X-LAUNCH-ACCEPTED-DATE**
-
-(ACCEPTANCE DATE) Specifies the point in time, when the Claims Notice was accepted. This field will be filled with the current date/time by default (if nothing else is defined). A Claim Notice is only valid for a period of 48 hours.
+| **X-LAUNCH-NOTICE-ID** | (NOTICE ID) Out of the Claims Notice, XML field tmNotice:id  
+ |
+| --- | --- |
+| **X-LAUNCH-EXPIRY-DATE** | (EXPIRY DATE) Out of the Claims Notice, XML field tmNotice:notAfter  
+ |
+| **X-LAUNCH-ACCEPTED-DATE** | (ACCEPTANCE DATE) Specifies the point in time, when the Claims Notice was accepted. This field will be filled with the current date/time by default (if nothing else is defined). A Claim Notice is only valid for a period of 48 hours. |
 
 ## Download of the Claims Notice
 

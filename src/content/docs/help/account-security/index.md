@@ -15,4 +15,4 @@ Special Characters: All UTF-8 characters are allowed.
 
 Affected are all newly modified or created passwords for CentralNic Reseller accounts and users.
 
-In general, we advise to change passwords on a regular basis. Furthermore, we advise to use additional features to secure your account, like [two-factor authentication](account-security/2-factor-authentication) for the CentralNic control panel and [IP whitelisting](account-security/ip-whitelist) for other interfaces.
+In general, we advise to change passwords on a regular basis. Furthermore, we advise to use additional features to secure your account, like [two-factor authentication](2-factor-authentication/) for the CentralNic control panel and [IP whitelisting](ip-whitelist/) for other interfaces.

@@ -94,7 +94,7 @@ STATUSAGPDELETES, QUERYAGPDELETESLIST, DELETEDOMAIN, QUERYSERVICELIST.
 
 You can particularly monitor the AGP values per TLD using the API call STATUSAGPDELETES for a specific TLD/ZONE, or using QUERYAGPDELETESLIST for all TLD/ZONES where AGP is available.
 
-For STATUSAGPDELETES and QUERYAGPDELETESLIST we created a new section called “[Paid Services](../api/api-commands/api-command-reference#cat-paidservices)”.
+For STATUSAGPDELETES and QUERYAGPDELETESLIST we created a new section called “[Paid Services](../../api/api-commands/api-command-reference/#cat-paidservices)”.
 
 **STATUSAGPDELETES**
 
@@ -106,7 +106,7 @@ It returns the available AGP deletes, current AGP deletes, current domain regist
 
 STATUSAGPDELETES always requires a ZONE and can only be used if AGP refunds are enabled for the registrar.
 
-Please see our [Knowledge Base](../api/api-command/StatusAGPdeletes) for details of the command.
+Please see our [Knowledge Base](../../api/api-command/statusagpdeletes/) for details of the command.
 
 **QUERYAGPDELETESLIST**
 
@@ -118,7 +118,7 @@ With the parameter “WIDE= 1” the command also provides all AGP statistics: t
 
 For the registrar only AGP refunds are enabled.
 
-Please see our [Knowledge Base](../api/api-command/QueryAGPDeleteslist) for details of the command.
+Please see our [Knowledge Base](../../api/api-command/queryagpdeleteslist/) for details of the command.
 
 Please also refer to the command STATUSAGPDELETES which uses the same statistics.
 
@@ -128,13 +128,13 @@ When you call the command “DeleteDomain” the response will confirm the succe
 
 It returns the number of AGP deletes used and remaining.
 
-Please see our [Knowledge Base](../api/api-command/DeleteDomain) for details of the command.
+Please see our [Knowledge Base](../../api/api-command/deletedomain/) for details of the command.
 
 **QUERYSERVICELIST**
 
 In addition to returning annual fee, transfer, trade, restore, currency information, etc., the command returns the service fee that activates the add grace deletion functionality.
 
-Please see our [Knowledge Base](../api/api-command/QueryServiceList) for details of the command.
+Please see our [Knowledge Base](../../api/api-command/queryservicelist/) for details of the command.
 
 ## Supported TLDs
 

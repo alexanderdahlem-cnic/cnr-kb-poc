@@ -36,277 +36,75 @@ The leading plus sign and the dot following the country code are required. The l
 
 The following list of countries do not have a zip code and our system will accept contacts located in those countries without zip code, wherefore you also have not to enter a fake value to create a valid contact handle:
 
-**AO**
-
-Angola
-
-**AG**
-
-Antigua and Barbuda
-
-**AW**
-
-Aruba
-
-**BS**
-
-Bahamas
-
-**BZ**
-
-Belize
-
-**BJ**
-
-Benin
-
-**BW**
-
-Botswana
-
-**BF**
-
-Burkina Faso
-
-**BI**
-
-Burundi
-
-**CM**
-
-Cameroon
-
-**BQ**
-
-Caribbean Netherlands
-
-**CF**
-
-Central African Republic
-
-**KM**
-
-Comoros
-
-**CG**
-
-Congo
-
-**CD**
-
-Congo, the Democratic Republic of the
-
-**CK**
-
-Cook Islands
-
-**CI**
-
-Cote d'Ivoire
-
-**DJ**
-
-Djibouti
-
-**DM**
-
-Dominica
-
-**GQ**
-
-Equatorial Guinea
-
-**ER**
-
-Eritrea
-
-**FJ**
-
-Fiji
-
-**TF**
-
-French Southern Territories
-
-**GM**
-
-Gambia
-
-**GH**
-
-Ghana
-
-**GD**
-
-Grenada
-
-**GN**
-
-Guinea
-
-**GY**
-
-Guyana
-
-**HK**
-
-Hong Kong
-
-**IE**
-
-Ireland
-
-**JM**
-
-Jamaica
-
-**KE**
-
-Kenya
-
-**KI**
-
-Kiribati
-
-**MO**
-
-Macao
-
-**MW**
-
-Malawi
-
-**ML**
-
-Mali
-
-**MR**
-
-Mauritania
-
-**MU**
-
-Mauritius
-
-**MS**
-
-Montserrat
-
-**NR**
-
-Nauru
-
-**AN**
-
-Netherlands Antilles
-
-**NU**
-
-Niue
-
-**KP**
-
-North Korea
-
-**PA**
-
-Panama
-
-**QA**
-
-Qatar
-
-**RW**
-
-Rwanda
-
-**KN**
-
-Saint Kitts and Nevis
-
-**LC**
-
-Saint Lucia
-
-**ST**
-
-Sao Tome and Principe
-
-**SA**
-
-Saudi Arabia
-
-**SC**
-
-Seychelles
-
-**SL**
-
-Sierra Leone
-
-**SB**
-
-Solomon Islands
-
-**SO**
-
-Somalia
-
-**ZA**
-
-South Africa
-
-**SR**
-
-Suriname
-
-**SY**
-
-Syria
-
-**TZ**
-
-Tanzania, United Republic of
-
-**TL**
-
-Timor-Leste
-
-**TK**
-
-Tokelau
-
-**TO**
-
-Tonga
-
-**TT**
-
-Trinidad and Tobago
-
-**TV**
-
-Tuvalu
-
-**UG**
-
-Uganda
-
-**AE**
-
-United Arab Emirates
-
-**VU**
-
-Vanuatu
-
-**YE**
-
-Yemen
-
-**ZW**
-
-Zimbabwe
+| **AO** | Angola |
+| --- | --- |
+| **AG** | Antigua and Barbuda |
+| **AW** | Aruba |
+| **BS** | Bahamas |
+| **BZ** | Belize |
+| **BJ** | Benin |
+| **BW** | Botswana |
+| **BF** | Burkina Faso |
+| **BI** | Burundi |
+| **CM** | Cameroon |
+| **BQ** | Caribbean Netherlands |
+| **CF** | Central African Republic |
+| **KM** | Comoros |
+| **CG** | Congo |
+| **CD** | Congo, the Democratic Republic of the |
+| **CK** | Cook Islands |
+| **CI** | Cote d'Ivoire |
+| **DJ** | Djibouti |
+| **DM** | Dominica |
+| **GQ** | Equatorial Guinea |
+| **ER** | Eritrea |
+| **FJ** | Fiji |
+| **TF** | French Southern Territories |
+| **GM** | Gambia |
+| **GH** | Ghana |
+| **GD** | Grenada |
+| **GN** | Guinea |
+| **GY** | Guyana |
+| **HK** | Hong Kong |
+| **IE** | Ireland |
+| **JM** | Jamaica |
+| **KE** | Kenya |
+| **KI** | Kiribati |
+| **MO** | Macao |
+| **MW** | Malawi |
+| **ML** | Mali |
+| **MR** | Mauritania |
+| **MU** | Mauritius |
+| **MS** | Montserrat |
+| **NR** | Nauru |
+| **AN** | Netherlands Antilles |
+| **NU** | Niue |
+| **KP** | North Korea |
+| **PA** | Panama |
+| **QA** | Qatar |
+| **RW** | Rwanda |
+| **KN** | Saint Kitts and Nevis |
+| **LC** | Saint Lucia |
+| **ST** | Sao Tome and Principe |
+| **SA** | Saudi Arabia |
+| **SC** | Seychelles |
+| **SL** | Sierra Leone |
+| **SB** | Solomon Islands |
+| **SO** | Somalia |
+| **ZA** | South Africa |
+| **SR** | Suriname |
+| **SY** | Syria |
+| **TZ** | Tanzania, United Republic of |
+| **TL** | Timor-Leste |
+| **TK** | Tokelau |
+| **TO** | Tonga |
+| **TT** | Trinidad and Tobago |
+| **TV** | Tuvalu |
+| **UG** | Uganda |
+| **AE** | United Arab Emirates |
+| **VU** | Vanuatu |
+| **YE** | Yemen |
+| **ZW** | Zimbabwe |
 
 ## Verified
 

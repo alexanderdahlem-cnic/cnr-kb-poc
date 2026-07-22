@@ -40,41 +40,14 @@ All content should be enclosed within double quotes.
 
 There cannot be an odd count of double quotes.
 
-{{--
-
 ## Current IP Addresses
 
 Our nameservers use the following IP addresses.
 
-**ns1.rrpproxy.net**
-
-193.227.117.226 | 2a04:2b00:14cc::226
-
-**ns2.rrpproxy.net**
-
-194.50.187.226 | 2a04:2b00:14dd::226
-
-**ns3.rrpproxy.net**
-
-194.0.182.226 | 2a04:2b00:14ee::226
-
-\--}}
-
-## Current IP Addresses
-
-Our nameservers use the following IP addresses.
-
-**ns1.rrpproxy.net**
-
-193.227.117.226 | 2a04:2b00:14cc::226 | Cloud 1 (mandatory)
-
-**ns2.rrpproxy.net**
-
-194.50.187.226 | 2a04:2b00:14dd::226 | Cloud 2 (mandatory)
-
-**ns3.rrpproxy.net**
-
-194.0.182.226 | 2a04:2b00:14ee::226 | Cloud 1 + Cloud 2 (optional)
+| **ns1.rrpproxy.net** | 193.227.117.226 | 2a04:2b00:14cc::226 | Cloud 1 (mandatory) |
+| --- | --- |
+| **ns2.rrpproxy.net** | 194.50.187.226 | 2a04:2b00:14dd::226 | Cloud 2 (mandatory) |
+| **ns3.rrpproxy.net** | 194.0.182.226 | 2a04:2b00:14ee::226 | Cloud 1 + Cloud 2 (optional) |
 
 Please kindly note, if 2 of our IP addresses are used for white labelling the DNS nameservers, do ensure always to use IPs from Cloud 1 (193.227.117.226 / 2a04:2b00:14cc::226) and Cloud 2 (194.50.187.226 / 2a04:2b00:14dd::226).
 
@@ -82,17 +55,10 @@ Please kindly note, if 2 of our IP addresses are used for white labelling the DN
 
 IP Addresses for the whitelabel nameserver set.
 
-**ns1.dnsres.net**
-
-193.227.117.225 | 2a04:2b00:14cc::225
-
-**ns2.dnsres.net**
-
-194.50.187.225 | 2a04:2b00:14dd::225
-
-**ns3.dnsres.net**
-
-194.0.182.225 | 2a04:2b00:14ee::225
+| **ns1.dnsres.net** | 193.227.117.225 | 2a04:2b00:14cc::225 |
+| --- | --- |
+| **ns2.dnsres.net** | 194.50.187.225 | 2a04:2b00:14dd::225 |
+| **ns3.dnsres.net** | 194.0.182.225 | 2a04:2b00:14ee::225 |
 
 ## Unicast Network Retired
 
@@ -106,6 +72,6 @@ Resellers with domains that use one or more of the nameservers listed in the att
 
 ## Resources
 
-[Retiring Nameserver List](../../files/Retire_NameServer_List_02-10-2024.csv)
+[Retiring Nameserver List](https://kb.centralnicreseller.com/files/Retire_NameServer_List_02-10-2024.csv)
 
 (As of Friday 29th November 2024)

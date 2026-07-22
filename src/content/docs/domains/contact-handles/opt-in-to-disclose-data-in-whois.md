@@ -98,7 +98,7 @@ Please note that further white labelling options including upload of your own em
 The options give you the opportunity to change GDPR and various fields in the contact disclosure email:
 
 -   Contact Form URL
-    -   This URL will be displayed in the Whois response of domains managed through your account. More information is available in the article "[contact-to-an-undisclosed-entity](../../help/gdpr/contact-to-an-undisclosed-entity)".
+    -   This URL will be displayed in the Whois response of domains managed through your account. More information is available in the article "[contact-to-an-undisclosed-entity](../../../help/gdpr/contact-to-an-undisclosed-entity/)".
     -   Default: [https://www.domain-contact.org](https://www.domain-contact.org)
 -   Contact Disclosure URL
     -   The URL which will be used in the contact disclose email.
@@ -109,7 +109,7 @@ The options give you the opportunity to change GDPR and various fields in the co
 -   Contact Disclosure FAQ
     -   The URL to a FAQ or website with further information about contact disclosure.
     -   Note: This particular field is currently not used in our default email template. Instead a FAQ is shown on [https://www.domain-contact.org/contactDisclosure](https://www.domain-contact.org/contactDisclosure)
-    -   Default: [https://kb.centralnicreseller.com/help/gdpr](../../help/gdpr)
+    -   Default: [https://kb.centralnicreseller.com/help/gdpr](../../../help/gdpr/)
 -   Contact Disclosure Email Sender
     -   The sender address of the contact disclosure email.
     -   Default: info@domain-contact.org

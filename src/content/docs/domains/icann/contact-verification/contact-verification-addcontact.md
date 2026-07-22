@@ -33,18 +33,11 @@ property[verification requested][0] = 1
 
 ### Attributes
 
-**VALIDATION**
-
-explicit validation if all required fields are set: (FIRSTNAME LASTNAME or ORGANIZATION) STREET0 CITY ZIP COUNTRY PHONE EMAIL  
-
-**CHECKONLY**
-
-does NOT INSERT a new contact  
-
-**PREVERIFY**
-
-generates the email with triggercode if the email has not been already verified or if there is an unverified job pending.  
-
-**VERIFICATION REQUESTED**
-
-returned only if PREVERIFY
+| **VALIDATION** | explicit validation if all required fields are set: (FIRSTNAME LASTNAME or ORGANIZATION) STREET0 CITY ZIP COUNTRY PHONE EMAIL  
+ |
+| --- | --- |
+| **CHECKONLY** | does NOT INSERT a new contact  
+ |
+| **PREVERIFY** | generates the email with triggercode if the email has not been already verified or if there is an unverified job pending.  
+ |
+| **VERIFICATION REQUESTED** | returned only if PREVERIFY |

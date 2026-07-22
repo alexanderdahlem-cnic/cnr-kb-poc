@@ -54,37 +54,15 @@ For ECC CSRs you can also use "SHA256-ECC-FULL" or "SHA256-ECC-HYBRID".
 
 For Symantec Secure Site Pro you can also use special algorithms as listed below.
 
-**SHA2-256**
-
-SHA256 intermediate certificate with a SHA-1 RSA root certificate.
-
-**SHA256-FULL-CHAIN**
-
-You can get certificates with a full SHA-256 certificate chain when the encryption algorithm is RSA. Compared to the default SHA2-256 option, which has a SHA-1 root, the SHA256-FULL- CHAIN option has a SHA-256 root.
-
-**SHA256-ECC-FULL**
-
-Used with an ECC CSR, sets the certificate chain to an ECC certificate with an ECC root. Same behavior as SHA2-256 for ECC certificates.
-
-**SHA256-ECC-HYBRID**
-
-Used with an ECC CSR, sets the certificate chain to an ECC certificate with an RSA root. This option provides the performance strength of ECC with the browser compatibility of the RSA root.
-
-**PRIVATE-SHA1-PCA3G1**
-
-PRIVATE-SHA1-PCA3G1 for Secure Site Pro only.
-
-**PRIVATE-SHA256-PCA3G1**
-
-PRIVATE-SHA256-PCA3G1 for Secure Site Pro only.
-
-**PRIVATE-SHA1-PCA3G2**
-
-PRIVATE-SHA1-PCA3G2 for Secure Site Pro only.
-
-**PRIVATE-SHA256-PCA3G2**
-
-PRIVATE-SHA256-PCA3G2 for Secure Site Pro only.
+| **SHA2-256** | SHA256 intermediate certificate with a SHA-1 RSA root certificate. |
+| --- | --- |
+| **SHA256-FULL-CHAIN** | You can get certificates with a full SHA-256 certificate chain when the encryption algorithm is RSA. Compared to the default SHA2-256 option, which has a SHA-1 root, the SHA256-FULL- CHAIN option has a SHA-256 root. |
+| **SHA256-ECC-FULL** | Used with an ECC CSR, sets the certificate chain to an ECC certificate with an ECC root. Same behavior as SHA2-256 for ECC certificates. |
+| **SHA256-ECC-HYBRID** | Used with an ECC CSR, sets the certificate chain to an ECC certificate with an RSA root. This option provides the performance strength of ECC with the browser compatibility of the RSA root. |
+| **PRIVATE-SHA1-PCA3G1** | PRIVATE-SHA1-PCA3G1 for Secure Site Pro only. |
+| **PRIVATE-SHA256-PCA3G1** | PRIVATE-SHA256-PCA3G1 for Secure Site Pro only. |
+| **PRIVATE-SHA1-PCA3G2** | PRIVATE-SHA1-PCA3G2 for Secure Site Pro only. |
+| **PRIVATE-SHA256-PCA3G2** | PRIVATE-SHA256-PCA3G2 for Secure Site Pro only. |
 
 ### AddCertificate
 

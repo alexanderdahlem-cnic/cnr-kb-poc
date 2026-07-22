@@ -36,45 +36,26 @@ property[trademark][0] = 0B26A740-F9D5-45B2-B1C0-F16390164BBA
 
 ### Attributes
 
-**TMREGDATE**
-
-<YYYY-MM-DD> Date when trademark was registered (only for REGISTERED\_MARK)  
-
-**TMREGEXPIRATIONDATE**
-
-<YYYY-MM-DD> Date when trademark will expire (only for REGISTERED\_MARK)  
-
-**TMREGNUMBER**
-
-<Text> Trademark Register Number (only for REGISTERED\_MARK)  
-
-**TMREGJURISDICTION**
-
-<Text> Legal responsibility for trademark (only for REGISTERED\_MARK)  
-
-**TMREGCLASS**
-
-<1-45 | N/A> (only for REGISTERED\_MARK - please see Nice Classification)  
-
-**SOTEXECDATE**
-
-<YYYY-MM-DD> Date when statute or treaty was established (only for STATUTE\_OR\_TREATY)  
-
-**SOTTITLE**
-
-<Text> Title of the statute or treaty (only for STATUTE\_OR\_TREATY)  
-
-**REFNUMBER**
-
-<Text> Reference number of the trademark (only for STATUTE\_OR\_TREATY/COURT\_VALIDATED\_MARK)  
-
-**PRODATE**
-
-<YYYY-MM-DD> Date when trademark was protected (only for STATUTE\_OR\_TREATY /COURT\_VALIDATED\_MARK)  
-
-**COURTNAME**
-
-<Text> Name of the court (only for STATUTE\_OR\_TREATY/COURT\_VALIDATED\_MARK)
+| **TMREGDATE** | <YYYY-MM-DD> Date when trademark was registered (only for REGISTERED\_MARK)  
+ |
+| --- | --- |
+| **TMREGEXPIRATIONDATE** | <YYYY-MM-DD> Date when trademark will expire (only for REGISTERED\_MARK)  
+ |
+| **TMREGNUMBER** | <Text> Trademark Register Number (only for REGISTERED\_MARK)  
+ |
+| **TMREGJURISDICTION** | <Text> Legal responsibility for trademark (only for REGISTERED\_MARK)  
+ |
+| **TMREGCLASS** | <1-45 | N/A> (only for REGISTERED\_MARK - please see Nice Classification)  
+ |
+| **SOTEXECDATE** | <YYYY-MM-DD> Date when statute or treaty was established (only for STATUTE\_OR\_TREATY)  
+ |
+| **SOTTITLE** | <Text> Title of the statute or treaty (only for STATUTE\_OR\_TREATY)  
+ |
+| **REFNUMBER** | <Text> Reference number of the trademark (only for STATUTE\_OR\_TREATY/COURT\_VALIDATED\_MARK)  
+ |
+| **PRODATE** | <YYYY-MM-DD> Date when trademark was protected (only for STATUTE\_OR\_TREATY /COURT\_VALIDATED\_MARK)  
+ |
+| **COURTNAME** | <Text> Name of the court (only for STATUTE\_OR\_TREATY/COURT\_VALIDATED\_MARK) |
 
 ## Adding a Trademark Record for registered trademarks
 

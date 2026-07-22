@@ -87,46 +87,46 @@ These documents are mandatory for participation in Sunrise services.
 
 ## Required Documents
 
-](tmch/required-documents "Required Documents")
+](required-documents/ "Required Documents")
 
 [
 
 ## Adding a trademark
 
-](tmch/adding-a-trademark "Adding a trademark")
+](adding-a-trademark/ "Adding a trademark")
 
 [
 
 ## Registered trademarks
 
-](tmch/registered-trademarks "Registered trademarks")
+](registered-trademarks/ "Registered trademarks")
 
 [
 
 ## Court validated marks
 
-](tmch/court-validated-marks "Court validated marks")
+](court-validated-marks/ "Court validated marks")
 
 [
 
 ## Marks protected by statute or treaty
 
-](tmch/marks-protected-by-statute-or-treaty "Marks protected by statute or treaty")
+](marks-protected-by-statute-or-treaty/ "Marks protected by statute or treaty")
 
 [
 
 ## Labels (Domain names)
 
-](tmch/labels-domain-names "Labels (Domain names)")
+](labels-domain-names/ "Labels (Domain names)")
 
 [
 
 ## API Commands
 
-](tmch/api-commands "API Commands")
+](api-commands/ "API Commands")
 
 [
 
 ## FAQ for ModifyTrademark
 
-](tmch/faq-for-modifytrademark "FAQ for ModifyTrademark")
+](faq-for-modifytrademark/ "FAQ for ModifyTrademark")

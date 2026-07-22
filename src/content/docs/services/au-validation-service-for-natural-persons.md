@@ -57,51 +57,23 @@ Resellers can also test this service through the CentralNic Reseller OTE system.
 
 ## Fields mapping per ID Type
 
-**ID type**
-
-Required Fields
-
-**Australian Citizenship**
-
-X-AU-OWNER-IDTYPE = 1
-
-X-AU-OWNER-IDDATE = YYYY-MM-DD
-
-X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\]
-
-**Australian Citizenship by Descent**
-
-X-AU-OWNER-IDTYPE = 2
-
-X-AU-OWNER-IDDATE = YYYY-MM-DD
-
-X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\]
-
-**Australian Driver's Licence**
-
-X-AU-OWNER-IDTYPE = 3
-
-X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\]
-
-X-AU-OWNER-IDISSUER = \[ACT, NSW, NT, QLD, SA, TAS, VIC, WA\]
-
-**Australian Passport**
-
-X-AU-OWNER-IDTYPE = 4
-
-X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z\]{1,2}\[0-9\]{7}
-
-**Australian Visa**
-
-X-AU-OWNER-IDTYPE = 5
-
-X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\]\*
-
-**Australian Birth Certificate**
-
-X-AU-OWNER-IDTYPE = 6
-
-X-AU-OWNER-IDISSUER = \[ACT, NSW, NT, QLD, SA, TAS, VIC, WA\]
+| **ID type** | Required Fields |
+| --- | --- |
+| **Australian Citizenship** | X-AU-OWNER-IDTYPE = 1 |
+|  | X-AU-OWNER-IDDATE = YYYY-MM-DD |
+|  | X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\] |
+| **Australian Citizenship by Descent** | X-AU-OWNER-IDTYPE = 2 |
+|  | X-AU-OWNER-IDDATE = YYYY-MM-DD |
+|  | X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\] |
+| **Australian Driver's Licence** | X-AU-OWNER-IDTYPE = 3 |
+|  | X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\] |
+|  | X-AU-OWNER-IDISSUER = \[ACT, NSW, NT, QLD, SA, TAS, VIC, WA\] |
+| **Australian Passport** | X-AU-OWNER-IDTYPE = 4 |
+|  | X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z\]{1,2}\[0-9\]{7} |
+| **Australian Visa** | X-AU-OWNER-IDTYPE = 5 |
+|  | X-AU-OWNER-IDNUMBER = Regex: \[A-Za-z0-9\]\* |
+| **Australian Birth Certificate** | X-AU-OWNER-IDTYPE = 6 |
+|  | X-AU-OWNER-IDISSUER = \[ACT, NSW, NT, QLD, SA, TAS, VIC, WA\] |
 
 X-AU-OWNER-DOB is always required. It should be filled in with the Registrant’s date of birth in the YYYY-MM-DD format.
 
@@ -111,73 +83,29 @@ For Citizenship, the “X-AU-OWNER-IDDATE” should be filled in with the date i
 
 1.  Australian Citizenship
 
-**State**
-
-All
-
-**Given Name(s) \[firstname\]**
-
-Required if available
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Stock (Document Number)**
-
-Required Stock Number field will permit entry of either; - the stock number (printed on the back top right hand corner) - the Citizenship Automated System (CAS) (prior to late-1998 printed on the front bottom left hand corner) - the evidence number (from late-1998 printed on the front) to be verified
-
-**Acquisition Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates should have the name entered into the Family Name field and the Given Name field left blank.
+| **State** | All |
+| --- | --- |
+| **Given Name(s) \[firstname\]** | Required if available |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Stock (Document Number)** | Required Stock Number field will permit entry of either; - the stock number (printed on the back top right hand corner) - the Citizenship Automated System (CAS) (prior to late-1998 printed on the front bottom left hand corner) - the evidence number (from late-1998 printed on the front) to be verified |
+| **Acquisition Date** | required |
+| **Additional Notes** | Single name certificates should have the name entered into the Family Name field and the Given Name field left blank. |
 
 _It is only possible to validate Citizenship by Descent certificates issued from 1 July 2007._
 
 2\. Australian Citizenship by Descent
 
-**State**
-
-All
-
-**Given Name(s) \[firstname\]**
-
-Required if available
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Stock (Document Number)**
-
-Required Prior to mid-2007 certificates contain a Register (maximum 4 digits) and Entry Number (maximum 5 digits) which combined make up the Stock (Document) Number value. From mid-2007 certificates are printed with a Client ID number (11 digits) which should be used for the Stock (Document) Number.
-
-**Acquisition Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates should have the name entered into the Family Name field and the Given Name field left blank.
+| **State** | All |
+| --- | --- |
+| **Given Name(s) \[firstname\]** | Required if available |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Stock (Document Number)** | Required Prior to mid-2007 certificates contain a Register (maximum 4 digits) and Entry Number (maximum 5 digits) which combined make up the Stock (Document) Number value. From mid-2007 certificates are printed with a Client ID number (11 digits) which should be used for the Stock (Document) Number. |
+| **Acquisition Date** | required |
+| **Additional Notes** | Single name certificates should have the name entered into the Family Name field and the Given Name field left blank. |
 
 _It is only possible to validate Citizenship by Descent certificates issued from 1 July 2007._
 
@@ -191,37 +119,15 @@ Notes:
 -   Middle name, if supplied, is not sent for verification.
 -   Card Number, if supplied, is sent for verification.
 
-**State**
-
-All
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Licence Number**
-
-required
-
-**State of Issue**
-
-required
-
-**Additional Notes**
-
-Single name licences should have the name entered into the Family Name field with a full stop or hyphen entered into the Given Name Field. Where a Given Name includes multiple names i.e. John James, the second name may represent a Middle Name and should not be entered.
+| **State** | All |
+| --- | --- |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Licence Number** | required |
+| **State of Issue** | required |
+| **Additional Notes** | Single name licences should have the name entered into the Family Name field with a full stop or hyphen entered into the Given Name Field. Where a Given Name includes multiple names i.e. John James, the second name may represent a Middle Name and should not be entered. |
 
 4\. Passport
 
@@ -230,63 +136,25 @@ Notes:
 -   The following types of Australian travel documents can be verified; Passport (including Ordinary, Frequent traveller, Diplomatic, Official and Emergency).
 -   Provisional travel documents cannot be verified.
 
-**State**
-
-All
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Document Number**
-
-required
-
-**Additional Notes**
-
-Given Name(s) field must include all first and middle names. Single name passports should have the name entered into the Family Name field with the Given Name field left blank. Family Name or Given Name(s) that are longer than 31 characters (including spaces) will record as many full names as possible in the respective fields with other names initialized.
+| **State** | All |
+| --- | --- |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Document Number** | required |
+| **Additional Notes** | Given Name(s) field must include all first and middle names. Single name passports should have the name entered into the Family Name field with the Given Name field left blank. Family Name or Given Name(s) that are longer than 31 characters (including spaces) will record as many full names as possible in the respective fields with other names initialized. |
 
 5\. Visa
 
-**State**
-
-All
-
-**Given Name(s) \[firstname\]**
-
-Required Should not include accents in name(s).
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-Required Should not include accents in name(s).
-
-**Birth Date**
-
-required
-
-**Passport Number**
-
-required
-
-**Additional Notes**
-
-Single name passports should have the name entered into the Family Name field and the Given Name(s) field should contain a hyphen. If a successful match is not achieved using the biographic data from the main section of the passport, then the details as they appear in the Machine Readable Zone should be provided (as this does not include non-Latin and national characters).
+| **State** | All |
+| --- | --- |
+| **Given Name(s) \[firstname\]** | Required Should not include accents in name(s). |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | Required Should not include accents in name(s). |
+| **Birth Date** | required |
+| **Passport Number** | required |
+| **Additional Notes** | Single name passports should have the name entered into the Family Name field and the Given Name(s) field should contain a hyphen. If a successful match is not achieved using the biographic data from the main section of the passport, then the details as they appear in the Machine Readable Zone should be provided (as this does not include non-Latin and national characters). |
 
 _Foreign nationals that arrived in Australia prior to mid-1990 may not be able to be verified._
 
@@ -312,257 +180,70 @@ The following birth certificates cannot be verified;
 -   WA birth certificates issued in the Cocos Islands prior to 1955
 -   WA birth certificates issued by/in Christmas Island prior to 1 July 1993.
 
-**State**
-
-ACT
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name field.
-
-**\-**
-
-\-
-
-**State**
-
-NSW
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates must have the name values entered into the corresponding name field and the empty field must contain a hyphen or be left blank.
-
-**\-**
-
-\-
-
-**State**
-
-NT
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name Field. Registration number cannot be used to verify Aboriginal Population Record certificates. If it is provided with the certificate number it will be Ignored. Certificate number must be provided to verify Aboriginal Population Record certificates.
-
-**\-**
-
-\-
-
-**State**
-
-QLD
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-single name certificates are not verifiable. Given & Middle Names may be required to be submitted together in the Given name field.
-
-**\-**
-
-\-
-
-**State**
-
-SA
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name field.
-
-**\-**
-
-\-
-
-**State**
-
-TAS
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates are not verifiable. If the time of birth is displayed on a certificate, it must be included as displayed in order to achieve a positive result.
-
-**\-**
-
-\-
-
-**State**
-
-VIC
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-Required if available
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates may be printed with a value denoting that the individual does not have a Given Name(s) or Family Name. Typically this will appear as ‘No Registered Surname’ or ‘No Registered Given Name’. If printed this value must be entered to achieve a positive result. Single name certificates may also be printed with a blank Given Name(s) or Family Name field; if there is no value printed on the certificate these can be verified by either entering a hyphen or leaving the field blank.
-
-**\-**
-
-\-
-
-**State**
-
-WA
-
-**Registration State**
-
-required
-
-**Given Name(s) \[firstname\]**
-
-required
-
-**Middle Name**
-
-N/A
-
-**Family Name \[lastname\]**
-
-required
-
-**Birth Date**
-
-required
-
-**Additional Notes**
-
-Single name certificates will be printed as one name value rather than Given Name(s) and Family Name values. The data should be entered into the Given Name(s)
+| **State** | ACT |
+| --- | --- |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name field. |
+| **\-** | \- |
+| **State** | NSW |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates must have the name values entered into the corresponding name field and the empty field must contain a hyphen or be left blank. |
+| **\-** | \- |
+| **State** | NT |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name Field. Registration number cannot be used to verify Aboriginal Population Record certificates. If it is provided with the certificate number it will be Ignored. Certificate number must be provided to verify Aboriginal Population Record certificates. |
+| **\-** | \- |
+| **State** | QLD |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | single name certificates are not verifiable. Given & Middle Names may be required to be submitted together in the Given name field. |
+| **\-** | \- |
+| **State** | SA |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates, where only a Given Name(s) or Family Name is printed must be entered with a hyphen in the empty name field. |
+| **\-** | \- |
+| **State** | TAS |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates are not verifiable. If the time of birth is displayed on a certificate, it must be included as displayed in order to achieve a positive result. |
+| **\-** | \- |
+| **State** | VIC |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | Required if available |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates may be printed with a value denoting that the individual does not have a Given Name(s) or Family Name. Typically this will appear as ‘No Registered Surname’ or ‘No Registered Given Name’. If printed this value must be entered to achieve a positive result. Single name certificates may also be printed with a blank Given Name(s) or Family Name field; if there is no value printed on the certificate these can be verified by either entering a hyphen or leaving the field blank. |
+| **\-** | \- |
+| **State** | WA |
+| **Registration State** | required |
+| **Given Name(s) \[firstname\]** | required |
+| **Middle Name** | N/A |
+| **Family Name \[lastname\]** | required |
+| **Birth Date** | required |
+| **Additional Notes** | Single name certificates will be printed as one name value rather than Given Name(s) and Family Name values. The data should be entered into the Given Name(s) |
 
 ## Ensuring a successful address validation
 

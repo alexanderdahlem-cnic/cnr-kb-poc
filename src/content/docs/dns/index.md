@@ -7,26 +7,16 @@ description: "DNS: ● KeyDNS Reference Manual ● DNSSEC: Domain Name System Se
 
 ## KeyDNS
 
-_KeyDNS Reference Manual_](dns/keydns "KeyDNS")
+_KeyDNS Reference Manual_](keydns/ "KeyDNS")
 
 [
 
 ## Usage Scenarios
 
-_KeyDNS Usage Scenarios_](dns/usage-scenarios "KeyDNS Usage Scenarios")
+_KeyDNS Usage Scenarios_](usage-scenarios/ "KeyDNS Usage Scenarios")
 
 [
 
 ## DNSSEC
 
-_Domain Name System Security Extensions_](dns/dnssec "DNSSEC")
-
-{{--
-
-[
-
-## KSK-Rollovers
-
-_KSK-Rollovers Manual_](dns/keydns/ksk-rollovers "KSK-Rollovers")
-
-\--}}
+_Domain Name System Security Extensions_](dnssec/ "DNSSEC")

@@ -23,29 +23,20 @@ If using the 5 above steps allow to convert the mark name in a label will be acc
 
 ## Example: ab & c
 
-**Allowed**
-
-ab-c, ab-c, abandc, ab-and-c (if jursdiction is US), ...
-
-**Not allowed**
-
-ab---c (dash on 3rd and 4th position), a-and-c (b cannot be omitted), ...
+| **Allowed** | ab-c, ab-c, abandc, ab-and-c (if jursdiction is US), ... |
+| --- | --- |
+| **Not allowed** | ab---c (dash on 3rd and 4th position), a-and-c (b cannot be omitted), ... |
 
 ## Example: a+b
 
-**Allowed**
-
-ab, a-b
+| **Allowed** | ab, a-b |
+| --- | --- |
 
 ## Example: +abc+
 
-**Allowed**
-
-abc
-
-**Not allowed**
-
-\-abc (starts with dash), abc- (ends with a dash), ...
+| **Allowed** | abc |
+| --- | --- |
+| **Not allowed** | \-abc (starts with dash), abc- (ends with a dash), ... |
 
 ## Algorithm
 

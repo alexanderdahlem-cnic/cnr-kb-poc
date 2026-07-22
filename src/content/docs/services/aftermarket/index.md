@@ -7,46 +7,46 @@ description: "Aftermarket: ● Introduction - How it works ● Aftermarket Accou
 
 ## Introduction - How it works
 
-](aftermarket/introduction-how-it-works "Introduction - How it works")
+](introduction-how-it-works/ "Introduction - How it works")
 
 [
 
 ## Account Management
 
-](aftermarket/aftermarket-account-management "Aftermarket Account Management")
+](aftermarket-account-management/ "Aftermarket Account Management")
 
 [
 
 ## List Domains for sale
 
-](aftermarket/list-domains-for-sale "List Domains for sale")
+](list-domains-for-sale/ "List Domains for sale")
 
 [
 
 ## The Selling Process
 
-](aftermarket/the-selling-process "The Selling Process")
+](the-selling-process/ "The Selling Process")
 
 [
 
 ## Buying a Domain
 
-](aftermarket/buying-a-domain "Buying a Domain")
+](buying-a-domain/ "Buying a Domain")
 
 [
 
 ## Aftermarket Events
 
-](aftermarket/aftermarket-events "Aftermarket Events")
+](aftermarket-events/ "Aftermarket Events")
 
 [
 
 ## Frequently asked questions
 
-](aftermarket/frequently-asked-questions "Frequently asked questions")
+](frequently-asked-questions/ "Frequently asked questions")
 
 [
 
 ## API Commands
 
-](aftermarket/api-commands "API Commands")
+](api-commands/ "API Commands")

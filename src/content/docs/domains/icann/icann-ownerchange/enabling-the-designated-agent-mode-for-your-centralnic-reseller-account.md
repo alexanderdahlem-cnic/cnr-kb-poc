@@ -12,4 +12,4 @@ When enabling this option you confirm that:
 
 After confirming these points all current and future domains of your registrants in your CentralNic Reseller account will be managed with you and Key-Systems as their Designated Agent for ICANN OwnerChanges.
 
-For further information on TAC and Registration Agreement, please refer to our [FAQ](frequently-asked-questions)
+For further information on TAC and Registration Agreement, please refer to our [FAQ](../frequently-asked-questions/)

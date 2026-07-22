@@ -68,7 +68,7 @@ Besides the individual renewal cycle of a registry, there are general policies a
 The auto renew grace period applies to all gTLDs, e.g. .com, .net, .org, .shop, .ninja, etc. It grants a 45 day extension before the domain expires. For you and your client’s convenience, we pass this period through to you. For security reasons and to have a certain _buffer_ for taking action we only subtract two days from this period. This means that the renewal date (which is relevant for you) will be _after_ the expiration date, but not the full length of ARGP offered by the registry.
 
 The renewal date is further subject to ICANN’s **Expired Registration Recovery Policy**, ERRP.  
-Please see [https://www.icann.org/resources/pages/errp-2013-02-28-en](https://www.icann.org/resources/pages/errp-2013-02-28-en) and [https://kb.centralnicreseller.com/domains/icann/errp](icann/errp).  
+Please see [https://www.icann.org/resources/pages/errp-2013-02-28-en](https://www.icann.org/resources/pages/errp-2013-02-28-en) and [https://kb.centralnicreseller.com/domains/icann/errp](../icann/errp/).  
 If you want to delete the domain during the auto renew grace period, it must be suspended for 8 days before deletion can take effect. The domain will not resolve during this time and the status in CentralNic Reseller is _pendingDelete_. A renewal without the need for prior restore is still possible during this phase.  
 The purpose of this policy is to make it very clear that the domain will definitely expire if no action is taken. As a consequence, the renewal date will be _35 days after the expiration date_ for gTLDs: 45 days – 8 days ERRP – 2 days buffer.
 
@@ -204,81 +204,26 @@ EOF
 
 The following TLDs do NOT support an explicit renewal:
 
-**.AT**
-
-Austria
-
-**.BE**
-
-Belgium
-
-**.CH**
-
-Swiss
-
-**.CO.ZA**
-
-South Africa
-
-**.DE**
-
-Germany
-
-**.DK**
-
-Denmark
-
-**.HU**
-
-Hungary
-
-**.IS**
-
-Iceland
-
-**.IT**
-
-Italy
-
-**.JP**
-
-Japan
-
-**.LI**
-
-Liechtenstein
-
-**.LU**
-
-Luxembourg
-
-**.MY**
-
-Malaysia
-
-**.NL**
-
-Netherlands
-
-**.PΦ**
-
-Russia
-
-**.RU**
-
-Russia
-
-**.SK**
-
-Slovakia
-
-**.SU**
-
-Soviet Union
-
-**.UA**
-
-Ukraine
+| **.AT** | Austria |
+| --- | --- |
+| **.BE** | Belgium |
+| **.CH** | Swiss |
+| **.CO.ZA** | South Africa |
+| **.DE** | Germany |
+| **.DK** | Denmark |
+| **.HU** | Hungary |
+| **.IS** | Iceland |
+| **.IT** | Italy |
+| **.JP** | Japan |
+| **.LI** | Liechtenstein |
+| **.LU** | Luxembourg |
+| **.MY** | Malaysia |
+| **.NL** | Netherlands |
+| **.PΦ** | Russia |
+| **.RU** | Russia |
+| **.SK** | Slovakia |
+| **.SU** | Soviet Union |
+| **.UA** | Ukraine |
 
 **4.2 Out of Funds**
 

@@ -14,22 +14,9 @@ The most simple way to manage the users and groups for your CentralNic Reseller 
 
 Users & Groups can be managed via API through several commands:
 
-**AddUser**
-
-Creates a user or a group.
-
-**ModifyUser**
-
-Change a password of a given user. Adding/removing users to groups.
-
-**DeleteUser**
-
-Deletes a user or a group.
-
-**StatusUser**
-
-Shows the status of a given user or group.
-
-**QueryUserList**
-
-Shows a list of all users or groups.
+| **AddUser** | Creates a user or a group. |
+| --- | --- |
+| **ModifyUser** | Change a password of a given user. Adding/removing users to groups. |
+| **DeleteUser** | Deletes a user or a group. |
+| **StatusUser** | Shows the status of a given user or group. |
+| **QueryUserList** | Shows a list of all users or groups. |

@@ -37,7 +37,7 @@ Please make sure that all documents are compiled into a single .pdf file, with t
 
 I'm working in Designated Agent Mode but what if I can not grant, that a single Registrant has not assigned me and Key-Systems as Designated Agents?
 
-For such occasions we will provide you with the option to handle individual cases with the FOA Mode through a special parameter([TriggerFoA=1](ownerchange-procedures-in-designated-agent-mode)).
+For such occasions we will provide you with the option to handle individual cases with the FOA Mode through a special parameter([TriggerFoA=1](../ownerchange-procedures-in-designated-agent-mode/)).
 
 Using FOA Mode, will the 60-day lock always be applied after a successful OwnerChange? (Similar to Designated Agent Mode, where the 60-day lock is always applied after a successful OwnerChange.)
 

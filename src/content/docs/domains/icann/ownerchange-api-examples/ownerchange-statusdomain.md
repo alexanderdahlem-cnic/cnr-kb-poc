@@ -18,18 +18,11 @@ property[ownerchange status][0] = REQUESTED
 
 ### Attributes
 
-**REQUESTED**
-
-OwnerChange is requested but none has been confirmed  
-
-**LOSING\_APPROVED**
-
-The losing registrant has approved  
-
-**GAINING\_APPROVED**
-
-The gaining registrant has approved  
-
-**SUCCESS**
-
-Losing and gaining registrant have both approved
+| **REQUESTED** | OwnerChange is requested but none has been confirmed  
+ |
+| --- | --- |
+| **LOSING\_APPROVED** | The losing registrant has approved  
+ |
+| **GAINING\_APPROVED** | The gaining registrant has approved  
+ |
+| **SUCCESS** | Losing and gaining registrant have both approved |

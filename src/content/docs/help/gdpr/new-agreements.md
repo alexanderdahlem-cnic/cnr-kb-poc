@@ -4,18 +4,18 @@ title: "New Agreements"
 
 To cover all aspects of GDPR we will publish new agreements that will become effective on May 25th 2018. For better understanding we provide preliminary versions here in our Knowledge Base. Final versions will be published on our websites soon. All these documents will become effective May 25, 2018
 
-[Privacy Policy (English)](../../files/privacy_policy_key-systems_may_2018.pdf)  
-[Privacy Policy (German)](../../files/datenschutz-bestimmungen_key-systems_mai_2018.pdf)  
-[Data Processing Agreement (English)](../../files/data_processing_agreement_key-systems_may_2018.pdf) - new document, further information will follow  
-[Data Processing Agreement (German)](../../files/auftragsdatenverarbeitungsvertrag_key-systems_mai_2018.pdf) - new document, further information will follow  
-[Terms and Conditions (English)](../../files/gtac_key-systems_may_2018.pdf)  
-[Terms and Conditions (English, redline version)](../../files/gtac_key-systems_may_2018-redline.pdf)  
-[Terms and Conditions (German)](../../files/agb_key-systems_mai_2018.pdf)  
-[Terms and Conditions (German, redline version)](../../files/agb_key-systems_mai_2018-redline.pdf)  
-[Registration Agreement (English)](../../files/registration_agreement_key-systems_may_2018.pdf)  
-[Registration Agreement (English, redline version)](../../files/registration_agreement_key-systems_may_2018-redline.pdf)  
-[Registration Agreement (German)](../../files/registrierungsvereinbarung_key-systems_mai_2018.pdf)  
-[Registration Agreement (German, redline version)](../../files/registrierungsvereinbarung_key-systems_mai_2018-redline.pdf)
+[Privacy Policy (English)](https://kb.centralnicreseller.com/files/privacy_policy_key-systems_may_2018.pdf)  
+[Privacy Policy (German)](https://kb.centralnicreseller.com/files/datenschutz-bestimmungen_key-systems_mai_2018.pdf)  
+[Data Processing Agreement (English)](https://kb.centralnicreseller.com/files/data_processing_agreement_key-systems_may_2018.pdf) - new document, further information will follow  
+[Data Processing Agreement (German)](https://kb.centralnicreseller.com/files/auftragsdatenverarbeitungsvertrag_key-systems_mai_2018.pdf) - new document, further information will follow  
+[Terms and Conditions (English)](https://kb.centralnicreseller.com/files/gtac_key-systems_may_2018.pdf)  
+[Terms and Conditions (English, redline version)](https://kb.centralnicreseller.com/files/gtac_key-systems_may_2018-redline.pdf)  
+[Terms and Conditions (German)](https://kb.centralnicreseller.com/files/agb_key-systems_mai_2018.pdf)  
+[Terms and Conditions (German, redline version)](https://kb.centralnicreseller.com/files/agb_key-systems_mai_2018-redline.pdf)  
+[Registration Agreement (English)](https://kb.centralnicreseller.com/files/registration_agreement_key-systems_may_2018.pdf)  
+[Registration Agreement (English, redline version)](https://kb.centralnicreseller.com/files/registration_agreement_key-systems_may_2018-redline.pdf)  
+[Registration Agreement (German)](https://kb.centralnicreseller.com/files/registrierungsvereinbarung_key-systems_mai_2018.pdf)  
+[Registration Agreement (German, redline version)](https://kb.centralnicreseller.com/files/registrierungsvereinbarung_key-systems_mai_2018-redline.pdf)
 
 ## Data Processing Agreement
 

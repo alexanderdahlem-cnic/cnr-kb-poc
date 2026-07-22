@@ -14,7 +14,7 @@ There are no special restrictions or requirements on the string that can be appl
 
 This table shows the mapping of natural or legal persons (API parameter x-au-domain-relationtype) to the respective TLD (API parameter zone) in the API Extensions as specified by the Australian TLD administration auDA (.AU, .COM.AU, .NET.AU, .ASN.AU, .ID.AU). Affected are the transaction types addDomain, modifyDomain and tradeDomain.
 
-[Mapping-File.pdf](../../files/au-relationtype-table-22-02-23.pdf)
+[Mapping-File.pdf](https://kb.centralnicreseller.com/files/au-relationtype-table-22-02-23.pdf)
 
 Valid as of 18/4/2023 07:00 UTC
 
@@ -120,7 +120,7 @@ For 3rd level extensions such as com.au that are restricted to Australian busine
 
 As 2nd level .au domains are open also to Natural Persons, RRPProxy will need to perform validation of the applicant’s details before submitting their orders to the Registry.
 
-Unlike ABN/ACN numbers lookups, these checks are not free. We are currently working on a separate paid validation service that Resellers can offer to their customers to validate a Contact Handle that can then be used to apply for one or more .au domains. More details on this validation service is available at [https://kb.centralnicreseller.com/services/au-validation-service-for-natural-persons](../../services/au-validation-service-for-natural-persons)
+Unlike ABN/ACN numbers lookups, these checks are not free. We are currently working on a separate paid validation service that Resellers can offer to their customers to validate a Contact Handle that can then be used to apply for one or more .au domains. More details on this validation service is available at [https://kb.centralnicreseller.com/services/au-validation-service-for-natural-persons](../../../services/au-validation-service-for-natural-persons/)
 
 ## How to submit pre-orders
 
@@ -136,63 +136,29 @@ Supported periods:
 
 To submit a preorder on behalf of a customer with a Priority right, the following additional fields should be included in the AddDomainApplication command:
 
-**CLASS**
-
-AU-GRANDFATHERING
-
-**X-AU-PRIORITY-TOKEN**
-
-String
-
-This field is optional when submitting the AddDomainApplication, and it is not required when the 3rd level domain on which the priority right is based is managed by RRPProxy and by the Reseller submitting the preorder (see section “Priority Registration Tokens” for more details).
-
-Where the 3rd level domain is managed by a different Registrar/Reseller, this field needs to be populated with the Priority Token provided by AuDA to the Registrant using the ModifyDomainApplication command before March 24th, 2022 in order for the request to be submitted to the Registry.
-
-**X-AU-GRANDFATHERING-TLD**
-
-com.au|net.au|org.au|asn.au|id.au
-
-This is the 3rd level extension of the domain on which the priority right is based. For instance, if you are applying for mydomain.au based on mydomain.net.au, you can fill the value “net.au” here.
-
-It is very important that this field is filled in correctly for domains that are managed by RRPProxy and the Reseller, to ensure that we can import the Priority Token correctly.
-
-Resellers should take extra care in ensuring that the Registrant details of the 3rd level domain are correct and match those submitted in the AddDomainApplication for the 2nd level domain. In case the same Registrant holds the domain in multiple 3rd level extensions, it is the responsibility of the Reseller that the domain with the highest Priority right is entered here.
-
-This extension is required even in case only one 3rd level domain exists matching the string.
-
-**X-AU-IMPORT-TOKEN**
-
-(optional - Default 1)
-
-When the 3rd level domain is managed by the Reseller through RRPProxy, we will automatically import the Priority Token to submit the application to the Registry. In case the Reseller does not wish for the token to be imported automatically, this field can be set to 0. In this case, the X-AU-PRIORITY-TOKEN field will need to be filled in with the Priority token obtained from AuDA.
-
-If the 3rd level domain is managed by RRPProxy but on behalf of a Reseller other than the one submitting the order, this field will be ignored and the token will not be automatically imported even if the field is set to 1.
-
-If the "X-AU-IMPORT-TOKEN", is set to "1" and the domain is with RRPProxy (and managed by the Reseller that submitted that pre-order), we will also populate any additional X-FLAGS required to submit the order correctly using the data from the corresponding 3rd level .au domain.
-
-if "X-AU-IMPORT-TOKEN" is set to "0", we will obviously not attempt to import the token, even if the domain is with us. Furthermore, we will not attempt to populate any of the other X-FLAGS either. I.e. it is entirely up to the Reseller to ensure all the data is added correctly to the pre-order, including all the relevant X-FLAGS.
-
-**X-AU-DOMAIN-IDTYPE and X-AU-DOMAIN-IDNUMBER**
-
-these 2 fields need to be filled in with the same values used for the 3rd level domain on which the Priority application is based (e.g. if an ABN number was used to register the corresponding com.au domain, then the value ABN and the ABN number need to be added in these 2 fields).
-
-**X-AU-DOMAIN-RELATIONTYPE**
-
-see section “Valid Relation Type values” below for a list of possible values to use in this field.
-
-**X-AU-DOMAIN-RELATION**
-
-This indicates the relationship between the Eligibility Type (e.g. business name#) and domain name. Specify the Policy reference number as appropriate from the table below:
-
-1 - if the 2nd level domain name is an exact match, an acronym or abbreviation of the company or trading name, organisation or association name, or trademark.
-
-2 - if the 2nd level domain name is closely and substantially connected to the organisation or activities undertaken by the organisation.
-
-**X-AU-OWNER-ORGANIZATION**
-
-Registrant name (company name or person name in case of a private registration)
-
-If X-AU-DOMAIN-IDTYPE = TM, the name of the trademark as found on https://search.ipaustralia.gov.au/trademarks/search/quick
+| **CLASS** | AU-GRANDFATHERING |
+| --- | --- |
+| **X-AU-PRIORITY-TOKEN** | String |
+|  | This field is optional when submitting the AddDomainApplication, and it is not required when the 3rd level domain on which the priority right is based is managed by RRPProxy and by the Reseller submitting the preorder (see section “Priority Registration Tokens” for more details). |
+|  | Where the 3rd level domain is managed by a different Registrar/Reseller, this field needs to be populated with the Priority Token provided by AuDA to the Registrant using the ModifyDomainApplication command before March 24th, 2022 in order for the request to be submitted to the Registry. |
+| **X-AU-GRANDFATHERING-TLD** | com.au|net.au|org.au|asn.au|id.au |
+|  | This is the 3rd level extension of the domain on which the priority right is based. For instance, if you are applying for mydomain.au based on mydomain.net.au, you can fill the value “net.au” here. |
+|  | It is very important that this field is filled in correctly for domains that are managed by RRPProxy and the Reseller, to ensure that we can import the Priority Token correctly. |
+|  | Resellers should take extra care in ensuring that the Registrant details of the 3rd level domain are correct and match those submitted in the AddDomainApplication for the 2nd level domain. In case the same Registrant holds the domain in multiple 3rd level extensions, it is the responsibility of the Reseller that the domain with the highest Priority right is entered here. |
+|  | This extension is required even in case only one 3rd level domain exists matching the string. |
+| **X-AU-IMPORT-TOKEN** | (optional - Default 1) |
+|  | When the 3rd level domain is managed by the Reseller through RRPProxy, we will automatically import the Priority Token to submit the application to the Registry. In case the Reseller does not wish for the token to be imported automatically, this field can be set to 0. In this case, the X-AU-PRIORITY-TOKEN field will need to be filled in with the Priority token obtained from AuDA. |
+|  | If the 3rd level domain is managed by RRPProxy but on behalf of a Reseller other than the one submitting the order, this field will be ignored and the token will not be automatically imported even if the field is set to 1. |
+|  | If the "X-AU-IMPORT-TOKEN", is set to "1" and the domain is with RRPProxy (and managed by the Reseller that submitted that pre-order), we will also populate any additional X-FLAGS required to submit the order correctly using the data from the corresponding 3rd level .au domain. |
+|  | if "X-AU-IMPORT-TOKEN" is set to "0", we will obviously not attempt to import the token, even if the domain is with us. Furthermore, we will not attempt to populate any of the other X-FLAGS either. I.e. it is entirely up to the Reseller to ensure all the data is added correctly to the pre-order, including all the relevant X-FLAGS. |
+| **X-AU-DOMAIN-IDTYPE and X-AU-DOMAIN-IDNUMBER** | these 2 fields need to be filled in with the same values used for the 3rd level domain on which the Priority application is based (e.g. if an ABN number was used to register the corresponding com.au domain, then the value ABN and the ABN number need to be added in these 2 fields). |
+| **X-AU-DOMAIN-RELATIONTYPE** | see section “Valid Relation Type values” below for a list of possible values to use in this field. |
+| **X-AU-DOMAIN-RELATION** |  |
+|  | This indicates the relationship between the Eligibility Type (e.g. business name#) and domain name. Specify the Policy reference number as appropriate from the table below: |
+|  | 1 - if the 2nd level domain name is an exact match, an acronym or abbreviation of the company or trading name, organisation or association name, or trademark. |
+|  | 2 - if the 2nd level domain name is closely and substantially connected to the organisation or activities undertaken by the organisation. |
+| **X-AU-OWNER-ORGANIZATION** | Registrant name (company name or person name in case of a private registration) |
+|  | If X-AU-DOMAIN-IDTYPE = TM, the name of the trademark as found on https://search.ipaustralia.gov.au/trademarks/search/quick |
 
 ## AddDomainApplication command example:
 
@@ -235,43 +201,22 @@ X-AU-OWNER-ORGANIZATION  = (TEXT)(mandatory)
 
 To submit a registration order on behalf of a customer without a Priority right for a domain that is not reserved by the Registry, the following additional fields should be included in the AddDomain command:
 
-**X-AU-DOMAIN-IDTYPE**
-
-(TEXT)
-
-When the Registrant is an Australian business, accepted values here are ABN/ACN
-
-When the Registrant is not based in Australia and uses an Australian Trademark to establish their Australian Presence, the TM number must be provided.
-
-When the Registrant is a Natural person, the only accepted value here is “PRIVATE”
-
-**X-AU-DOMAIN-IDNUMBER**
-
-(TEXT)
-
-When the Registrant is an Australian business, this field needs to contain the ABN/ACN number of the Registrant, in order to allow us to validate it before submitting the registration request to the Registry.
-
-When the Registrant is not based in Australia and uses an Australian Trademark to establish their Australian Presence, this field should contain the value “TM".Please remember that the domain applied for must match the Trademark.
-
-When the Registrant is a Natural person, this field can be left blank as the Registrant validation is handled through a separate product (see section “Validation of Natural Persons applying to register a .AU domain name” above).
-
-**X-AU-DOMAIN-RELATIONTYPE**
-
-See section “Valid Relation Type values” below for a list of possible values to use in this field. Please note that if you selected, then this field must contain the value “Citizen/Resident”. Please note that if you entered “PRIVATE” in the field X-AU-DOMAIN-IDTYPE, then this field must contain the value “Citizen/Resident”
-
-**X-AU-DOMAIN-RELATION**
-
-This indicates the relationship between the Eligibility Type (e.g. business name#) and domain name. Specify the Policy reference number as appropriate from the table below:
-
-1 - if the 2nd level domain name is an exact match, an acronym or abbreviation of the company or trading name, organisation or association name, or trademark.
-
-2 - if the 2nd level domain name is closely and substantially connected to the organisation or activities undertaken by the organisation.
-
-**X-AU-OWNER-ORGANIZATION**
-
-Registrant name (company name or person name in case of a private registration)
-
-If X-AU-DOMAIN-IDTYPE = TM, the name of the trademark as found on https://search.ipaustralia.gov.au/trademarks/search/quick
+| **X-AU-DOMAIN-IDTYPE** | (TEXT) |
+| --- | --- |
+|  | When the Registrant is an Australian business, accepted values here are ABN/ACN |
+|  | When the Registrant is not based in Australia and uses an Australian Trademark to establish their Australian Presence, the TM number must be provided. |
+|  | When the Registrant is a Natural person, the only accepted value here is “PRIVATE” |
+| **X-AU-DOMAIN-IDNUMBER** | (TEXT) |
+|  | When the Registrant is an Australian business, this field needs to contain the ABN/ACN number of the Registrant, in order to allow us to validate it before submitting the registration request to the Registry. |
+|  | When the Registrant is not based in Australia and uses an Australian Trademark to establish their Australian Presence, this field should contain the value “TM".Please remember that the domain applied for must match the Trademark. |
+|  | When the Registrant is a Natural person, this field can be left blank as the Registrant validation is handled through a separate product (see section “Validation of Natural Persons applying to register a .AU domain name” above). |
+| **X-AU-DOMAIN-RELATIONTYPE** | See section “Valid Relation Type values” below for a list of possible values to use in this field. Please note that if you selected, then this field must contain the value “Citizen/Resident”. Please note that if you entered “PRIVATE” in the field X-AU-DOMAIN-IDTYPE, then this field must contain the value “Citizen/Resident” |
+| **X-AU-DOMAIN-RELATION** |  |
+|  | This indicates the relationship between the Eligibility Type (e.g. business name#) and domain name. Specify the Policy reference number as appropriate from the table below: |
+|  | 1 - if the 2nd level domain name is an exact match, an acronym or abbreviation of the company or trading name, organisation or association name, or trademark. |
+|  | 2 - if the 2nd level domain name is closely and substantially connected to the organisation or activities undertaken by the organisation. |
+| **X-AU-OWNER-ORGANIZATION** | Registrant name (company name or person name in case of a private registration) |
+|  | If X-AU-DOMAIN-IDTYPE = TM, the name of the trademark as found on https://search.ipaustralia.gov.au/trademarks/search/quick |
 
 LIVE registration command is as follows:
 

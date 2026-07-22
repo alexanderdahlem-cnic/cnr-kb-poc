@@ -11,46 +11,46 @@ KeyDNS is designed to serve as your solution for DNS zone file management and al
 
 ## KeyDNS Upgrades
 
-](keydns/keydns-upgrade-to-anycast "KeyDNS Upgrade to Anycast")
+](keydns-upgrade-to-anycast/ "KeyDNS Upgrade to Anycast")
 
 [
 
 ## DNS Zone Xfer Infrastructure
 
-](keydns/dns-zone-xfer-infrastructure "DNS Zone Xfer Infrastructure")
+](dns-zone-xfer-infrastructure/ "DNS Zone Xfer Infrastructure")
 
 [
 
 ## Command reference
 
-](keydns/command-reference "Command reference")
+](command-reference/ "Command reference")
 
 [
 
 ## Enable DNSSEC for KeyDNS zones
 
-](keydns/enable-dnssec-for-keydns-zones "Enable DNSSEC for KeyDNS zones")
+](enable-dnssec-for-keydns-zones/ "Enable DNSSEC for KeyDNS zones")
 
 [
 
 ## CAA records
 
-](keydns/caa-records "CAA records")
+](caa-records/ "CAA records")
 
 [
 
 ## Resource records
 
-](keydns/resource-records "Resource records")
+](resource-records/ "Resource records")
 
 [
 
 ## KSK-Rollovers
 
-](keydns/ksk-rollovers "FAQs & KSK-Rollovers")
+](ksk-rollovers/ "FAQs & KSK-Rollovers")
 
 [
 
 ## FAQs & Troubleshooting
 
-](keydns/faqs-and-troubleshooting "FAQs & Troubleshooting")
+](faqs-and-troubleshooting/ "FAQs & Troubleshooting")

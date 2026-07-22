@@ -8,7 +8,7 @@ Each domain registration has it's own X-TIME-TO-SUSPENSION date (created date/tr
 
 What does it mean CentralNic Reseller contact is invalid (validated = 0)?
 
-The following attributes must be set: [Definitions](definitions)
+The following attributes must be set: [Definitions](../definitions/)
 
 Can I register a domain with an invalid contact?
 
@@ -42,13 +42,10 @@ property[verification requested][0] = 1
 
 ### Attributes
 
-**checkonly**
-
-1 does NOT UPDATE the contact  
-
-**preverify**
-
-1 generates the email with triggercode, if the email has not been already verified or if there is a pending request
+| **checkonly** | 1 does NOT UPDATE the contact  
+ |
+| --- | --- |
+| **preverify** | 1 generates the email with triggercode, if the email has not been already verified or if there is a pending request |
 
 Is it possible to verify an unvalidated contact handle?
 

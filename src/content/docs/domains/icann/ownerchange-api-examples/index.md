@@ -24,13 +24,10 @@ property[ownerchange status][0] = REQUESTED
 
 ### Attributes
 
-**TRIGGERFOA**
-
-1 forces the system to send FOA mails, even if the reseller account uses the Designated Agent Mode  
-
-**TRIGGERDA**
-
-1 forces the system to use the designated agent mode for the relevant operation, even if the reseller account uses FOA Mode. This setting needs to be enabled within the reseller properties (Account --> Settings --> ICANN Transfer).
+| **TRIGGERFOA** | 1 forces the system to send FOA mails, even if the reseller account uses the Designated Agent Mode  
+ |
+| --- | --- |
+| **TRIGGERDA** | 1 forces the system to use the designated agent mode for the relevant operation, even if the reseller account uses FOA Mode. This setting needs to be enabled within the reseller properties (Account --> Settings --> ICANN Transfer). |
 
 ## CheckOnly
 

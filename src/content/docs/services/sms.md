@@ -30,26 +30,10 @@ Please note that the Premium SMS Service does not support text messages of the t
 
 ## SMS API-Commands
 
-[ChargeMobileAccount](../api/api-command/ChargeMobileAccount)
-
-ChargeMobileAccount
-
-[CreateMobileAccount](../api/api-command/CreateMobileAccount)
-
-CreateMobileAccount
-
-[QueryMobileAccountList](../api/api-command/QueryMobileAccountList)
-
-QueryMobileAccountList
-
-[QuerySMSList](../api/api-command/QuerySMSList)
-
-QuerySMSList
-
-[SendSMS](../api/api-command/SendSMS)
-
-SendSMS
-
-[StatusMobileAccount](../api/api-command/StatusMobileAccount)
-
-StatusMobileAccount
+| [ChargeMobileAccount](../../api/api-command/chargemobileaccount/) | ChargeMobileAccount |
+| --- | --- |
+| [CreateMobileAccount](../../api/api-command/createmobileaccount/) | CreateMobileAccount |
+| [QueryMobileAccountList](../../api/api-command/querymobileaccountlist/) | QueryMobileAccountList |
+| [QuerySMSList](../../api/api-command/querysmslist/) | QuerySMSList |
+| [SendSMS](../../api/api-command/sendsms/) | SendSMS |
+| [StatusMobileAccount](../../api/api-command/statusmobileaccount/) | StatusMobileAccount |

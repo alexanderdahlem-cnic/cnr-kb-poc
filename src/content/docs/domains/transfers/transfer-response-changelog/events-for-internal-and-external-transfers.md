@@ -4,7 +4,7 @@ title: "Events for internal and external transfers"
 
 ## Internal Transfer(UserTransfer)
 
-The following listing contains example responses with the new extended information related to CentralNic Reseller [internal transfers](../internal-transfers):
+The following listing contains example responses with the new extended information related to CentralNic Reseller [internal transfers](../../internal-transfers/):
 
 -   Transfer request
 -   Transfer cancelation

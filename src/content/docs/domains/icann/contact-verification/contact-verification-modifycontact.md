@@ -28,18 +28,11 @@ property[verification requested][0] = 1
 
 ### Attributes
 
-**VALIDATION**
-
-explicite validation if all required fields are set  
-
-**CHECKONLY**
-
-does NOT UPDATE the contact  
-
-**PREVERIFY**
-
-generates the email with triggercode if the email has not been already verified or if there is a pending request  
-
-**VERIFICATION REQUESTED**
-
-returned only if PREVERIFY
+| **VALIDATION** | explicite validation if all required fields are set  
+ |
+| --- | --- |
+| **CHECKONLY** | does NOT UPDATE the contact  
+ |
+| **PREVERIFY** | generates the email with triggercode if the email has not been already verified or if there is a pending request  
+ |
+| **VERIFICATION REQUESTED** | returned only if PREVERIFY |

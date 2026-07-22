@@ -7,34 +7,34 @@ description: "● ICANN Policy for OwnerChange ● OwnerChange: Modify Domain �
 
 ## ICANN Policy
 
-_ICANN Policy for OwnerChange_](icann/icann-ownerchange "ICANN Policy for OwnerChange")
+_ICANN Policy for OwnerChange_](icann-ownerchange/ "ICANN Policy for OwnerChange")
 
 [
 
 ## Modify Domain
 
-](icann/ownerchange-api-examples "OwnerChange: Modify Domain")
+](ownerchange-api-examples/ "OwnerChange: Modify Domain")
 
 [
 
 ## Implementation Policy
 
-_Expired Registration Recovery Policy_](icann/errp "Implementation of Expired Registration Recovery Policy")
+_Expired Registration Recovery Policy_](errp/ "Implementation of Expired Registration Recovery Policy")
 
 [
 
 ## Requirements
 
-_Contact validation and verification requirements_](icann/contact-verification "Contact validation and verification requirements")
+_Contact validation and verification requirements_](contact-verification/ "Contact validation and verification requirements")
 
 [
 
 ## Registration Directory Services
 
-_Formerly WHOIS_](icann/registration-directory-services "Registration Directory Services")
+_Formerly WHOIS_](registration-directory-services/ "Registration Directory Services")
 
 [
 
 ## ICANN Registration Data Policy
 
-_ICANN Registration Data Policy_](icann-registration-data-policy "ICANN Registration Data Policy ")
+_ICANN Registration Data Policy_](https://kb.centralnicreseller.com/domains/icann-registration-data-policy "ICANN Registration Data Policy ")

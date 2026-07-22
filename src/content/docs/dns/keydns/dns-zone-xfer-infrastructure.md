@@ -17,15 +17,16 @@ The new IPs are available now. Please ensure to switch to these new IPs and have
 
 Maximum 15 outbound transfer IPs
 
-83.136.34.49 / 2a02:850:8::49
+| 83.136.34.49 / 2a02:850:8::49 |
+| --- |
 
 **IN**
 
 Maximum 8 inbound transfer IPs
 
-109.234.111.215 / 2a00:18e0:0:301::210
-
-109.234.111.216 / 2a00:18e0:0:301::211
+| 109.234.111.215 / 2a00:18e0:0:301::210 |
+| --- |
+| 109.234.111.216 / 2a00:18e0:0:301::211 |
 
 ## Previous AXFR IN/OUT Nameserver Set (IPv4 / IPv6)
 
@@ -33,14 +34,7 @@ These three AXFR IN/OUT Nameservers are located in Europe and will only be avail
 Afterwards, they will be replaced with the new IPs found in the “New AXFR IN/OUT Nameserver Set (IPv4 / IPv6)” section.  
 Please ensure to switch to the new IPs and have them whitelisted before then, otherwise no updates will not be processed.  
 
-**ns1-eu.key-systems.net**
-
-37.187.251.136 / 2001:41d0:c:388:37:187:251:136
-
-**ns2-eu.key-systems.net**
-
-66.206.25.194 / 2604:4500:c:3:66:206:25:194
-
-**ns3-eu.key-systems.net**
-
-51.68.180.207 / 2001:41d0:700:1bcf::
+| **ns1-eu.key-systems.net** | 37.187.251.136 / 2001:41d0:c:388:37:187:251:136 |
+| --- | --- |
+| **ns2-eu.key-systems.net** | 66.206.25.194 / 2604:4500:c:3:66:206:25:194 |
+| **ns3-eu.key-systems.net** | 51.68.180.207 / 2001:41d0:700:1bcf:: |

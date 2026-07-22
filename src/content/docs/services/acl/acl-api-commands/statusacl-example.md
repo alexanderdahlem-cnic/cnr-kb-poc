@@ -27,10 +27,7 @@ property[username][0] = user1
 
 ### Attributes
 
-**username**
-
-(TEXT) - Mandatory. "username" is either name of a user or a group.  
-
-**location**
-
-(TEXT) - Mandatory; see Locations list.
+| **username** | (TEXT) - Mandatory. "username" is either name of a user or a group.  
+ |
+| --- | --- |
+| **location** | (TEXT) - Mandatory; see Locations list. |

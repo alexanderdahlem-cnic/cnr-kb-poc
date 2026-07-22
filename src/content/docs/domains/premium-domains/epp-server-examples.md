@@ -19,21 +19,11 @@ description: "Server Examples: ● Application Fee ● Registration Fee ● Rene
 ...
 ```
 
-**Application Fee**
-
-The fee charged in addition to the registration fee for domains applied for during sunrise or landrush phases.
-
-**Registration Fee**
-
-The fee charged for the first year of registration.
-
-**Renewal Fee**
-
-The fee charged for all years subsequent to the first year.
-
-**Restore Fee**
-
-The fee charged to restore a domain from the Redemption Grace Period.
+| **Application Fee** | The fee charged in addition to the registration fee for domains applied for during sunrise or landrush phases. |
+| --- | --- |
+| **Registration Fee** | The fee charged for the first year of registration. |
+| **Renewal Fee** | The fee charged for all years subsequent to the first year. |
+| **Restore Fee** | The fee charged to restore a domain from the Redemption Grace Period. |
 
 ## Fee classes
 

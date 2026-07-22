@@ -1,5 +1,5 @@
 ---
-title: "E-mail signing | CentralNic Reseller Knowledge Base"
+title: "E-mail signing"
 ---
 
 As part of the CentralNic Reseller service, as a Reseller, you are able to customise the sending e-mail address created by the CentralNic service related to core policies such as Contact Verification, ERRP, WDRP, FOA, etc. In February 2024, Google introduced their policies for what they called "[New Gmail protections for a safer, less spammy inbox](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/)". As a result, any Reseller using a customised sending e-mail address on the CentralNic Reseller system must implement some additional security settings in the domain name in the customised e-mail address. Failure to do so may result in e-mails being sent to their customers not being delivered.

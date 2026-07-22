@@ -16,18 +16,8 @@ The table below shows an example for the formula(currency: USD). This would add 
 
 Note that this applies to each price separately not the total amount! (setup, unit, transfer, trade, restore, application).
 
-**value (in currency)**
-
-percentage (added to price)
-
-**\>=0**
-
-20%
-
-**\>=50**
-
-15%
-
-**\>=200**
-
-10%
+| **value (in currency)** | percentage (added to price) |
+| --- | --- |
+| **\>=0** | 20% |
+| **\>=50** | 15% |
+| **\>=200** | 10% |

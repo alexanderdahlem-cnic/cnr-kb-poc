@@ -6,4 +6,4 @@ title: "Plugins"
 
 ## WHMCS
 
-](plugins/whmcs "WHMCS Module")
+](whmcs/ "WHMCS Module")

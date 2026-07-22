@@ -127,38 +127,13 @@ property[sub status][0]= ACTIVE
 
 ## Certificate API-Commands
 
-[AddCertificate](../../api/api-command/AddCertificate)
-
-Request SSL certificate
-
-[CheckCertificate](../../api/api-command/CheckCertificate)
-
-Gather information about a certificate request
-
-[DeleteCertificate](../../api/api-command/DeleteCertificate)
-
-Delete a certificate
-
-[GetCertificateInfo](../../api/api-command/GetCertificateInfo)
-
-Request general information about a certificate class
-
-[ModifyCertificate](../../api/api-command/ModifyCertificate)
-
-Change the approver email address
-
-[QueryCertificateList](../../api/api-command/QueryCertificateList)
-
-List all certificate orders
-
-[ReissueCertificate](../../api/api-command/ReissueCertificate)
-
-Create a new sub-certificate in a certificate order
-
-[RenewCertificate](../../api/api-command/RenewCertificate)
-
-RenewCertificate will create a new sub-certificate in a certificate order
-
-[StatusCertificate](../../api/api-command/StatusCertificate)
-
-Give all information about certificate order
+| [AddCertificate](../../../api/api-command/addcertificate/) | Request SSL certificate |
+| --- | --- |
+| [CheckCertificate](../../../api/api-command/checkcertificate/) | Gather information about a certificate request |
+| [DeleteCertificate](../../../api/api-command/deletecertificate/) | Delete a certificate |
+| [GetCertificateInfo](../../../api/api-command/getcertificateinfo/) | Request general information about a certificate class |
+| [ModifyCertificate](../../../api/api-command/modifycertificate/) | Change the approver email address |
+| [QueryCertificateList](../../../api/api-command/querycertificatelist/) | List all certificate orders |
+| [ReissueCertificate](../../../api/api-command/reissuecertificate/) | Create a new sub-certificate in a certificate order |
+| [RenewCertificate](../../../api/api-command/renewcertificate/) | RenewCertificate will create a new sub-certificate in a certificate order |
+| [StatusCertificate](../../../api/api-command/statuscertificate/) | Give all information about certificate order |

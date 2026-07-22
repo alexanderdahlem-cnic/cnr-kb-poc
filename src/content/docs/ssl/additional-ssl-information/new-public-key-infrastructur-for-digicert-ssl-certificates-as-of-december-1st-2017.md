@@ -46,4 +46,4 @@ For reissues there's only time **UNTIL** September 13th 2018. Afterwards Google 
 
 ## How to perform Reissues
 
-A full how to on how to reissue affected certificates alongside best practices is available in the [ReissueCertificate](../ssl-reissue) article.
+A full how to on how to reissue affected certificates alongside best practices is available in the [ReissueCertificate](../../ssl-reissue/) article.

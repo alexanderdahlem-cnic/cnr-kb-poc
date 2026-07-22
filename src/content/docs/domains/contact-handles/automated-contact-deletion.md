@@ -18,25 +18,12 @@ We added a searchpattern parameter STATUS that can have the value of LINKED|UNLI
 
 VERY IMPORTANT: Since the status of a contact requires some processing, we are caching the status of a contact once a day. So changing the status from LINKED to UNLINKED or UNLINKED to LINKED can take up to 24hours until it is shown in QueryContactList. For realtime calculation of a single object you can use StatusContact.
 
-**LINKED**
-
-The contact is linked to a product
-
-**UNLINKED**
-
-The contact is not linked to a product and will be auto deleted
-
-**CLIENTAUTODELETEPROHIBITED**
-
-The contact is set to AUTODELETE=0 and will not be deleted by our system
-
-**STATUS**
-
-LINKED|UNLINKED|CLIENTAUTODELETEPROHIBITED
-
-**DELETION DATE**
-
-The date when we will start to delete the contact. Contacts with STATUS CLIENTDELETEPROHIBITED or LINKED will have an empty DELETION DATE.
+| **LINKED** | The contact is linked to a product |
+| --- | --- |
+| **UNLINKED** | The contact is not linked to a product and will be auto deleted |
+| **CLIENTAUTODELETEPROHIBITED** | The contact is set to AUTODELETE=0 and will not be deleted by our system |
+| **STATUS** | LINKED|UNLINKED|CLIENTAUTODELETEPROHIBITED |
+| **DELETION DATE** | The date when we will start to delete the contact. Contacts with STATUS CLIENTDELETEPROHIBITED or LINKED will have an empty DELETION DATE. |
 
 ## StatusContact
 
@@ -46,9 +33,8 @@ We added the response property DELETION DATE for UNLINKED contacts, and the flag
 
 Add optional parameter AUTODELETE=0|1. Default is 1 (YES).
 
-**AUTODELETE**
-
-Possible values are 0 or 1
+| **AUTODELETE** | Possible values are 0 or 1 |
+| --- | --- |
 
 ## RestoreContact
 

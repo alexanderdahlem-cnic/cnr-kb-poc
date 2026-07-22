@@ -2,7 +2,7 @@
 title: "General Guide or &quot;where to find what?&quot;"
 ---
 
-As mentioned in the "[Account Settings](../first-steps)" article, there a 3 different menu bars which lead to different settings, options or operations of the CentralNic Reseller account. By clicking on the main menu you will directly be forwarded to the 1st option/area of the drop down menu. The naming and layout might be subject to changes.
+As mentioned in the "[Account Settings](../)" article, there a 3 different menu bars which lead to different settings, options or operations of the CentralNic Reseller account. By clicking on the main menu you will directly be forwarded to the 1st option/area of the drop down menu. The naming and layout might be subject to changes.
 
 ### Top right Menus(right to left)
 

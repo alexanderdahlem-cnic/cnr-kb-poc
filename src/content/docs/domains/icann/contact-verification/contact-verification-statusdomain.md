@@ -15,14 +15,8 @@ property[status][1]               = serverHold
 
 ### Attributes
 
-**X-TIME-TO-SUSPENSION**
-
-Does not mean the domain is already suspended (it's just a candidate)  
-
-**STATUS0**
-
-ClientHold
-
-**STATUS1**
-
-ServerHold
+| **X-TIME-TO-SUSPENSION** | Does not mean the domain is already suspended (it's just a candidate)  
+ |
+| --- | --- |
+| **STATUS0** | ClientHold |
+| **STATUS1** | ServerHold |

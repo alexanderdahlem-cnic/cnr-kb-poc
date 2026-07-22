@@ -56,6 +56,6 @@ Full assistance for integration as well as switching all existing SSL certificat
 
 ## Resources
 
--   [SSL 2.0 API Documentation](../../files/ssl-2-0-api-documentation.pdf)
--   [SSL 2.0 Price Mapping](../../files/ssl-2-0-api-price-mapping.pdf)
--   [SSL Legacy API Documentation](../../files/ssl-legacy-api-documentation.pdf)
+-   [SSL 2.0 API Documentation](https://kb.centralnicreseller.com/files/ssl-2-0-api-documentation.pdf)
+-   [SSL 2.0 Price Mapping](https://kb.centralnicreseller.com/files/ssl-2-0-api-price-mapping.pdf)
+-   [SSL Legacy API Documentation](https://kb.centralnicreseller.com/files/ssl-legacy-api-documentation.pdf)
