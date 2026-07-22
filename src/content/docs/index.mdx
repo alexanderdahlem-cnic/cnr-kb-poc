@@ -1,0 +1,32 @@
+---
+title: CentralNic Reseller Knowledge Base
+description: Guides, API reference and TLD information for CentralNic Reseller partners.
+template: splash
+hero:
+  tagline: Everything you need to work with the CentralNic Reseller platform — guides, DNS, SSL, domain policies and API references.
+  actions:
+    - text: Browse the Help section
+      link: help/
+      icon: right-arrow
+      variant: primary
+    - text: Domains
+      link: domains/
+      icon: open-book
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Help & First Steps" icon="open-book">
+		Account setup, verification, payments and general guidance for getting started.
+	</Card>
+	<Card title="Domains" icon="star">
+		Applications, ICANN policies, ownerchange, contact verification and premium domains.
+	</Card>
+	<Card title="DNS & KeyDNS" icon="setting">
+		Zone management, DNSSEC, anycast/unicast infrastructure and resource records.
+	</Card>
+	<Card title="SSL & Services" icon="approve-check">
+		SSL validation, certificate handling and platform services.
+	</Card>
+</CardGrid>

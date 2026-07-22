@@ -1,0 +1,11 @@
+/* CNR brand accents — light touch for the POC. Tweak later. */
+:root {
+  --sl-color-accent-low: #0b2a4a;
+  --sl-color-accent: #1a73c7;
+  --sl-color-accent-high: #b9d8f2;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #cfe4f7;
+  --sl-color-accent: #1668b8;
+  --sl-color-accent-high: #0b3a63;
+}

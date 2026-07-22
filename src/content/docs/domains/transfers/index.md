@@ -1,0 +1,273 @@
+---
+title: "Transfer"
+---
+
+[
+
+## Internal Transfers
+
+_How to perform internal transfers within CentralNic Reseller_](transfers/internal-transfers "Internal Transfers")
+
+[
+
+## Response Changelog
+
+_Changes on transfer responses_](transfers/transfer-response-changelog "Transfer Response Changelog")
+
+[
+
+## GDPR
+
+_Transfers from and to other registrars_](transfers/gdpr "GDPR")
+
+[
+
+## Transfer Lock
+
+_Default transfer lock applied to all registered and transferred-in domains_](transfers/transfer-lock "Transfer Lock")
+
+## Changing Contact Handles during Transfers
+
+Several TLDs support changing contact handles during the transfer process through CentralNic Reseller.
+
+In our continuous effort to provide highly reliable API responses, when it come's to domain transfer requests (TransferDomain) including contact handles, the following change is implemented in our LIVE environment at Tuesday July 6, 2021:
+
+a) For TLDs that do not support changing contact handles during the transfer process through CentralNic Reseller, Domain transfer requests containing contact handles (TransferDomain parameter owner/admin/tech/billingcontact#) will be aborted with an error message (error code 503).
+
+Example:
+
+### Command
+
+```
+Command = TransferDomain
+Domain = NotSupportingContactHandleChangeUponTransfer.TLD
+OwnerContact0 = O-KEY239
+```
+
+### Response
+
+```
+...
+code = 503
+description = Invalid attribute name; OWNERCONTACT0
+...
+```
+
+b) If the parameter FORCEREQUEST=1 is provided, Domain transfer requests containing contact handles, will continue to work, even if the relevant TLD or registry backend does not support changing contact handles during the transfer process through CentralNic Reseller. The given contact information will be automatically suppressed in that scenario. This also applies to potentially submitted name servers (TransferDomain parameter nameserver#).
+
+Example:
+
+### Command
+
+```
+Command = TransferDomain
+Domain = NotSupportingContactModificationUponTransfer.TLD
+OwnerContact0 = O-KEY239
+AdminContact0 = O-KEY239
+TechContact0 = O-KEY239
+BillingContact0 = O-KEY239
+FORCEREQUEST=1
+```
+
+### Response
+
+```
+...
+code = 200
+description = Command completed successfully
+...
+```
+
+## EPP
+
+Using the CentralNic Reseller EPP API will automatically enforce the 'FORCEREQUEST=1' parameter during the transfer process, if transfer op='request' is set.
+
+## OT&E
+
+All changes are available for testing in the CentralNic Reseller OT&E since April 27, 2021.
+
+## Fulfillment TLDs and TLDs with manual transfer handling
+
+For Fulfillment TLDs and TLDs with manual transfer handling contacts can always be stated but there's no check if contacts can be changed upon transfer. Instead our Fulfillment Team will notify you accordingly.
+
+## Supported TLDs
+
+Changing contact handles during transfers is currently supported for the following TLDs:
+
+-   AC.NZ
+-   ACCOUNTANT
+-   AE
+-   AG
+-   ASN.AU
+-   ASN.LV
+-   ASSO.FR
+-   BE
+-   BIBLE
+-   BID
+-   BIZ
+-   BIZ.PR
+-   BUZZ
+-   BZ
+-   CA
+-   CC
+-   CL
+-   CLOUD
+-   CLUB
+-   CO
+-   CO.AG
+-   CO.BZ
+-   CO.LC
+-   CO.NZ
+-   COM
+-   COM.AG
+-   COM.AU
+-   COM.BZ
+-   COM.CO
+-   COM.LC
+-   COM.LV
+-   COM.PR
+-   COM.SC
+-   COM.SG
+-   COM.VC
+-   COMPARE
+-   CONF.LV
+-   COURSES
+-   CRICKET
+-   DATE
+-   DE
+-   DOWNLOAD
+-   EARTH
+-   EDU.LV
+-   EU
+-   FAITH
+-   FI
+-   FILM
+-   FR
+-   GEEK.NZ
+-   GEN.NZ
+-   GR
+-   HEALTH
+-   HK
+-   ID.AU
+-   ID.LV
+-   INFO.AU
+-   INFO.PR
+-   IS
+-   ISLA.PR
+-   IT
+-   JNJ
+-   JOBS
+-   JP
+-   KIWI.NZ
+-   KR
+-   KRD
+-   L.LC
+-   LC
+-   LOAN
+-   LU
+-   LV
+-   MAORI.NZ
+-   MB.CA
+-   MELBOURNE
+-   MEN
+-   MENU
+-   MN
+-   MOE
+-   NAME.PR
+-   NB.CA
+-   NET
+-   NET.AG
+-   NET.AU
+-   NET.BZ
+-   NET.CO
+-   NET.LC
+-   NET.LV
+-   NET.NZ
+-   NET.PR
+-   NET.SC
+-   NET.VC
+-   NF.CA
+-   NL.CA
+-   NOM.AG
+-   NOM.CO
+-   NS.CA
+-   NT.CA
+-   NU
+-   NU.CA
+-   NUIDN
+-   NYC
+-   NZ
+-   ON.CA
+-   ONE
+-   ORG.AG
+-   ORG.AU
+-   ORG.BZ
+-   ORG.LC
+-   ORG.LV
+-   ORG.NZ
+-   ORG.PR
+-   ORG.SC
+-   ORG.VC
+-   OSAKA
+-   P.LC
+-   PARTY
+-   PE.CA
+-   PHYSIO
+-   PM
+-   PR
+-   PRO.PR
+-   RACING
+-   RE
+-   REVIEW
+-   RO
+-   RU
+-   RU\_THIRD
+-   SC
+-   SCHOOL.NZ
+-   SCIENCE
+-   SE
+-   SELECT
+-   SG
+-   SI
+-   SK
+-   SK.CA
+-   STREAM
+-   STUDY
+-   SU
+-   SUCKS
+-   SU\_THIRD
+-   SYDNEY
+-   TAIPEI
+-   TEL
+-   TF
+-   TK
+-   TM.FR
+-   TRADE
+-   TRAVEL
+-   TUBE
+-   TV
+-   US
+-   VC
+-   VOTING
+-   VU
+-   WEBCAM
+-   WF
+-   WIN
+-   WS
+-   XN--1CK2E1B
+-   XN--BCK1B9A5DRE4C
+-   XN--CCK2B3B
+-   XN--E1A4C
+-   XN--FCT429K
+-   XN--G2XX48C
+-   XN--GCKR3F0F
+-   XN--JVR189M
+-   XN--MGBAAM7A8H
+-   XN--NGBC5AZD
+-   XN--P1AI
+-   XN--QXA6A
+-   XN--QXAM
+-   XN--ROVU88B
+-   XN--YFRO4I67O
+-   YK.CA
+-   YT

@@ -1,0 +1,132 @@
+---
+title: "Trademark Clearinghouse"
+description: "● Required Documents ● Adding a trademark ● Registered trademarks ● Court validated marks ● Marks protected by statute or treaty ● Labels ● Additional Commands "
+---
+
+The Trademark Clearinghouse will validate trademark / brand rights, store the information and transmit it as needed to the operators of nTLDs (registries). Trademark and brand owners that have been validated by the TMCH will be able to register their trademarks and brands in the Sunrise phase of so-called open TLDs, prior to the release of these TLDs to the general public. Trademark holders wishing to participate in Sunrise phases must demonstrate proof of use of the mark.
+
+Further, the TMCH will offer a Trademark Claims Service. This service will inform registrants attempting to register a domain corresponding to a TMCH-validated trademark. If the registration is successful, an alert will be sent to the trademark owner. This Trademark Claims Period will be 90 days long (which at this point, has been extended indefinitely).
+
+The TMCH is run by the Enterprise Risk Services department of "DELOITTE.". IBM is responsible for the database maintenance.
+
+-   CentralNic Reseller Resellers benefit from various features and functions to manage their TMCH records.
+-   Registration of trademarks in the Trademark Clearinghouse via API and Control Panel
+-   Definition of "labels" (possible domain names without TLD for protection and use in Sunrises)
+-   Management of trademark information stored at TMCH (e.g. switch on/off Sunrise service)
+-   Participation in new gTLD Sunrise phases
+-   Receiving Trademark Claims Notifications via API and email
+-   Receiving SMD files
+-   Defensive registrations (receiving only Trademark Claims Notifications, no use of Sunrise service)
+-   Technical pre-validation (check if labels are correct or not)
+
+## Valid Trademarks
+
+The Clearinghouse accepts the following trademarks:
+
+-   Registered trademarks
+-   Marks protected by statute or treaty
+-   Court validated trademarks
+
+## Potentially Valid Trademarks
+
+The following not registered trademarks might be eligible for inclusion in the Clearinghouse:
+
+-   Well-known or famous trademarks without registration
+-   Other marks that constitute intellectual property
+
+## Invalid Marks
+
+The following registered trademarks will not be accepted by the Clearinghouse:
+
+-   A registered trademark that includes a top level extension (Example: “icann.org” or “.icann”)
+-   Any registered trademark starting with or containing a “dot” (.) (Example: “deloitte.”)
+-   Any registered trademark that does not contain any letters, words, numerals or DNS valid characters
+-   Trademarks that are in an trademark registration process
+-   Trademarks that are in an invalidity, a deletion or amendment process
+
+## Data
+
+The following data have to be transmitted with the registration of a trademark / brand:
+
+-   Declaration of the trademark owner (according to TMCH template)
+-   Name of trademark
+-   Trademark number
+-   Registration date
+-   Country
+-   Trademark classification
+-   Trademark agency
+-   Status of the trademark owner (owner, licencee, assignee)
+-   Potentially licencee declaration (according to TMCH template)
+-   Potentially assignee declaration (according to TMCH template)
+-   Company (if the trademark owner is a company/organization)
+-   First name (if the trademark owner is a private person)
+-   Address
+-   Phone number / fax number
+-   Email address
+
+## Special Information for Marks Protected by Statute or Treaty
+
+The following data have to be transmitted with the registration of a trademark / brand that fall under the categorie Protected by Statute or Treaty:
+
+-   Identification of the statute or treaty
+-   Venue
+-   Date of ratification
+
+## Proof of Use
+
+Trademark holders who opt in for the Sunrise services when submitting a registered trademark must in these cases provide proof of use. The proof of use involves two parts:
+
+-   a signed declaration of use and
+-   a single sample of use such as
+    -   labels, tags, or containers from a product; or
+    -   advertising and marketing materials (including brochures, pamphlets, catalogues, product manuals, displays or signage, press releases, screen shots, or social media marketing materials).
+
+These documents are mandatory for participation in Sunrise services.
+
+[
+
+## Required Documents
+
+](tmch/required-documents "Required Documents")
+
+[
+
+## Adding a trademark
+
+](tmch/adding-a-trademark "Adding a trademark")
+
+[
+
+## Registered trademarks
+
+](tmch/registered-trademarks "Registered trademarks")
+
+[
+
+## Court validated marks
+
+](tmch/court-validated-marks "Court validated marks")
+
+[
+
+## Marks protected by statute or treaty
+
+](tmch/marks-protected-by-statute-or-treaty "Marks protected by statute or treaty")
+
+[
+
+## Labels (Domain names)
+
+](tmch/labels-domain-names "Labels (Domain names)")
+
+[
+
+## API Commands
+
+](tmch/api-commands "API Commands")
+
+[
+
+## FAQ for ModifyTrademark
+
+](tmch/faq-for-modifytrademark "FAQ for ModifyTrademark")
