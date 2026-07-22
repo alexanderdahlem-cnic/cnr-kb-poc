@@ -1,5 +1,5 @@
 ---
-title: "Renew of SHA1 &amp; SHA2 certificates"
+title: "Renew of SHA1 & SHA2 certificates"
 description: "Renew of SHA1 certificates: SHA1 hashing algorithm is not supported if certificate validity end date is beyond 12/31/2016..."
 ---
 

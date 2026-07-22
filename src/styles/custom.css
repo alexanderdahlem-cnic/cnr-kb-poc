@@ -9,3 +9,13 @@
   --sl-color-accent: #1668b8;
   --sl-color-accent-high: #0b3a63;
 }
+
+/* Homepage hero has no image, so the default two-column (text | image) grid
+   would leave it half-wide. Use the full content width instead. */
+.hero {
+  grid-template-columns: 1fr !important;
+}
+.hero > .sl-flex,
+.hero .stack {
+  max-width: none;
+}

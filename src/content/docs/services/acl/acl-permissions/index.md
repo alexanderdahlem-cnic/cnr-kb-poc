@@ -1,5 +1,5 @@
 ---
-title: "Permissions for ACL Users &amp; Groups"
+title: "Permissions for ACL Users & Groups"
 ---
 
 How does it work?

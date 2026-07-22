@@ -57,10 +57,16 @@ function listBladeFiles(dir) {
   return out;
 }
 
+/** Decode HTML entities (&quot; &amp; &#039; …) to their real characters. */
+function decodeEntities(s) {
+  if (!s || !s.includes('&')) return s;
+  return cheerio.load(`<x>${s}</x>`)('x').text();
+}
+
 function extractParam(header, key) {
   const re = new RegExp(`'${key}'\\s*=>\\s*'((?:[^'\\\\]|\\\\.)*)'`);
   const m = header.match(re);
-  return m ? m[1].replace(/\\'/g, "'").trim() : '';
+  return m ? decodeEntities(m[1].replace(/\\'/g, "'")).trim() : '';
 }
 
 function frontmatterEscape(s) {

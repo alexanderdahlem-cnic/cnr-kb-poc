@@ -1,6 +1,6 @@
 ---
 title: "Validation Method: DigiCert DNS"
-description: "To use the DNS based authentication for domain-vetted certificates, set the parameter &quot;AUTHMETHOD&quot; to &quot;DNS&quot; for AddCertificate&quot;, &quot;"
+description: "To use the DNS based authentication for domain-vetted certificates, set the parameter \"AUTHMETHOD\" to \"DNS\" for AddCertificate\", \"RenewCertificate\" and \"Reissue"
 ---
 
 To use the DNS based authentication for domain-vetted certificates, set the parameter "AUTHMETHOD" to "DNS" for AddCertificate", "RenewCertificate" and "ReissueCertificate". If the certificate class is valid for DNS based authentication, you will get one additional property back.

@@ -1,6 +1,6 @@
 ---
 title: "Validation Method: DigiCert FILE"
-description: "To use the FILE based authentication for domain-vetted certificates, set the parameter &quot;AUTHMETHOD&quot; to &quot;FILE&quot; for AddCertificate&quot;, &quo"
+description: "To use the FILE based authentication for domain-vetted certificates, set the parameter \"AUTHMETHOD\" to \"FILE\" for AddCertificate\", \"RenewCertificate\" and \"Reiss"
 ---
 
 Please be aware that due to CA/B regulations FILE based validation is NOT available for Wildcard certificates in general.

@@ -1,5 +1,5 @@
 ---
-title: "Premium domains for OT&amp;E"
+title: "Premium domains for OT&E"
 description: "Note: Every premium domain from LIVE System can be used for testing in OTE"
 ---
 

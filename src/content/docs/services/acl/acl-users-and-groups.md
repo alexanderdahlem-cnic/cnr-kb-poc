@@ -1,5 +1,5 @@
 ---
-title: "ACL Users &amp; Groups"
+title: "ACL Users & Groups"
 ---
 
 Each CentralNic Reseller account can set up users and groups. Specific rights can be applied for each user and each group, granting access to objects, as well as what operations are allowed on given objects.

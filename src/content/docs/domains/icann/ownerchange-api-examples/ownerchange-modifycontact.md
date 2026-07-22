@@ -1,6 +1,6 @@
 ---
 title: "OwnerChange: ModifyContact"
-description: "Material change with modify contact. For handles which are linked as owner with a GTLD, &quot;ownerchange status = REQUESTED&quot; is returned, indicating that "
+description: "Material change with modify contact. For handles which are linked as owner with a GTLD, \"ownerchange status = REQUESTED\" is returned, indicating that the IRTP p"
 ---
 
 Material change with modify contact.

@@ -1,6 +1,6 @@
 ---
 title: "Contact Verification: AddDomain"
-description: "If an unverified contact is used, the X-TIME-TO-SUSPENSION: &lt;DateTime&gt; must be set (NOW() plus 15 days)"
+description: "If an unverified contact is used, the X-TIME-TO-SUSPENSION: <DateTime> must be set (NOW() plus 15 days)"
 ---
 
 ## AddDomain

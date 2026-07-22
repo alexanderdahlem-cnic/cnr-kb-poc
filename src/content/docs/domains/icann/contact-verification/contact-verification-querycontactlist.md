@@ -1,6 +1,6 @@
 ---
 title: "Contact Verification: QueryContactList"
-description: "QueryContactList supports searchpatterns for valid and verified. Also with &#039;type = showverificationrequested&#039; shows the contact handles where an email"
+description: "QueryContactList supports searchpatterns for valid and verified. Also with 'type = showverificationrequested' shows the contact handles where an email verificat"
 ---
 
 ## QueryContactList

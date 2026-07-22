@@ -1,6 +1,6 @@
 ---
 title: "OwnerChange: ActivateOwnerChange"
-description: "ActivateOwnerChange is used to finish an OwnerChange using the respective &quot;action&quot; parameter..."
+description: "ActivateOwnerChange is used to finish an OwnerChange using the respective \"action\" parameter..."
 ---
 
 ActivateOwnerChange is used to finish an OwnerChange using the respective "action" parameter.
