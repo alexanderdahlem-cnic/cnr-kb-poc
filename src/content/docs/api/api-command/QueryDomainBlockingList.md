@@ -3,9 +3,6 @@ title: "QueryDomainBlockingList"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ QueryDomainBlockingList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewdomainblocking/ "RenewDomainBlocking")
-
 Retrieve all the block and its information managed in the current account. The parameter ServiceTag# is optional. It can be used to look up which blocks are tagged with a specific tag. The # in the parameter needs to be replaced by an integer starting with 0, such as ServiceTag0, ServiceTag1 etc. to look up multiple tags at once.
 
 ## Possible Gateways

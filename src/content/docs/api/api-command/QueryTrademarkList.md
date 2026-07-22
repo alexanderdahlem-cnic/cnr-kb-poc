@@ -3,9 +3,6 @@ title: "QueryTrademarkList"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ QueryTrademarkList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewtrademark/ "RenewTrademark")
-
 Query a list of trademarks in the own and subreseller accounts.
 
 ## Possible Gateways

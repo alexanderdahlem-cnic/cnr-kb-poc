@@ -3,9 +3,6 @@ title: "StatusUnsyncRegistryContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ StatusUnsyncRegistryContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../transfercontact/ "TransferContact")
-
 The StatusUnsyncRegistryContact command allows you to check if the contact information in CentralNic Reseller matches the contact information at the registry. If a contact is used on different domain names with different registrys and the content of the contact is changed later on it is possible that the update fails at some of the connected registrys. In that case the content of the contact in CentralNic Reseller and the registry is not in sync. This command shows you the problems if a contact is not in sync with the registry. You can either call it with a domain name or with a contact and the command will list the contacts.
 
 ## Possible Gateways

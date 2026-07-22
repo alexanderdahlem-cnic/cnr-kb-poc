@@ -3,9 +3,6 @@ title: "ModifyWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ ModifyWebspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryphpini/ "QueryPHPIni")
-
 ModifyWebspace allows you to increase the storage size/capacity of a single webspace. It is only possible to increase the Quota by full numbers in MB, decreasing is not possible.
 
 ## Possible Gateways

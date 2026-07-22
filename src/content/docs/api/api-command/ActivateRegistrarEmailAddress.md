@@ -3,9 +3,6 @@ title: "ActivateRegistrarEmailAddress"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ ActivateRegistrarEmailAddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addregistraremailaddress/ "AddRegistrarEmailAddress")
-
 Activate a given email address for receiving newsletter mailings
 
 ## Possible Gateways

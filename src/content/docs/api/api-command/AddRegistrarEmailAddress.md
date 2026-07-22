@@ -3,9 +3,6 @@ title: "AddRegistrarEmailAddress"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ AddRegistrarEmailAddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteregistraremailaddress/ "DeleteRegistrarEmailAddress")
-
 Add an email address for receiving RRPproxy newsletter, maintenance and/or abuse mailings
 
 ## Possible Gateways

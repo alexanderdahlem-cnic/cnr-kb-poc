@@ -3,9 +3,6 @@ title: "QueryCommandSyntax"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryCommandSyntax ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainpinlocklist/ "QueryDomainPinLockList")
-
 This command can be used to show all available parameters of a particular command. For certificates, information is returned based on the certificate classes used for the CLASS parameter.
 
 ## Possible Gateways

@@ -3,8 +3,6 @@ title: "Application:Successful"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:Successful ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 Application Successful (allocated)
 
 ## Required Parameters

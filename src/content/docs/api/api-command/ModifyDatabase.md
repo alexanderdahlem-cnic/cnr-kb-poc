@@ -3,9 +3,6 @@ title: "ModifyDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ ModifyDatabase ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydatabaselist/ "QueryDatabaseList")
-
 Modify Database, i.E. alter Quota
 
 ## Possible Gateways

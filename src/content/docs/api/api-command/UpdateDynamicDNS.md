@@ -3,8 +3,6 @@ title: "UpdateDynamicDNS"
 description: "CentralNic Reseller API Command Reference  ➤ DynamicDNS ➤ UpdateDynamicDNS ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Updates a dynamic DNS host object.
 
 ## Possible Gateways

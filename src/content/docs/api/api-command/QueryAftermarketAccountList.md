@@ -3,9 +3,6 @@ title: "QueryAftermarketAccountList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketAccountList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaftermarketbid/ "QueryAftermarketBid")
-
 A list of all Aftermarket accounts in your RRPproxy account.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "QueryDatabaseList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ QueryDatabaseList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewdatabase/ "RenewDatabase")
-
 Returns a list of all databases in your account including related data
 
 ## Possible Gateways

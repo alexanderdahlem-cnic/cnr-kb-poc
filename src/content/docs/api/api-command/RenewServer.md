@@ -3,9 +3,6 @@ title: "RenewServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ RenewServer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusserver/ "StatusServer")
-
 Renew an existing server in our system.
 
 ## Possible Gateways

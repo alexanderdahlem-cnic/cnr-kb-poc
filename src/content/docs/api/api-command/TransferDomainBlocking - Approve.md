@@ -3,9 +3,6 @@ title: "TransferDomainBlocking - Approve"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ TransferDomainBlocking - Approve ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel "TransferDomainBlocking - Cancel")
-
 This command is used to approve the outbound transfer of a domain block to another registrar.  
 For AdultBlock, in the gaining registrar's account, there will not be an auth code or an associated contact. There is only an empty placeholder contact in place. The user should user the command ModifyDomainBlocking to create an auth code and link it with their own contact.  
   

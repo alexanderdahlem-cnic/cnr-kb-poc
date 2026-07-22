@@ -3,9 +3,6 @@ title: "PushObject"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ PushObject ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryappendixlist/ "QueryAppendixList")
-
 You can now move an object within your own environment respectively hierarchy from one account in a subaccount using the new command "PushObject". Objects are among others: domain, domain block, SSL certificate, web hosting product or mobile account.
 
 These pushes are possible:

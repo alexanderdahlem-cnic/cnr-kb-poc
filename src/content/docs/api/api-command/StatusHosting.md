@@ -3,8 +3,6 @@ title: "StatusHosting"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ StatusHosting ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 StatusHosting
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "Host:Create"
 description: "EPP API Command Reference  ➤ Host commands ➤ Host:Create ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Delete](../host_delete/ "Host:Delete")
-
 ## Required Parameters
 
 ### Command

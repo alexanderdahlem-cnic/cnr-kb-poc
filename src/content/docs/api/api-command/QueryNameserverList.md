@@ -3,9 +3,6 @@ title: "QueryNameserverList"
 description: "CentralNic Reseller API Command Reference  ➤ Nameserver ➤ QueryNameserverList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusnameserver/ "StatusNameserver")
-
 ## Possible Gateways
 
 The command _QueryNameserverList_ is available via the following gateways:

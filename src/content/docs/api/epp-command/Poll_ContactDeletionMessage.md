@@ -3,9 +3,6 @@ title: "Poll:ContactDeletionMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:ContactDeletionMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainDeletionMessage](../poll_domaindeletionmessage/ "Poll:DomainDeletionMessage")
-
 ## Required Parameters
 
 ### Response

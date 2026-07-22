@@ -3,9 +3,6 @@ title: "ParkDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ ParkDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../pushdomain/ "PushDomain")
-
 We offer you the possibility to automatically park domains via the RRPproxy Metaregistry in your own account with the domain parking provider Parkingcrew (previous registration required) and thus monetise them.
 
 ## Possible Gateways

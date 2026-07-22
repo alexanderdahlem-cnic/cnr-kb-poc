@@ -3,9 +3,6 @@ title: "AddAftermarketAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ AddAftermarketAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addaftermarketdomain/ "AddAftermarketDomain")
-
 This command adds an Aftermarket Account.
 
 ## Possible Gateways

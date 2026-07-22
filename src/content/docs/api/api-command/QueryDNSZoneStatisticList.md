@@ -3,9 +3,6 @@ title: "QueryDNSZoneStatisticList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryDNSZoneStatisticList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addmailfwd/ "AddMailFwd")
-
 ## Possible Gateways
 
 The command _QueryDNSZoneStatisticList_ is available via the following gateways:

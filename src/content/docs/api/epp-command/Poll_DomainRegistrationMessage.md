@@ -3,9 +3,6 @@ title: "Poll:DomainRegistrationMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainRegistrationMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainRenewalMessage](../poll_domainrenewalmessage/ "Poll:DomainRenewalMessage")
-
 Domain registration message
 
 ## Required Parameters

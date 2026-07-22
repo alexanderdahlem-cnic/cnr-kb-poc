@@ -3,9 +3,6 @@ title: "AddDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ AddDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkdomainblockingiprid/ "CheckDomainBlockingIPRID")
-
 This command is used to place a domain block order for a submitted label. The parameters AddServiceTag# is only related to tags, therefore it is optional when purchasing a domain block. A successful command call would mean the creation of a new domain block and new tags being added. The # in the parameter needs to be replaced by an integer starting with 0, such as AddObject0, AddObject1 etc. Multiple entries can be used to apply the same function multiple times.
 
 ## Possible Gateways

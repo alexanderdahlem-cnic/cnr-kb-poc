@@ -3,9 +3,6 @@ title: "QueryTrusteeLogList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryTrusteeLogList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusobjectlog/ "StatusObjectLog")
-
 Query list of domains that have used a trustee.
 
 ## Possible Gateways

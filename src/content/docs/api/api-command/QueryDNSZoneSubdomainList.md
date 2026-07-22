@@ -3,9 +3,6 @@ title: "QueryDNSZoneSubdomainList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryDNSZoneSubdomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querymailfwdlist/ "QueryMailFwdList")
-
 Special command to list all subdomains of a DNSZone. Each subdomain is listed only once.
 
 ## Possible Gateways

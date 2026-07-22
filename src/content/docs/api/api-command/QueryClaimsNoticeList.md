@@ -3,9 +3,6 @@ title: "QueryClaimsNoticeList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryClaimsNoticeList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainexpirelist/ "QueryDomainExpireList")
-
 List all claims notices currently active.
 
 ## Possible Gateways

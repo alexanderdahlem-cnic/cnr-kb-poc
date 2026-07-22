@@ -3,9 +3,6 @@ title: "Contact:Check"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Check ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Create](../contact_create/ "Contact:Create")
-
 Check, if the contact ID is available or already in use.
 
 ## Required Parameters

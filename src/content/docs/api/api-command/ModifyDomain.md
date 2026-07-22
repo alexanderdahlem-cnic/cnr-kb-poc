@@ -3,9 +3,6 @@ title: "ModifyDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ ModifyDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../parkdomain/ "ParkDomain")
-
 _(Related EPP Command » [Domain:Update](../../epp-command/domain_update/ "Domain:Update"))_
 
 The ModifyDomain command allows you to modify the contact data of the domain or the nameservers as well as to set or remove a transfer lock or special parameters associated with the domain.

@@ -3,9 +3,6 @@ title: "StatusAcl"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ StatusAcl ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statususer/ "StatusUser")
-
 Shows granted rights for a specific location of a given user or group.
 
 ## Possible Gateways

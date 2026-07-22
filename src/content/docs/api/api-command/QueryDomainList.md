@@ -3,9 +3,6 @@ title: "QueryDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainlistbycontact/ "QueryDomainListByContact")
-
 Query list of domains in account
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "DeleteAcl"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ DeleteAcl ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteuser/ "DeleteUser")
-
 Remove location rights for a given user or group.
 
 ## Possible Gateways

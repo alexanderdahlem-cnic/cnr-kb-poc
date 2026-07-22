@@ -3,9 +3,6 @@ title: "Application:CheckClaims"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:CheckClaims ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [CreateDomainWithClaims](../application_createdomainwithclaims/ "Application:CreateDomainWithClaims")
-
 ## Required Parameters
 
 ### Command

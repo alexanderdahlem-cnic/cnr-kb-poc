@@ -3,8 +3,6 @@ title: "StatusMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ StatusMailspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 StatusMailspace
 
 ## Possible Gateways

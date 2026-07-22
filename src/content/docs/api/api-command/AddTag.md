@@ -3,9 +3,6 @@ title: "AddTag"
 description: "CentralNic Reseller API Command Reference  ➤ Domain - Tags ➤ AddTag ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletetag/ "DeleteTag")
-
 The AddTag command allows you to create new tags for either domains or domain blocks or zones or SSL 2.0 certificates. The tag name must be unique together with the type and supports all characters, but is limited to 64 characters.
 
 ## Possible Gateways

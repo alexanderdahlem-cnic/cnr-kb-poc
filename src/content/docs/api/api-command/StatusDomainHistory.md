@@ -3,9 +3,6 @@ title: "StatusDomainHistory"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ StatusDomainHistory ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../tradedomain/ "TradeDomain")
-
 This command enables you to get domain details of a deleted domain.
 
 ## Possible Gateways

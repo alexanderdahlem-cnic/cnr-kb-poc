@@ -3,9 +3,6 @@ title: "QueryUserList"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ QueryUserList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusacl/ "StatusAcl")
-
 Shows a list of all users or groups.
 
 ## Possible Gateways

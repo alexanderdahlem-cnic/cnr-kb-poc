@@ -3,9 +3,6 @@ title: "ModifyCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ ModifyCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querycertificatelist/ "QueryCertificateList")
-
 ## Possible Gateways
 
 The command _ModifyCertificate_ is available via the following gateways:

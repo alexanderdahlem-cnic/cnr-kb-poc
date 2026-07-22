@@ -3,9 +3,6 @@ title: "StatusDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ StatusDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdomainhistory/ "StatusDomainHistory")
-
 _(Related EPP Command » [Domain:Info](../../epp-command/domain_info/ "Domain:Info"))_
 
 The StatusDomain command enables you to check the current status of a domain name. It gives information about the created date, expiration, renewal mode, transfer-lock, etc.

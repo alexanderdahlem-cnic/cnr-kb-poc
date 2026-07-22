@@ -3,9 +3,6 @@ title: "Domain:Restore"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Restore ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Trade](../domain_trade/ "Domain:Trade")
-
 This command is required to restore a domain after deletion or expiration, if a restore is supported by the TLD.
 
 -   [Default handling](#)

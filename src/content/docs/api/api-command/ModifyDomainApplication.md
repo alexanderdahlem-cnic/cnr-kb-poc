@@ -3,9 +3,6 @@ title: "ModifyDomainApplication"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ ModifyDomainApplication ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryapplicationlist/ "QueryApplicationList")
-
 gTLD pre-orders can be updated to paid applications for a specific launch phase. ModifyDomainApplication cannot be used to manipulate existing launch phase applications.
 
 ## Possible Gateways

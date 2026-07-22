@@ -3,8 +3,6 @@ title: "StatusDomainApplication"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ StatusDomainApplication ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 This command enables you to check the actual status and all data of an application.
 
 ## Possible Gateways

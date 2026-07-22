@@ -3,9 +3,6 @@ title: "Contact:OwnerChange"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:OwnerChange ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Transfer](../contact_transfer/ "Contact:Transfer")
-
 Example of an owner change by EPP contact:update with the requested status as response.
 
 ## Required Parameters

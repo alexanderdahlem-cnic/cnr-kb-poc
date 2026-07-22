@@ -3,9 +3,6 @@ title: "QueryMonitoringList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryMonitoringList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryobjectloglist/ "QueryObjectLogList")
-
 Query information of running or upcoming maintenance.
 
 ## Possible Gateways

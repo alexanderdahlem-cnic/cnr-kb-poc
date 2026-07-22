@@ -3,9 +3,6 @@ title: "SetAuthcode"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ SetAuthcode ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdomaintransfer/ "StatusDomainTransfer")
-
 This command let you set an authorisation code for a .DE, .BE, .EU, and .NO. There are two different types of authinfos for .DE. Type 1 can only be set by the current provider. Type 2 can be set by any provider and will be sent per mail to the German owner or admin. Remember that the type 2 authinfo will be charged from your account! Authinfo type2 cannot be deleted! All authinfo expire 30 days after creation and should only be set if the domain is up for a transfer.
 
 ## Possible Gateways

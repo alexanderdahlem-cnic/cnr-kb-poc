@@ -3,9 +3,6 @@ title: "ModifyContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ ModifyContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querycontactlist/ "QueryContactList")
-
 _(Related EPP Command » [Contact:Update](../../epp-command/contact_update/ "Contact:Update"))_
 
 This command allows you, to change the content of a contact handle. The change will not be propagated to all registries, it may be necessary to send a ModifyDomain command with a different handle to these registries.

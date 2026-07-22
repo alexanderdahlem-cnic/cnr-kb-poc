@@ -3,9 +3,6 @@ title: "QueryJobList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryJobList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querymonitoringlist/ "QueryMonitoringList")
-
 Query list of running jobs in account
 
 ## Possible Gateways

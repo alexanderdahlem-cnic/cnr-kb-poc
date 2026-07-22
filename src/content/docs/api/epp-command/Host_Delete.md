@@ -3,9 +3,6 @@ title: "Host:Delete"
 description: "EPP API Command Reference  ➤ Host commands ➤ Host:Delete ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Info](../host_info/ "Host:Info")
-
 ## Required Parameters
 
 ### Command

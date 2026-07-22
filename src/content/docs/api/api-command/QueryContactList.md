@@ -3,9 +3,6 @@ title: "QueryContactList"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ QueryContactList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../requesttoken/ "RequestToken")
-
 Search for contact handles, wildcards are allowed for every parameter. Default will show all contacts.
 
 ## Possible Gateways

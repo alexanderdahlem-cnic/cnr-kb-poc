@@ -3,9 +3,6 @@ title: "ReserveDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ ReserveDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusaftermarketaccount/ "StatusAftermarketAccount")
-
 Reserve a domain in the aftermarket. This is a non-binding offer. Use BuyDomain with the token returned from this command to buy the domain later. ReserveDomain now reserves a domain for 96 hours at once and (if provided by provider) returns the time until a lock expires. Afterwards it will be released and is not reserved any more. Please note, the ReserveDomain command is only working for domains that are offered for direct sale, not for biddings. An event will be created once the lock is expired depending on the automated system cycle:  
   
 AFTERMARKET\_BID::BID\_FAILED (token:;domain:;reason:timeout)

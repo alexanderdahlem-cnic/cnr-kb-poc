@@ -3,9 +3,6 @@ title: "SetTrademarkRenewalmode"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ SetTrademarkRenewalmode ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statustrademark/ "StatusTrademark")
-
 ## Possible Gateways
 
 The command _SetTrademarkRenewalmode_ is available via the following gateways:

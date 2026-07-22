@@ -3,9 +3,6 @@ title: "RenewDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ RenewDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdomainblocking/ "StatusDomainBlocking")
-
 This command will extend an existing domain blocking product by a set number of years. The expirationDate parameter is the current expiration year on the domain block. The period parameter allows you to set the number of years you wish to extend it by. For AdultBlock, it is between 1 to 10. For GlobalBlock, it is between 1 to 3. To determine the maximum number of years accepted in the period, the rule is the expiration year plus the period cannot exceed the current year plus the period.
 
 ## Possible Gateways

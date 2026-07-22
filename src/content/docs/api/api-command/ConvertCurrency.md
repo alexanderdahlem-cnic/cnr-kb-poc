@@ -3,9 +3,6 @@ title: "ConvertCurrency"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ ConvertCurrency ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaccountinglist/ "QueryAccountingList")
-
 Converts a decimal amount from one currency to another currency with the current exchange rate.
 
 ## Possible Gateways

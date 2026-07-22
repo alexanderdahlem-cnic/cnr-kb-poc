@@ -3,9 +3,6 @@ title: "AddUser"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ AddUser ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteacl/ "DeleteAcl")
-
 Creates a user or a group. Optionally the new user can be assigned to an existing group.
 
 ## Possible Gateways

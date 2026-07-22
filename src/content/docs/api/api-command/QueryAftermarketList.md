@@ -3,9 +3,6 @@ title: "QueryAftermarketList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../reservedomain/ "ReserveDomain")
-
 Search domains in the aftermarket. The search term is given by "KEYWORD".  
   
 Description of property\[listing type\]\[x\]:  

@@ -3,9 +3,6 @@ title: "AddDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ AddDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkclaims/ "CheckClaims")
-
 _(Related EPP Command » [Domain:Create](../../epp-command/domain_create/ "Domain:Create"))_
 
 This commands invokes several processes: It checks if the domainname is available at the registry, creates the contacthandles in the registry and starts the registration at the registry. For a basic AddDomain command only few common parameters are required. For some TLDs special parameters are required in order to register Domains. All special parameters start with X-<TLD>- and can be found in the specific TLD Documentation.

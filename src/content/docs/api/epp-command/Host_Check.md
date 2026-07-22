@@ -3,9 +3,6 @@ title: "Host:Check"
 description: "EPP API Command Reference  ➤ Host commands ➤ Host:Check ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Create](../host_create/ "Host:Create")
-
 ## Required Parameters
 
 ### Command

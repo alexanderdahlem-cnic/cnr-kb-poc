@@ -3,9 +3,6 @@ title: "QueryACLList"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ QueryACLList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryuserlist/ "QueryUserList")
-
 Shows all locations with granted rights of a given user or group.
 
 ## Possible Gateways

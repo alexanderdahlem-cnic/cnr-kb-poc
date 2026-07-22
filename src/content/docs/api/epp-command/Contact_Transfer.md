@@ -3,9 +3,6 @@ title: "Contact:Transfer"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Transfer ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Update](../contact_update/ "Contact:Update")
-
 RRPproxy contacts can be transferred between accounts.
 
 ## Required Parameters

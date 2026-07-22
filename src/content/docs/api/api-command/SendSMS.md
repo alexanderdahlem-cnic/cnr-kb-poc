@@ -3,9 +3,6 @@ title: "SendSMS"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ SendSMS ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusmobileaccount/ "StatusMobileAccount")
-
 Send one or more SMS with your mobile account. The costs will be charged from the mobile account, not from your real account. If the input provided are valid, it should return a response with the code “200” indicating success. This indicates that the SMS was successfully submitted to the SMS gateway, meaning the phone number is valid, the gateway is responding and the connection is fine. In the response, the status can be one of two values - “successful” or “ failed”. “Successful” indicates we received an messageid from the 3th party provider. “Failed” could be a number of reasons beyond our control. Another command, QuerySMSList can be used to find out what has happened with the SMS, whether if it got delivered, expired, the phone number was not reachable or if the carrier has broken down.
 
 ## Possible Gateways

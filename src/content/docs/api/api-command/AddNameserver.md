@@ -3,9 +3,6 @@ title: "AddNameserver"
 description: "CentralNic Reseller API Command Reference  ➤ Nameserver ➤ AddNameserver ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checknameserver/ "CheckNameserver")
-
 This command may be used to add a new name server (e.g. for GLUE - records). The parent domain must be registered with Key-Systems and you can only add new name servers and not name servers which already exist.
 
 ## Possible Gateways

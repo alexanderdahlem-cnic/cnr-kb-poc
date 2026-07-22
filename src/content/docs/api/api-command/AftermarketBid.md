@@ -3,9 +3,6 @@ title: "AftermarketBid"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ AftermarketBid ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../buydomain/ "BuyDomain")
-
 This command is used to give a new bid in a bidding. A bidding is started with an optional ReserveDomain followed by BuyDomain if BuyDomain returns "bidding = 1".
 
 ## Possible Gateways

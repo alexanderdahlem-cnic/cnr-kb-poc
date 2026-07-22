@@ -3,9 +3,6 @@ title: "QueryObjectLogList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryObjectLogList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryownerchangelist/ "QueryOwnerChangeList")
-
 Query information from the object log
 
 ## Possible Gateways

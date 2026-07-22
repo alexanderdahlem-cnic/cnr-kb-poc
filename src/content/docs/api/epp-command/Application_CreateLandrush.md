@@ -3,9 +3,6 @@ title: "Application:CreateLandrush"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:CreateLandrush ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [CreateSunrise](../application_createsunrise/ "Application:CreateSunrise")
-
 ## Required Parameters
 
 ### Command

@@ -3,9 +3,6 @@ title: "ModifyNameserver"
 description: "CentralNic Reseller API Command Reference  ➤ Nameserver ➤ ModifyNameserver ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querynameserverlist/ "QueryNameserverList")
-
 This command allows you to modify existing name servers. Please note that you can only modify those name servers, which have been created through CentralNic Reseller.
 
 ## Possible Gateways

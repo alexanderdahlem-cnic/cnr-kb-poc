@@ -3,9 +3,6 @@ title: "QueryAGPDeleteslist"
 description: "CentralNic Reseller API Command Reference  ➤ Paid Services ➤ QueryAGPDeleteslist ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusagpdeletes/ "StatusAGPdeletes")
-
 ## Possible Gateways
 
 The command _QueryAGPDeleteslist_ is available via the following gateways:

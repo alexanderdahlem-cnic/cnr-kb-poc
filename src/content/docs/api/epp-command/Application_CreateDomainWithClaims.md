@@ -3,9 +3,6 @@ title: "Application:CreateDomainWithClaims"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:CreateDomainWithClaims ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [CreateLandrush](../application_createlandrush/ "Application:CreateLandrush")
-
 ## Required Parameters
 
 ### Command

@@ -3,9 +3,6 @@ title: "AddAftermarketDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ AddAftermarketDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../aftermarketbid/ "AftermarketBid")
-
 Adding a Domain for selling via the Aftermarket System requires the statement of: the Domain name Identifier of the Aftermarket Account Price, a minimum of 90.00 USD is required the type of listing, buy\_now (price is fixed) or make\_offer (offers can be made) the Aftermarket Provider The command always returns a token, which identifies the listing.  
   
 After a domain has been added to the Aftermarket System, a **Form Of Authorisation (FOA) email** will be sent to the Admin Contacts of the respective domain. If several domains with the same Admin Contact are added, only one FOA email for these domains will be sent. The FOA email contains a link including an approval code to aftermarketapproval.com to activate the listing. The sender address is "noreply@aftermarketapproval.com".  

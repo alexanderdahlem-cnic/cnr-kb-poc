@@ -3,9 +3,6 @@ title: "Contact:Create"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Create ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Delete](../contact_delete/ "Contact:Delete")
-
 The command allows to create a new handle in the system. To be able to order ccTLDs we added some rules compared to the EPP standard. When using the field you have to pass the firstname, middlename and lastname information seperated by whitespaces in this field. The middlename is optional. Our internal system parser will parse the in that order. In the example below John Doe “John” is the firstname and “Doe” is the lastname. When using the field you have the possibility to tell our parser to ignore the informations. Due to the restriction that the field is always mandatory you have to send a string without whitespaces in it (i.e. NULL). In this case the field is not parsed. An organization handle can only be used as an ownercontact for gTLDs an some ccTLDs. Here are two examples showing the differences between O-handle (Organization) and P-handle (Person) creation: Create a P-handle This part of the \- command: John -Doe My -Company will be translated to: firstname=John lastname=Doe organization=My -Company Create an O-handle: This part of the \- command: NULL My -Company will be translated to; organization=My -Company
 
 ## Required Parameters

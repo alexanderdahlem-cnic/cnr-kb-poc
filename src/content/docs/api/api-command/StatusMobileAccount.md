@@ -3,8 +3,6 @@ title: "StatusMobileAccount"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ StatusMobileAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Get details of your mobile account, useful if you forgot the password or need to ensure that enough money is charged on it.
 
 ## Possible Gateways

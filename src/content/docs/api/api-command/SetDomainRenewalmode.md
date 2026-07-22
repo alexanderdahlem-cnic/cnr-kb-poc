@@ -3,9 +3,6 @@ title: "SetDomainRenewalmode"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ SetDomainRenewalmode ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../setdomaintransfermode/ "SetDomainTransfermode")
-
 This command allows you to change the renewal mode for a domain name.
 
 ## Possible Gateways

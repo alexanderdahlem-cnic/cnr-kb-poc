@@ -3,9 +3,6 @@ title: "ModifyServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ ModifyServer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryserverlist/ "QueryServerList")
-
 Modify an existing server, you may i.e. change the bootorder, attach another cdimage to the system or set a new VNC password.
 
 ## Possible Gateways

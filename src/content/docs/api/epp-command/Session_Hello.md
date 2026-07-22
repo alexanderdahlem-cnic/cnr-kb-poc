@@ -3,9 +3,6 @@ title: "Session:Hello"
 description: "EPP API Command Reference  ➤ Session commands ➤ Session:Hello ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Login](../session_login/ "Session:Login")
-
 ## Required Parameters
 
 ### Command

@@ -3,9 +3,6 @@ title: "QueryServerList"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ QueryServerList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewserver/ "RenewServer")
-
 Query list of servers.
 
 ## Possible Gateways

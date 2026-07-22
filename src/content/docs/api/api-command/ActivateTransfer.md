@@ -3,9 +3,6 @@ title: "ActivateTransfer"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ ActivateTransfer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkdomaintransfer/ "CheckDomainTransfer")
-
 This command applies only to the gTLDs CNOBI if you have an own transfer confirmation page for ICANN transfers.
 
 ## Possible Gateways

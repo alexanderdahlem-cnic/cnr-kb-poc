@@ -3,9 +3,6 @@ title: "Domain:Trade"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Trade ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Update](../domain_update/ "Domain:Update")
-
 ## Required Parameters
 
 ### Command

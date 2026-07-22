@@ -3,9 +3,6 @@ title: "ModifyUser"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ ModifyUser ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryacllist/ "QueryACLList")
-
 Change a password of a given user. Also for adding/removing groups for a given user or adding/removing users from a given group.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "CreateMobileAccount"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ CreateMobileAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querymobileaccountlist/ "QueryMobileAccountList")
-
 Create a new mobile account, the amount on this account is independent from your main account, just the initial charging will be accounted on the main account, not single SMS.
 
 ## Possible Gateways

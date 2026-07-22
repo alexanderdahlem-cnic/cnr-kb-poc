@@ -3,9 +3,6 @@ title: "DeleteRegistrarEmailAddress"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ DeleteRegistrarEmailAddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyregistraremailaddress/ "ModifyRegistrarEmailAddress")
-
 Remove an email address for receiving RRPproxy newsletter and/or maintenance mailings. Only possible if all classes are already fully removed or all classes on status DISABLED.
 
 ## Possible Gateways

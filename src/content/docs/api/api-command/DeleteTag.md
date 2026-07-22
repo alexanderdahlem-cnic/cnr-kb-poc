@@ -3,9 +3,6 @@ title: "DeleteTag"
 description: "CentralNic Reseller API Command Reference  ➤ Domain - Tags ➤ DeleteTag ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifytag/ "ModifyTag")
-
 Deletes a Tag including all assignments to objects using this Tag.
 
 ## Possible Gateways

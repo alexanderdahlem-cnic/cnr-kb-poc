@@ -3,9 +3,6 @@ title: "DeleteMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ DeleteMailspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifymailspace/ "ModifyMailspace")
-
 DeleteMailspace
 
 ## Possible Gateways

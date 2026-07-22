@@ -3,8 +3,6 @@ title: "StatusWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ StatusWebspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 StatusWebspace
 
 ## Possible Gateways

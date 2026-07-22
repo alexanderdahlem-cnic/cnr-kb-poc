@@ -3,6 +3,8 @@ title: "Trademark Clearinghouse"
 description: "● Required Documents ● Adding a trademark ● Registered trademarks ● Court validated marks ● Marks protected by statute or treaty ● Labels ● Additional Commands "
 ---
 
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
 The Trademark Clearinghouse will validate trademark / brand rights, store the information and transmit it as needed to the operators of nTLDs (registries). Trademark and brand owners that have been validated by the TMCH will be able to register their trademarks and brands in the Sunrise phase of so-called open TLDs, prior to the release of these TLDs to the general public. Trademark holders wishing to participate in Sunrise phases must demonstrate proof of use of the mark.
 
 Further, the TMCH will offer a Trademark Claims Service. This service will inform registrants attempting to register a domain corresponding to a TMCH-validated trademark. If the registration is successful, an alert will be sent to the trademark owner. This Trademark Claims Period will be 90 days long (which at this point, has been extended indefinitely).
@@ -83,50 +85,13 @@ Trademark holders who opt in for the Sunrise services when submitting a register
 
 These documents are mandatory for participation in Sunrise services.
 
-[
-
-## Required Documents
-
-](required-documents/ "Required Documents")
-
-[
-
-## Adding a trademark
-
-](adding-a-trademark/ "Adding a trademark")
-
-[
-
-## Registered trademarks
-
-](registered-trademarks/ "Registered trademarks")
-
-[
-
-## Court validated marks
-
-](court-validated-marks/ "Court validated marks")
-
-[
-
-## Marks protected by statute or treaty
-
-](marks-protected-by-statute-or-treaty/ "Marks protected by statute or treaty")
-
-[
-
-## Labels (Domain names)
-
-](labels-domain-names/ "Labels (Domain names)")
-
-[
-
-## API Commands
-
-](api-commands/ "API Commands")
-
-[
-
-## FAQ for ModifyTrademark
-
-](faq-for-modifytrademark/ "FAQ for ModifyTrademark")
+<CardGrid>
+  <LinkCard title={"Required Documents"} href={"required-documents/"} />
+  <LinkCard title={"Adding a trademark"} href={"adding-a-trademark/"} />
+  <LinkCard title={"Registered trademarks"} href={"registered-trademarks/"} />
+  <LinkCard title={"Court validated marks"} href={"court-validated-marks/"} />
+  <LinkCard title={"Marks protected by statute or treaty"} href={"marks-protected-by-statute-or-treaty/"} />
+  <LinkCard title={"Labels (Domain names)"} href={"labels-domain-names/"} />
+  <LinkCard title={"API Commands"} href={"api-commands/"} />
+  <LinkCard title={"FAQ for ModifyTrademark"} href={"faq-for-modifytrademark/"} />
+</CardGrid>

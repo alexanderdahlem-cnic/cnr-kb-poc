@@ -3,9 +3,6 @@ title: "QueryWebhostList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webhost ➤ QueryWebhostList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statuswebhost/ "StatusWebhost")
-
 Returns a list of all webhosts in your account
 
 ## Possible Gateways

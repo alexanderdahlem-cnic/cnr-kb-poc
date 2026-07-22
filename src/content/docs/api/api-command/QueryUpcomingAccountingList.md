@@ -3,9 +3,6 @@ title: "QueryUpcomingAccountingList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryUpcomingAccountingList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryzonelist/ "QueryZoneList")
-
 Shows all upcoming accountings for domain names and services including the current settings for the domain names and services.
 
 ## Possible Gateways

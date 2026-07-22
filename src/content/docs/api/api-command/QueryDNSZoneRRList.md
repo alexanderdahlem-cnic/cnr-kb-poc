@@ -3,9 +3,6 @@ title: "QueryDNSZoneRRList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryDNSZoneRRList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydnszonesubdomainlist/ "QueryDNSZoneSubdomainList")
-
 Query resource record list of a particular zone in KeyDNS.
 
 ## Possible Gateways

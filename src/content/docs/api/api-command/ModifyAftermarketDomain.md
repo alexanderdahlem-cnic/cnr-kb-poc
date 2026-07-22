@@ -3,9 +3,6 @@ title: "ModifyAftermarketDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ ModifyAftermarketDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaftermarketaccountlist/ "QueryAftermarketAccountList")
-
 The listing at the Aftermarket Provider can be changed by updating the price, the type of listing (fixed price or bidding) or temporarily remove the domain from the listing.
 
 ## Possible Gateways

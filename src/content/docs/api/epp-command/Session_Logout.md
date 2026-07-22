@@ -3,8 +3,6 @@ title: "Session:Logout"
 description: "EPP API Command Reference  ➤ Session commands ➤ Session:Logout ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 ## Required Parameters
 
 ### Command

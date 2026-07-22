@@ -3,9 +3,6 @@ title: "QueryPremiumDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryPremiumDomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querypricehistorylist/ "QueryPriceHistoryList")
-
 Please be aware that this command only returns premium domain prices from registries that offer fixed lists of premium domain names and prices. However, for most of the premium domains, the registries do not offer fixed lists but only support the usage of the Fee Extension which we strongly recommend to all our API users as well.
 
 ## Possible Gateways

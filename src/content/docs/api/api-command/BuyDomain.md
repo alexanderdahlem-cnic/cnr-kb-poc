@@ -3,9 +3,6 @@ title: "BuyDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ BuyDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteaftermarketaccount/ "DeleteAftermarketAccount")
-
 Start a bid on a domain or directly buy a domain in the aftermarket. A domain may be reserved previously via ReserveDomain. If the buying process uses direct\_buy, no further action is necessary. Domains where the seller needs to approve the bid, go into an bidding process (see AftermarketBid).
 
 ## Possible Gateways

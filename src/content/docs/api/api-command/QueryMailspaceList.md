@@ -3,9 +3,6 @@ title: "QueryMailspaceList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ QueryMailspaceList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewmailspace/ "RenewMailspace")
-
 QueryMailspaceList
 
 ## Possible Gateways

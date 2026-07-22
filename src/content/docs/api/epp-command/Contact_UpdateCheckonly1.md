@@ -3,9 +3,6 @@ title: "Contact:UpdateCheckonly1"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:UpdateCheckonly1 ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [UpdateTriggerfoa1](../contact_updatetriggerfoa1/ "Contact:UpdateTriggerfoa1")
-
 ## Required Parameters
 
 ### Command

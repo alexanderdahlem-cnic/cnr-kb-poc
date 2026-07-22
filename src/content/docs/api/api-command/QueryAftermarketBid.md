@@ -3,9 +3,6 @@ title: "QueryAftermarketBid"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketBid ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaftermarketbidlist/ "QueryAftermarketBidList")
-
 This command shows details to a certain bid for a domain. The statement of the respective token for the bid is necessary.
 
 ## Possible Gateways

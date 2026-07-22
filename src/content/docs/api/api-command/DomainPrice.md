@@ -3,9 +3,6 @@ title: "DomainPrice"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ DomainPrice ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../getzone/ "GetZone")
-
 The DomainPrice command can be used to get the amount that will be charged for a domain for a specific action. RAM clients will only receive the RAM fees for this operation.
 
 ## Possible Gateways

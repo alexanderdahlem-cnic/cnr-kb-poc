@@ -3,9 +3,6 @@ title: "Contact:Update"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Update ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [UpdateCheckonly1](../contact_updatecheckonly1/ "Contact:UpdateCheckonly1")
-
 Update the contact information like address or contact status for example.
 
 ## Required Parameters

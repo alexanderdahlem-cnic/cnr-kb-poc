@@ -3,8 +3,6 @@ title: "StatusNameserver"
 description: "CentralNic Reseller API Command Reference  ➤ Nameserver ➤ StatusNameserver ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 IPv6 name server addresses will be normalized in CentralNic Reseller to match the preferred format defined in RFC-4291. IPv6 addresses can be stated in all valid formats, but will be normalized by our system. Excerpt from RFC-4291 regarding preferred form (https://tools.ietf.org/html/rfc4291): 2.2. Text Representation of Addresses There are three conventional forms for representing IPv6 addresses as text strings: 1. The preferred form is x:x:x:x:x:x:x:x, where the 'x's are one to four hexadecimal digits of the eight 16-bit pieces of the address. Examples: ABCD:EF01:2345:6789:ABCD:EF01:2345:6789 2001:DB8:0:0:8:800:200C:417A
 
 ## Possible Gateways

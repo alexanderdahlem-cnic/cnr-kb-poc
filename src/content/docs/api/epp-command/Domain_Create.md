@@ -3,9 +3,6 @@ title: "Domain:Create"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Create ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Delete](../domain_delete/ "Domain:Delete")
-
 This commands invokes several processes: It checks if the domainname is available at the registry, creates the contacthandles in the registry and starts the registration at the registry. For a basic Create command, only a few common parameters are required. For some TLDs special parameters are required in order to register domains. All special parameters start with X-\- and can be found in the specific TLD Documentation. These parameters are submitted within the keysys extension.
 
 -   [Default handling](#)

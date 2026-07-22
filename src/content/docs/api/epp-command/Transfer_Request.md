@@ -3,8 +3,6 @@ title: "Transfer:Request"
 description: "EPP API Command Reference  ➤ Transfer commands ➤ Transfer:Request ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 The Transfer:Request initiates the process to transfer a domain from one registrar to another.
 
 -   [Default handling](#)

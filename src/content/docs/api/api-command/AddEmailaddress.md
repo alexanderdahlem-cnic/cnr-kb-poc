@@ -3,9 +3,6 @@ title: "AddEmailaddress"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ AddEmailaddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addemailforwarding/ "AddEmailforwarding")
-
 AddEmailaddress
 
 ## Possible Gateways

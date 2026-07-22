@@ -3,8 +3,6 @@ title: "StatusRegistrar"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ StatusRegistrar ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 ## Possible Gateways
 
 The command _StatusRegistrar_ is available via the following gateways:

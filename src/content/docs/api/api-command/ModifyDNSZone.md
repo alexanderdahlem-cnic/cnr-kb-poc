@@ -3,9 +3,6 @@ title: "ModifyDNSZone"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ ModifyDNSZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydnszonelist/ "QueryDNSZoneList")
-
 ## Possible Gateways
 
 The command _ModifyDNSZone_ is available via the following gateways:

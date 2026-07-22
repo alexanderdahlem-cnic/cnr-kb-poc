@@ -3,9 +3,6 @@ title: "QueryDomainRenewList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainRenewList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryidntaglist/ "QueryIDNTagList")
-
 Shows a list of all domain names that are currently set for an automated renewal.
 
 ## Possible Gateways

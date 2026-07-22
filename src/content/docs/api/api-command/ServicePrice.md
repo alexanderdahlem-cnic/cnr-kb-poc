@@ -3,8 +3,6 @@ title: "ServicePrice"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ ServicePrice ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 The ServicePrice command can be used to get the amount that will be charged for a service for a specific action.
 
 ## Possible Gateways

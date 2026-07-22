@@ -3,9 +3,6 @@ title: "QueryAftermarketDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketDomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaftermarketlist/ "QueryAftermarketList")
-
 List all Domains currently listed for sale
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "DeleteUser"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ DeleteUser ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyacl/ "ModifyAcl")
-
 Deletes a user or a group. A group can NOT be deleted as long as users are allocated to this group.
 
 ## Possible Gateways

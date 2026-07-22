@@ -3,9 +3,6 @@ title: "ModifyPHPIni"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ ModifyPHPIni ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifywebspace/ "ModifyWebspace")
-
 This command is configuring the php.ini configuration file. For a given webspace.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "ActivateAppendix"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ ActivateAppendix ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyregistrar/ "ModifyRegistrar")
-
 ## Possible Gateways
 
 The command _ActivateAppendix_ is available via the following gateways:

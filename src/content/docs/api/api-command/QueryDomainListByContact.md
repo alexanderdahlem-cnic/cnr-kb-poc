@@ -3,9 +3,6 @@ title: "QueryDomainListByContact"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainListByContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainrenewlist/ "QueryDomainRenewList")
-
 Search all domains using a specific contact handle managed in your account
 
 ## Possible Gateways

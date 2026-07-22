@@ -3,9 +3,6 @@ title: "ModifyMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ ModifyMailspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querymailspacelist/ "QueryMailspaceList")
-
 ModifyMailspace
 
 ## Possible Gateways

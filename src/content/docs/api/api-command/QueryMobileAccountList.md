@@ -3,9 +3,6 @@ title: "QueryMobileAccountList"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ QueryMobileAccountList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querysmslist/ "QuerySMSList")
-
 Get all informations about your mobile accounts.
 
 ## Possible Gateways

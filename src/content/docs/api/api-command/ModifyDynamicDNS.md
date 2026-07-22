@@ -3,9 +3,6 @@ title: "ModifyDynamicDNS"
 description: "CentralNic Reseller API Command Reference  ➤ DynamicDNS ➤ ModifyDynamicDNS ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydynamicdnslist/ "QueryDynamicDNSList")
-
 Modifies a DynamicDNS host object.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "AddMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ AddMailspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkmailspaceemail/ "CheckMailspaceEmail")
-
 AddMailspace
 
 ## Possible Gateways

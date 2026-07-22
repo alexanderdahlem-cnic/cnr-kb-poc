@@ -3,9 +3,6 @@ title: "ModifyAcl"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ ModifyAcl ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyuser/ "ModifyUser")
-
 Modify location rights for a given user or group.
 
 ## Possible Gateways

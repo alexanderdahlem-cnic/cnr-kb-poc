@@ -3,9 +3,6 @@ title: "QueryOwnerChangeList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryOwnerChangeList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querypromotionlist/ "QueryPromotionList")
-
 Gives an overview about all pending OwnerChanges. To receive a detailed Status of ACTIVE OwnerChanges ('REQUESTED', 'LOSING\_APPROVED', 'GAINING\_APPROVED', 'SUCCESS'), a StatusOwnerChange API call must be used.
 
 ## Possible Gateways

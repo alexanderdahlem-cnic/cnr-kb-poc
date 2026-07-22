@@ -3,9 +3,6 @@ title: "ModifyTag"
 description: "CentralNic Reseller API Command Reference  ➤ Domain - Tags ➤ ModifyTag ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querytaglist/ "QueryTagList")
-
 Can be used to modify a Tag, e.g. its name, assigned domains and/or TLD zones, etc. The # in the parameter needs to be replaced by an integer starting with 0, such as AddObject0, AddObject1 etc. Multiple entries can be used to apply the same function multiple times.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "StatusOwnerChange"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ StatusOwnerChange ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusunsyncregistrycontact/ "StatusUnsyncRegistryContact")
-
 Explicitly check the status of an OwnerChange in detail.
 
 ## Possible Gateways

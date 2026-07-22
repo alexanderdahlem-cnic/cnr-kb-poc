@@ -3,8 +3,6 @@ title: "TradeDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ TradeDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 It is not possible to change the owner name or company name of a .AM, .AT, .BE, .CH, .CN, .DM, .ES, .FI, .GR, .HK, .IE, .IT, .LI, .LU, .MA, .NO, .NU, .PT, .SG, .TRAVEL or .CO.ZA domain through the ModifyDomain command by substituting the current owner contact with a new one. In such a case you have to request a so-called "trade" and state the new owner contact.
 
 ## Possible Gateways

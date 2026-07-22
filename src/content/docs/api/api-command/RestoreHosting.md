@@ -3,9 +3,6 @@ title: "RestoreHosting"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ RestoreHosting ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statushosting/ "StatusHosting")
-
 RestoreHosting
 
 ## Possible Gateways

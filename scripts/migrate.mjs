@@ -172,7 +172,7 @@ function convert(bladePath) {
 
   const $ = cheerio.load(body, null, false);
   // Remove repeated page furniture.
-  $('.breadcrumb, aside, .box.help, nav').remove();
+  $('.breadcrumb, aside, .box.help, nav, .rel_nav').remove();
   // Prefer the main content column if present.
   let scope = $('.main').first();
   if (!scope.length) scope = $.root();
@@ -218,6 +218,22 @@ function convert(bladePath) {
     }
   });
 
+  // Overview/teaser pages: turn the ".box" link cards into Starlight <LinkCard>s.
+  // (Links inside were already rewritten by the loop above.)
+  const cards = [];
+  scope.find('.box').each((_, box) => {
+    const $box = $(box);
+    const a = $box.find('a[href]').first();
+    if (!a.length) return;
+    const href = a.attr('href');
+    const cardTitle = ($box.find('h2, h3, h4').first().text() || a.attr('title') || '').trim();
+    const cardDesc = $box.find('em').first().text().trim();
+    if (href && cardTitle) cards.push({ href, title: cardTitle, description: cardDesc });
+  });
+  // Drop the teaser containers so turndown doesn't mangle them into text soup.
+  scope.find('.teaser, .boxes').remove();
+  scope.find('.box').remove();
+
   // Remove the first <h1> (Starlight renders the frontmatter title as h1).
   const firstH1 = scope.find('h1').first();
   const h1Text = firstH1.text().trim();
@@ -241,7 +257,25 @@ function convert(bladePath) {
       .filter(Boolean)
       .join('\n') + '\n\n';
 
-  return { fm, md };
+  // Build the file. Pages with link cards become .mdx (need components).
+  if (cards.length) {
+    const grid =
+      '<CardGrid>\n' +
+      cards
+        .map(
+          (c) =>
+            `  <LinkCard title={${JSON.stringify(c.title)}} href={${JSON.stringify(c.href)}}` +
+            (c.description ? ` description={${JSON.stringify(c.description)}}` : '') +
+            ` />`
+        )
+        .join('\n') +
+      '\n</CardGrid>';
+    const imp = "import { CardGrid, LinkCard } from '@astrojs/starlight/components';\n\n";
+    const content = fm + imp + (md ? md + '\n\n' : '') + grid + '\n';
+    return { content, ext: '.mdx' };
+  }
+
+  return { content: fm + md + '\n', ext: '.md' };
 }
 
 // --- run ---
@@ -288,13 +322,10 @@ for (const f of toMigrate) {
     skipped++;
     continue;
   }
-  if (!result.md || result.md.length < 8) {
-    empty++;
-    // still write a stub so nav is complete
-  }
-  const outPath = outPathFor(f);
+  if (result.content.replace(/---[\s\S]*?---/, '').trim().length < 8) empty++;
+  const outPath = outPathFor(f).replace(/\.md$/, result.ext);
   mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, result.fm + result.md + '\n', 'utf8');
+  writeFileSync(outPath, result.content, 'utf8');
   written++;
 }
 

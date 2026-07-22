@@ -3,9 +3,6 @@ title: "DeleteHosting"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ DeleteHosting ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyhosting/ "ModifyHosting")
-
 DeleteHosting
 
 ## Possible Gateways

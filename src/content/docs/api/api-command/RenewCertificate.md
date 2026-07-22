@@ -3,9 +3,6 @@ title: "RenewCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ RenewCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statuscertificate/ "StatusCertificate")
-
 This command is used to renew a certificate and certificate order.
 
 To renew a certificate inside an existing Certificate order, please use the API command ReissueCertificate.

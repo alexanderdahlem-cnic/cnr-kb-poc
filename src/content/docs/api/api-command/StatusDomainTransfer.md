@@ -3,9 +3,6 @@ title: "StatusDomainTransfer"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ StatusDomainTransfer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../transferdomain/ "TransferDomain")
-
 The StatusDomainTransfer command informs you about the current status of a transfer. You can check if the transfer was successfully initiated or who received the eMail to confirm a transfer.
 
 ## Possible Gateways

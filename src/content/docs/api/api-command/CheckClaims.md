@@ -3,9 +3,6 @@ title: "CheckClaims"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckClaims ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkdomain/ "CheckDomain")
-
 The CheckClaims Command is used to determine whether or not there are any matching trademarks, in the specified launch phase, for each domain name passed in the command. If there is at least one matching trademark that exists for the domain name, a "claim key", "claim url" and "claim validator id" property is returned. You can specify a maximum of 32 domains.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "QueryDynamicDNSList"
 description: "CentralNic Reseller API Command Reference  ➤ DynamicDNS ➤ QueryDynamicDNSList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdynamicdns/ "StatusDynamicDNS")
-
 Show details about all created DynamicDNS objects.
 
 ## Possible Gateways

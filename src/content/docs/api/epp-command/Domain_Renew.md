@@ -3,9 +3,6 @@ title: "Domain:Renew"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Renew ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Renewalmode](../domain_renewalmode/ "Domain:Renewalmode")
-
 The Domain:Renew command is used to renew domains explicitly for a specified time period. When renewing a domain please enter the domain, the period for renewal (e.g. period = 1) and the current expiration year (e.g. 2007). Please notice that you can not explicitly renew domains under all TLDs. For further information please see the corresponding TLD info page.
 
 -   [Default handling](#)

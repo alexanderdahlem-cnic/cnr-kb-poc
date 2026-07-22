@@ -3,9 +3,6 @@ title: "StatusClaimsNotice"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ StatusClaimsNotice ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdomain/ "StatusDomain")
-
 Lists details of a specified claims notice.
 
 ## Possible Gateways

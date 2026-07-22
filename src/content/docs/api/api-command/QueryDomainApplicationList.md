@@ -3,9 +3,6 @@ title: "QueryDomainApplicationList"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ QueryDomainApplicationList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdomainapplication/ "StatusDomainApplication")
-
 List all applications in your account
 
 ## Possible Gateways

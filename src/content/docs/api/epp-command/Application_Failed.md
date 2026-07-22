@@ -3,9 +3,6 @@ title: "Application:Failed"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:Failed ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Status](../application_status/ "Application:Status")
-
 Application Failed (rejected)
 
 ## Required Parameters

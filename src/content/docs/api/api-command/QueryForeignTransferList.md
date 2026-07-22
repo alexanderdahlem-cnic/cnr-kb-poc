@@ -3,9 +3,6 @@ title: "QueryForeignTransferList"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ QueryForeignTransferList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querytransferlist/ "QueryTransferList")
-
 With the QueryForeignTransferList API command, a registrar can query all currently running external transfers, that have one of theses status: FOREIGN\_PENDING, USERTRANSFER, PENDING, INITIATED. For each domain also the available actions are returned that are supported. This could be empty, approve, deny or approve and deny.
 
 ## Possible Gateways

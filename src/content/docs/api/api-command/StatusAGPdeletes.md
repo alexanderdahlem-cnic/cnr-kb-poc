@@ -3,8 +3,6 @@ title: "StatusAGPdeletes"
 description: "CentralNic Reseller API Command Reference  ➤ Paid Services ➤ StatusAGPdeletes ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 ## Possible Gateways
 
 The command _StatusAGPdeletes_ is available via the following gateways:

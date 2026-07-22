@@ -3,9 +3,6 @@ title: "Application:Delete"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:Delete ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Failed](../application_failed/ "Application:Failed")
-
 ## Required Parameters
 
 ### Command

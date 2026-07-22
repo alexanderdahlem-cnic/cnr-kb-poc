@@ -3,9 +3,6 @@ title: "Domain:OwnerChange"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:OwnerChange ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Push](../domain_push/ "Domain:Push")
-
 ## Required Parameters
 
 ### Command

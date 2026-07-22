@@ -3,9 +3,6 @@ title: "TransferDomainBlocking - Query"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ TransferDomainBlocking - Query ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request "TransferDomainBlocking - Request")
-
 Find out the status of an inbound transfer
 
 ## Possible Gateways

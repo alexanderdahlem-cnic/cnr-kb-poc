@@ -3,9 +3,6 @@ title: "QueryEventList"
 description: "CentralNic Reseller API Command Reference  ➤ Event ➤ QueryEventList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusevent/ "StatusEvent")
-
 Query existing and not yet deleted events in your account. For possible classes and subclasses, please have a look into the table at the beginning of this chapter.
 
 ## Possible Gateways

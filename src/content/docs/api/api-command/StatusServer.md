@@ -3,8 +3,6 @@ title: "StatusServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ StatusServer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Used to query the current status of the server.
 
 ## Possible Gateways

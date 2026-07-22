@@ -3,9 +3,6 @@ title: "DeleteAftermarketDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ DeleteAftermarketDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyaftermarketaccount/ "ModifyAftermarketAccount")
-
 To permanently remove a domain from the Aftermarket System and not only temporarily remove it from the listing, this command may be used.
 
 ## Possible Gateways

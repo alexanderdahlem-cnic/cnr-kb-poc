@@ -3,9 +3,6 @@ title: "CheckDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkdomains/ "CheckDomains")
-
 _(Related EPP Command » [Domain:Check](../../epp-command/domain_check/ "Domain:Check"))_
 
 This command checks, if the desired domain name is available and may be registered at the registry. In case of RAM and (!) premium domains, the checkDomain command will show the premium fee from the registry in the response to enable that you are aware of the registry fees as well. RAM fee will be shown with DomainPrice command.

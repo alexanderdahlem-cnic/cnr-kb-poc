@@ -3,9 +3,6 @@ title: "DeleteDNSZone"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ DeleteDNSZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletemailfwd/ "DeleteMailFwd")
-
 ## Possible Gateways
 
 The command _DeleteDNSZone_ is available via the following gateways:

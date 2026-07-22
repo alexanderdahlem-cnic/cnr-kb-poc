@@ -3,9 +3,6 @@ title: "Domain:Delete"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Delete ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Info](../domain_info/ "Domain:Info")
-
 ## Required Parameters
 
 ### Command

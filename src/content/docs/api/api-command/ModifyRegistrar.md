@@ -3,9 +3,6 @@ title: "ModifyRegistrar"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ ModifyRegistrar ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyregistrarcurrency/ "ModifyRegistrarCurrency")
-
 ## Possible Gateways
 
 The command _ModifyRegistrar_ is available via the following gateways:

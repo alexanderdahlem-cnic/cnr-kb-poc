@@ -3,8 +3,6 @@ title: "StatusObjectLog"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ StatusObjectLog ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Gather information about a particular entry of the object log
 
 ## Possible Gateways

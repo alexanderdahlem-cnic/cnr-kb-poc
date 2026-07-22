@@ -3,9 +3,6 @@ title: "CheckMailspaceEmail"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ CheckMailspaceEmail ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletemailspace/ "DeleteMailspace")
-
 Check Mailspace if Email address already exists.
 
 ## Possible Gateways

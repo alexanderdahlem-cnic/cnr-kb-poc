@@ -3,9 +3,6 @@ title: "Application:Status"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:Status ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Successful](../application_successful/ "Application:Successful")
-
 ## Required Parameters
 
 ### Command

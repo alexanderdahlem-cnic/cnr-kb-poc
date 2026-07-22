@@ -3,9 +3,6 @@ title: "Poll:DomainRenewalMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainRenewalMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainTradeMessage](../poll_domaintrademessage/ "Poll:DomainTradeMessage")
-
 Domain renewal message
 
 ## Required Parameters

@@ -3,9 +3,6 @@ title: "Transfer:Approve"
 description: "EPP API Command Reference  ➤ Transfer commands ➤ Transfer:Approve ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Cancel](../transfer_cancel/ "Transfer:Cancel")
-
 ## Required Parameters
 
 ### Command

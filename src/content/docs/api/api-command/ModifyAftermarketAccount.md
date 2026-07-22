@@ -3,9 +3,6 @@ title: "ModifyAftermarketAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ ModifyAftermarketAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyaftermarketdomain/ "ModifyAftermarketDomain")
-
 To change your Aftermarket Account Key or the description associated with the respective Aftermarket Account via API, please use the command ModifyAftermarketAccount.
 
 ## Possible Gateways

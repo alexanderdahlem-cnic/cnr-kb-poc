@@ -3,9 +3,6 @@ title: "QueryRegisteredPremiumDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryRegisteredPremiumDomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querytrusteedomainlist/ "QueryTrusteeDomainList")
-
 The QueryRegisteredPremiumDomainList command allows you to query the list of premium domains in your portfolio or located in subreseller accounts.
 
 ## Possible Gateways

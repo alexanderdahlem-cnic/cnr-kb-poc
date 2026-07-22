@@ -3,9 +3,6 @@ title: "QueryWebspaceTraffic"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ QueryWebspaceTraffic ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewwebspace/ "RenewWebspace")
-
 Returns the traffic for a single month in bytes. Default time if not given: current year / month.
 
 ## Possible Gateways

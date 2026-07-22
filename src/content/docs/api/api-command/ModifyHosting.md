@@ -3,9 +3,6 @@ title: "ModifyHosting"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ ModifyHosting ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryhostinglist/ "QueryHostingList")
-
 ModifyHosting
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "ChargeMobileAccount"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ ChargeMobileAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../createmobileaccount/ "CreateMobileAccount")
-
 Charge your mobile account, the amount on this account is independent from your main account, just the charging will be accounted on the main account, not single SMS.
 
 ## Possible Gateways

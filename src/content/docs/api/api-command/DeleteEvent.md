@@ -3,9 +3,6 @@ title: "DeleteEvent"
 description: "CentralNic Reseller API Command Reference  ➤ Event ➤ DeleteEvent ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryeventlist/ "QueryEventList")
-
 Delete particular event from list of events.
 
 ## Possible Gateways

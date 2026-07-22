@@ -3,9 +3,6 @@ title: "ResendNotification"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ ResendNotification ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../restoredomain/ "RestoreDomain")
-
 ## Possible Gateways
 
 The command _ResendNotification_ is available via the following gateways:

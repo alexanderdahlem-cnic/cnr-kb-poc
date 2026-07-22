@@ -3,9 +3,6 @@ title: "AddHosting - UserAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ AddHosting - UserAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkhosting/ "CheckHosting")
-
 This command is used to create a new cPanel account with a specific "TYPE". There is a separate API command page for each specific "TYPE". Please kindly note the "TYPE" parameter value here. Different parameters are needed for different "TYPE".
 
 ## Possible Gateways

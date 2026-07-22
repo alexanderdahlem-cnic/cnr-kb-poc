@@ -3,9 +3,6 @@ title: "Poll:DomainTransferStatusMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainTransferStatusMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainUpdateMessage](../poll_domainupdatemessage/ "Poll:DomainUpdateMessage")
-
 Domain Transfer status message
 
 ## Required Parameters

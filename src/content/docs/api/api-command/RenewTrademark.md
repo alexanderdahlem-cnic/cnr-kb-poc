@@ -3,9 +3,6 @@ title: "RenewTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ RenewTrademark ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../settrademarkrenewalmode/ "SetTrademarkRenewalmode")
-
 This command is used to extend the lifetime of a trademark.
 
 ## Possible Gateways

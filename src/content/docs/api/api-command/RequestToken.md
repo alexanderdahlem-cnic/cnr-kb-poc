@@ -3,9 +3,6 @@ title: "RequestToken"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ RequestToken ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../restorecontact/ "RestoreContact")
-
 To request a token to be sent within an email to a given Contact Handle or Domain. If a Domain is stated an email with a token will be sent to all linked contact handles. In case a contact handle is used multiple times (i.e. for Admin and Tech) only one email per contact handle is sent.
 
 ## Possible Gateways

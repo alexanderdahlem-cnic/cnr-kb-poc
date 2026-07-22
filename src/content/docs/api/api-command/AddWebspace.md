@@ -3,9 +3,6 @@ title: "AddWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ AddWebspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletewebspace/ "DeleteWebspace")
-
 Creates a new Webspace. The Quota in megabytes has to be a full digit (integer) between 1 and 102400.
 
 ## Possible Gateways

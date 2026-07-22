@@ -3,9 +3,6 @@ title: "QueryRegistrarList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryRegistrarList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querytrusteeloglist/ "QueryTrusteeLogList")
-
 ## Possible Gateways
 
 The command _QueryRegistrarList_ is available via the following gateways:

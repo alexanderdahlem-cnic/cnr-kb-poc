@@ -3,9 +3,6 @@ title: "StatusAftermarketAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ StatusAftermarketAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusaftermarketdomain/ "StatusAftermarketDomain")
-
 StatusAftermarketAccount shows the total number of domains currently listed, Account Key, Description, Aftermarket Provider of an Aftermarket Account. Furthermore it shows if the Login to the Aftermarket Provider was successful (1) or unsuccessful (0). The Login will be shown as unsuccessful if the Account Key has been changed, for example directly at the Aftermarket Provider.
 
 ## Possible Gateways

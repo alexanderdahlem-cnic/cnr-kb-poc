@@ -3,9 +3,6 @@ title: "QueryActiveServiceList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryActiveServiceList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryclaimsnoticelist/ "QueryClaimsNoticeList")
-
 Search for active running services and their renewal dates.
 
 ## Possible Gateways

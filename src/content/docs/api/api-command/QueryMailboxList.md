@@ -3,9 +3,6 @@ title: "QueryMailboxList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ QueryMailboxList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusemailaddress/ "StatusEmailaddress")
-
 QueryMailboxList
 
 ## Possible Gateways

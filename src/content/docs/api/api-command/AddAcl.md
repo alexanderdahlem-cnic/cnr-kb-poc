@@ -3,9 +3,6 @@ title: "AddAcl"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ AddAcl ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../adduser/ "AddUser")
-
 Add location rights for a given user or group.
 
 ## Possible Gateways

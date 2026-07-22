@@ -3,9 +3,6 @@ title: "ActivateClaimsNotice"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ ActivateClaimsNotice ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../adddomain/ "AddDomain")
-
 The claims notification occurs, if a TMCH entry exists for the selected domain name and needs to be approved by the registrant to continue the registration/application process.
 
 ## Possible Gateways

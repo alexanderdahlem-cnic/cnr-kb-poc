@@ -3,9 +3,6 @@ title: "DeleteCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ DeleteCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../getcertificateinfo/ "GetCertificateInfo")
-
 This command allows the user to cancel or revoke orders without implementing the complete handling of orders by just using the certificate ID instead of the order ID.  
 For the parameter "action", with the value "Revoke" executes the API command RevokeCertificate, with "CancelOrder" executes the API command CancelCertificateOrder and with "RevokeOrder" executes the API command RevokeCertificateOrder. Please kindly note, depending on the CA, a revoke of an order and/or certificate alone will not cancel the order and thus won't initiate a refund (if applicable).  
 For the attributes description, please refer to the SSL 2.0 API Documentation.  

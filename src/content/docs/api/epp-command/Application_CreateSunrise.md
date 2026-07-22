@@ -3,9 +3,6 @@ title: "Application:CreateSunrise"
 description: "EPP API Command Reference  ➤ Application commands ➤ Application:CreateSunrise ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Delete](../application_delete/ "Application:Delete")
-
 ## Required Parameters
 
 ### Command

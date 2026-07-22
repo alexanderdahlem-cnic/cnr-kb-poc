@@ -3,9 +3,6 @@ title: "Poll:RestoreFailedMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:RestoreFailedMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [RestoreNotifyMessage](../poll_restorenotifymessage/ "Poll:RestoreNotifyMessage")
-
 Domain Restore Failed Poll Message
 
 ## Required Parameters

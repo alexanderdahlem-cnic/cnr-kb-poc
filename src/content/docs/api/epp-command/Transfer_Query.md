@@ -3,9 +3,6 @@ title: "Transfer:Query"
 description: "EPP API Command Reference  ➤ Transfer commands ➤ Transfer:Query ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Reject](../transfer_reject/ "Transfer:Reject")
-
 ## Required Parameters
 
 ### Command

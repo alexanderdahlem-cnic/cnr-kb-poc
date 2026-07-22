@@ -3,9 +3,6 @@ title: "StatusTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ StatusTrademark ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../transfertrademark/ "TransferTrademark")
-
 This command allows you to query trademark status information from our system.
 
 ## Possible Gateways

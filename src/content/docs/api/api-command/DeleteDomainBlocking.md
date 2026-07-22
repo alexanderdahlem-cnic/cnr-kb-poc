@@ -3,9 +3,6 @@ title: "DeleteDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ DeleteDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydomainblocking/ "ModifyDomainBlocking")
-
 This command can be used to remove a domain block.
 
 ## Possible Gateways

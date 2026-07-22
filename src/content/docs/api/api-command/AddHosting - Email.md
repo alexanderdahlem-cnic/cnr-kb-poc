@@ -3,9 +3,6 @@ title: "AddHosting - Email"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ AddHosting - Email ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/AddHosting%20-%20EmailDomainlForward "AddHosting - EmailDomainlForward")
-
 This command is used to create a new cPanel user account with a specific "TYPE". There is a separate API command page for each specific "TYPE". Please kindly note the "TYPE" parameter value here. Different parameters are needed for different "TYPE".
 
 ## Possible Gateways

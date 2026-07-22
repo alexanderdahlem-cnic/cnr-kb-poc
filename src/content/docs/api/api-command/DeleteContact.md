@@ -3,9 +3,6 @@ title: "DeleteContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ DeleteContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifycontact/ "ModifyContact")
-
 _(Related EPP Command » [Contact:Delete](../../epp-command/contact_delete/ "Contact:Delete"))_
 
 This command allows you to delete an unused contact. Warning: A contact may only be deleted if no object is associated with it!

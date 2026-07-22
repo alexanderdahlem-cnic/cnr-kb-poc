@@ -3,8 +3,6 @@ title: "StatusDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ StatusDatabase ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Get Database status, returns the Database-ID and its properties.
 
 ## Possible Gateways

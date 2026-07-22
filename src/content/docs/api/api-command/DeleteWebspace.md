@@ -3,9 +3,6 @@ title: "DeleteWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ DeleteWebspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyphpini/ "ModifyPHPIni")
-
 This command disables a webspace and sets the renewalmode to "AUTODELETE".
 
 ## Possible Gateways

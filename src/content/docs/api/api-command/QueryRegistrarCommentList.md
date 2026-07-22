@@ -3,9 +3,6 @@ title: "QueryRegistrarCommentList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryRegistrarCommentList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryregistrarlist/ "QueryRegistrarList")
-
 ## Possible Gateways
 
 The command _QueryRegistrarCommentList_ is available via the following gateways:

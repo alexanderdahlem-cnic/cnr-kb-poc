@@ -3,9 +3,6 @@ title: "AddServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ AddServer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteserver/ "DeleteServer")
-
 Create a server.
 
 ## Possible Gateways

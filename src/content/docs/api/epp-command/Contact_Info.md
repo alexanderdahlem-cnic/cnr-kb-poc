@@ -3,9 +3,6 @@ title: "Contact:Info"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Info ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Info](./ "Contact:Info")
-
 The contact:info provides contact details.
 
 ## Required Parameters

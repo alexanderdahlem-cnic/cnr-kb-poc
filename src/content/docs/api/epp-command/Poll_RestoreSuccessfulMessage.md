@@ -3,8 +3,6 @@ title: "Poll:RestoreSuccessfulMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:RestoreSuccessfulMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 Domain Restore Successful Poll Message
 
 ## Required Parameters

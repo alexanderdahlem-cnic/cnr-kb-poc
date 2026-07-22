@@ -3,9 +3,6 @@ title: "Poll:RestoreNotifyMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:RestoreNotifyMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [RestorePendingMessage](../poll_restorependingmessage/ "Poll:RestorePendingMessage")
-
 Domain Restore Notify Poll Message
 
 ## Required Parameters

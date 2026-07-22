@@ -3,9 +3,6 @@ title: "AddDynamicDNS"
 description: "CentralNic Reseller API Command Reference  ➤ DynamicDNS ➤ AddDynamicDNS ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletedynamicdns/ "DeleteDynamicDNS")
-
 Adds a dynamic DNS host object.
 
 ## Possible Gateways

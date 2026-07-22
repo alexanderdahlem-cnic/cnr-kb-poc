@@ -3,9 +3,6 @@ title: "QueryHostingList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ QueryHostingList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewhosting/ "RenewHosting")
-
 This command is used to query a specific type of object and return all the information stored on it. More customisation are possible with the use of the optional parameters. Such as returning multiple results, setting further search criteria or sorting can be done. For example, in a single request, the object parameter can accept one or multiple values. Please see the below attributes section to understand the combination of required and optional parameters.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "GetCertificateInfo"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ GetCertificateInfo ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifycertificate/ "ModifyCertificate")
-
 This command will return information about a certificate class.  
 For the attributes description, please refer to the SSL 2.0 API Documentation.  
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.

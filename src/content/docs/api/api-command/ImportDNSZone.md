@@ -3,9 +3,6 @@ title: "ImportDNSZone"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ ImportDNSZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydnszone/ "ModifyDNSZone")
-
 Import DNSZone from BIND file to KeyDNS.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "Poll:Ack"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:Ack ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [ContactDeletionMessage](../poll_contactdeletionmessage/ "Poll:ContactDeletionMessage")
-
 Poll Ack command
 
 ## Required Parameters

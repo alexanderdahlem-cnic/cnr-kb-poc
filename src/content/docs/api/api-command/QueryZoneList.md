@@ -3,9 +3,6 @@ title: "QueryZoneList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryZoneList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryzonepricelist/ "QueryZonePriceList")
-
 The QueryZonelist command enables you to review your prices and for which gTLDs and ccTLDs your MREG-Account has been activated for.
 
 ## Possible Gateways

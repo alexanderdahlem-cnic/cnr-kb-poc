@@ -3,9 +3,6 @@ title: "QueryAppendixList"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ QueryAppendixList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryregistrarstatisticlist/ "QueryRegistrarStatisticList")
-
 Shows the list of available appendices in RRP
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "QueryPromotionList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryPromotionList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querypromotionregistrarlist/ "QueryPromotionRegistrarList")
-
 ## Possible Gateways
 
 The command _QueryPromotionList_ is available via the following gateways:

@@ -3,9 +3,6 @@ title: "Poll:DomainDeletionMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainDeletionMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainRegistrationMessage](../poll_domainregistrationmessage/ "Poll:DomainRegistrationMessage")
-
 Domain deletion message
 
 ## Required Parameters

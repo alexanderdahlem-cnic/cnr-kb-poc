@@ -3,9 +3,6 @@ title: "Host:Info"
 description: "EPP API Command Reference  ➤ Host commands ➤ Host:Info ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Update](../host_update/ "Host:Update")
-
 ## Required Parameters
 
 ### Command

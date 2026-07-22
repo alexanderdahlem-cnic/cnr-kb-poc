@@ -3,9 +3,6 @@ title: "RenewHosting"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - cPanel ➤ RenewHosting ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../restorehosting/ "RestoreHosting")
-
 RenewHosting
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "AddCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ AddCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkcertificate/ "CheckCertificate")
-
 The AddCertificate command is used for the request of a new SSL certificate.
 
 The parameter "DCVDomain" is optional. By default, the value from "Domain(FQDN)" is converted and inputted as the "DCVDomain". If the user wants to change a single DCVDomain, they have to send the complete list.  

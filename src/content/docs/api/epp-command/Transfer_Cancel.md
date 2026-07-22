@@ -3,9 +3,6 @@ title: "Transfer:Cancel"
 description: "EPP API Command Reference  ➤ Transfer commands ➤ Transfer:Cancel ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Query](../transfer_query/ "Transfer:Query")
-
 ## Required Parameters
 
 ### Command

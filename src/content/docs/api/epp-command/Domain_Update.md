@@ -3,8 +3,6 @@ title: "Domain:Update"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Update ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 Update domain information like contacts or name servers.
 
 ## Required Parameters

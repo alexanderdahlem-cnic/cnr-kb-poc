@@ -3,8 +3,6 @@ title: "Contact:UpdateTriggerfoa1"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:UpdateTriggerfoa1 ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
-
 ## Required Parameters
 
 ### Command

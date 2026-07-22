@@ -3,9 +3,6 @@ title: "GetTrademarkLabels"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ GetTrademarkLabels ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifytrademark/ "ModifyTrademark")
-
 This command returns the labels of a trademark name.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "QueryAccountingList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryAccountingList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryavailablepromotionlist/ "QueryAvailablePromotionList")
-
 The QueryAccountingList command gives you a detailed overview of all transactions in your account.
 
 ## Possible Gateways

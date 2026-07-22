@@ -3,9 +3,6 @@ title: "QueryCertificateList"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ QueryCertificateList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../reissuecertificate/ "ReissueCertificate")
-
 This commands will list all the certificates within the order. This behaves like most Query...List commands, allowing filtering and paging. By default all cancelled certificates are not returned.  
 For the parameters "ServiceTag", the # integer range is 0..100.  
 For the attributes description, please refer to the SSL 2.0 API Documentation.  

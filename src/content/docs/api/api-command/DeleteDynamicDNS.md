@@ -3,9 +3,6 @@ title: "DeleteDynamicDNS"
 description: "CentralNic Reseller API Command Reference  ➤ DynamicDNS ➤ DeleteDynamicDNS ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydynamicdns/ "ModifyDynamicDNS")
-
 Deletes a DynamicDNS host object.
 
 ## Possible Gateways

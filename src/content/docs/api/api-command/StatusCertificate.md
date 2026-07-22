@@ -3,8 +3,6 @@ title: "StatusCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ StatusCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 This command will give you all information about your certificates.  
 For the attributes description, please refer to the SSL 2.0 API Documentation.  
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.

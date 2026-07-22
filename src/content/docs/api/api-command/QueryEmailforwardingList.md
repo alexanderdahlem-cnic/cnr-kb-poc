@@ -3,9 +3,6 @@ title: "QueryEmailforwardingList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ QueryEmailforwardingList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querymailboxlist/ "QueryMailboxList")
-
 QueryEmailforwardingList
 
 ## Possible Gateways

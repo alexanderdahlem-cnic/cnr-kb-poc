@@ -3,9 +3,6 @@ title: "TransferDomainBlocking - Deny"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ TransferDomainBlocking - Deny ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query "TransferDomainBlocking - Query")
-
 Deny the outbound transfer of a domain block to another registrar.
 
 ## Possible Gateways

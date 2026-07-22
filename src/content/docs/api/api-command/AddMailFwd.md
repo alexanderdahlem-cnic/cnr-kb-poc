@@ -3,9 +3,6 @@ title: "AddMailFwd"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ AddMailFwd ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addwebfwd/ "AddWebFwd")
-
 Add a mail forward to a DNSZone in KeyDNS.
 
 ## Possible Gateways

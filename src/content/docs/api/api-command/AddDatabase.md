@@ -3,9 +3,6 @@ title: "AddDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ AddDatabase ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletedatabase/ "DeleteDatabase")
-
 Creates a new Database, returns the Database-ID, user and IP in the properties. The Quota is an integer and the unit is MB.
 
 ## Possible Gateways

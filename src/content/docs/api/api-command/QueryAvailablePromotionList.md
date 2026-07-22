@@ -3,9 +3,6 @@ title: "QueryAvailablePromotionList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryAvailablePromotionList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryexchangerates/ "QueryExchangeRates")
-
 This commands shows all promotions that are currently available for your account.
 
 ## Possible Gateways

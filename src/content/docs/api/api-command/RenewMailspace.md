@@ -3,9 +3,6 @@ title: "RenewMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ RenewMailspace ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../setmailspacerenewalmode/ "SetMailspaceRenewalMode")
-
 RenewMailspace
 
 ## Possible Gateways

@@ -3,8 +3,6 @@ title: "TransferDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ TransferDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 _(Related EPP Command » [Transfer:Request](../../epp-command/transfer_request/ "Transfer:Request"))_
 
 Simply enter the command and the respective domain name. Please note that in order to initiate a transfer for most domains you need the respective authorization code (auth).

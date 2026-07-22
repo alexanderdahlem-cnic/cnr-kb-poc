@@ -3,9 +3,6 @@ title: "CheckCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ CheckCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletecertificate/ "DeleteCertificate")
-
 The CheckCertificate command is used to check the certificate request for validation and information details. Please note, the CA does not check the WHOIS for email addresses when ordering/renewing the certificate. To work around this, call the CheckCertificate API command (with the optional parameters), and this will cache it for 24 hours, then place the order with this timeframe. The email address has to be one that returns from the response.  
 For the parameters "Domain", "CSR" and "CRT" the # integer range is 0..250.  
 For the attributes description, please refer to the SSL 2.0 API Documentation.  

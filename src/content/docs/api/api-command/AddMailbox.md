@@ -3,9 +3,6 @@ title: "AddMailbox"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ AddMailbox ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteemailaddress/ "DeleteEmailaddress")
-
 AddMailbox
 
 ## Possible Gateways

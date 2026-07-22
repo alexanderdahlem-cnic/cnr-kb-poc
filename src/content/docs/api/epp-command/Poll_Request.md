@@ -3,9 +3,6 @@ title: "Poll:Request"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:Request ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [RestoreFailedMessage](../poll_restorefailedmessage/ "Poll:RestoreFailedMessage")
-
 ## Required Parameters
 
 ### Command

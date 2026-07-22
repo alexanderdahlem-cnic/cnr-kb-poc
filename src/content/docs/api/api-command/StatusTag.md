@@ -3,8 +3,6 @@ title: "StatusTag"
 description: "CentralNic Reseller API Command Reference  ➤ Domain - Tags ➤ StatusTag ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Shows basic information about the Tag and the number of assigned objects.
 
 ## Possible Gateways

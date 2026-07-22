@@ -3,9 +3,6 @@ title: "Poll:DomainTradeMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainTradeMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [DomainTransferStatusMessage](../poll_domaintransferstatusmessage/ "Poll:DomainTransferStatusMessage")
-
 Domain trade message
 
 ## Required Parameters

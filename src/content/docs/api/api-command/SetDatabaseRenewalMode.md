@@ -3,9 +3,6 @@ title: "SetDatabaseRenewalMode"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ SetDatabaseRenewalMode ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdatabase/ "StatusDatabase")
-
 SetDatabaseRenewalMode
 
 ## Possible Gateways

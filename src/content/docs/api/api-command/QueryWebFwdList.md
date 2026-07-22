@@ -3,9 +3,6 @@ title: "QueryWebFwdList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryWebFwdList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusdnszone/ "StatusDNSZone")
-
 Query list of web forwards
 
 ## Possible Gateways

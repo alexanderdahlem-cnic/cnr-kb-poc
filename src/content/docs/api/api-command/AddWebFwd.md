@@ -3,9 +3,6 @@ title: "AddWebFwd"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ AddWebFwd ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../checkdnszone/ "CheckDNSZone")
-
 AddWebFwd offers forwarding as unmasked permanent 301 redirect (RD), masked frame redirect (MRD) and redirect to static content (SELF). The static content can be used for minisites. Keeping requested URL paths and parameters and forwarding them to the target is optionally possible.
 
 ## Possible Gateways

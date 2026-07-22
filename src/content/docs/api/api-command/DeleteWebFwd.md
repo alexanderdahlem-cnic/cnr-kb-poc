@@ -3,9 +3,6 @@ title: "DeleteWebFwd"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ DeleteWebFwd ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../exportdnszone/ "ExportDNSZone")
-
 Delete a web forward from a DNSZone in KeyDNS.
 
 ## Possible Gateways

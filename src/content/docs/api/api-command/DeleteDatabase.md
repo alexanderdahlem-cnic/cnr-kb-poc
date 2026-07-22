@@ -3,9 +3,6 @@ title: "DeleteDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ DeleteDatabase ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydatabase/ "ModifyDatabase")
-
 Delete Database, which results in the disabling of the DB
 
 ## Possible Gateways

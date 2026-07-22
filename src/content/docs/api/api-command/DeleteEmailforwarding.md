@@ -3,9 +3,6 @@ title: "DeleteEmailforwarding"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ DeleteEmailforwarding ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletemailbox/ "DeleteMailbox")
-
 DeleteEmailforwarding
 
 ## Possible Gateways

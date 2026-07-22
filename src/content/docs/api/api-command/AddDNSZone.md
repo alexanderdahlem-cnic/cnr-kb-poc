@@ -3,9 +3,6 @@ title: "AddDNSZone"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ AddDNSZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../addmailfwd/ "AddMailFwd")
-
 ## Possible Gateways
 
 The command _AddDNSZone_ is available via the following gateways:

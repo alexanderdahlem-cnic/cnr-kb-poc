@@ -3,9 +3,6 @@ title: "QueryPHPIni"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ QueryPHPIni ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querywebspacelist/ "QueryWebspaceList")
-
 Query the PHP.ini for a given Webspace.
 
 ## Possible Gateways

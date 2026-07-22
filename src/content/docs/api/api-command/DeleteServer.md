@@ -3,9 +3,6 @@ title: "DeleteServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ DeleteServer ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifyserver/ "ModifyServer")
-
 Must be disabled before (see ModifyServer). This CANNOT be reverted as all data will be lost!
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "QueryServiceList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryServiceList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryupcomingaccountinglist/ "QueryUpcomingAccountingList")
-
 Shows a price overview over all available services
 
 ## Possible Gateways

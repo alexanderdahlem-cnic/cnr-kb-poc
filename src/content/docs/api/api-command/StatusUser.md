@@ -3,8 +3,6 @@ title: "StatusUser"
 description: "CentralNic Reseller API Command Reference  ➤ ACL ➤ StatusUser ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Shows the status of a given user or group.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "ReissueCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ ReissueCertificate ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewcertificate/ "RenewCertificate")
-
 This command allows the user to exchange a certificate if the private key was compromised without having to pay for a new certificate.  
 For the parameter "algorithm" and "CACertificate", this refers to the hashing algorithm to be used. Using the API command GetCertificateInfo will provide a list of valid IDs for DigiCert products.  
 For the parameters "CSR", the # integer range is 0..250.  

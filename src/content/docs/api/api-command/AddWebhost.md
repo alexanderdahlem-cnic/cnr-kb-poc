@@ -3,9 +3,6 @@ title: "AddWebhost"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webhost ➤ AddWebhost ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletewebhost/ "DeleteWebhost")
-
 Creates a new Webhost underneath a Webspace. Typically they are named after the domain they are allocated to.
 
 ## Possible Gateways

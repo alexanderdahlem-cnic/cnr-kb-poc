@@ -3,9 +3,6 @@ title: "DeleteMailFwd"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ DeleteMailFwd ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletewebfwd/ "DeleteWebFwd")
-
 Delete a mail forward from a DNSZone in KeyDNS.
 
 ## Possible Gateways

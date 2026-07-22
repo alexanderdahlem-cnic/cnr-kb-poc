@@ -3,9 +3,6 @@ title: "QueryTrusteeDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryTrusteeDomainList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../renewdomain/ "RenewDomain")
-
 Search for domain names that use an active trustee service.
 
 ## Possible Gateways

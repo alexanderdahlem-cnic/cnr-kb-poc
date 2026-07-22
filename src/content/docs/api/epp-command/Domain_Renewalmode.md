@@ -3,9 +3,6 @@ title: "Domain:Renewalmode"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Renewalmode ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Restore](../domain_restore/ "Domain:Restore")
-
 If you want to change the renewalmode of a domain from DEFAULT(equals AUTORENEW) to AUTOEXPIRE or AUTODELETE, you can do so with the following command.
 
 ## Required Parameters

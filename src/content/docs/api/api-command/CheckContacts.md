@@ -3,9 +3,6 @@ title: "CheckContacts"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ CheckContacts ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../clonecontact/ "CloneContact")
-
 Check the availability of multiple contact handles
 
 ## Possible Gateways

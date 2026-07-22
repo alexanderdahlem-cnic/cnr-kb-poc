@@ -3,9 +3,6 @@ title: "QueryDomainExpireList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainExpireList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainhistorylist/ "QueryDomainHistoryList")
-
 Shows a list of all domain names that are currently marked for deletion or that will expire.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "CheckDomains"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckDomains ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletedomain/ "DeleteDomain")
-
 _(Related EPP Command » [Domain:Check](../../epp-command/domain_check/ "Domain:Check"))_
 
 This is exactly the same as CheckDomain, however with a multiple domain name check. CheckDomains for up to 32 domain names. Simply enter the respective domains with the TLD.

@@ -3,9 +3,6 @@ title: "RestoreDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ RestoreDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../setdomainpinlock/ "SetDomainPinLock")
-
 _(Related EPP Command » [Domain:Restore](../../epp-command/domain_restore/ "Domain:Restore"))_
 
 This command is required to restore a domain after deletion or expiration, if a restore is supported by the TLD.

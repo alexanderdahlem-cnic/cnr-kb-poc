@@ -3,8 +3,6 @@ title: "StatusAftermarketDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ StatusAftermarketDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Requires the identifier token for a listing. Returns the listed domain, price, status at Aftermarket Provider, listing type and Aftermarket Provider.
 
 ## Possible Gateways

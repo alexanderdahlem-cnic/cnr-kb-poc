@@ -3,8 +3,6 @@ title: "StatusEvent"
 description: "CentralNic Reseller API Command Reference  ➤ Event ➤ StatusEvent ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Show the content of an event by executing StatusEvent with the event - ID. For possible values inside the event, please have a look into the table at the beginning of this chapter.
 
 ## Possible Gateways

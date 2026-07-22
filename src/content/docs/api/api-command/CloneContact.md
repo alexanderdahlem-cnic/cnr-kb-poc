@@ -3,9 +3,6 @@ title: "CloneContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ CloneContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletecontact/ "DeleteContact")
-
 _(Related EPP Command » [Contact:Create](../../epp-command/contact_create/ "Contact:Create"))_
 
 The CloneContact command is used to create an exact duplicate of a particular contact.

@@ -3,9 +3,6 @@ title: "StatusEmailaddress"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailbox ➤ StatusEmailaddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusmailbox/ "StatusMailbox")
-
 StatusEmailaddress
 
 ## Possible Gateways

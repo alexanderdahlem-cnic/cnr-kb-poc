@@ -3,9 +3,6 @@ title: "QuerySMSList"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ QuerySMSList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../sendsms/ "SendSMS")
-
 Query details about SMS sent with the given account. Useful for delivery notifications or accountings.
 
 ## Possible Gateways

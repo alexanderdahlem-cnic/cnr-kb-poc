@@ -3,9 +3,6 @@ title: "QueryExchangeRates"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryExchangeRates ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querypremiumdomainlist/ "QueryPremiumDomainList")
-
 QueryExchangeRates
 
 ## Possible Gateways

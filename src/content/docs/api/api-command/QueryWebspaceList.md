@@ -3,9 +3,6 @@ title: "QueryWebspaceList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ QueryWebspaceList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querywebspacetraffic/ "QueryWebspaceTraffic")
-
 With QueryWebspaceList you can get a detailed overview of all your Webspaces refering to their status and usage.
 
 ## Possible Gateways

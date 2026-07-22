@@ -3,9 +3,6 @@ title: "QueryDomainHistoryList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainHistoryList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querydomainlist/ "QueryDomainList")
-
 This command lists you all domains that has been removed from your Account via explicit Deletion, autodelete/expire and Transfer outs. This can be filtered via the 'reason' variable listed in the optional section.
 
 ## Possible Gateways

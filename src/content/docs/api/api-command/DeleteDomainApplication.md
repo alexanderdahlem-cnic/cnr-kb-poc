@@ -3,9 +3,6 @@ title: "DeleteDomainApplication"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ DeleteDomainApplication ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydomainapplication/ "ModifyDomainApplication")
-
 _(Related EPP Command » [Application:Delete](../../epp-command/application_delete/ "Application:Delete"))_
 
 Delete a domain application

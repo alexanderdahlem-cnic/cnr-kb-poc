@@ -3,9 +3,6 @@ title: "QueryDomainPinLockList"
 description: "CentralNic Reseller API Command Reference  ➤ Query ➤ QueryDomainPinLockList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryjoblist/ "QueryJobList")
-
 Query list of domains in account with DomainPinLock
 
 ## Possible Gateways

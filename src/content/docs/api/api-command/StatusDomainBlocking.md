@@ -3,9 +3,6 @@ title: "StatusDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ StatusDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve "TransferDomainBlocking - Approve")
-
 This command can be used to retrieve a specific block’s information by supplying the block order ID, there is no need to specify the product.
 
 ## Possible Gateways

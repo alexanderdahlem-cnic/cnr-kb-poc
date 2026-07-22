@@ -3,9 +3,6 @@ title: "SetDomainTransfermode"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ SetDomainTransfermode ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusclaimsnotice/ "StatusClaimsNotice")
-
 The SetDomainTransferMode command sets the Domain Transfer Mode.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "Poll:RestorePendingMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:RestorePendingMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [RestoreSuccessfulMessage](../poll_restoresuccessfulmessage/ "Poll:RestoreSuccessfulMessage")
-
 Domain Restore Pending Poll Message
 
 ## Required Parameters

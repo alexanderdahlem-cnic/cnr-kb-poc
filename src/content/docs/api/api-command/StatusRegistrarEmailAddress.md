@@ -3,8 +3,6 @@ title: "StatusRegistrarEmailAddress"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ StatusRegistrarEmailAddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 Show all classes and their status for a defined email address
 
 ## Possible Gateways

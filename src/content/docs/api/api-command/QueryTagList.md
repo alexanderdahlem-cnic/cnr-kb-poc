@@ -3,9 +3,6 @@ title: "QueryTagList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain - Tags ➤ QueryTagList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statustag/ "StatusTag")
-
 Shows a list of all created Tags and offers various search possibilities. Parameter SHOWDEFAULTZONETAGS=1 only shows all default zone Tags.
 
 ## Possible Gateways

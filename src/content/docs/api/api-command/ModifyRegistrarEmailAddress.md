@@ -3,9 +3,6 @@ title: "ModifyRegistrarEmailAddress"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ ModifyRegistrarEmailAddress ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryregistraremailaddresslist/ "QueryRegistrarEmailAddressList")
-
 Updating class, language or recipients name for an email address
 
 ## Possible Gateways

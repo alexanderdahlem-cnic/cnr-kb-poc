@@ -3,9 +3,6 @@ title: "DeleteAftermarketAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ DeleteAftermarketAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deleteaftermarketdomain/ "DeleteAftermarketDomain")
-
 To remove access to an Aftermarket Account via your RRPproxy account. If domains are still listed, they will be deactivated at the respective Aftermarket Provider.
 
 ## Possible Gateways

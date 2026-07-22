@@ -3,9 +3,6 @@ title: "GetZoneInfo"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ GetZoneInfo ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifydomain/ "ModifyDomain")
-
 Query information about a zone, this includes (but not limited to): Allowed periods, IDN - capability, length - restrictions. The returned fields may vary across the different zones
 
 ## Possible Gateways

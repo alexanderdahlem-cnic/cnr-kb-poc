@@ -3,9 +3,6 @@ title: "AddTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ AddTrademark ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletetrademark/ "DeleteTrademark")
-
 The AddTrademark command allows you to add a trademark validation request. Your trademark data will be validated with our partners.
 
 ## Possible Gateways

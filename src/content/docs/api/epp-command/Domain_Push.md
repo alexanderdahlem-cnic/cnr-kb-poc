@@ -3,9 +3,6 @@ title: "Domain:Push"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Push ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Renew](../domain_renew/ "Domain:Renew")
-
 The Push Domain is used to send .DE / .AT domains to transit / billwithdraw status and to change the tag or delete a .UK domain.
 
 ## Required Parameters

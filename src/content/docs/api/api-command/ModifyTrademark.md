@@ -3,9 +3,6 @@ title: "ModifyTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ ModifyTrademark ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../querytrademarklist/ "QueryTrademarkList")
-
 The ModifyTrademark command allows you to modify a trademark validation request. Your trademark data will be validated with our partners.
 
 ## Possible Gateways

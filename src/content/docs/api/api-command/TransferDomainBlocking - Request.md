@@ -3,9 +3,6 @@ title: "TransferDomainBlocking - Request"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ TransferDomainBlocking - Request ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer "TransferDomainBlocking - UserTransfer")
-
 Request an inbound transfer for a domain block from another registrar. Please kindly note, for AdultBlock an additional 1 year will be added and billed accordingly. For GlobalBlock, completing a transfer will not renew the block or update its expiry date.
 
 ## Possible Gateways

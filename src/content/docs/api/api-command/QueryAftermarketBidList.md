@@ -3,9 +3,6 @@ title: "QueryAftermarketBidList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketBidList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryaftermarketdomainlist/ "QueryAftermarketDomainList")
-
 Query all initiated aftermarket processes in your CentralNic Reseller account.
 
 ## Possible Gateways

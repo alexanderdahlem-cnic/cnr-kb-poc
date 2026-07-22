@@ -3,9 +3,6 @@ title: "CheckDomainBlockingIPRID"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ CheckDomainBlockingIPRID ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../deletedomainblocking/ "DeleteDomainBlocking")
-
 This command can be used to retrieve the specific IPR related to the label. For AdultBlock, if the label exists, the IPR will be returned. For GlobalBlock, if the label exists, then the full details will be provided. Please kindly note that there can be more than one IPR for the same label, if this is the case then all matching results will be returned.
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "RestoreContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ RestoreContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statuscontact/ "StatusContact")
-
 Restore a deleted contact. If not linked to a product, the contact will be automatically deleted again in 120 days upon the restore.
 
 ## Possible Gateways

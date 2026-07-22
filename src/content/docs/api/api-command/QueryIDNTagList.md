@@ -3,9 +3,6 @@ title: "QueryIDNTagList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryIDNTagList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryregisteredpremiumdomainlist/ "QueryRegisteredPremiumDomainList")
-
 The QueryIDNTagList command can be used to determine the possible IDN language tags either for a domain name or a TLD.
 
 ## Possible Gateways

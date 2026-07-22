@@ -3,9 +3,6 @@ title: "Domain:Info"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Info ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [OwnerChange](../domain_ownerchange/ "Domain:OwnerChange")
-
 The Domain:Info command enables you to check the current status of a domain name. It gives information about the created date, expiration, renewal mode, transfer-lock, etc.
 
 -   [Default handling](#)

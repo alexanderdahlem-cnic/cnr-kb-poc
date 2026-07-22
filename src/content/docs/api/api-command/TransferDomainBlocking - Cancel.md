@@ -3,9 +3,6 @@ title: "TransferDomainBlocking - Cancel"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ TransferDomainBlocking - Cancel ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny "TransferDomainBlocking - Deny")
-
 Cancel the initiated inbound transfer for a domain block from another registrar. Please kindly note, for AdultBlock, the initiated additional 1 year will be refunded.
 
 ## Possible Gateways

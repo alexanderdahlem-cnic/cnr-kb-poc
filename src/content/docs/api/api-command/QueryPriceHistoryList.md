@@ -3,9 +3,6 @@ title: "QueryPriceHistoryList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryPriceHistoryList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../queryservicelist/ "QueryServiceList")
-
 QueryPriceHistoryList can be used to show the history of prices for the own account or for subreseller accounts. This is decided by the usage of the registrar/pricescale parameter. If no registrar/pricescale parameter is given, it will show the prices for the own account. Otherwise the prices of the subreseller or pricescale will be shown. Also registrar=\* and status=pending can be used to show all upcoming changes for all pricescales and subresellers at once. QueryPriceHistoryList supports also the usage of zone=\* which will show all zones and services at once.
 
 ## Possible Gateways

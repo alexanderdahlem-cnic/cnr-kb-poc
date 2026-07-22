@@ -3,9 +3,6 @@ title: "QueryRegistrarStatisticList"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ QueryRegistrarStatisticList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusaccount/ "StatusAccount")
-
 This command queries a statistic - cache in the system. This allows you to get a quick glance how many objects you have in which zone. The cache is regenerated every 4 hours.
 
 ## Possible Gateways

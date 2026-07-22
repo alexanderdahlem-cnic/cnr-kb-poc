@@ -3,8 +3,6 @@ title: "TransferTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ TransferTrademark ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
-
 The command can either be used to request a TransferIN(EXECUTE) or generate an authcode(INITIATE) to transfer the TMCH trademark away to another trademark agent.
 
 ## Possible Gateways

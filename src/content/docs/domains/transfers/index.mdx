@@ -2,29 +2,7 @@
 title: "Transfer"
 ---
 
-[
-
-## Internal Transfers
-
-_How to perform internal transfers within CentralNic Reseller_](internal-transfers/ "Internal Transfers")
-
-[
-
-## Response Changelog
-
-_Changes on transfer responses_](transfer-response-changelog/ "Transfer Response Changelog")
-
-[
-
-## GDPR
-
-_Transfers from and to other registrars_](gdpr/ "GDPR")
-
-[
-
-## Transfer Lock
-
-_Default transfer lock applied to all registered and transferred-in domains_](transfer-lock/ "Transfer Lock")
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## Changing Contact Handles during Transfers
 
@@ -271,3 +249,10 @@ Changing contact handles during transfers is currently supported for the followi
 -   XN--YFRO4I67O
 -   YK.CA
 -   YT
+
+<CardGrid>
+  <LinkCard title={"Internal Transfers"} href={"internal-transfers/"} description={"How to perform internal transfers within CentralNic Reseller"} />
+  <LinkCard title={"Response Changelog"} href={"transfer-response-changelog/"} description={"Changes on transfer responses"} />
+  <LinkCard title={"GDPR"} href={"gdpr/"} description={"Transfers from and to other registrars"} />
+  <LinkCard title={"Transfer Lock"} href={"transfer-lock/"} description={"Default transfer lock applied to all registered and transferred-in domains"} />
+</CardGrid>

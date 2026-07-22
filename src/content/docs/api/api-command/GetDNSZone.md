@@ -3,9 +3,6 @@ title: "GetDNSZone"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ GetDNSZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../importdnszone/ "ImportDNSZone")
-
 GetDNSZone
 
 ## Possible Gateways

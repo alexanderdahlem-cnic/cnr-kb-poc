@@ -3,9 +3,6 @@ title: "RenewDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ RenewDatabase ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../setdatabaserenewalmode/ "SetDatabaseRenewalMode")
-
 For renewing a Database
 
 ## Possible Gateways

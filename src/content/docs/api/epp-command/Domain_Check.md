@@ -3,9 +3,6 @@ title: "Domain:Check"
 description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Check ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Create](../domain_create/ "Domain:Create")
-
 This command checks, if the desired domain name is available and may be registered at the registry.
 
 -   [Default handling](#)

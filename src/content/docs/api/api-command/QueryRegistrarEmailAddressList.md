@@ -3,9 +3,6 @@ title: "QueryRegistrarEmailAddressList"
 description: "CentralNic Reseller API Command Reference  ➤ Newsletter / Maintenance ➤ QueryRegistrarEmailAddressList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusregistraremailaddress/ "StatusRegistrarEmailAddress")
-
 Show all emails with their details for a registrar. All the "usually known" Query\*List parameters can also be used in this command
 
 ## Possible Gateways

@@ -3,9 +3,6 @@ title: "StatusAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ StatusAccount ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../statusregistrar/ "StatusRegistrar")
-
 ## Possible Gateways
 
 The command _StatusAccount_ is available via the following gateways:

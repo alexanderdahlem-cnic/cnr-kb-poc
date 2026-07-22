@@ -3,9 +3,6 @@ title: "SetDomainPinLock"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ SetDomainPinLock ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../setdomainrenewalmode/ "SetDomainRenewalmode")
-
 This API command is used to activate the pinlock service.
 
 ## Possible Gateways

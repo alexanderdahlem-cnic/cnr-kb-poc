@@ -3,9 +3,6 @@ title: "Poll:DomainUpdateMessage"
 description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:DomainUpdateMessage ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Request](../poll_request/ "Poll:Request")
-
 Domain update message
 
 ## Required Parameters

@@ -3,9 +3,6 @@ title: "Contact:Delete"
 description: "EPP API Command Reference  ➤ Contact commands ➤ Contact:Delete ➥ Learn more about EPP API Commands"
 ---
 
--   [Overview](../../epp-server/epp-command-reference/)
--   [Info](../contact_info/ "Contact:Info")
-
 The contact:delete removes a contact from the system. Please make sure that no clientDeleteProhibited status is set. Newly created contacts will automatically receive the AUTODELETE=1 flag, which will result in the automated deletion of contacts that have not been linked to a product for 120 days. Further details can be found at "Domains --> Contact Handles --> Automated Contact Deletion".
 
 ## Required Parameters

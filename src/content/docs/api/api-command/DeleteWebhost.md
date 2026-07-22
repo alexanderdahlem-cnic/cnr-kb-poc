@@ -3,9 +3,6 @@ title: "DeleteWebhost"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webhost ➤ DeleteWebhost ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../modifywebhost/ "ModifyWebhost")
-
 Deletes the host entry / host entries of a webspace. Given data will be connected with "AND", so it's needed to give the webspace\_id for safety-reasons. Warning: This action CANNOT be reversed!
 
 ## Possible Gateways

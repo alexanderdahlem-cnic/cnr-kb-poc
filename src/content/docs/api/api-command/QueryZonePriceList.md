@@ -3,9 +3,6 @@ title: "QueryZonePriceList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryZonePriceList ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../serviceprice/ "ServicePrice")
-
 QueryZonePriceList can be used to show all individual subreseller and price scale prices for a specific zone or service, all existing invidiudal prices for a specific subreseller or all existing prices in a price scale. The command can be used providing a specific registrar/pricescale or providing a specific zone/service.
 
 ## Possible Gateways

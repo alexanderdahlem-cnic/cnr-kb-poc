@@ -3,9 +3,6 @@ title: "GetZone"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ GetZone ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
--   [Overview](../../api-commands/api-command-reference/)
--   [Next command](../getzoneinfo/ "GetZoneInfo")
-
 This command returns the zone of a specific domain name.
 
 ## Possible Gateways
