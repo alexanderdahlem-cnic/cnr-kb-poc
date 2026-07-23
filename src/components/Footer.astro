@@ -1,0 +1,14 @@
+---
+// Content-column footer. On TLD pages (mobile only) render the "TLD
+// Specifications" panel at the BOTTOM of the content — where it inherits the
+// content's padding and reading width — then the default footer. On desktop the
+// specs live in the right column instead (see PageSidebar.astro), so this block
+// is hidden there (`lg:sl-hidden`). Non-TLD pages just get the default footer.
+import Default from '@astrojs/starlight/components/Footer.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const specs = /** @type {any} */ (entry.data).tldspecsHtml;
+---
+
+{specs && <div class="tldspecs tldspecs--footer lg:sl-hidden" set:html={specs} />}
+<Default><slot /></Default>

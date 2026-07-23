@@ -128,9 +128,29 @@
   font-size: var(--sl-text-sm);
 }
 
-/* TLD Specifications panel (rendered in the right column on TLD pages). */
+/* TLD Specifications panel (right column on desktop, bottom of content on mobile). */
 .tldspecs {
   font-size: var(--sl-text-xs);
+}
+/* Desktop right-column panel: separate it from the main content with a hairline
+   rule + a little breathing room so it doesn't cling to the article text. */
+.tldspecs-panel {
+  border-inline-start: 1px solid var(--sl-color-hairline);
+  padding-inline-start: 1.5rem;
+}
+.tldspecs-panel .sl-container {
+  width: auto;
+}
+/* Mobile: specs sit at the bottom of the content, matching its width + padding,
+   set off from the article with a top rule and a slightly larger type scale. */
+.tldspecs--footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sl-color-hairline);
+  font-size: var(--sl-text-sm);
+}
+.tldspecs--footer .property {
+  padding: 0.55rem 0;
 }
 .tldspecs h2 {
   font-size: var(--sl-text-sm);

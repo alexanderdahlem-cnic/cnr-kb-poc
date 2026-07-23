@@ -55,6 +55,9 @@ export default defineConfig({
         // Right column: render the TLD Specifications panel on TLD pages,
         // otherwise fall back to the default table-of-contents sidebar.
         PageSidebar: './src/components/PageSidebar.astro',
+        // TLD specs at the bottom of the content on mobile (desktop uses the
+        // right column above).
+        Footer: './src/components/Footer.astro',
       },
       customCss: ['./src/styles/custom.css'],
     }),

@@ -1,7 +1,9 @@
 ---
-// Right-hand column. On TLD pages (frontmatter `tldspecsHtml` present) we render
-// the "TLD Specifications" property panel there — matching the legacy live site —
-// and skip the table of contents. Every other page keeps Starlight's default TOC.
+// Right column (desktop only). On TLD pages render the "TLD Specifications"
+// panel here — wrapped in Starlight's own `.right-sidebar-panel` so it gets the
+// standard sidebar padding/width — and skip the table of contents. On mobile
+// this is hidden (`sl-hidden lg:sl-block`); the specs are shown at the bottom of
+// the content instead (see Footer.astro). Every other page keeps the default TOC.
 import Default from '@astrojs/starlight/components/PageSidebar.astro';
 
 const { entry } = Astro.locals.starlightRoute;
@@ -10,7 +12,11 @@ const specs = /** @type {any} */ (entry.data).tldspecsHtml;
 
 {
   specs ? (
-    <div class="tldspecs" set:html={specs} />
+    <div class="right-sidebar-panel tldspecs-panel sl-hidden lg:sl-block">
+      <div class="sl-container">
+        <div class="tldspecs" set:html={specs} />
+      </div>
+    </div>
   ) : (
     <Default><slot /></Default>
   )
