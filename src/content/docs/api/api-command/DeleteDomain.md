@@ -3,7 +3,7 @@ title: "DeleteDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ DeleteDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Domain:Delete](../../epp-command/domain_delete/ "Domain:Delete"))_
+_(Related EPP Command » [Domain:Delete](../../epp-command/domain-delete/ "Domain:Delete"))_
 
 The DeleteDomain command can be used to delete a domain from your account. The domain will be deleted as soon as the command was finished successfully. Please note that you can not / must not delete all domains with this command. Please see the specific TLD annotations before using this command. For refunded AGP deletes the response will confirm the successful completion of the command with days pending for the deletion
 

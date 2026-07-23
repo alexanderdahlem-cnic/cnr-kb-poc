@@ -3,7 +3,7 @@ title: "PushDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ PushDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Domain:Push](../../epp-command/domain_push/ "Domain:Push"))_
+_(Related EPP Command » [Domain:Push](../../epp-command/domain-push/ "Domain:Push"))_
 
 The Push Domain is used to send .DE / .AT domains to transit / billwithdraw status and to change the tag or delete a .UK domain.
 

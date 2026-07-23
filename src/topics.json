@@ -86,59 +86,59 @@
           },
           {
             "label": "AddHosting - AddOnDomain",
-            "link": "/api/api-command/addhosting - addondomain/"
+            "link": "/api/api-command/addhosting-addondomain/"
           },
           {
             "label": "AddHosting - CatchAllAddress",
-            "link": "/api/api-command/addhosting - catchalladdress/"
+            "link": "/api/api-command/addhosting-catchalladdress/"
           },
           {
             "label": "AddHosting - DomainAlias",
-            "link": "/api/api-command/addhosting - domainalias/"
+            "link": "/api/api-command/addhosting-domainalias/"
           },
           {
             "label": "AddHosting - Email",
-            "link": "/api/api-command/addhosting - email/"
+            "link": "/api/api-command/addhosting-email/"
           },
           {
             "label": "AddHosting - EmailDomainlForward",
-            "link": "/api/api-command/addhosting - emaildomainlforward/"
+            "link": "/api/api-command/addhosting-emaildomainlforward/"
           },
           {
             "label": "AddHosting - EmailForward",
-            "link": "/api/api-command/addhosting - emailforward/"
+            "link": "/api/api-command/addhosting-emailforward/"
           },
           {
             "label": "AddHosting - FeatureList",
-            "link": "/api/api-command/addhosting - featurelist/"
+            "link": "/api/api-command/addhosting-featurelist/"
           },
           {
             "label": "AddHosting - FTPUser",
-            "link": "/api/api-command/addhosting - ftpuser/"
+            "link": "/api/api-command/addhosting-ftpuser/"
           },
           {
             "label": "AddHosting - MySQLDatabase",
-            "link": "/api/api-command/addhosting - mysqldatabase/"
+            "link": "/api/api-command/addhosting-mysqldatabase/"
           },
           {
             "label": "AddHosting - MySQLDatabaseUser",
-            "link": "/api/api-command/addhosting - mysqldatabaseuser/"
+            "link": "/api/api-command/addhosting-mysqldatabaseuser/"
           },
           {
             "label": "AddHosting - MySQLDatabaseUserPrivileges",
-            "link": "/api/api-command/addhosting - mysqldatabaseuserprivileges/"
+            "link": "/api/api-command/addhosting-mysqldatabaseuserprivileges/"
           },
           {
             "label": "AddHosting - Package",
-            "link": "/api/api-command/addhosting - package/"
+            "link": "/api/api-command/addhosting-package/"
           },
           {
             "label": "AddHosting - SubDomain",
-            "link": "/api/api-command/addhosting - subdomain/"
+            "link": "/api/api-command/addhosting-subdomain/"
           },
           {
             "label": "AddHosting - UserAccount",
-            "link": "/api/api-command/addhosting - useraccount/"
+            "link": "/api/api-command/addhosting-useraccount/"
           },
           {
             "label": "AddMailbox",
@@ -1058,27 +1058,27 @@
           },
           {
             "label": "TransferDomainBlocking - Approve",
-            "link": "/api/api-command/transferdomainblocking - approve/"
+            "link": "/api/api-command/transferdomainblocking-approve/"
           },
           {
             "label": "TransferDomainBlocking - Cancel",
-            "link": "/api/api-command/transferdomainblocking - cancel/"
+            "link": "/api/api-command/transferdomainblocking-cancel/"
           },
           {
             "label": "TransferDomainBlocking - Deny",
-            "link": "/api/api-command/transferdomainblocking - deny/"
+            "link": "/api/api-command/transferdomainblocking-deny/"
           },
           {
             "label": "TransferDomainBlocking - Query",
-            "link": "/api/api-command/transferdomainblocking - query/"
+            "link": "/api/api-command/transferdomainblocking-query/"
           },
           {
             "label": "TransferDomainBlocking - Request",
-            "link": "/api/api-command/transferdomainblocking - request/"
+            "link": "/api/api-command/transferdomainblocking-request/"
           },
           {
             "label": "TransferDomainBlocking - UserTransfer",
-            "link": "/api/api-command/transferdomainblocking - usertransfer/"
+            "link": "/api/api-command/transferdomainblocking-usertransfer/"
           },
           {
             "label": "TransferTrademark",
@@ -1150,219 +1150,219 @@
         "items": [
           {
             "label": "Application:CheckClaims",
-            "link": "/api/epp-command/application_checkclaims/"
+            "link": "/api/epp-command/application-checkclaims/"
           },
           {
             "label": "Application:CreateDomainWithClaims",
-            "link": "/api/epp-command/application_createdomainwithclaims/"
+            "link": "/api/epp-command/application-createdomainwithclaims/"
           },
           {
             "label": "Application:CreateLandrush",
-            "link": "/api/epp-command/application_createlandrush/"
+            "link": "/api/epp-command/application-createlandrush/"
           },
           {
             "label": "Application:CreateSunrise",
-            "link": "/api/epp-command/application_createsunrise/"
+            "link": "/api/epp-command/application-createsunrise/"
           },
           {
             "label": "Application:Delete",
-            "link": "/api/epp-command/application_delete/"
+            "link": "/api/epp-command/application-delete/"
           },
           {
             "label": "Application:Failed",
-            "link": "/api/epp-command/application_failed/"
+            "link": "/api/epp-command/application-failed/"
           },
           {
             "label": "Application:Status",
-            "link": "/api/epp-command/application_status/"
+            "link": "/api/epp-command/application-status/"
           },
           {
             "label": "Application:Successful",
-            "link": "/api/epp-command/application_successful/"
+            "link": "/api/epp-command/application-successful/"
           },
           {
             "label": "Contact:Check",
-            "link": "/api/epp-command/contact_check/"
+            "link": "/api/epp-command/contact-check/"
           },
           {
             "label": "Contact:Create",
-            "link": "/api/epp-command/contact_create/"
+            "link": "/api/epp-command/contact-create/"
           },
           {
             "label": "Contact:Delete",
-            "link": "/api/epp-command/contact_delete/"
+            "link": "/api/epp-command/contact-delete/"
           },
           {
             "label": "Contact:Info",
-            "link": "/api/epp-command/contact_info/"
+            "link": "/api/epp-command/contact-info/"
           },
           {
             "label": "Contact:OwnerChange",
-            "link": "/api/epp-command/contact_ownerchange/"
+            "link": "/api/epp-command/contact-ownerchange/"
           },
           {
             "label": "Contact:Transfer",
-            "link": "/api/epp-command/contact_transfer/"
+            "link": "/api/epp-command/contact-transfer/"
           },
           {
             "label": "Contact:Update",
-            "link": "/api/epp-command/contact_update/"
+            "link": "/api/epp-command/contact-update/"
           },
           {
             "label": "Contact:UpdateCheckonly1",
-            "link": "/api/epp-command/contact_updatecheckonly1/"
+            "link": "/api/epp-command/contact-updatecheckonly1/"
           },
           {
             "label": "Contact:UpdateTriggerfoa1",
-            "link": "/api/epp-command/contact_updatetriggerfoa1/"
+            "link": "/api/epp-command/contact-updatetriggerfoa1/"
           },
           {
             "label": "Domain:Check",
-            "link": "/api/epp-command/domain_check/"
+            "link": "/api/epp-command/domain-check/"
           },
           {
             "label": "Domain:Create",
-            "link": "/api/epp-command/domain_create/"
+            "link": "/api/epp-command/domain-create/"
           },
           {
             "label": "Domain:Delete",
-            "link": "/api/epp-command/domain_delete/"
+            "link": "/api/epp-command/domain-delete/"
           },
           {
             "label": "Domain:Info",
-            "link": "/api/epp-command/domain_info/"
+            "link": "/api/epp-command/domain-info/"
           },
           {
             "label": "Domain:OwnerChange",
-            "link": "/api/epp-command/domain_ownerchange/"
+            "link": "/api/epp-command/domain-ownerchange/"
           },
           {
             "label": "Domain:Push",
-            "link": "/api/epp-command/domain_push/"
+            "link": "/api/epp-command/domain-push/"
           },
           {
             "label": "Domain:Renew",
-            "link": "/api/epp-command/domain_renew/"
+            "link": "/api/epp-command/domain-renew/"
           },
           {
             "label": "Domain:Renewalmode",
-            "link": "/api/epp-command/domain_renewalmode/"
+            "link": "/api/epp-command/domain-renewalmode/"
           },
           {
             "label": "Domain:Restore",
-            "link": "/api/epp-command/domain_restore/"
+            "link": "/api/epp-command/domain-restore/"
           },
           {
             "label": "Domain:Trade",
-            "link": "/api/epp-command/domain_trade/"
+            "link": "/api/epp-command/domain-trade/"
           },
           {
             "label": "Domain:Update",
-            "link": "/api/epp-command/domain_update/"
+            "link": "/api/epp-command/domain-update/"
           },
           {
             "label": "Host:Check",
-            "link": "/api/epp-command/host_check/"
+            "link": "/api/epp-command/host-check/"
           },
           {
             "label": "Host:Create",
-            "link": "/api/epp-command/host_create/"
+            "link": "/api/epp-command/host-create/"
           },
           {
             "label": "Host:Delete",
-            "link": "/api/epp-command/host_delete/"
+            "link": "/api/epp-command/host-delete/"
           },
           {
             "label": "Host:Info",
-            "link": "/api/epp-command/host_info/"
+            "link": "/api/epp-command/host-info/"
           },
           {
             "label": "Host:Update",
-            "link": "/api/epp-command/host_update/"
+            "link": "/api/epp-command/host-update/"
           },
           {
             "label": "Poll:Ack",
-            "link": "/api/epp-command/poll_ack/"
+            "link": "/api/epp-command/poll-ack/"
           },
           {
             "label": "Poll:ContactDeletionMessage",
-            "link": "/api/epp-command/poll_contactdeletionmessage/"
+            "link": "/api/epp-command/poll-contactdeletionmessage/"
           },
           {
             "label": "Poll:DomainDeletionMessage",
-            "link": "/api/epp-command/poll_domaindeletionmessage/"
+            "link": "/api/epp-command/poll-domaindeletionmessage/"
           },
           {
             "label": "Poll:DomainRegistrationMessage",
-            "link": "/api/epp-command/poll_domainregistrationmessage/"
+            "link": "/api/epp-command/poll-domainregistrationmessage/"
           },
           {
             "label": "Poll:DomainRenewalMessage",
-            "link": "/api/epp-command/poll_domainrenewalmessage/"
+            "link": "/api/epp-command/poll-domainrenewalmessage/"
           },
           {
             "label": "Poll:DomainTradeMessage",
-            "link": "/api/epp-command/poll_domaintrademessage/"
+            "link": "/api/epp-command/poll-domaintrademessage/"
           },
           {
             "label": "Poll:DomainTransferStatusMessage",
-            "link": "/api/epp-command/poll_domaintransferstatusmessage/"
+            "link": "/api/epp-command/poll-domaintransferstatusmessage/"
           },
           {
             "label": "Poll:DomainUpdateMessage",
-            "link": "/api/epp-command/poll_domainupdatemessage/"
+            "link": "/api/epp-command/poll-domainupdatemessage/"
           },
           {
             "label": "Poll:Request",
-            "link": "/api/epp-command/poll_request/"
+            "link": "/api/epp-command/poll-request/"
           },
           {
             "label": "Poll:RestoreFailedMessage",
-            "link": "/api/epp-command/poll_restorefailedmessage/"
+            "link": "/api/epp-command/poll-restorefailedmessage/"
           },
           {
             "label": "Poll:RestoreNotifyMessage",
-            "link": "/api/epp-command/poll_restorenotifymessage/"
+            "link": "/api/epp-command/poll-restorenotifymessage/"
           },
           {
             "label": "Poll:RestorePendingMessage",
-            "link": "/api/epp-command/poll_restorependingmessage/"
+            "link": "/api/epp-command/poll-restorependingmessage/"
           },
           {
             "label": "Poll:RestoreSuccessfulMessage",
-            "link": "/api/epp-command/poll_restoresuccessfulmessage/"
+            "link": "/api/epp-command/poll-restoresuccessfulmessage/"
           },
           {
             "label": "Session:Hello",
-            "link": "/api/epp-command/session_hello/"
+            "link": "/api/epp-command/session-hello/"
           },
           {
             "label": "Session:Login",
-            "link": "/api/epp-command/session_login/"
+            "link": "/api/epp-command/session-login/"
           },
           {
             "label": "Session:Logout",
-            "link": "/api/epp-command/session_logout/"
+            "link": "/api/epp-command/session-logout/"
           },
           {
             "label": "Transfer:Approve",
-            "link": "/api/epp-command/transfer_approve/"
+            "link": "/api/epp-command/transfer-approve/"
           },
           {
             "label": "Transfer:Cancel",
-            "link": "/api/epp-command/transfer_cancel/"
+            "link": "/api/epp-command/transfer-cancel/"
           },
           {
             "label": "Transfer:Query",
-            "link": "/api/epp-command/transfer_query/"
+            "link": "/api/epp-command/transfer-query/"
           },
           {
             "label": "Transfer:Reject",
-            "link": "/api/epp-command/transfer_reject/"
+            "link": "/api/epp-command/transfer-reject/"
           },
           {
             "label": "Transfer:Request",
-            "link": "/api/epp-command/transfer_request/"
+            "link": "/api/epp-command/transfer-request/"
           }
         ]
       },

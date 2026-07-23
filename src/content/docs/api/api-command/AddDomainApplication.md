@@ -3,7 +3,7 @@ title: "AddDomainApplication"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ AddDomainApplication ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Application:CreateSunrise](../../epp-command/application_createsunrise/ "Application:CreateSunrise"))_
+_(Related EPP Command » [Application:CreateSunrise](../../epp-command/application-createsunrise/ "Application:CreateSunrise"))_
 
 ## Possible Gateways
 

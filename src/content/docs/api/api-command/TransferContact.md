@@ -3,7 +3,7 @@ title: "TransferContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ TransferContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Contact:Transfer](../../epp-command/contact_transfer/ "Contact:Transfer"))_
+_(Related EPP Command » [Contact:Transfer](../../epp-command/contact-transfer/ "Contact:Transfer"))_
 
 This command allows you to request a contact transfer. Simply enter the command and the respective contact handle with the corresponding authorisation code(auth). The transfer will be processed immediately.
 

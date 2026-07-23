@@ -3,7 +3,7 @@ title: "AddContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ AddContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Contact:Create](../../epp-command/contact_create/ "Contact:Create"))_
+_(Related EPP Command » [Contact:Create](../../epp-command/contact-create/ "Contact:Create"))_
 
 The AddContact command allows you to add a further contact. The system automatically substitutes existing handles. If you wish to create a new handle, please use the parameter "NEW = 1".
 

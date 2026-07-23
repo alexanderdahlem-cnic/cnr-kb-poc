@@ -3,7 +3,7 @@ title: "RenewDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ RenewDomain ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Domain:Renew](../../epp-command/domain_renew/ "Domain:Renew"))_
+_(Related EPP Command » [Domain:Renew](../../epp-command/domain-renew/ "Domain:Renew"))_
 
 The RenewDomain command is used to renew domains explicitly for a specified time period. When renewing a domain please enter the domain, the period for renewal (e.g. period = 1) and the current expiration year (e.g. 2007). Please notice that you can not explicitly renew domains under all TLDs. For further information please see the corresponding TLD info page.
 

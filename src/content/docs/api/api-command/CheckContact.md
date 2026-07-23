@@ -3,7 +3,7 @@ title: "CheckContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ CheckContact ➥ Learn more about CentralNic Reseller API Commands"
 ---
 
-_(Related EPP Command » [Contact:Check](../../epp-command/contact_check/ "Contact:Check"))_
+_(Related EPP Command » [Contact:Check](../../epp-command/contact-check/ "Contact:Check"))_
 
 Check the availability of a single contact handle
 
