@@ -19,6 +19,7 @@ import { join, relative } from 'node:path';
 const DOCS = join(process.cwd(), 'src/content/docs');
 
 const TOPICS = [
+  ['how-to', 'How To'],
   ['api', 'API'],
   ['domains', 'Domains'],
   ['hosting', 'Hosting'],

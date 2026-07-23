@@ -1,0 +1,238 @@
+---
+title: "Your First Day as a CentralNic Reseller"
+description: "A step-by-step guide to getting your new CentralNic Reseller account funded, secured, configured and ready to integrate — in about 30 minutes."
+sidebar:
+  order: 10
+  label: "Your First Day"
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Welcome aboard. You have signed up as a CentralNic Reseller — now let's turn that
+new account into a working foundation for your domain business. This guide walks
+you through everything you should do on day one, in the order that makes sense,
+so you finish set up, secure, and ready to build.
+
+You do not need to write a single line of code to complete these steps. Everything
+here happens in the [Control Panel](https://account.centralnicreseller.com/) —
+your web-based command centre. When you are done, you will pick how you want to
+integrate.
+
+:::tip[By the end of this guide you will have]
+- A **funded, verified** account ready to register real domains
+- Your team set up with **users and the right permissions**
+- **Two-factor authentication** and an **IP allowlist** protecting your account
+- Your **registrar defaults** configured the way your business works
+- A **first test registration** completed, and **API access** ready for OT&E
+:::
+
+:::note[Roughly 30 minutes]
+None of these steps is long. Work top to bottom the first time; afterwards this
+page doubles as a checklist you can return to.
+:::
+
+## 1. Fund your account and understand prepay
+
+CentralNic Reseller runs on a **prepayment model**: your account carries a
+balance, and registrations, renewals and transfers are charged against it in real
+time. There are no invoices to wait on and no credit delays — but it also means an
+empty balance stops new registrations, and automated processes such as renewals
+depend on funds being available.
+
+Your very first task is to add a small starting balance. This is **not a fee** — it
+confirms your intent to do business and immediately makes the account usable. You
+can top up by credit card or PayPal from the Control Panel.
+
+<Steps>
+
+1. In the top menu, open **Account Balance → Charge Your Account**.
+
+2. Choose a payment method and add your initial balance.
+
+3. Confirm the balance now shows in the top bar.
+
+</Steps>
+
+:::caution[Keep an eye on your balance]
+Because renewals are automated, a balance that runs dry can cause domains to lapse.
+Set up a **low-balance warning** under **Account → Registrar Data → Low-balance
+warning** so you are notified in good time.
+:::
+
+See [Payment Settings](../../../help/first-steps/payment-settings/) and
+[Account Settings](../../../help/first-steps/) for the full detail, including how
+verification and the reseller agreement work.
+
+## 2. Get to know the Control Panel
+
+Before changing settings, spend two minutes orienting yourself. The Control Panel
+has three menu areas that stay consistent everywhere you go:
+
+- **Top-right (your account menu)** — Settings, Password & Security, User
+  management and Automatic Payments.
+- **Top-centre** — Account Balance, API, Downloads, Support and product search.
+- **Left-hand side** — your working areas: Dashboard, Domains, Contacts, Hosted
+  DNS, SSL, Hosting and Subreseller.
+
+Clicking the CentralNic Reseller logo always returns you to the Dashboard. For a
+full tour, see the
+[Navigation guide](../../../help/first-steps/general-guide-or-where-to-find-what/).
+
+## 3. Create users and set permissions
+
+If more than one person will use the account, create individual **users** rather
+than sharing one login. Each user gets its own password and its own permissions,
+so you grant people exactly the access they need — and nothing more.
+
+Open your **account menu (top-right) → User management** to add users and groups
+and assign their rights.
+
+:::note[How user logins work]
+A user logs in with the account name and username joined by a colon —
+`login = accountname:username` — plus that user's own password. The same format
+applies when a user connects to the API.
+:::
+
+Prefer to automate this? Users and groups can also be managed via the API with
+`AddUser`, `ModifyUser`, `DeleteUser`, `StatusUser` and `QueryUserList`. See
+[ACL Users & Groups](../../../services/acl/acl-users-and-groups/) for the full
+permission model.
+
+If you plan to resell to your own customers under your own brand, take a look at
+the [Subreseller settings](../../../help/first-steps/subreseller-settings/) too —
+you can set defaults, pricing and even a white-label look for accounts beneath you.
+
+## 4. Turn on two-factor authentication
+
+Your account can register and transfer real domains and spend real money, so
+protect the login. CentralNic Reseller supports **two-factor authentication (2FA)**
+using a one-time code from the Google Authenticator app (Android and iOS). You can
+enable it for your main login and for individual users.
+
+<Steps>
+
+1. Open your **account menu (top-right) → Password & Security**.
+
+2. Click **Enable Two-factor Authentication**.
+
+3. Scan the QR code with Google Authenticator (or enter the secret manually).
+
+4. Enter the 6-digit code to confirm and activate.
+
+</Steps>
+
+Full walkthrough with screenshots:
+[2-Factor Authentication](../../../help/account-security/2-factor-authentication/).
+
+## 5. Lock down access with the IP allowlist
+
+For an extra layer of security you can restrict which IP addresses may reach your
+account. The allowlist covers two separate channels:
+
+- **IP Whitelist** — access to the **API gateways** (EPP, SOAP, HTTPS, XRRP, XMLRPC).
+- **IP Whitelist WI** — access to the **Control Panel** login.
+
+You will find both under your **account menu (top-right) → Settings → Account Data
+→ Security**. You can add up to five IPv4 addresses or ranges (for example
+`192.0.2.42` or `192.0.2.42/27`).
+
+:::caution[Don't lock yourself out]
+Use your **external** IPv4 addresses — internal or reserved addresses will not
+work. If your connection uses a dynamic (dial-up) IP that changes, be careful:
+allowlisting it could lock you out later. When in doubt, set this up once your
+integration servers have stable addresses.
+:::
+
+More detail in [IP Whitelist](../../../help/account-security/ip-whitelist/) and,
+for the API side, [API Security](../../../api/api-security/).
+
+## 6. Set your registrar defaults
+
+Registrar settings define how your account behaves by default. The one most worth
+setting on day one is your **renewal mode**, under **Account → Settings → General**:
+
+- **AUTORENEW** — domains renew automatically before they expire (the safe default
+  for most resellers).
+- **AUTOEXPIRE** — domains are allowed to expire when you have no confirmed renewal.
+- **AUTODELETE** — domains are deleted at their maximum expiration date.
+
+You can always override the mode per domain later. While you are here, review your
+default **nameservers** so new registrations resolve the way you expect. See
+[Registrar Properties](../../../help/first-steps/registrar-properties/) for the
+complete list of settings.
+
+## 7. Make your first test registration
+
+Before you automate anything, register one domain by hand in the Control Panel. It
+is the fastest way to confirm your account is funded and working, and to see the
+lifecycle for yourself.
+
+<Steps>
+
+1. In the left menu, open **Domains**.
+
+2. Search for an available, low-cost domain.
+
+3. Register it, choosing a contact and your default nameservers.
+
+4. Confirm it appears in your domain list as active.
+
+</Steps>
+
+:::tip[Do this in the Control Panel first]
+Registering once by hand — before touching the API — means that when you *do*
+automate, you already know what a correct result looks like.
+:::
+
+## 8. Find your pricing
+
+Know your costs before you build a price list for your customers. Two places show
+pricing:
+
+- **Account Balance → Services & Prices** (top menu) — your rates across services.
+- **Domains → Domain prices** (left menu) — per-TLD registration, renewal and
+  transfer prices.
+
+Your wholesale prices depend on your pricescale; your margin is the difference
+between those and what you charge your own customers.
+
+## 9. Activate API access and open OT&E
+
+Ready to integrate? CentralNic Reseller gives you a dedicated **OT&E
+(Operational Test & Evaluation)** environment — a full sandbox where you can build
+and test without spending money or touching live domains.
+
+From the top menu, **API** gives you everything you need:
+
+- **API Gateways** — the hostnames and ports for each protocol.
+- **Direct API Console** — try commands straight from the browser.
+- **Documentation** — the command reference.
+
+The OT&E gateway lives at `api-ote.rrpproxy.net`. For example, an HTTPS call looks
+like:
+
+```text
+https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[account]&s_pw=[password]&command=CheckDomain&domain=example.com
+```
+
+:::caution[OT&E and production are separate]
+Your OT&E environment has its own endpoints and credentials, and its data does not
+carry over to production. Build and test in OT&E, then follow
+[Moving from OT&E to Production](../moving-from-ote-to-production/) when you are
+ready to go live.
+:::
+
+See [Connecting](../../../api/connecting/) for all five ways to connect, and
+[HTTPS-Software](../../../api/connecting/hypertext-transfer-protocol-socket/) for
+the gateway details.
+
+## What to do next
+
+Your account is funded, secured and configured — nicely done. The next decision is
+*how* you want to integrate. Pick your path:
+
+<CardGrid>
+  <LinkCard title={"Which Integration Method Should I Choose?"} href={"../which-integration-method/"} description={"REST, EPP, an SDK, WHMCS or the Control Panel — find the right fit for your business."} />
+  <LinkCard title={"Building Your Integration"} href={"../../building-your-integration/"} description={"Connect and register your first domain via the API."} />
+  <LinkCard title={"Moving from OT&E to Production"} href={"../moving-from-ote-to-production/"} description={"When your integration is tested, take it live."} />
+</CardGrid>

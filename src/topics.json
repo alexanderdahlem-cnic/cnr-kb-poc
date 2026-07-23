@@ -1,5 +1,120 @@
 [
   {
+    "id": "how-to",
+    "label": "How To",
+    "link": "/how-to/",
+    "items": [
+      {
+        "label": "How To Overview",
+        "link": "/how-to/"
+      },
+      {
+        "label": "Start Here",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Start Here",
+            "link": "/how-to/start-here/"
+          },
+          {
+            "label": "Your First Day",
+            "link": "/how-to/start-here/your-first-day/"
+          },
+          {
+            "label": "Which Integration Method Should I Choose?",
+            "link": "/how-to/start-here/which-integration-method/"
+          },
+          {
+            "label": "Moving from OT&E to Production",
+            "link": "/how-to/start-here/moving-from-ote-to-production/"
+          }
+        ]
+      },
+      {
+        "label": "Building Your Integration",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Building Your Integration",
+            "link": "/how-to/building-your-integration/"
+          },
+          {
+            "label": "REST API Integration Guide",
+            "link": "/how-to/building-your-integration/rest-api-integration-guide/"
+          },
+          {
+            "label": "EPP Integration Guide for Registrars",
+            "link": "/how-to/building-your-integration/epp-integration-guide/"
+          },
+          {
+            "label": "SDK Quick Starts (PHP / Node.js / Python / C#)",
+            "link": "/how-to/building-your-integration/sdk-quick-starts/"
+          },
+          {
+            "label": "Authentication, Credentials & IP Allowlisting",
+            "link": "/how-to/building-your-integration/authentication-credentials-ip/"
+          },
+          {
+            "label": "Testing Your Integration in CentralNic OT&E",
+            "link": "/how-to/building-your-integration/testing-in-ote/"
+          }
+        ]
+      },
+      {
+        "label": "Working with Domains",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Working with Domains",
+            "link": "/how-to/working-with-domains/"
+          },
+          {
+            "label": "The Complete Domain Lifecycle",
+            "link": "/how-to/working-with-domains/complete-domain-lifecycle/"
+          },
+          {
+            "label": "Transfer a Domain into CentralNic Reseller",
+            "link": "/how-to/working-with-domains/transfer-a-domain-in/"
+          },
+          {
+            "label": "Understanding Contacts, Handles & Ownership",
+            "link": "/how-to/working-with-domains/contacts-handles-ownership/"
+          },
+          {
+            "label": "DNS Automation with CentralNic APIs",
+            "link": "/how-to/working-with-domains/dns-automation/"
+          },
+          {
+            "label": "WHMCS Integration Guide",
+            "link": "/how-to/working-with-domains/whmcs-integration/"
+          }
+        ]
+      },
+      {
+        "label": "Advanced Topics",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Advanced Topics",
+            "link": "/how-to/advanced-topics/"
+          },
+          {
+            "label": "Building Your Own Registrar Platform",
+            "link": "/how-to/advanced-topics/building-your-own-registrar-platform/"
+          },
+          {
+            "label": "Reference Architectures for Domain Resellers",
+            "link": "/how-to/advanced-topics/reference-architectures/"
+          },
+          {
+            "label": "Migrating from Another Provider",
+            "link": "/how-to/advanced-topics/migrating-from-another-provider/"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "api",
     "label": "API",
     "link": "/api/",
