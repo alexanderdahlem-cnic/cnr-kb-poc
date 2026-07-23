@@ -1,0 +1,79 @@
+---
+// Overrides Starlight's splash Hero (used only on the splash homepage).
+// A compact centred title with a single, light row of the four key selling
+// points — just an icon + heading each, no descriptions, no buttons. The icons
+// use their own distinct colours (deliberately NOT the accent blue used by the
+// "Get started" journey below), so the header stays light and lets the journey
+// band stand out as the primary call to action.
+import { Icon } from '@astrojs/starlight/components';
+
+const { entry } = Astro.locals.starlightRoute;
+const title = entry.data.hero?.title ?? entry.data.title;
+
+interface Benefit { icon: string; title: string; color: string; }
+
+const benefits: Benefit[] = [
+  { icon: 'star', title: '1,000+ TLDs', color: '#d97706' },        // amber
+  { icon: 'setting', title: 'Automation-first API', color: '#8b5cf6' }, // violet
+  { icon: 'approve-check', title: 'DNS, SSL & more', color: '#16a34a' }, // green
+  { icon: 'rocket', title: 'Built for resellers', color: '#db2777' },   // pink
+];
+---
+
+<div class="home-hero">
+  <h1 class="home-hero__title">{title}</h1>
+
+  <ul class="home-hero__benefits">
+    {benefits.map((b) => (
+      <li class="benefit">
+        <span class="benefit__icon" style={`color:${b.color}`} aria-hidden="true">
+          <Icon name={b.icon} size="1.15rem" />
+        </span>
+        <span class="benefit__label">{b.title}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .home-hero {
+    text-align: center;
+    padding: 0.5rem 0 0.25rem;
+  }
+  .home-hero__title {
+    margin: 0 auto;
+    max-width: 18ch;
+    font-size: clamp(1.8rem, 1.2rem + 2.4vw, 2.7rem);
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--sl-color-white);
+  }
+
+  /* One light, centred row of icon + heading — not spread edge to edge. */
+  .home-hero__benefits {
+    list-style: none;
+    margin: 1.35rem auto 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem 1.85rem;
+  }
+  .benefit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .benefit__icon {
+    display: inline-flex;
+    align-items: center;
+  }
+  .benefit__label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--sl-color-white);
+    white-space: nowrap;
+  }
+</style>

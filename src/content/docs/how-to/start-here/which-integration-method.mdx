@@ -82,13 +82,12 @@ idiomatically. See [SDK Quick Starts](../../building-your-integration/sdk-quick-
 for the available languages, and [Connecting](../../../api/connecting/) for the
 five gateway options and how authentication works.
 
-:::danger[Internal source — please review]
-CentralNic Reseller also offers a **REST API** as a modern option for custom
-integrations, but it is currently an early/alpha release documented outside this
-knowledge base and has not yet reached general availability — do not treat it as
-production-ready. Based on internal Confluence proposal DOMPM/6589546508 and Jira
-GI-1041 (internal, unconfirmed); OT&E and production availability are planned but
-not yet confirmed, and its branding is still under the RRPProxy host.
+:::note[The REST API is now available]
+CentralNic Reseller also offers a **REST API** — a modern JSON-over-HTTPS option
+for custom integrations. You can build against it in OT&E today, with the
+consolidated production release available from **28 July 2026**. If you prefer
+working in REST, start with the
+[REST API Integration Guide](../../building-your-integration/rest-api-integration-guide/).
 :::
 
 For most developers today, the **HTTPS API** (optionally via an SDK) is the
@@ -123,11 +122,11 @@ account is already funded and secured.
 | **API (HTTPS / XML-RPC / SOAP / MREG)** | Medium | Ability to send authenticated HTTP requests | Full control over every command | Custom platforms and bespoke automation | Days |
 | **EPP** | Medium–high | EPP client and protocol experience | Full registry-standard control | Registrars and teams already running EPP | Days |
 
-:::danger[Internal source — please review]
-A REST API is planned as a further option in this comparison, but it is not yet
-generally available and is therefore omitted from the table above as a
-recommended path. Based on internal Confluence proposal DOMPM/6589546508 (internal,
-unconfirmed).
+:::tip[REST joins the API options]
+The **REST API** is a JSON-over-HTTPS flavour of the same command-based API in the
+"API" row above — now available (OT&E today; production from **28 July 2026**). If
+REST is your preference, follow the
+[REST API Integration Guide](../../building-your-integration/rest-api-integration-guide/).
 :::
 
 :::tip[Not sure between the API and an SDK?]

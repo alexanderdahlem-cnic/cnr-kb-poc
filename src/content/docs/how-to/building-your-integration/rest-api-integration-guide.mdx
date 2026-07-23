@@ -1,0 +1,264 @@
+---
+title: "REST API Integration Guide"
+description: "Register your first domain over the CentralNic Reseller REST API — authenticate, check availability, create a contact, register and set nameservers, with working curl examples against OT&E."
+sidebar:
+  order: 10
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+If you prefer a modern JSON-over-HTTPS interface, the CentralNic Reseller **REST
+API** takes you from credentials to a registered domain with plain HTTP requests
+and structured JSON responses. Under the hood it speaks to the same command set as
+the rest of our platform — each endpoint maps to an established command (a
+`GET /domain/{domain}/availability` call runs `CheckDomain`, a `POST /domain` runs
+`AddDomain`) and returns the familiar `code` / `description` / `property` response
+envelope — so anything you already know about our API carries straight over.
+
+This guide is a quick start, not a full reference: the goal is to get you from an
+account to a **registered test domain in one sitting**, using the five moves every
+integration begins with — authenticate, check a name, create a contact, register
+it, and point it at your nameservers.
+
+:::tip[By the end of this guide you will have]
+- A client **authenticated against the OT&E** environment
+- A **domain availability check** returning a real result
+- A **contact handle** created
+- A **test domain registered** end to end
+- Its **nameservers set** — the full first-integration loop, in REST
+:::
+
+:::note[First things first]
+The REST API automates a funded, secured account — it is not the account setup
+itself. If you have not funded your account, created an API user and enabled
+security, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) first.
+Not sure REST is your best path? Compare it with EPP, the SDKs, WHMCS and the
+Control Panel in
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+:::
+
+## Before you begin
+
+You need a CentralNic Reseller account and its credentials, and you should build
+against **OT&E** (Operational Test & Evaluation) first — a free sandbox where
+nothing is billed and no live domains are touched.
+
+The REST API is served per environment, each under the `/v1` base path:
+
+| Environment | Base URL | Use it for |
+| --- | --- | --- |
+| **OT&E (test)** | `https://rest-ote.rrpproxy.net/v1` | Building and testing — start here |
+| **Production (live)** | `https://rest.rrpproxy.net/v1` | Real registrations, from **28 July 2026** |
+
+:::note[The Swagger reference is the source of truth]
+This page gets you started; the interactive Swagger UI documents every endpoint,
+parameter and response in full and is always current:
+[OT&E Swagger](https://rest-ote.rrpproxy.net/v1/openapi.html) ·
+[Production Swagger](https://rest.rrpproxy.net/v1/openapi.html).
+The API is actively evolving — if you were already using an earlier version,
+review the changes (some are breaking) before you move to the consolidated release,
+and pin your integration to the documented behaviour.
+:::
+
+## Authenticate
+
+Every request is authenticated. The REST API accepts **HTTP Basic authentication**
+(your API login and password) or a **Bearer JWT**. Basic auth is the quickest way
+to start, so we use it throughout — read your credentials from the environment
+rather than hard-coding them.
+
+Start with a connectivity check: `GET /account` runs `StatusAccount` and confirms
+your credentials, environment and network path all work before you touch a domain.
+
+```bash
+# OT&E — credentials read from environment variables
+export CNR_LOGIN="your-api-login"
+export CNR_PASSWORD="your-api-password"
+
+curl -s "https://rest-ote.rrpproxy.net/v1/account" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD"
+```
+
+:::caution[If this fails, it is almost always credentials, environment or the allowlist]
+A failed call here is rarely your code. Confirm you are using an OT&E credential
+against the OT&E host, and that your server's external IP is allowlisted if you have
+the allowlist enabled. If you authenticate as an API **sub-user** whose login has
+the `accountname:username` form, the colon collides with curl's `-u user:password`
+parsing — send the `Authorization: Basic …` header explicitly instead. See
+[Authentication, Credentials & IP Allowlisting](../authentication-credentials-ip/)
+for how logins, API users and the allowlist fit together.
+:::
+
+## Understand the response envelope
+
+Every response — success or failure — comes back in the same JSON envelope, so you
+can handle them uniformly:
+
+```json
+{
+  "code": 200,
+  "description": "Command completed successfully",
+  "property": { "…": "operation-specific result data" },
+  "cltrid": "your-client-transaction-id",
+  "svtrid": "server-transaction-id",
+  "queuetime": 0.0,
+  "runtime": 0.12
+}
+```
+
+Check the **`code`** first: `200` means success. Any other code means the request
+did not complete — read **`description`** for the reason. The **`property`** object
+carries the actual result (availability, the new contact handle, the domain's
+details, and so on). You can send your own **`cltrid`** on any request to correlate
+it with the response in your logs.
+
+## Step 1 — Check availability
+
+`CheckDomain` confirms whether a name is available before you try to register it.
+Always check first — it is the cheapest way to avoid a failed create, and a quick
+confirmation your credentials work.
+
+```bash
+curl -s "https://rest-ote.rrpproxy.net/v1/domain/example.com/availability" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD"
+```
+
+The `property` of the response tells you whether the name is available. To check
+many names at once, use `GET /domain/-/availability` (`CheckDomains`).
+
+## Step 2 — Create a contact
+
+A domain references **contacts** for its registrant, admin, tech and billing roles.
+Create a contact once with `POST /contact` (`AddContact`) and the response returns
+its **handle** (contact ID), which you then reference from the registration.
+
+```bash
+curl -s "https://rest-ote.rrpproxy.net/v1/contact" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "firstname": "Jane",
+    "lastname": "Doe",
+    "street": ["123 Example Street"],
+    "city": "Berlin",
+    "country": "DE",
+    "phone": "+49.3012345678",
+    "email": "jane.doe@example.com"
+  }'
+```
+
+The new handle comes back in the response `property`. Reuse it across every domain
+that needs it.
+
+:::tip[Leave the organization empty for a private person]
+If the contact is a private individual, do **not** put anything in `organization` —
+some registries would treat that text as the registrant name and could publish it
+or reject the registration. For how the four roles, handle reuse and GDPR fit
+together, see
+[Understanding Contacts, Handles & Ownership](../../working-with-domains/contacts-handles-ownership/).
+:::
+
+## Step 3 — Register the domain
+
+`AddDomain` (`POST /domain`) registers the name. Supply the registration **period**,
+the **contact handles** for each role, and your **nameservers**. Note the field
+shapes: `ownercontact0` is a single handle, while `admincontact`, `techcontact`,
+`billingcontact` and `nameserver` are arrays.
+
+```bash
+curl -s "https://rest-ote.rrpproxy.net/v1/domain" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "domain": "example.com",
+    "period": 1,
+    "ownercontact0": "P-XXX12345",
+    "admincontact": ["P-XXX12345"],
+    "techcontact": ["P-XXX12345"],
+    "billingcontact": ["P-XXX12345"],
+    "nameserver": ["ns1.example.net", "ns2.example.net"]
+  }'
+```
+
+A `code` of `200` means the registration succeeded. Many TLDs need extra data —
+supplied as `X-<TLD>-…` fields documented per TLD in the Swagger reference — so if a
+create is rejected for missing data, that is usually what is needed. You can also
+set `renewalmode` (`DEFAULT` / `AUTORENEW` / `AUTOEXPIRE` / `AUTODELETE`) and
+`transferlock` on the create.
+
+## Step 4 — Set the nameservers
+
+To change a domain's delegation after registration, use `ModifyDomain`
+(`PATCH /domain/{domain}`). Send the full set in `nameserver` to replace it, or use
+`addnameserver` / `delnameserver` to change individual hosts.
+
+```bash
+curl -s -X PATCH "https://rest-ote.rrpproxy.net/v1/domain/example.com" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "nameserver": ["ns1.yourdns.net", "ns2.yourdns.net"]
+  }'
+```
+
+The same `PATCH /domain/{domain}` endpoint updates contacts, the transfer lock and
+other domain settings.
+
+## Step 5 — Retrieve the domain
+
+Finally, read the domain back with `StatusDomain` (`GET /domain/{domain}`) and
+confirm it is active with the nameservers and contacts you set. Matching what you
+expect end to end is your green light.
+
+```bash
+curl -s "https://rest-ote.rrpproxy.net/v1/domain/example.com" \
+  -u "$CNR_LOGIN:$CNR_PASSWORD"
+```
+
+That is the full first loop — authenticate, check, create a contact, register and
+set nameservers — over REST. From here, the same pattern (`GET` to read, `POST` to
+create, `PATCH` to modify, `DELETE` to remove) extends to renewals, transfers, DNS
+and everything else in the Swagger reference.
+
+## When something goes wrong
+
+Because every response uses the same envelope, error handling is uniform: branch on
+`code`, and log `description` and `svtrid`. The most common first-integration
+failures are authentication (wrong environment or credentials), the **IP allowlist**
+(the calling server is not listed), and per-TLD **validation** (missing `X-…`
+fields). The [Authentication troubleshooting section](../authentication-credentials-ip/#troubleshooting-connection-failures)
+covers the connection cases, and each endpoint's Swagger page lists its expected
+responses.
+
+## Move to production
+
+When your integration is proven in OT&E, going live is a small, controlled change:
+
+<Steps>
+
+1. **Switch the base URL** from `https://rest-ote.rrpproxy.net/v1` to
+   `https://rest.rrpproxy.net/v1` (available from **28 July 2026**).
+
+2. **Swap your credentials** for your production login and password — OT&E
+   credentials do not work against production, and nothing you created in OT&E
+   carries over.
+
+3. **Re-validate the IP allowlist** for the servers that will carry live traffic.
+
+</Steps>
+
+Your requests and response handling stay identical. Follow the full checklist —
+smoke test and go-live steps included — in
+[Moving from OT&E to Production](../../start-here/moving-from-ote-to-production/).
+
+## What to do next
+
+<CardGrid>
+  <LinkCard title={"Production Swagger reference"} href={"https://rest.rrpproxy.net/v1/openapi.html"} description={"Every endpoint, parameter and response — the authoritative, always-current reference."} />
+  <LinkCard title={"SDK Quick Starts"} href={"../sdk-quick-starts/"} description={"Prefer a library? The same loop in PHP, Node.js or Python."} />
+  <LinkCard title={"Testing Your Integration in CentralNic OT&E"} href={"../testing-in-ote/"} description={"Validate the full check, register and update loop before you go live."} />
+  <LinkCard title={"Moving from OT&E to Production"} href={"../../start-here/moving-from-ote-to-production/"} description={"Swap endpoints and credentials, and re-check the allowlist before go-live."} />
+  <LinkCard title={"Authentication, Credentials & IP Allowlisting"} href={"../authentication-credentials-ip/"} description={"API users, credentials, the allowlist and connection troubleshooting."} />
+  <LinkCard title={"The Complete Domain Lifecycle"} href={"../../working-with-domains/complete-domain-lifecycle/"} description={"What happens to a domain after you register it — renew, transfer, restore, delete."} />
+</CardGrid>

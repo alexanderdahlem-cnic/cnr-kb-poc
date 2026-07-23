@@ -2,50 +2,20 @@
 title: CentralNic Reseller Knowledge Base
 description: Guides, API reference and TLD information for CentralNic Reseller partners — everything your integration needs in one place.
 # Topic-less landing: main navigation is the horizontal header nav.
+# The splash hero is rendered by the custom Hero override (src/components/Hero.astro):
+# a centred title + key-benefits strip. Section bands follow as components below.
 template: splash
 hero:
-  tagline: Build, sell and manage domains, DNS, SSL and more on the CentralNic Reseller platform. Hands-on guides and a complete API reference — everything your integration needs, in one place.
-  actions:
-    - text: Get started
-      link: help/first-steps/
-      icon: right-arrow
-      variant: primary
-    - text: API reference
-      link: api/
-      icon: open-book
-      variant: minimal
+  title: CentralNic Reseller Knowledge Base
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
-import TldSearch from '../../components/TldSearch.astro';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import HowToTeasers from '../../components/HowToTeasers.astro';
+import TldFinder from '../../components/TldFinder.astro';
 
-## Find a TLD
+<TldFinder />
 
-<TldSearch />
-
-## Why build with CentralNic Reseller?
-
-<CardGrid>
-	<Card title="1,000+ TLDs" icon="star">
-		One account and one API to register, transfer and manage domains across more than a thousand TLDs worldwide.
-	</Card>
-	<Card title="Automation-first API" icon="setting">
-		A battle-tested API and EPP interface with a fully documented command reference — automate everything from provisioning to billing.
-	</Card>
-	<Card title="DNS, SSL & more" icon="approve-check">
-		Managed anycast DNS, DNSSEC, SSL certificates and value-added services — all from a single reseller platform.
-	</Card>
-	<Card title="Built for resellers" icon="rocket">
-		Sub-reseller management, flexible pricing and white-label workflows designed for scaling a domain business.
-	</Card>
-</CardGrid>
-
-## First steps
-
-<CardGrid>
-	<LinkCard title="Getting started" href="help/first-steps/" description="Set up your account — verification, payments and your first steps on the platform." />
-	<LinkCard title="Account security" href="help/account-security/" description="Passwords, two-factor authentication and keeping your account secure." />
-</CardGrid>
+<HowToTeasers />
 
 ## Reference & guides
 

@@ -1,0 +1,187 @@
+---
+title: "Migrating from Another Provider"
+description: "Move your domain portfolio to CentralNic Reseller from Openprovider, OpenSRS, Enom, ResellerClub or any other provider — a low-risk framework for exporting, transferring in bulk and cutting over while every domain stays live."
+sidebar:
+  order: 30
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Switching provider can feel like the riskiest thing you will do with your
+portfolio — these are live domains carrying real traffic and email. The good
+news is that a domain migration is, at its core, a sequence of ordinary transfers
+you already know how to run, done in a planned order with the safety nets in
+place. Handled well, your domains keep resolving throughout and your customers
+never notice.
+
+This guide gives you a provider-agnostic framework, short notes for the providers
+resellers most often come from, and — above all — the risk mitigations that keep
+every domain live from start to finish.
+
+:::tip[By the end of this guide you will have]
+- A clear **migration framework** you can apply to any source provider
+- A plan to **export your domains and auth codes** from your current provider
+- A **bulk transfer strategy** with the pre-checks that prevent rejections
+- The **risk mitigations** that keep domains resolving throughout the cutover
+- A realistic sense of **timeline** and where to get help for large portfolios
+:::
+
+:::note[First things first]
+A migration lands into a working CentralNic Reseller account. If you have not set
+one up yet, start with [Your First Day as a CentralNic Reseller](../../start-here/your-first-day/)
+so your account is funded and secured before any domains arrive.
+:::
+
+## How a domain migration works
+
+A migration is a set of **inbound transfers**: you move each domain's sponsoring
+registrar from your current provider to CentralNic Reseller. Two facts make this
+far less scary than it sounds:
+
+- **Domains stay live during a transfer.** A transfer changes who manages the
+  domain — it does not, by itself, change where the domain resolves. As long as
+  the nameservers keep answering, the website and email keep working throughout.
+- **A transfer usually adds a year.** For most gTLDs an inbound transfer includes
+  a one-year renewal, so migrating also extends your registrations.
+
+The mechanics of a single transfer in — auth codes, eligibility, status tracking
+and failure handling — are covered in depth in
+[Transfer a Domain into CentralNic Reseller](../../working-with-domains/transfer-a-domain-in/).
+This page is about doing that at portfolio scale, safely.
+
+## The migration framework
+
+The same six steps apply whatever you are migrating from. Work through them in
+order — the preparation steps are what turn a nerve-wracking cutover into a
+routine one.
+
+<Steps>
+
+1. **Inventory and export.** Export the full list of domains from your current
+   provider, along with their expiry dates and current nameservers. You will use
+   this as your migration checklist and your before/after comparison.
+
+2. **Prepare each domain at the source.** For every domain, at your current
+   provider: unlock it (remove `clientTransferProhibited`), disable WHOIS/domain
+   privacy if it blocks the transfer, confirm the administrative contact email is
+   current (transfer approvals are often sent there), and retrieve the
+   **authorisation ("auth" or EPP) code**.
+
+3. **Recreate DNS and contacts in CentralNic Reseller first.** Before you move
+   anything, set up your [DNS zones](../../working-with-domains/dns-automation/)
+   and [contact handles](../../working-with-domains/contacts-handles-ownership/)
+   in CentralNic Reseller so they are ready and waiting. This is the single most
+   important risk mitigation — see below.
+
+4. **Submit the transfers.** Start the inbound transfers, in batches you can
+   monitor. Begin with a small pilot batch to confirm your process end to end,
+   then scale up.
+
+5. **Monitor to completion.** Track each transfer's status through to completion
+   and watch for the ones that need action (an approval, a corrected email, a
+   removed lock). Handle rejections as they surface rather than at the end.
+
+6. **Verify after cutover.** Reconcile the transferred domains against your
+   inventory, confirm nameservers and contacts are correct, and set your
+   [renewal modes](../../working-with-domains/complete-domain-lifecycle/) so the
+   portfolio behaves the way you expect going forward.
+
+</Steps>
+
+## Keeping every domain live throughout
+
+The one outcome to avoid is a domain going dark mid-migration. Three rules
+prevent it:
+
+:::caution[Replicate DNS before you transfer — not after]
+If your domains currently use your old provider's nameservers, their resolution
+depends on a provider you are leaving. **Recreate the DNS zones in CentralNic
+Reseller and cut nameservers over first**, or keep the existing authoritative
+nameservers in place until the transfer completes. Never let a domain's only
+working DNS live at the registrar you are moving away from.
+:::
+
+:::caution[Mind expiry dates and the transfer window]
+Do not transfer a domain that is about to expire — renew it at the source first,
+or you risk it lapsing mid-transfer. Also note that many gTLDs enforce a
+**60-day lock** after a registration or a previous transfer, during which a domain
+cannot be transferred again. This is registry/ICANN policy and varies by TLD, so
+check eligibility per domain (your inventory export makes this easy to spot).
+:::
+
+:::tip[Pilot, then scale]
+Run a small first batch — a handful of low-risk domains — all the way through
+before committing your whole portfolio. It validates your export, your auth codes
+and your monitoring in miniature, so the bulk run holds no surprises.
+:::
+
+## Provider-specific notes
+
+Every major provider lets you export your domains and retrieve auth codes — the
+details differ, but the shape is the same. Use your current provider's own
+documentation for the exact clicks; the notes below are just where to look.
+
+- **Openprovider** — export your domain list from the control panel or via their
+  API, unlock domains and pull auth codes per domain. Openprovider resellers often
+  already run EPP, which can make the CentralNic Reseller side familiar — see the
+  [EPP Integration Guide](../../building-your-integration/epp-integration-guide/).
+- **OpenSRS (Tucows)** — retrieve your domain list and auth codes from the OpenSRS
+  management console or API, and check that domain locking and privacy are cleared
+  before requesting each transfer.
+- **Enom** — export domains and obtain auth (EPP) codes from the Enom account,
+  unlock domains, and confirm the admin contact email so transfer approvals reach
+  you.
+- **ResellerClub** — export your domain list and auth codes from the reseller
+  control panel, disable privacy protection where enabled, and unlock before
+  transferring.
+
+:::caution[Bring the data, not the documentation]
+Export **your own** domain data — lists, auth codes, contact and DNS records — from
+whichever provider you are leaving. Do not rely on copied third-party
+instructions here; each provider maintains its own current export steps, and
+those are the authoritative source for their side of the move.
+:::
+
+## Migrating a large portfolio
+
+For a handful of domains, the self-service framework above is all you need. For a
+large portfolio, the transfer volume, sequencing and reconciliation are worth
+planning carefully — and you may not have to do it alone.
+
+:::danger[Internal source — please review]
+CentralNic Reseller appears to offer **assisted / managed migration** for larger
+portfolios — an internal 2021 **draft** process ("Domain Migration Mapping",
+Confluence page 838395437) describes a Migration Project Manager, a data-intake
+step, pre-transfer checks, a coordinated bulk transfer and a post-migration
+report, and a related "Migration documents" page (6452609032) holds a
+bulk registrar-to-registrar transfer template. None of this is published in the
+public knowledge base and it is a draft, so the exact offering, process, timeline
+and any SLA must be confirmed with the CentralNic Reseller team before it is
+stated to customers. Based on: internal, unconfirmed — confirm with your account
+manager / the migrations team.
+:::
+
+Whatever assistance is available, the self-service mechanics are the same
+underneath, so preparing your export, auth codes, DNS and contacts as described
+above is never wasted effort.
+
+## A realistic timeline
+
+Plan around the parts you do not control. Preparation (export, unlock, auth codes,
+recreating DNS and contacts) is entirely in your hands and can be done ahead of
+time. The transfers themselves are **asynchronous**: each inbound transfer can take
+up to several days to complete, depending on the TLD and how quickly the losing
+registrar releases it, and some registries wait out an acknowledgement period. So
+schedule the *submission* as a short window, but expect *completion* to trail over
+days — and keep DNS live throughout, which is exactly why the DNS-first rule above
+matters.
+
+## What to do next
+
+<CardGrid>
+  <LinkCard title={"Transfer a Domain into CentralNic Reseller"} href={"../../working-with-domains/transfer-a-domain-in/"} description={"The full mechanics of a single inbound transfer — the building block of every migration."} />
+  <LinkCard title={"DNS Automation with CentralNic APIs"} href={"../../working-with-domains/dns-automation/"} description={"Recreate your zones in CentralNic Reseller before you cut over."} />
+  <LinkCard title={"Which Integration Method Should I Choose?"} href={"../../start-here/which-integration-method/"} description={"Decide how you will manage the portfolio once it has landed."} />
+  <LinkCard title={"Building Your Own Registrar Platform"} href={"../building-your-own-registrar-platform/"} description={"Fold the migrated portfolio into a full platform build."} />
+  <LinkCard title={"Reference Architectures for Domain Resellers"} href={"../reference-architectures/"} description={"Pick the architecture that fits your business after the move."} />
+</CardGrid>

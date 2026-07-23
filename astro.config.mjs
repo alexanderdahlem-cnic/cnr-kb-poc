@@ -49,6 +49,8 @@ export default defineConfig({
         // Force dark mode + replace the theme toggle with account links.
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
+        // Custom splash hero (homepage): centred title + key-benefits strip.
+        Hero: './src/components/Hero.astro',
         // Horizontal topic nav in the header; sidebar shows only topic items.
         Header: './src/components/Header.astro',
         Sidebar: './src/components/Sidebar.astro',

@@ -1,0 +1,272 @@
+---
+// Homepage "guided journey" band for the How-To hub. Presents the four How-To
+// sub-categories as numbered steps along a connecting line — from day one to
+// advanced — each with a tagline, two featured articles and a "See all" CTA.
+// Borderless and airy (deliberately not a row of boxes). Links are base-aware.
+import { Icon } from '@astrojs/starlight/components';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+interface Article { title: string; href: string; }
+interface Step {
+  title: string;
+  icon: string;
+  tagline: string;
+  href: string;
+  articles: Article[];
+}
+
+const steps: Step[] = [
+  {
+    title: 'Start Here',
+    icon: 'rocket',
+    tagline: 'New to CentralNic Reseller? Set up your account and pick your path.',
+    href: '/how-to/start-here/',
+    articles: [
+      { title: 'Your First Day', href: '/how-to/start-here/your-first-day/' },
+      { title: 'Which Integration Method?', href: '/how-to/start-here/which-integration-method/' },
+    ],
+  },
+  {
+    title: 'Build Your Integration',
+    icon: 'puzzle',
+    tagline: 'Connect and register your first domain — REST, EPP or an SDK.',
+    href: '/how-to/building-your-integration/',
+    articles: [
+      { title: 'REST API Integration Guide', href: '/how-to/building-your-integration/rest-api-integration-guide/' },
+      { title: 'EPP Integration Guide', href: '/how-to/building-your-integration/epp-integration-guide/' },
+    ],
+  },
+  {
+    title: 'Work with Domains',
+    icon: 'list-format',
+    tagline: 'Master the everyday flows: lifecycle, transfers, contacts and DNS.',
+    href: '/how-to/working-with-domains/',
+    articles: [
+      { title: 'The Complete Domain Lifecycle', href: '/how-to/working-with-domains/complete-domain-lifecycle/' },
+      { title: 'Transfer a Domain In', href: '/how-to/working-with-domains/transfer-a-domain-in/' },
+    ],
+  },
+  {
+    title: 'Go Further',
+    icon: 'star',
+    tagline: 'Scale up — build a platform, choose an architecture or migrate in.',
+    href: '/how-to/advanced-topics/',
+    articles: [
+      { title: 'Build Your Own Registrar Platform', href: '/how-to/advanced-topics/building-your-own-registrar-platform/' },
+      { title: 'Migrating from Another Provider', href: '/how-to/advanced-topics/migrating-from-another-provider/' },
+    ],
+  },
+];
+---
+
+<section class="journey" aria-labelledby="journey-title">
+  <div class="journey__head">
+    <p class="journey__eyebrow">Get started</p>
+    <h2 id="journey-title" class="journey__title">Your path, step by step</h2>
+    <p class="journey__sub">Follow the guides from your first day to a live production integration — what to do, in what order, and why.</p>
+  </div>
+
+  <ol class="journey__steps">
+    {steps.map((s, i) => (
+      <li class="step">
+        <span class="step__node" aria-hidden="true"><Icon name={s.icon} size="1.4rem" /></span>
+        <h3 class="step__title">{s.title}</h3>
+        <p class="step__tagline">{s.tagline}</p>
+        <ul class="step__links">
+          {s.articles.map((a) => (
+            <li>
+              <a href={base + a.href}>
+                <span class="step__chevron" aria-hidden="true">›</span>
+                <span>{a.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a class="step__cta" href={base + s.href}>
+          See all articles
+          <span class="step__arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .journey {
+    margin: clamp(3rem, 2rem + 3.5vw, 5rem) 0;
+  }
+  .journey__head {
+    text-align: center;
+    max-width: 46rem;
+    margin: 0 auto 2.5rem;
+  }
+  .journey__eyebrow {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--sl-color-text-accent);
+  }
+  .journey__title {
+    margin: 0.35rem 0 0;
+    font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.1rem);
+    line-height: 1.2;
+    color: var(--sl-color-white);
+  }
+  .journey__sub {
+    margin: 0.65rem 0 0;
+    color: var(--sl-color-gray-3);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  /* The path: 4 numbered steps along a connecting line. */
+  .journey__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1.5rem;
+    position: relative;
+  }
+  /* Connecting line, threaded through the node centres (node is 3rem tall). */
+  .journey__steps::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 1.5rem;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sl-color-accent), var(--sl-color-accent-high));
+    opacity: 0.5;
+  }
+
+  .step {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .step__node {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--sl-color-accent);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    /* Page-coloured ring so the node reads as a bead sitting on the line. */
+    box-shadow: 0 0 0 6px var(--sl-color-bg, var(--sl-color-black)), 0 6px 14px -6px var(--sl-color-accent);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .step__title {
+    margin: 1rem 0 0;
+    min-height: 2.6em;            /* reserve up to 2 lines so rows line up */
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: var(--sl-color-white);
+  }
+  .step__tagline {
+    margin: 0.35rem 0 1rem;
+    min-height: 4.4em;            /* reserve up to 3 lines so links line up */
+    max-width: 15rem;
+    color: var(--sl-color-gray-3);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .step__links {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    width: 100%;
+  }
+  .step__links a {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.35rem;
+    color: var(--sl-color-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+  .step__links a:hover,
+  .step__links a:focus-visible { color: var(--sl-color-text-accent); }
+  .step__chevron {
+    color: var(--sl-color-accent);
+    font-weight: 700;
+    transition: transform 0.15s ease;
+  }
+  .step__links a:hover .step__chevron { transform: translateX(2px); }
+
+  .step__cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+  }
+  .step__cta:hover { text-decoration: underline; }
+  .step__arrow { transition: transform 0.18s ease; }
+  .step__cta:hover .step__arrow { transform: translateX(4px); }
+
+  /* Lift the node on hover/focus anywhere in the step. */
+  .step:hover .step__node,
+  .step:focus-within .step__node {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 6px var(--sl-color-bg, var(--sl-color-black)), 0 12px 22px -8px var(--sl-color-accent);
+  }
+
+  /* Tablet: two lanes. */
+  @media (max-width: 60rem) and (min-width: 44.0625rem) {
+    .journey__steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem; }
+    .journey__steps::before { display: none; }
+    .step__title,
+    .step__tagline { min-height: 0; }
+  }
+
+  /* Mobile: a vertical timeline. */
+  @media (max-width: 44rem) {
+    .journey__steps { grid-template-columns: 1fr; gap: 2.25rem; }
+    .journey__steps::before {
+      top: 1.5rem;
+      bottom: 1.5rem;
+      left: 50%;
+      right: auto;
+      width: 2px;
+      height: auto;
+      transform: translateX(-1px);
+      background: linear-gradient(180deg, var(--sl-color-accent), var(--sl-color-accent-high));
+    }
+    .step__title,
+    .step__tagline { min-height: 0; }
+    .step__tagline { margin-bottom: 0.85rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .step__node,
+    .step__arrow,
+    .step__chevron { transition: none; }
+    .step:hover .step__node,
+    .step:focus-within .step__node { transform: none; }
+  }
+</style>

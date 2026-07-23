@@ -1,0 +1,208 @@
+---
+// Full-width homepage band that turns the plain "Find a TLD" search into a
+// marketing feature: a headline about the breadth of the portfolio, the search
+// widget itself, and quick links to popular TLDs. Sits on a lightly raised,
+// accent-tinted surface so it stands out from the rest of the page.
+import TldSearch from './TldSearch.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Popular TLDs — only ones that resolve to a real page in this build.
+const popular = [
+  { name: '.com', url: '/domains/tlds/com/' },
+  { name: '.io', url: '/domains/tlds/io/' },
+  { name: '.de', url: '/domains/tlds/de/' },
+  { name: '.co.uk', url: '/domains/tlds/co.uk/' },
+  { name: '.xyz', url: '/domains/tlds/xyz/' },
+  { name: '.us', url: '/domains/tlds/us/' },
+];
+const allTldsHref = base + '/domains/tlds/';
+---
+
+<section class="tldfinder" aria-labelledby="tldfinder-title">
+  <div class="tldfinder__bg" aria-hidden="true"></div>
+
+  <div class="tldfinder__inner">
+    <p class="tldfinder__eyebrow">1,000+ TLDs · one account</p>
+    <h2 id="tldfinder-title" class="tldfinder__title">One of the industry's largest TLD portfolios</h2>
+    <p class="tldfinder__sub">
+      From <strong>.com</strong> to the newest namespaces — register, transfer and
+      manage more than a thousand TLDs through a single CentralNic Reseller platform.
+      Start typing to jump straight to any TLD's details.
+    </p>
+
+    <div class="tldfinder__search">
+      <TldSearch />
+    </div>
+
+    <div class="tldfinder__popular">
+      <span class="tldfinder__popular-label">Popular</span>
+      <ul class="tldfinder__chips">
+        {popular.map((t) => (
+          <li><a class="tldfinder__chip" href={base + t.url}>{t.name}</a></li>
+        ))}
+      </ul>
+      <a class="tldfinder__all" href={allTldsHref}>
+        Browse all TLDs
+        <span class="tldfinder__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tldfinder {
+    position: relative;
+    margin: clamp(3rem, 2rem + 3.5vw, 5rem) 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 1rem;
+    /* No overflow:hidden here — the search dropdown must be free to extend
+       below. The decorative glow is clipped by the bg layer instead. */
+  }
+
+  /* Raised, accent-tinted surface + soft glow, clipped to the rounded shape. */
+  .tldfinder__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    overflow: hidden;
+    background: var(--sl-color-gray-6, rgba(127, 127, 127, 0.06));
+  }
+  .tldfinder__bg::before,
+  .tldfinder__bg::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sl-color-accent) 0%, transparent 70%);
+    filter: blur(6px);
+  }
+  .tldfinder__bg::before {
+    width: 36rem;
+    height: 36rem;
+    top: -18rem;
+    right: -10rem;
+    opacity: 0.16;
+  }
+  .tldfinder__bg::after {
+    width: 26rem;
+    height: 26rem;
+    bottom: -16rem;
+    left: -8rem;
+    opacity: 0.1;
+  }
+
+  .tldfinder__inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(1.75rem, 1rem + 3vw, 3rem) clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+    text-align: center;
+  }
+
+  .tldfinder__eyebrow {
+    margin: 0;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--sl-color-text-accent);
+  }
+  .tldfinder__title {
+    margin: 0.4rem 0 0;
+    font-size: clamp(1.6rem, 1.1rem + 2vw, 2.4rem);
+    line-height: 1.15;
+    color: var(--sl-color-white);
+  }
+  .tldfinder__sub {
+    margin: 0.75rem auto 0;
+    max-width: 42rem;
+    color: var(--sl-color-gray-2);
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+  .tldfinder__sub strong { color: var(--sl-color-white); font-weight: 600; }
+
+  /* The embedded search: centred and given room; hide its own label/hint since
+     this band already provides the heading and context. */
+  .tldfinder__search {
+    max-width: 34rem;
+    margin: 1.5rem auto 0;
+  }
+  .tldfinder__search :global(.tld-search__label) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .tldfinder__search :global(.tld-search__hint) { display: none; }
+
+  .tldfinder__popular {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .tldfinder__popular-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--sl-color-gray-3);
+  }
+  .tldfinder__chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tldfinder__chip {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    background: var(--sl-color-black);
+    color: var(--sl-color-white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .tldfinder__chip:hover,
+  .tldfinder__chip:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--sl-color-accent);
+    background: var(--sl-color-accent);
+    color: #fff;
+  }
+  .tldfinder__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sl-color-text-accent);
+    text-decoration: none;
+  }
+  .tldfinder__all:hover { text-decoration: underline; }
+  .tldfinder__arrow { transition: transform 0.18s ease; }
+  .tldfinder__all:hover .tldfinder__arrow { transform: translateX(4px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tldfinder__chip,
+    .tldfinder__arrow { transition: none; }
+    .tldfinder__chip:hover,
+    .tldfinder__chip:focus-visible { transform: none; }
+  }
+</style>
