@@ -8,15 +8,8 @@ For AdultBlock, in the gaining registrar's account, there will not be an auth co
   
 For GlobalBlock, a successful transfer does not clear the auth code, the user has to actively delete it.
 
-## Possible Gateways
-
-The command _TransferDomainBlocking - Approve_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

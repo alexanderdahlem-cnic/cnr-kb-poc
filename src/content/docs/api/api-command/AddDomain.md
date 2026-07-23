@@ -7,15 +7,8 @@ _(Related EPP Command » [Domain:Create](../../epp-command/domain-create/ "Domai
 
 This commands invokes several processes: It checks if the domainname is available at the registry, creates the contacthandles in the registry and starts the registration at the registry. For a basic AddDomain command only few common parameters are required. For some TLDs special parameters are required in order to register Domains. All special parameters start with X-<TLD>- and can be found in the specific TLD Documentation.
 
-## Possible Gateways
-
-The command _AddDomain_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 -   [Default handling](#)
 -   [Premium features](#)

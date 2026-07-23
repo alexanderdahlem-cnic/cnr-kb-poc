@@ -7,15 +7,8 @@ _(Related EPP Command » [Domain:Check](../../epp-command/domain-check/ "Domain:
 
 This command checks, if the desired domain name is available and may be registered at the registry. In case of RAM and (!) premium domains, the checkDomain command will show the premium fee from the registry in the response to enable that you are aware of the registry fees as well. RAM fee will be shown with DomainPrice command.
 
-## Possible Gateways
-
-The command _CheckDomain_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 -   [Default handling](#)
 -   [Premium features](#)

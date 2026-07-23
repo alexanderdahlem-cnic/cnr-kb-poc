@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  âž¤ Hosting - Mailbox â
 
 This command allows you to delete mailboxes. Please note that the mailbox must be empty before it can be deleted. Existing email addresses needs to be deleted first.
 
-## Possible Gateways
-
-The command _DeleteMailbox_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

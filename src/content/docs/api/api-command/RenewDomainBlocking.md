@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultB
 
 This command will extend an existing domain blocking product by a set number of years. The expirationDate parameter is the current expiration year on the domain block. The period parameter allows you to set the number of years you wish to extend it by. For AdultBlock, it is between 1 to 10. For GlobalBlock, it is between 1 to 3. To determine the maximum number of years accepted in the period, the rule is the expiration year plus the period cannot exceed the current year plus the period.
 
-## Possible Gateways
-
-The command _RenewDomainBlocking_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

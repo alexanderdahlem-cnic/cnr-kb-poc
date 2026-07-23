@@ -21,15 +21,8 @@ The PushObject command does the following: Besides moving the domain from one ac
 
 The command automatically identifies the SSL system (whether it's legacy or 2.0) based on the provided ID. It will select all Certificates, CertificateOrders, and CertificateContacts linked to the specified Certificate and transfer them collectively. All relationships between these various objects will remain intact. CertificateContacts will be cloned, and all Certificates in the new account will utilize the copied version of the data.
 
-## Possible Gateways
-
-The command _PushObject_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

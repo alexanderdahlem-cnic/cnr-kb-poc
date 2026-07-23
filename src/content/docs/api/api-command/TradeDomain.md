@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ TradeDom
 
 It is not possible to change the owner name or company name of a .AM, .AT, .BE, .CH, .CN, .DM, .ES, .FI, .GR, .HK, .IE, .IT, .LI, .LU, .MA, .NO, .NU, .PT, .SG, .TRAVEL or .CO.ZA domain through the ModifyDomain command by substituting the current owner contact with a new one. In such a case you have to request a so-called "trade" and state the new owner contact.
 
-## Possible Gateways
-
-The command _TradeDomain_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

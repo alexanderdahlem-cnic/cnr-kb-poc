@@ -9,15 +9,8 @@ After a domain has been added to the Aftermarket System, a **Form Of Authorisati
   
 The respective URL for approving Sedo listings is http://sedo.aftermarketapproval.com/ Once the Admin Contact approved the listing, the resepective domain(s) will be submitted for listing at the selected provider. If after 5 days no approval is received, the domain will automatically be removed from the Aftermarket System in RRPproxy.
 
-## Possible Gateways
-
-The command _AddAftermarketDomain_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

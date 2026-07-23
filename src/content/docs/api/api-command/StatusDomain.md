@@ -7,15 +7,8 @@ _(Related EPP Command » [Domain:Info](../../epp-command/domain-info/ "Domain:In
 
 The StatusDomain command enables you to check the current status of a domain name. It gives information about the created date, expiration, renewal mode, transfer-lock, etc.
 
-## Possible Gateways
-
-The command _StatusDomain_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 -   [Default handling](#)
 -   [Premium features](#)

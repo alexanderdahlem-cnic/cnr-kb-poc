@@ -7,15 +7,8 @@ _(Related EPP Command » [Domain:Check](../../epp-command/domain-check/ "Domain:
 
 This is exactly the same as CheckDomain, however with a multiple domain name check. CheckDomains for up to 32 domain names. Simply enter the respective domains with the TLD.
 
-## Possible Gateways
-
-The command _CheckDomains_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 -   [Default handling](#)
 -   [Premium features](#)

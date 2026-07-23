@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultB
 
 This is used to transfer the AdultBlock|AdultBlockPlus from one account to another within CentralNic Reseller. If a valid "authcode" is used, the transfer will be processed in real time. The owner contact will be cloned, new authcode will be generated and both modified into the domainblock. If no "authocode" is used, the pending request must be approved/denied by the losing account or it will be auto-denied after 5 days. To approve/deny, please see the relevant "TransferDomainBlocking" API. If the request is denied and if there is a transfer fee (1 additional year), it will be refunded in full. If no "NORENEW" parameter is transmitted, the account-wide setting is used. If "NORENEW=0", the transfer fee will be charged by adding an additional year on top. If "NORENEW=1", there will be no fees.
 
-## Possible Gateways
-
-The command _TransferDomainBlocking - UserTransfer_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

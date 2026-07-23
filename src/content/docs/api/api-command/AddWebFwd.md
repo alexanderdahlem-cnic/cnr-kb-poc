@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ AddWebFw
 
 AddWebFwd offers forwarding as unmasked permanent 301 redirect (RD), masked frame redirect (MRD) and redirect to static content (SELF). The static content can be used for minisites. Keeping requested URL paths and parameters and forwarding them to the target is optionally possible.
 
-## Possible Gateways
-
-The command _AddWebFwd_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

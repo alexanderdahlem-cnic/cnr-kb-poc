@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ QueryF
 
 With the QueryForeignTransferList API command, a registrar can query all currently running external transfers, that have one of theses status: FOREIGN\_PENDING, USERTRANSFER, PENDING, INITIATED. For each domain also the available actions are returned that are supported. This could be empty, approve, deny or approve and deny.
 
-## Possible Gateways
-
-The command _QueryForeignTransferList_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

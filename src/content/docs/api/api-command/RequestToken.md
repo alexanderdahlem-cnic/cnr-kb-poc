@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ Request
 
 To request a token to be sent within an email to a given Contact Handle or Domain. If a Domain is stated an email with a token will be sent to all linked contact handles. In case a contact handle is used multiple times (i.e. for Admin and Tech) only one email per contact handle is sent.
 
-## Possible Gateways
-
-The command _RequestToken_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

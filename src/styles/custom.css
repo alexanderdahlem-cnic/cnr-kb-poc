@@ -60,6 +60,43 @@
   color: #ffffff;
 }
 
+/* "Possible Gateways" -> coloured badges, one colour per gateway type. */
+.gw-list {
+  margin: 1rem 0;
+}
+.gw-list__label {
+  display: block;
+  font-size: var(--sl-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-gray-3);
+  margin-bottom: 0.5rem;
+}
+.gw-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.gw-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: var(--sl-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.gw-mreg   { background: #7c3aed; }              /* MREG   – violet */
+.gw-https  { background: #16a34a; }              /* HTTPS  – green  */
+.gw-soap   { background: #2563eb; }              /* SOAP   – blue   */
+.gw-xmlrpc { background: #ea580c; }              /* XML-RPC– orange */
+.gw-smtp   { background: #0891b2; }              /* SMTP   – cyan   */
+.gw-sms    { background: #db2777; }              /* SMS    – pink   */
+.gw-default { background: var(--sl-color-gray-4); color: var(--sl-color-white); }
+
 /* Brand logo (top-left) — scale the wide wordmark to fit the header nicely. */
 .site-title img {
   height: 1.9rem;

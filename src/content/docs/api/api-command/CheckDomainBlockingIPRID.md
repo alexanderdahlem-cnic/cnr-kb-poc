@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultB
 
 This command can be used to retrieve the specific IPR related to the label. For AdultBlock, if the label exists, the IPR will be returned. For GlobalBlock, if the label exists, then the full details will be provided. Please kindly note that there can be more than one IPR for the same label, if this is the case then all matching results will be returned.
 
-## Possible Gateways
-
-The command _CheckDomainBlockingIPRID_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

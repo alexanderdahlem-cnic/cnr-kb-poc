@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ SetAut
 
 This command let you set an authorisation code for a .DE, .BE, .EU, and .NO. There are two different types of authinfos for .DE. Type 1 can only be set by the current provider. Type 2 can be set by any provider and will be sent per mail to the German owner or admin. Remember that the type 2 authinfo will be charged from your account! Authinfo type2 cannot be deleted! All authinfo expire 30 days after creation and should only be set if the domain is up for a transfer.
 
-## Possible Gateways
-
-The command _SetAuthcode_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

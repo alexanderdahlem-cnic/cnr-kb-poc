@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultB
 
 Request an inbound transfer for a domain block from another registrar. Please kindly note, for AdultBlock an additional 1 year will be added and billed accordingly. For GlobalBlock, completing a transfer will not renew the block or update its expiry date.
 
-## Possible Gateways
-
-The command _TransferDomainBlocking - Request_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

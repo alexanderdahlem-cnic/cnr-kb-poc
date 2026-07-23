@@ -5,15 +5,8 @@ description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryPr
 
 Please be aware that this command only returns premium domain prices from registries that offer fixed lists of premium domain names and prices. However, for most of the premium domains, the registries do not offer fixed lists but only support the usage of the Fee Extension which we strongly recommend to all our API users as well.
 
-## Possible Gateways
-
-The command _QueryPremiumDomainList_ is available via the following gateways:
-
--   [MREG](../../connecting/centralnic-reseller-metaregistry/)
--   [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
--   [SOAP](../../connecting/simple-object-access-protocol/)
--   [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
--   [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
+<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
 
 ## Required Parameters
 

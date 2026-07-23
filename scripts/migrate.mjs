@@ -268,6 +268,23 @@ function convert(bladePath) {
     $el.replaceWith(`\n\nAPIIOBLOCK${idx}ENDBLOCK\n\n`);
   });
 
+  // "Possible Gateways" lists -> small coloured badges (one colour per gateway).
+  scope.find('.gateways').each((_, el) => {
+    const $el = $(el);
+    const badges = [];
+    $el.find('li').each((_, li) => {
+      const type = ($(li).attr('class') || 'default').trim().split(/\s+/)[0] || 'default';
+      const label = $(li).text().replace(/\s+/g, ' ').trim();
+      if (label) badges.push(`<span class="gw-badge gw-${escapeHtml(type)}">${escapeHtml(label)}</span>`);
+    });
+    if (!badges.length) return;
+    const idx = apiBlocks.length;
+    apiBlocks.push(
+      `<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>\n<div class="gw-badges">${badges.join('')}</div></div>`
+    );
+    $el.replaceWith(`\n\nAPIIOBLOCK${idx}ENDBLOCK\n\n`);
+  });
+
   // Overview/teaser pages: turn the ".box" link cards into Starlight <LinkCard>s.
   // (Links inside were already rewritten by the loop above.)
   const cards = [];
