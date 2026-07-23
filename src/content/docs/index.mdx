@@ -19,17 +19,6 @@ hero:
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Explore the platform
-
-<CardGrid>
-	<LinkCard title="Getting started" href="help/first-steps/" description="Set up your account — verification, payments and your first steps on the platform." />
-	<LinkCard title="Domains" href="domains/" description="Registration, transfers, ICANN policies, ownerchange and premium domains." />
-	<LinkCard title="DNS & KeyDNS" href="dns/" description="Zone management, DNSSEC and our anycast/unicast nameserver infrastructure." />
-	<LinkCard title="SSL Certificates" href="ssl/" description="Ordering, validation methods, reissue and the full certificate lifecycle." />
-	<LinkCard title="Services" href="services/" description="ACL, aftermarket, brand protection, SMS and platform plugins." />
-	<LinkCard title="API Reference" href="api/" description="The complete command reference for the CentralNic Reseller API and EPP." />
-</CardGrid>
-
 ## Why build with CentralNic Reseller?
 
 <CardGrid>
@@ -47,6 +36,19 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 	</Card>
 </CardGrid>
 
-:::tip[New here?]
-Start with the [first steps guide](help/first-steps/) to set up your account, then jump into the [API reference](api/) when you're ready to automate.
-:::
+## First steps
+
+<CardGrid>
+	<LinkCard title="Getting started" href="help/first-steps/" description="Set up your account — verification, payments and your first steps on the platform." />
+	<LinkCard title="Account security" href="help/account-security/" description="Passwords, two-factor authentication and keeping your account secure." />
+</CardGrid>
+
+## Reference & guides
+
+<CardGrid>
+	<LinkCard title="API Reference" href="api/" description="The complete command reference for the CentralNic Reseller API and EPP." />
+	<LinkCard title="Domains" href="domains/" description="Registration, transfers, ICANN policies, ownerchange and premium domains." />
+	<LinkCard title="DNS & KeyDNS" href="dns/" description="Zone management, DNSSEC and our anycast/unicast nameserver infrastructure." />
+	<LinkCard title="SSL Certificates" href="ssl/" description="Ordering, validation methods, reissue and the full certificate lifecycle." />
+	<LinkCard title="Services" href="services/" description="ACL, aftermarket, brand protection, SMS and platform plugins." />
+</CardGrid>
