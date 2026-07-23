@@ -1,9 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-// Curated sidebar with humanised, capitalised labels — generated from the
-// content tree by scripts/gen-sidebar.mjs (run after migration).
-import sidebar from './src/sidebar.json' with { type: 'json' };
+import starlightSidebarTopics from 'starlight-sidebar-topics';
+// Topics power the horizontal main nav + per-section sidebar. Generated from
+// the content tree by scripts/gen-sidebar.mjs (run after migration).
+import topics from './src/topics.json' with { type: 'json' };
+
+// Safety net: map any page under a section to its topic even if it is not
+// explicitly listed in that topic's `items` (prevents build-time throws).
+const topicGlobs = Object.fromEntries(
+  topics.map((t) => [t.id, [`/${t.id}`, `/${t.id}/**`]]),
+);
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,19 +30,20 @@ export default defineConfig({
         src: './src/assets/logo-centralnicreseller.svg',
         replacesTitle: true,
       },
-      // Full-text search (Pagefind) ships with Starlight by default.
-      social: [
-        {
-          icon: 'external',
-          label: 'centralnicreseller.com',
-          href: 'https://www.centralnicreseller.com',
-        },
+      // Sidebar is provided per-topic by the plugin below (no global `sidebar`).
+      plugins: [
+        starlightSidebarTopics(topics, {
+          exclude: ['/'], // homepage is a topic-less landing
+          topics: topicGlobs,
+        }),
       ],
-      sidebar,
-      // Force dark mode + replace the theme toggle with account links.
       components: {
+        // Force dark mode + replace the theme toggle with account links.
         ThemeProvider: './src/components/ThemeProvider.astro',
         ThemeSelect: './src/components/ThemeSelect.astro',
+        // Horizontal topic nav in the header; sidebar shows only topic items.
+        Header: './src/components/Header.astro',
+        Sidebar: './src/components/Sidebar.astro',
       },
       customCss: ['./src/styles/custom.css'],
     }),

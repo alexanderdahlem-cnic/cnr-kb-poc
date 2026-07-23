@@ -22,7 +22,7 @@ const KB_ROOT = join(SRC_REPO, 'resources/views/cnr/kb');
 const OUT_ROOT = join(process.cwd(), 'src/content/docs');
 
 // Sections to migrate for the POC. Everything else (esp. domains/tlds) skipped.
-const INCLUDE = ['help', 'dns', 'ssl', 'services', 'domains', 'api'];
+const INCLUDE = ['help', 'dns', 'ssl', 'services', 'domains', 'api', 'hosting'];
 // Within domains, skip the mass TLD pages.
 const SKIP_DIRS = ['domains/tlds'];
 

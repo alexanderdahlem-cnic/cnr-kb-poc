@@ -1,0 +1,92 @@
+---
+// Override of Starlight's Header: adds a horizontal main navigation of the
+// topics (API / Domains / Hosting / SSL / DNS / Services / Help). Clicking a
+// topic navigates to that section, whose sub-navigation then shows on the left.
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+import config from 'virtual:starlight/user-config';
+
+const shouldRenderSearch =
+  config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+
+// `topic.link` is already base-/locale-resolved by the plugin — use as-is.
+const { topics = [] } = Astro.locals.starlightSidebarTopics ?? {};
+---
+
+<div class="header sl-flex">
+  <div class="title-wrapper sl-flex">
+    <SiteTitle />
+  </div>
+
+  {
+    topics.length > 0 && (
+      <nav class="topic-nav" aria-label="Main">
+        {topics.map((t) => (
+          <a
+            href={t.link}
+            class:list={['topic-nav__link', { 'topic-nav__link--current': t.isCurrent }]}
+          >
+            {t.label}
+          </a>
+        ))}
+      </nav>
+    )
+  }
+
+  <div class="sl-flex right-group print:hidden">
+    {shouldRenderSearch && <Search />}
+    <ThemeSelect />
+  </div>
+</div>
+
+<style>
+  .header {
+    gap: var(--sl-nav-gap);
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  .title-wrapper {
+    overflow: clip;
+    padding: 0.25rem;
+    margin: -0.25rem;
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+  .topic-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topic-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .topic-nav__link {
+    white-space: nowrap;
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.35rem;
+    border-bottom: 2px solid transparent;
+  }
+  .topic-nav__link:hover {
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-6);
+  }
+  .topic-nav__link--current {
+    color: var(--sl-color-white);
+    border-bottom-color: var(--sl-color-accent);
+  }
+  .right-group {
+    gap: 1rem;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+</style>

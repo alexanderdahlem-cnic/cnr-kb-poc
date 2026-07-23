@@ -1,0 +1,7 @@
+---
+// Override: render only the (current topic's) sidebar items. The topic list
+// itself lives in the horizontal header nav (see Header.astro), not here.
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+---
+
+<Default><slot /></Default>
