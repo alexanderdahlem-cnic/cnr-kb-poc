@@ -19,19 +19,16 @@ The command _QueryMonitoringList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryMonitoringList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryMonitoringList
 CLASS = next_maintenance|running_maintenance
 DAYS = (INT)
-WIDE = 0|1
-```
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[END_DATE][n] = (TEXT)
 property[REASON][n] = (TEXT)
@@ -41,8 +38,7 @@ property[SERVICE_NAME][n] = (TEXT)
 property[SERVICE_TYPE][n] = (TEXT)
 property[START_DATE][n] = (TEXT)
 property[COUNT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -58,20 +54,17 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryMonitoringList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryMonitoringList
 CLASS = next_maintenance|running_maintenance
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
-SUBUSER = (TEXT)
-```
+SUBUSER = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[END_DATE][n] = (TEXT)
 property[REASON][n] = (TEXT)
@@ -81,8 +74,7 @@ property[SERVICE_NAME][n] = (TEXT)
 property[SERVICE_TYPE][n] = (TEXT)
 property[START_DATE][n] = (TEXT)
 property[COUNT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

@@ -19,18 +19,15 @@ The command _StatusTrademark_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND   = StatusTrademark
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND   = StatusTrademark
 TRADEMARK = (TEXT)
-STATUSTYPE = SMD|ENC 
-```
+STATUSTYPE = SMD|ENC </code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[TRADEMARK][0] = (TEXT)
 property[MARKTYPE][0] = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
@@ -83,8 +80,7 @@ property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 property[RENEWAL_DATE][0] = (DATE)
 property[JOB_ID][0] = (TEXT)
 property[RENEWALMODE][0] = AUTORENEW|AUTOEXPIRE
-property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1
-```
+property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1</code></pre></div>
 
 ### Attributes
 

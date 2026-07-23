@@ -19,26 +19,22 @@ The command _TradeDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = TradeDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = TradeDomain
 DOMAIN = (DOMAIN)
-OWNERCONTACT0 = (CONTACT)
-```
+OWNERCONTACT0 = (CONTACT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
 property[ADMINCONTACT][0] = (TEXT)
 property[X-FEE-CURRENCY][0] = (TEXT)
-property[OWNERCONTACT][0] = (TEXT)
-```
+property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -50,10 +46,8 @@ property[OWNERCONTACT][0] = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = TradeDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = TradeDomain
 DOMAIN = (DOMAIN)
 OWNERCONTACT0 = (CONTACT)
 X-ES-ADMIN-IDENTIFICACION = (TEXT)
@@ -152,21 +146,19 @@ X-FEE-AMOUNT28 = (DECIMAL)
 X-FEE-AMOUNT29 = (DECIMAL)
 X-FEE-APPLICATION = (DECIMAL)
 X-FEE-CURRENCY = (TEXT)
-X-ACCEPT-PREMIUMPRICE = 0|1
-```
+X-ACCEPT-PREMIUMPRICE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
 property[ADMINCONTACT][0] = (TEXT)
 property[X-FEE-CURRENCY][0] = (TEXT)
-property[OWNERCONTACT][0] = (TEXT)
-```
+property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

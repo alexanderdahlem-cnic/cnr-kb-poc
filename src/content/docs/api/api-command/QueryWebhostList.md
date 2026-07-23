@@ -19,22 +19,19 @@ The command _QueryWebhostList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryWebhostList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryWebhostList
 WEBSPACE = (TEXT)
 ORDER = ASC|DESC
 ONLYSSL = 0|1
 ORDERBY = WEBSPACE|CLASS|VERSION|STATUS|IP
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[SSL][n] = (TEXT)
 property[AUTOCERT][n] = (TEXT)
@@ -45,8 +42,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

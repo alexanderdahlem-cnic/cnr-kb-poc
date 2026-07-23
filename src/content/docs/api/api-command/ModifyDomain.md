@@ -21,28 +21,22 @@ The command _ModifyDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyDomain
+domain  = YOURDOMAIN.TLD</code></pre></div>
 
-```
-command = ModifyDomain
-domain  = YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code        = (CODE)
-description = (DESCRIPTION)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (CODE)
+description = (DESCRIPTION)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command = ModifyDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyDomain
 domain  = (DOMAIN)
 addnameserver0            = (NAMESERVER)
 addnameserver1            = (NAMESERVER)
@@ -108,12 +102,12 @@ x-whois-url               = (TEXT)
 x-whois-rsp               = (TEXT)
 x-whois-banner0           = (TEXT)
 x-whois-banner1           = (TEXT)
-x-whois-banner2           = (TEXT)
-```
+x-whois-banner2           = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code        = (CODE)
-description = (DESCRIPTION)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (CODE)
+description = (DESCRIPTION)</code></pre></div>
+
+

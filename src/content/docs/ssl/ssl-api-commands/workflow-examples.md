@@ -7,32 +7,23 @@ Short description of different commands for certificates and subs.
 
 ## AddCertificate
 
-Ordering a new certificate. Creates a new certificate and a new sub.
+Ordering a new certificate. Creates a new certificate and a new sub. 
 
-### Command
-
-```
-command=AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddCertificate
 csrX=...
-[...]
-```
+[...]</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>n/a</code></pre></div>
 
-```
-n/a
-```
+Certificate after the command has been issued: 
 
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE</code></pre></div>
 
 ## RenewCertificate
 
@@ -40,98 +31,71 @@ Renewing an existing certificate. Mandatory parameter is "certificate", a certai
 
 ### Example 1:
 
-No sub has been explicitly stated, the newest active certificate will be renewed.
+No sub has been explicitly stated, the newest active certificate will be renewed. 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RenewCertificate
+certificate=CZ00001</code></pre></div>
 
-```
-command=RenewCertificate
-certificate=CZ00001
-```
+Certificate before the command has been issued: 
 
-Certificate before the command has been issued:
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be renewed</code></pre></div>
 
-### Command
+Certificate after the command has been issued: 
 
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	<-- this sub will be renewed
-```
-
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	<-- this is the renewed sub
-```
+Sub:			CZ00001-002		ACTIVE	&lt;-- this is the renewed sub</code></pre></div>
 
 ### Example 2:
 
-No sub has been explicitly stated, the newest active certificate will be renewed.
+No sub has been explicitly stated, the newest active certificate will be renewed. 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RenewCertificate
+certificate=CZ00001</code></pre></div>
 
-```
-command=RenewCertificate
-certificate=CZ00001
-```
+Certificate before the command has been issued: 
 
-Certificate before the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	<-- this sub will be renewed
-```
+Sub:			CZ00001-002		ACTIVE	&lt;-- this sub will be renewed</code></pre></div>
 
-Certificate after the command has been issued:
+Certificate after the command has been issued: 
 
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	<-- this is the renewed sub
-```
+Sub:			CZ00001-003		ACTIVE	&lt;-- this is the renewed sub</code></pre></div>
 
 ### Example 3:
 
-The explicitly stated sub will be renewed.
+The explicitly stated sub will be renewed. 
 
-### Command
-
-```
-command=RenewCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RenewCertificate
 certificate=CZ00001
-sub=CZ00001-001
-```
+sub=CZ00001-001</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be renewed
+Sub:			CZ00001-002		ACTIVE</code></pre></div>
 
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	<-- this sub will be renewed
-Sub:			CZ00001-002		ACTIVE
-```
+Certificate after the command has been issued: 
 
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	<-- this is the renewed sub
-```
+Sub:			CZ00001-003		ACTIVE	&lt;-- this is the renewed sub</code></pre></div>
 
 ## ReissueCertificate
 
@@ -139,102 +103,75 @@ Reissuing a certificate.
 
 ### Example 1:
 
-No sub has been explicitly stated, the newest active certificate will be reissued.
+No sub has been explicitly stated, the newest active certificate will be reissued. 
 
-### Command
-
-```
-command=ReissueCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ReissueCertificate
 certificate=CZ00001
-csrX=...
-```
+csrX=...</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be reissued</code></pre></div>
 
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	<-- this sub will be reissued
-```
+Certificate after the command has been issued: 
 
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	<-- this is the reissued sub
-```
+Sub:			CZ00001-002		ACTIVE	&lt;-- this is the reissued sub</code></pre></div>
 
 ### Example 2:
 
-No sub has been explicitly stated, the newest active certificate will be reissued.
+No sub has been explicitly stated, the newest active certificate will be reissued. 
 
-### Command
-
-```
-command=ReissueCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ReissueCertificate
 certificate=CZ00001
-csrX=...
-```
+csrX=...</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	<-- this sub will be reissued
-```
+Sub:			CZ00001-002		ACTIVE	&lt;-- this sub will be reissued</code></pre></div>
 
-Certificate after the command has been issued:
+Certificate after the command has been issued: 
 
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	<-- this is the reissued sub
-```
+Sub:			CZ00001-003		ACTIVE	&lt;-- this is the reissued sub</code></pre></div>
 
 ### Example 3:
 
-The explicitly stated sub will be reissued.
+The explicitly stated sub will be reissued. 
 
-### Command
-
-```
-[Command]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[Command]
 command=ReissueCertificate
 certificate=CZ00001
 sub=CZ00001-001
-csrX=...
-```
+csrX=...</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be reissued
+Sub:			CZ00001-002		ACTIVE</code></pre></div>
 
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	<-- this sub will be reissued
-Sub:			CZ00001-002		ACTIVE
-```
+Certificate after the command has been issued: 
 
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	<-- this is the reissued sub
-```
+Sub:			CZ00001-003		ACTIVE	&lt;-- this is the reissued sub</code></pre></div>
 
 ## DeleteCertificate
 
@@ -242,63 +179,47 @@ The DeleteCertificate command can be used to revoke a certificate.
 
 ### Example 1:
 
-No sub has been explicitly stated, the newest active certificate will be revoked.
+No sub has been explicitly stated, the newest active certificate will be revoked. 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=DeleteCertificate
+certificate=CZ00001</code></pre></div>
 
-```
-command=DeleteCertificate
-certificate=CZ00001
-```
+Certificate before the command has been issued: 
 
-Certificate before the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	<-- this sub will be revoked
-```
+Sub:			CZ00001-002		ACTIVE	&lt;-- this sub will be revoked</code></pre></div>
 
-Certificate after the command has been issued:
+Certificate after the command has been issued: 
 
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		REVOKED
-```
+Sub:			CZ00001-002		REVOKED</code></pre></div>
 
 ### Example 2:
 
-The explicitly stated sub will be reissued.
+The explicitly stated sub will be reissued. 
 
-### Command
-
-```
-command=DeleteCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=DeleteCertificate
 certificate=CZ00001
-sub=CZ00001-001
-```
+sub=CZ00001-001</code></pre></div>
 
-Certificate before the command has been issued:
+Certificate before the command has been issued: 
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be revoked
+Sub:			CZ00001-002		ACTIVE</code></pre></div>
 
-```
-Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	<-- this sub will be revoked
-Sub:			CZ00001-002		ACTIVE
-```
+Certificate after the command has been issued: 
 
-Certificate after the command has been issued:
-
-### Command
-
-```
-Certificate:		CZ00001
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate:		CZ00001
 Sub:			CZ00001-001		REVOKED
-Sub:			CZ00001-002		ACTIVE
-```
+Sub:			CZ00001-002		ACTIVE</code></pre></div>
+
+

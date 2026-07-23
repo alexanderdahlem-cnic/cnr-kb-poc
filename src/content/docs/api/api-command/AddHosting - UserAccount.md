@@ -19,16 +19,13 @@ The command _AddHosting - UserAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND             = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND             = AddHosting
 TYPE                 = useraccount
 CLASS             = cpanel
 OBJECT            = (TEXT)
 PACKAGE             = (TEXT)
-X-HOSTING-LOCATION    = (TEXT)
-```
+X-HOSTING-LOCATION    = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -48,10 +45,8 @@ X-HOSTING-LOCATION    = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND             = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND             = AddHosting
 TYPE                 = useraccount
 CLASS             = cpanel
 OBJECT            = (TEXT)
@@ -62,5 +57,6 @@ NAME                = (TEXT)
 PASSWORD            = (TEXT)
 PERIOD            = (INT)
 RENEWALMODE         = AUTODELETE|AUTORENEW
-X-PROMOTION-CODE     = (TEXT)
-```
+X-PROMOTION-CODE     = (TEXT)</code></pre></div>
+
+

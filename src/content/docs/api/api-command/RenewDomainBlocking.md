@@ -19,32 +19,27 @@ The command _RenewDomainBlocking_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND		= RenewDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND		= RenewDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
 EXPIRATIONDATE	= (INTEGER)
-PERIOD		= (INTEGER)
-```
+PERIOD		= (INTEGER)</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code	 		= (INTEGER)
 description 		= (TEXT)
 runtime 		= (INTEGER)
 queuetime 		= (INTEGER)
 property[domainblock][0] = (TEXT)
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
-
 The following are specific to GlobalBlock:
 property[label][0]  	= (TEXT)
 property[status][0] 	= (TEXT)
 property[type][0] 	= GLOBALBLOCK|GLOBALBLOCKPLUS
-EOF
-```
+EOF</code></pre></div>
 
 ### Attributes
 

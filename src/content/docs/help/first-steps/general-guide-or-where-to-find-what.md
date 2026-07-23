@@ -6,24 +6,23 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 
 ### Top right Menus(right to left)
 
-```
-- Username consisting of:
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>- Username consisting of:
 	- Settings
-	- Password & Security
+	- Password &amp; Security
 	- User management
 	- Automatic Payments
 - Bell icon showing/listing different system notification concerning several issues
-- Cogwheels icon showing/listing your current/latest jobs
-```
+- Cogwheels icon showing/listing your current/latest jobs</code></pre></div>
 
 ### Top central Menus(left to right)
 
-```
-- Account Balance: showing your current account balance
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>- Account Balance: showing your current account balance
 	- Your current credit line
 	- Accountings
-	- Invoices & Statements
-	- Services & Prices
+	- Invoices &amp; Statements
+	- Services &amp; Prices
 	- Automatic Payments
 	- Charge Your Account
 - API
@@ -37,7 +36,7 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Agreements
 	- Newsletter Archive
 	- Documentation / Software
-	- Forms & Info
+	- Forms &amp; Info
 - Support
 	- Contact
 	- My support tickets
@@ -45,13 +44,12 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Beta Changelog
 	- CentralNic Reseller Wiki(external)
 	- Technical Support phone number
-- Find a product
-```
+- Find a product</code></pre></div>
 
 ### Left border Menus(top to bottom)
 
-```
-- Dashboard
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>- Dashboard
 - Domains
 	- Domains
 	- Applications
@@ -69,5 +67,6 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Subresellers
 	- Pricing
 	- Promotions
-	- Settings
-```
+	- Settings</code></pre></div>
+
+

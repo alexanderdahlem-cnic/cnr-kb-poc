@@ -19,21 +19,17 @@ The command _StatusDomainTransfer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDomainTransfer
+DOMAIN = (DOMAIN)</code></pre></div>
 
-```
-COMMAND = StatusDomainTransfer
-DOMAIN = (DOMAIN)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[TRANSFERLOG][n] =
-property[TRANSFERSTATUS][0] =
-```
+property[TRANSFERSTATUS][0] =</code></pre></div>
 
 ### Attributes
 

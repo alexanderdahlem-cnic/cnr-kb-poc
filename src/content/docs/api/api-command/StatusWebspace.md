@@ -19,19 +19,16 @@ The command _StatusWebspace_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = StatusWebSpace
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusWebSpace
 WIDE = 0|1
 LOG = 0|1
-WEBSPACE = (TEXT)
-```
+WEBSPACE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CREATED DATE][0] = (DATE)
 property[IP][0] = (TEXT)
@@ -41,8 +38,7 @@ property[STATUS][0] = (TEXT)
 property[UPDATED DATE][0] = (DATE)
 property[USED QUOTA][0] = (INT)
 property[USED TRAFFIC][0] = (INT)
-property[SSO_REDIRECT_LOCATION][0] = (TEXT)
-```
+property[SSO_REDIRECT_LOCATION][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

@@ -19,17 +19,14 @@ The command _StatusNameserver_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusNameserver
+NAMESERVER = (NAMESERVER)</code></pre></div>
 
-```
-COMMAND = StatusNameserver
-NAMESERVER = (NAMESERVER)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[REGISTRAR_TRANSFER_DATE][0] = (DATE)
 property[REGISTRAR][0] = (TEXT)
@@ -39,8 +36,7 @@ property[CREATED_DATE][0] = (DATE)
 property[CREATED_BY][0] = (TEXT)
 property[UPDATED_DATE][0] = (DATE)
 property[UPDATED_BY][0] = (TEXT)
-property[STATUS][n] = (TEXT)
-```
+property[STATUS][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 

@@ -19,21 +19,17 @@ The command _SetDomainTransfermode_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = SetDomainTransferMode
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = SetDomainTransferMode
 DOMAIN = (DOMAIN)
 TRANSFERMODE = DEFAULT|AUTOAPPROVE|AUTODENY
-TOKEN = (TEXT)
-```
+TOKEN = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

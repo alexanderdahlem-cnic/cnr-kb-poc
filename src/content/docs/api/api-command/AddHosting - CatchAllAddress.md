@@ -19,14 +19,11 @@ The command _AddHosting - CatchAllAddress_ is available via the following gatewa
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = Catchalladdress
 CLASS     = cpanel
-ACCOUNT    = (TEXT)
-```
+ACCOUNT    = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -41,15 +38,14 @@ ACCOUNT    = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = Catchalladdress
 CLASS     = cpanel
 ACCOUNT    = (TEXT)
 OBJECT    = (TEXT)
 OPTION    = fwd, fail, blackhole
 TARGET    = (TEXT)
-REASON    = (TEXT)
-```
+REASON    = (TEXT)</code></pre></div>
+
+

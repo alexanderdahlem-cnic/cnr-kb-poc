@@ -20,19 +20,16 @@ The command _QueryMobileAccountList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = QueryMobileAccountList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryMobileAccountList
 wide    =(0|1)
 first   =(INT)
-limit   =(INT)
-```
+limit   =(INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code                      =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                      =(INT)
 description               =(TEXT)
 property[account][0]      =(1234567)
 property[status][0]       =(ACTIVE|SUSPENDED)
@@ -44,8 +41,7 @@ property[count][0]        =(INT)
 property[first][0]        =(INT)
 property[last][0]         =(INT)
 property[limit][0]        =(INT)
-property[total][0]        =(INT)
-```
+property[total][0]        =(INT)</code></pre></div>
 
 ### Attributes
 

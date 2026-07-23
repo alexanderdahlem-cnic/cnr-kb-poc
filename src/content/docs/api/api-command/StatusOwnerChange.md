@@ -19,25 +19,21 @@ The command _StatusOwnerChange_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = StatusOwnerChange
+domain  = YOURDOMAIN.TLD</code></pre></div>
 
-```
-command = StatusOwnerChange
-domain  = YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code                            = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                            = (INT)
 description                     = (TEXT)
 property[domain][0]             = (TEXT)
 property[status][0]             = (TEXT)
 property[requested date][0]     = (DATE)
 property[expire date][0]        = (DATE)
 property[losing registrant][0]  = (CONTACT)
-property[gaining registrant][0] = (CONTACT)
-```
+property[gaining registrant][0] = (CONTACT)</code></pre></div>
 
 ### Attributes
 

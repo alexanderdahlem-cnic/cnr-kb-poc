@@ -19,44 +19,35 @@ The command _ModifyDomainBlocking_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     	= ModifyDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     	= ModifyDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-code	 		= (INTEGER)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code	 		= (INTEGER)
 description 		= (TEXT)
 queuetime	 	= (INTEGER)
 runtime 		= (INTEGER)
 property[domainblock][0]= (Block Order ID)
-property[type][0] 	= ADULTBLOCK|ADULTBLOCKPLUS|GLOBALBLOCK|GLOBALBLOCKPLUS
-```
+property[type][0] 	= ADULTBLOCK|ADULTBLOCKPLUS|GLOBALBLOCK|GLOBALBLOCKPLUS</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     	= ModifyDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     	= ModifyDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
-
 AUTH	        = (For AdultBlock/+) AUTHENTICATION KEY
 AUTH	        = (For GlobalBlock/+ and DPMLBRIDGE/+) 1|0|null
 OWNERCONTACT# 	= CONTACT ID
 RENEWALMODE	= AUTORENEW|AUTOEXPIRE
-
 SERVICETAG# 	= (TEXT)
 ADDSERVICETAG# 	= (TEXT)
-DELSERVICETAG# 	= (TEXT)
-```
+DELSERVICETAG# 	= (TEXT)</code></pre></div>
 
 ### Attributes
 

@@ -16,8 +16,8 @@ The following API commands now support the COMMAND parameters DomainTag\[0-4095\
 
 ### Example parameters
 
-```
-...
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>...
 ZoneTag0=
 ...
 ZoneTag4095=
@@ -25,8 +25,7 @@ ZoneTag4095=
 DomainTag0=
 ...
 DomainTag4095=
-...
-```
+...</code></pre></div>
 
 **Important**
 
@@ -46,14 +45,13 @@ AddDomain now supports DOMAINTAG\[0-4095\]= for the direct assignment of Tags du
 
 Example parameters:
 
-```
-[[AddDomain|AddDomain]]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[[AddDomain|AddDomain]]
 DomainTag0=
 DomainTagN=
 - or -
 AddDomainTag0=
-AddDomainTagN=
-```
+AddDomainTagN=</code></pre></div>
 
 ## ModifyDomain
 
@@ -61,33 +59,29 @@ ModifyDomain now supports DOMAINTAG\[0-4095\]= for direct assignment of Tags dur
 
 Example parameters:
 
-```
-[[ModifyDomain|ModifyDomain]]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[[ModifyDomain|ModifyDomain]]
 DomainTag0=
 DomainTagN=
 - or -
 AddDomainTag0=
 AddDomainTagN=
 DelDomainTag0=
-DelDomainTagN=
-```
+DelDomainTagN=</code></pre></div>
 
 ## CheckDomains with TLD Zone Tags
 
 The command CheckDomains now also works with TLD Zone Tags and checks for a given search string. The search string can be stated without any TLD. The response automatically displays results for TLDs that belong to a certain TLD Zone Tag. Of course default and individual TLD Zone Tags can be combined.
 
-### Command
-
-```
-Command=CheckDomains
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=CheckDomains
 Domain0=cooldomainname
-ZONETAG=DEFAULT_GENERIC
-```
+ZONETAG=DEFAULT_GENERIC</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 queuetime = 0
 runtime = 10.36
@@ -108,8 +102,7 @@ property[domainchecktime][2] = 0.001
 property[first][0] = 0
 property[last][0] = 14
 property[limit][0] = 32
-property[total][0] = 16
-```
+property[total][0] = 16</code></pre></div>
 
 ## Using Query Commands with Tags
 
@@ -129,17 +122,14 @@ We integrated Tag support for Several Query Commands:
 
 To narrow down a query using tags the parameters DomainTag\[x\] and ZoneTag\[x\] can be used. You can query for up to 4096 Tags (from 0 to 4095) of each type and work as logical conjunction. The response lists the intersection, i.e. all objects assigned to all Tags stated in the query command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=QueryDomainlist
+ZoneTag0=DEFAULT_GENERIC</code></pre></div>
 
-```
-command=QueryDomainlist
-ZoneTag0=DEFAULT_GENERIC
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 runtime = 0.009
 property[column][0] = domain
@@ -149,8 +139,7 @@ property[domain][1] = first-domain2.com
 property[first][0] = 0
 property[last][0] = 1
 property[limit][0] = 1000
-property[total][0] = 2
-```
+property[total][0] = 2</code></pre></div>
 
 ## Sub-Reseller Management with TLD Zone Tags
 
@@ -158,14 +147,13 @@ Tags can be used to activate TLD zones for Sub-Resellers, during the creation (A
 
 ### AddRegistrar with TLD Zone Tags
 
-```
-Command=AddRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=AddRegistrar
 ...
 ZoneTag0=
 ...
 ZoneTag4095=
-...
-```
+...</code></pre></div>
 
 **Important**
 
@@ -175,16 +163,15 @@ Only TLD Zones currently assigned to the respective Tag will be activated. Chang
 
 Deleting of ZoneTags containing Zones that are not activated for the respective Sub-Reseller account, will be ignored.
 
-```
-Command=ModifyRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=ModifyRegistrar
 AddZoneTag0=
 ...
 AddZoneTag4095=
 ...
 DelZoneTag0=
 ...
-DelZoneTag4095=
-```
+DelZoneTag4095=</code></pre></div>
 
 **Important**
 

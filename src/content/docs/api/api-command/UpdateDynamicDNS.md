@@ -19,21 +19,17 @@ The command _UpdateDynamicDNS_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = UpdateDynamicDNS
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = UpdateDynamicDNS
 HOSTNAME = (TEXT)
 PASSWORD = (TEXT)
-IP = (TEXT)
-```
+IP = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -47,20 +43,16 @@ description = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = UpdateDynamicDNS
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = UpdateDynamicDNS
 HOSTNAME = (TEXT)
-MX = (TEXT)
-```
+MX = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

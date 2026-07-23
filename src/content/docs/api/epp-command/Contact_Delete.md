@@ -7,41 +7,39 @@ The contact:delete removes a contact from the system. Please make sure that no c
 
 ## Required Parameters
 
-### Command
-
-```
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0
-    epp-1.0.xsd">
- <command>
-   <delete>
-     <contact:delete
+    epp-1.0.xsd"&gt;
+ &lt;command&gt;
+   &lt;delete&gt;
+     &lt;contact:delete
       xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
       xsi:schemaLocation="urn:ietf:params:xml:ns:contact-1.0
-      contact-1.0.xsd">
-       <contact:id>P-JMD24</contact:id>
-     </contact:delete>
-   </delete>
-   <clTRID>FDB67388-2FFE-11DE-970B-80000000568C</clTRID>
- </command>
-</epp>
-```
+      contact-1.0.xsd"&gt;
+       &lt;contact:id&gt;P-JMD24&lt;/contact:id&gt;
+     &lt;/contact:delete&gt;
+   &lt;/delete&gt;
+   &lt;clTRID&gt;FDB67388-2FFE-11DE-970B-80000000568C&lt;/clTRID&gt;
+ &lt;/command&gt;
+&lt;/epp&gt;</code></pre></div>
 
-### Response
+ 
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
- <response>
-   <result code="1000">
-     <msg>Command completed successfully</msg>
-   </result>
-   <trID>
-     <clTRID>FDB67388-2FFE-11DE-970B-80000000568C</clTRID>
-     <svTRID>29B5C6C2-3005-11DE-9BD1-C9EF1D79318A</svTRID>
-   </trID>
- </response>
-</epp>
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+ &lt;response&gt;
+   &lt;result code="1000"&gt;
+     &lt;msg&gt;Command completed successfully&lt;/msg&gt;
+   &lt;/result&gt;
+   &lt;trID&gt;
+     &lt;clTRID&gt;FDB67388-2FFE-11DE-970B-80000000568C&lt;/clTRID&gt;
+     &lt;svTRID&gt;29B5C6C2-3005-11DE-9BD1-C9EF1D79318A&lt;/svTRID&gt;
+   &lt;/trID&gt;
+ &lt;/response&gt;
+&lt;/epp&gt;</code></pre></div>
+
+

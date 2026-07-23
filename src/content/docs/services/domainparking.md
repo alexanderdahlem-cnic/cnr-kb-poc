@@ -19,12 +19,11 @@ You can connect your CentralNic Reseller account with one (1) Parking provider a
 
 Use the following command to submit your credentials to the CentralNic Reseller system
 
-```
-command = SetProperty
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = SetProperty
 class = PARKING
 parking-parkingcrewpassword = [password = API Key]
-parking-parkingcrewusername = [username = Login Name ]
-```
+parking-parkingcrewusername = [username = Login Name ]</code></pre></div>
 
 ## Advantages of domain parking
 

@@ -174,10 +174,8 @@ As the domain owner contact needs to provide a valid Australian postal address, 
 -   QLD - Queensland
 -   JBT - Jervis Bay Territory
 
-### Command
-
-```
-command = AddDomainApplication
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddDomainApplication
 class = AU-GRANDFATHERING
 domain = yourDomain.au
 techcontact0 = (contact)
@@ -188,14 +186,13 @@ period = (INT)
 nameserver0 = (nameserver)
 nameserver1 = (nameserver)
 X-AU-PRIORITY-TOKEN = (token)
-X-AU-GRANDFATHERING-TLD = <com.au|net.au|org.au|asn.au|id.au>
-X-AU-IMPORT-TOKEN = <1|0>
+X-AU-GRANDFATHERING-TLD = &lt;com.au|net.au|org.au|asn.au|id.au&gt;
+X-AU-IMPORT-TOKEN = &lt;1|0&gt;
 X-AU-DOMAIN-IDTYPE       = (TEXT)(mandatory if X-AU-DOMAIN-IDTYPE != PRIVATE)
 X-AU-DOMAIN-IDNUMBER     = (TEXT)(mandatory)
 X-AU-DOMAIN-RELATIONTYPE = (TEXT)(mandatory)
 X-AU-DOMAIN-RELATION     = 1|2 (mandatory)
-X-AU-OWNER-ORGANIZATION  = (TEXT)(mandatory)
-```
+X-AU-OWNER-ORGANIZATION  = (TEXT)(mandatory)</code></pre></div>
 
 ## Go Live orders
 
@@ -220,10 +217,8 @@ To submit a registration order on behalf of a customer without a Priority right 
 
 LIVE registration command is as follows:
 
-### Command
-
-```
-command = AddDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddDomain
 domain = yourdomain.au
 techcontact0 = (contact)
 ownercontact0 = (contact)
@@ -237,10 +232,9 @@ X-AU-DOMAIN-IDNUMBER     = (TEXT)(MANDATORY if X-AU-DOMAIN-IDTYPE != PRIVATE)
 X-AU-DOMAIN-RELATIONTYPE = (TEXT)(MANDATORY)
 X-AU-DOMAIN-RELATION     = 1|2 (MANDATORY)
 X-AU-OWNER-ORGANIZATION  = (TEXT)(MANDATORY)
-X-AU-ELIGIBILITY-NAME = <TEXT>
-X-AU-ELIGIBILITY-IDNUMBER = <TEXT>
-X-AU-ELIGIBILITY-IDTYPE = <TEXT>
-```
+X-AU-ELIGIBILITY-NAME = &lt;TEXT&gt;
+X-AU-ELIGIBILITY-IDNUMBER = &lt;TEXT&gt;
+X-AU-ELIGIBILITY-IDTYPE = &lt;TEXT&gt;</code></pre></div>
 
 ## Modifying an existing Priority Order that is in pending status
 
@@ -252,15 +246,12 @@ The extra fields for this command are the same as described above under AddDomai
 
 ModifyDomainApplication command example:
 
-### Command
-
-```
-command = ModifyDomainApplication
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyDomainApplication
 class = AU-GRANDFATHERING
-application = <ID>
-X-AU-PRIORITY-TOKEN = <token>
-X-AU-IMPORT-TOKEN = <1|0>
-```
+application = &lt;ID&gt;
+X-AU-PRIORITY-TOKEN = &lt;token&gt;
+X-AU-IMPORT-TOKEN = &lt;1|0&gt;</code></pre></div>
 
 ## Valid Relation Type values
 

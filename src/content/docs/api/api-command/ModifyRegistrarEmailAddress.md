@@ -19,26 +19,24 @@ The command _ModifyRegistrarEmailAddress_ is available via the following gateway
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = ModifyRegistrarEmailAddress
-email = <email address>
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyRegistrarEmailAddress
+email = &lt;email address&gt;
 add|delclass0 = MAINTENANCE|NEWSLETTER|ABUSE
 add|delclass1 = MAINTENANCE|NEWSLETTER|ABUSE
 name = FIRSTNAME LASTNAME
-language=DE|EN
-```
+language=DE|EN</code></pre></div>
 
-### Response
+ 
 
-```
-code        = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (INT)
 description = (TEXT)
 property[class0][0] = NEWSLETTER
 property[class1][0] = MAINTENANCE
 property[class2][0] = ABUSE
-property[email][0] = <email address>
+property[email][0] = &lt;email address&gt;
 property[status0][0] = PROCESSING
-property[status1][0] = BLOCKED
-```
+property[status1][0] = BLOCKED</code></pre></div>
+
+

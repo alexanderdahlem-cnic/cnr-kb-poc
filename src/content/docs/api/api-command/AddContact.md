@@ -21,10 +21,8 @@ The command _AddContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command   = AddContact
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = AddContact
 firstname = (TEXT)
 lastname  = (TEXT)
 street0   = (TEXT)
@@ -32,44 +30,38 @@ city      = (TEXT)
 zip       = (TEXT)
 country   = (COUNTRY)
 phone     = (PHONE)
-email     = (EMAIL)
-```
+email     = (EMAIL)</code></pre></div>
 
-### Response
+ 
 
-```
-code        = (CODE)
-description = (DESCRIPTION)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (CODE)
+description = (DESCRIPTION)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-[COMMAND]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[COMMAND]
 command     = AddContact
 VALIDATION  = (0|1)
 CHECKONLY   = (0|1)
 PREVERIFY   = (0|1)
 NEW         = (0|1)
 AUTODELETE  = (0|1)
-
 X-VERIFICATION-DATA0..n           = email|phone|name|address
 X-VERIFICATION-TRUSTFRAMEWORK0..n  = (TEXT)
 X-VERIFICATION-TIMESTAMP0..n      = YYYY-MM-DD HH:MM:SS
 X-VERIFICATION-METHOD0..n         = (TEXT)
 X-VERIFICATION-REFERENCE0..n      = (TEXT)
 X-VERIFICATION-EVIDENCE0..n       = (TEXT)
-X-VERIFICATION-RESULT0..n         = Success|failed
-```
+X-VERIFICATION-RESULT0..n         = Success|failed</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                                      = (INTERGER)
 ...
 property[validated][0]                    = (0|1)
@@ -81,8 +73,7 @@ property[x-verification-timestamp][0]     = (DATETIME)
 property[x-verification-method][0]        = (TEXT)
 property[x-verification-reference][0]     = (TEXT)
 property[x-verification-evidence][0]      = (TEXT)
-property[x-verification-result][0]        = Success|failed
-```
+property[x-verification-result][0]        = Success|failed</code></pre></div>
 
 ### Attributes
 

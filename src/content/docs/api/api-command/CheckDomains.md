@@ -24,21 +24,17 @@ The command _CheckDomains_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomains
+domain[0-31]=YOURDOMAIN.TLD</code></pre></div>
 
-```
-command=CheckDomains
-domain[0-31]=YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code                          = (CODE)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          = (CODE)
 description                   = (TEXT)
 property[domaincheck][0-31]      = (CODE) (TEXT)
-property[domainchecktime][0-31]  = (RUNTIME)
-```
+property[domainchecktime][0-31]  = (RUNTIME)</code></pre></div>
 
 ### Attributes
 
@@ -51,25 +47,21 @@ property[domainchecktime][0-31]  = (RUNTIME)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command=CheckDomains
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomains
 domain[0-31]=YOURDOMAIN.TLD
 X-IDN-LANGUAGE = (TEXT)
-X-ALLOCATION-TOKEN=0|1
-```
+X-ALLOCATION-TOKEN=0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[X-ALLOCATION-TOKEN][0] = (TEXT)
 property[AFTERMARKET_PRICE][0] = (DECIMAL)
 property[AFTERMARKET_CURRENCY][0] = (TEXT)
-property[AFTERMARKET_INFO][0] = (TEXT)
-```
+property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -84,23 +76,20 @@ property[AFTERMARKET_INFO][0] = (TEXT)
 
 The following premium parameters are standard for this command.
 
-### Command
-
-```
-command=CheckDomains
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomains
 domain[0-31]=YOURDOMAIN.TLD
 X-FEE-COMMAND[0-31]=(TEXT)
 X-FEE-DOMAIN[0-31]=(TEXT)
 X-FEE-PERIOD[0-31]=(INT)
 X-FEE-PERIODTYPE[0-31]=(TEXT)
 X-FEE-CURRENCY[0-31]=(TEXT)
-X-FEE-LAUNCHPHASE[0-31]=(TEXT)
-```
+X-FEE-LAUNCHPHASE[0-31]=(TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAINCHECK][n] = (TEXT)
 property[DOMAINCHECKTIME][n] = (DECIMAL)
@@ -116,8 +105,7 @@ property[X-FEE-COMMAND][n] = (TEXT)
 property[X-FEE-DOMAIN][n] = (TEXT)
 property[X-FEE-LAUNCHPHASE][n] = (TEXT)
 property[X-FEE-PERIOD][n] = (TEXT)
-property[X-FEE-PERIODTYPE][n] = (TEXT)
-```
+property[X-FEE-PERIODTYPE][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 

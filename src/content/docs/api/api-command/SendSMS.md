@@ -20,26 +20,22 @@ The command _SendSMS_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command   = SendSMS
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = SendSMS
 accountid =(TEXT)
 password  =(TEXT)
 mobilenr# =(TEXT)
 sourceid  =(TEXT)
 text      =(TEXT)
 encoding  =(PLAIN|PLAINFLASH|UNICODE|UNICODEFLASH)
-premium   =(0|1)
-```
+premium   =(0|1)</code></pre></div>
 
-### Response
+ 
 
-```
-code               =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code               =(INT)
 description        =(TEXT)
-property[smsid][0] =(INT)
-```
+property[smsid][0] =(INT)</code></pre></div>
 
 ### Attributes
 

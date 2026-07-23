@@ -19,22 +19,20 @@ The command _CheckMailspaceEmail_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = CheckMailspaceEMail
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = CheckMailspaceEMail
 mailspace=mailspace_6mfcaxp9tt
-emailaddress=test@test.de
-```
+emailaddress=test@test.de</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 queuetime = 0
 runtime = 0.118
 property[emailaddress][0] = test@test.de
 property[mailbox][0] = 1
-property[mailspace][0] = mailspace_6mfcaxp9tt
-```
+property[mailspace][0] = mailspace_6mfcaxp9tt</code></pre></div>
+
+

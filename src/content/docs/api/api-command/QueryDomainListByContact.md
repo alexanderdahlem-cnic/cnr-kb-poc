@@ -19,17 +19,14 @@ The command _QueryDomainListByContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDomainListByContact
+CONTACT = (CONTACT)</code></pre></div>
 
-```
-COMMAND = QueryDomainListByContact
-CONTACT = (CONTACT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (DOMAIN)
 property[TYPE][n] = ADMIN|OWNER|TECH|BILLING
@@ -37,8 +34,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -56,23 +52,20 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryDomainListByContact
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDomainListByContact
 CONTACT = (CONTACT)
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
 LIMIT = (INT)
 ORDER = ASC|DESC
-ORDERBY = DOMAIN|TYPE
-```
+ORDERBY = DOMAIN|TYPE</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (DOMAIN)
 property[TYPE][n] = ADMIN|OWNER|TECH|BILLING
@@ -80,8 +73,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

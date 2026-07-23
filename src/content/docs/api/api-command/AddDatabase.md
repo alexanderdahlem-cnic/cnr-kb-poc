@@ -19,10 +19,8 @@ The command _AddDatabase_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = AddDatabase
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddDatabase
 DATABASE = (TEXT)
 X-HOSTING-ONECLICK-WEBHOST = (TEXT)
 X-HOSTING-ONECLICK = 0|1
@@ -31,17 +29,15 @@ X-HOSTING-ADVERT = 0|1
 X-HOSTING-LOCATION = EU|US|IM
 PASSWORD = (TEXT)
 NAME = (TEXT)
-X-PROMOTION-CODE = (TEXT)
-```
+X-PROMOTION-CODE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DATABASE][0] = (TEXT)
-property[IP][0] = (IP)
-```
+property[IP][0] = (IP)</code></pre></div>
 
 ### Attributes
 

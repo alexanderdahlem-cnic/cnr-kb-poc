@@ -28,12 +28,7 @@ Please note that the Premium SMS Service does not support text messages of the t
 -   PLAIN and UNICODE for both Standard and Premium SMS Service
 -   Additionally PLAINFLASH and UNICODEFLASH for Standard SMS Service
 
-## SMS API-Commands
+<div class="api-io api-io--command"><span class="api-io__label">SMS API-Commands</span>
+<pre class="api-io__code"><code><h2>SMS API-Commands</h2><table><tbody><tr><th><a href="../../api/api-command/chargemobileaccount/">ChargeMobileAccount</a></th><th>ChargeMobileAccount</th></tr><tr><td><a href="../../api/api-command/createmobileaccount/">CreateMobileAccount</a></td><td>CreateMobileAccount</td></tr><tr><td><a href="../../api/api-command/querymobileaccountlist/">QueryMobileAccountList</a></td><td>QueryMobileAccountList</td></tr><tr><td><a href="../../api/api-command/querysmslist/">QuerySMSList</a></td><td>QuerySMSList</td></tr><tr><td><a href="../../api/api-command/sendsms/">SendSMS</a></td><td>SendSMS</td></tr><tr><td><a href="../../api/api-command/statusmobileaccount/">StatusMobileAccount</a></td><td>StatusMobileAccount</td></tr></tbody></table></code></pre></div>
 
-| [ChargeMobileAccount](../../api/api-command/chargemobileaccount/) | ChargeMobileAccount |
-| --- | --- |
-| [CreateMobileAccount](../../api/api-command/createmobileaccount/) | CreateMobileAccount |
-| [QueryMobileAccountList](../../api/api-command/querymobileaccountlist/) | QueryMobileAccountList |
-| [QuerySMSList](../../api/api-command/querysmslist/) | QuerySMSList |
-| [SendSMS](../../api/api-command/sendsms/) | SendSMS |
-| [StatusMobileAccount](../../api/api-command/statusmobileaccount/) | StatusMobileAccount |
+

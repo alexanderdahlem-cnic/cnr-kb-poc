@@ -17,18 +17,15 @@ The command _StatusDNSZone_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = StatusDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDNSZone
 DNSZONE = [TEXT]
-CLTRID  = [TEXT]
-```
+CLTRID  = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code	     		       = (INTEGER)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code	     		       = (INTEGER)
 description 		       = (TEXT)
 runtime 		       = (INTEGER)
 queuetime 	               = (INTEGER)
@@ -51,8 +48,7 @@ property[keydata][#]           =  (TEXT)
 property[keydsdata sha256][#]  = (TEXT)
 property[signer status][#]     = 0|1
 property[premiumdnsset][0]     = (TEXT)
-property[external][#]          = 0|1
-```
+property[external][#]          = 0|1</code></pre></div>
 
 ### Attributes
 

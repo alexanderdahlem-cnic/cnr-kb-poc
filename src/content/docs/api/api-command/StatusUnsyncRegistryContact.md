@@ -19,46 +19,40 @@ The command _StatusUnsyncRegistryContact_ is available via the following gateway
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                            = StatusUnsyncRegistryContact
+domain                             = (DOMAIN)</code></pre></div>
 
-```
-command                            = StatusUnsyncRegistryContact
-domain                             = (DOMAIN)
-```
+ 
 
-### Response
-
-```
-code                                   = (CODE)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                   = (CODE)
 description                            = (DESCRIPTION)
 property[domain][0]                    = (DOMAIN)
 property[zone][0]                      = (TEXT)
 property[contact][0]                   = (CONTACT)
 property[contacttype][0]               = (TEXT)
 property[errorcode][0]                 = (INT)
-property[errordescription][0]          = (TEXT)
-```
+property[errordescription][0]          = (TEXT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                            = StatusUnsyncRegistryContact
+contact                            = (CONTACT)</code></pre></div>
 
-```
-command                            = StatusUnsyncRegistryContact
-contact                            = (CONTACT)
-```
+ 
 
-### Response
-
-```
-code                                   = (CODE)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                   = (CODE)
 description                            = (DESCRIPTION)
 property[domain][0]                    = (DOMAIN)
 property[zone][0]                      = (TEXT)
 property[contact][0]                   = (CONTACT)
 property[contacttype][0]               = (TEXT)
 property[errorcode][0]                 = (INT)
-property[errordescription][0]          = (TEXT)
-```
+property[errordescription][0]          = (TEXT)</code></pre></div>
+
+

@@ -19,19 +19,15 @@ The command _DeleteNameserver_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteNameserver
+NAMESERVER = (NAMESERVER)</code></pre></div>
 
-```
-COMMAND = DeleteNameserver
-NAMESERVER = (NAMESERVER)
-```
+ 
 
-### Response
-
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -42,21 +38,17 @@ description = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = DeleteNameserver
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteNameserver
 NAMESERVER = (NAMESERVER)
 TOKEN = (TEXT)
-FORCE = 1
-```
+FORCE = 1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

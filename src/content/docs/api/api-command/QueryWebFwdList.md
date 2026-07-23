@@ -19,24 +19,20 @@ The command _QueryWebFwdList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryWebFwdList</code></pre></div>
 
-```
-COMMAND = QueryWebFwdList
-```
+ 
 
-### Response
-
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[WEBFWD][n] = [TEXT]
 property[COUNT][0]  = [INT]
 property[FIRST][0]  = [INT]
 property[LAST][0]   = [INT]
 property[LIMIT][0]  = [INT]
-property[TOTAL][0]  = [INT]
-```
+property[TOTAL][0]  = [INT]</code></pre></div>
 
 ### Attributes
 
@@ -54,10 +50,8 @@ property[TOTAL][0]  = [INT]
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryWebFwdList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryWebFwdList
 WIDE    = [TEXT]
 SOURCE  = [TEXT]
 TARGET  = [TEXT]
@@ -66,13 +60,12 @@ FIRST   = [INT]
 LIMIT   = [INT]
 ORDER   = ASC | DESC
 ORDERBY = source | target | type
-CLTRID  = [TEXT]
-```
+CLTRID  = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[SOURCE][n] = [TEXT]
 property[TARGET][n] = [TEXT]
@@ -83,8 +76,7 @@ property[LAST][0]   = [INT]
 property[LIMIT][0]  = [INT]
 property[TOTAL][0]  = [INT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 

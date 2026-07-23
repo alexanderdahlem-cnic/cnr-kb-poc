@@ -19,10 +19,8 @@ The command _QueryMailFwdList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryMailFwdList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryMailFwdList
 DNSZONE = [TEXT]
 FROM    = [TEXT]
 SOURCE  = [TEXT]
@@ -33,13 +31,12 @@ LIMIT   = [TEXT]
 ORDER   = ASC | DESC
 ORDERBY = dnszone
 CLTRID  = [TEXT]
-WIDE    = [TEXT]
-```
+WIDE    = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code                 = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                 = [INT]
 description          = [TEXT]
 property[DNSZONE][0] = [TEXT]
 property[FROM][0]    = [TEXT]
@@ -51,8 +48,7 @@ property[LAST][0]    = [INT]
 property[LIMIT][0]   = [INT]
 property[TOTAL][0]   = [INT]
 property[CLTRID][0]  = [TEXT]
-property[SVTRID][0]  = [TEXT]
-```
+property[SVTRID][0]  = [TEXT]</code></pre></div>
 
 ### Attributes
 

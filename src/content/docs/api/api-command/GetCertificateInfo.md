@@ -21,17 +21,14 @@ The command _GetCertificateInfo_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND 	= GetCertificateInfo
+APIVERSION 	= 1|2</code></pre></div>
 
-```
-COMMAND 	= GetCertificateInfo
-APIVERSION 	= 1|2
-```
+ 
 
-### Response
-
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                                                = (INTEGER)
 description                                         = (TEXT)
 runtime                                             = (INTEGER)
@@ -66,15 +63,13 @@ property[techcontact][n]                            = (TEXT)
 property[type][n]                                   = DV|EV|OV
 property[wildcard][n]                               = 0|1
 property[periods][0] = (For Sectigo) 1y,365d
-property[periods][0] = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d
-```
+property[periods][0] = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>CLASS	= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv</code></pre></div>
 
-```
-CLASS	= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
-```
+

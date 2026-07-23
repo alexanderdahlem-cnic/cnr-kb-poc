@@ -19,39 +19,33 @@ The command _ModifyRegistrarCurrency_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND=ModifyRegistrarCurrency
+CURRENCY=USD|EUR|GBP|CHF|PLN|AUD|NZD|CAD</code></pre></div>
 
-```
-COMMAND=ModifyRegistrarCurrency
-CURRENCY=USD|EUR|GBP|CHF|PLN|AUD|NZD|CAD
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 runtime = 0.016
-property[status][0] = SUCCESS
-```
+property[status][0] = SUCCESS</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND=ModifyRegistrarCurrency
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND=ModifyRegistrarCurrency
 CURRENCY=USD|EUR|GBP|CHF|PLN|AUD|NZD|CAD
-CANCELCHANGE=0|1
-```
+CANCELCHANGE=0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 runtime = 0.009
-property[status][0] = DELETED
-```
+property[status][0] = DELETED</code></pre></div>
+
+

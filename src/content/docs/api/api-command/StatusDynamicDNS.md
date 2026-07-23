@@ -19,19 +19,15 @@ The command _StatusDynamicDNS_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDynamicDNS
+HOSTNAME = (TEXT)</code></pre></div>
 
-```
-COMMAND = StatusDynamicDNS
-HOSTNAME = (TEXT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -42,20 +38,16 @@ description = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = StatusDynamicDNS
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDynamicDNS
 HOSTNAME = (TEXT)
-WIDE = 0|1
-```
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = <INT>
-description = <TEXT>
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = &lt;INT&gt;
+description = &lt;TEXT&gt;</code></pre></div>
 
 ### Attributes
 

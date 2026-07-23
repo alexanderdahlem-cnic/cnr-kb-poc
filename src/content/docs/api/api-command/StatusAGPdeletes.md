@@ -17,19 +17,17 @@ The command _StatusAGPdeletes_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = statusAGPdeletes
+zone    = TLD</code></pre></div>
 
-```
-command = statusAGPdeletes
-zone    = TLD
-```
+ 
 
-### Response
-
-```
-property[available agp deletes][0]        = 2
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[available agp deletes][0]        = 2
 property[current agp deletes][0]          = 0
 property[current domain registrations][0] = 17
 property[total agp deletes][0]            = 2
-property[zone][0]                         = TLD
-```
+property[zone][0]                         = TLD</code></pre></div>
+
+

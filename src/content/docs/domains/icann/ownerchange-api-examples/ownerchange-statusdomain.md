@@ -5,16 +5,13 @@ description: "StatusDomains responses now additionally show information of a pen
 
 StatusDomains responses now additionally show information of a pending OwnerChange.
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[domain][0] = example.com
 ...
 property[status][0] = pendingUpdate
-property[ownerchange status][0] = REQUESTED
-```
+property[ownerchange status][0] = REQUESTED</code></pre></div>
 
 ### Attributes
 

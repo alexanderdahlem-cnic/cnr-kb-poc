@@ -19,20 +19,17 @@ The command _QueryHostingList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryHostingList
-CLASS = cPanel (required)
-TYPE = useraccount|package|featurelist (required)
-FILTER = primarydomain|package|useraccount (optional)
-NAME = (TEXT) (optional)
-OBJECT = (TEXT) (optional)
-ORDER = ASC|DESC (optional)
-ORDERBY = STATUS|NAME|RENEWALMODE|PACKAGE|REGISTRATIONEXPIRATIONDATE (optional)
-STATUS = ACTIVE|PENDINGDELETE (optional)
-LIMIT = (INTEGER) (optional)
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryHostingList
+CLASS = cPanel&nbsp;(required)
+TYPE = useraccount|package|featurelist&nbsp;(required)
+FILTER = primarydomain|package|useraccount&nbsp;(optional)
+NAME = (TEXT)&nbsp;(optional)
+OBJECT = (TEXT)&nbsp;(optional)
+ORDER = ASC|DESC&nbsp;(optional)
+ORDERBY = STATUS|NAME|RENEWALMODE|PACKAGE|REGISTRATIONEXPIRATIONDATE&nbsp;(optional)
+STATUS = ACTIVE|PENDINGDELETE&nbsp;(optional)
+LIMIT = (INTEGER)&nbsp;(optional)</code></pre></div>
 
 ### Attributes
 
@@ -46,10 +43,8 @@ LIMIT = (INTEGER) (optional)
 | **STATUS**  | Filter data by status.  |
 |  |  |
 
-### Response
-
-```
-code =  (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code =  (INT)
 description =  (TEXT)
 property[account][0] = tkf2igf5
 property[accountdomain][0] = messe-useraccount.com
@@ -80,5 +75,6 @@ property[total][0] = 1
 property[updated by][0] = messe
 property[updated date][0] = 2019-02-22 06:59:50
 property[x-hosting-location][0] = EU
-property[x-hosting-server][0] = cpanel-01-eu.hostingww.com
-```
+property[x-hosting-server][0] = cpanel-01-eu.hostingww.com</code></pre></div>
+
+

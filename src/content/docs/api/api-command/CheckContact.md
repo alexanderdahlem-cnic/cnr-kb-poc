@@ -21,19 +21,15 @@ The command _CheckContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckContact
+contact=(CONTACT)</code></pre></div>
 
-```
-command=CheckContact
-contact=(CONTACT)
-```
+ 
 
-### Response
-
-```
-code=(INT) 215 contact not available/214 contact available
-description=(TEXT) Contact (not) available
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code=(INT) 215 contact not available/214 contact available
+description=(TEXT) Contact (not) available</code></pre></div>
 
 ### Attributes
 

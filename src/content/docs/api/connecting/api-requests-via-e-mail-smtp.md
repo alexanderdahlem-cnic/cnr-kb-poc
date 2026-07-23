@@ -15,12 +15,12 @@ Please note, that you need to provide your username and password with every requ
 
 A basic "CheckDomain" command looks like the following:
 
-```
-s_login = [mregname]
-s_pw = [<mregpassword>ote]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>s_login = [mregname]
+s_pw = [&lt;mregpassword&gt;ote]
 s_opmode = OTE
-
 [COMMAND]
 command = CheckDomain
-domain = example.com
-```
+domain = example.com</code></pre></div>
+
+

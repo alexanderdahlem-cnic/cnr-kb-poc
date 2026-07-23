@@ -4,15 +4,12 @@ title: "ModifyAcl Example"
 
 Remove AddDomain and ModifyDomain rights
 
-### Command
-
-```
-command = ModifyAcl
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyAcl
 username = user1
 location = DOMAIN
 delacl0 = ADD
-delacl1 = MODIFY
-```
+delacl1 = MODIFY</code></pre></div>
 
 ### Attributes
 

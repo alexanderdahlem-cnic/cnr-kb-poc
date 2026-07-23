@@ -20,17 +20,14 @@ The command _StatusMobileAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = StatusMobileAccount
+accountid =(TEXT)</code></pre></div>
 
-```
-command   = StatusMobileAccount
-accountid =(TEXT)
-```
+ 
 
-### Response
-
-```
-code                          =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          =(INT)
 description                   =(TEXT)
 property[accountid][0]        =(TEXT)
 property[password][0]         =(TEXT)
@@ -38,8 +35,7 @@ property[current][0]          =(INT)
 property[currency][0]         =(TEXT)
 property[status][0]           = ACTIVE
 property[amount charged][0]   =(INT)
-property[currency charged][0] =(TEXT)
-```
+property[currency charged][0] =(TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -50,10 +46,8 @@ property[currency charged][0] =(TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command   = StatusMobileAccount
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = StatusMobileAccount
 accountid =(TEXT)
 wide      =(0|1)
 recipient =(TEXT)
@@ -61,13 +55,12 @@ mindate   =(DATE)
 maxdate   =(DATE)
 smsid     =(TEXT)
 first     =(INT)
-limit     =(INT)
-```
+limit     =(INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code                          =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          =(INT)
 description                   =(TEXT)
 property[accountid][0]        =(TEXT)
 property[password][0]         =(TEXT)
@@ -75,5 +68,6 @@ property[current][0]          =(INT)
 property[currency][0]         =(TEXT)
 property[status][0]           = ACTIVE
 property[amount charged][0]   =(INT)
-property[currency charged][0] =(TEXT)
-```
+property[currency charged][0] =(TEXT)</code></pre></div>
+
+

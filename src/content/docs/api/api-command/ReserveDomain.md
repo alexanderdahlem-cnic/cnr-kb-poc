@@ -21,25 +21,21 @@ The command _ReserveDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND               = ReserveDomain
-DOMAIN                = <DOMAIN>
-BID                   = <DECIMAL>
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND               = ReserveDomain
+DOMAIN                = &lt;DOMAIN&gt;
+BID                   = &lt;DECIMAL&gt;
 PROVIDER              = sedo
-CONTACT               = <CONTACT>
-```
+CONTACT               = &lt;CONTACT&gt;</code></pre></div>
 
-### Response
+ 
 
-```
-code                  = <INT>
-description           = <TEXT>
-property[TOKEN][0]    = <TEXT>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                  = &lt;INT&gt;
+description           = &lt;TEXT&gt;
+property[TOKEN][0]    = &lt;TEXT&gt;
 property[provider][0] = sedo
-property[expires][0]  = YYYY-MM-DD HH:MM:SS GMT
-```
+property[expires][0]  = YYYY-MM-DD HH:MM:SS GMT</code></pre></div>
 
 | **TOKEN** | Token to identify this process in our system  
  |

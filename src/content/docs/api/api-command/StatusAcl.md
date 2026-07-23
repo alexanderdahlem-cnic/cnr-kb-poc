@@ -19,13 +19,10 @@ The command _StatusAcl_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = StatusAcl
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = StatusAcl
 username = (TEXT)
-location = (TEXT)
-```
+location = (TEXT)</code></pre></div>
 
 ### Attributes
 

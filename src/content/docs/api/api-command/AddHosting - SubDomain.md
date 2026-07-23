@@ -19,15 +19,12 @@ The command _AddHosting - SubDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = SubDomain
 CLASS     = cpanel
 ACCOUNT    = (TEXT)
-OBJECT    = (TEXT)
-```
+OBJECT    = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -40,13 +37,12 @@ OBJECT    = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = SubDomain
 CLASS     = cpanel
 ACCOUNT    = (TEXT)
 OBJECT    = (TEXT)
-DIRECTORY    = (TEXT)
-```
+DIRECTORY    = (TEXT)</code></pre></div>
+
+

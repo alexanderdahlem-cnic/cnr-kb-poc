@@ -19,16 +19,13 @@ The command _QueryAvailablePromotionList_ is available via the following gateway
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryAvailablePromotionList</code></pre></div>
 
-```
-COMMAND = QueryAvailablePromotionList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[PROMOTION][0] = (TEXT)
 property[ZONE][0] = (TEXT)
@@ -53,8 +50,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -88,10 +84,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryAvailablePromotionList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryAvailablePromotionList
 TYPE = RUNNING|UPCOMING|FINISHED
 DATE = (DATE)
 ZONE = (TEXT)
@@ -102,13 +96,12 @@ ORDERBY = ZONE|PROMOTION|STARTDATE|ENDDATE
 SENDLISTEMAIL = (EMAILS)
 WIDE = 0|1
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[PROMOTION][0] = (TEXT)
 property[ZONE][0] = (TEXT)
@@ -133,8 +126,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

@@ -20,10 +20,8 @@ x-fee-period0=1
 x-fee-periodtype0=YEAR  
 x-fee-launchphase0=GOLIVE_
 
-### Command
-
-```
-command=CheckDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomain
 domain=YOURDOMAIN.TLD
 x-fee-domain0=YOURDOMAIN.TLD
 x-fee-currency0=USD
@@ -31,8 +29,7 @@ x-fee-command0=ADD
 x-fee-period0=1
 x-fee-periodtype0=YEAR
 x-fee-launchphase0=GOLIVE
-EOF
-```
+EOF</code></pre></div>
 
 ### Attributes
 
@@ -45,13 +42,12 @@ _x-fee-domain0=YOURDOMAIN.TLD
 x-fee-command0=ADD  
 x-fee-period0=1_
 
-### Command
-
-```
-command=CheckDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomain
 domain=YOURDOMAIN.TLD
 x-fee-domain0=domain.TLD
 x-fee-command0=ADD
 x-fee-period0=1
-EOF
-```
+EOF</code></pre></div>
+
+

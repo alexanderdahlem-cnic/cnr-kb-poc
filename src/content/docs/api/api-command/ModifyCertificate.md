@@ -17,22 +17,18 @@ The command _ModifyCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = ModifyCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ModifyCertificate
 CERTIFICATE = [PATTERN]
 SUB=[PATTERN]
 APPROVEREMAIL[0-24] = [EMAIL]
-AUTHMETHOD = EMAIL|DNS|FILE
-```
+AUTHMETHOD = EMAIL|DNS|FILE</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

@@ -19,26 +19,22 @@ The command _ConvertCurrency_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = ConvertCurrency
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ConvertCurrency
 AMOUNT = (DECIMAL)
 FROM = (TEXT)
-TO = (TEXT)
-```
+TO = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[AMOUNT][0] = (DECIMAL)
 property[FROM][0] = (TEXT)
 property[TO][0] = (TEXT)
 property[CONVERTED_AMOUNT][0] = (DECIMAL)
-property[RATE][0] = (DECIMAL)
-```
+property[RATE][0] = (DECIMAL)</code></pre></div>
 
 ### Attributes
 

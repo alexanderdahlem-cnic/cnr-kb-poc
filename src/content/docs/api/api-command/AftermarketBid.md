@@ -19,14 +19,11 @@ The command _AftermarketBid_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command=AftermarketBid
-token=<TEXT>
-bid=<DECIMAL>(only available for counter)
-action=accept|deny|counter
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AftermarketBid
+token=&lt;TEXT&gt;
+bid=&lt;DECIMAL&gt;(only available for counter)
+action=accept|deny|counter</code></pre></div>
 
 ### Attributes
 

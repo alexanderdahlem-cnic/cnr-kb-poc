@@ -19,16 +19,13 @@ The command _QueryTagList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     			= QueryTagList</code></pre></div>
 
-```
-COMMAND     			= QueryTagList
-```
+ 
 
-### Response
-
-```
-code                     = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                     = (INT)
 description              = (TEXT)
 property[tag][#]         = (TEXT)
 property[type][#]	 = DOMAIN|ZONE|SERVICE-DOMAINBLOCKING
@@ -38,18 +35,14 @@ property[count)(0]       = (INT)
 property[first)(0]       = (INT)
 property[last)(0]        = (INT)
 property[limit][0]       = (INT)
-property[total](0]       = (INT)
-```
+property[total](0]       = (INT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND    		= QueryTagList
-
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND    		= QueryTagList
 TYPE        		= DOMAIN|ZONE|SERVICE
 SERVICETYPE 		= DOMAINBLOCKING|CERTIFICATE
 TAG      		= (TEXT)
@@ -60,13 +53,12 @@ WIDE			= 0|1
 ORDER			= ASC|DESC
 ORDERBY			= TAG|TYPE
 FIRST			= (INT)
-LIMIT			= (INT)
-```
+LIMIT			= (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code                     = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                     = (INT)
 description              = (TEXT)
 property[column][#]	 = (TEXT)
 property[tag][#]         = (TEXT)
@@ -78,8 +70,7 @@ property[count)(0]       = (INT)
 property[first)(0]       = (INT)
 property[last)(0]        = (INT)
 property[limit][0]       = (INT)
-property[total](0]       = (INT)
-```
+property[total](0]       = (INT)</code></pre></div>
 
 ### Attributes
 

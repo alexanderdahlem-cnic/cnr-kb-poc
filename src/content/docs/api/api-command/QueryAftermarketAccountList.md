@@ -19,27 +19,23 @@ The command _QueryAftermarketAccountList_ is available via the following gateway
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryAftermarketAccountList</code></pre></div>
 
-```
-command = QueryAftermarketAccountList
-```
+ 
 
-### Response
-
-```
-property[aftermarketaccount][0] = <TEXT>
-property[description][0]        = <TEXT>
-property[accountkey][0]         = <TEXT>
-property[listed domains][0]     = <INT>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[aftermarketaccount][0] = &lt;TEXT&gt;
+property[description][0]        = &lt;TEXT&gt;
+property[accountkey][0]         = &lt;TEXT&gt;
+property[listed domains][0]     = &lt;INT&gt;
 property[login successful][0]   = 0|1
 property[provider][0]           = sedo           (the respective Aftermarket Provider)
-property[count][0]              = <INT>
-property[first][0]              = <INT>
-property[last][0]               = <INT>
-property[limit][0]              = <INT>
-property[total][0]              = <INT>
-```
+property[count][0]              = &lt;INT&gt;
+property[first][0]              = &lt;INT&gt;
+property[last][0]               = &lt;INT&gt;
+property[limit][0]              = &lt;INT&gt;
+property[total][0]              = &lt;INT&gt;</code></pre></div>
 
   
 
@@ -47,20 +43,17 @@ property[total][0]              = <INT>
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-wide               = 1|<NULL>
-aftermarketaccount = <PATTERN>|<NULL>
-description        = <PATTERN>|<NULL>
-accountkey         = <PATTERN>|<NULL>
-listeddomains.     = <PATTERN>|<NULL>
-provider           = sedo|<NULL>
-first              = <INT>
-limit              = <INT>|<NULL>
-orderby            = <TEXT>|<NULL>
-order              = asc|desc|<NULL>
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>wide               = 1|&lt;NULL&gt;
+aftermarketaccount = &lt;PATTERN&gt;|&lt;NULL&gt;
+description        = &lt;PATTERN&gt;|&lt;NULL&gt;
+accountkey         = &lt;PATTERN&gt;|&lt;NULL&gt;
+listeddomains.     = &lt;PATTERN&gt;|&lt;NULL&gt;
+provider           = sedo|&lt;NULL&gt;
+first              = &lt;INT&gt;
+limit              = &lt;INT&gt;|&lt;NULL&gt;
+orderby            = &lt;TEXT&gt;|&lt;NULL&gt;
+order              = asc|desc|&lt;NULL&gt;</code></pre></div>
 
 | **listed domains** | Shows how many domains are currently listed for sale with this Aftermarket Account  
  |

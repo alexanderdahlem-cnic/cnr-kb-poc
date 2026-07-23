@@ -16,14 +16,10 @@ The sending service must "sign" each outgoing message and this signature must ma
 
 The CentralNic e-mail sending servers will DKIM sign all outgoing mails should there be a corresponding record in the sending domain name zone file. If, for example, the sending e-mail address is _emails@example.com_, then to enable DKIM on the following two records need to be added to the _example.com_ DNS zone:
 
-**DNS CNAME Records**
-
-```
-
-ti-a-oveesuingaiye6aoth9i._domainkey IN CNAME ti-a-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>ti-a-oveesuingaiye6aoth9i._domainkey IN CNAME ti-a-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
 ti-b-oveesuingaiye6aoth9i._domainkey IN CNAME ti-b-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
-            			
-```
+            			</code></pre></div>
 
 ## SPF (Sender Policy Framework)
 
@@ -33,19 +29,13 @@ If you are using customised e-mail addresses for the sending of e-mails by our s
 
 If you do not have an SPF record on the sending e-mail domain name, then you will need to add the following TXT record to the DNS zone:
 
-**DNS TXT Records**
-
-```
-@   IN TXT     "v=spf1 include:_spf.mailrelay.rrpproxy.net ~all"
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>@   IN TXT     "v=spf1 include:_spf.mailrelay.rrpproxy.net ~all"</code></pre></div>
 
 If you already have an SPF record, you will need to add the following to your SPF record:
 
-**Additional SPF record**
-
-```
-include:_spf.mailrelay.rrpproxy.net ~all
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>include:_spf.mailrelay.rrpproxy.net ~all</code></pre></div>
 
 ## DMARC (Domain-based Message Authentication, Reporting & Conformance)
 
@@ -53,11 +43,8 @@ DMARC tells receiving servers what to do with messages that don’t pass SPF or 
 
 If you are using customised e-mail addresses for the sending of e-mails by our service, and do not have a DMARC record setup on the sending e-mail address domain name, then, as a minumum, the following TXT record should be added to the zone file:
 
-**DNS TXT Record**
-
-```
-_dmarc    IN TXT     "v=DMARC1; p=none;"
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>_dmarc    IN TXT     "v=DMARC1; p=none;"</code></pre></div>
 
 This instructs the receiving server to take no action on the message, should it fail DKIM/SPF and deliver it to the intended recipient. It will log messages in a daily report (if a rua parameter is included, e.g. rua=mailto:dmarc@example.net;). It is recommended that you review the logs and modify your DMARC record in line with your businesses, and general best practices, to avoid e-mail spoofing and spamming on your domain name.
 

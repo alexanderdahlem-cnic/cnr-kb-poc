@@ -19,27 +19,21 @@ The command _QueryTrusteeLogList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryTrusteeLogList</code></pre></div>
 
-```
-COMMAND = QueryTrusteeLogList
-```
+ 
 
-### Response
-
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryTrusteeLogList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryTrusteeLogList
 DOMAIN = (PATTERN)
 FIRST = (INT)
 LIMIT = (INT)
@@ -48,15 +42,13 @@ MINDATE = (NULL)|(TEXT)
 STATUS = (PATTERN)
 WIDE = 0|1
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)
-```
+SENDLISTEMAIL = (EMAILS)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

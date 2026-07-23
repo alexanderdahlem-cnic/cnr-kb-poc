@@ -7,9 +7,8 @@ description: "SSL certificate creation: ● How to Create a CSR ● Ordering pro
 
 For ordering a certificate, you need to create a CSR (Certificate Signing Request) on your server. You may create such an CSR by issuing the following command using OpenSSL.
 
-```
-openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout www_example_com.key -out www_example_com.csr
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout www_example_com.key -out www_example_com.csr</code></pre></div>
 
 **Notes**
 
@@ -66,39 +65,32 @@ For Symantec Secure Site Pro you can also use special algorithms as listed below
 
 ### AddCertificate
 
-### Command
-
-```
-Command=AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=AddCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...
-```
+...</code></pre></div>
 
 ### RenewCertificate
 
-### Command
-
-```
-Command=RenewCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=RenewCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...
-```
+...</code></pre></div>
 
 ### ReissueCertificate
 
-### Command
-
-```
-Command=ReissueCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=ReissueCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...
-```
+...</code></pre></div>
+
+

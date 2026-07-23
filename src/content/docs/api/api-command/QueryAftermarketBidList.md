@@ -19,30 +19,26 @@ The command _QueryAftermarketBidList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND                = QueryAftermarketBidList
+FIRST                  = &lt;INT&gt;
+LIMIT                  = &lt;INT&gt;</code></pre></div>
 
-```
-COMMAND                = QueryAftermarketBidList
-FIRST                  = <INT>
-LIMIT                  = <INT>
-```
+ 
 
-### Response
-
-```
-code                   = <INT>
-description            = <TEXT>
-property[TOKEN][0]     = <TEXT>
-property[DOMAIN][0]    = <DOMAIN>
-property[BID][0]       = <DECIMAL>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                   = &lt;INT&gt;
+description            = &lt;TEXT&gt;
+property[TOKEN][0]     = &lt;TEXT&gt;
+property[DOMAIN][0]    = &lt;DOMAIN&gt;
+property[BID][0]       = &lt;DECIMAL&gt;
 property[BIDSTATUS][0] = INITIATED|FAILED|SUCCESS|WAITINGFORAUTH|INTRANSFER (1)
 property[provider][0]  = sedo
-property[COUNT][0]     = <INT>
-property[FIRST][0]     = <INT>
-property[LAST][0]      = <INT>
-property[LIMIT][0]     = <INT>
-property[TOTAL][0]     = <INT>
-```
+property[COUNT][0]     = &lt;INT&gt;
+property[FIRST][0]     = &lt;INT&gt;
+property[LAST][0]      = &lt;INT&gt;
+property[LIMIT][0]     = &lt;INT&gt;
+property[TOTAL][0]     = &lt;INT&gt;</code></pre></div>
 
 | **TOKEN** | matching token for this bid  
  |

@@ -19,18 +19,15 @@ The command _QueryPremiumDomainList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryPremiumDomainList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryPremiumDomainList
 ZONE = (TEXT)(mandatory if no LAUNCHPHASE given)
-LAUNCHPHASE = (TEXT)(mandatory if no ZONE given)
-```
+LAUNCHPHASE = (TEXT)(mandatory if no ZONE given)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -48,8 +45,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -76,10 +72,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryPremiumDomainList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryPremiumDomainList
 DOMAIN = (TEXT)
 TYPE = DEFAULT|OWN
 REGISTRYACCOUNT = (TEXT)
@@ -91,13 +85,12 @@ ORDERBY = DOMAIN|UNIT
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
 LIMIT = (INT)
-WIDE = 0|1
-```
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -112,10 +105,9 @@ property[RESTORE][n] = (DECIMAL)
 property[APPLICATION][n] = (DECIMAL)
 property[CURRENCY][n] = (TEXT)
 property[COUNT][0] = (INT)
-property[FIRST][0] = (INT)
-```
+property[FIRST][0] = (INT)</code></pre></div>
 
-property\[LAST\]\[0\] = (INT) property\[LIMIT\]\[0\] = (INT) property\[TOTAL\]\[0\] = (INT)
+ property\[LAST\]\[0\] = (INT) property\[LIMIT\]\[0\] = (INT) property\[TOTAL\]\[0\] = (INT)
 
 ### Attributes
 

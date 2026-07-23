@@ -69,6 +69,13 @@ function extractParam(header, key) {
   return m ? decodeEntities(m[1].replace(/\\'/g, "'")).trim() : '';
 }
 
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function frontmatterEscape(s) {
   return '"' + String(s).replace(/"/g, '\\"') + '"';
 }
@@ -177,8 +184,9 @@ function convert(bladePath) {
     .replace(/<\/?x-[^>]*>/g, '');
 
   const $ = cheerio.load(body, null, false);
-  // Remove repeated page furniture.
+  // Remove repeated page furniture + Font Awesome icons (no FA font shipped).
   $('.breadcrumb, aside, .box.help, nav, .rel_nav').remove();
+  $('i.fa, i[class*="fa-"]').remove();
   // Prefer the main content column if present.
   let scope = $('.main').first();
   if (!scope.length) scope = $.root();
@@ -224,6 +232,24 @@ function convert(bladePath) {
     }
   });
 
+  // Command (.cmd) / Response (.rsp) blocks -> styled coloured boxes.
+  // Kept as raw HTML (with a colour class + flag label) so CSS can style them;
+  // substituted back after turndown via placeholder tokens.
+  const apiBlocks = [];
+  scope.find('.cmd, .rsp').each((_, el) => {
+    const $el = $(el);
+    const kind = $el.hasClass('rsp') ? 'response' : 'command';
+    const label = ($el.find('h1, h2, h3, h4, h5').first().text() || (kind === 'response' ? 'Response' : 'Command')).trim();
+    const codeEl = $el.find('pre code').first().length ? $el.find('pre code').first() : $el.find('pre').first();
+    let code = (codeEl.length ? codeEl.html() : $el.html()) || '';
+    code = code.replace(/\n\s*\n+/g, '\n').replace(/^\n+|\n+$/g, ''); // no blank lines (keeps it one HTML block)
+    const idx = apiBlocks.length;
+    apiBlocks.push(
+      `<div class="api-io api-io--${kind}"><span class="api-io__label">${escapeHtml(label)}</span>\n<pre class="api-io__code"><code>${code}</code></pre></div>`
+    );
+    $el.replaceWith(`\n\nAPIIOBLOCK${idx}ENDBLOCK\n\n`);
+  });
+
   // Overview/teaser pages: turn the ".box" link cards into Starlight <LinkCard>s.
   // (Links inside were already rewritten by the loop above.)
   const cards = [];
@@ -249,6 +275,9 @@ function convert(bladePath) {
   const html = scope.html() || '';
   let md = td.turndown(html).trim();
   // Collapse excessive blank lines.
+  md = md.replace(/\n{3,}/g, '\n\n');
+  // Substitute the Command/Response boxes back in as raw HTML blocks.
+  md = md.replace(/APIIOBLOCK(\d+)ENDBLOCK/g, (_, i) => '\n\n' + apiBlocks[Number(i)] + '\n\n');
   md = md.replace(/\n{3,}/g, '\n\n');
 
   if (!title) title = basename(bladePath).replace(/\.blade\.php$/, '').replace(/[-_]/g, ' ');

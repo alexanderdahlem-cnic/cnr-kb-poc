@@ -18,24 +18,20 @@ The command _QueryExchangeRates_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryExchangeRates</code></pre></div>
 
-```
-COMMAND = QueryExchangeRates
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DATE][n] = (DATE)
 property[CURRENCY_FROM][n] = (TEXT)
 property[CURRENCY_TO][n] = (TEXT)
 property[RATE][n] = (DECIMAL)
 property[COUNT][0] = (INT)
-property[LIMIT][0] = (INT)
-```
+property[LIMIT][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -51,31 +47,27 @@ property[LIMIT][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryExchangeRates
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryExchangeRates
 CURRENCYFROM = (TEXT)
 CURRENCYTO = (TEXT)
 LIMIT = (INT)
 MAXDATE = (DATE)
 MINDATE = (DATE)
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)
-```
+SENDLISTEMAIL = (EMAILS)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DATE][n] = (DATE)
 property[CURRENCY_FROM][n] = (TEXT)
 property[CURRENCY_TO][n] = (TEXT)
 property[RATE][n] = (DECIMAL)
 property[COUNT][0] = (INT)
-property[LIMIT][0] = (INT)
-```
+property[LIMIT][0] = (INT)</code></pre></div>
 
 ### Attributes
 

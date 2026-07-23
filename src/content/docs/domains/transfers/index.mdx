@@ -14,47 +14,39 @@ a) For TLDs that do not support changing contact handles during the transfer pro
 
 Example:
 
-### Command
-
-```
-Command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command = TransferDomain
 Domain = NotSupportingContactHandleChangeUponTransfer.TLD
-OwnerContact0 = O-KEY239
-```
+OwnerContact0 = O-KEY239</code></pre></div>
 
-### Response
+ 
 
-```
-...
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>...
 code = 503
 description = Invalid attribute name; OWNERCONTACT0
-...
-```
+...</code></pre></div>
 
 b) If the parameter FORCEREQUEST=1 is provided, Domain transfer requests containing contact handles, will continue to work, even if the relevant TLD or registry backend does not support changing contact handles during the transfer process through CentralNic Reseller. The given contact information will be automatically suppressed in that scenario. This also applies to potentially submitted name servers (TransferDomain parameter nameserver#).
 
 Example:
 
-### Command
-
-```
-Command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command = TransferDomain
 Domain = NotSupportingContactModificationUponTransfer.TLD
 OwnerContact0 = O-KEY239
 AdminContact0 = O-KEY239
 TechContact0 = O-KEY239
 BillingContact0 = O-KEY239
-FORCEREQUEST=1
-```
+FORCEREQUEST=1</code></pre></div>
 
-### Response
+ 
 
-```
-...
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>...
 code = 200
 description = Command completed successfully
-...
-```
+...</code></pre></div>
 
 ## EPP
 

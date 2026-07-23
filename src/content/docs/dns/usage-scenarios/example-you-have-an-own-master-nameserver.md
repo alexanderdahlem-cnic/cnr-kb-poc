@@ -19,48 +19,38 @@ For IP addresses that can be used to send notifies to and to allow transfer requ
 
 Command example to add a DNS zone with Unicast in KeyDNS for your Master NS. Note that the name service of your Master NS must be accessible regarding the relevant zones by our Slave NS.
 
-### Command
-
-```
-COMMAND          = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND          = AddDNSZone
 dnszone          = yourdomain.TLD
-MASTERIPADDRESS# = [IP]
-```
+MASTERIPADDRESS# = [IP]</code></pre></div>
 
 ## KeyDNS Unicast SlaveNS set for your hidden Master NS
 
 Command example to add a DNS zone with Unicast in KeyDNS for your hidden Master NS. Note that the name service of your Master NS must be accessible regarding the relevant zones by our Slave NS.
 
-### Command
-
-```
-COMMAND          = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND          = AddDNSZone
 dnszone          = yourdomain.TLD
-MASTERIPADDRESS# = [IP]
-```
+MASTERIPADDRESS# = [IP]</code></pre></div>
 
 ## KeyDNS Anycast SlaveNS set for your Master NS
 
 Command example to add a DNS zone with Anycast in KeyDNS for your Master NS. Note that the name service of your Master NS must be accessible regarding the relevant zones by our Slave NS.
 
-### Command
-
-```
-COMMAND          = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND          = AddDNSZone
 dnszone          = yourdomain.TLD
 MASTERIPADDRESS# = [IP]
-PREMIUMDNSSET    = ANYCAST1
-```
+PREMIUMDNSSET    = ANYCAST1</code></pre></div>
 
 ## KeyDNS Anycast SlaveNS set for your hidden Master NS
 
 Command example to add a DNS zone with Anycast in KeyDNS for your hidden Master NS. Note that the name service of your Master NS must be accessible regarding the relevant zones by our Slave NS.
 
-### Command
-
-```
-COMMAND          = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND          = AddDNSZone
 dnszone          = yourdomain.TLD
 MASTERIPADDRESS# = [IP]
-PREMIUMDNSSET    = ANYCAST1
-```
+PREMIUMDNSSET    = ANYCAST1</code></pre></div>
+
+

@@ -22,58 +22,47 @@ Using Anycast is not free of charge. You can find your pricing in your CentralNi
 
 ## Step 1: Adding a new DNSzone with Anycast in KeyDNS
 
-### Command
-
-```
-command              = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command              = AddDNSZone
 dnszone              = test23.com
 rr0                  = @ IN A 1.2.3.4
-premiumdnsset        = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)
-```
+premiumdnsset        = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)</code></pre></div>
 
-### Response
+ 
 
-```
-code                 = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                 = 200
 description          = Command completed successfully
 property[dnszone][0] = test23.com
 queuetime            = 0
-runtime              = 0.004
-```
+runtime              = 0.004</code></pre></div>
 
 ## Step 2: Activating Anycast for a DNSzone in KeyDNS
 
-### Command
-
-```
-command              = ModifyDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command              = ModifyDNSZone
 dnszone              = test23.com
-premiumdnsset        = NULL (OPTIONAL) | ANYCAST1 (OPTIONAL)
-```
+premiumdnsset        = NULL (OPTIONAL) | ANYCAST1 (OPTIONAL)</code></pre></div>
 
-### Response
+ 
 
-```
-code                 = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                 = 200
 description          = Command completed successfully
 property[dnszone][0] = test23.com
 queuetime            = 0
-runtime              = 0.004
-```
+runtime              = 0.004</code></pre></div>
 
 ## Step 3: Checking the status of a DNSzone in KeyDNS
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                    = StatusDNSZone
+dnszone                    = test23.com</code></pre></div>
 
-```
-command                    = StatusDNSZone
-dnszone                    = test23.com
-```
+ 
 
-### Response
-
-```
-code                       = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                       = 200
 description                = Command completed successfully
 property[dnszone][0]       = test23.com
 property[soamname][0]      = ns1.dnsres.net
@@ -83,27 +72,22 @@ property[soattl][0]        = 28800
 property[dnssec][0]        = 0
 property[premiumdnsset][0] = NULL | ANYCAST1
 queuetime                  = 0
-runtime                    = 0.004
-```
+runtime                    = 0.004</code></pre></div>
 
 ## Step 4: Applying Anycast to a Domain
 
 Please use the following name server set with your domains in order to use the Anycast set after activation by AddDNSZone/ModifyDNSZone
 
-### Command
-
-```
-command     = AddDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = AddDomain
 domain      = domain.com
 nameserver0 = anycast1.dnsres.net
-nameserver1 = anycast2.dnsres.net
-```
+nameserver1 = anycast2.dnsres.net</code></pre></div>
 
-### Command
-
-```
-command     = ModifyDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = ModifyDomain
 domain      = domain.com
 nameserver0 = anycast1.dnsres.net
-nameserver1 = anycast2.dnsres.net
-```
+nameserver1 = anycast2.dnsres.net</code></pre></div>
+
+

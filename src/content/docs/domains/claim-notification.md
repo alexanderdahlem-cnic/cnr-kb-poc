@@ -24,10 +24,8 @@ If the reseller is going to carry out the claim notification of the registrant b
 
 To order claim domain names using the customized reseller handling, three additional special parameters have to be included in the order: Notice ID, Expiry Date and Accepted Date.
 
-### Command
-
-```
-command                = AddDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                = AddDomain
 domain                 = claimdomain.tld
 ownercontact0          = P-MHM147
 billingcontact0        = P-MHM147
@@ -35,8 +33,7 @@ admincontact0          = P-MHM147
 auth                   = sdjf"213$
 X-LAUNCH-NOTICE-ID     = 1a9c71e70000000000000036415
 X-LAUNCH-EXPIRY-DATE   = 2014-02-08 00:00:00
-X-LAUNCH-ACCEPTED-DATE = 2014-02-07 00:00:00
-```
+X-LAUNCH-ACCEPTED-DATE = 2014-02-07 00:00:00</code></pre></div>
 
 ### Attributes
 

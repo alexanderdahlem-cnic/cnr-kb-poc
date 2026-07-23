@@ -17,17 +17,14 @@ The command _QueryAGPDeleteslist_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QUERYAGPDELETESLIST
+wide    = 1</code></pre></div>
 
-```
-command = QUERYAGPDELETESLIST
-wide    = 1
-```
+ 
 
-### Response
-
-```
-property[column][0] = zone
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[column][0] = zone
 property[column][1] = current domain registrations
 property[column][2] = current agp deletes
 property[column][3] = total agp deletes
@@ -45,5 +42,6 @@ property[current agp deletes][0]          = 0
 property[total agp deletes][0]            = 0
 property[available agp deletes][0]        = 0
 property[agp percentage][0]               = 9.0
-property[agp days][0]                     = 5
-```
+property[agp days][0]                     = 5</code></pre></div>
+
+

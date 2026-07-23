@@ -17,18 +17,15 @@ The command _StatusContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = StatusContact
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusContact
 CONTACT = (CONTACT)
-AUTH = (TEXT)
-```
+AUTH = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                                       = (INT)
 description                                = (TEXT)
 property[REGISTRAR][0]                     = (TEXT)
@@ -66,5 +63,6 @@ property[x-verification-timestamp][0]      = (DATETIME)
 property[x-verification-method][0]         = (TEXT)
 property[x-verification-reference][0]      = (TEXT)
 property[x-verification-evidence][0]       = (TEXT)
-property[x-verification-result][0]         = Success|failed 
-```
+property[x-verification-result][0]         = Success|failed </code></pre></div>
+
+

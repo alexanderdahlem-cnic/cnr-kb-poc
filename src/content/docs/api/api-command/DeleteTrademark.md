@@ -19,20 +19,16 @@ The command _DeleteTrademark_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteTrademark
+TRADEMARK = (TEXT)</code></pre></div>
 
-```
-COMMAND = DeleteTrademark
-TRADEMARK = (TEXT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
-property[PAYBACK][0] = (TEXT)
-```
+property[PAYBACK][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

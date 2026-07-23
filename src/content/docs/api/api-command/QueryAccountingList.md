@@ -19,17 +19,14 @@ The command _QueryAccountingList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryAccountingList
+MINDATE = (DATE)</code></pre></div>
 
-```
-COMMAND = QueryAccountingList
-MINDATE = (DATE)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[ACCOUNTING_DATE][n] = (DATE)
 property[ACCOUNTING_TYPE][n] = (TEXT)
@@ -54,8 +51,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -90,10 +86,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryAccountingList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryAccountingList
 OBJECT = (TEXT)
 MAXDATE = (TEXT)
 REGISTRAR = (TEXT)
@@ -104,13 +98,12 @@ ACCOUNTINGTYPE = (TEXT)
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[ACCOUNTING_DATE][n] = (DATE)
 property[ACCOUNTING_TYPE][n] = (TEXT)
@@ -135,8 +128,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

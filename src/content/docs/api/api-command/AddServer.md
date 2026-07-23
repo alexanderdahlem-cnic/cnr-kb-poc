@@ -19,28 +19,24 @@ The command _AddServer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddServer
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddServer
 CLASS       = [VSERVER_512|VSERVER_1024|VSERVER_2048]
 AUTOINSTALL = 1
 SERVERPTR   = [TEXT]
 PERIOD      = [1M|3M|6M]
-RENEWALMODE = [AUTORENEW|AUTOEXPIRE]
-```
+RENEWALMODE = [AUTORENEW|AUTOEXPIRE]</code></pre></div>
 
-### Response
+ 
 
-```
-code                  = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                  = [INT]
 description           = [TEXT]
 property[SERVER][0]   = [TEXT]
 property[SERVERIP][0] = [IP]
 property[VNCIP][0]    = [IP]
 property[VNCPASS][0]  = [TEXT]
-property[VNCPORT][0]  = [INT]
-```
+property[VNCPORT][0]  = [INT]</code></pre></div>
 
 ### Attributes
 

@@ -21,21 +21,17 @@ The command _CloneContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CloneContact
+contact= (CONTACT)</code></pre></div>
 
-```
-command=CloneContact
-contact= (CONTACT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CONTACT][0] = (CONTACT)
-property[ROID][0] = (TEXT)
-```
+property[ROID][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -47,22 +43,18 @@ property[ROID][0] = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command=CloneContact
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CloneContact
 contact= (CONTACT)
-new = 1
-```
+new = 1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CONTACT][0] = (CONTACT)
-property[ROID][0] = (TEXT)
-```
+property[ROID][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

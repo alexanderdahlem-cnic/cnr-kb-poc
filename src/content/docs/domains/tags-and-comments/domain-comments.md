@@ -18,20 +18,20 @@ The following API commands now additionally respond with property\[X-DOMAIN-COMM
 
 AddDomain now supports X-DOMAIN-COMMENT= for the direct assignment of a Comment during the registration request.
 
-```
-COMMAND=AddDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND=AddDomain
 ...
 X-DOMAIN-COMMENT=Some witty comment
-...
-```
+...</code></pre></div>
 
 ## ModifyDomain
 
 ModifyDomain now supports X-DOMAIN-COMMENT= for direct assignment a Comment when modifying a Domain.
 
-```
-COMMAND=ModifyDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND=ModifyDomain
 ...
 X-DOMAIN-COMMENT=Some witty comment
-...
-```
+...</code></pre></div>
+
+

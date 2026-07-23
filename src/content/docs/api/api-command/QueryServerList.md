@@ -19,10 +19,8 @@ The command _QueryServerList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = QueryServerList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = QueryServerList
 FIRST       = [INT]
 WIDE        = [1|0]
 LIMIT       = [INT]
@@ -32,13 +30,12 @@ CLASS       = [VSERVER_512|VSERVER_1024|VSERVER_2048]
 PERIOD      = [1M|3M|6M]
 RENEWALMODE = [AUTORENEW|AUTOEXPIRE]
 SERVERIP    = [IP]
-STATUS      = ACTIVE|DISABLED
-```
+STATUS      = ACTIVE|DISABLED</code></pre></div>
 
-### Response
+ 
 
-```
-code                         = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                         = [INT]
 description                  = [TEXT]
 property[BOOTORDER][n]       = [dc|cd]
 property[CDIMAGE][n]         = [INT]
@@ -60,8 +57,7 @@ property[VNCIP][n]           = [IP]
 property[VNCKEYMAP][n]       = [ar|da|de|de-ch|en-gb|...]
 property[VNCPASS][n]         = [TEXT]
 property[VNCPOINTER][n]      = [mouse|tablet]
-property[VNCPORT][n]         = [INT]
-```
+property[VNCPORT][n]         = [INT]</code></pre></div>
 
 ### Attributes
 

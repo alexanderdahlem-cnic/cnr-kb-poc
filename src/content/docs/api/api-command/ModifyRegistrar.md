@@ -17,10 +17,8 @@ The command _ModifyRegistrar_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND               = ModifyRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND               = ModifyRegistrar
 REGISTRAR             = (TEXT)
 URL                   = (TEXT)
 WHOIS                 = (TEXT)
@@ -102,15 +100,13 @@ BANNER0               = (TEXT)
 BANNER1               = (TEXT)
 BANNER2               = (TEXT)
 BANNER3               = (TEXT)
-BANNER4               = (TEXT)
-```
+BANNER4               = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code        = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

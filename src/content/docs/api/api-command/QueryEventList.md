@@ -19,16 +19,13 @@ The command _QueryEventList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryEventList</code></pre></div>
 
-```
-COMMAND = QueryEventList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[EVENT][n] = (INT)
 property[EVENTCLASS][n] = (TEXT)
@@ -41,8 +38,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -64,10 +60,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryEventList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryEventList
 CLASS = (PATTERN)
 SUBCLASS = (PATTERN)
 HISTORY = 0|1
@@ -81,13 +75,12 @@ SHOWALL= 0|1
 MINDATE = (DATE)
 MAXDATE = (DATE)
 ORDERBY = CLASS|SUBCLASS|OBJECTID|DATE
-ORDER = ASC|DESC
-```
+ORDER = ASC|DESC</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[EVENT][n] = (INT)
 property[EVENTCLASS][n] = (TEXT)
@@ -101,8 +94,7 @@ property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
 property[TOTAL][0] = (INT)
-property[REGISTRAR][n] = (TEXT)
-```
+property[REGISTRAR][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 

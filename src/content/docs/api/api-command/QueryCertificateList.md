@@ -22,17 +22,14 @@ The command _QueryCertificateList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND 	= QueryCertificateList
+APIVERSION 	= 1|2</code></pre></div>
 
-```
-COMMAND 	= QueryCertificateList
-APIVERSION 	= 1|2
-```
+ 
 
-### Response
-
-```
-code 				= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[class][n] 		= (TEXT)
@@ -53,17 +50,14 @@ property[count][n] 		= (INT)
 property[first][n] 		= (INT)
 property[last][n] 		= (INT)
 property[limit][n] 		= (INT)
-property[total][n] 		= (INT)
-```
+property[total][n] 		= (INT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-WIDE 		= 0|1
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>WIDE 		= 0|1
 CERTIFICATE	= (TEXT)
 CERTIFICATEORDER= (TEXT)
 CREATEDDATE	= (DATE)
@@ -80,5 +74,6 @@ DOMAIN 		= (TEXT)
 INCLUDESUB 	= 0|1
 SERVICETAG# 	= (TEXT)
 SERVERTYPE	= apache|barracuda|weblogic|cisco|citrix|cpanel|f5|ibm|java|lighttpd|lotus|macos|exchange.*2007|exchange.*2010|exchange.*2013|exchange.*2016|forefront|iis56|iis7|iis8|iis10|netscape|iplanet|nginx|novellichain|novellnetware|oracle|qmail|sunone|tomcat|webstar|zeus|other
-CLASS 		= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
-```
+CLASS 		= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv</code></pre></div>
+
+

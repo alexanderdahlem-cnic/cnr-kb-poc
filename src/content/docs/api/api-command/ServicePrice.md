@@ -19,17 +19,14 @@ The command _ServicePrice_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ServicePrice
+SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE</code></pre></div>
 
-```
-COMMAND = ServicePrice
-SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[SERVICE][0] = (TEXT)
 property[TYPE][0] = (TEXT)
@@ -51,8 +48,7 @@ property[PRICE][0] = (DECIMAL)
 property[VAT][0] = (DECIMAL)
 property[NONREFUNDABLE][0] = (DECIMAL)
 property[VATNONREFUNDABLE][0] = (DECIMAL)
-property[PROMOTION][n] = (TEXT)
-```
+property[PROMOTION][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -83,23 +79,20 @@ property[PROMOTION][n] = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = ServicePrice
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ServicePrice
 PERIOD = (TEXT)
 PERIODTYPE = (TEXT)
 ACTION = ADD|RENEW|TRANSFER
 SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE
 TYPE = (TEXT)
 DOMAIN = (TEXT)
-X-PROMOTION-CODE = (TEXT)
-```
+X-PROMOTION-CODE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[SERVICE][0] = (TEXT)
 property[TYPE][0] = (TEXT)
@@ -117,10 +110,9 @@ property[ZONECURRENCY][0] = (TEXT)
 property[EXCHANGERATE][0] = (DECIMAL)
 property[ACTION][0] = (TEXT)
 property[PERIOD][0] = (INT)
-property[PRICE][0] = (DECIMAL)
-```
+property[PRICE][0] = (DECIMAL)</code></pre></div>
 
-property\[VAT\]\[0\] = (DECIMAL) property\[NONREFUNDABLE\]\[0\] = (DECIMAL) property\[VATNONREFUNDABLE\]\[0\] = (DECIMAL) property\[PROMOTION\]\[n\] = (TEXT)
+ property\[VAT\]\[0\] = (DECIMAL) property\[NONREFUNDABLE\]\[0\] = (DECIMAL) property\[VATNONREFUNDABLE\]\[0\] = (DECIMAL) property\[PROMOTION\]\[n\] = (TEXT)
 
 ### Attributes
 

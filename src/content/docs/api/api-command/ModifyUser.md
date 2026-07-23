@@ -19,17 +19,14 @@ The command _ModifyUser_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = ModifyUser
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyUser
 username = (TEXT)
 password = (TEXT)
 addgroup0..255 = (TEXT)
 delgroup0..255 = (TEXT)
 adduser0..255 = (TEXT)
-deluser0..255 = (TEXT)
-```
+deluser0..255 = (TEXT)</code></pre></div>
 
 ### Attributes
 

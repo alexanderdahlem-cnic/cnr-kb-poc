@@ -19,25 +19,21 @@ The command _StatusEvent_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusEvent
+EVENT = (INT)</code></pre></div>
 
-```
-COMMAND = StatusEvent
-EVENT = (INT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[OBJECT_ID][0] = (TEXT)
 property[CLASS][0] = (TEXT)
 property[SUBCLASS][0] = (TEXT)
 property[DATA][n] = (TEXT)
 property[INFO][0] = (TEXT)
-property[DATE][0] = (DATE)
-```
+property[DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -54,26 +50,22 @@ property[DATE][0] = (DATE)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = StatusEvent
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusEvent
 EVENT = (INT)
-HISTORY = 0|1
-```
+HISTORY = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[OBJECT_ID][0] = (TEXT)
 property[CLASS][0] = (TEXT)
 property[SUBCLASS][0] = (TEXT)
 property[DATA][n] = (TEXT)
 property[INFO][0] = (TEXT)
-property[DATE][0] = (DATE)
-```
+property[DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 

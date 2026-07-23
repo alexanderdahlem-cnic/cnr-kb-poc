@@ -19,38 +19,31 @@ The command _QueryApplicationList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryApplicationList</code></pre></div>
 
-```
-command = QueryApplicationList
-```
+ 
 
-### Response
-
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command = QueryApplicationList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryApplicationList
 application = (PATTERN)
 domain      = (DOMAIN)
 zone        = (ZONE)
 first       = (INT)
-limit       = (INT)
-```
+limit       = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-property[application][0]          = (APPLICATION CLASS)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[application][0]          = (APPLICATION CLASS)
 property[check domain syntax][0]  = (REGEXP)
 property[description][0]          = (TEXT)
 property[period start][0]         = (DATE)
@@ -71,5 +64,6 @@ property[count][0]                = (INT)
 property[first][0]                = (INT)
 property[last][0]                 = (INT)
 property[limit][0]                = (INT)
-property[total][0]                = (INT)
-```
+property[total][0]                = (INT)</code></pre></div>
+
+

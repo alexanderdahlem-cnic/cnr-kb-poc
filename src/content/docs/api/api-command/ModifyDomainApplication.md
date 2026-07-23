@@ -19,14 +19,11 @@ The command _ModifyDomainApplication_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command     = ModifyDomainApplication
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = ModifyDomainApplication
 application = INT
 class       = Change GTLD-PREORDER to desired launch phase CLASS
-pay         = 1        - REQUIRED
-```
+pay         = 1        - REQUIRED</code></pre></div>
 
 ### Attributes
 

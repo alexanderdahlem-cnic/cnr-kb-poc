@@ -19,23 +19,21 @@ The command _BuyDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND  = BuyDomain
-DOMAIN   = <DOMAIN>         (The domain to be bought, mandatory)
-BID      = <DECIMAL>        (Price to buy the domain for, in your account currency. Format XX.XX, decimals always need to be stated.)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND  = BuyDomain
+DOMAIN   = &lt;DOMAIN&gt;         (The domain to be bought, mandatory)
+BID      = &lt;DECIMAL&gt;        (Price to buy the domain for, in your account currency. Format XX.XX, decimals always need to be stated.)
 PROVIDER = sedo             (Where to buy the domain)
-CONTACT  = <CONTACT>        (Contact handle used to buy the domain, will be used for all contact handles after the transfer)
-TOKEN    = <TEXT>           (Token used to reserve a domain, optional but necessary if the domain has been reserved previously)
-```
+CONTACT  = &lt;CONTACT&gt;        (Contact handle used to buy the domain, will be used for all contact handles after the transfer)
+TOKEN    = &lt;TEXT&gt;           (Token used to reserve a domain, optional but necessary if the domain has been reserved previously)</code></pre></div>
 
-### Response
+ 
 
-```
-code                  = <INT>
-description           = <TEXT>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                  = &lt;INT&gt;
+description           = &lt;TEXT&gt;
 property[BIDDING][0]  = 0|1          (0: buy_now, Domain has been bought, 1: make_offer, Domain is in bidding)
-property[TOKEN][0]    = <TEXT>       (Token, identifier of the buy process. Necessary for further bids in biddings.)
-property[provider][0] = sedo         (Aftermarket Provider)
-```
+property[TOKEN][0]    = &lt;TEXT&gt;       (Token, identifier of the buy process. Necessary for further bids in biddings.)
+property[provider][0] = sedo         (Aftermarket Provider)</code></pre></div>
+
+

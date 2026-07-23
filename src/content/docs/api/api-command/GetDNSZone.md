@@ -19,23 +19,19 @@ The command _GetDNSZone_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = GetDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetDNSZone
 DOMAIN  = [TEXT]
-CLTRID  = [TEXT]
-```
+CLTRID  = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code                 = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                 = [INT]
 description          = [TEXT]
 property[DNSZONE][0] = [TEXT]
 property[CLTRID][0]  = [TEXT]
-property[SVTRID][0]  = [TEXT]
-```
+property[SVTRID][0]  = [TEXT]</code></pre></div>
 
 ### Attributes
 

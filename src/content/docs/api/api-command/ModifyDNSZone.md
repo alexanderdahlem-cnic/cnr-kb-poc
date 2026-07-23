@@ -20,10 +20,8 @@ The command _ModifyDNSZone_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND             = ModifyDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND             = ModifyDNSZone
 COMMAND             = ModifyDNSZone
 DNSZONE             = [TEXT]
 SOAEXPIRE           = [INT]
@@ -43,17 +41,15 @@ ADDMASTERIPADDRESS# = [IP]
 SLAVEIPADDRESS#     = [IP]
 - or -
 DELSLAVEIPADDRESS#  = [IP]
-ADDSLAVEIPADDRESS#  = [IP]
-```
+ADDSLAVEIPADDRESS#  = [IP]</code></pre></div>
 
-### Response
+ 
 
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 
@@ -86,17 +82,13 @@ property[SVTRID][0] = [TEXT]
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>signed = 0 (DEFAULT) | 1 (OPTIONAL)</code></pre></div>
 
-```
-signed = 0 (DEFAULT) | 1 (OPTIONAL)
-```
+ 
 
-### Response
-
-```
-property[signed][0]  = 1
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[signed][0]  = 1</code></pre></div>
 
 ### Attributes
 
@@ -107,8 +99,7 @@ property[signed][0]  = 1
 
 The following premium parameters are standard for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>PREMIUMDNSSET       = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)</code></pre></div>
 
-```
-PREMIUMDNSSET       = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)
-```
+

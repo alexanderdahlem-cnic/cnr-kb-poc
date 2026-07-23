@@ -19,16 +19,13 @@ The command _QueryUpcomingAccountingList_ is available via the following gateway
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryUpcomingAccountingList</code></pre></div>
 
-```
-COMMAND = QueryUpcomingAccountingList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[SERVER][n] = (TEXT)
@@ -48,8 +45,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -77,10 +73,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryUpcomingAccountingList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryUpcomingAccountingList
 DAYS = (INT)
 ORDER = ASC|DESC
 ORDERBY = DOMAIN | ZONE | RENEWALDATE | CLASS
@@ -94,13 +88,12 @@ CLASS = (TEXT)
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[SERVER][n] = (TEXT)
@@ -120,8 +113,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

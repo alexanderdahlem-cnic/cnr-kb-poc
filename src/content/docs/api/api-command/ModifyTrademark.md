@@ -19,10 +19,8 @@ The command _ModifyTrademark_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = ModifyTrademark
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ModifyTrademark
 TRADEMARK = (TEXT)
 MARKNAME = (TEXT)
 X-ACCEPT-ADDITIONAL-LABEL-COST = 0|1
@@ -57,13 +55,12 @@ ADDCLAIMSNOTIFY# = 0|1
 DELCLAIMSNOTIFY# = 0|1
 ULABEL# = (TEXT)
 ADDULABEL# = (TEXT)
-DELULABEL# = (TEXT)
-```
+DELULABEL# = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[TRADEMARK][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -73,8 +70,7 @@ property[UPDATED_DATE][0] = (DATE)
 property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 property[RENEWAL_DATE][0] = (DATE)
 property[STATUS][0] = ACTIVE|PROCESSING|REQUESTED|FAILED|DOCUMENTS_RECEIVED|INCORRECT|DEACTIVATED|EXPIRED
-property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1
-```
+property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1</code></pre></div>
 
 ### Attributes
 

@@ -19,17 +19,15 @@ The command _RenewServer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = RenewServer
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = RenewServer
 SERVER  = [Server-ID]
-PERIOD  = [1M|3M|6M]
-```
+PERIOD  = [1M|3M|6M]</code></pre></div>
 
-### Response
+ 
 
-```
-code        = [INT]
-description = [TEXT]
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = [INT]
+description = [TEXT]</code></pre></div>
+
+

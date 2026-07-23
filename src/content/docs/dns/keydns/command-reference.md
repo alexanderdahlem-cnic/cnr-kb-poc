@@ -2,25 +2,9 @@
 title: "Command reference"
 ---
 
-## KeyDNS API-Commands
 
-_Our KeyDNS Reference Manual will give you an extensive overview of the commands which can be submitted to the system. Please read the KeyDNS Reference manual carefully in order to avoid any mistakes. If there are any errors or missing topics, please do not hesitate to contact us._
 
-| [AddDNSZone](../../../api/api-command/adddnszone/) | Add the DNSZone to the HostedDNS section |
-| --- | --- |
-| [AddMailFwd](../../../api/api-command/addmailfwd/) | Add a mail forward |
-| [AddWebFwd](../../../api/api-command/addwebfwd/) | Add forward in HostedDNS zone |
-| [CheckDNSZone](../../../api/api-command/checkdnszone/) | Check availability of DNSZone |
-| [DeleteDNSZone](../../../api/api-command/deletednszone/) | Delete the DNSZone from the HostedDNS section |
-| [DeleteMailFwd](../../../api/api-command/deletemailfwd/) | Delete a mail forward |
-| [DeleteWebFwd](../../../api/api-command/deletewebfwd/) | Delete a web forward |
-| [ExportDNSZone](../../../api/api-command/exportdnszone/) | Export DNSZone from KeyDNS |
-| [GetDNSZone](../../../api/api-command/getdnszone/) | GetDNSZone |
-| [ImportDNSZone](../../../api/api-command/importdnszone/) | Import DNSZone to KeyDNS |
-| [ModifyDNSZone](../../../api/api-command/modifydnszone/) | Modify the DNSZone in the HostedDNS section |
-| [QueryDNSZoneList](../../../api/api-command/querydnszonelist/) | Query list of DNSZones in KeyDNS |
-| [QueryDNSZoneRRList](../../../api/api-command/querydnszonerrlist/) | Query list of resource records of a particular zone |
-| [QueryDNSZoneSubdomainList](../../../api/api-command/querydnszonesubdomainlist/) | Query subdomain list of a particular DNSZone |
-| [QueryMailFwdList](../../../api/api-command/querymailfwdlist/) | Query list of mail forwards |
-| [QueryWebFwdList](../../../api/api-command/querywebfwdlist/) | Query list of web forwards |
-| [StatusDNSZone](../../../api/api-command/statusdnszone/) | Shows the DNSZone configuration |
+<div class="api-io api-io--command"><span class="api-io__label">KeyDNS API-Commands</span>
+<pre class="api-io__code"><code><h2>KeyDNS API-Commands</h2><p><em>Our KeyDNS Reference Manual will give you an extensive overview of the commands which can be submitted to the system. Please read the KeyDNS Reference manual carefully in order to avoid any mistakes. If there are any errors or missing topics, please do not hesitate to contact us.</em></p><table><tbody><tr><th><a href="../../../api/api-command/adddnszone/">AddDNSZone</a></th><th>Add the DNSZone to the HostedDNS section</th></tr><tr><td><a href="../../../api/api-command/addmailfwd/">AddMailFwd</a></td><td>Add a mail forward</td></tr><tr><td><a href="../../../api/api-command/addwebfwd/">AddWebFwd</a></td><td>Add forward in HostedDNS zone</td></tr><tr><td><a href="../../../api/api-command/checkdnszone/">CheckDNSZone</a></td><td>Check availability of DNSZone</td></tr><tr><td><a href="../../../api/api-command/deletednszone/">DeleteDNSZone</a></td><td>Delete the DNSZone from the HostedDNS section</td></tr><tr><td><a href="../../../api/api-command/deletemailfwd/">DeleteMailFwd</a></td><td>Delete a mail forward</td></tr><tr><td><a href="../../../api/api-command/deletewebfwd/">DeleteWebFwd</a></td><td>Delete a web forward</td></tr><tr><td><a href="../../../api/api-command/exportdnszone/">ExportDNSZone</a></td><td>Export DNSZone from KeyDNS</td></tr><tr><td><a href="../../../api/api-command/getdnszone/">GetDNSZone</a></td><td>GetDNSZone</td></tr><tr><td><a href="../../../api/api-command/importdnszone/">ImportDNSZone</a></td><td>Import DNSZone to KeyDNS</td></tr><tr><td><a href="../../../api/api-command/modifydnszone/">ModifyDNSZone</a></td><td>Modify the DNSZone in the HostedDNS section</td></tr><tr><td><a href="../../../api/api-command/querydnszonelist/">QueryDNSZoneList</a></td><td>Query list of DNSZones in KeyDNS</td></tr><tr><td><a href="../../../api/api-command/querydnszonerrlist/">QueryDNSZoneRRList</a></td><td>Query list of resource records of a particular zone</td></tr><tr><td><a href="../../../api/api-command/querydnszonesubdomainlist/">QueryDNSZoneSubdomainList</a></td><td>Query subdomain list of a particular DNSZone</td></tr><tr><td><a href="../../../api/api-command/querymailfwdlist/">QueryMailFwdList</a></td><td>Query list of mail forwards</td></tr><tr><td><a href="../../../api/api-command/querywebfwdlist/">QueryWebFwdList</a></td><td>Query list of web forwards</td></tr><tr><td><a href="../../../api/api-command/statusdnszone/">StatusDNSZone</a></td><td>Shows the DNSZone configuration</td></tr></tbody></table></code></pre></div>
+
+

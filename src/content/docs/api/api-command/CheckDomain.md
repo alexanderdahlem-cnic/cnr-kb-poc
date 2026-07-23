@@ -24,19 +24,15 @@ The command _CheckDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomain
+domain=YOURDOMAIN.TLD</code></pre></div>
 
-```
-command=CheckDomain
-domain=YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -47,25 +43,21 @@ description = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command=CheckDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomain
 domain=YOURDOMAIN.TLD
 X-IDN-LANGUAGE = (TEXT)
-X-ALLOCATION-TOKEN=0|1
-```
+X-ALLOCATION-TOKEN=0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[X-ALLOCATION-TOKEN][0] = (TEXT)
 property[AFTERMARKET_PRICE][0] = (DECIMAL)
 property[AFTERMARKET_CURRENCY][0] = (TEXT)
-property[AFTERMARKET_INFO][0] = (TEXT)
-```
+property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -80,23 +72,20 @@ property[AFTERMARKET_INFO][0] = (TEXT)
 
 The following premium parameters are standard for this command.
 
-### Command
-
-```
-command=CheckDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=CheckDomain
 domain=YOURDOMAIN.TLD
 X-FEE-COMMAND#=(TEXT)
 X-FEE-DOMAIN#=(TEXT)
 X-FEE-PERIOD#=(INT)
 X-FEE-PERIODTYPE#=(TEXT)
 X-FEE-CURRENCY#=(TEXT)
-X-FEE-LAUNCHPHASE#=(TEXT)
-```
+X-FEE-LAUNCHPHASE#=(TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 X-FEE-DOMAIN#=(TEXT)
 X-FEE-PERIOD#=(INT)
@@ -105,8 +94,7 @@ X-FEE-CURRENCY#=(TEXT)
 X-FEE-LAUNCHPHASE#=(TEXT)
 X-FEE-CLASS#=(TEXT)
 X-FEE-AMOUNT#=(DECIMAL)
-X-FEE-APPLICATION#=(DECIMAL)
-```
+X-FEE-APPLICATION#=(DECIMAL)</code></pre></div>
 
 ### Attributes
 

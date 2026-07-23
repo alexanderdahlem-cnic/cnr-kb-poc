@@ -35,18 +35,15 @@ The command _RenewCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND 	= RenewCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND 	= RenewCertificate
 CERTIFICATE 	= (TEXT)
-APIVERSION 	= 1|2
-```
+APIVERSION 	= 1|2</code></pre></div>
 
-### Response
+ 
 
-```
-code 				= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[certificateorder][n] 	= (TEXT)
@@ -84,22 +81,20 @@ property[organizationcontact][n]= (TEXT)
 property[evapprovercontact][n] 	= (TEXT)
 property[updated by][n] 	= (TEXT)
 property[updated date][n] 	= (DATE)
-property[vat][n] 		= (DECIMAL)
-```
+property[vat][n] 		= (DECIMAL)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-CSR#          = (TEXT)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>CSR#          = (TEXT)
 DCVMETHOD     = EMAIL|DNS-TXT|DNS-CNAME|HTTP|HTTPS
 DCVSCOPE      = base|fqdn
 DCVTOKEN      = (TEXT)
 CACERTIFICATE = (TEXT)
 ALGORITHM     = (TEXT)
 PERIOD        = (For Sectigo) 1y,365d
-PERIOD        = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d
-```
+PERIOD        = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d</code></pre></div>
+
+

@@ -17,8 +17,8 @@ The Verisign Name Suggestion has been integrated (nearly) 1:1 and offers a wide 
 
 The only mandatory field is NAME for which alternative suggestions shall be generated. The parameters of the command GetNameSuggestion are depending on the respective TYPE, since parameter vary slightly depending on the selected TYPE. Also, depending on the selected TYPE the response varies. Thus this API documentation for GetNameSuggestion is always in context with a relevant TYPE.
 
-```
-Type: Suggest
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Type: Suggest
 Language: English
 TLDs: com,de,net,org,ch,info,co.uk,es,com.br,eu
 IDN: yes
@@ -27,8 +27,7 @@ Dashes: yes
 Content Filter: no
 Unavailable Domains: no
 Maximum Length: 63 characters
-Maximum Results: 30
-```
+Maximum Results: 30</code></pre></div>
 
 ## GetNameSuggestion
 
@@ -56,10 +55,8 @@ Parameter Explanation
 This is the standard API function which combines all other functions (prefix, suffix, spin, etc.) and shows various results using different algorithms.  
 Integrated as standard function in CentralNic Reseller.
 
-### Command
-
-```
-COMMAND = GetNameSuggestion
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetNameSuggestion
 NAME = [TEXT]
 (optional)
 TYPE = SUGGEST
@@ -72,46 +69,38 @@ USE-DASHES = 0|1
 FILTER-CONTENT = 0|1
 SHOW-UNAVAILABLE = 0|1
 MAX-LENGTH = 3-63
-MAX-RESULTS = 1-99
-```
+MAX-RESULTS = 1-99</code></pre></div>
 
-### Response
+ 
 
-```
-property[NAME][n] =
-property[AVAILABILITY][n] =
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[NAME][n] =
+property[AVAILABILITY][n] =</code></pre></div>
 
 ### TYPE SEGMENT
 
 Segments a given name into single words, if possible.  
 Example: iamthelaw -> i, am, the, law
 
-### Command
-
-```
-COMMAND = GetNameSuggestion
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetNameSuggestion
 TYPE = SEGMENT
 NAME = [TEXT]
 (optional)
-LANGUAGE = ENG|SPA|ITA|JPN|TUR|CHI|GER|POR|FRE|KOR
-```
+LANGUAGE = ENG|SPA|ITA|JPN|TUR|CHI|GER|POR|FRE|KOR</code></pre></div>
 
-### Response
+ 
 
-```
-property[SEGMENTEDNAME][n] =
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[SEGMENTEDNAME][n] =</code></pre></div>
 
 ### TYPE PREFIX/SUFFIX
 
 Adds both syntactically and semantically relevant prefixes or suffixes for domain name suggestions.  
 Examples: prefixsearchstring.com or searchstringsuffix.com
 
-### Command
-
-```
-COMMAND = GetNameSuggestion
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetNameSuggestion
 TYPE = PREFIX|SUFFIX
 NAME = [TEXT]
 (optional)
@@ -123,25 +112,21 @@ FILTER-CONTENT = 0|1
 SHOW-UNAVAILABLE = 0|1
 MAX-LENGTH = 3-63
 MAX-RESULTS = 1-99
-USE-SEPARATOR = 0|1
-```
+USE-SEPARATOR = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-property[NAME][n] =
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[NAME][n] =
 property[PREFIX|SUFFIX][n] =
-property[AVAILABILITY][n] =
-```
+property[AVAILABILITY][n] =</code></pre></div>
 
 ### TYPE SPINWORD
 
 Provides syntactically and semantically relevant alternatives for one specific word of a list of at last 2 and up to 10 words.
 
-### Command
-
-```
-COMMAND = GetNameSuggestion
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetNameSuggestion
 NAME0 || NAME = [TEXT]
 TYPE = SPINWORD
 (optional)
@@ -155,24 +140,20 @@ SHOW-UNAVAILABLE = 0|1
 MAX-LENGTH = 3-63
 MAX-RESULTS = 1-99
 USE-SEPARATOR = 0|1
-POSITION = [INT]
-```
+POSITION = [INT]</code></pre></div>
 
-### Response
+ 
 
-```
-property[NAME][n] =
-property[AVAILABILITY][n] =
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[NAME][n] =
+property[AVAILABILITY][n] =</code></pre></div>
 
 ### TYPE PERSONALNAME
 
 This function specifically generates alternatives for personal names.
 
-### Command
-
-```
-COMMAND = GetNameSuggestion
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetNameSuggestion
 NAME or FIRSTNAME = [TEXT]
 TYPE = PERSONALNAME
 (optional)
@@ -187,12 +168,12 @@ FILTER-CONTENT = 0|1
 SHOW-UNAVAILABLE = 0|1
 MAX-LENGTH = 3-63
 MAX-RESULTS = 1-99
-SPIN-FIRSTNAME = 0|1
-```
+SPIN-FIRSTNAME = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-property[NAME][n] =
-property[AVAILABILITY][n] =
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[NAME][n] =
+property[AVAILABILITY][n] =</code></pre></div>
+
+

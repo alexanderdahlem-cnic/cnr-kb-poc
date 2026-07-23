@@ -19,17 +19,14 @@ The command _StatusDomainApplication_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = StatusDomainApplication
+application = (INT)</code></pre></div>
 
-```
-command     = StatusDomainApplication
-application = (INT)
-```
+ 
 
-### Response
-
-```
-code =  (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code =  (INT)
 description =  (TEXT)
 property[DOMAIN][0] =  (DOMAIN)
 property[APPLICATION_ID][0] =  (INT)
@@ -50,8 +47,7 @@ property[X-TRADEMARK-NUMBER][0] =  (TEXT)
 property[X-TRADEMARK-REG-DATE][0] =  (DATE)
 property[X-TRADEMARK-RIGHT-TYPE][0] =  (TEXT)
 property[CREATED_DATE][0] =  (DATE)
-property[UPDATE_DATE][0] =  (DATE)
-```
+property[UPDATE_DATE][0] =  (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -81,19 +77,16 @@ property[UPDATE_DATE][0] =  (DATE)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = StatusDomainApplication
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDomainApplication
 DOMAIN = (DOMAIN)
 CLASS = (TEXT)
-APPLICATION = (INT)
-```
+APPLICATION = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code =  (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code =  (INT)
 description =  (TEXT)
 property[DOMAIN][0] =  (DOMAIN)
 property[APPLICATION_ID][0] =  (INT)
@@ -114,8 +107,7 @@ property[X-TRADEMARK-NUMBER][0] =  (TEXT)
 property[X-TRADEMARK-REG-DATE][0] =  (DATE)
 property[X-TRADEMARK-RIGHT-TYPE][0] =  (TEXT)
 property[CREATED_DATE][0] =  (DATE)
-property[UPDATE_DATE][0] =  (DATE)
-```
+property[UPDATE_DATE][0] =  (DATE)</code></pre></div>
 
 ### Attributes
 

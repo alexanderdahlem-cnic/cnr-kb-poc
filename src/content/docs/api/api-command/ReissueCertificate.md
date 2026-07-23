@@ -24,18 +24,15 @@ The command _ReissueCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND 	= ReissueCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND 	= ReissueCertificate
 CERTIFICATE 	= (TEXT)
-APIVERSION 	= 1|2
-```
+APIVERSION 	= 1|2</code></pre></div>
 
-### Response
+ 
 
-```
-code 				= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[certificateorder][n] 	= (TEXT)
@@ -69,19 +66,17 @@ property[techcontact#][n] 	= (TEXT)
 property[organizationcontact][n]= (TEXT)
 property[evapprovercontact][n] 	= (TEXT)
 property[updated by][n] 	= (TEXT)
-property[updated date][n] 	= (DATE)
-```
+property[updated date][n] 	= (DATE)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-CSR#	 		= (TEXT)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>CSR#	 		= (TEXT)
 DCVSCOPE		= base|fqdn
 DCVTOKEN		= (TEXT)
 CACERTIFICATE		= (TEXT)
-ALGORITHM 		= (TEXT)
-```
+ALGORITHM 		= (TEXT)</code></pre></div>
+
+

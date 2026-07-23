@@ -10,6 +10,56 @@
   --sl-color-accent-high: #0b3a63;
 }
 
+/* API Command / Response boxes: yellow = command, blue = response, with a
+   small coloured flag label in the top-left corner. */
+.api-io {
+  margin: 1rem 0;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.api-io__label {
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  border-radius: 0 0 0.4rem 0;
+  font-size: var(--sl-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.api-io__code {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  background: transparent;
+  overflow-x: auto;
+  font-family: var(--sl-font-mono, ui-monospace, monospace);
+  font-size: var(--sl-text-code);
+  line-height: 1.55;
+  color: var(--sl-color-white);
+}
+.api-io__code code {
+  font-family: inherit;
+  white-space: pre;
+}
+/* Command = yellow */
+.api-io--command {
+  background: rgba(234, 179, 8, 0.08);
+  border-color: rgba(234, 179, 8, 0.5);
+}
+.api-io--command .api-io__label {
+  background: #eab308;
+  color: #1a1a1a;
+}
+/* Response = blue (CNR blue) */
+.api-io--response {
+  background: rgba(45, 104, 196, 0.12);
+  border-color: rgba(45, 104, 196, 0.55);
+}
+.api-io--response .api-io__label {
+  background: #2d68c4;
+  color: #ffffff;
+}
+
 /* Brand logo (top-left) — scale the wide wordmark to fit the header nicely. */
 .site-title img {
   height: 1.9rem;

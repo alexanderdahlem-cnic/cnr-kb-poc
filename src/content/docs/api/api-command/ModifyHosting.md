@@ -19,10 +19,8 @@ The command _ModifyHosting_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = ModifyHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ModifyHosting
 CLASS required = cpanel (DEFAULT)
 TYPE optional = useraccount|email|mysqldatabaseuserprivileges|passwordresetftpuser|passwordresetaccount|passwordresetmysqldatabaseuser
 ACCOUNT required = cPanelAccountID
@@ -36,12 +34,12 @@ PACKAGE optional = economy|business|firstclass
 ACTION optional = suspendsendemail|suspendloginemail|suspendreceiveemail|unsuspendsendemail|unsuspendloginemail|unsuspendreceiveemail|suspend|unsuspend
 NAME optional = (only for CentralNic Reseller tagging)
 PASSWORD optional =
-RENEWALMODE = AUTODELETE|AUTORENEW
-```
+RENEWALMODE = AUTODELETE|AUTORENEW</code></pre></div>
 
-### Response
+ 
 
-```
-code =  (INT)
-description =  (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code =  (INT)
+description =  (TEXT)</code></pre></div>
+
+

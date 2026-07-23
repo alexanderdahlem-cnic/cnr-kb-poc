@@ -19,17 +19,14 @@ The command _StatusServer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusServer
+SERVER  = [Server-ID]</code></pre></div>
 
-```
-COMMAND = StatusServer
-SERVER  = [Server-ID]
-```
+ 
 
-### Response
-
-```
-code                         = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                         = [INT]
 description                  = [TEXT]
 property[SERVER][0]          = [TEXT]
 property[CLASS][0]           = VSERVER_512|VSERVER_1024|VSERVER_2048
@@ -55,8 +52,7 @@ property[VNCIP][0]           = [IP]
 property[VNCKEYMAP][0]       = [ar|da|de|de-ch|en-gb|en-us|es|...]
 property[VNCPORT][0]         = [INT]
 property[VNCPASS][0]         = [TEXT]
-property[VNCPOINTER][0]      = mouse|tablet
-```
+property[VNCPOINTER][0]      = mouse|tablet</code></pre></div>
 
 ### Attributes
 

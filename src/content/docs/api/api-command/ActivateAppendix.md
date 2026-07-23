@@ -17,21 +17,17 @@ The command _ActivateAppendix_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND      = ActivateAppendix
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND      = ActivateAppendix
 APPENDIX     = (TEXT)
-X-ACCEPT-TAC = 1|0
-```
+X-ACCEPT-TAC = 1|0</code></pre></div>
 
-### Response
+ 
 
-```
-code               = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code               = (INT)
 description        = (TEXT)
-property[EMAIL][0] = failed|successful
-```
+property[EMAIL][0] = failed|successful</code></pre></div>
 
 ### Attributes
 

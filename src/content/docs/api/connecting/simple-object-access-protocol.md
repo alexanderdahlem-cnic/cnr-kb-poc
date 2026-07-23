@@ -19,67 +19,59 @@ Our API's have an Operational Test and Evaluation (OT&E) system, which you may u
 
 For access with perl, we recommend using "SOAP::Lite", please have a look at the example below.
 
-```
-#!/usr/bin/perl --w
-
-use SOAP::Lite; #+trace => debug;
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>#!/usr/bin/perl --w
+use SOAP::Lite; #+trace =&gt; debug;
 use Data::Dumper;'
-
 my $soap = SOAP::Lite
--> uri('urn:Api')
--> proxy('URL to SOAP Gateway')
+-&gt; uri('urn:Api')
+-&gt; proxy('URL to SOAP Gateway')
 ;
-
 my @commands = (
 {
-'s_login' => '[mregname]',
-'s_pw' => '[<mregpassword>ote]',
-'s_opmode' => 'OTE',
-'s_encode' => 'UTF-8',
-'command' => 'CheckDomain',
-'domain' => 'example.com',
+'s_login' =&gt; '[mregname]',
+'s_pw' =&gt; '[&lt;mregpassword&gt;ote]',
+'s_opmode' =&gt; 'OTE',
+'s_encode' =&gt; 'UTF-8',
+'command' =&gt; 'CheckDomain',
+'domain' =&gt; 'example.com',
 },
 );
-
-my $res = $soap->xcall(@commands);
-
-print Dumper($res->result) . "\n";
-```
+my $res = $soap-&gt;xcall(@commands);
+print Dumper($res-&gt;result) . "\n";</code></pre></div>
 
 ## PHP
 
 We recommend to use the PHP-internal SOAP - functions for accessing our SOAP - API with PHP. Please have a look at the example below.
 
-```
-<?php
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>&lt;?php
 $client = new SoapClient(NULL,
 array(
-"location" => "URL to SOAP Gateway",
-// "location" => "URL to SOAP Gateway",
-"uri" => "urn:Api",
-"style" => SOAP_RPC,
-"use" => SOAP_ENCODED,
+"location" =&gt; "URL to SOAP Gateway",
+// "location" =&gt; "URL to SOAP Gateway",
+"uri" =&gt; "urn:Api",
+"style" =&gt; SOAP_RPC,
+"use" =&gt; SOAP_ENCODED,
 )
 );
-
 $params = array(
 array(
-"s_login" => "[mregname]",
-"s_pw" => "[<mregpassword>ote]",
-"s_opmode" => "OTE",
-"s_encode" => "UTF-8",
-"command" => "CheckDomain",
-"domain" => "example.com"
+"s_login" =&gt; "[mregname]",
+"s_pw" =&gt; "[&lt;mregpassword&gt;ote]",
+"s_opmode" =&gt; "OTE",
+"s_encode" =&gt; "UTF-8",
+"command" =&gt; "CheckDomain",
+"domain" =&gt; "example.com"
 )
 );
-
-$result = $client->__call("xcall",
+$result = $client-&gt;__call("xcall",
 $params,
 array(
-"uri" => "urn:Api",
-"soapaction" => "urn:Api#xcall")
+"uri" =&gt; "urn:Api",
+"soapaction" =&gt; "urn:Api#xcall")
 );
-
 print_r($result);
-?>
-```
+?&gt;</code></pre></div>
+
+

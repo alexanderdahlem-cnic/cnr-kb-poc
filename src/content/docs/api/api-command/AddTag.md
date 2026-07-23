@@ -19,22 +19,18 @@ The command _AddTag_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddTag
 TYPE        = DOMAIN|ZONE|SERVICE
-TAG         = (TEXT)
-```
+TAG         = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code 		= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code 		= (INT)
 description 	= (TEXT)
 queuetime 	= (INT)
-runtime 	= (INT)
-```
+runtime 	= (INT)</code></pre></div>
 
 ### Attributes
 
@@ -46,29 +42,24 @@ runtime 	= (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND 	= AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND 	= AddTag
 TYPE 		= DOMAIN|ZONE|SERVICE
 TAG		= (TEXT)
-
 SERVICETYPE 	= DOMAINBLOCKING|CERTIFICATE
 COPY 		= (TEXT)
 DESCRIPTION 	= (TEXT)
 DOMAIN# 	= (DOMAIN)
 ZONE# 		= (ZONE)
-OBJECT# 	= DOMAIN BLOCK ROID|CERTIFICATE ID
-```
+OBJECT# 	= DOMAIN BLOCK ROID|CERTIFICATE ID</code></pre></div>
 
-### Response
+ 
 
-```
-code		= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code		= (INT)
 description 	= (TEXT)
 queuetime 	= (INT)
-runtime	= (INT)
-```
+runtime	= (INT)</code></pre></div>
 
 ### Attributes
 

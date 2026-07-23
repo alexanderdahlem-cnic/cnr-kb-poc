@@ -19,21 +19,18 @@ The command _TransferDomainBlocking - Deny_ is available via the following gatew
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command     = TRANSFERDOMAINBLOCKING
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = TRANSFERDOMAINBLOCKING
 DOMAINBLOCK = (Block Order ID)
 ACTION      = DENY
 AUTH        = For AdultBlock (AUTHENTICATION KEY)
 TYPE        = AdultBlock|AdultBlockplus|GlobalBlock|GlobalBlockplus|DPMLBridge|DPMLBridgePlus
-EOF  
-```
+EOF  </code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                             = (INTEGER)
 description                      = (TEXT)
 queuetime                        = (INTEGER)
@@ -43,20 +40,16 @@ property[domainblocking type][0] = AdultBlock|AdultBlockplus|GlobalBlock|GlobalB
 property[label][0]               = (TEXT)
 property[transfer date][0]       = YYYY-MM-DD HH:MM:SS
 property[transfer status][0]     = clientRejected|transferRejected
-
 For AdultBlock only
 property[requested date][0]      = YYYY-MM-DD HH:MM:SS
-
 For GlobalBlock only
-property[requested by][0]        = (TEXT)
-```
+property[requested by][0]        = (TEXT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>AUTH = For GlobalBlock (AUTHENTICATION KEY)</code></pre></div>
 
-```
-AUTH = For GlobalBlock (AUTHENTICATION KEY)
-```
+

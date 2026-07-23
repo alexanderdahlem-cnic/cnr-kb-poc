@@ -4,13 +4,10 @@ title: "DeleteAcl Example"
 
 Remove location "domain":
 
-### Command
-
-```
-command = DeleteAcl
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = DeleteAcl
 username = user1
-location = DOMAIN
-```
+location = DOMAIN</code></pre></div>
 
 ### Attributes
 

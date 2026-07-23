@@ -19,24 +19,20 @@ The command _QueryAftermarketBid_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND                = QueryAftermarketBid
+TOKEN                  = &lt;TEXT&gt;</code></pre></div>
 
-```
-COMMAND                = QueryAftermarketBid
-TOKEN                  = <TEXT>
-```
+ 
 
-### Response
-
-```
-code                   = <INT>
-description            = <TEXT>
-property[token][0]     = <TEXT>             (matching token for this bid)
-property[domain][0]    = <DOMAIN>           (domain in question)
-property[bid][0]       = <DECIMAL>          (current highest bid in your account currency)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                   = &lt;INT&gt;
+description            = &lt;TEXT&gt;
+property[token][0]     = &lt;TEXT&gt;             (matching token for this bid)
+property[domain][0]    = &lt;DOMAIN&gt;           (domain in question)
+property[bid][0]       = &lt;DECIMAL&gt;          (current highest bid in your account currency)
 property[bidstatus][0] = INITIATED|FAILED|SUCCESS|WAITINGFORAUTH|INTRANSFER (1)
-property[provider][0]  = sedo               (Aftermarket Provider)
-```
+property[provider][0]  = sedo               (Aftermarket Provider)</code></pre></div>
 
 | **TOKEN** | Matching token for this bid.  
  |

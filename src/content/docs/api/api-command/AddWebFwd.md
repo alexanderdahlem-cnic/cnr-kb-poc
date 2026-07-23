@@ -19,23 +19,19 @@ The command _AddWebFwd_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = AddWebFwd
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddWebFwd
 SOURCE  = [TEXT]
 TARGET  = [TEXT]
-TYPE    = RD | MRD | SELF
-```
+TYPE    = RD | MRD | SELF</code></pre></div>
 
-### Response
+ 
 
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 
@@ -48,26 +44,22 @@ property[SVTRID][0] = [TEXT]
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-KEEPURIPATH = 0 | 1
-CONTENT0 = <html>
-CONTENT1 = <head> ... </head>
-CONTENT2 = <body> ... </body>
-CONTENT3 = </html>
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>KEEPURIPATH = 0 | 1
+CONTENT0 = &lt;html&gt;
+CONTENT1 = &lt;head&gt; ... &lt;/head&gt;
+CONTENT2 = &lt;body&gt; ... &lt;/body&gt;
+CONTENT3 = &lt;/html&gt;
 CLTRID  = [TEXT]
-HTTPS   = 1
-```
+HTTPS   = 1</code></pre></div>
 
-### Response
+ 
 
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 

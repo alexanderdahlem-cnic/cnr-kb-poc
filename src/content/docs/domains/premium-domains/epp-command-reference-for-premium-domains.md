@@ -5,10 +5,7 @@ description: "The following EPP commands are available for premium domains: ● 
 
 The following EPP commands are available for premium domains.
 
-| [Domain:Check](../../../api/epp-command/domain_check/#premium) | Check availability of a single domain |
-| --- | --- |
-| [Domain:Create](../../../api/epp-command/domain_create/#premium) | Initiates the domain name registration at the registry |
-| [Domain:Info](../../../api/epp-command/domain_info/#premium) | Gather information about a domain name in account |
-| [Domain:Renew](../../../api/epp-command/domain_renew/#premium) | Command used to renew domains explicitly for a specified period of time |
-| [Domain:Restore](../../../api/epp-command/domain_restore/#premium) | Command used to restore a domain |
-| [Transfer:Request](../../../api/epp-command/transfer_request/#premium) | Initiates the domain transfer |
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code><table><tbody><tr><th><a href="../../../api/epp-command/domain_check/#premium">Domain:Check</a></th><th>Check availability of a single domain</th></tr><tr><td><a href="../../../api/epp-command/domain_create/#premium">Domain:Create</a></td><td>Initiates the domain name registration at the registry</td></tr><tr><td><a href="../../../api/epp-command/domain_info/#premium">Domain:Info</a></td><td>Gather information about a domain name in account</td></tr><tr><td><a href="../../../api/epp-command/domain_renew/#premium">Domain:Renew</a></td><td>Command used to renew domains explicitly for a specified period of time</td></tr><tr><td><a href="../../../api/epp-command/domain_restore/#premium">Domain:Restore</a></td><td>Command used to restore a domain</td></tr><tr><td><a href="../../../api/epp-command/transfer_request/#premium">Transfer:Request</a></td><td>Initiates the domain transfer</td></tr></tbody></table></code></pre></div>
+
+

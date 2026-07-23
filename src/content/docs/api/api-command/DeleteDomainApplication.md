@@ -21,22 +21,18 @@ The command _DeleteDomainApplication_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command     = DeleteDomainApplication
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = DeleteDomainApplication
 domain = YOURDOMAIN.TLD
 class = (TEXT)
-application = (INT)
-```
+application = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
-property[DOMAIN][0] = (DOMAIN)
-```
+property[DOMAIN][0] = (DOMAIN)</code></pre></div>
 
 ### Attributes
 

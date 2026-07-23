@@ -23,25 +23,23 @@ The command _AddAftermarketDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command=AddAftermarketDomain
-domain=<DOMAIN>                  (The Domain you'd like to list.)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddAftermarketDomain
+domain=&lt;DOMAIN&gt;                  (The Domain you'd like to list.)
  - or
-domainX=<DOMAIN>                 (In case you'd like to list up to 256 Domains with one command, specify them with domain0, domain1 ... domain255)
-aftermarketaccount=<TEXT>        (Identifier of the Account where the domain should be listed)
-price=<DECIMAL>                  (Price for the listed Domain. Format XX.XX, decimals always need to be stated. A minimum price of 90.00 USD is required.)
+domainX=&lt;DOMAIN&gt;                 (In case you'd like to list up to 256 Domains with one command, specify them with domain0, domain1 ... domain255)
+aftermarketaccount=&lt;TEXT&gt;        (Identifier of the Account where the domain should be listed)
+price=&lt;DECIMAL&gt;                  (Price for the listed Domain. Format XX.XX, decimals always need to be stated. A minimum price of 90.00 USD is required.)
 - or -
-priceX=<DECIMAL>                 (In case you'd like to list several Domains with one command, specify their respective prices with price0, price1 ... price255.)
+priceX=&lt;DECIMAL&gt;                 (In case you'd like to list several Domains with one command, specify their respective prices with price0, price1 ... price255.)
 listingtype=buy_now|make_offer   (Price is fixed|offers can be made. Defaults to buy_now if not stated otherwise.)
-provider=sedo                    (The Aftermarket Provider, where the Domain(s) shall be listed.)
-```
+provider=sedo                    (The Aftermarket Provider, where the Domain(s) shall be listed.)</code></pre></div>
 
-### Response
+ 
 
-```
-property[aftermarketdomain][n] = <DOMAIN>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[aftermarketdomain][n] = &lt;DOMAIN&gt;
 property[status][n] = foa_pending
-property[token][n] = <TEXT>
-```
+property[token][n] = &lt;TEXT&gt;</code></pre></div>
+
+

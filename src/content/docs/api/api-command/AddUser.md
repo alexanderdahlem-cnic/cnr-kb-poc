@@ -19,14 +19,11 @@ The command _AddUser_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = AddUser
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddUser
 username = (TEXT)
 password = (TEXT)
-email = (TEXT)
-```
+email = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -39,16 +36,13 @@ email = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command = AddUser
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddUser
 username = (TEXT)
 password = (TEXT)
 group0..255 = (TEXT)
 type = USER|GROUP
-email = (TEXT)
-```
+email = (TEXT)</code></pre></div>
 
 ### Attributes
 

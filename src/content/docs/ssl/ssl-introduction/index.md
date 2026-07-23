@@ -30,13 +30,12 @@ After each call of an Add-, Renew- or ReissueCertificate command, the response w
 
 Thus the following scheme is applied:
 
-```
-Certificate (= order identifier, also referred to as certificate id)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Certificate (= order identifier, also referred to as certificate id)
 - Sub1 (= certificate identifier, also referred to as sub or sub id)
 - Sub2
 - Sub3
-...
-```
+...</code></pre></div>
 
 Unlike domains SSL certificates can not be renewed. Instead, a new certificate will be issued. Following the principle of domain renewals, the CentralNic Reseller system provides the possibility to renew certificates. Issuing a renewal for a certificate will add a new sub to an order.
 

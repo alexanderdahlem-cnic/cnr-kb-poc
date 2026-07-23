@@ -19,10 +19,8 @@ The command _ModifyWebspace_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = ModifyWebSpace
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ModifyWebSpace
 WEBSPACE = (TEXT)
 CLASS = PHP
 QUOTA = (INT)
@@ -30,19 +28,17 @@ X-HOSTING-ADVERT = 0|1
 STATUS = (TEXT)
 ACTION = ACTIVE|DISABLED|ALL
 VERSION = (TEXT)
-NAME = (TEXT)
-```
+NAME = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CREATED DATE][0] = (DATE)
 property[IP][0] = (IP)
 property[STATUS][0] = ACTIVE|SUSPENDED|HOLD
-property[UPDATED DATE][0] = (DATE)
-```
+property[UPDATED DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 

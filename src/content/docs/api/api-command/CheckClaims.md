@@ -19,25 +19,21 @@ The command _CheckClaims_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = CheckClaims
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = CheckClaims
 DOMAIN# = (DOMAIN)
-CLASS = (TEXT)
-```
+CLASS = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CLAIM_EXISTS][n] = (TEXT)
 property[CLAIM_KEY][n] = (TEXT)
 property[CLAIM_URL][n] = (TEXT)
 property[CLAIM_VALIDATOR_ID][n] = (TEXT)
-property[RUNTIME][0] = (TEXT)
-```
+property[RUNTIME][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

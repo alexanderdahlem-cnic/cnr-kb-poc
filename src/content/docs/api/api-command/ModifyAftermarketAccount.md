@@ -19,12 +19,11 @@ The command _ModifyAftermarketAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command=ModifyAftermarketAccount
-aftermarketaccount=<TEXT>   (mandatory, ID for the Aftermarket Account to be modified, alphanumerical random string of 10 characters)
-accountkey=<TEXT>|<NULL>    (optional, if the Account Key changed at the Aftermarket Provider and a different key is provided, the command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ModifyAftermarketAccount
+aftermarketaccount=&lt;TEXT&gt;   (mandatory, ID for the Aftermarket Account to be modified, alphanumerical random string of 10 characters)
+accountkey=&lt;TEXT&gt;|&lt;NULL&gt;    (optional, if the Account Key changed at the Aftermarket Provider and a different key is provided, the command
                             will return an error. If this parameter is left empty, it won’t be changed in your CentralNic Reseller account)
-description=<TEXT>          (optional, freetext for easier identification. Will be overwritten if this parameter is passed along without content)
-```
+description=&lt;TEXT&gt;          (optional, freetext for easier identification. Will be overwritten if this parameter is passed along without content)</code></pre></div>
+
+

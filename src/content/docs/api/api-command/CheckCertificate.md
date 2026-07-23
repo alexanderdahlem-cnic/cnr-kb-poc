@@ -22,20 +22,17 @@ The command _CheckCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = checkCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = checkCertificate
 APIVERSION = 1|2
 CSR#    = (TEXT)
 CRT#    = (TEXT)
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-code                                            = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                            = (INT)
 description                                     = (TEXT)
 property[csr public key algorithm][n]           = (TEXT)
 property[csr signature algorithm][n]            = (TEXT)
@@ -79,19 +76,17 @@ property[crt issuer organizational unit][n] 	= (TEXT)
 property[dcv token][n] 				= (TEXT)
 property[dcv email#][n] 			= (TEXT)
 property[domain#][n] 				= (TEXT)
-EOF
-```
+EOF</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-CSR# 			= (TEXT)
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>CSR# 			= (TEXT)
 CRT# 			= (TEXT)
 GENERATEDCVTOKEN 	= 1|0
 DOMAIN# 		= (TEXT)
-CLASS 			= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
-```
+CLASS 			= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv</code></pre></div>
+
+

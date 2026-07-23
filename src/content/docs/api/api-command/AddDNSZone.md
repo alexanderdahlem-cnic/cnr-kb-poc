@@ -20,10 +20,8 @@ The command _AddDNSZone_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND          = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND          = AddDNSZone
 DNSZONE          = [TEXT]
 RR#              = [TEXT]
 SOAEXPIRE        = [INT]
@@ -33,18 +31,15 @@ SOAREFRESH       = [INT]
 SOARETRY         = [INT]
 SOARNAME         = [TEXT]
 MASTERIPADDRESS# = [IP]
-CLTRID           = [TEXT]
+CLTRID           = [TEXT]</code></pre></div>
 
-```
+ 
 
-### Response
-
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 
@@ -68,24 +63,19 @@ property[SVTRID][0] = [TEXT]
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>signed = 0 (DEFAULT) | 1 (OPTIONAL)</code></pre></div>
 
-```
-signed = 0 (DEFAULT) | 1 (OPTIONAL)
-```
+ 
 
-### Response
-
-```
-property[signed][0]  = 1
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[signed][0]  = 1</code></pre></div>
 
 ## Required Parameters (premium)
 
 The following premium parameters are standard for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>PREMIUMDNSSET    = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)</code></pre></div>
 
-```
-PREMIUMDNSSET    = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)
-```
+

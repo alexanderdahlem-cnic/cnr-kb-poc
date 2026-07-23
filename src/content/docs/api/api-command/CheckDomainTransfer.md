@@ -22,10 +22,8 @@ The command _CheckDomainTransfer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = CheckDomainTransfer
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = CheckDomainTransfer
 DOMAIN = YOURDOMAIN.TLD
 AUTH = (TEXT)
 ACTION = REQUEST|APPROVE|DENY|CANCEL|USERTRANSFER
@@ -34,13 +32,12 @@ EMAILSENDER = (TEXT)
 EMAILSUBJECT = (TEXT)
 EMAILTAC = (TEXT)
 EMAILURL = (TEXT)
-REQUESTENTITY = (TEXT)
-```
+REQUESTENTITY = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -51,8 +48,7 @@ property[TRANSFER_STATUS][0] = (TEXT)
 property[TRANSFERSTATUS][0] = (TEXT)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
-property[X-FEE-CURRENCY][0] = (TEXT)
-```
+property[X-FEE-CURRENCY][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

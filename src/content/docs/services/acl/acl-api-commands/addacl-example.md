@@ -4,16 +4,13 @@ title: "AddAcl Example"
 
 Allow user1 AddDomain, StatusDomain and ModifyDomain
 
-### Command
-
-```
-command = AddAcl
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddAcl
 username = user1
 location = DOMAIN
 acl0 = ADD
 acl1 = STATUS
-acl2 = MODIFY
-```
+acl2 = MODIFY</code></pre></div>
 
 ### Attributes
 

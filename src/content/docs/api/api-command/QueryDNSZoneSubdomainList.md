@@ -19,22 +19,19 @@ The command _QueryDNSZoneSubdomainList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command   = QueryDNSZoneSubdomainList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = QueryDNSZoneSubdomainList
 dnszone   = test23.com
 name      = [TEXT]
 first     = [INT]
 limit     = [INT]
 order     = ASC|DESC
-cltrid    = [TEXT]
-```
+cltrid    = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code                   = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                   = 200
 description            = Command completed successfully
 property[count][0]     = [INT]
 property[first][0]     = 0
@@ -44,8 +41,7 @@ property[subdomain][0] = www.domain.com
 ...
 property[total][0]     = [INT]
 queuetime              = 0
-runtime                = 0.075
-```
+runtime                = 0.075</code></pre></div>
 
 ### Attributes
 

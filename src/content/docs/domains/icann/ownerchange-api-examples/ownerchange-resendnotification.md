@@ -9,14 +9,11 @@ Resend the ICANN OwnerChange FOA Mail to losing, gaining or both owner contacts.
 
 The resubmission of the email through the Control Panel will soon be available.
 
-### Command
-
-```
-command = ResendNotification
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ResendNotification
 type = OwnerChange
 object = example.com | P-ABC1
-recipient = losing|gaining|both
-```
+recipient = losing|gaining|both</code></pre></div>
 
 ## Designated agent email
 

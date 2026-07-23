@@ -21,17 +21,14 @@ The command _DeleteDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteDomain
+DOMAIN = YOURDOMAIN.TLD</code></pre></div>
 
-```
-COMMAND = DeleteDomain
-DOMAIN = YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[ADDGRACEDELETIONS][0] = (TEXT)
 property[PAYBACK][0] = (TEXT)
@@ -42,27 +39,23 @@ property[ROID][0] = (TEXT)
 property[STATUS][0] = (TEXT)
 property[TRANSFER_STATUS][0] = (TEXT)
 DESCRIPTION = Command completed Successfully; action 'PendingGracePeriodSuspension' pending in 5 days
-AGPDELETES = (TEXT)
-```
+AGPDELETES = (TEXT)</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = DeleteDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteDomain
 DOMAIN = YOURDOMAIN.TLD
 ACTION = INSTANT|AUTODELETE|AUTOEXPIRE|AUTOAPPROVE|PUSH
 TARGET = (TEXT)
-TOKEN = (TEXT)
-```
+TOKEN = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[ADDGRACEDELETIONS][0] = (TEXT)
 property[DELETION_DATE][0] = (TEXT)
@@ -70,8 +63,7 @@ property[JOB_ID][0] = (TEXT)
 property[PAYBACK][0] = (TEXT)
 property[ROID][0] = (TEXT)
 property[STATUS][0] = (TEXT)
-property[TRANSFER_STATUS][0] = (TEXT)
-```
+property[TRANSFER_STATUS][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

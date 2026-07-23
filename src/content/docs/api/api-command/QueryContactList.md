@@ -19,19 +19,15 @@ The command _QueryContactList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryContactList</code></pre></div>
 
-```
-COMMAND = QueryContactList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
-property[CONTACT][n] = (CONTACT)
-```
+property[CONTACT][n] = (CONTACT)</code></pre></div>
 
 ### Attributes
 
@@ -47,10 +43,8 @@ property[CONTACT][n] = (CONTACT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryContactList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryContactList
 CONTACT = (PATTERN)
 TITLE = (PATTERN)
 FIRSTNAME = (TEXT)
@@ -76,13 +70,12 @@ ORDER = ASC|DESC
 ORDERBY = ID|FIRSTNAME|LASTNAME|ORGANIZATION|STREET|CITY|ZIP|COUNTRY|EMAIL|VALIDATED|VERIFIED|CREATEDDATE
 STATUS = LINKED|UNLINKED|CLIENTAUTODELETEPROHIBITED
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[CONTACT][n] = (CONTACT)
 property[ROID][n] = (TEXT)
@@ -115,8 +108,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

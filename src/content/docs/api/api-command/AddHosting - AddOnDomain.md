@@ -19,17 +19,14 @@ The command _AddHosting - AddOnDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = addondomain
 CLASS     = cpanel
 ACCOUNT     = (TEXT)
 DIRECTORY    = (TEXT)
 OBJECT     = (TEXT)
-TARGET    = (TEXT)
-```
+TARGET    = (TEXT)</code></pre></div>
 
 ### Attributes
 

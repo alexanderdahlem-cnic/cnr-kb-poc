@@ -19,24 +19,20 @@ The command _StatusObjectLog_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusObjectLog
+LOG = (INT) </code></pre></div>
 
-```
-COMMAND = StatusObjectLog
-LOG = (INT) 
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[LOG_DATE][0] = (TEXT)
 property[OBJECT_CLASS][0] = (TEXT)
 property[ID_CLASS][0] = (TEXT)
 property[OPERATION_TYPE][0] = (TEXT)
-property[OPERATION_INFO][0] = (TEXT)
-```
+property[OPERATION_INFO][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

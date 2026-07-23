@@ -22,16 +22,13 @@ The command _QueryRegisteredPremiumDomainList_ is available via the following ga
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = QueryRegisteredPremiumDomainList</code></pre></div>
 
-```
-COMMAND     = QueryRegisteredPremiumDomainList
-```
+ 
 
-### Response
-
-```
-code                                             = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                             = (INT)
 description                                      = (TEXT)
 property[DOMAIN][n]                              = (DOMAIN)
 property[REGISTRAR][n]                           = (TEXT)
@@ -39,8 +36,7 @@ property[COUNT][0]                               = (INT)
 property[FIRST][0]                               = (INT)
 property[LAST][0]                                = (INT)
 property[LIMIT][0]                               = (INT)
-property[TOTAL][0]                               = (INT)
-```
+property[TOTAL][0]                               = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -67,10 +63,8 @@ property[TOTAL][0]                               = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     = QueryRegisteredPremiumDomainList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = QueryRegisteredPremiumDomainList
 DOMAIN      = (PATTERN)
 DOMAINIDN   = (TEXT)
 RENEWALMODE = DEFAULT|AUTORENEW|AUTOEXPIRE|AUTODELETE|RENEWONCE|AUTORENEWMONTHLY
@@ -82,13 +76,12 @@ ORDER       = ASC|DESC
 ORDERBY     = DOMAIN|DOMAINIDN|DOMAINCREATEDDATE|DOMAINREGISTRATIONEXPIRATIONDATE|DOMAINRENEWALDATE|DOMAINZONE|ZONE|RENEWALMODE|TRANSFERMODE
 WIDE        = 0|1
 FIRST       = (INT)
-LIMIT       = (INT)
-```
+LIMIT       = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code                                             = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                             = (INT)
 description                                      = (TEXT)
 property[DOMAIN][n]                              = (DOMAIN)
 property[REGISTRAR][n]                           = (TEXT)
@@ -108,8 +101,7 @@ property[FIRST][0]                               = (INT)
 property[FIRST][0]                               = (INT)
 property[LAST][0]                                = (INT)
 property[LIMIT][0]                               = (INT)
-property[TOTAL][0]                               = (INT)
-```
+property[TOTAL][0]                               = (INT)</code></pre></div>
 
 ### Attributes
 

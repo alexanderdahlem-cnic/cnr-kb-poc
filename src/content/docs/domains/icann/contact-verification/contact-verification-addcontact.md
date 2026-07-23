@@ -10,26 +10,22 @@ As of September 2014 the new changes will be applied to all generic TLD registra
 
 AddContact checks if the used email address is already verified, if that is the case the new contact is directly set to verified.
 
-### Command
-
-```
-command    = AddContact
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = AddContact
 ...
 VALIDATION = (0|1)
 CHECKONLY  = (0|1)
 PREVERIFY  = (0|1)
-           
-```
+           </code></pre></div>
 
-### Response
+ 
 
-```
-code                                = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                = 200
 ...
 property[validated][0]              = 1
 property[verified][0]               = 0
-property[verification requested][0] = 1
-```
+property[verification requested][0] = 1</code></pre></div>
 
 ### Attributes
 

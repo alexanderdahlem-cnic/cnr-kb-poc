@@ -23,21 +23,18 @@ The fee extension is more or less a handshake process that ensures correct accou
 
 Example availability check for premium.name with the price request for a 2 year registration.
 
-### Command
-
-```
-command = CheckDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = CheckDomain
 domain = premium.name
 x-fee-command0 = create
 x-fee-domain0 = premium.name
 x-fee-period0 = 2
-x-fee-periodtype0 = YEAR
-```
+x-fee-periodtype0 = YEAR</code></pre></div>
 
-### Response
+ 
 
-```
-code = 210
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 210
 description = Domain name available
 property[x-fee-amount][0] = 235.0000
 property[x-fee-application][0] = 0.0000
@@ -47,33 +44,28 @@ property[x-fee-currency][0] = USD
 property[x-fee-domain][0] = premium.name
 property[x-fee-launchphase][0] =
 property[x-fee-period][0] = 2
-property[x-fee-periodtype][0] = YEAR
-```
+property[x-fee-periodtype][0] = YEAR</code></pre></div>
 
 Example AddDomain for premium.name with fee extension
 
 If the price at the registry changes between the check and the creation, the handshake will fail to prevent false accountings. For regular domain names, the fee extension handshake will not be required!!
 
-### Command
-
-```
-command=AddDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddDomain
 domain=premium.name
 ownercontact0=...
 nameserver0=...
 ...
-x-fee-amount=235.00
-```
+x-fee-amount=235.00</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[x-fee-amount][0] = 235.0000
 property[x-fee-application][0] = 0.0000
-property[x-fee-periodtype][0] = YEAR
-```
+property[x-fee-periodtype][0] = YEAR</code></pre></div>
 
 We are working with amounts with four decimals!
 

@@ -34,10 +34,8 @@ You can choose to state or not state email addresses for any number of SAN domai
 
 ### AddCertificate
 
-### Command
-
-```
-COMMAND = AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddCertificate
 APPROVEREMAIL[0-24] = [EMAIL]
 PERIOD = [INT]
 OWNERCONTACT0 = [CONTACT]
@@ -49,8 +47,7 @@ DOMAIN[0-24] = [DOMAIN]
 WEBSERVERTYPE = apachessl|apacheraven|apachessleay|c2net|Ibmhttp|Iplanet|Dominogo4625|Dominogo4626|Domino|iis4|iis5|Netscape|zeusv3|Other|apacheopenssl|apache2|apacheapachessl|cobaltseries|cpanel|ensim|hsphere|ipswitch|plesk|tomcat|WebLogic|website|webstar|iis
 CLASS = SSL123|SSLWebServer|SSLWebServerWC|SSLWebServerEV|SecureSite|SecureSitePro|SecureSiteEV|SecureSiteProEV|QuickSSLPremium|TrueBizID|TrueBizIDWC|TrueBizIDEV|RapidSSL|RapidSSLWC|InstantSSL|SGCWildcardSSL|PositiveSSL|PremiumSSL|ExtendedValidatedSSL|PositiveWildcardSSL
 ALGORITHM = SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-AUTHMETHOD = EMAIL|DNS|FILE
-```
+AUTHMETHOD = EMAIL|DNS|FILE</code></pre></div>
 
 ### Attributes
 
@@ -59,17 +56,14 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### RenewCertificate
 
-### Command
-
-```
-command=RenewCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RenewCertificate
 CERTIFICATE = [PATTERN]
 SUB = [PATTERN]
 PERIOD = [INT]
 APPROVEREMAIL[0-24] = [EMAIL]
 ALGORITHM = SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-AUTHMETHOD = EMAIL|DNS|FILE
-```
+AUTHMETHOD = EMAIL|DNS|FILE</code></pre></div>
 
 ### Attributes
 
@@ -78,15 +72,12 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### ModifyCertificate
 
-### Command
-
-```
-COMMAND = ModifyCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ModifyCertificate
 CERTIFICATE = [PATTERN]
 SUB=[PATTERN]
 APPROVEREMAIL[0-24] = [EMAIL]
-AUTHMETHOD = EMAIL|DNS|FILE
-```
+AUTHMETHOD = EMAIL|DNS|FILE</code></pre></div>
 
 ### Attributes
 
@@ -95,18 +86,15 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### ReissueCertificate
 
-### Command
-
-```
-COMMAND = ReissueCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = ReissueCertificate
 CERTIFICATE = [PATTERN]
 SUB = [PATTERN]
 CSR# = (TEXT)
 REISSUEEMAIL[0-24] = (EMAIL)
 DOMAIN[0-24] = (TEXT)
 ALGORITHM = SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-AUTHMETHOD = EMAIL|DNS|FILE
-```
+AUTHMETHOD = EMAIL|DNS|FILE</code></pre></div>
 
 ### Attributes
 
@@ -115,22 +103,18 @@ AUTHMETHOD = EMAIL|DNS|FILE
 
 ### StatusCertificate
 
-### Command
-
-```
-COMMAND = StatusCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusCertificate
 CERTIFICATE = [PATTERN]
 SUB = [PATTERN]
-WIDE = 0|1
-```
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-...
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>...
 property[crt san][0-24]=
-...
-```
+...</code></pre></div>
 
 ### Attributes
 

@@ -19,10 +19,8 @@ The command _AddWebhost_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = AddWebhost
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddWebhost
 WEBSPACE = (TEXT)
 WEBHOST = (DOMAIN)
 QUOTA = (INT)
@@ -35,17 +33,15 @@ DIR = (TEXT)
 GPGLINE# = (TEXT)
 LOGIN = (TEXT)
 FTPPASSWD = (TEXT)
-ERRORLOG = 0|1
-```
+ERRORLOG = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[IP][0] = (IP)
-property[PRICE][0] = (DECIMAL)
-```
+property[PRICE][0] = (DECIMAL)</code></pre></div>
 
 ### Attributes
 

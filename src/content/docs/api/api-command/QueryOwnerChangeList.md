@@ -19,16 +19,13 @@ The command _QueryOwnerChangeList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryOwnerChangeList</code></pre></div>
 
-```
-command = QueryOwnerChangeList
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[column][0] = domain
 property[column][1] = status
@@ -40,24 +37,20 @@ property[count][0] = 0
 property[first][0] = 0
 property[last][0] = 0
 property[limit][0] = 1000
-property[total][0] = 0
-```
+property[total][0] = 0</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryOwnerChangeList
+STATUS = ACTIVE|SUCCESS|FAILED|EXPIRED</code></pre></div>
 
-```
-command = QueryOwnerChangeList
-STATUS = ACTIVE|SUCCESS|FAILED|EXPIRED
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[column][0] = domain
 property[column][1] = status
@@ -69,5 +62,6 @@ property[count][0] = 0
 property[first][0] = 0
 property[last][0] = 0
 property[limit][0] = 1000
-property[total][0] = 0
-```
+property[total][0] = 0</code></pre></div>
+
+

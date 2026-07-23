@@ -19,10 +19,8 @@ The command _ModifyServer_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = ModifyServer
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = ModifyServer
 SERVER      = [TEXT]
 STATUS      = [DISABLED]
 BOOTORDER   = [cd|dc]
@@ -34,12 +32,12 @@ VNCPOINTER  = [mouse|tablet]
 VNCPASS     = [TEXT]
 RENEWALMODE = [AUTORENEW|AUTOEXPIRE]
 PERIOD      = [1M | 3M | 6M]
-ACTION      = [CREATE | SHUTDOWN | DESTROY | REBOOT | RESET]
-```
+ACTION      = [CREATE | SHUTDOWN | DESTROY | REBOOT | RESET]</code></pre></div>
 
-### Response
+ 
 
-```
-code        = [INT]
-description = [TEXT]
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = [INT]
+description = [TEXT]</code></pre></div>
+
+

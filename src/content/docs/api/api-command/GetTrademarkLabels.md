@@ -19,24 +19,20 @@ The command _GetTrademarkLabels_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = GetTrademarkLabels
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetTrademarkLabels
 MARKNAME = (TEXT)
 MARKTYPE = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
-COUNTRY = (WIPOST3)
-```
+COUNTRY = (WIPOST3)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[MARKNAME][0] = (TEXT)
 property[LABEL#][n] = (TEXT)
-property[ALABEL#][n] = (TEXT)
-```
+property[ALABEL#][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 

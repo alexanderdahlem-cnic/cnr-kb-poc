@@ -19,22 +19,18 @@ The command _ActivateRegistrarEmailAddress_ is available via the following gatew
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ActiveRegistrarEmailAddress
+email = &lt;email address&gt;
+token = TOKEN</code></pre></div>
 
-```
-command = ActiveRegistrarEmailAddress
-email = <email address>
-token = TOKEN
-```
+ 
 
-### Response
-
-```
-code        = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code        = (INT)
 description = (TEXT)
 property[class][0] = NEWSLETTER
-property[email][0] = <email address>
-```
+property[email][0] = &lt;email address&gt;</code></pre></div>
 
 ### Attributes
 

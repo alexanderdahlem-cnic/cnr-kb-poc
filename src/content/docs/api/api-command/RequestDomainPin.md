@@ -19,10 +19,9 @@ The command _RequestDomainPin_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command  = RequestDomainPin
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command  = RequestDomainPin
 domain   = #DOMAIN#
-language = DE|EN (default EN)
-```
+language = DE|EN (default EN)</code></pre></div>
+
+

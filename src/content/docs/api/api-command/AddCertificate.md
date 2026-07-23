@@ -31,23 +31,19 @@ The command _AddCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddCertificate
 APIVERSION  = 1|2
 DOMAIN#     = (TEXT)
 CSR#        = (TEXT)
 CLASS       = geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
 EOF
+Contacts needed, see optional parameters below.</code></pre></div>
 
-Contacts needed, see optional parameters below.
-```
+ 
 
-### Response
-
-```
-code                            = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                            = (INT)
 description                     = (TEXT)
 property[certificate][n]        = (TEXT)
 property[certificateorder][n]   = (TEXT)
@@ -85,8 +81,7 @@ property[cert#][n]              = (TEXT)
 property[csr#][n]               = (TEXT)
 property[root#][n]              = (TEXT)
 property[intermediate#][n]      = (TEXT)
-property[expiration date][n]    = (DATE)
-```
+property[expiration date][n]    = (DATE)</code></pre></div>
 
   
 
@@ -94,11 +89,8 @@ property[expiration date][n]    = (DATE)
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-
-CHECKONLY            = 1|0
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>CHECKONLY            = 1|0
 NOAUTOFILLDOMAINS    = 1|0
 PERIOD               = (For Sectigo) 1y,365d
 PERIOD               = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d
@@ -113,24 +105,20 @@ CACERTIFICATE        = (TEXT)
 ALGORITHM            = (TEXT)
 DCVMETHOD            = EMAIL|DNS-TXT|DNS-CNAME|HTTP|HTTPS
 SERVERTYPE           = apache|barracuda|weblogic|cisco|citrix|cpanel|f5|ibm|java|lighttpd|lotus|macos|exchange.*2007|exchange.*2010|exchange.*2013|exchange.*2016|forefront|iis56|iis7|iis8|iis10|netscape|iplanet|nginx|novellichain|novellnetware|oracle|qmail|sunone|tomcat|webstar|zeus|other
-
 ----- Contacts -----
 Option 1
 EVAPPROVERCONTACT#   = (P-HANDLE or CERTIFICATECONTACT ID)
 TECHCONTACT#         = (P-HANDLE or CERTIFICATECONTACT ID)
-
 ORGANIZATIONCONTACT  = (CertificateContact ID)
 or
 ORGANIZATIONOHANDLE  = (O-HANDLE CONTACT)
 ORGANIZATIONPHANDLE  = (P-HANDLE CONTACT)
-
 Option 2
 EVAPPROVERFIRSTNAME  = (TEXT)
 EVAPPROVERLASTNAME   = (TEXT)
 EVAPPROVERPHONE      = (TEXT)
 EVAPPROVEREMAIL      = (TEXT)
 EVAPPROVERJOBTITLE   = (TEXT)
-
 ORGANIZATIONNAME     = (TEXT)
 ORGANIZATIONDBA      = (TEXT)
 ORGANIZATIONSTREET   = (TEXT)
@@ -140,11 +128,11 @@ ORGANIZATIONSTATE    = (TEXT)
 ORGANIZATIONCOUNTRY  = (TEXT)
 ORGANIZATIONPHONE    = (TEXT)
 ORGANIZATIONEMAIL    = (TEXT)
-
 TECHFIRSTNAME#       = (TEXT)
 TECHLASNAME#         = (TEXT)
 TECHPHONE#           = (TEXT)
 TECHEMAIL#           = (TEXT)
 TECHJOBTITLE         = (TEXT)
-EOF
-```
+EOF</code></pre></div>
+
+

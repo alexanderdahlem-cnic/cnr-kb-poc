@@ -19,25 +19,21 @@ The command _AddDomainBlocking_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND			= AddDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND			= AddDomainBlocking
 TYPE			= AdultBlock|AdultBlockplus|GlobalBlock|
 			  GlobalBlockplus|DPMLBridge|DPMLBridgePlus
 LABEL			= (TEXT)
 PERIOD			= (INTEGER)
 OWNERCONTACT# 		= (CONTACT ID)
-
 SMDFILE#		= (TEXT)
 X-DOMAIN-BLOCKING-IPR-ID= (TEXT)
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code	 					= (INTEGER)
 description 					= (TEXT)
 runtime 					= (INTEGER)
@@ -56,30 +52,24 @@ property[updated by][0] 			= (TEXT)
 property[registration expiration date][0] 	= YYYY-MM-DD HH:MM:SS
 property[renewal date][0]	 		= YYYY-MM-DD HH:MM:SS
 property[ownercontact][0]			= (TEXT)
-EOF
-```
+EOF</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND			= AddDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND			= AddDomainBlocking
 TYPE			= AdultBlock|AdultBlockplus|GlobalBlock|
 			  GlobalBlockplus|DPMLBridge|DPMLBridgePlus
 LABEL			= (TEXT)
 PERIOD			= (INTEGER)
 OWNERCONTACT# 		= (CONTACT ID)
-
 SMDFILE#		= (TEXT)
 X-DOMAIN-BLOCKING-IPR-ID= (TEXT)
-
 SERVICETAG# 		= (TEXT)
 ADDSERVICETAG# 		= (TEXT)
-DELSERVICETAG# 		= (TEXT)
-```
+DELSERVICETAG# 		= (TEXT)</code></pre></div>
 
 ### Attributes
 

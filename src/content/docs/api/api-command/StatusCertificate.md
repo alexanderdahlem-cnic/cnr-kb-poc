@@ -21,18 +21,15 @@ The command _StatusCertificate_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND		= StatusCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND		= StatusCertificate
 CERTIFICATE 	= (TEXT)
-APIVERSION 	= 1|2
-```
+APIVERSION 	= 1|2</code></pre></div>
 
-### Response
+ 
 
-```
-code 				= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code 				= (INT)
 description 			= (TEXT)
 property[ca][n] 		= (TEXT)
 property[ca certificate id][n] 	= (INT)
@@ -61,18 +58,14 @@ property[created date][n] 	= (DATE)
 property[expiration date][n] 	= (DATE)
 property[order paid until][n] 	= (DATE)
 property[server type][n] 	= apache|barracuda|weblogic|cisco|citrix|cpanel|f5|ibm|java|lighttpd|lotus|macos|exchange.*2007|exchange.*2010|exchange.*2013|exchange.*2016|forefront|iis56|iis7|iis8|iis10|netscape|iplanet|nginx|novellichain|novellnetware|oracle|qmail|sunone|tomcat|webstar|zeus|other
-property[class][n] 		= geotrustflexdv|geotrusttruebizidev|geotrusttruebizidov|instantsslov|multidomaindv|multidomainev|multidomainov|positivessldv|premiumov|rapidssldv|securesiteflexev|securesiteflexov|securesiteproev|securesiteproov|singledomainev|ssl123dv|unifiedcommunicationsdv|unifiedcommunicationsov|webserverev|webserverov
-```
+property[class][n] 		= geotrustflexdv|geotrusttruebizidev|geotrusttruebizidov|instantsslov|multidomaindv|multidomainev|multidomainov|positivessldv|premiumov|rapidssldv|securesiteflexev|securesiteflexov|securesiteproev|securesiteproov|singledomainev|ssl123dv|unifiedcommunicationsdv|unifiedcommunicationsov|webserverev|webserverov</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-chainformat = pem|pem_reverse|zip|zip_reverse|zip_noroot|p7b|
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>chainformat = pem|pem_reverse|zip|zip_reverse|zip_noroot|p7b|<null></null></code></pre></div>
 
 | **chainformat** | The option to choose in reverse or not for the intermediate and root to be returned individually in PEM, with the option to be in a base64 encoded zip.  
 The root certificate can also be omitted. Alternatively, return all the certificates in a single base64 encoded p7b-file. |

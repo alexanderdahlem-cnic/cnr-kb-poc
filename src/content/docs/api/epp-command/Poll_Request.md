@@ -5,45 +5,43 @@ description: "EPP API Command Reference  ➤ Poll commands ➤ Poll:Request ➥ 
 
 ## Required Parameters
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+ &lt;command&gt;
+   &lt;poll op="req"/&gt;
+   &lt;clTRID&gt;96ABFF8A-2385-11DE-A5FC-8000000002DF&lt;/clTRID&gt;
+ &lt;/command&gt;
+&lt;/epp&gt;</code></pre></div>
 
-```
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
- <command>
-   <poll op="req"/>
-   <clTRID>96ABFF8A-2385-11DE-A5FC-8000000002DF</clTRID>
- </command>
-</epp>
-```
+ 
 
-### Response
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+ &lt;response&gt;
+   &lt;result code="1301"&gt;
+     &lt;msg&gt;Command completed successfully; ack to dequeue&lt;/msg&gt;
+   &lt;/result&gt;
+   &lt;msgQ count="1" id="2"&gt;
+     &lt;qDate&gt;2009-03-02T00:00:00.0Z&lt;/qDate&gt;
+     &lt;msg&gt;TRANSFER_PENDING&lt;/msg&gt;
+   &lt;/msgQ&gt;
+   &lt;resData&gt;
+     &lt;domain:trnData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
+       &lt;domain:name&gt;example.com&lt;/domain:name&gt;
+       &lt;domain:trStatus&gt;pending&lt;/domain:trStatus&gt;
+       &lt;domain:reID&gt;ABC&lt;/domain:reID&gt;
+       &lt;domain:reDate&gt;2009-03-01T00:00:00.0Z&lt;/domain:reDate&gt;
+       &lt;domain:acID&gt;DEF&lt;/domain:acID&gt;
+       &lt;domain:acDate&gt;2009-02-01T00:00:00.0Z&lt;/domain:acDate&gt;
+     &lt;/domain:trnData&gt;
+   &lt;/resData&gt;
+   &lt;trID&gt;
+     &lt;clTRID&gt;96ABFF8A-2385-11DE-A5FC-8000000002DF&lt;/clTRID&gt;
+     &lt;svTRID&gt;9D0093FA-2385-11DE-821B-B3E190C00BCC&lt;/svTRID&gt;
+   &lt;/trID&gt;
+ &lt;/response&gt;
+&lt;/epp&gt;</code></pre></div>
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
- <response>
-   <result code="1301">
-     <msg>Command completed successfully; ack to dequeue</msg>
-   </result>
-   <msgQ count="1" id="2">
-     <qDate>2009-03-02T00:00:00.0Z</qDate>
-     <msg>TRANSFER_PENDING</msg>
-   </msgQ>
-   <resData>
-     <domain:trnData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
-       <domain:name>example.com</domain:name>
-       <domain:trStatus>pending</domain:trStatus>
-       <domain:reID>ABC</domain:reID>
-       <domain:reDate>2009-03-01T00:00:00.0Z</domain:reDate>
-       <domain:acID>DEF</domain:acID>
-       <domain:acDate>2009-02-01T00:00:00.0Z</domain:acDate>
-     </domain:trnData>
-   </resData>
-   <trID>
-     <clTRID>96ABFF8A-2385-11DE-A5FC-8000000002DF</clTRID>
-     <svTRID>9D0093FA-2385-11DE-821B-B3E190C00BCC</svTRID>
-   </trID>
- </response>
-</epp>
-```
+

@@ -19,13 +19,12 @@ The command _SetDomainPinLock_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command         = SetDomainPinLock
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command         = SetDomainPinLock
 domain          = #DOMAIN#
 language        = DE|EN (default EN)
 PINLOCK         = 0|1
 AUTHORITYNUMBER = #MOBILENR# (in format 001987654321)
-TOKEN           = #TOKEN# (only necessary for the final activation)
-```
+TOKEN           = #TOKEN# (only necessary for the final activation)</code></pre></div>
+
+

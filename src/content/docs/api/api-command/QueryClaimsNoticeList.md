@@ -19,32 +19,28 @@ The command _QueryClaimsNoticeList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryClaimsNoticeList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryClaimsNoticeList
 WIDE = 0|1
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
-LIMIT = (INT)
-```
+LIMIT = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = <INT>
-description = <TEXT>
-property[CLAIMSNOTICE][n] = <TEXT>
-property[DOMAIN][n] = <TEXT>
-property[TOKEN][n] = <TEXT>
-property[ADDRESS][n] = <TEXT>
-property[COUNT][0] = <INT>
-property[FIRST][0] = <INT>
-property[LAST][0] = <INT>
-property[LIMIT][0] = <INT>
-property[TOTAL][0] = <INT>
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = &lt;INT&gt;
+description = &lt;TEXT&gt;
+property[CLAIMSNOTICE][n] = &lt;TEXT&gt;
+property[DOMAIN][n] = &lt;TEXT&gt;
+property[TOKEN][n] = &lt;TEXT&gt;
+property[ADDRESS][n] = &lt;TEXT&gt;
+property[COUNT][0] = &lt;INT&gt;
+property[FIRST][0] = &lt;INT&gt;
+property[LAST][0] = &lt;INT&gt;
+property[LIMIT][0] = &lt;INT&gt;
+property[TOTAL][0] = &lt;INT&gt;</code></pre></div>
 
 ### Attributes
 

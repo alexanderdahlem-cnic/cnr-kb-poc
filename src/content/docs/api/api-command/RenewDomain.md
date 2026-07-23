@@ -24,23 +24,19 @@ The command _RenewDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command    = RenewDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = RenewDomain
 domain     = YOURDOMAIN.TLD
 period     = (INT)
-expiration = (INT)
-```
+expiration = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[JOB_ID][n] = (TEXT)
-property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
-```
+property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -53,25 +49,21 @@ property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command    = RenewDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = RenewDomain
 domain     = YOURDOMAIN.TLD
 period     = (INT)
 expiration = (INT)
-X-PROMOTION-CODE = (TEXT)
-```
+X-PROMOTION-CODE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[JOB_ID][n] = (TEXT)
 property[PROMOTIONS][0] = (TEXT)
-property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
-```
+property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -82,10 +74,8 @@ property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 
 The following premium parameters are standard for this command.
 
-### Command
-
-```
-command    = RenewDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = RenewDomain
 domain     = YOURDOMAIN.TLD
 period     = (INT)
 expiration = (INT)
@@ -93,20 +83,18 @@ X-FEE-AMOUNT = (DECIMAL)
 X-FEE-AMOUNT# = (DECIMAL)
 X-FEE-APPLICATION = (DECIMAL)
 X-FEE-CURRENCY = (TEXT)
-X-ACCEPT-PREMIUMPRICE = 0|1
-```
+X-ACCEPT-PREMIUMPRICE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[JOB_ID][n] = (TEXT)
 property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
-property[X-FEE-CURRENCY][0] = (TEXT)
-```
+property[X-FEE-CURRENCY][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

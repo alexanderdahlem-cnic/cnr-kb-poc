@@ -19,17 +19,14 @@ The command _StatusDomainHistory_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDomainHistory
+DOMAIN = (DOMAIN)</code></pre></div>
 
-```
-COMMAND = StatusDomainHistory
-DOMAIN = (DOMAIN)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][0] = (DOMAIN)
 property[STATUS][n] = (TEXT)
@@ -49,8 +46,7 @@ property[DELETED_DATE][0] = (DATE)
 property[CREATED_DATE][0] = (DATE)
 property[CREATED_BY][0] = (TEXT)
 property[REGISTRAR_TRANSFER_DATE][0] = (DATE)
-property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
-```
+property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -79,18 +75,15 @@ property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = StatusDomainHistory
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusDomainHistory
 DOMAIN = (DOMAIN)
-HISTORYID = (INT)
-```
+HISTORYID = (INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[DOMAIN][0] = (DOMAIN)
 property[STATUS][n] = (TEXT)
@@ -110,8 +103,7 @@ property[DELETED_DATE][0] = (DATE)
 property[CREATED_DATE][0] = (DATE)
 property[CREATED_BY][0] = (TEXT)
 property[REGISTRAR_TRANSFER_DATE][0] = (DATE)
-property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
-```
+property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)</code></pre></div>
 
 ### Attributes
 

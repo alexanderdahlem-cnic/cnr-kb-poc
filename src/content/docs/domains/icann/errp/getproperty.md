@@ -2,12 +2,11 @@
 title: "GetProperty"
 ---
 
-### Command
 
-```
-command = GetProperty
-CLASS   = ICANNERRP
-```
+
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = GetProperty
+CLASS   = ICANNERRP</code></pre></div>
 
 **Important Note**
 

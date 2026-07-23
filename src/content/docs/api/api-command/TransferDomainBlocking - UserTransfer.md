@@ -19,22 +19,19 @@ The command _TransferDomainBlocking - UserTransfer_ is available via the followi
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-[COMMAND]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[COMMAND]
 COMMAND		= TRANSFERDOMAINBLOCKING
 DOMAINBLOCK	= (DOMAIN BLOCK ROID)
 ACTION		= USERTRANSFER
 AUTH		= (TEXT)
 NORENEW		= 0|1
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                            = (INTEGER)
 description                     = (TEXT)
 runtime                         = (INTEGER)
@@ -45,8 +42,7 @@ property[label][#]              = (TEXT)
 property[loosing registrar][#]  = (TEXT)
 property[norenew][#]            = (BOOLEAN)
 property[transfer status][#]    = (TEXT)
-property[transfer type][#]      = USER_TRANSFER
-```
+property[transfer type][#]      = USER_TRANSFER</code></pre></div>
 
 ### Attributes
 

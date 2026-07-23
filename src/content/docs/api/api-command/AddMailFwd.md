@@ -19,23 +19,19 @@ The command _AddMailFwd_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = AddMailFwd
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddMailFwd
 FROM    = [TEXT]
 TO      = [TEXT]
-CLTRID  = [TEXT]
-```
+CLTRID  = [TEXT]</code></pre></div>
 
-### Response
+ 
 
-```
-code                = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                = [INT]
 description         = [TEXT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]
-```
+property[SVTRID][0] = [TEXT]</code></pre></div>
 
 ### Attributes
 

@@ -4,17 +4,14 @@ title: "QueryAclList - User Example"
 
 Shows all locations with granted rights of a given user.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryAclList
+username=user2</code></pre></div>
 
-```
-command = QueryAclList
-username=user2
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 runtime = 0.085
 queuetime = 0
@@ -34,8 +31,7 @@ property[rightnames][1] = RENEW,CHECK,DELETE,MODIFY,QUERY,ADD,STATUS,TRANSFER
 property[location][2] = TOOL
 property[right][2] = 247
 property[rightnames][2] = STATUS,ADD,QUERY,TRANSFER,MODIFY,RENEW,CHECK
-property[total][0] = 3
-```
+property[total][0] = 3</code></pre></div>
 
 ### Attributes
 

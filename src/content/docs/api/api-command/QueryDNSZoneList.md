@@ -19,16 +19,13 @@ The command _QueryDNSZoneList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDNSZoneList</code></pre></div>
 
-```
-COMMAND = QueryDNSZoneList
-```
+ 
 
-### Response
-
-```
-code = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = [INT]
 code = (INTEGER)
 description = (TEXT)
 runtime = (INTEGER)
@@ -39,39 +36,34 @@ property[dnszone][#] = (TEXT)
 property[first][#] = (INTEGER)
 property[last][#] = (INTEGER)
 property[limit][#] = (INTEGER)
-property[total][#] = (INTEGER)
-```
+property[total][#] = (INTEGER)</code></pre></div>
 
   
 
 ### Optional
 
-The following parameters are optional for this command.
+The following parameters are optional for this command. 
 
-### Command
-
-```
-COMMAND = QueryDNSZoneList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDNSZoneList
 DNSZONE = (TEXT)
 FIRST   = (INTEGER)
 LIMIT   = (INTEGER)
 ORDER   = ASC | DESC
 WIDE    = (INTEGER)
 CLTRID  = (TEXT)
-EXTERNAL = O|1
-```
+EXTERNAL = O|1</code></pre></div>
 
-### Response
+ 
 
-```
-property[zonetype][#] =  (TEXT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[zonetype][#] =  (TEXT)
 property[wide][#] = (INTEGER)
 property[updated date][#] = YYYY-M-DD HH:MM:SS
 property[external][#] = O|1
 CLTRID  = (TEXT)
 SVTRID = (TEXT)
-EXTERNAL = O|1
-```
+EXTERNAL = O|1</code></pre></div>
 
 ### Attributes
 

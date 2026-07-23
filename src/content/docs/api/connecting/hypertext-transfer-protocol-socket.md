@@ -9,55 +9,45 @@ You can connect by using the following HTTP(s) call(the values in square bracket
 
 \[<mregpassword>ote\] => accountpassword
 
-```
-https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&s_pw=[<mregpassword>ote]
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&amp;s_pw=[&lt;mregpassword&gt;ote]</code></pre></div>
 
 The API commands are passed on through the parameters:
 
-```
-https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&s_pw=[<mregpassword>ote]&command=CheckDomain&domain=example.com
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&amp;s_pw=[&lt;mregpassword&gt;ote]&amp;command=CheckDomain&amp;domain=example.com</code></pre></div>
 
 ## Wget
 
 Connect by using the following Wget command:
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>wget --nv -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&amp;s_login=[mregname]&amp;s_pw=
+[&lt;mregpassword&gt;ote]&amp;command=checkdomain&amp;domain=example.org" --O-</code></pre></div>
 
-```
-wget --nv -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[mregname]&s_pw=
-[<mregpassword>ote]&command=checkdomain&domain=example.org" --O-
-```
+ 
 
-### Response
-
-```
-code = 210
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 210
 description = Domain name available
 queuetime=0
-runtime=0.054
-```
+runtime=0.054</code></pre></div>
 
 ## Curl
 
 Connect by using the following Curl command:
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>curl -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&amp;s_login=[mregname]&amp;s_pw=
+[&lt;mregpassword&gt;ote]&amp;command=checkdomain&amp;domain=example.org"</code></pre></div>
 
-```
-curl -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[mregname]&s_pw=
-[<mregpassword>ote]&command=checkdomain&domain=example.org"
-```
+ 
 
-### Response
-
-```
-code = 211
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 211
 description = Domain name not available
 queuetime=0
-runtime=0.15
-```
+runtime=0.15</code></pre></div>
 
 **Operational Test & Evaluation (OT&E)**
 

@@ -142,13 +142,10 @@ Unless specified differently, a newly registered or transferred domain uses your
 
 You can also set your account’s renewal mode via API using the following command:
 
-### Command
-
-```
-command     = ModifyRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = ModifyRegistrar
 renewalmode = AutoRenew
-EOF
-```
+EOF</code></pre></div>
 
 **3.2.2 Domain Specific Settings**
 
@@ -156,20 +153,15 @@ The renewal settings of your account apply to all domains you manage. You can al
 
 ![Domain Specific Settings](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_domain_specific_settings.png)
 
-### Command
-
-```
-command     = SetDomainRenewalMode
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = SetDomainRenewalMode
 domain      = example.com
 renewalmode = RenewOnceThenAutoExpire
-
 or
-
 command     = ModifyDomain
 domain      = example.com
 renewalmode = RenewOnceThenAutoExpire
-EOF
-```
+EOF</code></pre></div>
 
 ## 4 Explicit Renewals and Domain Auction
 
@@ -192,15 +184,12 @@ For supported TLDs you can get an explicit renewal via the CentralNic Reseller c
 
 You can reach the same result with the following API command:
 
-### Command
-
-```
-command    = RenewDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = RenewDomain
 domain     = (DOMAIN)
 period     = (INT)
 expiration = (YEAR of the PAID-UNTIL DATE)
-EOF
-```
+EOF</code></pre></div>
 
 The following TLDs do NOT support an explicit renewal:
 
@@ -255,13 +244,10 @@ You can manually request a restore through the control panel as follows:
 
 Via API, the command is:
 
-### Command
-
-```
-command	= RestoreDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command	= RestoreDomain
 domain	= example.com
-EOF
-```
+EOF</code></pre></div>
 
 Some restores may need manual action by our support team and will therefore not be processed in real-time. This is explicitly stated in our Knowledge Base in the TLD’s restore details. You will receive an automated event/poll message once manually processed restores are completed.
 

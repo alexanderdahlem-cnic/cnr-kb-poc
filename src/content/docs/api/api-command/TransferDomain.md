@@ -24,19 +24,16 @@ The command _TransferDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST
-auth = (TEXT)
-```
+auth = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -44,8 +41,7 @@ property[PROMOTIONS][0] = (TEXT)
 property[RENEWAL_PERIOD][0] = (TEXT)
 property[ROID][0] = (TEXT)
 property[TRANSFER_STATUS][0] = (TEXT)
-property[TRANSFERSTATUS][0] = (TEXT)
-```
+property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -63,10 +59,8 @@ property[TRANSFERSTATUS][0] = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST|APPROVE|DENY|CANCEL|USERTRANSFER|PUSH|TRADE
 auth = (TEXT)
@@ -91,13 +85,12 @@ emailsender = (EMAIL)
 emailsubject = (TEXT)
 emailtac = (TEXT)
 emailurl = (TEXT)
-transferlock = 0|1
-```
+transferlock = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -105,8 +98,7 @@ property[PROMOTIONS][0] = (TEXT)
 property[RENEWAL_PERIOD][0] = (TEXT)
 property[ROID][0] = (TEXT)
 property[TRANSFER_STATUS][0] = (TEXT)
-property[TRANSFERSTATUS][0] = (TEXT)
-```
+property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -130,10 +122,8 @@ property[TRANSFERSTATUS][0] = (TEXT)
 
 The following premium parameters are standard for this command.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST
 auth = (TEXT)
@@ -145,20 +135,18 @@ nameserver# = (NAMESERVER)
 X-FEE-AMOUNT0 = (DECIMAL)
 X-FEE-APPLICATION = (DECIMAL)
 X-FEE-CURRENCY = (TEXT)
-X-ACCEPT-PREMIUMPRICE = 0|1
-```
+X-ACCEPT-PREMIUMPRICE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
-property[PROMOTIONS][0] = (TEXT)
-```
+property[PROMOTIONS][0] = (TEXT)</code></pre></div>
 
-property\[RENEWAL\_PERIOD\]\[0\] = (TEXT) property\[ROID\]\[0\] = (TEXT) property\[TRANSFER\_STATUS\]\[0\] = (TEXT) property\[TRANSFERSTATUS\]\[0\] = (TEXT) property\[X-FEE-AMOUNT\]\[0\] = (DECIMAL) property\[X-FEE-APPLICATION\]\[0\] = (DECIMAL) property\[X-FEE-CURRENCY\]\[0\] = (TEXT)
+ property\[RENEWAL\_PERIOD\]\[0\] = (TEXT) property\[ROID\]\[0\] = (TEXT) property\[TRANSFER\_STATUS\]\[0\] = (TEXT) property\[TRANSFERSTATUS\]\[0\] = (TEXT) property\[X-FEE-AMOUNT\]\[0\] = (DECIMAL) property\[X-FEE-APPLICATION\]\[0\] = (DECIMAL) property\[X-FEE-CURRENCY\]\[0\] = (TEXT)
 
 ### Attributes
 

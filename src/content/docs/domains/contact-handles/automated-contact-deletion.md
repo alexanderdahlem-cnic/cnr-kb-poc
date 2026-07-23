@@ -40,9 +40,8 @@ Add optional parameter AUTODELETE=0|1. Default is 1 (YES).
 
 New API call that restores a deleted contact(regardless, if explicitly or automatically deleted).
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RestoreContact
+contact=(CONTACT)</code></pre></div>
 
-```
-command=RestoreContact
-contact=(CONTACT)
-```
+

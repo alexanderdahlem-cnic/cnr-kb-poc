@@ -106,40 +106,33 @@ All our servers are DNSSEC capable. To find out more about our Anycast infrastru
 
 The DNSSEC keys are returned in the command response, if they are already present while the AddDNSZone command is still running. If the signing system is busy at the command runtime, the command finishes with 'code = 200' without returning the keys. In this case, the keys can be obtained by running a StatusDNSZone command for the relevant zone
 
-### Command
-
-```
-command              = AddDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command              = AddDNSZone
 dnszone              = test23.com
 rr0                  = @ IN A 1.2.3.4
-signed               = 0 (DEFAULT) | 1 (OPTIONAL)
-```
+signed               = 0 (DEFAULT) | 1 (OPTIONAL)</code></pre></div>
 
-### Response
+ 
 
-```
-code                 = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                 = 200
 description          = Command completed successfully
 property[dnszone][0] = test23.com
-property[signed][0]  = 1
-```
+property[signed][0]  = 1</code></pre></div>
 
 ## ModifyDNSZone
 
-### Command
-
-```
-command                       = ModifyDNSZone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                       = ModifyDNSZone
 dnszone                       = test23.com
 signed                        = 0 (DEFAULT) | 1 (OPTIONAL)
 rollover                      = ZSK|KSK (OPTIONAL)
-finishkskrollover             =  (OPTIONAL)
-```
+finishkskrollover             =  (OPTIONAL)</code></pre></div>
 
-### Response
+ 
 
-```
-code                          = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          = 200
 description                   = Command completed successfully
 property[dnszone][0]          = test23.com
 property[signed][0]           = 1
@@ -152,22 +145,18 @@ property[keydsdata sha256][1] = 58374 7 2 89B4292C6989809BDFBA71E746AA65D27F3C5.
 property[status][0]           = active
 property[status][1]           = ready
 property[type][0]             = ZSK
-property[type][1]             = KSK
-```
+property[type][1]             = KSK</code></pre></div>
 
 ## StatusDNSZone
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>ommand                       = statusdnszone
+dnszone                       = test23.com</code></pre></div>
 
-```
-ommand                       = statusdnszone
-dnszone                       = test23.com
-```
+ 
 
-### Response
-
-```
-code                          = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          = 200
 description                   = Command completed successfully
 property[dnszone][0]          = test23.com
 property[soamname][0]         = ns1.dnsres.net
@@ -184,5 +173,6 @@ property[keydsdata sha256][1] = 58374 7 2 89B4292C6989809BDFBA71E746AA65D27F3C53
 property[status][0]           = active
 property[status][1]           = ready
 property[type][0]             = ZSK
-property[type][1]             = KSK
-```
+property[type][1]             = KSK</code></pre></div>
+
+

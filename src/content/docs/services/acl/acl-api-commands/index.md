@@ -2,18 +2,9 @@
 title: "List of API commands associated to ACL Management"
 ---
 
-## ACL API-Commands
 
-_The Access Control List specifies which actions on certain objects a user is allowed to conduct._
 
-| [AddAcl](../../../api/api-command/addacl/) | Add location rights for a given user or group. |
-| --- | --- |
-| [AddUser](../../../api/api-command/adduser/) | Creates a user or a group. |
-| [DeleteAcl](../../../api/api-command/deleteacl/) | Remove location rights for a given user or group. |
-| [DeleteUser](../../../api/api-command/deleteuser/) | Deletes a user or a group. |
-| [ModifyAcl](../../../api/api-command/modifyacl/) | Modify location rights for a given user or group. |
-| [ModifyUser](../../../api/api-command/modifyuser/) | Modify already existing ACL user |
-| [QueryACLList](../../../api/api-command/queryacllist/) | Shows all locations with granted rights of a given user or group. |
-| [QueryUserList](../../../api/api-command/queryuserlist/) | Shows a list of all users or groups. |
-| [StatusAcl](../../../api/api-command/statusacl/) | Shows granted rights for a specific location of a given user or group. |
-| [StatusUser](../../../api/api-command/statususer/) | Shows the status of a given user or group. |
+<div class="api-io api-io--command"><span class="api-io__label">ACL API-Commands</span>
+<pre class="api-io__code"><code><h2>ACL API-Commands</h2><p><em>The Access Control List specifies which actions on certain objects a user is allowed to conduct.</em></p><table><tbody><tr><th><a href="../../../api/api-command/addacl/">AddAcl</a></th><th>Add location rights for a given user or group.</th></tr><tr><td><a href="../../../api/api-command/adduser/">AddUser</a></td><td>Creates a user or a group.</td></tr><tr><td><a href="../../../api/api-command/deleteacl/">DeleteAcl</a></td><td>Remove location rights for a given user or group.</td></tr><tr><td><a href="../../../api/api-command/deleteuser/">DeleteUser</a></td><td>Deletes a user or a group.</td></tr><tr><td><a href="../../../api/api-command/modifyacl/">ModifyAcl</a></td><td>Modify location rights for a given user or group.</td></tr><tr><td><a href="../../../api/api-command/modifyuser/">ModifyUser</a></td><td>Modify already existing ACL user</td></tr><tr><td><a href="../../../api/api-command/queryacllist/">QueryACLList</a></td><td>Shows all locations with granted rights of a given user or group.</td></tr><tr><td><a href="../../../api/api-command/queryuserlist/">QueryUserList</a></td><td>Shows a list of all users or groups.</td></tr><tr><td><a href="../../../api/api-command/statusacl/">StatusAcl</a></td><td>Shows granted rights for a specific location of a given user or group.</td></tr><tr><td><a href="../../../api/api-command/statususer/">StatusUser</a></td><td>Shows the status of a given user or group.</td></tr></tbody></table></code></pre></div>
+
+

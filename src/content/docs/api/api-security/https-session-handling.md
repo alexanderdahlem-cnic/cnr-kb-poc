@@ -16,23 +16,19 @@ https://api.rrpproxy.net/api/call
 
 followed by the API command below:
 
-### Command
-
-```
-command     = StartSession
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command     = StartSession
 login       = (REGISTRAR)
 password    = (PASSWORD)
 persistent  = 1
-newpassword = (NEW_PASSWORD, optional, it allows you to set a new password during session start)
-```
+newpassword = (NEW_PASSWORD, optional, it allows you to set a new password during session start)</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
-property[sessionid][0] = 1dac7d5108865ac2a4c54fec04526d69
-```
+property[sessionid][0] = 1dac7d5108865ac2a4c54fec04526d69</code></pre></div>
 
 ## Requests with session ID
 
@@ -44,19 +40,15 @@ or
 
 https://api.rrpproxy.net/api/call?s\_login=<REGISTRAR>&s\_sessionid=1dac7d5108865ac2a4c54fec04526d69
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=StatusAccount</code></pre></div>
 
-```
-command=StatusAccount
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
-...
-```
+...</code></pre></div>
 
 ## Closing a session
 
@@ -68,15 +60,13 @@ or
 
 https://api.rrpproxy.net/api/call?s\_login=<REGISTRAR>&s\_sessionid=1dac7d5108865ac2a4c54fec04526d69
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=StopSession</code></pre></div>
 
-```
-command=StopSession
-```
+ 
 
-### Response
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
+description = Command completed successfully</code></pre></div>
 
-```
-code = 200
-description = Command completed successfully
-```
+

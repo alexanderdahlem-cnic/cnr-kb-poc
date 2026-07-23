@@ -5,25 +5,21 @@ description: "To explicitly check the status of an OwnerChange in detail..."
 
 To explicitly check the status of an OwnerChange in detail.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = StatusOwnerChange
+domain = example.com</code></pre></div>
 
-```
-command = StatusOwnerChange
-domain = example.com
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[domain][0] = example.com
 property[status][0] = REQUESTED
 property[requested date][0] = 2000-01-01 00:00:00
 property[expire date][0] = 2000-01-15 00:00:00
 property[losing registrant][0] = P-ABC1
-property[gaining registrant][0] = P-ABC2
-```
+property[gaining registrant][0] = P-ABC2</code></pre></div>
 
 ### Attributes
 

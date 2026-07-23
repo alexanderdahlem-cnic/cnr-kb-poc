@@ -19,17 +19,14 @@ The command _QueryActiveServiceList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryActiveServiceList
+TYPE = WHOIS-PROXY|DOMAIN-PIN-LOCK|FEEDBACK-SELFSERVICE|NET-REGISTRY-LOCK|COM-REGISTRY-LOCK|CC-REGISTRY-LOCK|NAME-REGISTRY-LOCK|TV-REGISTRY-LOCK|ANYCAST1|DNSZONE</code></pre></div>
 
-```
-COMMAND = QueryActiveServiceList
-TYPE = WHOIS-PROXY|DOMAIN-PIN-LOCK|FEEDBACK-SELFSERVICE|NET-REGISTRY-LOCK|COM-REGISTRY-LOCK|CC-REGISTRY-LOCK|NAME-REGISTRY-LOCK|TV-REGISTRY-LOCK|ANYCAST1|DNSZONE
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[OBJECT][n] = (TEXT)
 property[RENEWALDATE][n] = (DATE)
@@ -40,8 +37,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -61,10 +57,8 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryActiveServiceList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryActiveServiceList
 OBJECT = (PATTERN)
 INCLUDESUB = 0|1
 DOMAINTAG# = (TEXT)
@@ -75,13 +69,12 @@ GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
 LIMIT = (INT)
-WIDE = 0|1
-```
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[OBJECT][n] = (TEXT)
 property[RENEWALDATE][n] = (DATE)
@@ -92,8 +85,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

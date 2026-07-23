@@ -19,20 +19,17 @@ The command _QueryDomainBlockingList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = QueryDomainBlockingList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = QueryDomainBlockingList
 SERVICETAG# = test
 wide    = 1
 history = 0
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]	
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]	
 code	 			= (INTEGER)
 description 			= (TEXT)
 runtime 			= (INTEGER)
@@ -76,8 +73,7 @@ property[renewal date][0]	= YYYY-MM-DD HH:MM:SS
 property[paid until date][0] 	= YYYY-MM-DD HH:MM:SS
 property[registrar transfer date][0] 	= YYYY-MM-DD HH:MM:SS
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
-EOF
-```
+EOF</code></pre></div>
 
 ### Attributes
 

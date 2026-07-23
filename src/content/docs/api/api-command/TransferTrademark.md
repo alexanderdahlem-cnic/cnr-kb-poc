@@ -19,23 +19,19 @@ The command _TransferTrademark_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = TransferTrademark
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferTrademark
 ACTION = EXECUTE
-AUTH = (TEXT)
-```
+AUTH = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[new tmch id][0] = (TEXT)
 property[trademark][0] = (TRADEMARK-TOKEN)
-property[transfer date][0] = (DATE)
-```
+property[transfer date][0] = (DATE)</code></pre></div>
 
 ### Attributes
 
@@ -46,20 +42,18 @@ property[transfer date][0] = (DATE)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command = TransferTrademark
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferTrademark
 ACTION = INITIATE
-TRADEMARK = (TRADEMARK-TOKEN)
-```
+TRADEMARK = (TRADEMARK-TOKEN)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[authcode][0] = (TEXT)
 property[trademark id][0] = (TEXT)
-property[transfer status][0] = pendingTransfer
-```
+property[transfer status][0] = pendingTransfer</code></pre></div>
+
+

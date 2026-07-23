@@ -7,18 +7,15 @@ Please be aware that due to CA/B regulations FILE based validation is NOT availa
 
 To use the FILE based authentication for domain-vetted certificates, set the parameter "AUTHMETHOD" to "FILE" for AddCertificate", "RenewCertificate" and "ReissueCertificate". If the certificate class is valid for file based authentication, you will get two additional properties back.
 
-### Command
-
-```
-command    = AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command    = AddCertificate
 csrX       = ...
-authmethod = FILE
-```
+authmethod = FILE</code></pre></div>
 
-### Response
+ 
 
-```
-code                           = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                           = 200
 description                    = Command completed successfully
 runtime                        = 9.616
 property[certificate][0]       = SA3546077
@@ -26,8 +23,7 @@ property[fileauth contents][0] = RInN0UIPzTzZrJDhCD6C
 property[fileauth name][0]     = .well-known/pki-validation/fileauth.txt
 property[status][0]            = REQUESTED
 property[sub][0]               = SA3546077-001
-property[sub status][0]        = ORDER_REQUESTED
-```
+property[sub status][0]        = ORDER_REQUESTED</code></pre></div>
 
 You need to use the properties "fileauth contents" and "fileauth name" as follows:
 

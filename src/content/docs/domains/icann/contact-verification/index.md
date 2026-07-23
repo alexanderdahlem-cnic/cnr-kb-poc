@@ -19,10 +19,9 @@ We are pleased to inform you that on November 6, 2018 we will introduce an impro
 
 This service is also customizable by API and Control Panel: If you prefer to create your own suspension notification web page you can submit your own nameservers. Please note that the changed DNS records must refer to a website with relevant content that explains the domain's suspension due to non-completion of an ICANN-mandated contact verification.
 
-### Command
-
-```
-command = SetProperty
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = SetProperty
 contactverification-interrupt-nameserver0 = ns1.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)
-contactverification-interrupt-nameserver1 = ns2.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)
-```
+contactverification-interrupt-nameserver1 = ns2.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)</code></pre></div>
+
+

@@ -19,16 +19,13 @@ The command _QueryZoneList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryZoneList</code></pre></div>
 
-```
-COMMAND = QueryZoneList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[3RDS][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -41,8 +38,7 @@ property[TRADE][n] = (DECIMAL)
 property[APPLICATION][n] = (DECIMAL)
 property[CURRENCY][n] = (TEXT)
 property[DOMAIN_COUNT][n] = (INT)
-property[ACTIVE][n] = 1|0
-```
+property[ACTIVE][n] = 1|0</code></pre></div>
 
 ### Attributes
 
@@ -63,22 +59,19 @@ property[ACTIVE][n] = 1|0
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryZoneList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryZoneList
 ZONE = (PATTERN)
 INACTIVE = 0|1
 INDIVIDUAL = 0|1
 REGISTRAR = (TEXT)
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)
-```
+SENDLISTEMAIL = (EMAILS)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[3RDS][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -91,8 +84,7 @@ property[TRADE][n] = (DECIMAL)
 property[APPLICATION][n] = (DECIMAL)
 property[CURRENCY][n] = (TEXT)
 property[DOMAIN_COUNT][n] = (INT)
-property[ACTIVE][n] = 1|0
-```
+property[ACTIVE][n] = 1|0</code></pre></div>
 
 ### Attributes
 

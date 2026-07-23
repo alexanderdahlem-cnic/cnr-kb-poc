@@ -19,21 +19,17 @@ The command _RenewWebspace_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = RenewWebspace
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = RenewWebspace
 WEBSPACE = (TEXT)
 PERIOD = 1|2|3|4|5|6|7|8|9|10|11|12
-X-PROMOTION-CODE = (TEXT)
-```
+X-PROMOTION-CODE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

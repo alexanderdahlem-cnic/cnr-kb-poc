@@ -57,46 +57,37 @@ Details described below.
 
 We advise to state contact handles alongside the respective authcode upon initiating incoming transfers for .COM/.NET domains. Contact Handles for Owner, Admin, Tech and Billing can be stated optionally and is not mandatory as shown in the example below:
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain  = YOURDOMAIN.COM
 action  = request
 auth    = .......
 ownercontact0   = (CONTACT)
 admincontact0   = (CONTACT)
 techcontact0    = (CONTACT)
-billingcontact0 = (CONTACT)
-```
+billingcontact0 = (CONTACT)</code></pre></div>
 
 ## Incoming Transfers for Thick Registry gTLD and nTLD Domains (all other gTLDs)
 
 We advise to check and adjust contact handles after an incoming transfer for a gTLD or newgTLD domain has been finished.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain  = yourdomain.gTLD
 action  = request
-auth    = .......
-```
+auth    = .......</code></pre></div>
 
 ## Transfer has been completed
 
 After the transfer has been finished, the domain should be updated through a ModifyDomain:
 
-### Command
-
-```
-command = ModifyDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = ModifyDomain
 domain  = yourdomain.gTLD
 ownercontact0   = (CONTACT)
 admincontact0   = (CONTACT)
 techcontact0    = (CONTACT)
-billingcontact0 = (CONTACT)
-```
+billingcontact0 = (CONTACT)</code></pre></div>
 
 ## Incoming Transfers for ccTLDs
 
@@ -132,18 +123,15 @@ Currently, the following ccTLDs support stating contact handles for incoming Tra
 You can use the command QueryCommandSyntax to check if stating contact handles is possible for transfers. In the command response property\[optional\] shows if a parameter is mandatory (= 0) or optional (= 1).  
 Example command:
 
-### Command
-
-```
-command=QueryCommandSyntax
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=QueryCommandSyntax
 commandname=TransferDomain
-class=TLD (i.e. COM, NET, etc.)
-```
+class=TLD (i.e. COM, NET, etc.)</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 ...
 property[commandname][0] = TransferDomain
@@ -154,8 +142,9 @@ property[parameter][6] = OWNERCONTACT0
 property[title][6] = Owner contact
 property[position][6] = 21
 property[paramgroup][6] = Zone specific
-property[range][6] = <CONTACT>|<NULL>
+property[range][6] = &lt;CONTACT&gt;|&lt;NULL&gt;
 property[description][6] =
 property[optional][6] = 1
-...
-```
+...</code></pre></div>
+
+

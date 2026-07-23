@@ -2,22 +2,9 @@
 title: "API Commands"
 ---
 
-## Aftermarket API-Commands
 
-| [AddAftermarketAccount](../../../api/api-command/addaftermarketaccount/) | Add an Aftermarket Account |
-| --- | --- |
-| [AddAftermarketDomain](../../../api/api-command/addaftermarketdomain/) | Add a Domain listing |
-| [AftermarketBid](../../../api/api-command/aftermarketbid/) | Give a new bid in a bidding |
-| [BuyDomain](../../../api/api-command/buydomain/) | Start a bid on a domain or directly buy a domain. |
-| [DeleteAftermarketAccount](../../../api/api-command/deleteaftermarketaccount/) | Remove an Aftermarket Account |
-| [DeleteAftermarketDomain](../../../api/api-command/deleteaftermarketdomain/) | Remove a Domain from listing |
-| [ModifyAftermarketAccount](../../../api/api-command/modifyaftermarketaccount/) | Modify an Aftermarket Account |
-| [ModifyAftermarketDomain](../../../api/api-command/modifyaftermarketdomain/) | Modify a Domain listing |
-| [QueryAftermarketAccountList](../../../api/api-command/queryaftermarketaccountlist/) | List your Aftermarket Accounts |
-| [QueryAftermarketBid](../../../api/api-command/queryaftermarketbid/) | Details to a certain bid for a domain |
-| [QueryAftermarketBidList](../../../api/api-command/queryaftermarketbidlist/) | Query all initiated aftermarket processes in your CentralNic Reseller account. |
-| [QueryAftermarketDomainList](../../../api/api-command/queryaftermarketdomainlist/) | Returns a list of all Domains in your CentralNic Reseller account that are currently listed for sale through the Aftermarket System. Offers parameters to narrow down the resulting response. |
-| [QueryAftermarketList](../../../api/api-command/queryaftermarketlist/) | Search domains in the aftermarket |
-| [ReserveDomain](../../../api/api-command/reservedomain/) | Reserve a domain in the aftermarket |
-| [StatusAftermarketAccount](../../../api/api-command/statusaftermarketaccount/) | Status of an Aftermarket Account |
-| [StatusAftermarketDomain](../../../api/api-command/statusaftermarketdomain/) | Status of a Domain listing |
+
+<div class="api-io api-io--command"><span class="api-io__label">Aftermarket API-Commands</span>
+<pre class="api-io__code"><code><h2>Aftermarket API-Commands</h2><table><tbody><tr><th><a href="../../../api/api-command/addaftermarketaccount/">AddAftermarketAccount</a></th><th>Add an Aftermarket Account</th></tr><tr><td><a href="../../../api/api-command/addaftermarketdomain/">AddAftermarketDomain</a></td><td>Add a Domain listing</td></tr><tr><td><a href="../../../api/api-command/aftermarketbid/">AftermarketBid</a></td><td>Give a new bid in a bidding</td></tr><tr><td><a href="../../../api/api-command/buydomain/">BuyDomain</a></td><td>Start a bid on a domain or directly buy a domain.</td></tr><tr><td><a href="../../../api/api-command/deleteaftermarketaccount/">DeleteAftermarketAccount</a></td><td>Remove an Aftermarket Account</td></tr><tr><td><a href="../../../api/api-command/deleteaftermarketdomain/">DeleteAftermarketDomain</a></td><td>Remove a Domain from listing</td></tr><tr><td><a href="../../../api/api-command/modifyaftermarketaccount/">ModifyAftermarketAccount</a></td><td>Modify an Aftermarket Account</td></tr><tr><td><a href="../../../api/api-command/modifyaftermarketdomain/">ModifyAftermarketDomain</a></td><td>Modify a Domain listing</td></tr><tr><td><a href="../../../api/api-command/queryaftermarketaccountlist/">QueryAftermarketAccountList</a></td><td>List your Aftermarket Accounts</td></tr><tr><td><a href="../../../api/api-command/queryaftermarketbid/">QueryAftermarketBid</a></td><td>Details to a certain bid for a domain</td></tr><tr><td><a href="../../../api/api-command/queryaftermarketbidlist/">QueryAftermarketBidList</a></td><td>Query all initiated aftermarket processes in your CentralNic Reseller account.</td></tr><tr><td><a href="../../../api/api-command/queryaftermarketdomainlist/">QueryAftermarketDomainList</a></td><td>Returns a list of all Domains in your CentralNic Reseller account that are currently listed for sale through the Aftermarket System. Offers parameters to narrow down the resulting response.</td></tr><tr><td><a href="../../../api/api-command/queryaftermarketlist/">QueryAftermarketList</a></td><td>Search domains in the aftermarket</td></tr><tr><td><a href="../../../api/api-command/reservedomain/">ReserveDomain</a></td><td>Reserve a domain in the aftermarket</td></tr><tr><td><a href="../../../api/api-command/statusaftermarketaccount/">StatusAftermarketAccount</a></td><td>Status of an Aftermarket Account</td></tr><tr><td><a href="../../../api/api-command/statusaftermarketdomain/">StatusAftermarketDomain</a></td><td>Status of a Domain listing</td></tr></tbody></table></code></pre></div>
+
+

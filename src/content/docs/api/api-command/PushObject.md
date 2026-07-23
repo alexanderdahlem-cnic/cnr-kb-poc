@@ -35,22 +35,20 @@ The command _PushObject_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = PushObject
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = PushObject
 object  = (unique object identifier, e.g. domain name)
 type    = DOMAIN|DOMAINBLOCK|WEBSPACE|CERTIFICATE|SERVER|MOBILE|TRADEMARK
-target  = (target registrar / subreseller)
-```
+target  = (target registrar / subreseller)</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code = 200
 description = Command completed successfully
 runtime = 0.107
 queuetime = 0
-EOF
-```
+EOF</code></pre></div>
+
+

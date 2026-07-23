@@ -19,16 +19,13 @@ The command _QueryServiceList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryServiceList</code></pre></div>
 
-```
-COMMAND = QueryServiceList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[SERVICE][n] = mobile | server | webspace | application | trustee | certificate | subreseller | other | trademark
 property[TYPE][n] = (TEXT)
@@ -42,8 +39,7 @@ property[TRADE][n] = (DECIMAL)|N/A
 property[APPLICATION][n] = (DECIMAL)|N/A
 property[CURRENCY][n] = (TEXT)
 property[DESCRIPTION][n] = (TEXT)
-property[ACTIVE][n] = 1|0
-```
+property[ACTIVE][n] = 1|0</code></pre></div>
 
 ### Attributes
 
@@ -66,22 +62,19 @@ property[ACTIVE][n] = 1|0
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryServiceList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryServiceList
 SERVICE = mobile|server|webspace|application|trustee|certificate|subreseller|other|trademark
 INDIVIDUAL = 0|1
 INACTIVE = 0|1
 REGISTRAR = (TEXT)
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)
-```
+SENDLISTEMAIL = (EMAILS)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[SERVICE][n] = mobile | server | webspace | application | trustee | certificate | subreseller | other | trademark
 property[TYPE][n] = (TEXT)
@@ -95,8 +88,7 @@ property[TRADE][n] = (DECIMAL)|N/A
 property[APPLICATION][n] = (DECIMAL)|N/A
 property[CURRENCY][n] = (TEXT)
 property[DESCRIPTION][n] = (TEXT)
-property[ACTIVE][n] = 1|0
-```
+property[ACTIVE][n] = 1|0</code></pre></div>
 
 ### Attributes
 

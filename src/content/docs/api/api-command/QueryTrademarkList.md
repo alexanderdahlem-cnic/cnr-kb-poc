@@ -19,16 +19,13 @@ The command _QueryTrademarkList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryTradeMarkList</code></pre></div>
 
-```
-COMMAND = QueryTradeMarkList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[TRADEMARK][n] = (TEXT)
 property[TRADEMARK_TYPE][n] = (TEXT)
@@ -42,8 +39,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 
@@ -66,26 +62,23 @@ property[TOTAL][0] = (INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryTradeMarkList
-TRADEMARKNAME = <PATTERN>
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryTradeMarkList
+TRADEMARKNAME = &lt;PATTERN&gt;
 TRADEMARKTYPE = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
 ORDER = ASC|DESC
 ORDERBY = TRADEMARKNAME|RENEWALDATE|TRADEMARKTYPE|ENTITLEMENT|TRADEMARKSTATUS
 TYPE = DEFAULT( The trademarklist)|SHOWSUBLAYER(Show all trademarks located on suberseller accounts)
 GENERATELIST = 0|1
-SENDLISTEMAIL = <EMAILS>
-FIRST = <INT>
-LIMIT = <INT>
-WIDE = 0|1
-```
+SENDLISTEMAIL = &lt;EMAILS&gt;
+FIRST = &lt;INT&gt;
+LIMIT = &lt;INT&gt;
+WIDE = 0|1</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[TRADEMARK][n] = (TEXT)
 property[TRADEMARK_TYPE][n] = (TEXT)
@@ -99,8 +92,7 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)
-```
+property[TOTAL][0] = (INT)</code></pre></div>
 
 ### Attributes
 

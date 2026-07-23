@@ -19,18 +19,15 @@ The command _StatusDomainBlocking_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND		= StatusDomainBlocking
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND		= StatusDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-code	 		= (INTEGER)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code	 		= (INTEGER)
 description 		= (TEXT)
 runtime 		= (INTEGER)
 queuetime 		= (INTEGER)
@@ -44,12 +41,10 @@ property[created by][0] = (TEXT)
 property[created date][0] = YYYY-MM-DD HH:MM:SS
 property[updated date][0] = YYYY-MM-DD HH:MM:SS
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
-
 The following are specific to AdultBlock:
 property[ownercontact][0] = (TEXT)
 property[tld blocks][0] = .adult, .porn, .sex, .xxx
 property[label variant generator uri][0] = https://adultblock.adult/trademark-variant-search/
-
 The following are specific to GlobalBlock:
 property[x-domain-blocking-ipr-id][0] 	= (TEXT)
 property[mark][0] 			= (TEXT)
@@ -64,5 +59,6 @@ property[registrar transfer date][0] 	= YYYY-MM-DD HH:MM:SS
 property[renewal date][0]	 	= YYYY-MM-DD HH:MM:SS
 property[renewalmode][0] 		= (TEXT)
 property[updated by][0] 		= (TEXT)
-property[brand protection calculator uri][0] = https://globalblock.co/brand-protection-calculator
-```
+property[brand protection calculator uri][0] = https://globalblock.co/brand-protection-calculator</code></pre></div>
+
+

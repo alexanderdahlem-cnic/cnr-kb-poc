@@ -13,26 +13,22 @@ Certificates containing SAN will be charged by the number of additional domains 
 
 ## AddCertificate
 
-### Command
-
-```
-command=AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddCertificate
 csrX=...
 [...]
 domain0=example.net
 domain1=www.example.net
 domain2=www.example.com
-domain3=mail.example.com
-```
+domain3=mail.example.com</code></pre></div>
 
 ## Generating a CSR including SAN with OpenSSL
 
 To create a CSR containing SAN with OpenSSL, you need to create a config containing the "alt\_names" - extension as shown below (using example.cnf)
 
-```
-HOME                    = .
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>HOME                    = .
 RANDFILE                = $ENV::HOME/.rnd
-
 [req]
 default_bits            = 2048
 default_keyfile         = privkey.pem
@@ -42,59 +38,46 @@ x509_extensions         = v3_req
 string_mask             = nombstr
 req_extensions          = v3_req
 default_md = sha256
-
 [req_distinguished_name]
 countryName                     = Country Name (2 letter code)
 countryName_default             = DE
 countryName_min                 = 2
 countryName_max                 = 2
-
 stateOrProvinceName             = State or Province Name (full name)
 stateOrProvinceName_default     = Test state
-
 localityName                    = Locality Name (eg, city)
 localityName_default            = Test town
-
 0.organizationName              = Organization Name (eg, company)
 0.organizationName_default      = Testing Ltd.
-
 organizationalUnitName          = Organizational Unit Name (eg, section)
 organizationalUnitName_default  = Test department
-
 commonName                      = Common Name (eg, YOUR name)
 commonName_max                  = 64
 commonName_default              = www.example.com
-
 emailAddress                    = Email Address
 emailAddress_max                = 64
 emailAddress_default            = hostmaster@example.com
-
 [v3_req]
 basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
-
 [alt_names]
 DNS.1 = example.net
 DNS.2 = www.example.net
 DNS.3 = www.example.com
-DNS.4 = mail.example.com
-```
+DNS.4 = mail.example.com</code></pre></div>
 
 This file can now be used with this openssl command to create a new CSR: The resulting content of example.csr can then be used in CheckCertificate, AddCertificate or ReissueCertificate by using the CSR# parameter (every line in the CSR a new numbered parameter).
 
-```
-openssl req -new [-nodes] [-sha256] -keyout example.key -out example.csr -config example.cnf
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>openssl req -new [-nodes] [-sha256] -keyout example.key -out example.csr -config example.cnf</code></pre></div>
 
 ## Ordering a certificate with Subject Alternative Names
 
 To include multiple domains in 1 certificate, Subject Alternative Names (SAN) can be used. For this, the domainX - parameters must match the SAN - extension in the CSR (See details in the introduction).
 
-### Command
-
-```
-command=AddCertificate
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddCertificate
 csr0=-----BEGIN CERTIFICATE REQUEST-----
 csr1=MIIC9DCCAdwCAQAwga4xCzAJBgNVBAYTAkRFMRswGQYDVQQIExJSaGluZWxhbmQt
 csr2=UGFsYXRpbmUxFDASBgNVBAcTC011c3RlcnN0YWR0MRQwEgYDVQQKEwtNdXN0ZXJm
@@ -123,18 +106,18 @@ class=TRUEBIZID
 domain0=example.net
 domain1=www.example.net
 domain2=www.example.com
-domain3=mail.example.com
-```
+domain3=mail.example.com</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[billingclass][0] = truebizid-4san
 property[certificate][0] = SA1234567
 property[status][0] = REQUESTED
 property[sub][0] = SA1234567-001
 property[sub status][0] = ORDER_REQUESTED
-EOF
-```
+EOF</code></pre></div>
+
+

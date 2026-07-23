@@ -19,22 +19,18 @@ The command _QueryWebspaceTraffic_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = QueryWebspaceTraffic
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryWebspaceTraffic
 WEBSPACE = (TEXT)
-YEARMONTH = (TEXT)
-```
+YEARMONTH = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[WEBSPACE][n] = (TEXT)
-property[USED_TRAFFIC][n] = (INT)
-```
+property[USED_TRAFFIC][n] = (INT)</code></pre></div>
 
 ### Attributes
 

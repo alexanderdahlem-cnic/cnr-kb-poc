@@ -19,20 +19,16 @@ The command _SetDatabaseRenewalMode_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = SetDatabaseRenewalMode
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = SetDatabaseRenewalMode
 DATABASE = (TEXT)
-RENEWALMODE = AUTODELETE|AUTORENEW|DEFAULT
-```
+RENEWALMODE = AUTODELETE|AUTORENEW|DEFAULT</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 

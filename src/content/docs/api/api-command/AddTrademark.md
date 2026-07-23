@@ -19,10 +19,8 @@ The command _AddTrademark_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND                        = AddTrademark
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND                        = AddTrademark
 MARKNAME                       = [TEXT]
 X-ACCEPT-ADDITIONAL-LABEL-COST = 0|1
 ENTITLEMENT                    = OWNER|ASSIGNEE|LICENSEE
@@ -50,13 +48,12 @@ REGDATE                        = [DATE]
 SMDINCLUSION#                  = 0|1
 CLAIMSNOTIFY#                  = 0|1
 ULABEL#                        = [TEXT]
-MARKTYPE                       = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
-```
+MARKTYPE                       = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY</code></pre></div>
 
-### Response
+ 
 
-```
-code                                        = [INT]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                                        = [INT]
 description                                 = [TEXT]
 property[TRADEMARK][0]                      = [TEXT]
 property[JOB_ID][0]                         = [TEXT]
@@ -66,8 +63,7 @@ property[CREATED_DATE][0]                   = [DATE]
 property[REGISTRATION_EXPIRATION_DATE][0]   = [DATE]
 property[RENEWAL_DATE][0]                   = [DATE]
 property[STATUS][0]                         = ACTIVE|PROCESSING|REQUESTED|FAILED|DOCUMENTS_RECEIVED|DEACTIVATED|EXPIRED
-property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1
-```
+property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1</code></pre></div>
 
 ### Attributes
 

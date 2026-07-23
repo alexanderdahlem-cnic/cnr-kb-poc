@@ -34,20 +34,16 @@ To request a token to be sent within an email to a given Contact Handle or Domai
 
 ## API RequestToken for a specific contact:
 
-### Command
-
-```
-command=RequestToken
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RequestToken
 type=ContactDisclosure
-contact=P-ABC123
-```
+contact=P-ABC123</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
-description = Command completed successfully
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
+description = Command completed successfully</code></pre></div>
 
 ## API RequestToken for multiple contacts of a domain:
 
@@ -56,22 +52,19 @@ unittest-70376373.com P-PGS24 ADMIN
 unittest-70376373.com P-PHS26 TECH  
 unittest-70376373.com P-PCS25 BILLING
 
-### Command
-
-```
-command=RequestToken
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RequestToken
 type=ContactDisclosure
 domain=unittest-70376373.com
 contacttype0=OWNER
 contacttype1=ADMIN
 contacttype2=TECH
-contacttype3=BILLING
-```
+contacttype3=BILLING</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[contact][0] = P-SPZ22
 property[description][0] =
@@ -84,8 +77,7 @@ property[description][1] =
 property[description][2] =
 property[status][0] = SUCCESS
 property[status][1] = SUCCESS
-property[status][2] = SUCCESS
-```
+property[status][2] = SUCCESS</code></pre></div>
 
 ## GDPR settings in the CentralNic Reseller Control Panel
 
@@ -116,34 +108,24 @@ The options give you the opportunity to change GDPR and various fields in the co
 
 ## Example Mail
 
-```
-Dear Registrant,
-
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Dear Registrant,
 in accordance with our registration agreement, you have provided us with certain contact
 information that is connected with one or more domain names registered through our service.
-
 We were informed by your service provider that you have requested that you wish to disclose
 or undisclose elements of your data in the publicly available Whois records.
-
 If you want to modify the publication of your contact information please proceed to:
 {DISCLOSURE-URL}
-
 Please note that due to security reasons this link will only remain functional for 30 days.
 During this time, it can be used multiple times to change your privacy settings or revoke
 your permission to publish the data. After the link expires, please contact your service
 provider to request a new link.
-
 Due to ongoing changes of the way Registry Operators handle data, such updates may not be
 immediately available for domains in all TLDs where these contact details in use.
-
 To view the corresponding policies go to: {DISCLOSURE-POLICIES}
-
 For more information about the GDPR go to: https://www.eugdpr.org/
-
 Best regards,
-
-Your Domain Registrar
-```
+Your Domain Registrar</code></pre></div>
 
 ## Event example:
 

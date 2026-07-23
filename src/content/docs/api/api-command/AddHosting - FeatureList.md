@@ -19,10 +19,8 @@ The command _AddHosting - FeatureList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND                     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND                     = AddHosting
 TYPE                         = Featurelist
 CLASS                     = cpanel
 FEATURELIST                = (TEXT)
@@ -111,8 +109,7 @@ FEATUREFILERESTORATION         = 1|0
 FEATURERESOURCEPLUGIN        = 1|0
 FEATURESSLMANAGER             = 1|0
 FEATUREWORDPRESSTOOLKIT        = 1|0
-FEATUREWORDPRESSTOOLKITDELUXE = 1|0
-```
+FEATUREWORDPRESSTOOLKITDELUXE = 1|0</code></pre></div>
 
 ### Attributes
 

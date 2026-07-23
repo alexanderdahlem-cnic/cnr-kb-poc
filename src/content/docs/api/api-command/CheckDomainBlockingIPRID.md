@@ -19,19 +19,16 @@ The command _CheckDomainBlockingIPRID_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = CheckDomainBlockingIPRID
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = CheckDomainBlockingIPRID
 TYPE	= AdultBlock|AdultBlockplus|GlobalBlock|GlobalBlockplus|DPMLBridge|DPMLBridgePlus
 LABEL	= [TEXT]
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code 					= (INTEGER)
 description 				= (TEXT)
 queuetime 				= (INTEGER)
@@ -44,5 +41,6 @@ property[rightsholder][0] 		= (TEXT)
 property[rightsid][0] 			= (INTEGER)
 property[rightsstatus][0] 		= Active|Closed|QueuedForActivation|ActivationInProgress
 property[x-domain-blocking-ipr-id][0] 	= (TEXT)
-EOF
-```
+EOF</code></pre></div>
+
+

@@ -19,17 +19,14 @@ The command _QueryCommandSyntax_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryCommandSyntax
+COMMANDNAME = (TEXT)</code></pre></div>
 
-```
-COMMAND = QueryCommandSyntax
-COMMANDNAME = (TEXT)
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[COMMANDDESCRIPTION][n] = (TEXT)
 property[COMMANDNAME][0] = (TEXT)
@@ -45,8 +42,7 @@ property[RANGE][n] = (TEXT)
 property[TITLE][n] = (TEXT)
 property[TYPE][n] = (TEXT)
 property[WIDE][n] = (TEXT)
-property[ZONE][n] = (TEXT)
-```
+property[ZONE][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -57,18 +53,15 @@ property[ZONE][n] = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-PARENT = 0|1
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>PARENT = 0|1
 TYPE = REQUEST|RESPONSE
 DOMAIN = (TEXT)
 CLASS = (TEXT)
 SHOWONLYPARENT = 1|0
 IGNOREZONE = 0|1
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)
-```
+SENDLISTEMAIL = (EMAILS)</code></pre></div>
 
 ### Attributes
 

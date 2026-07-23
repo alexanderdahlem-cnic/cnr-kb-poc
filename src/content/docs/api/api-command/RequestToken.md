@@ -19,20 +19,16 @@ The command _RequestToken_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command=RequestToken
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RequestToken
 type=ContactDisclosure
-contact=(CONTACT)
-```
+contact=(CONTACT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
-description = (TEXT)
-```
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
+description = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -43,22 +39,19 @@ description = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command=RequestToken
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RequestToken
 type=ContactDisclosure
 domain=(DOMAIN)
 contacttype0=OWNER(optional)
 contacttype1=ADMIN(optional)
 contacttype2=TECH(optional)
-contacttype3=BILLING(optional)
-```
+contacttype3=BILLING(optional)</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 property[contact][0] = P-SPZ22
 property[description][0] =
@@ -71,5 +64,6 @@ property[description][1] =
 property[description][2] =
 property[status][0] = SUCCESS
 property[status][1] = SUCCESS
-property[status][2] = SUCCESS
-```
+property[status][2] = SUCCESS</code></pre></div>
+
+

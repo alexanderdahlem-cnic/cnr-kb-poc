@@ -5,44 +5,42 @@ description: "EPP API Command Reference  ➤ Host commands ➤ Host:Check ➥ Le
 
 ## Required Parameters
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+ &lt;command&gt;
+   &lt;check&gt;
+     &lt;host:check
+      xmlns:host="urn:ietf:params:xml:ns:host-1.0"&gt;
+       &lt;host:name&gt;ns1.example.com&lt;/host:name&gt;
+     &lt;/host:check&gt;
+   &lt;/check&gt;
+   &lt;clTRID&gt;E29ECDB4-2F4C-11DE-86F5-80000000A754&lt;/clTRID&gt;
+ &lt;/command&gt;
+&lt;/epp&gt;</code></pre></div>
 
-```
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
- <command>
-   <check>
-     <host:check
-      xmlns:host="urn:ietf:params:xml:ns:host-1.0">
-       <host:name>ns1.example.com</host:name>
-     </host:check>
-   </check>
-   <clTRID>E29ECDB4-2F4C-11DE-86F5-80000000A754</clTRID>
- </command>
-</epp>
-```
+ 
 
-### Response
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+ &lt;response&gt;
+   &lt;result code="1000"&gt;
+     &lt;msg&gt;Command completed successfully&lt;/msg&gt;
+   &lt;/result&gt;
+   &lt;resData xmlns:host="urn:ietf:params:xml:ns:host-1.0"&gt;
+     &lt;host:chkData&gt;
+       &lt;host:cd&gt;
+         &lt;host:name avail="1"&gt;ns1.example.com&lt;/host:name&gt;
+         &lt;host:reason&gt;Name server available&lt;/host:reason&gt;
+       &lt;/host:cd&gt;
+     &lt;/host:chkData&gt;
+   &lt;/resData&gt;
+   &lt;trID&gt;
+     &lt;clTRID&gt;E29ECDB4-2F4C-11DE-86F5-80000000A754&lt;/clTRID&gt;
+     &lt;svTRID&gt;E4B1E8DE-2F4C-11DE-BC4A-D747571B6317&lt;/svTRID&gt;
+   &lt;/trID&gt;
+ &lt;/response&gt;
+&lt;/epp&gt;</code></pre></div>
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
- <response>
-   <result code="1000">
-     <msg>Command completed successfully</msg>
-   </result>
-   <resData xmlns:host="urn:ietf:params:xml:ns:host-1.0">
-     <host:chkData>
-       <host:cd>
-         <host:name avail="1">ns1.example.com</host:name>
-         <host:reason>Name server available</host:reason>
-       </host:cd>
-     </host:chkData>
-   </resData>
-   <trID>
-     <clTRID>E29ECDB4-2F4C-11DE-86F5-80000000A754</clTRID>
-     <svTRID>E4B1E8DE-2F4C-11DE-BC4A-D747571B6317</svTRID>
-   </trID>
- </response>
-</epp>
-```
+

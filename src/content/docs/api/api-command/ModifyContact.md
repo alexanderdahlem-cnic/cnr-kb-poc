@@ -21,33 +21,27 @@ The command _ModifyContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-[COMMAND]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[COMMAND]
 COMMAND     = ModifyContact
 CONTACT     = (CONTACT)
-AUTODELETE  = (0|1)
-```
+AUTODELETE  = (0|1)</code></pre></div>
 
-### Response
+ 
 
-```
-code = <INT>
-description = <TEXT>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = &lt;INT&gt;
+description = &lt;TEXT&gt;
 property[VALIDATED][0] = 0|1
 property[VERIFIED][0] = 0|1
-property[VERIFICATION_REQUESTED][0] = 0|1
-```
+property[VERIFICATION_REQUESTED][0] = 0|1</code></pre></div>
 
 ## Optional
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-[COMMAND]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[COMMAND]
 COMMAND       = ModifyContact
 VALIDATION    = (0|1)
 CHECKONLY     = (0|1)
@@ -69,20 +63,18 @@ FAX           = (TEXT)
 EMAIL         = (TEXT)
 AUTH          = (TEXT)
 STATUS0..4    = (TEXT)
-
 X-VERIFICATION-DATA0..n           = email|phone|name|address
 X-VERIFICATION-TRUSTFAMEWORK0..n  = (TEXT)
 X-VERIFICATION-TIMESTAMP0..n      = YYYY-MM-DDTHH:MM:SS+HH:MM
 X-VERIFICATION-METHOD0..n         = (TEXT)
 X-VERIFICATION-REFERENCE0..n      = (TEXT)
 X-VERIFICATION-EVIDENCE0..n       = (TEXT)
-X-VERIFICATION-RESULT0..n         = Success|failed
-```
+X-VERIFICATION-RESULT0..n         = Success|failed</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code                                      = (INTEGER)
 description                               = (TEXT)
 property[VALIDATED][0]                    = (0|1)
@@ -94,8 +86,7 @@ property[x-verification-timestamp][0]     = (DATETIME)
 property[x-verification-method][0]        = (TEXT)
 property[x-verification-reference][0]     = (TEXT)
 property[x-verification-evidence][0]      = (TEXT)
-property[x-verification-result][0]        = Success|failed 
-```
+property[x-verification-result][0]        = Success|failed </code></pre></div>
 
 ### Attributes
 

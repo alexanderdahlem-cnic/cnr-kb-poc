@@ -19,17 +19,15 @@ The command _AddAftermarketAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddAftermarketAccount
+accountkey=&lt;TEXT&gt;                 (mandatory, your Aftermarket Account key)
+description=&lt;TEXT&gt;                (optional, freetext for easier identification)
+provider=sedo|&lt;NULL&gt;              (defaults to "sedo")</code></pre></div>
 
-```
-command=AddAftermarketAccount
-accountkey=<TEXT>                 (mandatory, your Aftermarket Account key)
-description=<TEXT>                (optional, freetext for easier identification)
-provider=sedo|<NULL>              (defaults to "sedo")
-```
+ 
 
-### Response
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[aftermarketaccount][0] = &lt;TEXT&gt;    (The Aftermarket Account ID, an alphanumerical random string of 10 characters)</code></pre></div>
 
-```
-property[aftermarketaccount][0] = <TEXT>    (The Aftermarket Account ID, an alphanumerical random string of 10 characters)
-```
+

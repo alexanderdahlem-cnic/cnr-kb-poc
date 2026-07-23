@@ -19,16 +19,13 @@ The command _AddHosting - MySQLDatabaseUser_ is available via the following gate
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = Mysqldatabaseuser
 CLASS     = cpanel
 ACCOUNT    = (TEXT)
 PASSWORD    = (TEXT)
-OBJECT    = (TEXT)
-```
+OBJECT    = (TEXT)</code></pre></div>
 
 ### Attributes
 

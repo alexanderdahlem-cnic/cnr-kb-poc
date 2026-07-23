@@ -19,21 +19,18 @@ The command _DomainPrice_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = DomainPrice
-PERIOD = <TEXT>
-PERIODTYPE = <TEXT>
-DOMAIN = <DOMAIN>
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DomainPrice
+PERIOD = &lt;TEXT&gt;
+PERIODTYPE = &lt;TEXT&gt;
+DOMAIN = &lt;DOMAIN&gt;
 TYPE = ADDDOMAIN|RENEWDOMAIN|TRANSFERDOMAIN|RESTOREDOMAIN
-X-PROMOTION-CODE = <TEXT>
-```
+X-PROMOTION-CODE = &lt;TEXT&gt;</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[PREMIUM][0] = (TEXT)
 property[DOMAIN][0] = (TEXT)
@@ -55,8 +52,7 @@ property[PRICE][0] = (DECIMAL)
 property[VAT][0] = (DECIMAL)
 property[NONREFUNDABLE][0] = (DECIMAL)
 property[VATNONREFUNDABLE][0] = (DECIMAL)
-property[PROMOTION][n] = (TEXT)
-```
+property[PROMOTION][n] = (TEXT)</code></pre></div>
 
 ### Attributes
 

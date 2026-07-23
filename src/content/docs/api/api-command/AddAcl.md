@@ -19,14 +19,11 @@ The command _AddAcl_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-command = AddAcl
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = AddAcl
 username = (TEXT)
 location = (TEXT)
-acl0..255 = (TEXT)
-```
+acl0..255 = (TEXT)</code></pre></div>
 
 ### Attributes
 

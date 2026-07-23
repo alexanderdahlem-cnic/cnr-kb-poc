@@ -19,18 +19,15 @@ The command _StatusTag_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = statusTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = statusTag
 TYPE        = DOMAIN|ZONE|SERVICE
-TAG         = (TEXT)
-```
+TAG         = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code               			= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code               			= (INT)
 description             		= (TEXT)
 queuetime 				= (INT)
 runtime 				= (INT)
@@ -39,8 +36,7 @@ property[type][0]			= DOMAIN|ZONE|SERVICE
 property[description][0]		= (TEXT)
 property[domain][#]     		= (DOMAIN)
 property[zone][#]      			= (ZONE)
-property[service-domainblocking][#] 	= (DOMAIN BLOCK ROID)
-```
+property[service-domainblocking][#] 	= (DOMAIN BLOCK ROID)</code></pre></div>
 
 ### Attributes
 
@@ -55,20 +51,16 @@ property[service-domainblocking][#] 	= (DOMAIN BLOCK ROID)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     	= statusTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     	= statusTag
 TYPE        	= DOMAIN|ZONE|SERVICE
 TAG         	= (TEXT)
+SERVICETYPE 	= DOMAINBLOCKING|CERTIFICATE</code></pre></div>
 
-SERVICETYPE 	= DOMAINBLOCKING|CERTIFICATE
-```
+ 
 
-### Response
-
-```
-code               			= (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code               			= (INT)
 description             		= (TEXT)
 queuetime 				= (INT)
 runtime 				= (INT)
@@ -77,8 +69,7 @@ property[type][0]			= DOMAIN|ZONE|SERVICE
 property[description][0]		= (TEXT)
 property[domain][#]     		= (DOMAIN)
 property[zone][#]      			= (ZONE)
-property[service-domainblocking][#] 	= (DOMAIN BLOCK ROID)
-```
+property[service-domainblocking][#] 	= (DOMAIN BLOCK ROID)</code></pre></div>
 
 ### Attributes
 

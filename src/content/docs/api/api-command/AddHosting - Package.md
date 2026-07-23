@@ -19,10 +19,8 @@ The command _AddHosting - Package_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND                 = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND                 = AddHosting
 TYPE                     = Package
 CLASS                 = cpanel
 FEATURELIST            = (TEXT)
@@ -40,8 +38,7 @@ PACKAGEBANDWIDTHLIMIT    = (INT)
 PACKAGEMAXLISTS            = (INT)
 PACKAGEMAXEMAILACCTQUOTA = (INT)
 PACKAGEEXTENSIONS        = softinstcount
-PACKAGEMAXSOFTINST        = (INT)
-```
+PACKAGEMAXSOFTINST        = (INT)</code></pre></div>
 
 ### Attributes
 

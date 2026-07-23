@@ -19,21 +19,19 @@ The command _StatusAftermarketAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=StatusAftermarketAccount
+aftermarketaccount=&lt;TEXT&gt;          (identifier for the Aftermarket Account to be modified, alphanumerical random string of 10 characters)</code></pre></div>
 
-```
-command=StatusAftermarketAccount
-aftermarketaccount=<TEXT>          (identifier for the Aftermarket Account to be modified, alphanumerical random string of 10 characters)
-```
+ 
 
-### Response
-
-```
-property[aftermarketaccount][0] = <TEXT>
-property[accountkey][0] = <TEXT>
-property[description][0] = <TEXT>
-property[listed domains][0] = <INT> (how many domains are currently listed for sale with this Aftermarket Account)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>property[aftermarketaccount][0] = &lt;TEXT&gt;
+property[accountkey][0] = &lt;TEXT&gt;
+property[description][0] = &lt;TEXT&gt;
+property[listed domains][0] = &lt;INT&gt; (how many domains are currently listed for sale with this Aftermarket Account)
 property[login successful][0] = 0|1 (Shows if the Login to the Aftermarket Provider was successful (1) or unsuccessful (0).
 				    Unsuccessful if the Account Key has been changed, for example directly at the Aftermarket Provider.)
-property[provider][0] = sedo
-```
+property[provider][0] = sedo</code></pre></div>
+
+

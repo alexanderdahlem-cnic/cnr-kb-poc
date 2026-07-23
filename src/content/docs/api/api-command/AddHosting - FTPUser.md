@@ -19,16 +19,13 @@ The command _AddHosting - FTPUser_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = ftpuser
 CLASS     = cpanel
 ACCOUNT     = (TEXT)
 OBJECT     = ftp-user1
-PASSWORD    = (TEXT)
-```
+PASSWORD    = (TEXT)</code></pre></div>
 
 ### Attributes
 
@@ -42,14 +39,13 @@ PASSWORD    = (TEXT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND     = AddHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND     = AddHosting
 TYPE         = ftpuser
 CLASS     = cpanel
 ACCOUNT     = (TEXT)
 OBJECT     = ftp-user1
 PASSWORD    = (TEXT)
-DIRECTORY    = (TEXT)
-```
+DIRECTORY    = (TEXT)</code></pre></div>
+
+

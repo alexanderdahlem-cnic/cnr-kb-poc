@@ -12,40 +12,31 @@ Internal transfers can either be requested with or without auth-code, please see
 
 If you start an internal transfer without auth-code, the current reseller has to approve the transfer request within 5 days, otherwise the transfer will timeout on the 6th day.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain  = yourdomain.TLD
 action  = usertransfer
-NORENEW = 1
-```
+NORENEW = 1</code></pre></div>
 
 ## With Auth-Code
 
 If you start an internal transfer **with** auth-code, the current reseller can approve or deny the transfer. If the current reseller does not confirm the transfer and the domain is not locked, the transfer will be successfully completed on the 6th day.
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain  = yourdomain.TLD
 action  = usertransfer
 auth    = .......
-NORENEW = 1
-```
+NORENEW = 1</code></pre></div>
 
 ## With Explicit Renewal
 
 If you wish to explicitly renew a domain during internal transfer, please add the parameters detailed below. Please note that this will only work for those TLDs where explicit renewals are supported. If in doubt, please check the TLD's respective knowledge base article.
 
-### Command
-
-```
-[…]
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>[…]
 period  = 1
-NORENEW = 0
-```
+NORENEW = 0</code></pre></div>
 
 Please note that internal transfers are not subject to usual TLD-specific transfer procedures.
 
@@ -68,20 +59,16 @@ The settings can be found in the control panel following "Account" -> "Settings"
 
 If no value is transmitted, the default setting is used.
 
-### Command
-
-```
-command                 = ModifyRegistrar
-INTERNAL-TRANSFER-RENEW = REGISTRY | NORENEW | (Null)
-```
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command                 = ModifyRegistrar
+INTERNAL-TRANSFER-RENEW = REGISTRY | NORENEW | (Null)</code></pre></div>
 
 ## API Example for an Internal Transfer, Skipping the Renewal
 
-### Command
-
-```
-command = TransferDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = TransferDomain
 domain  = yourdomain.com
 action  = usertransfer
-NORENEW = 1
-```
+NORENEW = 1</code></pre></div>
+
+

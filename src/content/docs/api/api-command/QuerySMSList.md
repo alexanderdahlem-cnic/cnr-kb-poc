@@ -20,17 +20,14 @@ The command _QuerySMSList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = QuerySMSList
+accountid =(TEXT)</code></pre></div>
 
-```
-command   = QuerySMSList
-accountid =(TEXT)
-```
+ 
 
-### Response
-
-```
-code                   =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                   =(INT)
 description            =(TEXT)
 property[smsid][0]     = 1234567
 property[status][0]    = SEND|DELIVERED|BUFFERED|FAILED|EXPIRED|REJECTED|ERROR|UNKNOWN
@@ -40,8 +37,7 @@ property[count][0]     =(INT)
 property[first][0]     =(INT)
 property[last][0]      =(INT)
 property[limit][0]     =(INT)
-property[total][0]     =(INT)
-```
+property[total][0]     =(INT)</code></pre></div>
 
 ### Attributes
 
@@ -64,10 +60,8 @@ property[total][0]     =(INT)
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-command   = QuerySMSList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command   = QuerySMSList
 accountid =(TEXT)
 wide      =(0|1)
 recipient =(TEXT)
@@ -75,13 +69,12 @@ mindate   =(DATE)
 maxdate   =(DATE)
 smsid     =(TEXT)
 first     =(INT)
-limit     =(INT)
-```
+limit     =(INT)</code></pre></div>
 
-### Response
+ 
 
-```
-code                   =(INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                   =(INT)
 description            =(TEXT)
 property[smsid][0]     = 1234567
 property[status][0]    = SEND|DELIVERED|BUFFERED|FAILED|EXPIRED|REJECTED|ERROR|UNKNOWN
@@ -91,8 +84,7 @@ property[count][0]     =(INT)
 property[first][0]     =(INT)
 property[last][0]      =(INT)
 property[limit][0]     =(INT)
-property[total][0]     =(INT)
-```
+property[total][0]     =(INT)</code></pre></div>
 
 ### Attributes
 

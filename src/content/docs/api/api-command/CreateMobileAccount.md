@@ -20,17 +20,14 @@ The command _CreateMobileAccount_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = CreateMobileAccount
+amount  = (INT)</code></pre></div>
 
-```
-command = CreateMobileAccount
-amount  = (INT)
-```
+ 
 
-### Response
-
-```
-code                          = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code                          = (INT)
 description                   = (TEXT)
 property[accountid][0]        = (TEXT)
 property[password][0]         = (TEXT)
@@ -38,8 +35,7 @@ property[current][0]          = (INT)
 property[currency][0]         = (TEXT)
 property[status][0]           = ACTIVE
 property[amount charged][0]   = (INT)
-property[currency charged][0] = (TEXT)
-```
+property[currency charged][0] = (TEXT)</code></pre></div>
 
 ### Attributes
 

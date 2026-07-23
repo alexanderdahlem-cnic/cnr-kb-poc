@@ -19,26 +19,24 @@ The command _DeleteHosting_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = DeleteHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = DeleteHosting
 CLASS required = cpanel (DEFAULT) -
 TYPE required = useraccount|addondomain|domainalias|subdomain|email|emailforward|emaildomainforward|ftpuser|mysqldatabase|mysqldatabaseuser|mysqldatabaseuserprivileges
 ACCOUNT required = cPanelAccountID
 OBJECT optional =
 DATABASENAME optional = -
 DATABASEUSER optional = -
-TARGET optional (emailforward, emaildomainforward, addondomain) =
-```
+TARGET optional (emailforward, emaildomainforward, addondomain) =</code></pre></div>
 
-### Response
+ 
 
-```
-code =  (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code =  (INT)
 description =  (TEXT)
 property[job id][0] = 305150
 property[restoreable until][0] = 2019-03-24 06:59:50
 property[status][0] = pendingDelete
-property[updated date][0] = 2019-02-22 06:59:5
-```
+property[updated date][0] = 2019-02-22 06:59:5</code></pre></div>
+
+

@@ -19,18 +19,15 @@ The command _GetZoneInfo_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = GetZoneInfo
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = GetZoneInfo
 ZONE = (TEXT)
-DOMAIN = YOURDOMAIN.TLD
-```
+DOMAIN = YOURDOMAIN.TLD</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[AUTORENEW_GRACE_PERIOD][0] = (TEXT)
 property[CHANGE_OF_REGISTRANT][n] = (TEXT)
@@ -59,8 +56,7 @@ property[CHARACTERS_MAXIMUM][0] = (INT)
 property[CHARACTERS_MINIMUM][0] = (INT)
 property[ZONE_INFO][0] = (TEXT)
 property[ZONE_USE][0] = (TEXT)
-property[REALTIME][0] = 0|1
-```
+property[REALTIME][0] = 0|1</code></pre></div>
 
 ### Attributes
 

@@ -24,17 +24,14 @@ The command _StatusDomain_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = StatusDomain
+domain = YOURDOMAIN.TLD</code></pre></div>
 
-```
-command = StatusDomain
-domain = YOURDOMAIN.TLD
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 property[AFTERMARKET PROVIDER][0] = sedo
 property[AFTERMARKET STATUS][0] = LISTED|UNLISTED
 property[PAIDUNTIL_DATE][0] = (TEXT)
@@ -275,28 +272,24 @@ property[X-FEE-DOMAIN][0] = (TEXT)
 property[X-FEE-LAUNCHPHASE][0] = (TEXT)
 property[X-FEE-PERIOD][0] = (TEXT)
 property[X-FEE-PERIODTYPE][0] = (TEXT)
-property[DOMAINTAG][n] = (TEXT)
-```
+property[DOMAINTAG][n] = (TEXT)</code></pre></div>
 
 ## Required Parameters (premium)
 
 The following premium parameters are standard for this command.
 
-### Command
-
-```
-command           = StatusDomain
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command           = StatusDomain
 domain            = YOURDOMAIN.TLD
 x-fee-command     = create
 x-fee-period      = 1
 x-fee-periodtype  = YEAR
-x-fee-launchphase = sunrise
-```
+x-fee-launchphase = sunrise</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 property[domain][0] = YOURDOMAIN.TLD
 ...
 property[x-fee-period][0] = 1
@@ -304,5 +297,6 @@ property[x-fee-periodtype][0] = YEAR
 property[x-fee-amount][0] = 10.00
 property[x-fee-application][0] = 100.00
 property[x-fee-currency][0] = USD
-property[x-fee-launchphase][0] = sun
-```
+property[x-fee-launchphase][0] = sun</code></pre></div>
+
+

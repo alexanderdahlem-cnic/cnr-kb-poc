@@ -19,22 +19,19 @@ The command _TransferDomainBlocking - Request_ is available via the following ga
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-Command     = TRANSFERDOMAINBLOCKING
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command     = TRANSFERDOMAINBLOCKING
 DOMAINBLOCK = (Block Order ID)
 ACTION      = REQUEST
 AUTH        = (AUTHENTICATION KEY)
 LABEL       = (TEXT)
 TYPE        = AdultBlock|AdultBlockplus|GlobalBlock|GlobalBlockplus|DPMLBridge|DPMLBridgePlus
-EOF
-```
+EOF</code></pre></div>
 
-### Response
+ 
 
-```
-[RESPONSE]
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>[RESPONSE]
 code 				 = (INTEGER)
 description 			 = (TEXT)
 queuetime 			 = (INTEGER)
@@ -49,5 +46,6 @@ property[transfer date][0] 	 = YYYY-MM-DD HH:MM:SS
 property[transfer status][0]  	 = pending
 property[updated by][0] 	 = (TEXT)
 property[updated date][0] 	 = YYYY-MM-DD HH:MM:SS
-EOF
-```
+EOF</code></pre></div>
+
+

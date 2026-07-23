@@ -12,54 +12,39 @@ For reference: [RFC 6844 for CAA records](https://tools.ietf.org/html/rfc6844)
 
 Allow the Certificate Authority DigiCert to issue SSL certificates for example.com:
 
-### Command
-
-```
-command = adddnszone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = adddnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 issue digicert.com
-```
+rr0 = @ IN CAA 0 issue digicert.com</code></pre></div>
 
 Allow the Certificate Authority DigiCert to issue SSL wildcard certificates for example.com:
 
-### Command
-
-```
-command = modifydnszone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 issuewild digicert.com
-```
+rr0 = @ IN CAA 0 issuewild digicert.com</code></pre></div>
 
 Allow the Certificate Authority DigiCert to issue SSL wildcard certificates for example.com, but disallow single domain SSL certificates:
 
-### Command
-
-```
-command = modifydnszone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = modifydnszone
 dnszone = example.com
 rr0 = @ IN CAA 0 issue ";"
-rr1 = @ IN CAA 0 issuewild digicert.com
-```
+rr1 = @ IN CAA 0 issuewild digicert.com</code></pre></div>
 
 Define email address to send incident reports to:
 
-### Command
-
-```
-command = modifydnszone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 iodef mailto:info@example.com
-```
+rr0 = @ IN CAA 0 iodef mailto:info@example.com</code></pre></div>
 
 Define URL to send incident reports to:
 
-### Command
-
-```
-command = modifydnszone
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 iodef http://www.example.com/script.php
-```
+rr0 = @ IN CAA 0 iodef http://www.example.com/script.php</code></pre></div>
 
 There's currently no standard format for receiving incident reports. And it might not be supported by all Certificate Authorities.
 

@@ -19,9 +19,8 @@ The command _RestoreContact_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=RestoreContact
+contact=(CONTACT)</code></pre></div>
 
-```
-command=RestoreContact
-contact=(CONTACT)
-```
+

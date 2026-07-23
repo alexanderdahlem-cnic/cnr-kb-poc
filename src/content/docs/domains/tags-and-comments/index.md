@@ -163,18 +163,15 @@ DelDomainTagN=
 
 The command CheckDomains now also works with TLD Zone Tags and checks for a given search string. The search string can be stated without any TLD. The response automatically displays results for TLDs that belong to a certain TLD Zone Tag. Of course default and individual TLD Zone Tags can be combined.
 
-### Command
-
-```
-Command=CheckDomains
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=CheckDomains
 Domain0=cooldomainname
-ZONETAG=DEFAULT_GENERIC
-```
+ZONETAG=DEFAULT_GENERIC</code></pre></div>
 
-### Response
+ 
 
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 queuetime = 0
 runtime = 10.36
@@ -195,8 +192,7 @@ property[domainchecktime][2] = 0.001
 property[first][0] = 0
 property[last][0] = 14
 property[limit][0] = 32
-property[total][0] = 16
-```
+property[total][0] = 16</code></pre></div>
 
 ## Using Query Commands with Tags
 
@@ -216,17 +212,14 @@ We integrated Tag support for Several Query Commands:
 
 To narrow down a query using tags the parameters DomainTag\[x\] and ZoneTag\[x\] can be used. You can query for up to 4096 Tags (from 0 to 4095) of each type and work as logical conjunction. The response lists the intersection, i.e. all objects assigned to all Tags stated in the query command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=QueryDomainlist
+ZoneTag0=DEFAULT_GENERIC</code></pre></div>
 
-```
-command=QueryDomainlist
-ZoneTag0=DEFAULT_GENERIC
-```
+ 
 
-### Response
-
-```
-code = 200
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = 200
 description = Command completed successfully
 runtime = 0.009
 property[column][0] = domain
@@ -236,8 +229,7 @@ property[domain][1] = first-domain2.com
 property[first][0] = 0
 property[last][0] = 1
 property[limit][0] = 1000
-property[total][0] = 2
-```
+property[total][0] = 2</code></pre></div>
 
 ## Sub-Reseller Management with TLD Zone Tags
 
@@ -247,55 +239,46 @@ Tags can be used to activate TLD zones for Sub-Resellers, during the creation (A
 
 Important: Only TLD Zones currently assigned to the respective Tag will be activated. Changes to the used Tag at a later time will not be included, i.e. the activated TLD Zones will not changed.
 
-```
-Command=AddRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=AddRegistrar
 ...
 ZoneTag0=
 ...
 ZoneTag4095=
-...
-```
+...</code></pre></div>
 
 ## ModifyRegistrar with TLD Zone Tags
 
 Deleting of ZoneTags containing Zones that are not activated for the respective Sub-Reseller account, will be ignored.  
 Important: Only TLD Zones currently assigned to the respective Tag will be activated. Changes to the used Tag at a later time will not be included, i.e. the activated TLD Zones will not changed.
 
-```
-Command=ModifyRegistrar
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>Command=ModifyRegistrar
 AddZoneTag0=
 ...
 AddZoneTag4095=
 ...
 DelZoneTag0=
 ...
-DelZoneTag4095=
-```
+DelZoneTag4095=</code></pre></div>
 
-## Domain - Tags API-Commands
-
-| [AddTag](../../api/api-command/addtag/) | Creates a new Tag |
-| --- | --- |
-| [DeleteTag](../../api/api-command/deletetag/) | DeleteTag |
-| [ModifyTag](../../api/api-command/modifytag/) | ModifyTag |
-| [QueryTagList](../../api/api-command/querytaglist/) | Shows a list of all created Tags |
-| [StatusTag](../../api/api-command/statustag/) | StatusTag |
+<div class="api-io api-io--command"><span class="api-io__label">Domain - Tags API-Commands</span>
+<pre class="api-io__code"><code><h2>Domain - Tags API-Commands</h2><table><tbody><tr><th><a href="../../api/api-command/addtag/">AddTag</a></th><th>Creates a new Tag</th></tr><tr><td><a href="../../api/api-command/deletetag/">DeleteTag</a></td><td>DeleteTag</td></tr><tr><td><a href="../../api/api-command/modifytag/">ModifyTag</a></td><td>ModifyTag</td></tr><tr><td><a href="../../api/api-command/querytaglist/">QueryTagList</a></td><td>Shows a list of all created Tags</td></tr><tr><td><a href="../../api/api-command/statustag/">StatusTag</a></td><td>StatusTag</td></tr></tbody></table></code></pre></div>
 
 ## API command examples
 
 Add a new Tag for domains
 
-```
-command=AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddTag
 type=DOMAIN
 tag=tertius
-description=number three
-```
+description=number three</code></pre></div>
 
 Add a new Tag for Domains and assign it to Domains using AddTag
 
-```
-command=AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddTag
 type=DOMAIN
 tag=primus
 description=number one
@@ -307,20 +290,18 @@ domain4=first-domain5.com
 domain5=first-domain6.com
 domain6=first-domain7.com
 domain7=first-domain8.com
-domain8=first-domain9.com
-```
+domain8=first-domain9.com</code></pre></div>
 
 Add a new Tag for a TLD Zone and assign it to TLD Zones using AddTag
 
-```
-command=AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddTag
 type=ZONE
 tag=rich
 description=oh so wealthy
 zone0=rich
 zone1=luxury
-zone2=diamonds
-```
+zone2=diamonds</code></pre></div>
 
 Add a new TLD Zone Tag using AddTag and COPY from an existing TLD Zone Tag
 
@@ -331,18 +312,17 @@ During creation of a new TLD Zone Tag you copy from an existing TLD Zone Tag or 
 -   When using the parameter COPY additional TLD Zones can not be added.
 -   COPY is only working with TLD Zone Tags.
 
-```
-command=AddTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=AddTag
 type=ZONE
-Copy=ExistingTag
-```
+Copy=ExistingTag</code></pre></div>
 
 ## Modifying Tags using ModifyTag
 
 Assign a Tag to some Domains using ModifyTag
 
-```
-command=ModifyTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ModifyTag
 type=DOMAIN
 tag=secundus
 adddomain0=second-domain1.com
@@ -350,13 +330,12 @@ adddomain1=second-domain2.com
 adddomain2=second-domain3.com
 adddomain3=second-domain4.com
 adddomain4=second-domain5.com
-adddomain5=second-domain6.com
-```
+adddomain5=second-domain6.com</code></pre></div>
 
 Remove a Tag from some Domains using ModifyTag
 
-```
-command=ModifyTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ModifyTag
 type=DOMAIN
 tag=primus
 deldomain0=first-domain1.com
@@ -364,17 +343,17 @@ deldomain1=first-domain2.com
 deldomain2=first-domain3.com
 deldomain3=first-domain4.com
 deldomain4=first-domain5.com
-deldomain5=first-domain6.com
-```
+deldomain5=first-domain6.com</code></pre></div>
 
 Assign and remove a Tag to/from some TLD Zones using ModifyTag
 
-```
-command=ModifyTag
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>command=ModifyTag
 type=ZONE
 tag=famous
 addzone0=com
 addzone1=net
 addzone2=org
-delzone3=info
-```
+delzone3=info</code></pre></div>
+
+

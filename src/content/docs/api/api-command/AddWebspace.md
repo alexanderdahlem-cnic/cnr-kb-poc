@@ -19,28 +19,24 @@ The command _AddWebspace_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = AddWebspace
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = AddWebspace
 QUOTA = (INT)
 CLASS = PHP
 X-HOSTING-ADVERT = 0|1
 X-HOSTING-LOCATION = EU|US|IM
 VERSION = 5.6|7.0|0.0
 NAME = (TEXT)
-X-PROMOTION-CODE = (TEXT)
-```
+X-PROMOTION-CODE = (TEXT)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 property[WEBSPACE][0] = (TEXT)
 property[IP][0] = (IP)
-property[PRICE][0] = (DECIMAL)
-```
+property[PRICE][0] = (DECIMAL)</code></pre></div>
 
 ### Attributes
 

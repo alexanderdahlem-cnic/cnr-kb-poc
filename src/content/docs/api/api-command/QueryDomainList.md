@@ -19,16 +19,13 @@ The command _QueryDomainList_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDomainList</code></pre></div>
 
-```
-COMMAND = QueryDomainList
-```
+ 
 
-### Response
-
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 description = (TEXT)
 queuetime = (INT)
 runtime = (INT)
@@ -39,8 +36,7 @@ property[first][0]  = (INT)
 property[last][0]   = (INT)
 property[limit][0]  = (INT)
 property[total][0]  = (INT)
-EOF
-```
+EOF</code></pre></div>
 
 ### Attributes
 
@@ -56,10 +52,8 @@ EOF
 
 The following parameters are optional for this command.
 
-### Command
-
-```
-COMMAND = QueryDomainList
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = QueryDomainList
 DOMAIN = (PATTERN)
 DOMAINIDN = (TEXT)
 DAYS = (INT)
@@ -76,13 +70,12 @@ FIRST = (INT)
 LIMIT = (INT)
 DOMAINTAG# = (TEXT)
 ZONETAG# = (TEXT)
-NAMESERVER = (PATTERN)
-```
+NAMESERVER = (PATTERN)</code></pre></div>
 
-### Response
+ 
 
-```
-code = (INT)
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = (INT)
 code = (INT)
 description = (TEXT)
 queuetime = (INT)
@@ -109,13 +102,11 @@ property[VERIFIED][n] = (TEXT)
 property[X-TIME-TO-SUSPENSION][n] = (TEXT)
 property[X-TRANSFERLOCK-UNTIL][n] = (DATE)
 property[zone][n] = (TEXT)
-
 If type = SHOWGTLDOWNERTRUSTEESERVICE
 property[column][3] = x-gtld-owner-trustee-active
 property[column][4] = x-gtld-owner-trustee-service-start
 property[x-gtld-owner-trustee-active][n] = 1
-property[x-gtld-owner-trustee-service-start][n] = YYYY-MM-DD HH:MM:SS
-```
+property[x-gtld-owner-trustee-service-start][n] = YYYY-MM-DD HH:MM:SS</code></pre></div>
 
 ### Attributes
 

@@ -19,24 +19,21 @@ The command _StatusHosting_ is available via the following gateways:
 
 The following parameters are standard parameters for this command.
 
-### Command
-
-```
-COMMAND = StatusHosting
+<div class="api-io api-io--command"><span class="api-io__label">Command</span>
+<pre class="api-io__code"><code>COMMAND = StatusHosting
 CLASS required = cpanel (DEFAULT)
 TYPE required = useraccount|domains|email|emailforward|emaildomainforward|ftpuser|
 mysqldatabase|mysqldatabaseuser|mysqldatabaseuserprivileges|bandwidth|cpanellogin|webmaillogin|
 package|featurelist|quota
 ACCOUNT optional = cPanelAccountID
 OBJECT optional =
-DATABASENAME optional =
-```
+DATABASENAME optional =</code></pre></div>
 
-### Response
+ 
 
-```
-code = <INT>
-description = <TEXT>
+<div class="api-io api-io--response"><span class="api-io__label">Response</span>
+<pre class="api-io__code"><code>code = &lt;INT&gt;
+description = &lt;TEXT&gt;
 property[account][0] = tkf2igf5
 property[accountdomain][0] = messe-useraccount.com
 property[accountreseller][0] = l4qdwhtn
@@ -86,5 +83,6 @@ property[updated date][0] = 2019-02-22 06:59:50
 property[webftp login url][0] = https://127.0.0.1:2078
 property[webmail login url][0] = https://127.0.0.1:2096
 property[x-hosting-location][0] = EU
-property[x-hosting-server][0] = cpanel-01-eu.hostingww.com
-```
+property[x-hosting-server][0] = cpanel-01-eu.hostingww.com</code></pre></div>
+
+
