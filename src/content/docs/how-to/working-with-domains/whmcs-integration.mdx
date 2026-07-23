@@ -1,0 +1,199 @@
+---
+title: "WHMCS Integration Guide"
+description: "Add domain registration to the WHMCS platform you already run — install the CentralNic Reseller module, connect your account, set pricing, run a test order and switch on automated renewals, in about an hour."
+sidebar:
+  order: 50
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+If you already bill and provision hosting through WHMCS, you do not need a separate
+system to start selling domains. The **CentralNic Reseller module for WHMCS** plugs
+domain registration, transfers, renewals, DNS and SSL straight into the platform
+your customers and staff already use — under your own brand, from the admin and
+client areas you know. This guide takes you along the happy path: install the
+module, connect your account, set pricing, prove it with a test order, and turn on
+automated renewals.
+
+It is written for hosting companies and resellers who want to be live quickly. The
+module is the shortest route from "we run WHMCS" to "we sell domains", and with a
+funded account already in place you can be taking orders in **under an hour**.
+
+:::tip[By the end of this guide you will have]
+- The **CentralNic Reseller module installed** in your WHMCS instance
+- Your **CentralNic Reseller account connected** with your credentials
+- **Pricing and TLD availability configured** so customers can find and buy domains
+- A **test registration completed** end to end
+- **Automated renewals switched on** so domains stay live without manual work
+:::
+
+:::note[First things first]
+The module connects a WHMCS installation to a **funded, secured CentralNic
+Reseller account** — it is not the account setup itself. If you have not funded
+your account, created users and enabled security yet, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) first.
+It takes about 30 minutes and applies to every integration method.
+
+Not sure WHMCS is the right path for you? See
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+:::
+
+## Before you start
+
+You need two things in place:
+
+- A **running WHMCS installation** you can log into as an administrator and upload
+  files to.
+- A **funded CentralNic Reseller account** with credentials — the account name and
+  a user login (a user logs in as `accountname:username`, as covered in
+  [Your First Day](../../start-here/your-first-day/)).
+
+The CentralNic Reseller registrar module has the WHMCS module ID **`cnic`**. It is
+distributed as the **WHMCS CNIC Software Bundle**, an all-in-one package that adds
+domains, DNS, DNSSEC and SSL management to WHMCS, along with helper addons for
+domain search, importing and monitoring.
+
+## 1. Install the CentralNic Reseller module
+
+The module is published on the
+[WHMCS Marketplace](https://marketplace.whmcs.com/product/6677-centralnic-reseller-software-bundle-for-whmcs)
+and on
+[GitHub](https://github.com/centralnicgroup-opensource/rtldev-middleware-whmcs).
+Installation is a file upload followed by activation inside WHMCS.
+
+<Steps>
+
+1. **Download the bundle.** Get the latest
+   [WHMCS CNIC Software Bundle](https://github.com/centralnicgroup-opensource/rtldev-middleware-whmcs/raw/main/whmcs-cnic-bundle.zip)
+   (`whmcs-cnic-bundle.zip`).
+
+2. **Extract and upload.** Unzip the archive and upload its contents into your
+   WHMCS `modules` directory. The registrar module is placed under
+   `modules/registrars/cnic`.
+
+3. **Activate the registrar.** In the WHMCS admin, open your domain registrar
+   settings, find **CentralNic Reseller** in the list of available registrars, and
+   activate it.
+
+</Steps>
+
+:::tip[Follow the official installation guide alongside these steps]
+For the exact WHMCS menu paths, version requirements, upgrade instructions and the
+setup of the bundled addons, keep the module's own
+[Installation Guide](https://support.centralnicreseller.com/hc/en-gb/sections/13438422570781-WHMCS)
+open as you go. It is the authoritative, always-current reference for the module.
+:::
+
+:::note[Running more than one account?]
+If you need to run several CentralNic Reseller accounts or brand variants side by
+side in one WHMCS installation, the bundle includes **wrapper modules** (`cnic1`,
+`cnic2`, and so on). Extract each wrapper so its path is `modules/registrars/cnicX`
+— WHMCS will not detect it anywhere else.
+:::
+
+## 2. Connect your CentralNic Reseller account
+
+With the registrar activated, tell it which account to use. In the module's
+configuration screen, enter your **CentralNic Reseller account credentials** and
+save. WHMCS will then route domain checks, registrations, transfers and renewals
+through your account.
+
+:::caution[Test against OT&E before you sell to real customers]
+CentralNic Reseller gives you a free **OT&E (Operational Test & Evaluation)**
+sandbox where nothing is billed and no live domains are touched. Point the module
+at your OT&E account credentials while you set everything up and place test orders,
+then switch to your production credentials when you are ready to go live. See
+[Your First Day](../../start-here/your-first-day/) for how OT&E works and
+[Moving from OT&E to Production](../../start-here/moving-from-ote-to-production/)
+for the switch-over. Confirm the exact credential fields in the
+[Installation Guide](https://support.centralnicreseller.com/hc/en-gb/sections/13438422570781-WHMCS).
+:::
+
+## 3. Configure pricing and TLD availability
+
+Customers can only buy the TLDs you offer, at the prices you set. WHMCS manages
+this in its own **domain pricing** area, where you choose which extensions to sell
+and set your registration, transfer and renewal prices — with CentralNic Reseller
+selected as the registrar for each TLD.
+
+<Steps>
+
+1. **Decide which TLDs to offer.** Add the extensions you want to sell to your
+   WHMCS domain pricing list.
+
+2. **Assign CentralNic Reseller as the registrar** for each of those TLDs so orders
+   route to your account.
+
+3. **Set your retail prices.** Your wholesale cost comes from your CentralNic
+   Reseller pricescale (see **Account Balance → Services & Prices** in the
+   [Control Panel](https://account.centralnicreseller.com/)); your margin is the
+   difference between that and what you charge in WHMCS.
+
+</Steps>
+
+:::tip[Fewer failed orders on demanding TLDs]
+The module is TLD-aware: it handles the extra registry fields and validation that
+TLDs such as `.de`, `.us` and `.dk` require, and supports internationalised domain
+names (IDNs). That means more registrations and transfers go through the first
+time. The bundled **CNIC Admin Config** addon lets you set default values for these
+additional domain fields.
+:::
+
+## 4. Run a test registration
+
+Before you announce domains to your customers, prove the whole chain end to end —
+search, order, payment and provisioning — with one test registration.
+
+<Steps>
+
+1. **Search for a domain** in WHMCS, either through the admin area or your client
+   area storefront, and confirm availability results come back.
+
+2. **Place the order** for an available, low-cost domain and take it through your
+   normal WHMCS checkout and payment flow.
+
+3. **Confirm it provisioned.** Check that WHMCS reports the domain as active and
+   that it appears in your CentralNic Reseller account.
+
+</Steps>
+
+:::tip[Do this in OT&E first]
+Running the test order against your OT&E credentials means you can exercise the
+full flow without spending real money. When the OT&E result looks right, the same
+order against production should behave identically — which is exactly the
+confidence you want before going live.
+:::
+
+## 5. Enable automated renewals
+
+The point of running domains inside WHMCS is that they largely look after
+themselves. WHMCS handles renewal orders, invoicing and provisioning on its
+automation (cron) schedule, and the CentralNic Reseller account applies its own
+renewal behaviour on top.
+
+- In **WHMCS**, make sure domain **auto-renewal** and the automation cron are
+  enabled so renewal invoices are raised and paid renewals are provisioned on time.
+- In **CentralNic Reseller**, confirm your renewal mode. **AUTORENEW** renews
+  domains automatically before they expire — the safe default for most resellers —
+  and is set under **Account → Settings → General** in the Control Panel (see
+  [Your First Day](../../start-here/your-first-day/)).
+
+:::caution[Keep your prepay balance topped up]
+Renewals draw on your CentralNic Reseller balance in real time. A balance that runs
+dry can cause domains to lapse even when WHMCS has collected payment from your
+customer. Set a **low-balance warning** in the Control Panel so you are notified in
+good time.
+:::
+
+## What to do next
+
+Your WHMCS storefront is selling domains and renewing them on its own. From here,
+deepen the integration and get comfortable with the everyday flows:
+
+<CardGrid>
+  <LinkCard title={"WHMCS Module"} href={"../../../services/plugins/whmcs/"} description={"Downloads, documentation and the full installation and upgrade reference."} />
+  <LinkCard title={"The Complete Domain Lifecycle"} href={"../complete-domain-lifecycle/"} description={"Register, renew, transfer, restore and delete — the flows behind every domain."} />
+  <LinkCard title={"Transfer a Domain into CentralNic Reseller"} href={"../transfer-a-domain-in/"} description={"Bring existing domains across so they live alongside your new registrations."} />
+  <LinkCard title={"Automating DNS"} href={"../dns-automation/"} description={"Offer self-service DNS and DNSSEC to your customers."} />
+  <LinkCard title={"Moving from OT&E to Production"} href={"../../start-here/moving-from-ote-to-production/"} description={"Switch the module from your test sandbox to live once your test order looks right."} />
+</CardGrid>

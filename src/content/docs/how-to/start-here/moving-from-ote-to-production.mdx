@@ -1,0 +1,217 @@
+---
+title: "Moving from OT&E to Production"
+description: "Take your tested CentralNic Reseller integration live — swap endpoints and credentials, re-validate the production IP allowlist, and run a smoke test and go-live checklist so nothing surprises you on day one."
+sidebar:
+  order: 30
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+You have built your integration and proven it in OT&E — availability checks work,
+registrations succeed, and your code handles the responses. Now comes the last
+step every integration passes through: pointing it at production and making a real
+registration. It is a small change on paper, but it is also where avoidable
+go-live incidents happen, almost always for the same reasons — a forgotten
+credential, an endpoint left on the test gateway, or a production server whose IP
+was never added to the allowlist.
+
+This guide walks you through the cutover carefully so your first live command
+behaves exactly like your last OT&E one.
+
+:::tip[By the end of this guide you will have]
+- A clear picture of **what changes** between OT&E and production — and what does
+  **not** carry over
+- Your integration **pointed at the production gateways** with production
+  credentials
+- Your **production IP allowlist re-validated** so live connections are not refused
+- A completed **smoke test** against production: check, register, update, retrieve
+- A **go-live checklist** covering balance, monitoring and support contacts
+:::
+
+:::note[Do this once your OT&E testing is genuinely finished]
+The cutover assumes your integration already works end-to-end in OT&E. If you are
+not there yet, finish [Testing in OT&E](../../building-your-integration/testing-in-ote/)
+first — this page is the bridge from that work to your live account.
+:::
+
+## What changes — and what does not carry over
+
+OT&E and production are two **separate systems**. They run the same commands and
+speak the same protocols, which is exactly why your tested code will work — but
+they do not share anything else. Treat them as two different accounts that happen
+to look identical.
+
+| | OT&E (test) | Production (live) |
+| --- | --- | --- |
+| **Purpose** | Build and test freely, at no cost | Real registrations, real money |
+| **Endpoints** | The OT&E gateways (for HTTPS, `api-ote.rrpproxy.net`) | The production gateways — find them in the Control Panel |
+| **Credentials** | Your OT&E login and password | Your production login and password |
+| **Charges** | None — nothing is billed | Every registration, renewal and transfer is charged |
+| **Data** | Test domains, contacts and balance | Completely separate — nothing crosses over |
+
+:::caution[Nothing you did in OT&E carries over]
+The domains you registered, the contacts you created and the test balance you used
+in OT&E stay in OT&E. Production starts empty. Anything your live business needs —
+contacts, nameserver sets, default settings — has to exist in production in its own
+right. Do not assume a handle or object from OT&E is available live.
+:::
+
+## Swap your endpoints and credentials
+
+Going live is, mechanically, a configuration change: you stop talking to the test
+system and start talking to the live one. Two things change together.
+
+**1. The gateway endpoint.** Your integration currently points at the OT&E gateway.
+For HTTPS that is `api-ote.rrpproxy.net`, and OT&E calls carry the `s_opmode=OTE`
+flag. In production you connect to the **production gateway** for your protocol and
+drop the OT&E mode. The exact production hostnames and ports for every gateway
+(HTTPS, XML-RPC, SOAP, MREG, EPP) are listed in your Control Panel under
+**API → API Gateways** — use those values, and always connect by **hostname, not
+IP address**, because our host IPs can change.
+
+**2. Your credentials.** Production uses your **live** account login and password,
+not your OT&E ones. Update the credentials your integration sends so they match the
+live account.
+
+<Steps>
+
+1. Open the Control Panel and go to **API → API Gateways** to read the exact
+   production hostname and port for the gateway your integration uses.
+
+2. In your integration's configuration, replace the OT&E endpoint with the
+   production one, and remove the OT&E mode flag (`s_opmode=OTE`) if your code sets
+   it.
+
+3. Replace your OT&E credentials with your **production** login and password. Keep
+   them in configuration or a secret store — never hard-coded.
+
+4. Keep the two configurations separate (for example, distinct config profiles or
+   environment variables) so you can still reach OT&E for future testing without
+   editing live settings.
+
+</Steps>
+
+:::tip[Verify the exact values in the Control Panel]
+Rather than copying hostnames or ports from anywhere else, read them from your own
+Control Panel under **API → API Gateways**. That page always reflects the correct,
+current endpoints for your account. For the connection detail per protocol, see
+[Connecting](../../../api/connecting/).
+:::
+
+## Re-validate your production IP allowlist
+
+If you enabled the IP allowlist while securing your account, remember that it
+applies to **production connections too** — every live call over EPP, SOAP, HTTPS,
+XRRP and XMLRPC is checked against the same list. This is one of the most common
+reasons a first production call fails when the identical OT&E call worked: the
+server making the live request has an IP that was never added.
+
+Production traffic often comes from **different servers** than your test setup — a
+separate production host, a different egress IP, or a new range after an infra
+change. Confirm those addresses are on the allowlist before you cut over.
+
+<Steps>
+
+1. Identify the **external** IPv4 address(es) your production servers use to reach
+   our gateways. Internal or reserved addresses will not work.
+
+2. In the Control Panel, open your **account menu (top-right) → Settings → Account
+   Data → Security** and review the **IP Whitelist** (this covers the API gateways;
+   **IP Whitelist WI** is for the Control Panel login).
+
+3. Add your production addresses. You can list up to five IPv4 addresses or ranges
+   (for example `192.0.2.42` or `192.0.2.42/27`).
+
+4. Save. New settings apply as soon as a connection is re-established — open
+   connections keep working until they reconnect.
+
+</Steps>
+
+:::caution[Do not lock yourself out]
+Use stable external IPs, and add production addresses **before** you switch traffic
+over so live connections are not refused. If your integration uses a dynamic IP
+that changes, allowlisting it can lock you out later. See
+[IP Whitelist](../../../help/account-security/ip-whitelist/) and, for the API side,
+[API Security](../../../api/api-security/).
+:::
+
+## Run a production smoke test
+
+Before you turn on real traffic, make one deliberate, low-risk pass through the
+core lifecycle against production. Use a **low-cost TLD** and expect **real
+charges** — this is a live registration, not a test. The goal is to confirm your
+newly pointed integration works end-to-end against the live system.
+
+<Steps>
+
+1. **Availability check.** Run a `CheckDomain` for a name you intend to register.
+   Confirm you get a clean available/not-available response from the production
+   gateway — this alone proves your endpoint, credentials and allowlist are all
+   correct.
+
+2. **Live registration.** Register one **low-cost** domain, using a real contact
+   and your production default nameservers. Confirm it succeeds and is charged
+   against your live balance.
+
+3. **Nameserver update.** Update the domain's nameservers and confirm the change is
+   accepted. This exercises a modify operation, not just a create.
+
+4. **Retrieve and confirm state.** Fetch the domain (for example with
+   `StatusDomain`) and confirm it comes back active with the nameservers and contact
+   you set. Matching what you expect end-to-end is your green light.
+
+</Steps>
+
+:::tip[You already know what "correct" looks like]
+Because you ran these same steps in OT&E, a production result that matches your
+OT&E result is exactly the confirmation you want. If anything differs, stop and
+compare configuration — it is almost always the endpoint, the credentials or the
+allowlist.
+:::
+
+## Work through the go-live checklist
+
+The smoke test proves the plumbing. This final checklist makes sure the account
+around it is ready for real, ongoing traffic.
+
+<Steps>
+
+1. **Funding and balance.** Production charges are real and immediate against your
+   prepaid balance. Confirm the account is funded for your expected volume, and set
+   a **low-balance warning** so automated renewals never fail for lack of funds.
+
+2. **Renewal mode.** Confirm your default renewal mode (AUTORENEW, AUTOEXPIRE or
+   AUTODELETE) is set the way your business needs it, so live domains behave as you
+   expect at expiry.
+
+3. **Monitoring and alerting.** Make sure you will *notice* problems — log the
+   response `code` and `description` on every call, and alert on error responses
+   and connection failures so a broken run does not go unseen.
+
+4. **Support contacts.** Confirm the right people on your side know the cutover is
+   happening, and that you know how to reach CentralNic Reseller support if you need
+   help on day one.
+
+5. **Cut over.** With the above confirmed, enable production traffic. Watch your
+   monitoring closely for the first live registrations.
+
+</Steps>
+
+:::caution[Keep OT&E for the future]
+Going live does not retire your test environment. Keep your OT&E configuration
+around — you will want it again for the next feature, the next TLD, or the next
+change to your integration. Test there first, then repeat this cutover.
+:::
+
+## What to do next
+
+You are live. Keep these guides close for the work that follows go-live and for
+your next round of changes:
+
+<CardGrid>
+  <LinkCard title={"Your First Day"} href={"../your-first-day/"} description={"Funding, security and the account settings your live traffic depends on."} />
+  <LinkCard title={"Testing in OT&E"} href={"../../building-your-integration/testing-in-ote/"} description={"Where every change starts before it reaches production."} />
+  <LinkCard title={"Building Your Integration"} href={"../../building-your-integration/"} description={"The hub for connecting, authenticating and registering via the API."} />
+  <LinkCard title={"Authentication, Credentials & IP"} href={"../../building-your-integration/authentication-credentials-ip/"} description={"How logins, credentials and the IP allowlist fit together."} />
+  <LinkCard title={"API Security"} href={"../../../api/api-security/"} description={"IP allowlisting across the EPP, SOAP, HTTPS, XRRP and XMLRPC gateways."} />
+</CardGrid>

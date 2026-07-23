@@ -1,0 +1,225 @@
+---
+title: "Understanding Contacts, Handles & Ownership"
+description: "How CentralNic Reseller models domain contacts — the registrant, admin, billing and tech roles, the handles that represent them, when to reuse a handle versus create a new one, and how GDPR and registry-specific rules shape the data you collect."
+sidebar:
+  order: 30
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Every domain carries a small cast of **contacts** — the people or organisations
+behind it — and getting that model right on the first attempt saves a great deal
+of rework later. Contacts are one of the most common onboarding stumbling
+blocks: it is easy to treat them as an afterthought, then hit a registry
+validation error at registration time and have to refactor. This guide walks you
+through how CentralNic Reseller thinks about contacts so you can design your data
+model once and trust it.
+
+The core idea is simple. A contact is a reusable object with its own ID — a
+**handle** — that you create once and then attach to as many domains as you like.
+A domain does not store contact details directly; it *references* handles for
+each role it needs. Understand handles, and everything else falls into place.
+
+:::tip[By the end of this page you will understand]
+- The **four contact roles** — registrant (owner), admin, billing and tech — and
+  what each one is for
+- How CentralNic Reseller represents contacts as **handles** (contact IDs)
+- When to **reuse an existing handle** and when to **create a new one**, and the
+  trade-offs either way
+- What GDPR means for **the data you collect versus what appears in public WHOIS/RDDS**
+- Why some **TLDs demand particular contact data**, and how to plan for it
+:::
+
+:::note[Where this fits]
+This page is the conceptual companion to the API mechanics. If you are building
+over EPP, read it alongside the
+[Contact objects and mapping](../../building-your-integration/epp-integration-guide/#contact-objects-and-mapping)
+section of the EPP guide, which shows the exact commands. Here we focus on the
+*decisions*, not the syntax.
+:::
+
+## The four contact roles
+
+Every domain registration recognises four contact roles. Whether a given TLD
+requires all four or just the registrant, the roles always mean the same thing:
+
+| Role | CentralNic Reseller term | What it represents |
+| --- | --- | --- |
+| **Registrant** | Owner | The legal holder of the domain — the person or organisation that *owns* it. This is the contact that carries legal weight. |
+| **Administrative** | Admin | The person authorised to manage the domain and make decisions about it on the registrant's behalf. |
+| **Technical** | Tech | The contact responsible for the technical operation — DNS, nameservers and the like. |
+| **Billing** | Billing | The contact responsible for payment and renewal matters. |
+
+:::note[Registrant and "Owner" are the same thing]
+Across the wider industry the legal holder is called the **registrant**; in the
+CentralNic Reseller Control Panel and API that role is labelled **Owner**. When
+you see `OWNER` in a command or response, read it as "registrant". The other
+three roles keep their familiar names.
+:::
+
+Of the four, the **registrant/owner is special**. The admin, tech and billing
+contacts can be updated with an ordinary contact change. The registrant cannot:
+changing who *owns* a domain is a distinct operation — an **owner change** (often
+called a trade) — because it transfers legal control. Depending on the TLD it can
+involve a confirmation exchange, and sometimes a fee or identity documents. Model
+the registrant with that in mind from the start. See
+[ICANN Owner Change](../../../domains/icann/icann-ownerchange/) for how the
+process works across gTLDs.
+
+## How contacts are represented: handles
+
+CentralNic Reseller stores each contact as a first-class object identified by a
+**handle** — its contact ID. You create the contact once, the system returns a
+handle, and from then on you reference that handle from any domain that needs it.
+A single handle can serve as Owner, Admin, Tech and Billing all at once, or you
+can assign a different handle to each role.
+
+When you supply the data for a natural person — a first, (optional) middle and
+last name together with address details — the system creates a **P-Handle** in
+the form `P-WWW####`, where each `W` is an uppercase letter (A–Z) and each `#` is
+a digit (0–9), for example `P-ABC123`. This is the kind of handle you want.
+
+:::caution[Let the system make a P-Handle, not an O-Handle]
+If you *do not* provide the data of a named natural person, our system generates
+a so-called **O-Handle** instead. We strongly recommend always creating proper
+**P-Handles** with real personal or organisational data. See
+[Managing Contacts](../../../domains/contact-handles/) for the full explanation.
+:::
+
+To use the *same* handle for every role you simply reference it four times. To use
+*different* handles per role, create each contact separately (one per handle)
+first, then reference them. Full guidance and the related API commands are on the
+[Managing Contacts](../../../domains/contact-handles/) page; over EPP the same
+objects are created and referenced as described in the
+[EPP integration guide](../../building-your-integration/epp-integration-guide/#contact-objects-and-mapping).
+
+## Reuse an existing handle, or create a new one?
+
+This is the decision that trips people up. Because a handle is a shared object,
+**reusing one propagates**: update a reused handle and the change reaches every
+domain and every role it is attached to. That is a feature when the contacts are
+genuinely the same, and a hazard when they are not.
+
+Use this to decide:
+
+<Steps>
+
+1. **Same real-world entity, many domains?** Reuse one handle. A single registrant
+   who owns a hundred domains should be one handle referenced a hundred times —
+   one place to keep the address current, and one contact that stays **LINKED**
+   (see the caution below).
+
+2. **Same entity, all four roles on one domain?** Reuse one handle across the
+   roles unless the TLD needs them to differ. Fewer objects, less to maintain.
+
+3. **Different real people or organisations?** Create separate handles. Never
+   share a handle between two entities just to save a step — a later update to one
+   would silently rewrite the other, and disentangling them after the fact is
+   painful.
+
+4. **A one-off or short-lived contact?** A new handle is fine, but know that
+   unused handles do not linger forever (see below).
+
+</Steps>
+
+:::caution[Unused handles are deleted automatically]
+A contact that has not been linked to any product (domain, certificate, and so
+on) for **120 days** is deleted automatically. Reused handles that stay attached
+to live domains are safe; orphaned handles are not. You can exempt a handle with
+the `AUTODELETE` parameter, check whether a handle is `LINKED` or `UNLINKED`, and
+recover a deleted one — all covered in
+[Automated Contact Deletion](../../../domains/contact-handles/automated-contact-deletion/).
+:::
+
+:::caution[Avoid generic "role" contacts]
+It is tempting to create a shared contact such as "Domain Administrator" or
+"Hostmaster" and reuse it everywhere. We advise against it unless a specific
+registry requires or accepts one. Generic role contacts cause problems later in a
+domain's life — for example, an owner change may require identity documents that
+simply do not exist for a fictitious "role", blocking the operation. Prefer real,
+named contacts.
+:::
+
+## GDPR: what you collect versus what is published
+
+Here is the distinction that matters most, because the two things are separate:
+
+- **What you collect** — CentralNic Reseller still needs *full, accurate* contact
+  data. That obligation has not gone away under GDPR: the data is required for our
+  own legitimate business purposes and for the data controllers we work under,
+  such as ICANN and the registries. Always provide complete, correct details.
+- **What is published** — by **default we do not disclose personal data in WHOIS**.
+  Contact fields transmitted to registries and returned by our WHOIS server are
+  **redacted or replaced** (for example with `REDACTED FOR PRIVACY`), and the
+  contact email is replaced with a generic address so people can still make contact
+  through [domain-contact.org](../../../help/gdpr/contact-to-an-undisclosed-entity/).
+
+In other words: collect everything, publish nothing by default. The background,
+benefits and scope of this are on the
+[General Data Protection Regulation](../../../help/gdpr/) page, and the exact
+field-by-field behaviour — thick versus thin registries, which fields are redacted
+and which are replaced — is in
+[Reduced publication and transmission of WHOIS data](../../../help/gdpr/reduced-publication-and-transmission-of-whois-data/).
+
+:::tip[Disclosure is opt-in, per handle]
+A contact who *wants* their details public can opt in. You trigger a disclosure
+email (via the `RequestToken` command), and the contact chooses field by field —
+name, organisation, address, phone, fax, email — what to reveal. Because it is
+tied to the handle, the choice applies wherever that handle is used. Note that
+even when a contact opts to disclose, the registry controlling the WHOIS output
+may still not publish it. Full detail in
+[Opt-in to Disclose Data in WHOIS](../../../domains/contact-handles/opt-in-to-disclose-data-in-whois/).
+:::
+
+WHOIS itself is part of ICANN's broader **Registration Directory Services (RDS)**
+framework, which governs registrant, administrative, technical and billing contact
+data for gTLDs — background is on the
+[Registration Directory Services](../../../domains/icann/registration-directory-services/)
+page, and you can shape your own output as described in
+[Customise your WHOIS output](../../../domains/icann/registration-directory-services/customise-your-whois-output/).
+
+## Registry-specific contact requirements
+
+The four roles are universal, but the **data each TLD demands is not**. What one
+registry accepts, another rejects — and these rules are **TLD-dependent**, so
+always check the requirements of the specific TLD before you build. A few patterns
+to plan for:
+
+- **Extra fields for certain TLDs.** Some registries require additional contact
+  data beyond the standard set — for instance a state/province, a national
+  identifier or PIN, or personal details such as a birth date or city. These are
+  supplied as registry-specific parameters. The
+  [EPP integration guide](../../building-your-integration/epp-integration-guide/#registry-specific-data-through-extensions)
+  shows how such fields are passed (for example a France or Italy extension), and
+  the per-TLD pages state exactly what each registry expects.
+- **Contact verification.** Many gTLDs require the registrant's email to be
+  verified after registration, or the domain risks suspension. Plan for the
+  verification flow rather than being surprised by it — see
+  [Contact Verification](../../../domains/icann/contact-verification/).
+- **Keep the organisation field empty for private individuals.** For a private
+  person, leave the organisation field blank. Do **not** enter placeholder text
+  such as "private" or "none": some registries treat the organisation field as the
+  registrant's identity, so bogus data can end up published in WHOIS or, worse,
+  cause the registry to suspend or delete the domain for invalid data.
+
+:::caution[Check the TLD before you register, not after]
+Registry validation happens at registration time. If you discover a TLD's contact
+requirements only when a `Domain:Create` is rejected, you may have to rebuild your
+contact model. Confirm each TLD's rules — additional fields, verification,
+role-specific handles — while you are still designing, so the first registration
+succeeds.
+:::
+
+## What to do next
+
+You now have the mental model: reusable handles, four roles, a special registrant,
+and data you always collect but rarely publish. Put it to work:
+
+<CardGrid>
+  <LinkCard title={"Managing Contacts"} href={"../../../domains/contact-handles/"} description={"The reference for creating handles, P- versus O-Handles, and every contact API command."} />
+  <LinkCard title={"EPP: Contact objects and mapping"} href={"../../building-your-integration/epp-integration-guide/#contact-objects-and-mapping"} description={"The exact commands for creating and referencing handles over EPP."} />
+  <LinkCard title={"Opt-in to Disclose Data in WHOIS"} href={"../../../domains/contact-handles/opt-in-to-disclose-data-in-whois/"} description={"Let a contact choose, field by field, what appears publicly."} />
+  <LinkCard title={"General Data Protection Regulation"} href={"../../../help/gdpr/"} description={"How CentralNic Reseller handles personal data in WHOIS and to registries."} />
+  <LinkCard title={"Contact Verification"} href={"../../../domains/icann/contact-verification/"} description={"The registrant email verification many gTLDs require."} />
+  <LinkCard title={"Transfer a Domain In"} href={"../transfer-a-domain-in/"} description={"Bring an existing domain — and its contacts — into your account."} />
+</CardGrid>

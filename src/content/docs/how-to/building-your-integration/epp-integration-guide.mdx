@@ -1,0 +1,444 @@
+---
+title: "EPP Integration Guide for Registrars"
+description: "Connect to CentralNic Reseller over EPP — when EPP is the right choice, OT&E setup and the IP allowlist, the session lifecycle, domain check and create, contacts and handles, transfers, and the poll queue — with a clear path to production."
+sidebar:
+  order: 20
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+If your team already speaks the Extensible Provisioning Protocol, connecting to
+CentralNic Reseller should feel familiar rather than foreign. EPP is the
+registry-industry standard, and our EPP server supports the full domain, contact,
+host, transfer and poll command set — so the client, tooling and expertise you
+already have carry straight over. This guide walks you from choosing EPP through a
+working OT&E integration, in the order a real build happens.
+
+It is written for registrars and larger hosting companies who either run EPP
+elsewhere today or are standardising on one protocol across multiple providers.
+You will find the concrete facts you need — session limits, connection rules,
+where the gateway details live — alongside the shape of each core flow.
+
+:::tip[By the end of this guide you will have]
+- A clear view of **when EPP is the right choice** for your business
+- Your EPP client **connected to the OT&E test environment**, with the IP
+  allowlist understood and set where you need it
+- A **long-lived session** opened, kept alive and closed cleanly
+- The **core provisioning flow** working end to end — check, then create
+- **Contacts and handles** mapped the way CentralNic Reseller expects
+- The **transfer flow** and the **poll queue** integrated for asynchronous events
+- A clear, low-risk **path to production**
+:::
+
+:::note[First things first]
+EPP is one way to integrate a funded, secured account — it is not the account
+setup itself. If you have not yet funded your account, created users and enabled
+security, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) first;
+it applies to every integration method.
+:::
+
+## When EPP is the right choice
+
+There is no single "right" way to connect to CentralNic Reseller — there is the
+right way *for your business*. We expose several gateways (EPP, SOAP, HTTPS, XRRP
+and XML-RPC), and EPP is the natural fit for a specific kind of partner.
+
+**Choose EPP if:**
+
+- You are an **established registrar** whose team already builds and operates EPP
+  clients. You reuse existing expertise instead of learning a new interface.
+- You are **standardising on one protocol** across several registries or providers,
+  and want CentralNic Reseller to speak the same language as the rest of your stack.
+- You value working against the **registry-industry standard** and the tooling,
+  libraries and mental models that come with it.
+
+**Consider the HTTPS / XRRP API instead if** you are building a custom platform
+from scratch, want the thinnest possible dependency, or would rather send a simple
+authenticated request and get a structured response back. The API reaches the same
+system and the same command set — it is often the faster path for teams without an
+existing EPP investment.
+
+If you are still weighing the options, read
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/)
+first. If EPP is already your world, read on.
+
+## Connect to OT&E and understand the IP allowlist
+
+Every integration is built and proven in **OT&E (Operational Test & Evaluation)** —
+a full sandbox where nothing is billed and no live domains are touched. You point
+your EPP client at the OT&E gateway, build against it, and only then move to
+production.
+
+### Find the gateway hostname and port
+
+Connect to our EPP gateway by **hostname, not IP address**. The IP addresses of our
+hosts can change; the hostnames will not, and using them keeps your connection
+reliable.
+
+<Steps>
+
+1. Open the [Control Panel](https://account.centralnicreseller.com/) and go to
+   **API → API Gateways** (top menu).
+
+2. Read the exact **EPP hostname and TCP port** for the **OT&E** environment. This
+   page always reflects the correct, current endpoints for your account.
+
+3. Configure your EPP client with that hostname and port over TLS, and your OT&E
+   account credentials.
+
+</Steps>
+
+:::tip[Read the endpoint from your own Control Panel]
+Rather than copying a hostname or port from anywhere else, take the EPP values from
+**API → API Gateways**. The same page lists every gateway (EPP, SOAP, HTTPS,
+XML-RPC, MREG) for both OT&E and production. See
+[Connecting](../../../api/connecting/) for the general connection guidance.
+:::
+
+### Set the IP allowlist where you need it
+
+CentralNic Reseller offers an **IP allowlist** for the API gateways as a security
+layer. It is optional and disabled by default — but when you enable it, **every**
+connection over EPP, SOAP, HTTPS, XRRP and XML-RPC is checked against your list, so
+the servers running your EPP client must be on it.
+
+<Steps>
+
+1. Identify the **external** IPv4 address(es) your EPP client servers use to reach
+   our gateways. Internal or reserved addresses will not work.
+
+2. In the Control Panel, open your **account menu (top-right) → Settings → Account
+   Data → Security** and find the **IP Whitelist** (this covers the API gateways;
+   **IP Whitelist WI** covers Control Panel login).
+
+3. Add your addresses. You can list up to **five** IPv4 addresses or ranges (for
+   example `192.0.2.42` or `192.0.2.42/27`).
+
+4. Save. New settings apply as soon as a connection is re-established; open
+   connections keep working until they reconnect.
+
+</Steps>
+
+:::caution[Do not lock yourself out]
+Use stable external IPs. If your client connects from a dynamic address that
+changes, allowlisting it can lock you out later. Add the addresses of your
+production servers **before** you cut over, since production traffic often comes
+from different hosts than your test setup. See
+[IP Whitelist](../../../help/account-security/ip-whitelist/) and
+[API Security](../../../api/api-security/) for the full detail.
+:::
+
+## Open and maintain a session
+
+EPP is session-oriented: you open a connection, log in, run commands, and log out.
+CentralNic Reseller expects you to treat sessions as **long-lived** rather than
+opening one per command, and there are concrete limits worth designing around from
+the start.
+
+The session commands are `Session:Hello`, `Session:Login` and `Session:Logout`.
+
+<Steps>
+
+1. **Connect and greet.** On connecting over TLS, send `Session:Hello` to retrieve
+   the server greeting. Send `Hello` periodically as a keep-alive to hold an idle
+   connection open.
+
+2. **Log in.** Send `Session:Login` with your account credentials. A user logs in
+   with the account name and username joined by a colon —
+   `login = accountname:username` — plus that user's password. If you use
+   CentralNic Reseller EPP extensions, declare the extension URI in the login
+   services so extension data is returned in responses (see
+   [Contact objects and mapping](#contact-objects-and-mapping) below).
+
+3. **Run your commands.** Issue check, create, transfer and poll commands over the
+   open session.
+
+4. **Log out.** Send `Session:Logout` to close the session cleanly when you are
+   done.
+
+</Steps>
+
+A minimal, illustrative login looks like this — declaring the standard object
+services plus the CentralNic Reseller (Key-Systems) extension so you receive
+extension data back:
+
+```xml
+<login>
+  <clID>accountname:username</clID>
+  <pw>your-password</pw>
+  <svcs>
+    <objURI>urn:ietf:params:xml:ns:domain-1.0</objURI>
+    <objURI>urn:ietf:params:xml:ns:contact-1.0</objURI>
+    <objURI>urn:ietf:params:xml:ns:host-1.0</objURI>
+    <svcExtension>
+      <extURI>http://www.key-systems.net/epp/keysys-1.0</extURI>
+    </svcExtension>
+  </svcs>
+</login>
+```
+
+:::caution[Design for the connection limits]
+Our EPP server enforces a few limits — build to them rather than discover them:
+
+- **5 concurrent connections** per registrar (there is no per-IP limit).
+- **1 command per second**, measured across the whole account, not per connection.
+- An idle connection is closed automatically after **10 minutes** — send
+  `Session:Hello` to keep long-lived connections alive.
+- A session has a maximum lifetime (**TTL**) of **24 hours**; plan to reconnect and
+  log in again before then.
+
+See the [EPP Server FAQ](../../../api/epp-server/frequently-asked-questions/) for
+these operational details.
+:::
+
+## Domain check and create
+
+With a session open, the core provisioning flow is two steps: confirm a name is
+available, then register it. These map to the `Domain:Check` and `Domain:Create`
+commands.
+
+### Check availability
+
+`Domain:Check` confirms whether one or more domains are available before you try to
+register. Always check first — it is the cheapest way to avoid a failed create and
+the fastest confirmation that your session, credentials and connection are all
+working.
+
+```xml
+<check>
+  <domain:check>
+    <domain:name>example.com</domain:name>
+  </domain:check>
+</check>
+```
+
+The response tells you, per name, whether it is available.
+
+### Create the domain
+
+`Domain:Create` initiates the domain registration at the registry. A create carries
+the registration period, the nameservers, and the contact handles for the roles the
+TLD requires (see the next section on contacts). Many TLDs also need extra data,
+which is supplied through extensions.
+
+```xml
+<create>
+  <domain:create>
+    <domain:name>example.com</domain:name>
+    <domain:period unit="y">1</domain:period>
+    <domain:ns>
+      <domain:hostObj>ns1.example.net</domain:hostObj>
+      <domain:hostObj>ns2.example.net</domain:hostObj>
+    </domain:ns>
+    <domain:registrant>P-1234567</domain:registrant>
+  </domain:create>
+</create>
+```
+
+Beyond check and create, the domain object supports the operations you would
+expect for the full lifecycle — `Domain:Info`, `Domain:Update`, `Domain:Renew`,
+`Domain:Renewalmode`, `Domain:Restore`, `Domain:Delete`, `Domain:Trade`,
+`Domain:OwnerChange` and `Domain:Push`. Host objects have their own set
+(`Host:Check`, `Host:Create`, `Host:Info`, `Host:Update`, `Host:Delete`). See the
+[EPP Command Reference](../../../api/epp-server/epp-command-reference/) for the
+complete, authoritative list.
+
+:::tip[Some TLDs need extra data via extensions]
+Many TLDs require additional information — contact validations or registry-specific
+settings the RFCs do not cover — which CentralNic Reseller handles through EPP
+extensions. If a create is rejected for missing data, the extension for that TLD is
+usually what is needed. See [Contact objects and mapping](#contact-objects-and-mapping).
+:::
+
+## Contact objects and mapping
+
+Domains reference **contacts** for the registrant, admin, billing and tech roles.
+In CentralNic Reseller EPP, a contact is a first-class object you create once and
+then reference by its **handle** (its contact ID) from any domain that needs it.
+The contact commands are `Contact:Check`, `Contact:Create`, `Contact:Info`,
+`Contact:Update`, `Contact:Delete`, `Contact:Transfer` and `Contact:OwnerChange`.
+
+The typical pattern is:
+
+<Steps>
+
+1. **Create the contact** with `Contact:Create` (or reuse an existing handle you
+   already created). The server returns the handle.
+
+2. **Reference the handle** from `Domain:Create` (or `Domain:Update`) for each role
+   the TLD requires — registrant, admin, tech, billing.
+
+3. **Reuse handles** across domains where it makes sense, and keep them current with
+   `Contact:Update`. `Contact:Check` tells you whether a given contact ID is
+   available.
+
+</Steps>
+
+### Registry-specific data through extensions
+
+Some registries require contact or domain data that the base EPP schema does not
+carry. CentralNic Reseller exposes this through the **Key-Systems extension**
+(`http://www.key-systems.net/epp/keysys-1.0`), which mirrors the `X-*` parameters
+used elsewhere in our API. Two rules matter:
+
+- The `X-` prefix is **dropped** in the extension element — for example the
+  `X-FR-BIRTHCITY` parameter is given as `FR-BIRTHCITY`.
+- Extension elements **must be listed in alphabetical order**.
+
+To receive extension data back in responses — particularly on `Info` commands —
+you must declare the extension URI when you log in (as shown in the login example
+above). A minimal create extension looks like:
+
+```xml
+<extension>
+  <keysys:create xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0">
+    <keysys:domain>
+      <keysys:it-pin>DE1234567912</keysys:it-pin>
+    </keysys:domain>
+  </keysys:create>
+</extension>
+```
+
+See [EPP Server Extensions](../../../api/epp-server/extensions/) for the full
+mechanism, and [Understanding Contacts, Handles & Ownership](../../working-with-domains/contacts-handles-ownership/)
+for how the four contact roles, handle reuse and GDPR fit together.
+
+## The transfer flow over EPP
+
+Bringing a domain in from another registrar is an asynchronous, multi-step exchange
+— your request starts it, and the outcome arrives later (often via the poll queue,
+below). CentralNic Reseller supports the standard transfer operations: `Transfer:Request`,
+`Transfer:Query`, `Transfer:Approve`, `Transfer:Reject` and `Transfer:Cancel`.
+
+<Steps>
+
+1. **Request the transfer.** Send `Transfer:Request` for the domain, supplying its
+   authorisation ("auth" / EPP) code. This initiates the transfer.
+
+   ```xml
+   <transfer op="request">
+     <domain:transfer>
+       <domain:name>example.com</domain:name>
+       <domain:authInfo>
+         <domain:pw>auth-code-here</domain:pw>
+       </domain:authInfo>
+     </domain:transfer>
+   </transfer>
+   ```
+
+2. **Track status.** Use `Transfer:Query` to check where a pending transfer stands,
+   and watch the poll queue for the status message that reports the result.
+
+3. **Act on incoming transfers.** Where you are the losing side, `Transfer:Approve`
+   and `Transfer:Reject` let you respond; `Transfer:Cancel` withdraws a request you
+   initiated.
+
+</Steps>
+
+:::caution[Transfers are high-stakes — check eligibility first]
+A transfer moves a live domain, so confirm eligibility before you request:
+the domain must be unlocked, past any age or recent-transfer restriction, and you
+must have a valid auth code. For the business rules, eligibility checks and
+failure handling, see
+[Transfer a Domain into CentralNic Reseller](../../working-with-domains/transfer-a-domain-in/)
+and the [Transfers](../../../domains/transfers/) reference.
+:::
+
+## The poll queue
+
+EPP delivers asynchronous results and notifications through a **poll queue** — a
+per-registrar message queue you read from and acknowledge. Transfer outcomes,
+registration, renewal, update, trade, deletion and restore notifications all arrive
+here, so polling is not optional for a complete integration: it is how you learn
+about events that do not resolve inside a single request/response.
+
+The commands are `Poll:Request` (retrieve the next message) and `Poll:Ack`
+(acknowledge and remove it).
+
+<Steps>
+
+1. **Request the next message.** Send `Poll:Request`. The response includes the
+   oldest queued message and the number of messages waiting.
+
+   ```xml
+   <poll op="req"/>
+   ```
+
+2. **Process it.** Handle the message according to its type — for example a
+   `Poll:DomainTransferStatusMessage`, `Poll:DomainRegistrationMessage`,
+   `Poll:DomainRenewalMessage`, `Poll:DomainUpdateMessage`, or one of the restore
+   messages (`Poll:RestorePendingMessage`, `Poll:RestoreSuccessfulMessage`,
+   `Poll:RestoreFailedMessage`).
+
+3. **Acknowledge it.** Send `Poll:Ack` for that message so it is removed and the
+   next one becomes available. Loop until the queue is empty.
+
+</Steps>
+
+:::tip[Poll on a schedule, and always acknowledge]
+Poll regularly so events are handled promptly, and always `Poll:Ack` a message once
+you have safely processed it — unacknowledged messages stay at the head of the
+queue and block the ones behind them. The full set of message types is listed in
+the [EPP Command Reference](../../../api/epp-server/epp-command-reference/).
+:::
+
+## Production access and certification
+
+A question registrars ask early is whether production EPP access is gated behind a
+formal **certification or acceptance test** — as some registries require before
+they hand over live credentials.
+
+:::danger[Internal source — please review]
+The public knowledge base does **not** document a formal EPP certification or
+acceptance exam for CentralNic Reseller production access, and an internal
+Confluence search found no reseller-side EPP certification process. Whether any
+acceptance step, review or approval applies before your production EPP credentials
+are activated should be confirmed directly with CentralNic Reseller support — do
+not treat the absence of a documented exam as a guarantee that none applies.
+Based on: internal, unconfirmed — confirm with support.
+:::
+
+In practice, the right preparation is the same either way: prove your integration
+in OT&E. Exercise the full flow you will run live — open a session, check and
+create domains, create and reference contacts, run a transfer, and consume the poll
+queue — until the results match your expectations every time. That is what makes a
+production cutover boring, which is exactly what you want.
+
+For structured guidance on validating your integration before go-live, see
+[Testing Your Integration in CentralNic OT&E](../testing-in-ote/).
+
+## Move to production
+
+When your EPP integration is proven in OT&E, going live is a controlled
+configuration change rather than a rewrite: you point your client at the
+**production** EPP gateway (from **API → API Gateways** in the Control Panel), swap
+your OT&E credentials for your production ones, and re-validate the IP allowlist for
+the servers that will carry live traffic. Everything else — your commands, your
+poll handling, your extension usage — stays the same.
+
+Rather than repeat the detail here, follow the dedicated
+[Moving from OT&E to Production](../../start-here/moving-from-ote-to-production/)
+guide, which covers the endpoint and credential swap, the allowlist re-check, a
+production smoke test and a go-live checklist.
+
+:::tip[Do not skip the smoke test]
+Because you ran the same steps in OT&E, a production result that matches your OT&E
+result is exactly the confirmation you want. If a first live command fails where the
+identical OT&E command worked, it is almost always the endpoint, the credentials or
+the IP allowlist.
+:::
+
+## What to do next
+
+You have the full EPP flow in hand. These guides take you the rest of the way — and
+keep the reference material close:
+
+<CardGrid>
+  <LinkCard title={"Moving from OT&E to Production"} href={"../../start-here/moving-from-ote-to-production/"} description={"The endpoint and credential swap, allowlist re-check, smoke test and go-live checklist."} />
+  <LinkCard title={"Testing Your Integration in CentralNic OT&E"} href={"../testing-in-ote/"} description={"Validate your EPP integration end to end before you go live."} />
+  <LinkCard title={"EPP Command Reference"} href={"../../../api/epp-server/epp-command-reference/"} description={"The complete, authoritative set of domain, contact, host, transfer and poll commands."} />
+  <LinkCard title={"EPP Server Extensions"} href={"../../../api/epp-server/extensions/"} description={"How CentralNic Reseller carries registry-specific data over EPP."} />
+  <LinkCard title={"Authentication, Credentials & IP Allowlisting"} href={"../authentication-credentials-ip/"} description={"How logins, API users and the IP allowlist fit together."} />
+  <LinkCard title={"API Security"} href={"../../../api/api-security/"} description={"IP allowlisting across the EPP, SOAP, HTTPS, XRRP and XMLRPC gateways."} />
+</CardGrid>

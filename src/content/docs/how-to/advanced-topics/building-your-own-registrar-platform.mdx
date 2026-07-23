@@ -1,0 +1,345 @@
+---
+title: "Building Your Own Registrar Platform"
+description: "An end-to-end architectural blueprint for building a full commercial domain platform on CentralNic Reseller — from account setup and search through cart, registration, renewals, transfers, DNS, billing and customer notifications — showing at each stage what CentralNic Reseller provides and what you build."
+sidebar:
+  order: 10
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Most of our guides answer a single question — how to connect, how to register a
+domain, how to run a transfer. This one is different. It steps back and shows how
+those pieces fit together into a **complete commercial platform**: a storefront
+where your own customers search, buy, renew and manage domains under your brand,
+with your pricing and your billing on top of CentralNic Reseller.
+
+The important idea running through this page is a **dividing line**. For every
+stage of the journey, some of the work is done for you by CentralNic Reseller —
+the registry connections, the provisioning commands, the automated renewal
+engine, the prepay accounting — and some of it is **yours to build**, because it
+is where your product and your business rules live: your cart, your price list,
+your customer accounts, your notifications. Knowing which side of that line each
+responsibility sits on is what turns a pile of API calls into a coherent platform.
+
+This is a reference, not a tutorial. Rather than repeat the detail of the
+individual how-tos, it ties them together and links out to each one at the point
+it becomes relevant.
+
+:::tip[By the end of this page you will have]
+- A **mental model** of the full platform, stage by stage, from account setup to
+  customer notifications
+- A clear view, at each stage, of **what CentralNic Reseller provides** versus
+  **what you must build yourself**
+- The **specific guide to open** for the implementation detail of every stage
+- An understanding of how the CentralNic Reseller **prepay model** sits
+  underneath your own end-customer billing
+:::
+
+:::note[First things first]
+This blueprint assumes you already have a funded, secured account and have chosen
+how you will connect. If you have not done that yet, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) and
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/)
+first — everything below builds on top of them.
+:::
+
+## The platform at a glance
+
+A domain platform is a pipeline. A visitor arrives, searches for a name, adds it
+to a cart, pays, and becomes the owner of a registered domain that you then renew,
+transfer, point at DNS and bill for over its lifetime. CentralNic Reseller powers
+the registry-facing half of that pipeline; you own the customer-facing half.
+
+The table below is the map for the rest of this page. Read it top to bottom as
+the flow a customer moves through, and use the two right-hand columns to see where
+responsibility sits at each stage.
+
+| Platform stage | CentralNic Reseller provides | You build |
+| --- | --- | --- |
+| **Account setup** | Reseller account, users, permissions, OT&E sandbox, security | Your own end-customer accounts and sign-up |
+| **Contact management** | Contact/handle objects, reusable across domains | Collecting and validating customer contact data |
+| **Domain search** | Availability checks across all supported TLDs | Search UX, suggestions, result caching |
+| **Cart** | *Nothing — there is no server-side cart* | The entire cart and checkout experience |
+| **Registration** | Domain provisioning at the registry | Order orchestration, retries, confirmation |
+| **Renewal** | Automated renewal engine and renewal modes | Renewal reminders, upsells, your renewal pricing |
+| **Transfers** | Standard transfer-in / transfer-out operations | Auth-code collection, eligibility UX, progress tracking |
+| **DNS management** | Hosted DNS (KeyDNS) and nameserver objects | DNS editor UI, templates, defaults per customer |
+| **Billing** | Prepay balance charged in real time; wholesale prices | Your price list, margins, invoices, payment capture |
+| **Customer notifications** | Event / poll queue for asynchronous registry events | Emails, dashboards and alerts to your customers |
+
+The rest of this page walks each row.
+
+## Account setup
+
+Your CentralNic Reseller account is the **single wholesale relationship** behind
+your whole platform. Every domain your customers register is registered by *you*,
+against *your* balance. Your customers never see or touch CentralNic Reseller —
+they see your brand.
+
+**CentralNic Reseller provides** the reseller account itself, a full user and
+permission model so your systems and staff hold only the access they need, a
+complete **OT&E sandbox** to build against without spending money, and the
+security controls (two-factor authentication and IP allowlisting) that protect an
+account able to spend real funds. If you resell under your own brand, subreseller
+settings let you set defaults and pricing for accounts beneath you.
+
+**You build** the concept of an *end customer*. CentralNic Reseller has no notion
+of your individual buyers — it sees one reseller. Your platform owns customer
+sign-up, login, profiles and the mapping between each of your customers and the
+domains you hold on their behalf.
+
+:::tip[Design your account-to-customer mapping early]
+Because every domain lives under one reseller account, your database — not
+CentralNic Reseller — is the system of record for *which of your customers owns
+what*. Get that ownership model right before you write your first order, and keep
+it authoritative.
+:::
+
+Full setup walkthrough:
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) and
+[Authentication, Credentials & IP Allowlisting](../../building-your-integration/authentication-credentials-ip/).
+
+## Contact management
+
+Every domain registration references **contacts** — the registrant, admin, tech
+and billing roles — and different TLDs require different combinations and data.
+
+**CentralNic Reseller provides** contacts as reusable first-class objects. You
+create a contact once with `AddContact` (or `Contact:Create` over EPP) and
+receive a **handle** — typically a `P-` handle for a validated person — which you
+then reference from any domain that needs it. Handles can be reused across many
+domains and kept current with a single update.
+
+**You build** the collection and validation of your customers' contact details in
+your own checkout, and the logic that decides which handle to use for which role
+on which order. A common pattern is to create one handle per end customer and
+reuse it across all their domains.
+
+:::caution[Contact data has real registry consequences]
+Getting contact data wrong is not a cosmetic problem. For a private person the
+organisation field must be left empty — placeholder text like "private" can be
+published in WHOIS or even cause a registry to suspend the domain for invalid
+data. Validate before you submit.
+:::
+
+The handle model, the four roles, role-contact pitfalls and GDPR are covered in
+[Understanding Contacts, Handles & Ownership](../../working-with-domains/contacts-handles-ownership/).
+
+## Domain search
+
+Search is the front door of your storefront, and the point where availability is
+confirmed before anyone spends money.
+
+**CentralNic Reseller provides** availability checking across every supported TLD
+via `CheckDomain` (one name) and `CheckDomains` (several at once), or
+`Domain:Check` over EPP. This is the authoritative answer to "can this be
+registered right now?".
+
+**You build** everything around it: the search box, name suggestions and
+alternate-TLD prompts, how you present prices alongside availability, and any
+caching or rate management so a busy search page does not translate into a flood
+of checks. Always check availability before attempting a registration — it is the
+cheapest way to avoid a failed order.
+
+See the [API Command Reference](../../../api/api-commands/api-command-reference/)
+for the check commands and the
+[complete domain lifecycle](../../working-with-domains/complete-domain-lifecycle/)
+for how search leads into registration.
+
+## Cart and checkout
+
+This stage is worth calling out precisely because **there is nothing here on the
+CentralNic Reseller side**. There is no server-side shopping cart, no held
+reservation, no multi-item order object waiting for you to consume.
+
+**You build** the cart and checkout in full: line items, quantities and
+registration periods, add-ons such as privacy or DNS, the running total in your
+own currency, and the checkout flow that captures payment and confirms intent.
+The cart is pure application state in your platform until the moment you commit an
+order.
+
+:::caution[Availability is not a reservation]
+A domain confirmed available at the moment it is added to a cart can be taken by
+someone else before checkout completes — a name is only secured when the
+registration succeeds. Re-check availability at checkout, handle the "no longer
+available" case gracefully, and treat registration itself as the point of truth.
+:::
+
+## Registration
+
+Checkout ends with the one irreversible, billable action in the whole flow:
+registering the domain.
+
+**CentralNic Reseller provides** provisioning at the registry through `AddDomain`
+(or `Domain:Create` over EPP). A registration carries the period, the nameservers
+and the contact handles for the roles the TLD requires; many TLDs need extra data
+supplied through registry-specific extensions. On success the domain is live under
+your account and your balance is charged in real time.
+
+**You build** the order orchestration: turning a paid cart into one registration
+call per domain, handling partial failures across a multi-domain order, retrying
+sensibly, recording the result against the owning customer in your database, and
+showing a clear confirmation. Because registration spends real money, this is the
+code that most deserves careful error handling and idempotency.
+
+The end-to-end registration flow, including nameservers and TLD-specific data,
+lives in
+[The Complete Domain Lifecycle](../../working-with-domains/complete-domain-lifecycle/);
+registrars building over EPP should follow the
+[EPP Integration Guide](../../building-your-integration/epp-integration-guide/).
+
+## Renewal
+
+Renewal is where CentralNic Reseller does the most work on your behalf — and where
+the prepay model matters most.
+
+**CentralNic Reseller provides** a full **automated renewal engine**. Domains are
+automatically renewed, left to expire, or deleted at the end of their lifecycle
+according to their **renewal mode** — `AutoRenew` (the safe default), `AutoExpire`,
+`AutoDelete`, `RenewOnce` and several TLD-specific variants. Renewal is driven by
+an internal *renewal date* (not the raw registry expiration date), and modes can
+be set for the whole account or per domain.
+
+**You build** the customer-facing side of renewal: reminder emails ahead of the
+renewal date, self-service auto-renew toggles that map to the CentralNic Reseller
+renewal mode, upsell and multi-year offers, and your own renewal pricing. You also
+decide your operating posture — lean on automated `AutoRenew`, or handle renewals
+explicitly yourself.
+
+:::caution[Automated renewals depend on a funded balance]
+If your account cannot cover a renewal fee in full at the moment of renewal, the
+domain is left to auto-expire and removed — recovering it then requires a paid
+restore. Keep your balance ahead of your renewal volume and use low-balance
+warnings. This is the single most important operational discipline for a platform
+at scale.
+:::
+
+The modes, the renewal-date model, grace periods and restores are documented in
+[The CentralNic Reseller Renewal System](../../../domains/renewal-system/), with
+the customer-flow view in
+[The Complete Domain Lifecycle](../../working-with-domains/complete-domain-lifecycle/).
+
+## Transfers
+
+Bringing domains in (and letting them out) is a standard part of any platform, and
+an important acquisition channel.
+
+**CentralNic Reseller provides** the full transfer command set — request, query,
+approve, reject and cancel — via `TransferDomain` (or the `Transfer:*` commands
+over EPP). Transfers are asynchronous: your request starts the process and the
+outcome arrives later, typically through the event/poll queue.
+
+**You build** the customer experience around it: collecting the authorisation
+("auth"/EPP) code, guiding the customer through unlocking the domain at their old
+registrar, checking eligibility up front, and showing live progress while the
+transfer completes in the background. Note that not all TLDs support changing
+contact handles during a transfer — plan your UX for the TLDs you actually sell.
+
+:::tip[Transfers are asynchronous — design for the wait]
+Unlike a registration that resolves in one call, a transfer can take hours or
+days and can be declined. Build a status view your customer can return to, and
+consume the event queue so you learn the result the moment it lands rather than
+polling a customer's patience.
+:::
+
+The eligibility rules, auth codes and failure handling are in
+[Transfer a Domain into CentralNic Reseller](../../working-with-domains/transfer-a-domain-in/),
+with contact-handle-on-transfer behaviour covered there too.
+
+## DNS management
+
+Once a customer owns a domain, they will want it to *do* something — and DNS is
+usually the first thing they ask for.
+
+**CentralNic Reseller provides** two things: nameserver (host) objects you manage
+with commands such as `AddNameserver` and `ModifyNameserver`, and **KeyDNS**, our
+hosted DNS service for managing zone files and records (including DNSSEC and CAA),
+which can itself be provided to and invoiced to subresellers.
+
+**You build** the DNS-editing experience your customers use: a record editor, sane
+defaults and templates applied at registration (so a new domain resolves the way
+you expect out of the box), and any bulk or per-customer nameserver policies. You
+decide whether customers use your KeyDNS-backed zones, point at their own
+nameservers, or both.
+
+Automating records, zones and nameservers is covered in
+[DNS Automation](../../working-with-domains/dns-automation/).
+
+## The billing model: your billing on top of prepay
+
+This is the stage most often misunderstood, so it is worth being precise. There
+are **two billing layers**, and they are separate.
+
+**CentralNic Reseller provides** the *wholesale* layer: a **prepayment account**.
+Your account carries a balance, and every registration, renewal, transfer and
+restore is charged against it in **real time** at your wholesale price — there are
+no invoices to wait on and no credit delays. Your wholesale rates come from your
+pricescale, visible under Services & Prices and per-TLD Domain prices.
+
+**You build** the *retail* layer — the entire commercial relationship with your
+customers. That means your own price list and margins, your currencies, taxes,
+invoices, payment capture, refunds and dunning. CentralNic Reseller never bills
+your customers; it bills *you*, and your platform bills them. Your margin is the
+difference between your wholesale cost and what you charge.
+
+:::caution[Your retail revenue must keep the prepay balance funded]
+Because the wholesale layer is prepaid and automated, an empty balance stops new
+registrations and can cause automated renewals to fail. Treat topping up the
+CentralNic Reseller balance as a first-class part of your finance operations, not
+an afterthought — set a low-balance warning and, ideally, automate replenishment
+ahead of demand.
+:::
+
+The prepay model and low-balance notifications are described in
+[Payment Settings](../../../help/first-steps/payment-settings/), and the funding
+walkthrough is in [Your First Day](../../start-here/your-first-day/).
+
+## Customer notifications
+
+A platform that only ever pushes commands to CentralNic Reseller is half-built.
+Much of what matters — transfer outcomes, renewal results, restore completions —
+happens **asynchronously**, and your customers expect to hear about it.
+
+**CentralNic Reseller provides** an **event / poll queue**: a per-account stream
+of asynchronous notifications for registration, renewal, update, transfer,
+deletion and restore events. Over EPP you read it with `Poll:Request` and
+acknowledge with `Poll:Ack`; over the API the same events are available through the
+event commands. This is how your platform learns about things that do not resolve
+inside a single request/response.
+
+**You build** everything your customer actually sees: turning a queue message into
+a customer-friendly email, dashboard update or alert; expiry and renewal reminders
+driven by your own schedule; and the notification preferences your customers set.
+The queue is your source of truth for "what just happened"; the messaging is yours.
+
+:::tip[Consume the queue on a schedule, and always acknowledge]
+Poll regularly so events are handled promptly, and always acknowledge a message
+once you have safely processed it — an unacknowledged message stays at the head of
+the queue and blocks the ones behind it. A reliable queue consumer is the backbone
+of trustworthy customer notifications.
+:::
+
+The poll queue and event message types are detailed in the
+[EPP Integration Guide](../../building-your-integration/epp-integration-guide/)
+and the [API Command Reference](../../../api/api-commands/api-command-reference/).
+
+## Putting it together
+
+Read as a whole, the pattern is consistent: CentralNic Reseller owns the
+**registry-facing, wholesale, automated** half — provisioning, renewal, transfers,
+DNS, prepay accounting and the event stream — and you own the **customer-facing,
+retail, experiential** half — accounts, search UX, cart, pricing, billing and
+notifications. Build cleanly to that dividing line and each half stays simple.
+
+When you are ready to turn this blueprint into a concrete design, the next two
+guides help you choose a shape and, if you are coming from elsewhere, bring your
+portfolio across:
+
+<CardGrid>
+  <LinkCard title={"Reference Architectures for Domain Resellers"} href={"../reference-architectures/"} description={"Concrete patterns for hosting, registrar, SaaS, marketplace and corporate platforms."} />
+  <LinkCard title={"Migrating from Another Provider"} href={"../migrating-from-another-provider/"} description={"Export, transfer strategy, cutover timeline and risk mitigation for moving a portfolio in."} />
+  <LinkCard title={"The Complete Domain Lifecycle"} href={"../../working-with-domains/complete-domain-lifecycle/"} description={"Search, register, renew, transfer and delete — the core flows every platform automates."} />
+  <LinkCard title={"Which Integration Method Should I Choose?"} href={"../../start-here/which-integration-method/"} description={"Control Panel, WHMCS, SDK, API or EPP — pick the foundation for your platform."} />
+  <LinkCard title={"EPP Integration Guide"} href={"../../building-your-integration/epp-integration-guide/"} description={"Sessions, provisioning, transfers and the poll queue for registrars building over EPP."} />
+  <LinkCard title={"API Command Reference"} href={"../../../api/api-commands/api-command-reference/"} description={"The authoritative list of account, domain, contact, DNS and event commands."} />
+</CardGrid>

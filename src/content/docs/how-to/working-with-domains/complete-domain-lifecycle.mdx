@@ -1,0 +1,373 @@
+---
+title: "The Complete Domain Lifecycle"
+description: "A conceptual map of a domain's whole life at CentralNic Reseller — check, register, modify, DNS, transfer, renew, expire, restore and delete — with the states, grace periods and registry rules that shape each stage."
+sidebar:
+  order: 10
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+If you know your way around an API, the mechanics of registering a domain look
+simple: send a command, get a response. But a domain is not an ordinary record you
+create and delete at will. It is a **time-limited lease governed by registry
+rules** — it passes through a defined sequence of states, some transitions are
+one-way, and a few of them are surprisingly expensive to reverse. The developers
+who trip up are almost never the ones who got the syntax wrong; they are the ones
+who assumed a domain behaves like a row in their own database.
+
+This page is the map of that territory. It walks the full arc — **check → register
+→ modify → DNS → transfer → renew → expire → restore → delete** — and explains what
+each state *means*, what triggers a move from one to the next, and where the
+registry, not CentralNic Reseller, sets the rules. It deliberately stays
+conceptual: you will not find code here. Instead, each stage links to the
+how-to or reference page that carries the concrete commands and detail, so this
+becomes the guide that ties the other Working-with-Domains articles together.
+
+:::tip[By the end of this page you will understand]
+- Why a domain is a **lease with a lifecycle**, not a permanent record you own
+- What each **state and status code** means, and which transitions are one-way
+- How **grace periods** — add, auto-renew, redemption — change what an action costs
+- Why **renewal, expiry, restore and delete** are distinct operations with
+  distinct consequences (and why **restore is not re-registration**)
+- Which **guide or reference** to open for the commands behind each stage
+:::
+
+:::note[Read this before you automate]
+You can build a working integration by reading command references alone — but the
+category errors that cause real incidents (treating a lapsed domain as gone,
+scripting a delete you cannot undo, missing a renewal window) come from
+misreading the *lifecycle*, not the *commands*. Fifteen minutes here saves those
+mistakes. If you have not chosen how you will connect yet, start with
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+:::
+
+## A domain is a lease, not a purchase
+
+Every stage below makes more sense once one idea is fixed: you never *own* a
+domain outright. You hold the right to use it for a period — typically one to ten
+years — from a **registry** (the operator of the TLD, such as the operator behind
+`.com`), through a **registrar** (here, CentralNic Reseller). Two consequences
+follow, and they drive everything else:
+
+- **It expires.** If nothing extends the lease, the domain lapses on a schedule
+  the registry defines. Renewal is not optional maintenance; it is what keeps the
+  domain yours.
+- **The registry has the final say.** CentralNic Reseller passes your requests to
+  the registry, but each TLD sets its own rules — how long grace periods run,
+  whether an explicit renewal is even possible, what a restore costs, and more.
+  Where this page gives a specific number, it is the common gTLD case; **ccTLDs
+  frequently differ**, so always confirm the individual TLD's rules.
+
+A domain's current state is reported through **EPP status codes** — a standardised
+vocabulary (`ok`, `pendingTransfer`, `redemptionPeriod`, and so on) that every
+registry speaks. Learning to read them is the single most useful skill for
+operating domains at scale; the full list lives in the
+[EPP Status Codes](../../../domains/status/) reference, and we point to the
+relevant ones at each stage.
+
+## Check: is the name available?
+
+The lifecycle begins before a domain exists, with a question: *can I have this
+name?* A **check** asks the registry whether a name is available to register right
+now. It changes nothing and costs nothing, which is exactly why you should always
+do it first — it is the cheapest way to avoid a failed registration and the
+fastest confirmation that your credentials and connection are working.
+
+The API commands are `CheckDomain` (one name) and `CheckDomains` (several);
+over EPP the equivalent is `Domain:Check`. A name that comes back unavailable is
+not necessarily *registrable-later-for-more* — some names are premium-priced,
+some are reserved or blocked, and some are simply already registered by someone
+else. Check tells you availability; pricing and premium status are separate
+lookups.
+
+:::tip[Availability is a moment in time]
+A successful check is not a hold. The name can be registered by someone else in
+the seconds between your check and your create, so treat check as a pre-flight
+test, not a reservation — and always be ready for a create to fail even after a
+clean check.
+:::
+
+## Register: create the domain
+
+Registration is where the lease is created. A **create** initiates the domain
+registration at the registry (`AddDomain`, or `Domain:Create` over EPP) and, once
+accepted, the domain becomes yours for the period you requested. Three things must
+be in place, and each is more than a formality:
+
+- **A registration period** — how many years the initial lease runs, within the
+  minimum and maximum the TLD allows.
+- **Nameservers** — where the domain's DNS is answered (see
+  [DNS](#dns-making-the-domain-resolve) below). A domain with no nameservers is
+  registered but does not resolve.
+- **Contacts** — the registrant, admin, tech and billing parties, referenced by
+  their **handles**. You create a contact once and reuse its handle across many
+  domains. Which roles a TLD requires, and what data each needs, varies by
+  registry. See [Managing Contacts](../../../domains/contact-handles/) for the
+  handle model and [Understanding Contacts, Handles & Ownership](../contacts-handles-ownership/)
+  for how the roles and GDPR fit together.
+
+A freshly registered gTLD domain carries an informative `addPeriod` status for its
+first several days. This **add grace period** exists so that a domain deleted
+almost immediately after registration can be credited back — useful to know, but
+not something most integrations act on directly. If the domain has no nameservers
+yet, you will also see `inactive`: registered, but not resolving.
+
+:::caution[Many TLDs need more than the basics]
+Beyond period, nameservers and contacts, numerous TLDs require extra data —
+identity documents, local-presence details, registrant validations — that the
+base registration does not carry. A create rejected "for missing data" is usually
+a TLD-specific requirement, not a bug. Full registration flows live in
+[Building Your Integration](../../building-your-integration/); the authoritative
+command list is the [API Command Reference](../../../api/api-commands/api-command-reference/).
+:::
+
+## Modify: change data on a live domain
+
+Once a domain exists you will change things about it — nameservers, contacts,
+renewal behaviour, locks. A **modify** (`ModifyDomain`, or `Domain:Update` over
+EPP) updates the domain in place; the lease itself is untouched. This is the
+routine, low-drama part of the lifecycle, but two ideas matter.
+
+First, **locks are your friend, and they are status codes**. A domain can carry
+`clientUpdateProhibited`, `clientTransferProhibited` and `clientDeleteProhibited`
+— protections that make the domain reject updates, transfers or deletions until
+the lock is lifted. These prevent accidental or malicious changes; the trade-off
+is that your own automation must remove a lock before the operation it guards will
+succeed. Their `server*` counterparts are set by the registry and take precedence.
+
+Second, **changing the registrant is special**. Updating an admin or tech contact
+is a normal modify. Changing the *owner* (registrant) is an **ownership change** —
+a trade — which for many TLDs is a distinct, sometimes fee-bearing, sometimes
+document-requiring operation (`TradeDomain`), not an ordinary contact update. This
+is precisely why we advise against fictional "role" contacts as the registrant:
+they make a later trade far harder. See
+[Managing Contacts](../../../domains/contact-handles/) for why.
+
+## DNS: making the domain resolve
+
+Registering a domain and making it *work* are two different things. Registration
+records who holds the name; **DNS** is what turns the name into an answer a browser
+can use. The link between them is the domain's **nameservers** — the servers
+authoritative for its zone.
+
+If a domain has no nameservers associated, it shows `inactive` and will not
+resolve, no matter how correctly it is registered. Conversely, a registry can set
+`serverHold` (or a registrar `clientHold`) to *deliberately* stop a domain
+resolving — used during disputes or non-payment — even while the registration
+itself is fine. Reading those status codes tells you whether a "site is down"
+problem is a DNS problem or a lifecycle problem.
+
+You can point a domain at external nameservers, or use CentralNic Reseller's DNS
+so records live alongside the domain. The zone-and-record workflows — creating
+zones, managing records, DNSSEC, bulk changes — are their own topic; see
+[DNS Automation with CentralNic APIs](../dns-automation/).
+
+## Transfer: moving a domain between registrars
+
+A domain can move from one registrar to another without changing hands or lapsing.
+A **transfer** is that move. It matters here because it is **asynchronous and
+multi-step** — unlike a register or modify, you do not get the final answer in a
+single request. You initiate it (`TransferDomain`, or `Transfer:Request` over EPP)
+and the outcome arrives later, once the other side and the registry have acted.
+
+Three rules catch people out:
+
+- **You need the auth code.** Transferring a domain *in* requires its
+  authorisation ("auth" / EPP) code, obtained from the current registrar. It is
+  the proof of authority that makes the transfer legitimate.
+- **The domain must be transferable.** It has to be unlocked
+  (`clientTransferProhibited` removed), past any registry age or
+  recent-transfer restriction, and not in a state that blocks it. CentralNic
+  Reseller applies a default transfer lock to newly registered and transferred-in
+  domains, which is exactly this protection working as intended.
+- **A completed transfer starts a grace period.** After a successful inbound
+  transfer the domain carries `transferPeriod` for a limited time — an informative
+  grace window, mirroring the add and renew grace periods elsewhere.
+
+Some TLDs also allow contact handles to change *during* the transfer, and some do
+not; the behaviour and the current list are documented in the
+[Transfer](../../../domains/transfers/) reference. For the step-by-step inbound
+flow — eligibility checks, auth codes, tracking and bulk moves — see
+[Transfer a Domain into CentralNic Reseller](../transfer-a-domain-in/).
+
+:::caution[Track the status; do not assume success]
+Because transfers resolve over time, a request that returns cleanly means
+*started*, not *done*. Watch the domain's status (`pendingTransfer`) and, over
+EPP, the poll queue, until the registry confirms the result. Automation that
+treats "request accepted" as "transfer complete" will get the state wrong.
+:::
+
+## Renew: extending the lease
+
+Renewal is how you extend the lease before it runs out — and it is where
+CentralNic Reseller's model most rewards understanding, because the date you must
+watch is **not** the one you might expect.
+
+The registry has an **expiration date**. But CentralNic Reseller manages renewals
+against its own **renewal date**, derived from the **paid-until date** plus a
+TLD-specific **deletion timeframe**. For generic TLDs this pushes the renewal date
+*after* the registry expiration date: gTLDs get a 45-day **auto-renew grace period
+(ARGP)**, from which CentralNic Reseller subtracts 8 days for ICANN's Expired
+Registration Recovery Policy and a 2-day safety buffer — leaving a renewal date
+**35 days after the expiration date**. ccTLDs are not bound by ICANN and vary, so
+treat 35 days as the gTLD case, not a universal constant.
+
+:::caution[Watch the renewal date, not the expiration date]
+The renewal date is the moment CentralNic Reseller will act — renew, expire or
+delete the domain according to its renewal mode. It can fall well before or after
+the registry's expiration date depending on the TLD. Any manual renewal should be
+requested safely ahead of the renewal date (at least a day), and note that some
+ccTLDs do **not** support explicit renewal at all — for those you extend the lease
+by setting a "renew" renewal mode instead.
+:::
+
+Most renewal happens automatically, driven by the domain's **renewal mode**:
+
+- **AutoRenew** — the domain renews itself at the renewal date. This is the account
+  default and the safe choice for most resellers; it guards against accidental
+  loss.
+- **RenewOnce** — renew a single time, then revert to the account default. Useful
+  when a TLD has no explicit-renewal command.
+- **AutoExpire / AutoDelete** — do *not* renew; let the domain go (see
+  [Expire](#expire-what-happens-when-you-do-nothing)).
+
+Account-level modes set the default; per-domain settings override it. Explicit,
+on-demand renewals use `RenewDomain`. The full mode list, the paid-until/renewal-date
+model and the exceptions are all in
+[The CentralNic Reseller Renewal System](../../../domains/renewal-system/).
+
+:::caution[Auto-renew depends on funds]
+CentralNic Reseller runs on prepayment, and an automated renewal can only complete
+if the balance covers it. If funds are short at the renewal date, an AutoRenew
+domain is **left to auto-expire instead** and removed — recovering it then means a
+paid restore. Keep a working balance and a low-balance warning set.
+:::
+
+## Expire: what happens when you do nothing
+
+Expiry is the *passive* end of the lifecycle — the lease ending because nothing
+renewed it. It is not a single instant but a sequence, and understanding it is
+what lets you recover a domain in time rather than discover it is gone.
+
+For a gTLD left to expire, the domain does not vanish at the expiration date. It
+first sits in the auto-renew grace period; during the ICANN ERRP portion of that
+window it is suspended (it stops resolving and shows `pendingDelete`) so it is
+unmistakable that the domain will be lost unless action is taken. Throughout this
+phase a **renewal is still possible without a restore** — this is your last easy
+off-ramp. Only when the renewal date passes with no renewal, and the mode says so,
+does the domain actually get deleted.
+
+Renewal mode decides the outcome at that point. **AutoExpire** and **AutoDelete**
+both remove the domain from CentralNic Reseller at the end of the process; for
+gTLDs they behave identically, but for some ccTLDs (for example `.DE` and `.AT`)
+expiry and deletion trigger genuinely different registry processes — expiry can
+hand the domain back to the registry for the registrant to manage directly. This
+is a place to read the specific TLD's documentation rather than assume.
+
+:::tip[Expiry is a window, not a cliff]
+Between the expiration date and the actual deletion there is real time — 35 days
+for gTLDs by the standard calculation — during which a straightforward renewal
+still saves the domain. After deletion, the far more expensive restore path is
+your only option. Watch the renewal date and act inside the window.
+:::
+
+## Restore: recovering a deleted domain
+
+This is the stage that produces the most costly misunderstandings, so it gets the
+clearest warning. Once a domain has been deleted — whether it expired or you
+deleted it deliberately — it does **not** immediately become available for anyone
+to register. gTLD registries hold it in a **redemption grace period (RGP)** of 30
+days, shown as `redemptionPeriod`. During that window the original holder, and
+only the original holder, can bring it back with a **restore**.
+
+A restore (`RestoreDomain`, or `Domain:Restore` over EPP) is a distinct, billable
+operation:
+
+- It is **charged separately** from renewal, at a TLD-specific restore fee that is
+  typically much higher than a registration.
+- After an end-of-life restore, the domain is set to **RenewOnce** and an automatic
+  renewal runs within minutes — so a restore usually costs **restore fee +
+  renewal fee**. (A domain deleted mid-term is restored without that immediate
+  renewal.) Do not change the renewal mode until that follow-up renewal has
+  completed.
+- Some ccTLDs and some restores need manual handling and are **not** processed in
+  real time; you receive an event/poll message when they complete.
+
+:::caution[Restore is not re-registration — this is the category error to avoid]
+The most common and most expensive mistake developers make is treating a lapsed
+domain like a fresh name: scripting a `CheckDomain` / `AddDomain` to "re-register"
+it. During RGP the name is unavailable, so the check fails and the re-register
+never happens — and worse, waiting for it to become "available" risks losing the
+domain to someone else the moment RGP ends. To recover *your* deleted domain, use
+**restore**, not register. They are different operations with different prices and
+different outcomes.
+:::
+
+The RGP is finite. After it, the domain moves to a `pendingDelete` phase (about 5
+days for gTLDs) during which it can no longer be restored, and then it is purged
+from the registry and becomes available to the public again. One shortcut worth
+knowing: deleting a domain *before* its expiration date sends it straight into RGP,
+bypassing the auto-renew grace period. The restore rules, fees and ccTLD
+exceptions are detailed in
+[The CentralNic Reseller Renewal System](../../../domains/renewal-system/).
+
+## Delete: ending the lease deliberately
+
+Deletion is the *active* end of the lifecycle — you asking for the domain to be
+removed (`DeleteDomain`, or `Domain:Delete` over EPP), rather than letting it
+expire. It is a legitimate operation, but it is the sharpest edge on the whole map,
+so treat it with care.
+
+- **It is guarded by a lock for a reason.** A domain with `clientDeleteProhibited`
+  or the registry's `serverDeleteProhibited` will refuse deletion until the lock is
+  removed — a deliberate speed bump against accidental and malicious deletes.
+- **It is not instant, and it is not free to undo.** As covered above, a delete
+  (or a delete-before-expiry) sends the domain into the redemption grace period,
+  from which only a paid restore recovers it. There is no "undo" that returns it to
+  its prior state at no cost.
+- **Prefer expiry to explicit deletion.** For letting go of unwanted domains, best
+  practice is usually to set **AutoExpire** or **AutoDelete** and let the domain go
+  at the natural end of its term, rather than deleting explicitly — it deletes at
+  the latest safe moment and avoids surprises.
+
+:::caution[Deletion is a one-way door with a paid escape hatch]
+Automate deletes with the same caution you would give an irreversible production
+change. Confirm the domain, respect the locks, and remember that the only route
+back is a restore inside the redemption window — at the restore fee, not the
+registration fee.
+:::
+
+## Reading the map: status codes tie it together
+
+Every stage above surfaces as an EPP **status code**, and once the arc makes sense
+the codes become a live readout of exactly where a domain sits:
+
+- `ok` / `active` — settled, no pending operations or prohibitions.
+- `inactive` — registered but no nameservers; not resolving.
+- `pendingCreate`, `pendingTransfer`, `pendingRenew`, `pendingUpdate` — an
+  operation is in flight and not yet final.
+- `clientHold` / `serverHold` — deliberately not resolving (dispute, non-payment).
+- `client*Prohibited` / `server*Prohibited` — locks against update, transfer or
+  delete; `server*` (registry-set) outrank `client*` (registrar-set).
+- `addPeriod`, `renewPeriod`, `autoRenewPeriod`, `transferPeriod` — informative
+  grace windows after register, renew, auto-renew and transfer.
+- `redemptionPeriod`, `pendingRestore`, `pendingDelete` — the end-of-life sequence:
+  recoverable by restore, restore in progress, and past the point of no return.
+
+When a domain misbehaves, read its status before you touch a command. The complete,
+authoritative descriptions — including what action each code calls for — are in the
+[EPP Status Codes](../../../domains/status/) reference.
+
+## What to do next
+
+You have the shape of the whole lifecycle. These guides carry the concrete steps
+and commands for each stage — open the one that matches what you are building:
+
+<CardGrid>
+  <LinkCard title={"Transfer a Domain into CentralNic Reseller"} href={"../transfer-a-domain-in/"} description={"Auth codes, eligibility, status tracking and bulk transfers — the inbound flow end to end."} />
+  <LinkCard title={"Understanding Contacts, Handles & Ownership"} href={"../contacts-handles-ownership/"} description={"Registrant, admin, tech and billing roles, handle reuse and GDPR."} />
+  <LinkCard title={"DNS Automation with CentralNic APIs"} href={"../dns-automation/"} description={"Zones, records, DNSSEC and bulk changes so your domains resolve."} />
+  <LinkCard title={"The CentralNic Reseller Renewal System"} href={"../../../domains/renewal-system/"} description={"Renewal modes, the paid-until and renewal dates, grace periods and restores."} />
+  <LinkCard title={"EPP Status Codes"} href={"../../../domains/status/"} description={"The full vocabulary of domain states and what each one calls for."} />
+  <LinkCard title={"API Command Reference"} href={"../../../api/api-commands/api-command-reference/"} description={"The authoritative list of domain, contact, transfer and query commands."} />
+</CardGrid>

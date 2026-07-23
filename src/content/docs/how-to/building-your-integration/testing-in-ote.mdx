@@ -1,0 +1,295 @@
+---
+title: "Testing Your Integration in CentralNic OT&E"
+description: "Validate your CentralNic Reseller integration end to end in the free OT&E test environment — connect to the OT&E gateway, simulate a registration and a transfer at no cost, and verify your responses against production before you go live."
+sidebar:
+  order: 50
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Every solid integration is proven before it touches a live domain or a real
+balance. That is what **OT&E (Operational Test & Evaluation)** is for: a full
+sandbox that runs the same commands and speaks the same protocols as production,
+where you can register, transfer, update and retrieve domains as many times as you
+like — at no cost and with nothing billed. If it works here, it will work live.
+
+This guide is the companion to
+[Moving from OT&E to Production](../../start-here/moving-from-ote-to-production/):
+that page is the cutover; this one is the testing you do well *before* it. Do the
+work here thoroughly and the cutover becomes a boring configuration change — which
+is exactly what you want on go-live day. We will connect to OT&E, walk a
+registration and a transfer end to end, and check your responses against what
+production will actually return.
+
+:::tip[By the end of this guide you will have]
+- Your integration **connected to the OT&E gateway** with the `s_opmode=OTE` flag
+- A **registration simulated end to end** — check, create, set nameservers,
+  retrieve — at no cost
+- A **transfer simulated end to end**, including the asynchronous status flow
+- Your **responses verified** against what production will return
+- A clear view of the **behaviours and limits that differ** in OT&E, so you never
+  build against a quirk that will not hold live
+:::
+
+:::note[First fund and secure the account]
+OT&E is where you test an integration — it is not the account setup itself. If you
+have not yet funded your account, created users and enabled security, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) first,
+and pick your protocol in
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+This guide uses the HTTPS API for its examples, but the same flow applies whichever
+gateway you connect over.
+:::
+
+## Where OT&E fits
+
+CentralNic Reseller gives every reseller a dedicated OT&E environment alongside the
+live one. The two systems are deliberately identical in how they behave — the same
+command set, the same response codes, the same protocols — so that code proven in
+OT&E behaves the same way in production. The difference is consequence: in OT&E
+nothing is charged and no live domain is affected, so you are free to fail, retry
+and iterate until every flow returns exactly what you expect.
+
+The plan for the rest of this page is simple: **test here first, then cut over.**
+Get check, create, update, retrieve and transfer all returning clean, expected
+responses in OT&E — then follow the production guide to point the same code at the
+live system.
+
+## Connect to the OT&E environment
+
+OT&E has its own endpoints. For the HTTPS API the OT&E gateway is
+`api-ote.rrpproxy.net`, and OT&E calls carry the `s_opmode=OTE` flag so the system
+knows to run them in test mode. Connect by **hostname, not IP address** — our host
+IPs can change, but the hostnames do not.
+
+<Steps>
+
+1. Open the [Control Panel](https://account.centralnicreseller.com/) and go to
+   **API → API Gateways** (top menu). This page lists the exact **OT&E hostnames
+   and ports for every protocol** (HTTPS, XML-RPC, SOAP, MREG, EPP) for your
+   account — always take the values from here rather than copying them from
+   anywhere else.
+
+2. Point your integration at the OT&E gateway. For HTTPS that is
+   `api-ote.rrpproxy.net`, with `s_opmode=OTE` on each call.
+
+3. Set your OT&E credentials. If you need to set or change the OT&E password, do it
+   in the Control Panel under **Account → Settings → Passwords**.
+
+</Steps>
+
+A minimal HTTPS availability check against OT&E looks like this:
+
+```text
+https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[account]&s_pw=[password]&command=CheckDomain&domain=example.com
+```
+
+:::tip[Read the exact endpoints from your own Control Panel]
+**API → API Gateways** always reflects the correct, current endpoints for your
+account, for both OT&E and production. See
+[HTTPS-Software](../../../api/connecting/hypertext-transfer-protocol-socket/) for
+the HTTPS gateway detail and [Connecting](../../../api/connecting/) for all the
+ways to connect. Keep your OT&E and production settings in separate configuration
+profiles so you can reach either without editing the other.
+:::
+
+## Simulate a registration end to end
+
+The core lifecycle is four steps, and OT&E lets you run the whole thing for free as
+often as you need. Register a name, change its nameservers, read it back, and
+confirm every response matches what you expect. Because nothing is billed, this is
+also the fastest way to prove your endpoint, credentials and IP allowlist are all
+working before you write another line of code.
+
+<Steps>
+
+1. **Check availability.** Run `CheckDomain` for the name you intend to register.
+   A clean available / not-available response confirms your connection and
+   credentials are correct end to end.
+
+   ```text
+   command = CheckDomain
+   domain  = example.com
+   ```
+
+2. **Create the domain.** Run `AddDomain`, supplying the registration period, your
+   nameservers and the contact handles for the roles the TLD requires. In OT&E this
+   registers a test domain at no cost.
+
+   ```text
+   command   = AddDomain
+   domain    = example.com
+   period    = 1
+   ownercontact0 = P-1234567
+   nameserver0   = ns1.example.net
+   nameserver1   = ns2.example.net
+   ```
+
+3. **Set or change the nameservers.** Run `ModifyDomain` to update the domain's
+   nameservers. This exercises a modify operation, not just a create, so you prove
+   the whole update path works.
+
+   ```text
+   command     = ModifyDomain
+   domain      = example.com
+   nameserver0 = ns1.example.org
+   nameserver1 = ns2.example.org
+   ```
+
+4. **Retrieve and confirm state.** Run `StatusDomain` and confirm the domain comes
+   back active with the nameservers and contacts you set. Matching what you expect,
+   field for field, is your green light.
+
+   ```text
+   command = StatusDomain
+   domain  = example.com
+   ```
+
+</Steps>
+
+:::tip[Test the failure paths too, not just the happy path]
+A registration that succeeds is only half the story. In OT&E, deliberately trigger
+the errors your live code must survive — a name that is already taken, a missing
+mandatory contact, an invalid nameserver — and confirm your integration reads the
+response `code` and `description` and reacts sensibly. Handling errors gracefully in
+OT&E is what keeps a bad input from becoming a bad incident in production.
+:::
+
+For the full lifecycle beyond these four steps — renew, restore, delete,
+owner-change — see
+[The Complete Domain Lifecycle](../../working-with-domains/complete-domain-lifecycle/),
+and for how contact handles and roles work, see
+[Understanding Contacts, Handles & Ownership](../../working-with-domains/contacts-handles-ownership/).
+The complete, authoritative list of commands and parameters is in the
+[API Command Reference](../../../api/api-commands/api-command-reference/).
+
+## Simulate a transfer end to end
+
+Bringing a domain in from another registrar is asynchronous: your request *starts*
+the transfer, and the outcome arrives later. That makes it exactly the kind of flow
+worth rehearsing in OT&E, where you can exercise the request and the status-tracking
+path without moving a real domain or incurring a charge.
+
+<Steps>
+
+1. **Check eligibility.** Use `CheckDomainTransfer` to confirm the domain can be
+   transferred before you request it — this is the cheapest way to avoid a failed
+   request.
+
+   ```text
+   command = CheckDomainTransfer
+   domain  = example.com
+   ```
+
+2. **Request the transfer.** Run `TransferDomain` with the domain's authorisation
+   ("auth" / EPP) code to initiate it. Confirm you get an acknowledgement that the
+   transfer is pending, not an immediate completion — transfers do not resolve
+   inside a single request.
+
+   ```text
+   command = TransferDomain
+   domain  = example.com
+   auth    = auth-code-here
+   ```
+
+3. **Track the status.** Poll for the transfer status and confirm your integration
+   handles the pending state and the eventual outcome. This asynchronous handling is
+   the part most worth proving before go-live.
+
+4. **Retrieve and confirm.** Once the test transfer resolves, run `StatusDomain` and
+   confirm the domain reflects the state you expect.
+
+</Steps>
+
+:::caution[Transfers are high-stakes — rehearse the whole flow]
+A transfer moves a live domain, so the value of OT&E is getting the flow exactly
+right before it counts: eligibility check, a valid auth code, the pending state and
+the final outcome. Note that OT&E also lets you test transfer-time behaviours such
+as changing contact handles during a transfer. For the business rules, eligibility
+checks and failure handling, see
+[Transfer a Domain into CentralNic Reseller](../../working-with-domains/transfer-a-domain-in/)
+and the [Transfers](../../../domains/transfers/) reference.
+:::
+
+## Verify your responses against production
+
+The whole point of OT&E is that a result here predicts the result live. Confirm
+that by checking your responses carefully — but also know where OT&E and production
+legitimately differ, so you never build against a test-only quirk that will not
+hold in production.
+
+<Steps>
+
+1. **Read the response `code` and `description`, not just success or failure.**
+   Production returns the same codes as OT&E — for example `210` for an available
+   domain, `211` for one that is not, `200` for a completed command. Log and branch
+   on the `code` in your integration so your live behaviour matches your tested
+   behaviour exactly.
+
+2. **Confirm the shape of every response you rely on.** Field names, structure and
+   ordering carry over from OT&E to production. If your parser works here, it works
+   there.
+
+3. **Compare against what you saw in the Control Panel.** If you registered a domain
+   by hand during your first day, you already know what a correct result looks like
+   — use it as your reference.
+
+</Steps>
+
+Keep these OT&E-versus-production differences in mind as you test:
+
+| Behaviour | In OT&E | In production |
+| --- | --- | --- |
+| **System** | A separate system with its own endpoints | The live system with its own endpoints |
+| **Charges** | Nothing is billed | Every registration, renewal and transfer is charged |
+| **Data** | Test domains, contacts and balance | Completely separate — nothing crosses over |
+| **Credentials** | Your OT&E login and password | Your production login and password |
+| **Premium domains** | Tested using designated premium test names | Real premium names at real premium prices |
+
+:::caution[Nothing you do in OT&E carries over]
+OT&E and production are two separate systems. The domains, contacts and test
+balance you create in OT&E stay in OT&E — production starts empty. Do not assume a
+handle or object built in OT&E will exist live; anything your live business needs
+has to be created in production in its own right.
+:::
+
+:::tip[Testing premium domains in OT&E]
+Premium pricing and premium registration flows can be tested in OT&E, but not with
+arbitrary names — you use the **designated premium test domains** published for the
+test system. Every premium domain from the live system is usable for testing in
+OT&E, and specific test names are listed per TLD in
+[Premium domains for OT&E](../../../domains/premium-domains/premium-domains-for-otande/).
+Use those names to exercise your premium handling before you rely on it live.
+:::
+
+## Test here first, then cut over
+
+When check, create, update, retrieve and transfer all return clean, expected
+responses in OT&E — including the failure paths — your integration is proven. Going
+live is then a controlled configuration change, not a rewrite: you point the same
+code at the production gateway, swap your OT&E credentials for your production ones,
+drop the `s_opmode=OTE` flag, and re-validate the IP allowlist for the servers that
+will carry live traffic.
+
+Because you ran every step here first, a production result that matches your OT&E
+result is exactly the confirmation you want. If a first live command ever fails
+where the identical OT&E command worked, it is almost always the endpoint, the
+credentials or the allowlist — not your logic.
+
+:::note[Keep OT&E for the future]
+Going live does not retire your test environment. Keep your OT&E configuration for
+the next feature, the next TLD and the next change — test there first every time,
+then repeat the cutover.
+:::
+
+## What to do next
+
+Your integration is validated. Take it live, and keep the reference material close:
+
+<CardGrid>
+  <LinkCard title={"Moving from OT&E to Production"} href={"../../start-here/moving-from-ote-to-production/"} description={"The endpoint and credential swap, allowlist re-check, smoke test and go-live checklist."} />
+  <LinkCard title={"EPP Integration Guide"} href={"../epp-integration-guide/"} description={"Testing the same flows end to end over EPP, from session to poll queue."} />
+  <LinkCard title={"Authentication, Credentials & IP Allowlisting"} href={"../authentication-credentials-ip/"} description={"How logins, API users and the IP allowlist fit together."} />
+  <LinkCard title={"The Complete Domain Lifecycle"} href={"../../working-with-domains/complete-domain-lifecycle/"} description={"Every operation from registration to expiry, with the commands behind each."} />
+  <LinkCard title={"API Command Reference"} href={"../../../api/api-commands/api-command-reference/"} description={"The complete, authoritative list of commands and parameters."} />
+</CardGrid>

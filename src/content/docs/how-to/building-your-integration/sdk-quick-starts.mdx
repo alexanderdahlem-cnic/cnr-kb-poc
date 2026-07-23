@@ -1,0 +1,409 @@
+---
+title: "SDK Quick Starts (PHP / Node.js / Python / C#)"
+description: "Get from account to a successful test registration in about 15 minutes using an official CentralNic Reseller SDK — install, authenticate against OT&E, check a domain, register it and update its nameservers, in the language you already build in."
+sidebar:
+  order: 30
+---
+
+import { Steps, CardGrid, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
+
+If you would rather call a few idiomatic methods than assemble HTTP requests by
+hand, an official SDK is the fastest way in. CentralNic Reseller maintains
+open-source connector libraries for several languages, and each one wraps the same
+established API you would otherwise call directly — so you get real objects,
+sensible response handling and session management in your own language, talking to
+exactly the same commands documented across this knowledge base.
+
+This page is a quick start, not a full reference. The goal is deliberately narrow:
+get you from an account to a **successful test registration in about 15 minutes**,
+using the same five moves every integration begins with — install, authenticate,
+check a name, register it, and point it at your nameservers.
+
+:::tip[By the end of this guide you will have]
+- The right **SDK installed** for your language, from its official package registry
+- A client **authenticated against OT&E** with a dedicated API user
+- A **domain availability check** returning a real result
+- A **test domain registered** end to end
+- Its **nameservers updated** — the full first-integration loop, in idiomatic code
+:::
+
+:::note[First things first]
+An SDK automates a funded, secured account — it is not the account setup itself. If
+you have not yet funded your account, created an API user and enabled security, work
+through [Your First Day as a CentralNic Reseller](../../start-here/your-first-day/)
+first; it applies to every integration method. Not sure an SDK is the right path?
+See [Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+:::
+
+## What the SDKs actually do
+
+Every CentralNic Reseller SDK is a **thin connector** over the established
+command-based API — the same `command = …` request/response interface reachable
+over the HTTPS, SOAP, XML-RPC and other gateways. You build a client, hand it your
+credentials, and send a request whose keys are the API command and its parameters;
+the SDK returns a response object you can query for success, response code and the
+result data.
+
+Because the command set is identical, everything documented in the
+[API Command Reference](../../../api/api-command/) applies directly: whatever you
+can send as a raw command, you can send through the SDK by name. The SDK adds the
+transport, authentication, OT&E-versus-production switching, session handling and
+response parsing so you do not have to.
+
+:::tip[Learn the command names once, use them everywhere]
+The examples below use [`CheckDomain`](../../../api/api-command/CheckDomain/),
+[`AddDomain`](../../../api/api-command/AddDomain/) and
+[`ModifyDomain`](../../../api/api-command/ModifyDomain/). These are the same commands
+the raw API and the Direct API Console use — so anything you prove in the Console
+translates straight into SDK code, and vice versa.
+:::
+
+## Which languages have an SDK
+
+CentralNic Reseller publishes and actively maintains connector libraries in
+several languages. This quick start covers the three the title promises that have a
+current library — **PHP, Node.js and Python** — and is honest about the fourth.
+
+| Language | Official SDK | Package |
+| --- | --- | --- |
+| **PHP** | [rtldev-middleware-php-sdk](https://github.com/centralnicgroup-opensource/rtldev-middleware-php-sdk) | [`centralnic-reseller/php-sdk`](https://packagist.org/packages/centralnic-reseller/php-sdk) (Packagist) |
+| **Node.js** | [rtldev-middleware-node-sdk](https://github.com/centralnicgroup-opensource/rtldev-middleware-node-sdk) | [`@team-internet/apiconnector`](https://www.npmjs.com/package/@team-internet/apiconnector) (npm) |
+| **Python** | [rtldev-middleware-python-sdk](https://github.com/centralnicgroup-opensource/rtldev-middleware-python-sdk) | [`centralnicreseller.apiconnector`](https://pypi.org/project/centralnicreseller.apiconnector/) (PyPI) |
+| **C# / .NET** | Not currently available | — see [Using C# / .NET today](#using-c--net-today) |
+
+:::note[There are more than three]
+Beyond the languages above, the same organisation also publishes
+[Go](https://github.com/centralnicgroup-opensource/rtldev-middleware-go-sdk) and
+[Java](https://github.com/centralnicgroup-opensource/rtldev-middleware-java-sdk)
+SDKs. Browse them all in the public
+[centralnicgroup-opensource](https://github.com/orgs/centralnicgroup-opensource/repositories)
+organisation.
+:::
+
+## 1. Install the SDK
+
+Pull the library in from your language's standard package registry.
+
+<Tabs>
+  <TabItem label="PHP">
+  Requires PHP 8.3 or newer. Install with Composer:
+
+  ```sh
+  composer require centralnic-reseller/php-sdk
+  ```
+  </TabItem>
+  <TabItem label="Node.js">
+  Requires a current Node.js LTS. The package is published as an ES module:
+
+  ```sh
+  npm install @team-internet/apiconnector
+  ```
+  </TabItem>
+  <TabItem label="Python">
+  Install from PyPI:
+
+  ```sh
+  pip install centralnicreseller.apiconnector
+  ```
+  </TabItem>
+</Tabs>
+
+## 2. Authenticate against OT&E
+
+Build a client, point it at the **OT&E** test environment, and set your
+credentials. Everything in this quick start runs in OT&E, where nothing is billed
+and no live domains are touched — you switch to production only once your
+integration is proven.
+
+Use a **dedicated API user** rather than your master account login, and read the
+credentials from the environment rather than hard-coding them — see
+[Authentication, Credentials & IP Allowlisting](../authentication-credentials-ip/)
+for why, and for how the `accountname:username` login format works.
+
+<Tabs>
+  <TabItem label="PHP">
+  ```php
+  <?php
+  require __DIR__ . '/vendor/autoload.php';
+
+  use CNIC\ClientFactory;
+
+  $cl = ClientFactory::getClient("CNR");
+  $cl->useOTESystem()                              // OT&E; production is the default otherwise
+     ->setCredentials(getenv('CNR_USER'), getenv('CNR_PASSWORD'));
+
+  // A first sanity check that credentials and connectivity are good:
+  $r = $cl->request(["COMMAND" => "StatusAccount"]);
+  echo $r->isSuccess() ? "Connected\n" : "Auth failed\n";
+  ```
+  </TabItem>
+  <TabItem label="Node.js">
+  ```js
+  import { APIClient } from "@team-internet/apiconnector";
+
+  const cl = new APIClient();
+  cl.useOTESystem();                                // OT&E; production is the default otherwise
+  cl.setCredentials(process.env.CNR_USER, process.env.CNR_PASSWORD);
+
+  // A first sanity check that credentials and connectivity are good:
+  const r = await cl.request({ COMMAND: "StatusAccount" });
+  console.log(r.isSuccess() ? "Connected" : "Auth failed");
+  ```
+  </TabItem>
+  <TabItem label="Python">
+  ```python
+  import os
+  from centralnicreseller.apiconnector.apiclient import APIClient
+
+  cl = APIClient()
+  cl.useOTESystem()                                 # OT&E; production is the default otherwise
+  cl.setCredentials(os.environ.get("CNR_USER"), os.environ.get("CNR_PASSWORD"))
+
+  # A first sanity check that credentials and connectivity are good:
+  r = cl.request({"Command": "StatusAccount"})
+  print("Connected" if r.isSuccess() else "Auth failed")
+  ```
+  </TabItem>
+</Tabs>
+
+:::caution[If StatusAccount does not succeed]
+A failure here is almost always credentials, environment or the IP allowlist — not
+your code. Confirm you are using the `accountname:username` login with that user's
+own password, that your OT&E password is set (from the **live** Control Panel), and
+that your server's external IP is allowlisted if you have the allowlist enabled. The
+[Authentication troubleshooting table](../authentication-credentials-ip/#troubleshooting-connection-failures)
+walks through each case.
+:::
+
+## 3. Check a domain
+
+`CheckDomain` confirms whether a name is available before you try to register it.
+Always check first — it is the cheapest way to avoid a failed create and a quick
+confirmation that your session and credentials work. Every SDK returns a response
+object exposing `isSuccess()`, a response code and description, and the result data
+as a hash.
+
+<Tabs>
+  <TabItem label="PHP">
+  ```php
+  $r = $cl->request([
+      "COMMAND" => "CheckDomain",
+      "DOMAIN"  => "example.com",
+  ]);
+
+  echo $r->getCode() . " " . $r->getDescription() . "\n";
+  print_r($r->getHash());
+  ```
+  </TabItem>
+  <TabItem label="Node.js">
+  ```js
+  const r = await cl.request({
+    COMMAND: "CheckDomain",
+    DOMAIN: "example.com",
+  });
+
+  console.log(r.getCode(), r.getDescription());
+  console.dir(r.getHash());
+  ```
+  </TabItem>
+  <TabItem label="Python">
+  ```python
+  r = cl.request({
+      "Command": "CheckDomain",
+      "Domain": "example.com",
+  })
+
+  print(r.getCode(), r.getDescription())
+  print(r.getHash())
+  ```
+  </TabItem>
+</Tabs>
+
+The response code and description tell you whether the name is available. See
+[CheckDomain](../../../api/api-command/CheckDomain/) for the full parameter and
+response detail.
+
+## 4. Register the domain
+
+`AddDomain` runs the whole registration in one call: it re-checks availability,
+creates the contact handles at the registry, and starts the registration. A basic
+create needs the **period**, the **contact roles** the TLD requires (owner, admin,
+tech, billing) and your **nameservers**. Many TLDs need extra `X-<TLD>-…`
+parameters — those are listed in each TLD's documentation.
+
+<Tabs>
+  <TabItem label="PHP">
+  ```php
+  $r = $cl->request([
+      "COMMAND"         => "AddDomain",
+      "DOMAIN"          => "example.com",
+      "PERIOD"          => 1,
+      "OWNERCONTACT0"   => "P-XXX12345",   // an existing contact handle
+      "ADMINCONTACT0"   => "P-XXX12345",
+      "TECHCONTACT0"    => "P-XXX12345",
+      "BILLINGCONTACT0" => "P-XXX12345",
+      "NAMESERVER0"     => "ns1.example.net",
+      "NAMESERVER1"     => "ns2.example.net",
+  ]);
+
+  echo $r->isSuccess() ? "Registered\n" : "Failed: " . $r->getDescription() . "\n";
+  ```
+  </TabItem>
+  <TabItem label="Node.js">
+  ```js
+  const r = await cl.request({
+    COMMAND: "AddDomain",
+    DOMAIN: "example.com",
+    PERIOD: 1,
+    OWNERCONTACT0: "P-XXX12345",           // an existing contact handle
+    ADMINCONTACT0: "P-XXX12345",
+    TECHCONTACT0: "P-XXX12345",
+    BILLINGCONTACT0: "P-XXX12345",
+    NAMESERVER0: "ns1.example.net",
+    NAMESERVER1: "ns2.example.net",
+  });
+
+  console.log(r.isSuccess() ? "Registered" : "Failed: " + r.getDescription());
+  ```
+  </TabItem>
+  <TabItem label="Python">
+  ```python
+  r = cl.request({
+      "Command": "AddDomain",
+      "Domain": "example.com",
+      "Period": 1,
+      "OwnerContact0": "P-XXX12345",        # an existing contact handle
+      "AdminContact0": "P-XXX12345",
+      "TechContact0": "P-XXX12345",
+      "BillingContact0": "P-XXX12345",
+      "NameServer0": "ns1.example.net",
+      "NameServer1": "ns2.example.net",
+  })
+
+  print("Registered" if r.isSuccess() else "Failed: " + r.getDescription())
+  ```
+  </TabItem>
+</Tabs>
+
+:::tip[Create a contact handle once, reuse it]
+`AddDomain` references contacts by their **handle** (contact ID). Create a contact
+once and reuse its handle across every domain that needs it. For how the four
+contact roles, handle reuse and ownership fit together, see
+[AddDomain](../../../api/api-command/AddDomain/) and the broader
+[API Command Reference](../../../api/api-command/).
+:::
+
+## 5. Update the nameservers
+
+`ModifyDomain` changes a domain's contacts, transfer lock or nameservers after
+registration. To replace the delegation, send the full nameserver set as
+`NAMESERVER0`, `NAMESERVER1`, … (you can also add or remove individual hosts with
+`ADDNAMESERVER…` / `DELNAMESERVER…`).
+
+<Tabs>
+  <TabItem label="PHP">
+  ```php
+  $r = $cl->request([
+      "COMMAND"     => "ModifyDomain",
+      "DOMAIN"      => "example.com",
+      "NAMESERVER0" => "ns1.yourdns.net",
+      "NAMESERVER1" => "ns2.yourdns.net",
+  ]);
+
+  echo $r->isSuccess() ? "Nameservers updated\n" : $r->getDescription() . "\n";
+  $cl->close(); // close the connection when you are done
+  ```
+  </TabItem>
+  <TabItem label="Node.js">
+  ```js
+  const r = await cl.request({
+    COMMAND: "ModifyDomain",
+    DOMAIN: "example.com",
+    NAMESERVER0: "ns1.yourdns.net",
+    NAMESERVER1: "ns2.yourdns.net",
+  });
+
+  console.log(r.isSuccess() ? "Nameservers updated" : r.getDescription());
+  ```
+  </TabItem>
+  <TabItem label="Python">
+  ```python
+  r = cl.request({
+      "Command": "ModifyDomain",
+      "Domain": "example.com",
+      "NameServer0": "ns1.yourdns.net",
+      "NameServer1": "ns2.yourdns.net",
+  })
+
+  print("Nameservers updated" if r.isSuccess() else r.getDescription())
+  ```
+  </TabItem>
+</Tabs>
+
+That is the full first loop — install, authenticate, check, register, update — in
+your own language. See [ModifyDomain](../../../api/api-command/ModifyDomain/) for
+every parameter it accepts.
+
+## Session-based versus session-less requests
+
+Every example above is **session-less**: the SDK authenticates each request on its
+own, which is the simplest way to start and perfectly fine for scripts and
+low-volume work. For a busier integration, each SDK can also **log in once and reuse
+the session** — call `login()`, run your requests, then `logout()` — so the password
+is sent once rather than on every call. The PHP, Node.js and Python demo apps in
+each repository show both patterns side by side.
+
+For the mechanics of persistent sessions on the underlying API, see
+[HTTPS Session Handling](../../../api/api-security/https-session-handling/) and the
+credentials guide's
+[section on how authentication is sent](../authentication-credentials-ip/#how-authentication-is-sent-on-each-session).
+
+## Using C# / .NET today
+
+There is **no official C# / .NET SDK** in the CentralNic Reseller open-source
+organisation at this time. If .NET is your stack, you have a clean, fully supported
+path today: call the API **directly**. The SDKs above are only convenience wrappers
+around the same command-based API, so a .NET `HttpClient` sending an authenticated
+request to the HTTPS gateway reaches exactly the same commands — `CheckDomain`,
+`AddDomain`, `ModifyDomain` and the rest.
+
+<Steps>
+
+1. Set up credentials and (optionally) the IP allowlist as described in
+   [Authentication, Credentials & IP Allowlisting](../authentication-credentials-ip/).
+
+2. Read the gateway hostnames and ports from **API → API Gateways** in the Control
+   Panel, and see [Connecting](../../../api/connecting/) for all the ways to connect.
+
+3. Send `command = …` requests to the HTTPS gateway from your .NET code and parse the
+   key-value response — the same commands the SDKs use under the hood.
+
+</Steps>
+
+:::note[Check the open-source org for updates]
+Because the language line-up is maintained in public, the
+[centralnicgroup-opensource](https://github.com/orgs/centralnicgroup-opensource/repositories)
+organisation is the authoritative place to check whether a C# / .NET library has
+since been added.
+:::
+
+## Move to production
+
+When your integration is proven in OT&E, going live is a small, controlled change:
+drop the `useOTESystem()` call (production is the default), swap your OT&E
+credentials for your production ones, and re-check the IP allowlist for the servers
+that will carry live traffic. Your commands and response handling stay exactly the
+same.
+
+Validate first, then follow the dedicated go-live guide:
+
+<CardGrid>
+  <LinkCard title={"Testing Your Integration in CentralNic OT&E"} href={"../testing-in-ote/"} description={"Prove the full check, register and update loop before you go live."} />
+  <LinkCard title={"Moving from OT&E to Production"} href={"../../start-here/moving-from-ote-to-production/"} description={"Swap endpoints and credentials, and re-check the allowlist before go-live."} />
+  <LinkCard title={"Authentication, Credentials & IP Allowlisting"} href={"../authentication-credentials-ip/"} description={"API users, the colon login format, the allowlist, and connection troubleshooting."} />
+  <LinkCard title={"API Command Reference"} href={"../../../api/api-command/"} description={"Every command your SDK can call by name — the same set across all gateways."} />
+  <LinkCard title={"Connecting"} href={"../../../api/connecting/"} description={"All the ways to reach the API, for direct calls or a language without an SDK."} />
+  <LinkCard title={"Which Integration Method Should I Choose?"} href={"../../start-here/which-integration-method/"} description={"SDK, direct API, EPP, WHMCS or the Control Panel — find the right fit."} />
+</CardGrid>
+</content>
+</invoke>

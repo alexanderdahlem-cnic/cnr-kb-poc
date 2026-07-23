@@ -1,0 +1,351 @@
+---
+title: "Reference Architectures for Domain Resellers"
+description: "Proven integration architectures for five common reseller business models — web host, registrar, SaaS platform, marketplace and corporate domain manager — with the recommended CentralNic Reseller approach for each and the reasoning behind it."
+sidebar:
+  order: 20
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Two partners can connect to CentralNic Reseller in completely different ways and
+both be right — because the best architecture is the one that fits your *business
+model*, not the one with the most features. A web host bolting domains onto an
+existing billing system, a registrar standardising on one protocol, and a
+marketplace provisioning names on demand each want something different from the
+same platform. This page lays out reference architectures for the business models
+we see most often, so you can recognise yours and start from a shape that already
+works.
+
+Think of this as the architecture-level companion to
+[Which Integration Method Should I Choose?](../../start-here/which-integration-method/).
+That page helps you pick a single method; this one shows how the pieces fit
+together for a whole business — which gateway carries your traffic, where domains
+sit relative to the rest of your product, and which CentralNic Reseller
+capabilities each pattern leans on.
+
+:::tip[By the end of this page you will]
+- Recognise the **reference pattern** that matches your business model
+- Know the **recommended integration approach** for it — Control Panel, WHMCS, an
+  SDK, the API or EPP — and *why*
+- See which **CentralNic Reseller capabilities** each pattern relies on
+- Have a clear **next guide to open** to start building your version of it
+:::
+
+:::note[First things first]
+Every pattern below assumes a funded, secured account with API access where
+automation is involved. If you have not set that up, start with
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) — it
+takes about 30 minutes and applies to all five architectures.
+:::
+
+## How to read these patterns
+
+The five patterns are not a menu where you pick exactly one. Most real businesses
+are a blend — a hosting company with a marketplace-style storefront, a SaaS
+product with a corporate portfolio of its own — and CentralNic Reseller lets you
+mix methods against a single account. Find the pattern that describes your
+*primary* model, adopt its architecture, then borrow from the others as you grow.
+
+Every method below reaches the **same command set** behind the
+[five gateways](../../../api/connecting/) — HTTPS, XML-RPC, SOAP, MREG and SMTP —
+so choosing a pattern is about fit and effort, not about locking away
+capabilities. The comparison at the end summarises all five in one view.
+
+## Pattern 1 — The web hosting company
+
+**Scenario.** You already sell hosting, and you bill and provision it through a
+platform your customers and staff use every day. Domains are a natural add-on:
+you want a customer to register a name in the same basket as their hosting plan,
+and you want renewals, transfers and DNS to be handled without building a second
+system.
+
+**Recommended approach: the WHMCS module.** If you run WHMCS, our module plugs
+domain registration directly into the platform you already operate. Your storefront,
+cart, invoicing and customer area stay exactly as they are; the module adds domains
+as another product line, talking to CentralNic Reseller behind the scenes.
+
+**Why this fits.** The shortest path to selling domains is the one that reuses the
+billing and provisioning system you have already built your business around. There
+is no separate portal for customers to learn and no second reconciliation process
+for your finance team. Because CentralNic Reseller runs on a prepayment balance,
+each sale is charged in real time against your account — so your WHMCS margin is
+simply the difference between your wholesale price and what you charge the customer.
+
+**CentralNic Reseller capabilities it leans on**
+
+- The **WHMCS module** for registration, renewal and transfer flows.
+- The **prepayment model** and per-TLD pricing, so retail pricing sits cleanly on
+  top of your wholesale cost.
+- **KeyDNS** for the DNS that hosting customers expect to come with a domain.
+- **White-label / subreseller** settings so the experience stays under your brand.
+
+**Architecture at a glance**
+
+```text
+Customer ─▶ Your WHMCS storefront ─▶ WHMCS domain module ─▶ CentralNic Reseller API
+                    │                                             │
+              billing & invoices                          register / renew / transfer
+                    │                                        DNS via KeyDNS
+              (your existing system)                     (charged against prepay balance)
+```
+
+:::tip[Already on WHMCS for hosting? You are most of the way there]
+If WHMCS is already your billing engine, adding domains is configuration, not a
+build. See [WHMCS integration](../../working-with-domains/whmcs-integration/) for
+the everyday flows and the [WHMCS module](../../../services/plugins/whmcs/) page to
+get it installed.
+:::
+
+If you have outgrown WHMCS or never used it, a hosting company can equally drive
+domains from the **HTTPS API** inside its own control panel — that is really
+Pattern 3 below, applied to hosting.
+
+## Pattern 2 — The registrar
+
+**Scenario.** You are an established registrar, or you already run the Extensible
+Provisioning Protocol against one or more registries. You have EPP clients, tooling
+and a team that thinks in sessions, poll queues and auth codes — and you want
+CentralNic Reseller to be one more endpoint that speaks the language you already
+use.
+
+**Recommended approach: EPP.** Point your existing EPP client at our EPP gateway.
+Our server supports the full domain, contact, host, transfer and poll command set,
+so your client, libraries and mental models carry straight over with minimal
+relearning.
+
+**Why this fits.** For a team with an EPP investment, EPP is the path of least
+resistance: you reuse expertise instead of learning a new interface, and you keep
+a single protocol across every provider you connect to. Registry-specific data
+that the base schema does not carry is handled through the Key-Systems EPP
+extension, which mirrors the same `X-*` parameters used elsewhere in our API — so
+even the edge cases map onto concepts you know.
+
+**CentralNic Reseller capabilities it leans on**
+
+- The **EPP server** and its full command set (session, domain, contact, host,
+  transfer, poll).
+- The **poll queue** for asynchronous events — transfer outcomes, renewals,
+  restores — which is how a complete registrar integration learns about state
+  changes.
+- **EPP extensions** (the Key-Systems extension) for registry-specific data.
+- The **OT&E environment** to prove the full flow before cutover, and the **IP
+  allowlist** across the gateways.
+
+**Architecture at a glance**
+
+```text
+Your registrar systems
+        │
+   EPP client (long-lived TLS session)
+        │
+        ▼
+CentralNic Reseller EPP gateway ──▶ registries
+        │
+   poll queue ──▶ your event handler (transfers, renewals, restores)
+```
+
+:::caution[Design for the EPP connection limits from the start]
+Our EPP server enforces concurrency, rate and session limits (documented in the
+[EPP Integration Guide](../../building-your-integration/epp-integration-guide/)).
+Treat sessions as long-lived, keep them alive, and poll on a schedule — building to
+the limits up front is far easier than retrofitting around them.
+:::
+
+If your goal is not just to connect but to run a full registrar business on top of
+CentralNic Reseller — billing, customer notifications, the lot — see
+[Building Your Own Registrar Platform](../building-your-own-registrar-platform/).
+
+## Pattern 3 — The SaaS platform
+
+**Scenario.** You are building a product — a website builder, a business-tools
+suite, a developer platform — where a domain is one feature among many. You want
+domains to appear inside your own UI and workflows, provisioned from your backend,
+with no sign that a separate registrar is involved. You have engineers, and you
+want full control over the experience.
+
+**Recommended approach: the HTTPS API, via an SDK where we publish one for your
+language.** The API is a straightforward request/response interface — you send a
+`command` with parameters and get a structured response back — so you can wire
+registration, renewal, DNS and contact management into exactly the flows your
+product needs. An SDK wraps that same API idiomatically so your team writes less
+boilerplate.
+
+**Why this fits.** A SaaS product needs domains to be invisible plumbing: fully
+embedded, fully branded, fully under your control. The API gives you every command
+with no imposed UI, and the SDK gets you moving without hand-rolling HTTP. You
+choose the gateway that suits your stack — HTTPS for simplicity, or the
+high-performance MREG gateway if throughput matters — while keeping the identical
+command set either way.
+
+**CentralNic Reseller capabilities it leans on**
+
+- The **HTTPS API** (and the XML-RPC, SOAP and MREG gateways) for full programmatic
+  control.
+- **SDKs** for an idiomatic client in supported languages.
+- **KeyDNS** automation so your product can manage zones, records and DNSSEC from
+  code — see [DNS Automation](../../working-with-domains/dns-automation/).
+- **Contacts and handles** created and reused programmatically for your customers.
+- The **OT&E environment** to build and test without spending money.
+
+**Architecture at a glance**
+
+```text
+Your customers ─▶ Your product UI
+                       │
+                 Your backend service ──(SDK or HTTPS calls)──▶ CentralNic Reseller API
+                       │                                              │
+                 your data model                              domains, contacts,
+                 (users, subscriptions)                       DNS via KeyDNS
+```
+
+:::tip[Not sure between the API and an SDK?]
+They reach the same system. Use an **SDK** if we publish one for your language and
+you want to move fast; call the **API directly** for a language we do not yet cover
+or the thinnest possible dependency. See
+[SDK Quick Starts](../../building-your-integration/sdk-quick-starts/) for what is
+available.
+:::
+
+:::danger[Internal source — please review]
+CentralNic Reseller also has a **REST API** in progress as a modern option for
+custom platforms, but it is an early/alpha release documented outside this
+knowledge base and has not reached general availability — do not architect a
+production SaaS integration on it yet. Prefer the established HTTPS/MREG gateways
+today. Based on internal Confluence proposal DOMPM/6589546508 and Jira GI-1041
+(internal, unconfirmed); OT&E and production availability are planned but not yet
+confirmed.
+:::
+
+## Pattern 4 — The marketplace
+
+**Scenario.** You run a marketplace or storefront where availability, price and
+speed are the product. Customers search for names, expect instant results, and buy
+on impulse; you may register in bursts, run promotions, and provision at volume.
+Throughput and a fast search-to-purchase path matter more than a deep per-domain
+management UI.
+
+**Recommended approach: the HTTPS API, with the high-performance MREG gateway for
+volume.** Drive availability checks and registrations directly from your backend.
+Where you need high request rates — bulk availability lookups feeding a search box,
+or large registration runs — the MREG gateway is built for performance while
+exposing the same command set as the other gateways.
+
+**Why this fits.** A marketplace lives and dies on the responsiveness of check and
+buy. The API gives you programmatic `CheckDomain`-style availability and immediate
+registration; MREG keeps that fast at volume. Because the account runs on a
+prepayment balance, purchases settle in real time with no invoice lag — but it also
+means you must keep the balance funded ahead of demand, especially before a
+promotion, or new registrations will stop.
+
+**CentralNic Reseller capabilities it leans on**
+
+- The **HTTPS API** for availability and registration, and the **MREG gateway** for
+  high-throughput traffic.
+- The **prepayment model** and per-TLD pricing to power live retail pricing and
+  margin.
+- **KeyDNS** to give every purchased name working DNS immediately.
+- The **OT&E environment** to load-test your search-and-buy path before launch.
+
+**Architecture at a glance**
+
+```text
+Shoppers ─▶ Search box ──(bulk availability)──▶ Your backend ──▶ MREG / HTTPS gateway
+                                                     │                  │
+                                              buy now ──────────▶ register + DNS
+                                                     │
+                                          (real-time prepay charge)
+```
+
+:::caution[Keep the balance ahead of demand]
+Registrations draw down your prepayment balance in real time, and an empty balance
+stops new sales — the last thing you want mid-promotion. Set a **low-balance
+warning** (see [Your First Day](../../start-here/your-first-day/)) and top up ahead
+of expected spikes.
+:::
+
+## Pattern 5 — The corporate domain manager
+
+**Scenario.** You are not reselling at all — you manage your own organisation's
+portfolio. You hold dozens or hundreds of brand and defensive domains, you care
+about consistency, security and never letting a name lapse, and much of the work is
+periodic rather than continuous. You may have little or no engineering time to
+spend on a custom integration.
+
+**Recommended approach: the Control Panel first, with selective API automation for
+scale tasks.** Run day-to-day management — registrations, renewals, contact updates
+— from the Control Panel, our web-based command centre that needs no code. When a
+task is repetitive across the whole portfolio (a nameserver migration, a CAA policy,
+an SPF change), reach for the API to apply it uniformly.
+
+**Why this fits.** A corporate portfolio does not need a storefront or high
+throughput; it needs control, safety and low overhead. The Control Panel delivers
+that with zero build. But some jobs — applying one DNS change to every domain, or
+auditing records across the portfolio — are painful by hand and trivial by script,
+which is exactly where a thin layer of API or KeyDNS automation pays off without
+committing you to a full custom platform.
+
+**CentralNic Reseller capabilities it leans on**
+
+- The **Control Panel** for hands-on management with no code.
+- **AUTORENEW** and low-balance warnings so a strategic domain never lapses by
+  accident (see [Your First Day](../../start-here/your-first-day/)).
+- **KeyDNS** with DNSSEC and Anycast for the organisation's own DNS.
+- **Users, groups and the ACL model** so different teams get exactly the access
+  they need — and nothing more.
+- The **HTTPS API / KeyDNS automation** for occasional bulk changes across the
+  portfolio.
+
+**Architecture at a glance**
+
+```text
+Your team ─▶ Control Panel (day-to-day management, no code)
+                   │
+           CentralNic Reseller account (portfolio, AUTORENEW, KeyDNS + DNSSEC)
+                   ▲
+           occasional scripts ──(HTTPS API / KeyDNS)── bulk changes across all domains
+```
+
+:::tip[Automate only the parts that hurt]
+A corporate manager rarely needs a full integration. Keep the Control Panel as your
+home base and script only the repetitive, portfolio-wide tasks — the
+[DNS Automation](../../working-with-domains/dns-automation/) guide shows the
+enumerate → apply → verify pattern that makes bulk changes safe.
+:::
+
+## Compare the patterns at a glance
+
+| Business model | Recommended approach | Why it fits |
+| --- | --- | --- |
+| **Web hosting company** | WHMCS module (or HTTPS API in a custom panel) | Reuses the billing/provisioning platform you already run; domains become one more product line |
+| **Registrar** | EPP | Reuses existing EPP clients, tooling and expertise; one protocol across every provider |
+| **SaaS platform** | HTTPS API + SDK | Fully embedded, branded, backend-driven domains with complete control over the experience |
+| **Marketplace** | HTTPS API + MREG gateway | Fast search-to-purchase and high-throughput registration at volume |
+| **Corporate domain manager** | Control Panel + selective API automation | Control and safety with minimal build; script only the repetitive portfolio-wide tasks |
+
+:::note[You are not locked in]
+Every pattern runs against the same account and the same
+[gateways](../../../api/connecting/). Start with the one that matches your primary
+model, and combine methods as your business grows — a hosting company can add a
+marketplace storefront, a SaaS platform can manage its own corporate portfolio, and
+all of it settles against one prepayment balance.
+:::
+
+:::caution[Security applies to every automated pattern]
+Before you connect any automated method, review
+[API Security](../../../api/api-security/). IP allowlisting protects the EPP, SOAP,
+HTTPS, XRRP and XMLRPC gateways — set it up early so every architecture above is
+safe from day one.
+:::
+
+## What to do next
+
+Found your pattern? Open the guide that turns it into a working build:
+
+<CardGrid>
+  <LinkCard title={"Which Integration Method Should I Choose?"} href={"../../start-here/which-integration-method/"} description={"The method-level decision guide that sits alongside these architectures."} />
+  <LinkCard title={"Building Your Integration"} href={"../../building-your-integration/"} description={"Connect, authenticate and register your first domain via the API."} />
+  <LinkCard title={"EPP Integration Guide"} href={"../../building-your-integration/epp-integration-guide/"} description={"Sessions, commands, transfers and the poll queue for registrars."} />
+  <LinkCard title={"WHMCS Integration"} href={"../../working-with-domains/whmcs-integration/"} description={"Add domains to the billing platform web hosts already run."} />
+  <LinkCard title={"DNS Automation with CentralNic APIs"} href={"../../working-with-domains/dns-automation/"} description={"Drive KeyDNS at scale — the backbone of the SaaS, marketplace and corporate patterns."} />
+  <LinkCard title={"Building Your Own Registrar Platform"} href={"../building-your-own-registrar-platform/"} description={"The end-to-end blueprint behind the registrar pattern."} />
+</CardGrid>

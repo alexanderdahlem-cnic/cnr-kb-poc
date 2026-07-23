@@ -1,0 +1,159 @@
+---
+title: "Which Integration Method Should I Choose?"
+description: "A decision guide to picking the right CentralNic Reseller integration — Control Panel, WHMCS, an SDK, the API or EPP — based on your business, not the protocol."
+sidebar:
+  order: 20
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+There is no single "right" way to connect to CentralNic Reseller — there is the
+right way *for your business*. A web host automating a few hundred domains, a
+registrar running EPP across several registries, and a developer building a
+custom platform all have different needs, and we give each of them a path that
+fits. This page helps you pick yours **before** you write any code.
+
+The good news: you are not locked in. Many partners start in the
+[Control Panel](https://account.centralnicreseller.com/), add WHMCS or an API
+integration as they grow, and mix methods over time. Choose what gets you live
+soonest today; you can always deepen the integration later.
+
+:::tip[By the end of this page you will know]
+- Which method matches **your situation** — hosting provider, registrar,
+  WHMCS user or custom developer
+- How the methods compare on **setup effort, prerequisites, flexibility and
+  time-to-first-registration**
+- Exactly **which guide to open next** to start building
+:::
+
+:::note[First things first]
+Whichever path you choose, everything begins with a funded, secured account. If
+you have not done that yet, work through
+[Your First Day as a CentralNic Reseller](../your-first-day/) first — it takes
+about 30 minutes and applies to every method below.
+:::
+
+## Start with your situation
+
+Find the description that sounds most like you and follow the recommendation.
+More than one may fit — that is fine, and the [comparison table](#compare-the-methods-at-a-glance)
+below will help you decide between them.
+
+### "I want to be live as fast as possible"
+
+Start in the **Control Panel**. It is your white-label, web-based command centre —
+no code, no servers, nothing to install. You can register, transfer, renew and
+manage domains, contacts and DNS by hand from day one, and it is the fastest way
+to make your first real registration.
+
+Every partner should know the Control Panel even if they later automate, because
+it is where you configure defaults, check pricing and verify that automation did
+what you expected. See
+[Your First Day](../your-first-day/) for the full walkthrough.
+
+### "I run a web hosting business"
+
+Choose the **WHMCS module**. If you already bill and provision hosting through
+WHMCS, our module plugs domain registration straight into the platform your
+customers and staff already use — no separate system to build or maintain. It is
+the shortest path to selling domains alongside hosting under your own brand.
+
+You will find the module and its documentation on the
+[WHMCS](../../../services/plugins/whmcs/) page, and the everyday flows in
+[WHMCS integration](../../working-with-domains/whmcs-integration/).
+
+### "I already use WHMCS for something else"
+
+Same recommendation: the **WHMCS module**. There is no reason to build a custom
+integration when the platform you run can talk to us directly. Install the
+module, add your credentials, and your existing WHMCS instance becomes your
+domain storefront. Start at the [WHMCS](../../../services/plugins/whmcs/) page.
+
+### "I'm a developer building a custom platform"
+
+You want the **API** — and, if we publish one for your language, an **SDK** on top
+of it. Our HTTPS API is a straightforward request/response interface: you send a
+`command` with parameters and get a structured response back, over HTTPS, XML-RPC,
+SOAP or the high-performance MREG gateway. It gives you full control to build
+exactly the product you want.
+
+If you would rather not hand-roll HTTP calls, our **SDKs** wrap the same API
+idiomatically. See [SDK Quick Starts](../../building-your-integration/sdk-quick-starts/)
+for the available languages, and [Connecting](../../../api/connecting/) for the
+five gateway options and how authentication works.
+
+:::danger[Internal source — please review]
+CentralNic Reseller also offers a **REST API** as a modern option for custom
+integrations, but it is currently an early/alpha release documented outside this
+knowledge base and has not yet reached general availability — do not treat it as
+production-ready. Based on internal Confluence proposal DOMPM/6589546508 and Jira
+GI-1041 (internal, unconfirmed); OT&E and production availability are planned but
+not yet confirmed, and its branding is still under the RRPProxy host.
+:::
+
+For most developers today, the **HTTPS API** (optionally via an SDK) is the
+proven, fully documented path. See the
+[REST API Integration Guide](../../building-your-integration/rest-api-integration-guide/)
+for where REST fits once it is generally available.
+
+### "I'm a registrar, or I already run EPP elsewhere"
+
+Choose **EPP**. If your team already speaks the Extensible Provisioning Protocol —
+the registry-industry standard — you can reuse that expertise and tooling to
+connect to CentralNic Reseller with minimal relearning. EPP is the natural fit
+for established registrars and anyone standardising on one protocol across
+multiple providers.
+
+Our EPP server supports the full domain, contact, host, transfer and poll command
+set. See the [EPP Command Reference](../../../api/epp-server/epp-command-reference/)
+for the complete list and the
+[EPP Integration Guide](../../building-your-integration/epp-integration-guide/) to
+get connected.
+
+## Compare the methods at a glance
+
+Use this table to weigh the trade-offs. "Time-to-first-registration" assumes your
+account is already funded and secured.
+
+| Method | Setup effort | Technical prerequisites | Control & flexibility | Typical use case | Time-to-first-registration |
+| --- | --- | --- | --- | --- | --- |
+| **Control Panel** | None — log in and go | A web browser | Manual operations; no automation | Getting started, testing, occasional manual tasks | Minutes |
+| **WHMCS module** | Low | A running WHMCS installation | High for billing/provisioning; bounded by WHMCS | Web hosts and anyone already on WHMCS | Same day |
+| **SDK** | Low–medium | Coding in a supported language | Full API access, idiomatic wrapper | Developers who want the API without hand-rolling HTTP | Days |
+| **API (HTTPS / XML-RPC / SOAP / MREG)** | Medium | Ability to send authenticated HTTP requests | Full control over every command | Custom platforms and bespoke automation | Days |
+| **EPP** | Medium–high | EPP client and protocol experience | Full registry-standard control | Registrars and teams already running EPP | Days |
+
+:::danger[Internal source — please review]
+A REST API is planned as a further option in this comparison, but it is not yet
+generally available and is therefore omitted from the table above as a
+recommended path. Based on internal Confluence proposal DOMPM/6589546508 (internal,
+unconfirmed).
+:::
+
+:::tip[Not sure between the API and an SDK?]
+They reach the same system. Use an **SDK** if we publish one for your language and
+you want to move fast; call the **API directly** if you need a language we do not
+yet cover, or want the thinnest possible dependency. Either way you are talking to
+the identical command set behind the [gateways](../../../api/connecting/).
+:::
+
+:::caution[Security applies to every API path]
+Before you connect any automated method, review
+[API Security](../../../api/api-security/). IP allowlisting protects the EPP, SOAP,
+HTTPS, XRRP and XMLRPC gateways, and setting it up early keeps your integration
+safe from day one.
+:::
+
+## What to do next
+
+You have picked a direction — now let's build. Open the guide that matches your
+choice:
+
+<CardGrid>
+  <LinkCard title={"Building Your Integration"} href={"../../building-your-integration/"} description={"The hub for connecting, authenticating and registering your first domain via code."} />
+  <LinkCard title={"REST API Integration Guide"} href={"../../building-your-integration/rest-api-integration-guide/"} description={"From credentials to your first registered domain over the API."} />
+  <LinkCard title={"EPP Integration Guide"} href={"../../building-your-integration/epp-integration-guide/"} description={"Sessions, commands and transfers for registrars."} />
+  <LinkCard title={"SDK Quick Starts"} href={"../../building-your-integration/sdk-quick-starts/"} description={"The same happy path, idiomatic to your language."} />
+  <LinkCard title={"WHMCS Module"} href={"../../../services/plugins/whmcs/"} description={"Add domains to the billing platform you already run."} />
+  <LinkCard title={"Your First Day"} href={"../your-first-day/"} description={"Not set up yet? Fund and secure your account first."} />
+</CardGrid>

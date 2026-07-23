@@ -1,0 +1,333 @@
+---
+title: "Transfer a Domain into CentralNic Reseller"
+description: "Bring existing domains into CentralNic Reseller with confidence — get the auth code, check eligibility, submit the transfer, track it through to completion, recover from failures, and move a whole portfolio at once."
+sidebar:
+  order: 20
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Moving a domain from another registrar into CentralNic Reseller is one of the
+highest-stakes operations you will run — the domain is live, it may be carrying
+real traffic or email, and a mishandled transfer can leave it in limbo. The good
+news is that a transfer-in is completely routine when you do it in the right order:
+confirm the domain is eligible, get the right authorisation code, submit, and then
+watch it through to completion. This guide walks you through exactly that, so each
+transfer is a controlled, predictable step rather than a leap of faith.
+
+It is written for customers bringing domains in at any volume — a single domain you
+are consolidating, or a whole portfolio you are migrating from another provider. The
+mechanics are the same either way; only the scale changes, and the
+[Transfer a portfolio in bulk](#transfer-a-portfolio-in-bulk) section covers that.
+
+:::tip[By the end of this guide you will have]
+- The **authorisation (auth / EPP) code** for each domain, obtained the right way
+- Each domain's **eligibility confirmed** — lock status, age, and recent-transfer
+  rules checked *before* you submit
+- The transfer **submitted** and the domain showing as pending
+- A way to **monitor status** through to completion, and to know where results arrive
+- A plan for **handling rejections** and recovering cleanly
+- A repeatable approach for moving **many domains at once**
+:::
+
+:::note[This assumes a working, funded account]
+A transfer-in is charged against your prepaid balance the moment it is initiated,
+and most transfers extend the domain by a year. If you have not yet funded and
+secured your account, start with
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/) — it
+applies to every operation, including this one.
+:::
+
+## How a transfer works before you start
+
+A domain transfer is an **asynchronous, multi-party exchange**, not a single
+instant action. You initiate it, the losing (current) registrar and the registry
+process it, and the final result arrives later — sometimes within minutes, often
+after a waiting period set by the registry. Two things follow from that:
+
+- **You will not always get an immediate "done".** A successful *request* usually
+  comes back as *pending*, and completion is reported separately.
+- **You need to monitor for the outcome.** Results and status changes are delivered
+  through your event / poll queue and can be queried on demand — see
+  [Monitor the transfer to completion](#monitor-the-transfer-to-completion).
+
+Keep that model in mind and nothing about a transfer will surprise you.
+
+## 1. Get the authorisation (auth / EPP) code
+
+Almost every transfer requires an **authorisation code** — also called the auth
+code, EPP code, transfer secret or authInfo. It proves to the registry that whoever
+is requesting the transfer is authorised to move the domain, and it is the single
+most common thing people get wrong.
+
+The auth code is issued by the domain's **current registrar**, not by CentralNic
+Reseller. The domain's owner or admin requests it from wherever the domain lives
+today.
+
+<Steps>
+
+1. **Unlock the domain first (at the losing registrar).** Auth codes usually cannot
+   be retrieved while the domain is locked — see the next section on eligibility.
+
+2. **Request the auth code from the current registrar.** This is typically a button
+   in their control panel ("get EPP code", "transfer / unlock"), or a support
+   request. It is often emailed to the registrant.
+
+3. **Copy it exactly.** Auth codes are case-sensitive and frequently contain special
+   characters. Copy and paste rather than retyping, and do not let it wrap or pick up
+   trailing spaces.
+
+</Steps>
+
+:::caution[Auth codes are time-sensitive]
+Registries commonly expire auth codes after a set period, and a code that has aged
+out is a leading cause of a rejected transfer. Treat the code as fresh: request it
+close to when you intend to submit, and if a transfer fails on authorisation, get a
+new code rather than reusing the old one.
+:::
+
+:::note[Some TLDs handle auth codes differently]
+For a few country-code TLDs — for example **.DE, .BE, .EU and .NO** — the auth code
+works differently and may need to be *set* by the current provider rather than simply
+read out, and codes can expire (for .DE, 30 days after creation). Where you are the
+current provider setting a code for an outgoing move, see
+[SetAuthcode](../../../api/api-command/setauthcode/). Auth-code handling is always
+**TLD- and registry-dependent**, so confirm the specifics for the extension you are
+moving.
+:::
+
+## 2. Check eligibility before you submit
+
+Most transfer failures are avoidable, because they come from rules you can check up
+front. Confirm each of these before submitting — a two-minute check saves a failed
+attempt and a frustrated customer.
+
+**Lock status.** A domain protected by `clientTransferProhibited` (a transfer lock)
+cannot be transferred out until the lock is removed at the current registrar. This
+is deliberate: it is a security feature. The owner must unlock the domain at the
+losing registrar before the transfer will proceed.
+
+**Domain age and recent transfers.** Many gTLDs, under registry and ICANN policy,
+**restrict transfers within 60 days** of the domain's initial registration and
+within 60 days of a *previous* transfer. A domain that was just registered or just
+moved may not be transferable yet. These windows are **TLD- and
+registry-dependent** — treat 60 days as the common case, not a universal rule, and
+check the policy for the specific extension.
+
+**Registrant contact and email.** Because transfers are often confirmed by email to
+the registrant, an out-of-date or unreachable registrant email can stall or reject a
+transfer. Under [GDPR](../../../domains/transfers/gdpr/), registrant details are
+frequently redacted in public WHOIS, which is exactly why the **auth code has become
+the primary transfer mechanism** — make sure the registrant email on file is current.
+
+**Expiry status.** A domain that is expired, or already in a redemption/pending-delete
+state, may not be eligible until it is restored at the current registrar.
+
+CentralNic Reseller gives you a pre-flight command that checks all of this for you.
+`CheckDomainTransfer` reviews whether a domain *can* be transferred and returns the
+details a successful transfer needs — current registrar, domain status, and the email
+addresses involved:
+
+:::command[Command]
+
+```text
+command = CheckDomainTransfer
+domain  = yourdomain.TLD
+action  = REQUEST
+```
+
+:::
+
+Run this first for every domain. See
+[CheckDomainTransfer](../../../api/api-command/checkdomaintransfer/) for the full
+parameter list and the TLDs it supports.
+
+:::tip[Run CheckDomainTransfer as your gate]
+Make a clean `CheckDomainTransfer` result the precondition for submitting. If it
+flags a lock, an age restriction, or a contact problem, fix that first — you will
+convert a would-be rejection into a smooth transfer.
+:::
+
+## 3. Submit the transfer
+
+Once the domain is unlocked, eligible, and you hold a fresh auth code, initiate the
+transfer with `TransferDomain`. Over EPP this is `Transfer:Request`.
+
+:::command[Command]
+
+```text
+command = TransferDomain
+domain  = yourdomain.TLD
+action  = REQUEST
+auth    = the-auth-code-here
+```
+
+:::
+
+A successful submission does **not** usually mean the domain has moved yet. The
+response returns a **transfer status** that tells you where things stand — for a
+freshly requested transfer this is a *pending*-type status (the CentralNic Reseller
+API distinguishes `REQUESTED`, `INITIATED` and registry `pending`; over EPP these all
+appear as `pending`). It also returns a **job id** and the **execute date** — the date
+by which the losing side must respond, after which many registries auto-approve.
+
+A few submission details worth knowing:
+
+- **Most transfers extend the registration by a year** and are charged on
+  initiation. If you do not want a renewal added (where the TLD allows this), the
+  behaviour is controlled per request; check the rules for your TLD.
+- **Changing contacts or nameservers during transfer** is supported for some TLDs
+  and rejected for others (error `503`). If you need to force a request through
+  without those changes, `FORCEREQUEST=1` suppresses the unsupported data — and the
+  EPP API applies this automatically on `Transfer:Request`. See the
+  [Transfers reference](../../../domains/transfers/) for the supported-TLD list.
+- **Moving between two CentralNic Reseller accounts?** That is an *internal transfer*
+  (usertransfer), a different and simpler flow that keeps the domain on the same
+  registrar accreditation — see
+  [Internal Transfers](../../../domains/transfers/internal-transfers/).
+
+:::caution[A transfer lock is reapplied after the domain arrives]
+CentralNic Reseller automatically applies `clientTransferProhibited` to every
+transferred-in domain as soon as it lands, as a security measure. That is expected
+and protects your new domain. If you ever need to move it *out* again later, you will
+first remove that lock — and if you do not transfer within **30 days**, the lock is
+reapplied automatically. See [Transfer Lock](../../../domains/transfers/transfer-lock/).
+:::
+
+## 4. Monitor the transfer to completion
+
+Because completion happens after your request, monitoring is part of the job, not an
+afterthought. There are two complementary ways to follow a transfer.
+
+**Query status on demand.** `StatusDomainTransfer` reports the current state of a
+transfer — whether it was initiated successfully, who was emailed to confirm, and the
+key dates:
+
+:::command[Command]
+
+```text
+command = StatusDomainTransfer
+domain  = yourdomain.TLD
+```
+
+:::
+
+**Consume the event / poll queue.** Transfer outcomes are pushed to your event
+queue as they happen — over EPP you read these with `Poll:Request` and acknowledge
+them with `Poll:Ack`. This is how you learn about a completion or a rejection without
+polling every domain by hand. If you are integrating over EPP, the
+[EPP Integration Guide](../../building-your-integration/epp-integration-guide/) covers
+the poll queue in detail.
+
+Whichever you use, the **transfer status** value tells you where the domain is:
+
+| Status | What it means |
+| --- | --- |
+| `pending`, `REQUESTED`, `INITIATED` | The transfer-in is in progress at the registry — no action needed yet |
+| `USERTRANSFER` | An internal (account-to-account) transfer is pending |
+| `clientApproved` | The losing registrar approved the transfer |
+| `serverApproved` | The registry auto-approved after the waiting period elapsed |
+| `clientRejected` | The losing registrar rejected it — see failure handling below |
+| `clientCancelled` | The gaining side cancelled the request |
+| `serverCancelled` | The registry or CentralNic Reseller cancelled it |
+
+See [StatusDomainTransfer](../../../api/api-command/statusdomaintransfer/) and the
+[Transfers reference](../../../domains/transfers/) for the full set of response
+parameters, including `request date`, `execute date` and both registrar identifiers.
+
+:::tip[Watch the execute date]
+For a pending transfer, the `execute date` is the deadline by which the losing
+registrar must act — many registries **auto-approve** at that point. If a customer
+wants the move to complete as fast as possible, ask the losing registrar to approve
+early; otherwise it will typically complete on the execute date.
+:::
+
+## 5. Handle failures and recover
+
+A rejected or stalled transfer is recoverable — the domain stays safely where it is,
+and you can resubmit once the cause is fixed. When a transfer does not complete, it is
+almost always one of these:
+
+<Steps>
+
+1. **Domain still locked.** The most common cause. Ask the owner to remove
+   `clientTransferProhibited` at the losing registrar, confirm with
+   `CheckDomainTransfer`, then resubmit.
+
+2. **Wrong or expired auth code.** Auth codes are case-sensitive and time-limited.
+   Request a fresh code from the current registrar and resubmit — do not reuse an old
+   one.
+
+3. **Inside the 60-day window.** If the domain was registered or transferred within
+   the restriction period, it cannot move yet. Wait until the window passes, then try
+   again.
+
+4. **Registrant did not confirm / email unreachable.** Where a transfer needs the
+   registrant's confirmation, update the registrant email at the losing registrar so
+   the confirmation reaches a real inbox, then resubmit.
+
+5. **Explicitly rejected by the losing registrar (`clientRejected`).** Contact the
+   current registrar to understand why — it is often an unresolved lock, an account
+   dispute, or an unpaid balance on their side. Resolve it there and resubmit.
+
+6. **Domain expired or in redemption.** Have the current registrar restore/renew the
+   domain into good standing first; then it becomes eligible again.
+
+</Steps>
+
+:::caution[Fix the cause, then resubmit — do not retry blindly]
+Re-sending the same request without changing anything just produces the same
+rejection. Read the transfer status and, where available, the response description,
+correct the specific cause, re-run `CheckDomainTransfer`, and only then resubmit. If
+you are unsure why a transfer failed, CentralNic Reseller support can help you read
+the outcome.
+:::
+
+## Transfer a portfolio in bulk
+
+Moving many domains at once uses exactly the same building blocks — there is no
+separate "bulk" command to learn. You scale the single-domain flow, and the value is
+in doing it methodically.
+
+<Steps>
+
+1. **Gather auth codes up front.** Collect a current auth code for every domain
+   before you start. This is usually the slowest part of a portfolio move, so front-load
+   it and keep the codes fresh.
+
+2. **Pre-check the whole list.** Run `CheckDomainTransfer` for every domain and split
+   the list into "ready" and "needs fixing" (locked, too new, contact issues). Only
+   submit the ready ones.
+
+3. **Submit in a controlled loop, respecting rate limits.** Issue `TransferDomain`
+   per domain. If you are automating over the API, note that CentralNic Reseller
+   enforces roughly **one command per second** across the account, so pace your
+   submissions rather than firing them all at once. For smaller batches you can submit
+   by hand in the Control Panel.
+
+4. **Track every domain to completion.** Consume the poll/event queue and reconcile it
+   against your submitted list, so you can see at a glance which domains completed,
+   which are pending, and which need attention. Re-run the fix-and-resubmit loop for
+   any that fail.
+
+</Steps>
+
+:::tip[Stagger a large migration]
+For a big portfolio, move in waves rather than all at once. A first wave proves your
+process end to end — auth codes, eligibility, submission, monitoring — before you
+commit the whole estate, and it keeps the volume of any single problem manageable.
+:::
+
+## What to do next
+
+Your domains are in. These guides help you operate them and round out your
+transfer knowledge:
+
+<CardGrid>
+  <LinkCard title={"Transfers Reference"} href={"../../../domains/transfers/"} description={"The authoritative detail on transfer parameters, responses and per-TLD behaviour."} />
+  <LinkCard title={"Transfer Lock"} href={"../../../domains/transfers/transfer-lock/"} description={"How the automatic clientTransferProhibited lock protects your domains."} />
+  <LinkCard title={"Internal Transfers"} href={"../../../domains/transfers/internal-transfers/"} description={"Move a domain between two CentralNic Reseller accounts."} />
+  <LinkCard title={"Understanding Contacts, Handles & Ownership"} href={"../contacts-handles-ownership/"} description={"Set the registrant and roles your transferred-in domains reference."} />
+  <LinkCard title={"The Complete Domain Lifecycle"} href={"../complete-domain-lifecycle/"} description={"Registration, renewal, expiry and deletion once your domains are in."} />
+  <LinkCard title={"EPP Integration Guide"} href={"../../building-your-integration/epp-integration-guide/"} description={"The transfer flow and poll queue for teams integrating over EPP."} />
+</CardGrid>

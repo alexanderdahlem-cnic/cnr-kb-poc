@@ -1,0 +1,324 @@
+---
+title: "DNS Automation with CentralNic APIs"
+description: "Automate DNS at scale on CentralNic Reseller KeyDNS — create zones, manage records, sign with DNSSEC, switch nameservers and roll out bulk changes across many domains, all through the API."
+sidebar:
+  order: 40
+---
+
+import { Steps, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+If you manage DNS for more than a handful of domains, the Control Panel stops
+being the fastest tool — the API does. CentralNic Reseller's **KeyDNS** service
+is built to be driven programmatically: every zone, every record, DNSSEC signing
+and nameserver assignment is a command you can script, put behind your own
+product, and run across thousands of domains without touching a web form. This
+guide shows you the real operations you will automate, in the order you tend to
+need them, grounded in the KeyDNS command set.
+
+It is written for teams automating DNS management at scale — resellers running
+their own hosting platform, developers wiring DNS into a control panel, and
+anyone who wants zone changes to happen from code rather than by hand. Each
+section gives you the concrete command and the rules worth designing around from
+the start.
+
+:::tip[By the end of this guide you will be able to]
+- **Create and check zones** in KeyDNS from the API
+- **Add, change and remove records** — A, AAAA, CNAME, MX, TXT, CAA and more —
+  with the record model the API expects
+- **Sign a zone with DNSSEC** and publish the right key to the parent zone
+- **Switch a domain's nameservers** to your KeyDNS or Anycast set
+- **Roll out the same change across many domains** safely, by enumerating then
+  applying and verifying
+:::
+
+:::note[First things first]
+DNS automation runs on a funded, secured account with API access. If you have
+not set that up yet, work through
+[Your First Day as a CentralNic Reseller](../../start-here/your-first-day/)
+first, and skim the [KeyDNS overview](../../../dns/keydns/) for how the service
+fits together. Every command below is issued the same way as any other API
+command — see [Command reference](../../../dns/keydns/command-reference/) for the
+full list.
+:::
+
+## Why automate DNS through the API
+
+The Control Panel is perfect for a one-off change. But when DNS is part of a
+product you sell — provisioning a customer's site, rotating a mail provider,
+publishing a verification record for every domain you manage — you want that
+change to be a repeatable command, not a manual click. KeyDNS exposes the whole
+lifecycle as a small, consistent command set: `AddDNSZone`, `ModifyDNSZone`,
+`StatusDNSZone`, `DeleteDNSZone` and a set of `Query…` commands for reading back
+what you have. Learn those, and everything else in this guide is a variation on
+them.
+
+## Create a zone
+
+A zone is the container for a domain's records. Before you create one, it is
+cheap and worth it to confirm it does not already exist with `CheckDNSZone`.
+
+<Steps>
+
+1. **Check whether the zone exists.**
+
+   :::command[Command]
+   ```text
+   command = CheckDNSZone
+   dnszone = example.com
+   ```
+   :::
+
+2. **Create the zone with `AddDNSZone`.** Supply the initial records inline as
+   `rr0`, `rr1`, … — each one a full record line in the format shown in
+   [Resource records](../../../dns/keydns/resource-records/).
+
+   :::command[Command]
+   ```text
+   command = AddDNSZone
+   dnszone = example.com
+   rr0     = @ IN A 192.0.2.1
+   rr1     = www IN A 192.0.2.1
+   ```
+   :::
+
+3. **Confirm the result with `StatusDNSZone`.** This returns the zone's SOA
+   details and whether it is signed — a clean way to verify automation did what
+   you expected.
+
+   :::command[Command]
+   ```text
+   command = StatusDNSZone
+   dnszone = example.com
+   ```
+   :::
+
+</Steps>
+
+:::tip[Two optional flags at creation time]
+`AddDNSZone` accepts two flags worth knowing on day one: `signed = 1` turns on
+[DNSSEC](#turn-on-dnssec-for-a-keydns-zone) for the zone, and
+`premiumdnsset = ANYCAST1` publishes the zone across our global Anycast network.
+You can also enable either later with `ModifyDNSZone`. See the
+[KeyDNS usage scenarios](../../../dns/usage-scenarios/) for Anycast, hidden-master
+and secondary-nameserver setups.
+:::
+
+## Add and manage records
+
+Once a zone exists, you manage its records with `ModifyDNSZone`. Two parameter
+families cover almost everything you will automate:
+
+- `addrr0`, `addrr1`, … — **add** a record.
+- `delrr0`, `delrr1`, … — **remove** a record (give the exact record line you
+  want gone).
+
+A common change — repointing a host — is a delete plus an add in the same
+command:
+
+:::command[Command]
+```text
+command = ModifyDNSZone
+dnszone = example.com
+delrr0  = @ IN A 192.0.2.1
+addrr0  = @ IN A 198.51.100.1
+```
+:::
+
+To read a zone's records back — for reconciliation, or to diff against your
+source of truth before you change anything — use `QueryDNSZoneRRList`:
+
+:::command[Command]
+```text
+command = QueryDNSZoneRRList
+dnszone = example.com
+```
+:::
+
+### Record types you will use most
+
+KeyDNS supports the full range of record types. Each record line follows the
+standard `name TTL IN TYPE rdata` shape (TTL is optional). Here are the ones most
+automations reach for:
+
+| Type | Purpose | Example record line |
+| --- | --- | --- |
+| **A** | Map a host to an IPv4 address | `test.example.com. 28800 IN A 192.0.2.1` |
+| **AAAA** | Map a host to an IPv6 address | `test.example.com. 28800 IN AAAA 2001:db8:85a3::8a2e:370:7334` |
+| **CNAME** | Alias one name to another | `foo.example.com. 28800 IN CNAME bar.example.com.` |
+| **MX** | Route mail (priority + mail host) | `example.com. 28800 IN MX 10 mail.example.com.` |
+| **TXT** | Free text — SPF, verification, etc. | `@ IN TXT "v=spf1 ip4:192.0.2.0/24 -all"` |
+| **CAA** | Restrict which CAs may issue certs | `@ IN CAA 0 issue digicert.com` |
+
+Beyond these, KeyDNS also handles ALIAS, DNAME, NS, PTR, SRV, NAPTR, LOC, SSHFP,
+TLSA, SMIMEA, SVCB, DHCID and the pseudo-records for web and mail forwarding. The
+[Resource records](../../../dns/keydns/resource-records/) page documents the exact
+format for every type — treat it as the authority when you build your record
+templates.
+
+:::tip[CAA is a great first automation]
+A CAA record tells certificate authorities who is allowed to issue certificates
+for your domain — a small, high-value record to publish across your portfolio.
+`issue`, `issuewild`, `iodef` and more are all supported; the
+[CAA records](../../../dns/keydns/caa-records/) page has ready-to-use command
+examples for each.
+:::
+
+:::caution[Design for KeyDNS validation rules]
+KeyDNS enforces a few DNS-compliance rules — build to them so a bulk run does not
+surprise you:
+
+- **Underscores are not allowed** in the target of NS, MX and SRV records.
+- **TTLs below 60 seconds are raised to 60**, and the same minimum applies to the
+  SOA retry, refresh, expire and negative-TTL values.
+- A **single domain/record-type pair is capped at 1,000 records**.
+- **TXT content must be wrapped in double quotes**, with an even number of quotes,
+  or the record is hidden.
+
+The full detail is on
+[KeyDNS Upgrade to Anycast](../../../dns/keydns/keydns-upgrade-to-anycast/).
+:::
+
+## Turn on DNSSEC for a KeyDNS zone
+
+KeyDNS signs zones for you — you do not manage keys by hand. Enabling DNSSEC is a
+single flag; the one manual step is publishing the resulting key to the parent
+zone so the chain of trust validates.
+
+<Steps>
+
+1. **Sign the zone.** Add `signed = 1` when you create it, or turn it on for an
+   existing zone:
+
+   :::command[Command]
+   ```text
+   command = ModifyDNSZone
+   dnszone = example.com
+   signed  = 1
+   ```
+   :::
+
+2. **Read the key material** with `StatusDNSZone`. The response returns the zone's
+   `keydata` and `keydsdata` entries. Always use the **KSK** (key-signing key,
+   flag **257**) — not the ZSK — to update the parent zone.
+
+   :::command[Command]
+   ```text
+   command = StatusDNSZone
+   dnszone = example.com
+   ```
+   :::
+
+3. **Publish the DS/key data to the parent zone** at the registry, so resolvers
+   can validate the signature. How you submit DS or key data to the registry is
+   covered in [DNSSEC](../../../dns/dnssec/).
+
+</Steps>
+
+KeyDNS handles key rollovers as part of the service. The **ZSK rolls
+automatically every 90 days**. The **KSK does not roll automatically** because it
+requires a matching update in the parent zone — you initiate it with
+`rollover = KSK` and, once the parent is updated, finish it with
+`finishkskrollover = <keytag>` (the keytag comes from `StatusDNSZone`).
+
+:::caution[Disabling DNSSEC needs care]
+Setting `signed = 0` disables signing, but only remove the delegation-signer (DS)
+record from the parent zone **first** — otherwise resolvers will keep expecting a
+signature and the domain can fail to validate. The full walkthrough, including
+rollover states, is on
+[Enable DNSSEC for KeyDNS zones](../../../dns/keydns/enable-dnssec-for-keydns-zones/).
+:::
+
+## Switch nameservers
+
+Managing a zone in KeyDNS only takes effect once the domain actually delegates to
+our nameservers. Point a domain at KeyDNS by setting its nameservers on the domain
+object with `ModifyDomain`:
+
+:::command[Command]
+```text
+command     = ModifyDomain
+domain      = example.com
+nameserver0 = anycast1.dnsres.net
+nameserver1 = anycast2.dnsres.net
+```
+:::
+
+Which set you use depends on the service level:
+
+- **Anycast** — `anycast1.dnsres.net`, `anycast2.dnsres.net`, for zones activated
+  with `premiumdnsset = ANYCAST1`.
+- **Whitelabel** — `ns1.dnsres.net`, `ns2.dnsres.net`, `ns3.dnsres.net` (ns1 and
+  ns2 are mandatory, ns3 optional).
+
+The exact hostnames and their IP addresses are listed on
+[KeyDNS Upgrade to Anycast](../../../dns/keydns/keydns-upgrade-to-anycast/).
+
+:::caution[Have the zone ready before you delegate]
+Create and populate the KeyDNS zone **before** you switch a live domain's
+nameservers, so resolution never points at an empty zone during propagation.
+After the switch, confirm all of the assigned nameservers appear in the domain's
+WHOIS — mixing in third-party or leftover nameservers is a common cause of
+intermittent resolution. See
+[FAQs & Troubleshooting](../../../dns/keydns/faqs-and-troubleshooting/) if a
+domain misbehaves after a change.
+:::
+
+## Make bulk changes across many domains
+
+The real payoff of automation is applying one change consistently across your
+whole portfolio — a new SPF record, a CAA policy, a mail-host migration, or a
+nameserver switch. There is no separate "bulk" command to learn: you compose the
+same commands you already know into a safe **enumerate → apply → verify** loop.
+
+<Steps>
+
+1. **Enumerate your zones** with `QueryDNSZoneList` to get the exact set of zones
+   to act on, paging through the full list.
+
+   :::command[Command]
+   ```text
+   command = QueryDNSZoneList
+   ```
+   :::
+
+2. **Apply the change** to each zone with `ModifyDNSZone`, using `addrr#` /
+   `delrr#` for record changes — for example, publishing the same CAA policy
+   everywhere:
+
+   :::command[Command]
+   ```text
+   command = ModifyDNSZone
+   dnszone = example.com
+   addrr0  = @ IN CAA 0 issue digicert.com
+   ```
+   :::
+
+   For a fleet-wide nameserver move, loop `ModifyDomain` over your domains with
+   the target nameserver set instead.
+
+3. **Verify each result** with `StatusDNSZone` (or `QueryDNSZoneRRList` to confirm
+   records), so a failure on one domain is caught rather than assumed away.
+
+</Steps>
+
+:::tip[Make bulk runs idempotent and reversible]
+Because a repoint is a `delrr#` plus an `addrr#`, write your bulk jobs so they can
+be re-run safely and rolled back: capture the current state with
+`QueryDNSZoneRRList` before you change anything, apply in batches, and check the
+result of every call rather than fire-and-forget. That turns a risky mass edit
+into a boring, repeatable operation — which is exactly what you want at scale.
+:::
+
+## What to do next
+
+You now have the full KeyDNS automation loop — create, manage, sign, delegate and
+scale. These references keep the exact commands and record formats close:
+
+<CardGrid>
+  <LinkCard title={"KeyDNS Command Reference"} href={"../../../dns/keydns/command-reference/"} description={"The complete list of KeyDNS zone, record and forwarding commands."} />
+  <LinkCard title={"Resource Records"} href={"../../../dns/keydns/resource-records/"} description={"The exact format for every supported record type, with examples."} />
+  <LinkCard title={"Enable DNSSEC for KeyDNS Zones"} href={"../../../dns/keydns/enable-dnssec-for-keydns-zones/"} description={"Signing, parent-zone updates and key rollovers in full."} />
+  <LinkCard title={"KeyDNS Usage Scenarios"} href={"../../../dns/usage-scenarios/"} description={"Anycast, hidden-master and secondary-nameserver setups."} />
+  <LinkCard title={"CAA Records"} href={"../../../dns/keydns/caa-records/"} description={"Ready-to-use command examples for issue, issuewild and iodef."} />
+  <LinkCard title={"Understanding Contacts, Handles & Ownership"} href={"../contacts-handles-ownership/"} description={"The other half of domain automation, alongside DNS."} />
+</CardGrid>
