@@ -1,5 +1,6 @@
-# build output
-dist/
+# build output (anchored to repo root so it does NOT match public/media/dist/,
+# where self-hosted registry assets like country flags live)
+/dist/
 # dependencies
 node_modules/
 # astro
