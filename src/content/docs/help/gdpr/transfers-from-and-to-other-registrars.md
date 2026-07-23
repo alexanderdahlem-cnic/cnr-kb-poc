@@ -1,5 +1,7 @@
 ---
 title: "Transfers from and to other Registrars"
+sidebar:
+  order: 2110
 ---
 
 Incoming and outgoing transfer procedure are going to change after May 25h, mainly because the most important necessary data is expected to no longer be published in Whois by many registrars: the registrants email address. Further data of the registrant and admin, tech and billing contacts won't be displayed either, which makes it necessary to adjust update registration details after successful domain transfers.
@@ -57,37 +59,52 @@ Details described below.
 
 We advise to state contact handles alongside the respective authcode upon initiating incoming transfers for .COM/.NET domains. Contact Handles for Owner, Admin, Tech and Billing can be stated optionally and is not mandatory as shown in the example below:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 domain  = YOURDOMAIN.COM
 action  = request
 auth    = .......
 ownercontact0   = (CONTACT)
 admincontact0   = (CONTACT)
 techcontact0    = (CONTACT)
-billingcontact0 = (CONTACT)</code></pre></div>
+billingcontact0 = (CONTACT)
+```
+
+:::
 
 ## Incoming Transfers for Thick Registry gTLD and nTLD Domains (all other gTLDs)
 
 We advise to check and adjust contact handles after an incoming transfer for a gTLD or newgTLD domain has been finished.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 domain  = yourdomain.gTLD
 action  = request
-auth    = .......</code></pre></div>
+auth    = .......
+```
+
+:::
 
 ## Transfer has been completed
 
 After the transfer has been finished, the domain should be updated through a ModifyDomain:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ModifyDomain
+:::command[Command]
+
+```text
+command = ModifyDomain
 domain  = yourdomain.gTLD
 ownercontact0   = (CONTACT)
 admincontact0   = (CONTACT)
 techcontact0    = (CONTACT)
-billingcontact0 = (CONTACT)</code></pre></div>
+billingcontact0 = (CONTACT)
+```
+
+:::
 
 ## Incoming Transfers for ccTLDs
 
@@ -123,15 +140,22 @@ Currently, the following ccTLDs support stating contact handles for incoming Tra
 You can use the command QueryCommandSyntax to check if stating contact handles is possible for transfers. In the command response property\[optional\] shows if a parameter is mandatory (= 0) or optional (= 1).  
 Example command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=QueryCommandSyntax
+:::command[Command]
+
+```text
+command=QueryCommandSyntax
 commandname=TransferDomain
-class=TLD (i.e. COM, NET, etc.)</code></pre></div>
+class=TLD (i.e. COM, NET, etc.)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 ...
 property[commandname][0] = TransferDomain
@@ -142,9 +166,10 @@ property[parameter][6] = OWNERCONTACT0
 property[title][6] = Owner contact
 property[position][6] = 21
 property[paramgroup][6] = Zone specific
-property[range][6] = &lt;CONTACT&gt;|&lt;NULL&gt;
+property[range][6] = <CONTACT>|<NULL>
 property[description][6] =
 property[optional][6] = 1
-...</code></pre></div>
+...
+```
 
-
+:::

@@ -1,5 +1,7 @@
 ---
 title: "Registrar Properties"
+sidebar:
+  order: 2000
 ---
 
 Registrar Settings describes your CentralNic Reseller account settings. The Registrar Settings are used to store account settings for all different kind of functionalities for an CentralNic Reseller and its Subreseller accounts.  

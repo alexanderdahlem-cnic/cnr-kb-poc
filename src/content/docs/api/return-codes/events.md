@@ -1,5 +1,7 @@
 ---
 title: "Events"
+sidebar:
+  order: 60
 ---
 
 ## CLASS: ACCOUNT\_CREATE

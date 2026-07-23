@@ -1,33 +1,52 @@
 ---
 title: "TradeDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ TradeDomain ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3340
 ---
 
 It is not possible to change the owner name or company name of a .AM, .AT, .BE, .CH, .CN, .DM, .ES, .FI, .GR, .HK, .IE, .IT, .LI, .LU, .MA, .NO, .NU, .PT, .SG, .TRAVEL or .CO.ZA domain through the ModifyDomain command by substituting the current owner contact with a new one. In such a case you have to request a so-called "trade" and state the new owner contact.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = TradeDomain
+:::command[Command]
+
+```text
+COMMAND = TradeDomain
 DOMAIN = (DOMAIN)
-OWNERCONTACT0 = (CONTACT)</code></pre></div>
+OWNERCONTACT0 = (CONTACT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
 property[ADMINCONTACT][0] = (TEXT)
 property[X-FEE-CURRENCY][0] = (TEXT)
-property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
+property[OWNERCONTACT][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -39,8 +58,10 @@ property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = TradeDomain
+:::command[Command]
+
+```text
+COMMAND = TradeDomain
 DOMAIN = (DOMAIN)
 OWNERCONTACT0 = (CONTACT)
 X-ES-ADMIN-IDENTIFICACION = (TEXT)
@@ -139,19 +160,27 @@ X-FEE-AMOUNT28 = (DECIMAL)
 X-FEE-AMOUNT29 = (DECIMAL)
 X-FEE-APPLICATION = (DECIMAL)
 X-FEE-CURRENCY = (TEXT)
-X-ACCEPT-PREMIUMPRICE = 0|1</code></pre></div>
+X-ACCEPT-PREMIUMPRICE = 0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[X-FEE-AMOUNT][0] = (DECIMAL)
 property[X-FEE-APPLICATION][0] = (DECIMAL)
 property[ADMINCONTACT][0] = (TEXT)
 property[X-FEE-CURRENCY][0] = (TEXT)
-property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
+property[OWNERCONTACT][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -249,3 +278,41 @@ property[OWNERCONTACT][0] = (TEXT)</code></pre></div>
 | **X-FEE-APPLICATION** | None refundable amount of the fee extension. (optional) |
 | **X-FEE-CURRENCY** | Currency of the fee extension. Default is the own account currency. (optional) |
 | **X-ACCEPT-PREMIUMPRICE** | No|Yes (optional) |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](./)
+
+:::

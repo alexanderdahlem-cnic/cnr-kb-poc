@@ -1,6 +1,9 @@
 ---
 title: "SSL Introduction - How it works"
 description: "SSL certificates guarantee the authenticity of a website identity through a specific validation process executed by a certification authority. ➥ Learn more!"
+sidebar:
+  order: 1120
+  label: "Introduction - How it works"
 ---
 
 SSL (Secure Sockets Layer) certificates guarantee the authenticity of a website identity through a specific validation process executed by a certification authority.  
@@ -30,12 +33,17 @@ After each call of an Add-, Renew- or ReissueCertificate command, the response w
 
 Thus the following scheme is applied:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Certificate (= order identifier, also referred to as certificate id)
+:::command[Command]
+
+```text
+Certificate (= order identifier, also referred to as certificate id)
 - Sub1 (= certificate identifier, also referred to as sub or sub id)
 - Sub2
 - Sub3
-...</code></pre></div>
+...
+```
+
+:::
 
 Unlike domains SSL certificates can not be renewed. Instead, a new certificate will be issued. Following the principle of domain renewals, the CentralNic Reseller system provides the possibility to renew certificates. Issuing a renewal for a certificate will add a new sub to an order.
 

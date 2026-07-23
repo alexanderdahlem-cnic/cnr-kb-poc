@@ -1,31 +1,50 @@
 ---
 title: "QueryWebFwdList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryWebFwdList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4380
 ---
 
 Query list of web forwards
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryWebFwdList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryWebFwdList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                = [INT]
+:::response[Response]
+
+```text
+code                = [INT]
 description         = [TEXT]
 property[WEBFWD][n] = [TEXT]
 property[COUNT][0]  = [INT]
 property[FIRST][0]  = [INT]
 property[LAST][0]   = [INT]
 property[LIMIT][0]  = [INT]
-property[TOTAL][0]  = [INT]</code></pre></div>
+property[TOTAL][0]  = [INT]
+```
+
+:::
 
 ### Attributes
 
@@ -43,8 +62,10 @@ property[TOTAL][0]  = [INT]</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryWebFwdList
+:::command[Command]
+
+```text
+COMMAND = QueryWebFwdList
 WIDE    = [TEXT]
 SOURCE  = [TEXT]
 TARGET  = [TEXT]
@@ -53,12 +74,17 @@ FIRST   = [INT]
 LIMIT   = [INT]
 ORDER   = ASC | DESC
 ORDERBY = source | target | type
-CLTRID  = [TEXT]</code></pre></div>
+CLTRID  = [TEXT]
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                = [INT]
+:::response[Response]
+
+```text
+code                = [INT]
 description         = [TEXT]
 property[SOURCE][n] = [TEXT]
 property[TARGET][n] = [TEXT]
@@ -69,7 +95,10 @@ property[LAST][0]   = [INT]
 property[LIMIT][0]  = [INT]
 property[TOTAL][0]  = [INT]
 property[CLTRID][0] = [TEXT]
-property[SVTRID][0] = [TEXT]</code></pre></div>
+property[SVTRID][0] = [TEXT]
+```
+
+:::
 
 ### Attributes
 
@@ -82,3 +111,26 @@ property[SVTRID][0] = [TEXT]</code></pre></div>
 | **LIMIT** | Show only this many items in the response (optional) ORDER |
 | **ORDERBY** | Order resulting list by this column (optional) |
 | **CLTRID** | Unique identifier for this request, must be changed with every request, the default is auto-generated (optional) |
+
+:::commandlist[KeyDNS commands]
+
+- [AddDNSZone](../adddnszone/)
+- [AddMailFwd](../addmailfwd/)
+- [AddWebFwd](../addwebfwd/)
+- [CheckDNSZone](../checkdnszone/)
+- [DeleteDNSZone](../deletednszone/)
+- [DeleteMailFwd](../deletemailfwd/)
+- [DeleteWebFwd](../deletewebfwd/)
+- [ExportDNSZone](../exportdnszone/)
+- [GetDNSZone](../getdnszone/)
+- [ImportDNSZone](../importdnszone/)
+- [ModifyDNSZone](../modifydnszone/)
+- [QueryDNSZoneList](../querydnszonelist/)
+- [QueryDNSZoneRRList](../querydnszonerrlist/)
+- [QueryDNSZoneStatisticList](../querydnszonestatisticlist/)
+- [QueryDNSZoneSubdomainList](../querydnszonesubdomainlist/)
+- [QueryMailFwdList](../querymailfwdlist/)
+- [QueryWebFwdList](./)
+- [StatusDNSZone](../statusdnszone/)
+
+:::

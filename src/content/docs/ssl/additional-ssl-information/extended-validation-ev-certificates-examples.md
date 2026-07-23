@@ -1,6 +1,9 @@
 ---
 title: "Extended Validation (EV) Certificates Examples"
 description: "For Extended Validation (EV) Certificates, the respective Certificate Authority (CA) will check some databases to verify the contact information..."
+sidebar:
+  order: 1290
+  label: "Extended Validation"
 ---
 
 **Extended Validated (EV):** support all features of OV certificates. In addition, a strict check is carried out as to the legitimacy of the company. EV certificates will not be accepted if they are not recorded in multiple transparency logs.

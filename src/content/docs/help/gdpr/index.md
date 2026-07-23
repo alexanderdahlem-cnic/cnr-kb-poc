@@ -1,5 +1,7 @@
 ---
 title: "General Data Protection Regulation"
+sidebar:
+  order: 2060
 ---
 
 ## Information on GDPR

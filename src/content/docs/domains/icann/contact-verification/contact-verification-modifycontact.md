@@ -1,26 +1,39 @@
 ---
 title: "Contact Verification: ModifyContact"
 description: "In the ModifyContact command it is prohibited to remove information from a validated contact (see definitions) if the contact is related to a domain (with activ"
+sidebar:
+  order: 790
+  label: "ModifyContact"
 ---
 
 ## ModifyContact
 
 In the ModifyContact command it is prohibited to remove information from a validated contact (see definitions) if the contact is related to a domain (with active contactverification) as owner.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command    = ModifyContact
+:::command[Command]
+
+```text
+command    = ModifyContact
 contact    = (CONTACT)
 validation = (0|1)
 checkonly  = (0|1)
-preverify  = (0|1)</code></pre></div>
+preverify  = (0|1)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                                = 200
+:::response[Response]
+
+```text
+code                                = 200
 property[validated][0]              = 1
 property[verified][0]               = 0
-property[verification requested][0] = 1</code></pre></div>
+property[verification requested][0] = 1
+```
+
+:::
 
 ### Attributes
 

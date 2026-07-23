@@ -1,5 +1,7 @@
 ---
 title: "DigiCert ICA Rollover"
+sidebar:
+  order: 1330
 ---
 
 ## DigiCert Root and ICA updates 2023

@@ -1,5 +1,7 @@
 ---
 title: "List of Locations"
+sidebar:
+  order: 1740
 ---
 
 The following Locations are available:

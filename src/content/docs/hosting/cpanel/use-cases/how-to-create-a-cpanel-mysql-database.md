@@ -2,13 +2,14 @@
 title: "How to create a cPanel mysql database?"
 ---
 
+:::command[Command]
 
-
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = AddHosting
+```text
+COMMAND = AddHosting
 CLASS = cpanel
 TYPE = mysqldatabase
 ACCOUNT = cPanelAccountIDofEndcustomer
-OBJECT = dbname001</code></pre></div>
+OBJECT = dbname001
+```
 
-
+:::

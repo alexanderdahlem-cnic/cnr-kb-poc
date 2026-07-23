@@ -1,6 +1,9 @@
 ---
 title: "Aftermarket Introduction - How it works"
 description: "The RRPproxy Aftermarket gives you the possibility to integrate access to Aftermarket Providers to sell and buy domains in the Aftermarket via API."
+sidebar:
+  order: 1580
+  label: "Introduction - How it works"
 ---
 
 ## About the CentralNic Reseller Aftermarket

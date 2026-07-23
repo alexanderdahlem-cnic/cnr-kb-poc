@@ -1,5 +1,7 @@
 ---
 title: "Labels (Domain names)"
+sidebar:
+  order: 250
 ---
 
 The Clearinghouse will support sunrise services and trademark claims services offered by gTLD registries.  
@@ -55,16 +57,23 @@ If using the 5 above steps allow to convert the mark name in a label will be acc
 
 The "TMCH Label Generator" can be used through the control panel or by the following API command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=GetTrademarkLabels
-MARKNAME=Fäther &amp; Sön &amp; Mother &amp; Daughter &amp;
+:::command[Command]
+
+```text
+command=GetTrademarkLabels
+MARKNAME=Fäther & Sön & Mother & Daughter &
 MARKTYPE=REGISTERED_MARK
-COUNTRY=D</code></pre></div>
+COUNTRY=D
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 runtime = 0.359
 property[alabel][0] = xn--fthersnmotherdaughter-51b33b
@@ -195,6 +204,7 @@ property[label][60] = fäther---sön---motherdaughter
 property[label][61] = fäther---sön---mother-daughter
 property[label][62] = fäther---sön---mother--daughter
 property[label][63] = fäther---sön---mother---daughter
-property[markname][0] = Fäther &amp; Sön &amp; Mother &amp; Daughter &amp;</code></pre></div>
+property[markname][0] = Fäther & Sön & Mother & Daughter &
+```
 
-
+:::

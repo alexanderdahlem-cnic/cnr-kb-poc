@@ -1,6 +1,8 @@
 ---
 title: "Return Codes"
 description: "After the execution of each command our API will report if the command was successful: ● Successful Return Codes ● Temporary Error Codes ● Permanent Error Codes"
+sidebar:
+  order: 50
 ---
 
 After the execution of each command our API will report if the command was successful

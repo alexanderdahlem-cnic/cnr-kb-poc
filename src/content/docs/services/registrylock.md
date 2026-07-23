@@ -1,6 +1,8 @@
 ---
 title: "RegistryLock"
 description: "Secure your domains with the Registry Lock Service. The Registry Lock Service allows registry-level protection for domain names."
+sidebar:
+  order: 1520
 ---
 
 ## Secure your domains with our Registry Lock Service

@@ -1,6 +1,8 @@
 ---
 title: "OwnerChange in DA-Mode"
 description: "OwnerChange Procedures in Designated Agent Mode. ➥ Learn more!"
+sidebar:
+  order: 590
 ---
 
 This procedure outlines the technical OwnerChange process in Designated Agent Mode.
@@ -18,8 +20,11 @@ Compared to the FOA Mode, the workflow is significantly simpler in Designated Ag
 
 This feature needs to be enabled by SetProperty / ICANNTRANSFER-OWNERCHANGE-REMOVE-TRANSFERLOCK = 1. It adds a link to the Designated Agent confirmation email, which enables the losing registrant, to remove the transfer lock and to skip the 60 day transfer lock phase.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = SetProperty
-ICANNTRANSFER-OWNERCHANGE-REMOVE-TRANSFERLOCK = 1</code></pre></div>
+:::command[Command]
 
+```text
+command = SetProperty
+ICANNTRANSFER-OWNERCHANGE-REMOVE-TRANSFERLOCK = 1
+```
 
+:::

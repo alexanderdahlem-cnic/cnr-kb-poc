@@ -1,42 +1,68 @@
 ---
 title: "QueryApplicationList"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ QueryApplicationList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2690
 ---
 
 The QueryApplicationList command provides a list of all currently available applications with details.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = QueryApplicationList</code></pre></div>
+:::command[Command]
+
+```text
+command = QueryApplicationList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code = (INT)
+description = (TEXT)
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = QueryApplicationList
+:::command[Command]
+
+```text
+command = QueryApplicationList
 application = (PATTERN)
 domain      = (DOMAIN)
 zone        = (ZONE)
 first       = (INT)
-limit       = (INT)</code></pre></div>
+limit       = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>property[application][0]          = (APPLICATION CLASS)
+:::response[Response]
+
+```text
+property[application][0]          = (APPLICATION CLASS)
 property[check domain syntax][0]  = (REGEXP)
 property[description][0]          = (TEXT)
 property[period start][0]         = (DATE)
@@ -57,6 +83,18 @@ property[count][0]                = (INT)
 property[first][0]                = (INT)
 property[last][0]                 = (INT)
 property[limit][0]                = (INT)
-property[total][0]                = (INT)</code></pre></div>
+property[total][0]                = (INT)
+```
 
+:::
 
+:::commandlist[Application commands]
+
+- [AddDomainApplication](../adddomainapplication/)
+- [DeleteDomainApplication](../deletedomainapplication/)
+- [ModifyDomainApplication](../modifydomainapplication/)
+- [QueryApplicationList](./)
+- [QueryDomainApplicationList](../querydomainapplicationlist/)
+- [StatusDomainApplication](../statusdomainapplication/)
+
+:::

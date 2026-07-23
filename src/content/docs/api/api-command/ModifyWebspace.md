@@ -1,19 +1,30 @@
 ---
 title: "ModifyWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ ModifyWebspace ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4150
 ---
 
 ModifyWebspace allows you to increase the storage size/capacity of a single webspace. It is only possible to increase the Quota by full numbers in MB, decreasing is not possible.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ModifyWebSpace
+:::command[Command]
+
+```text
+COMMAND = ModifyWebSpace
 WEBSPACE = (TEXT)
 CLASS = PHP
 QUOTA = (INT)
@@ -21,17 +32,25 @@ X-HOSTING-ADVERT = 0|1
 STATUS = (TEXT)
 ACTION = ACTIVE|DISABLED|ALL
 VERSION = (TEXT)
-NAME = (TEXT)</code></pre></div>
+NAME = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[CREATED DATE][0] = (DATE)
 property[IP][0] = (IP)
 property[STATUS][0] = ACTIVE|SUSPENDED|HOLD
-property[UPDATED DATE][0] = (DATE)</code></pre></div>
+property[UPDATED DATE][0] = (DATE)
+```
+
+:::
 
 ### Attributes
 
@@ -48,3 +67,18 @@ property[UPDATED DATE][0] = (DATE)</code></pre></div>
 | **IP** | IP address |
 | **STATUS** | Object status |
 | **UPDATED DATE** | Last changed date |
+
+:::commandlist[Hosting - Webspace commands]
+
+- [AddWebspace](../addwebspace/)
+- [DeleteWebspace](../deletewebspace/)
+- [ModifyPHPIni](../modifyphpini/)
+- [ModifyWebspace](./)
+- [QueryPHPIni](../queryphpini/)
+- [QueryWebspaceList](../querywebspacelist/)
+- [QueryWebspaceTraffic](../querywebspacetraffic/)
+- [RenewWebspace](../renewwebspace/)
+- [SetWebspaceRenewalMode](../setwebspacerenewalmode/)
+- [StatusWebspace](../statuswebspace/)
+
+:::

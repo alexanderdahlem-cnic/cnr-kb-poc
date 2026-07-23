@@ -1,5 +1,7 @@
 ---
 title: "MPML service of Minds + Machines"
+sidebar:
+  order: 1700
 ---
 
 Unfortunately, MMX will no longer be accepting new applications nor renewals for MPML services. For current MPMLs in place, these protections will remain active until the upcoming expiration.

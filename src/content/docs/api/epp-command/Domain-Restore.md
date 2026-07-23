@@ -10,70 +10,99 @@ This command is required to restore a domain after deletion or expiration, if a 
 
 ## Required Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
- &lt;command&gt;
-   &lt;update&gt;
-     &lt;domain:update xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-       &lt;domain:name&gt;example.com&lt;/domain:name&gt;
-       &lt;domain:chg/&gt;
-     &lt;/domain:update&gt;
-   &lt;/update&gt;
-   &lt;extension&gt;
-     &lt;rgp:update xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0"&gt;
-       &lt;rgp:restore op="request"/&gt;
-     &lt;/rgp:update&gt;
-   &lt;/extension&gt;
-   &lt;clTRID&gt;CE3FA053-CE97-44EA-A857-E028B6750BE2&lt;/clTRID&gt;
- &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <command>
+   <update>
+     <domain:update xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+       <domain:name>example.com</domain:name>
+       <domain:chg/>
+     </domain:update>
+   </update>
+   <extension>
+     <rgp:update xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0">
+       <rgp:restore op="request"/>
+     </rgp:update>
+   </extension>
+   <clTRID>CE3FA053-CE97-44EA-A857-E028B6750BE2</clTRID>
+ </command>
+</epp>
+```
+
+:::
 
 ## Required premium domain handling parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;command&gt;
-    &lt;update&gt;
-      &lt;domain:update xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name&gt;example.blue&lt;/domain:name&gt;
-        &lt;domain:chg/&gt;
-      &lt;/domain:update&gt;
-    &lt;/update&gt;
-    &lt;extension&gt;
-      &lt;rgp:update xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0"&gt;
-        &lt;rgp:restore op="request"/&gt;
-      &lt;/rgp:update&gt;
-      &lt;fee:update xmlns:fee="urn:ietf:params:xml:ns:fee-0.7"&gt;
-        &lt;fee:currency&gt;USD&lt;/fee:currency&gt;
-        &lt;fee:fee&gt;107.1000&lt;/fee:fee&gt;
-      &lt;/fee:update&gt;
-    &lt;/extension&gt;
-    &lt;clTRID&gt;476046B7-5E04-43EC-B3BE-B4E8D83BED1A&lt;/clTRID&gt;
-  &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <command>
+    <update>
+      <domain:update xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name>example.blue</domain:name>
+        <domain:chg/>
+      </domain:update>
+    </update>
+    <extension>
+      <rgp:update xmlns:rgp="urn:ietf:params:xml:ns:rgp-1.0">
+        <rgp:restore op="request"/>
+      </rgp:update>
+      <fee:update xmlns:fee="urn:ietf:params:xml:ns:fee-0.7">
+        <fee:currency>USD</fee:currency>
+        <fee:fee>107.1000</fee:fee>
+      </fee:update>
+    </extension>
+    <clTRID>476046B7-5E04-43EC-B3BE-B4E8D83BED1A</clTRID>
+  </command>
+</epp>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1000"&gt;
-      &lt;msg&gt;Command completed successfully&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;extension&gt;
-      &lt;fee:updData xmlns:fee="urn:ietf:params:xml:ns:fee-0.7"&gt;
-        &lt;fee:currency&gt;USD&lt;/fee:currency&gt;
-        &lt;fee:fee refundable="1" description="Restore fee"&gt;107.1000&lt;/fee:fee&gt;
-      &lt;/fee:updData&gt;
-    &lt;/extension&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;476046B7-5E04-43EC-B3BE-B4E8D83BED1A&lt;/clTRID&gt;
-      &lt;svTRID&gt;a6a45f48-4279-4a74-8222-4643464c2440&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1000">
+      <msg>Command completed successfully</msg>
+    </result>
+    <extension>
+      <fee:updData xmlns:fee="urn:ietf:params:xml:ns:fee-0.7">
+        <fee:currency>USD</fee:currency>
+        <fee:fee refundable="1" description="Restore fee">107.1000</fee:fee>
+      </fee:updData>
+    </extension>
+    <trID>
+      <clTRID>476046B7-5E04-43EC-B3BE-B4E8D83BED1A</clTRID>
+      <svTRID>a6a45f48-4279-4a74-8222-4643464c2440</svTRID>
+    </trID>
+  </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Domain commands]
+
+- [Domain:Check](../domain-check/)
+- [Domain:Create](../domain-create/)
+- [Domain:Delete](../domain-delete/)
+- [Domain:Info](../domain-info/)
+- [Domain:OwnerChange](../domain-ownerchange/)
+- [Domain:Push](../domain-push/)
+- [Domain:Renew](../domain-renew/)
+- [Domain:Renewalmode](../domain-renewalmode/)
+- [Domain:Restore](./)
+- [Domain:Trade](../domain-trade/)
+- [Domain:Update](../domain-update/)
+
+:::

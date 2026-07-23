@@ -2,11 +2,12 @@
 title: "How to check cPanel locations?"
 ---
 
+:::command[Command]
 
-
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = CheckHosting
+```text
+COMMAND = CheckHosting
 CLASS = cpanel
-TYPE = x-hosting-location</code></pre></div>
+TYPE = x-hosting-location
+```
 
-
+:::

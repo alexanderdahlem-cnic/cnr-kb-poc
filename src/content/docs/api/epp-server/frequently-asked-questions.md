@@ -1,6 +1,9 @@
 ---
 title: "FAQ EPP Server"
 description: "Frequently asked questions about RRPproxy EPP Server.➥ Learn more!"
+sidebar:
+  order: 30
+  label: "Frequently asked questions"
 ---
 
 How many IP addresses can be whitelisted?

@@ -1,5 +1,8 @@
 ---
 title: "New Public Key Infrastructur for DigiCert SSL Certificates as of December 1st 2017"
+sidebar:
+  order: 1310
+  label: "New PKI for Symantec"
 ---
 
 You might have read in the news about Google and Symantec. Earlier this year, after incidents of Symantec have become known to the public, Google stepped forward and announced plans to distrust all SSL certificates of the Symantec product group in their Google Chrome browser. Both companies had many discussions with each other as this move would affect a huge number of internet users.  

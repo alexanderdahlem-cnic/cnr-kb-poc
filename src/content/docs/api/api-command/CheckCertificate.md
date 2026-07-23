@@ -1,6 +1,8 @@
 ---
 title: "CheckCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ CheckCertificate ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2730
 ---
 
 The CheckCertificate command is used to check the certificate request for validation and information details. Please note, the CA does not check the WHOIS for email addresses when ordering/renewing the certificate. To work around this, call the CheckCertificate API command (with the optional parameters), and this will cache it for 24 hours, then place the order with this timeframe. The email address has to be one that returns from the response.  
@@ -8,24 +10,38 @@ For the parameters "Domain", "CSR" and "CRT" the # integer range is 0..250.
 For the attributes description, please refer to the SSL 2.0 API Documentation.  
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.  
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = checkCertificate
+:::command[Command]
+
+```text
+COMMAND = checkCertificate
 APIVERSION = 1|2
 CSR#    = (TEXT)
 CRT#    = (TEXT)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                                            = (INT)
+:::response[Response]
+
+```text
+code                                            = (INT)
 description                                     = (TEXT)
 property[csr public key algorithm][n]           = (TEXT)
 property[csr signature algorithm][n]            = (TEXT)
@@ -69,17 +85,44 @@ property[crt issuer organizational unit][n] 	= (TEXT)
 property[dcv token][n] 				= (TEXT)
 property[dcv email#][n] 			= (TEXT)
 property[domain#][n] 				= (TEXT)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>CSR# 			= (TEXT)
+:::command[Command]
+
+```text
+CSR# 			= (TEXT)
 CRT# 			= (TEXT)
 GENERATEDCVTOKEN 	= 1|0
 DOMAIN# 		= (TEXT)
-CLASS 			= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv</code></pre></div>
+CLASS 			= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
+```
 
+:::
 
+:::commandlist[Certificate commands]
+
+- [AddCertificate](../addcertificate/)
+- [CheckCertificate](./)
+- [DeleteCertificate](../deletecertificate/)
+- [GetCertificateInfo](../getcertificateinfo/)
+- [QueryCertificateList](../querycertificatelist/)
+- [ReissueCertificate](../reissuecertificate/)
+- [RenewCertificate](../renewcertificate/)
+- [StatusCertificate](../statuscertificate/)
+- [RevokeCertificate](../revokecertificate/)
+- [RevokeCertificateOrder](../revokecertificateorder/)
+- [CancelCertificateOrder](../cancelcertificateorder/)
+- [StatusCertificateOrder](../statuscertificateorder/)
+- [QueryCertificateOrderList](../querycertificateorderlist/)
+- [AddCertificateContact](../addcertificatecontact/)
+- [StatusCertificateContact](../statuscertificatecontact/)
+- [QueryCertificateContactList](../querycertificatecontactlist/)
+
+:::

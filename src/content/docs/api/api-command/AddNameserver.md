@@ -1,27 +1,46 @@
 ---
 title: "AddNameserver"
 description: "CentralNic Reseller API Command Reference  ➤ Nameserver ➤ AddNameserver ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4400
 ---
 
 This command may be used to add a new name server (e.g. for GLUE - records). The parent domain must be registered with Key-Systems and you can only add new name servers and not name servers which already exist.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command    = AddNameserver
+:::command[Command]
+
+```text
+command    = AddNameserver
 NAMESERVER = (NAMESERVER)
-IPADDRESS# = (IPADDRESS)</code></pre></div>
+IPADDRESS# = (IPADDRESS)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code        = (CODE)
-description = (DESCRIPTION)</code></pre></div>
+:::response[Response]
+
+```text
+code        = (CODE)
+description = (DESCRIPTION)
+```
+
+:::
 
 ### Attributes
 
@@ -33,21 +52,42 @@ description = (DESCRIPTION)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command    = AddNameserver
+:::command[Command]
+
+```text
+command    = AddNameserver
 NAMESERVER = (NAMESERVER)
 IPADDRESS# = (IPADDRESS)
 STATUS# = (TEXT)
-TOKEN = (TEXT)</code></pre></div>
+TOKEN = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code        = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code        = (INT)
+description = (TEXT)
+```
+
+:::
 
 ### Attributes
 
 | **STATUS#** | Optional |
 | --- | --- |
 | **TOKEN** | The one time authorization token for protected domain names. (optional) |
+
+:::commandlist[Nameserver commands]
+
+- [AddNameserver](./)
+- [CheckNameserver](../checknameserver/)
+- [DeleteNameserver](../deletenameserver/)
+- [ModifyNameserver](../modifynameserver/)
+- [QueryNameserverList](../querynameserverlist/)
+- [StatusNameserver](../statusnameserver/)
+
+:::

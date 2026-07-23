@@ -1,5 +1,7 @@
 ---
 title: "Expire Auction"
+sidebar:
+  order: 410
 ---
 
 As CentralNic Reseller Reseller you can earn additional revenue from the domains your customers decide not to renew by setting the renewal mode to EXPIREAUCTION.
@@ -20,10 +22,15 @@ Please note that domains EXPIREAUCTION renewal mode are locked on day 30 after t
 
 If a domain with the EXPIREAUCTION renewal mode fails to sell at auction, it will be unlocked in the Reseller account and deleted according to the regular expiry workflow on day 43 after expiration. Domains that are deleted as part of this process can be Restored through the regular Restore process for the extension they are registered in.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = SetDomainRenewalMode
+:::command[Command]
+
+```text
+command     = SetDomainRenewalMode
 domain      = (DOMAIN)
-renewalmode = EXPIREAUCTION</code></pre></div>
+renewalmode = EXPIREAUCTION
+```
+
+:::
 
 ## Life cycle of an auction domain
 
@@ -37,14 +44,17 @@ renewalmode = EXPIREAUCTION</code></pre></div>
 -   If the domain is sold, it will be transferred to Afternic between day 41-43 and assigned to the auction’s winner.
 -   If the domain does not sell, it is deleted at the Registry like any other expired name on day 43 after the expiration date. For these domains, it is possible for the original Registrant to restore the domain following the regular restore procedure.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Example domain (current date): auction.com on 2013-05-15
+:::command[Command]
+
+```text
+Example domain (current date): auction.com on 2013-05-15
 Registration date: 2012-04-29
 Expiration date: 2014-04-29
 Paid until: 2013-04-29
 Auction date: 2013-06-03
 Deletion date (43 days after expiration date): 2013-06-11
 Registration Period: 2012-04-29 – 2013-04-29
-Auto Renew Period: 2013-04-29 – 2013-06-11</code></pre></div>
+Auto Renew Period: 2013-04-29 – 2013-06-11
+```
 
-
+:::

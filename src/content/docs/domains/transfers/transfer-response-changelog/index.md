@@ -1,5 +1,8 @@
 ---
 title: "Transfer Response Changelog"
+sidebar:
+  order: 440
+  label: "Response Changelog"
 ---
 
 ## Unified Transfer Response Parameters
@@ -35,49 +38,64 @@ The following transfer parameters are returned on all domain transfer responses 
 
 The property registrar and requesting registrar can contain the own user name from CentralNic Reseller or an external registrar name:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>property[registrar][0] = rrp-user
+:::command[Command]
+
+```text
+property[registrar][0] = rrp-user
 property[requesting registrar][0] = foreign-registrar
 property[transfer status][0] = pending
 property[request date][0] = 2015-08-06 14:02:00.0
 property[execute date][0] = 2015-08-11 14:02:00.0
-property[registration expiration date][0] = 2016-04-18 14:06:58.0</code></pre></div>
+property[registration expiration date][0] = 2016-04-18 14:06:58.0
+```
+
+:::
 
 This example shows an initiated outgoing transfer to another registrar:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>property[registrar][0] = rrp-user
+:::command[Command]
+
+```text
+property[registrar][0] = rrp-user
 property[requesting registrar][0] = foreign-registrar
 property[transfer status][0] = pending
 property[request date][0] = 2015-08-06 15:00:00.0
 property[execute date][0] = 2015-08-11 15:00:00.0
-property[registration expiration date][0] = 2016-04-18 14:06:58.0</code></pre></div>
+property[registration expiration date][0] = 2016-04-18 14:06:58.0
+```
+
+:::
 
 EPP Example:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1001"&gt;
-      &lt;msg&gt;Command completed successfully; action pending&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;resData&gt;
-      &lt;domain:trnData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name&gt;example.com&lt;/domain:name&gt;
-        &lt;domain:trStatus&gt;pending&lt;/domain:trStatus&gt;
-        &lt;domain:reID&gt;rrp-user&lt;/domain:reID&gt;
-        &lt;domain:reDate&gt;2018-08-02T13:19:35.0Z&lt;/domain:reDate&gt;
-        &lt;domain:acID&gt;foreign-registrar&lt;/domain:acID&gt;
-        &lt;domain:acDate&gt;2018-08-07T13:19:35.0Z&lt;/domain:acDate&gt;
-      &lt;/domain:trnData&gt;
-    &lt;/resData&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
-      &lt;svTRID&gt;396ce82d-47d1-4494-bd23-25d1ed015bf6&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1001">
+      <msg>Command completed successfully; action pending</msg>
+    </result>
+    <resData>
+      <domain:trnData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name>example.com</domain:name>
+        <domain:trStatus>pending</domain:trStatus>
+        <domain:reID>rrp-user</domain:reID>
+        <domain:reDate>2018-08-02T13:19:35.0Z</domain:reDate>
+        <domain:acID>foreign-registrar</domain:acID>
+        <domain:acDate>2018-08-07T13:19:35.0Z</domain:acDate>
+      </domain:trnData>
+    </resData>
+    <trID>
+      <clTRID>ABC-12345</clTRID>
+      <svTRID>396ce82d-47d1-4494-bd23-25d1ed015bf6</svTRID>
+    </trID>
+  </response>
+</epp>
+```
+
+:::
 
 ### Summary
 
@@ -111,16 +129,23 @@ The examples below explain in detail what has changed on the following actions o
 
 -   Added new response parameters "execute date", "registrar", "requesting registrar" and "requested date"
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 action = request
 domain = yourdomain.TLD
-auth = FooBar123</code></pre></div>
+auth = FooBar123
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-07 14:22:09.0
 property[job id][0] = 100092
@@ -128,110 +153,161 @@ property[registrar][0] = registrar1
 property[renewal period][0] = 1
 property[requesting registrar][0] = registrar2
 property[request date][0] = 2013-08-02 14:22:09.0
-property[transfer status][0] = INITIATED</code></pre></div>
+property[transfer status][0] = INITIATED
+```
+
+:::
 
 ### Action cancel
 
 -   Added new response parameters "execute date", "registrar", "requesting registrar", "requested date" and "transfer status"
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 action = cancel
 domain = yourdomain.TLD
-auth = FooBar123</code></pre></div>
+auth = FooBar123
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-02 14:30:22.0
 property[registrar][0] = registrar1
 property[requesting registrar][0] = registrar2
 property[request date][0] = 2013-08-02 14:29:38.0
-property[transfer status][0] = clientCancelled</code></pre></div>
+property[transfer status][0] = clientCancelled
+```
+
+:::
 
 ### Action deny
 
 -   Added new response parameters "execute date", "registrar", "requesting registrar", "requested date", "roid" and "transfer status"
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 action = deny
-domain = yourdomain.TLD</code></pre></div>
+domain = yourdomain.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-02 13:41:26.0
 property[registrar][0] = registrar1
 property[requesting registrar][0] = registrar2
 property[request date][0] = 2013-08-02 13:41:00.0
 property[roid][0] = 13438296011048_DOMAIN-KEYSYS
-property[transfer status][0] = clientRejected</code></pre></div>
+property[transfer status][0] = clientRejected
+```
+
+:::
 
 ### Action approve
 
 -   Added new response parameters "execute date", "registrar", "requesting registrar", "request date", "roid" and "transfer status"
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 action = approve
-domain = yourdomain.TLD</code></pre></div>
+domain = yourdomain.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-02 15:50:32.0
 property[registrar][0] = registrar1
 property[requesting registrar][0] = registrar2
 property[request date][0] = 2013-08-02 15:49:28.0
 property[transfer status][0] = clientApproved
-property[roid][0] = 15849440711048_DOMAIN-KEYSYS</code></pre></div>
+property[roid][0] = 15849440711048_DOMAIN-KEYSYS
+```
+
+:::
 
 ### Action query
 
 -   Added new action "query" (Required for EPP Standard)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 action = query
-domain = yourdomain.TLD</code></pre></div>
+domain = yourdomain.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-06 14:27:09.0
 property[registrar][0] = registrar1
 property[registration expiration date][0] = 2014-04-18 14:06:58.0
 property[requesting registrar][0] = registrar2
 property[request date][0] = 2013-08-06 14:02:04.0
-property[transfer status][0] = serverCancelled</code></pre></div>
+property[transfer status][0] = serverCancelled
+```
+
+:::
 
 ### StatusDomainTransfer
 
 -   Renamed response parameter "request registrar" to "requesting registrar"
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = StatusDomainTransfer
-domain = yourdomain.TLD</code></pre></div>
+:::command[Command]
+
+```text
+command = StatusDomainTransfer
+domain = yourdomain.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[execute date][0] = 2013-08-06 14:27:09
 property[registrar][0] = registrar1
 property[registration expiration date][0] = 2014-04-18 14:06:58
 property[requesting registrar][0] = registrar2
 property[requested date][0] = 2013-08-06 14:02:04
-property[transfer status][0] = serverCancelled</code></pre></div>
+property[transfer status][0] = serverCancelled
+```
 
-
+:::

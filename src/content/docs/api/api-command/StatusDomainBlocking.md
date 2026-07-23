@@ -1,26 +1,42 @@
 ---
 title: "StatusDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ StatusDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2430
 ---
 
 This command can be used to retrieve a specific block’s information by supplying the block order ID, there is no need to specify the product.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND		= StatusDomainBlocking
+:::command[Command]
+
+```text
+COMMAND		= StatusDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code	 		= (INTEGER)
+:::response[Response]
+
+```text
+code	 		= (INTEGER)
 description 		= (TEXT)
 runtime 		= (INTEGER)
 queuetime 		= (INTEGER)
@@ -34,10 +50,12 @@ property[created by][0] = (TEXT)
 property[created date][0] = YYYY-MM-DD HH:MM:SS
 property[updated date][0] = YYYY-MM-DD HH:MM:SS
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
+
 The following are specific to AdultBlock:
 property[ownercontact][0] = (TEXT)
 property[tld blocks][0] = .adult, .porn, .sex, .xxx
 property[label variant generator uri][0] = https://adultblock.adult/trademark-variant-search/
+
 The following are specific to GlobalBlock:
 property[x-domain-blocking-ipr-id][0] 	= (TEXT)
 property[mark][0] 			= (TEXT)
@@ -52,6 +70,25 @@ property[registrar transfer date][0] 	= YYYY-MM-DD HH:MM:SS
 property[renewal date][0]	 	= YYYY-MM-DD HH:MM:SS
 property[renewalmode][0] 		= (TEXT)
 property[updated by][0] 		= (TEXT)
-property[brand protection calculator uri][0] = https://globalblock.co/brand-protection-calculator</code></pre></div>
+property[brand protection calculator uri][0] = https://globalblock.co/brand-protection-calculator
+```
 
+:::
 
+:::commandlist[AdultBlock | AdultBlockPlus commands]
+
+- [AddDomainBlocking](../adddomainblocking/)
+- [CheckDomainBlockingIPRID](../checkdomainblockingiprid/)
+- [DeleteDomainBlocking](../deletedomainblocking/)
+- [ModifyDomainBlocking](../modifydomainblocking/)
+- [QueryDomainBlockingList](../querydomainblockinglist/)
+- [RenewDomainBlocking](../renewdomainblocking/)
+- [StatusDomainBlocking](./)
+- [TransferDomainBlocking - Approve](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve)
+- [TransferDomainBlocking - Cancel](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel)
+- [TransferDomainBlocking - Deny](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny)
+- [TransferDomainBlocking - Query](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query)
+- [TransferDomainBlocking - Request](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request)
+- [TransferDomainBlocking - UserTransfer](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer)
+
+:::

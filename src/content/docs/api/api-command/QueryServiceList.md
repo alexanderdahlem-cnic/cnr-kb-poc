@@ -1,24 +1,40 @@
 ---
 title: "QueryServiceList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryServiceList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3550
 ---
 
 Shows a price overview over all available services
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryServiceList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryServiceList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[SERVICE][n] = mobile | server | webspace | application | trustee | certificate | subreseller | other | trademark
 property[TYPE][n] = (TEXT)
@@ -32,7 +48,10 @@ property[TRADE][n] = (DECIMAL)|N/A
 property[APPLICATION][n] = (DECIMAL)|N/A
 property[CURRENCY][n] = (TEXT)
 property[DESCRIPTION][n] = (TEXT)
-property[ACTIVE][n] = 1|0</code></pre></div>
+property[ACTIVE][n] = 1|0
+```
+
+:::
 
 ### Attributes
 
@@ -55,19 +74,26 @@ property[ACTIVE][n] = 1|0</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryServiceList
+:::command[Command]
+
+```text
+COMMAND = QueryServiceList
 SERVICE = mobile|server|webspace|application|trustee|certificate|subreseller|other|trademark
 INDIVIDUAL = 0|1
 INACTIVE = 0|1
 REGISTRAR = (TEXT)
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)</code></pre></div>
+SENDLISTEMAIL = (EMAILS)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[SERVICE][n] = mobile | server | webspace | application | trustee | certificate | subreseller | other | trademark
 property[TYPE][n] = (TEXT)
@@ -81,7 +107,10 @@ property[TRADE][n] = (DECIMAL)|N/A
 property[APPLICATION][n] = (DECIMAL)|N/A
 property[CURRENCY][n] = (TEXT)
 property[DESCRIPTION][n] = (TEXT)
-property[ACTIVE][n] = 1|0</code></pre></div>
+property[ACTIVE][n] = 1|0
+```
+
+:::
 
 ### Attributes
 
@@ -92,3 +121,19 @@ property[ACTIVE][n] = 1|0</code></pre></div>
 | **REGISTRAR** | Shows the prices of the given subreseller. (optional) |
 | **GENERATELIST** | Show result on screen|Generate a CSV File and upload to ftp (optional) |
 | **SENDLISTEMAIL** | Email address where the CSV will be sent to (optional) |
+
+:::commandlist[Finance commands]
+
+- [ConvertCurrency](../convertcurrency/)
+- [QueryAccountingList](../queryaccountinglist/)
+- [QueryAvailablePromotionList](../queryavailablepromotionlist/)
+- [QueryExchangeRates](../queryexchangerates/)
+- [QueryPremiumDomainList](../querypremiumdomainlist/)
+- [QueryPriceHistoryList](../querypricehistorylist/)
+- [QueryServiceList](./)
+- [QueryUpcomingAccountingList](../queryupcomingaccountinglist/)
+- [QueryZoneList](../queryzonelist/)
+- [QueryZonePriceList](../queryzonepricelist/)
+- [ServicePrice](../serviceprice/)
+
+:::

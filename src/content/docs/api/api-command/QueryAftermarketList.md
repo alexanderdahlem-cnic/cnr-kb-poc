@@ -1,6 +1,8 @@
 ---
 title: "QueryAftermarketList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2620
 ---
 
 Search domains in the aftermarket. The search term is given by "KEYWORD".  
@@ -11,38 +13,60 @@ Description of property\[listing type\]\[x\]:
 -   buy\_now staged\_transfer: Fixed price domain in marketplace (SEDO) Client transmits authcode manually which might take some time.
 -   buy\_now instant\_transfer: Fast transfer premium domain (SEDO) SEDO automatically transmit from loosing registrar which happens instantly.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND     = QueryAftermarketList
-KEYWORD     = &lt;TEXT&gt;       (Return domains belonging to this keyword)
-FIRST       = &lt;INT&gt;        (For pagination, start with a certain result number)
-PROVIDER    = &lt;TEXT&gt;       (Which Aftermarket Provider to search: Sedo or Afternic, mandatory)</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND     = QueryAftermarketList
+KEYWORD     = <TEXT>       (Return domains belonging to this keyword)
+FIRST       = <INT>        (For pagination, start with a certain result number)
+PROVIDER    = <TEXT>       (Which Aftermarket Provider to search: Sedo or Afternic, mandatory)
+```
+
+:::
 
 ## Optional Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>LIMIT       = &lt;INT&gt;  (Show only this many items in the response)
-FILTER      = &lt;TEXT&gt; (Don't search for domains containing this)
+:::command[Command]
+
+```text
+LIMIT       = <INT>  (Show only this many items in the response)
+FILTER      = <TEXT> (Don't search for domains containing this)
 LISTINGTYPE = buy_now|make_offer
-MINLENGTH   = &lt;INT&gt;  (Search only for domains longer than this)
-MAXLENGTH   = &lt;INT&gt;  (Search only for domains shorter than this)
-MINPRICE    = &lt;DECIMAL&gt;
-MAXPRICE    = &lt;DECIMAL&gt;</code></pre></div>
+MINLENGTH   = <INT>  (Search only for domains longer than this)
+MAXLENGTH   = <INT>  (Search only for domains shorter than this)
+MINPRICE    = <DECIMAL>
+MAXPRICE    = <DECIMAL>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>property[domain][x]        = &lt;DOMAIN&gt;
-property[minimum price][x] = &lt;DECIMAL&gt;
-property[minimum offer][x] = &lt;DECIMAL&gt;
+:::response[Response]
+
+```text
+property[domain][x]        = <DOMAIN>
+property[minimum price][x] = <DECIMAL>
+property[minimum offer][x] = <DECIMAL>
 property[listing type][x]  = make_offer|buy_now staged_transfer|buy_now instant_transfer|fasttransfer|normal
-property[provider][x]      = sedo</code></pre></div>
+property[provider][x]      = sedo
+```
+
+:::
 
 ### Attributes
 
@@ -50,3 +74,24 @@ property[provider][x]      = sedo</code></pre></div>
 | --- | --- |
 | **Minimum offer** | Minimum (non binding) offer the seller asks for |
 | **Listing type** | Domain available via SedoMLS Make Offer Automated Transfer (SEDO)|Fixed price domain in marketplace (SEDO)|Fast transfer premium domain (SEDO) |
+
+:::commandlist[Aftermarket commands]
+
+- [AddAftermarketAccount](../addaftermarketaccount/)
+- [AddAftermarketDomain](../addaftermarketdomain/)
+- [AftermarketBid](../aftermarketbid/)
+- [BuyDomain](../buydomain/)
+- [DeleteAftermarketAccount](../deleteaftermarketaccount/)
+- [DeleteAftermarketDomain](../deleteaftermarketdomain/)
+- [ModifyAftermarketAccount](../modifyaftermarketaccount/)
+- [ModifyAftermarketDomain](../modifyaftermarketdomain/)
+- [QueryAftermarketAccountList](../queryaftermarketaccountlist/)
+- [QueryAftermarketBid](../queryaftermarketbid/)
+- [QueryAftermarketBidList](../queryaftermarketbidlist/)
+- [QueryAftermarketDomainList](../queryaftermarketdomainlist/)
+- [QueryAftermarketList](./)
+- [ReserveDomain](../reservedomain/)
+- [StatusAftermarketAccount](../statusaftermarketaccount/)
+- [StatusAftermarketDomain](../statusaftermarketdomain/)
+
+:::

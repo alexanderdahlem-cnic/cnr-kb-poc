@@ -1,5 +1,7 @@
 ---
 title: "Reduced publication and transmission of Whois Data"
+sidebar:
+  order: 2090
 ---
 
 By default, we are not publishing your private data in Whois, i.e. we do **NOT** disclose your data. In particular, the data which is coming from our Whois server and being transmitted to registries will be redacted entirely.

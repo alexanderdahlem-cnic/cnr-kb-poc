@@ -1,14 +1,19 @@
 ---
 title: "ICANN OwnerChange Events"
 description: "Events: ● Trade Domain Failed ● Trade Domain Success ● Trade Contact Failed ● Trade Contact Success ➥ Learn more!"
+sidebar:
+  order: 610
+  label: "Events"
 ---
 
 ## Trade Domain Failed (DOMAIN\_MODIFICATION::MODIFICATION\_FAILED)
 
 OwnerChange status values: gaining\_denied|losing\_denied|gaining, losing denied|user cancelled|expired 
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[date][0] = 2016-11-28 14:25:31.0
 property[class][0] = DOMAIN_MODIFICATION
@@ -24,12 +29,17 @@ property[data][6] = gaining_registrant:P-ABC2
 property[data][7] = losing_registrant:P-ABC1
 property[data][8] = domain:testdomain.com
 property[info][0] = ownerchange%20failed
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## Trade Domain Success (DOMAIN\_MODIFICATION::MODIFICATION\_SUCCESSFUL)
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[date][0] = 2016-11-18 16:32:41.0
 property[class][0] = DOMAIN_MODIFICATION
@@ -45,12 +55,17 @@ property[data][6] = ownerchange_status:successful
 property[data][7] = losing_registrant:P-ABC1
 property[data][8] = reason:ownerchange successful
 property[info][0] = ownerchange%20successful
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## Trade Contact Failed (CONTACT\_MODIFICATION::MODIFICATION\_FAILED)
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[date][0] = 2016-11-25 12:14:00.0
 property[class][0] = CONTACT_MODIFICATION
@@ -64,12 +79,17 @@ property[data][4] = gaining_registrant:P-ABC2
 property[data][5] = ownerchange_status:registry operation failed|gaining_denied|losing_denied|gaining, losing denied|user cancelled|expired
 property[data][6] = reason:ownerchange failed: 531 Authorization failed
 property[info][0] = ownerchange%20failed%3a%20531%20Authorization%20failed
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## Trade Contact Success (CONTACT\_MODIFICATION::MODIFICATION\_SUCCESSFUL)
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[date][0] = 2016-11-24 15:03:34.0
 property[class][0] = CONTACT_MODIFICATION
@@ -83,6 +103,7 @@ property[data][4] = ownerchange_status:successful
 property[data][5] = gaining_registrant:P-ABC2
 property[data][6] = reason:ownerchange successful
 property[info][0] = ownerchange%20successful
-EOF</code></pre></div>
+EOF
+```
 
-
+:::

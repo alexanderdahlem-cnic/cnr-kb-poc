@@ -1,6 +1,9 @@
 ---
 title: "Application Systems"
 description: "Overview: ● Application Systems ● AddDomainApplication ● DeleteDomainApplication ● ModifyDomainApplication ● QueryApplicationList ● QueryDomainApplicationList ●"
+sidebar:
+  order: 390
+  label: "Applications"
 ---
 
 In this context, an Application is regarded as an order to register a domain within a certain launch phase of a TLD. You can place Application orders in the CentralNic Reseller Application System and as soon as a certain launch phase starts we will try to register the domains you ordered.
@@ -70,3 +73,14 @@ Why don't you offer all phases?
 We try our very best to offer as many phases as possible. Due to the ICANN new gTLD program, as one of the very few registrars we introduced Application Phases for almost all new gTLDs we're offering. Since all our services are available via API, we're also offering Application Phases via API.
 
 However, in some cases, it just doesn't make much sense to offer Application Phases for all thinkable domain releases a registry is having. There's simply not enough demand. In other cases registry announce releases and relevant data on too short notice.
+
+:::commandlist[Application commands]
+
+- [QueryApplicationList](../../api/api-command/queryapplicationlist/)
+- [AddDomainApplication](../../api/api-command/adddomainapplication/)
+- [ModifyDomainApplication](../../api/api-command/modifydomainapplication/)
+- [DeleteDomainApplication](../../api/api-command/deletedomainapplication/)
+- [QueryDomainApplicationList](../../api/api-command/querydomainapplicationlist/)
+- [StatusDomainApplication](../../api/api-command/statusdomainapplication/)
+
+:::

@@ -1,5 +1,7 @@
 ---
 title: "FAQ"
+sidebar:
+  order: 1020
 ---
 
 What are the cPanel, Webmail, calDav and WebFTP URL's?

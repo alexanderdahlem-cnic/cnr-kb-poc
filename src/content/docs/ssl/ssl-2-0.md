@@ -1,6 +1,9 @@
 ---
 title: "SSL 2.0 - Introduction"
 description: "Introducing the new SSL API 2.0, an entirely redesigned SSL service in CentralNic Reseller. ➥ Learn more!"
+sidebar:
+  order: 1110
+  label: "New SSL API 2.0"
 ---
 
 SSL API 2.0 is the current supported SSL service within CentralNic Reseller. It was designed to modernise certificate management by introducing greater flexibility, improved performance, and enhanced automation capabilities, and it now serves as the sole API for ordering and managing SSL certificates.

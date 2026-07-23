@@ -1,5 +1,8 @@
 ---
 title: "Frequently Asked Questions"
+sidebar:
+  order: 2070
+  label: "FAQ"
 ---
 
 What is GDPR?

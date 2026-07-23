@@ -1,29 +1,45 @@
 ---
 title: "DomainPrice"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ DomainPrice ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3080
 ---
 
 The DomainPrice command can be used to get the amount that will be charged for a domain for a specific action. RAM clients will only receive the RAM fees for this operation.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = DomainPrice
-PERIOD = &lt;TEXT&gt;
-PERIODTYPE = &lt;TEXT&gt;
-DOMAIN = &lt;DOMAIN&gt;
+:::command[Command]
+
+```text
+COMMAND = DomainPrice
+PERIOD = <TEXT>
+PERIODTYPE = <TEXT>
+DOMAIN = <DOMAIN>
 TYPE = ADDDOMAIN|RENEWDOMAIN|TRANSFERDOMAIN|RESTOREDOMAIN
-X-PROMOTION-CODE = &lt;TEXT&gt;</code></pre></div>
+X-PROMOTION-CODE = <TEXT>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[PREMIUM][0] = (TEXT)
 property[DOMAIN][0] = (TEXT)
@@ -45,7 +61,10 @@ property[PRICE][0] = (DECIMAL)
 property[VAT][0] = (DECIMAL)
 property[NONREFUNDABLE][0] = (DECIMAL)
 property[VATNONREFUNDABLE][0] = (DECIMAL)
-property[PROMOTION][n] = (TEXT)</code></pre></div>
+property[PROMOTION][n] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -75,3 +94,41 @@ property[PROMOTION][n] = (TEXT)</code></pre></div>
 | **NONREFUNDABLE: The nonrefundable part of the price for this accounting** |
 | **VATNONREFUNDABLE: The nonrefundable part of the vat for this accounting** |
 | **PROMOTION: Promotion used to calculate the price** |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](./)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

@@ -1,5 +1,8 @@
 ---
 title: "KeyDNS Upgrades"
+sidebar:
+  order: 1390
+  label: "KeyDNS Upgrade to Anycast"
 ---
 
 ## Improving our DNS Services

@@ -1,5 +1,7 @@
 ---
 title: "Enable DNSSEC for KeyDNS zones"
+sidebar:
+  order: 1420
 ---
 
 -   Zone is not existing in KeyDNS: Add the DNS zone to KeyDNS with the command AddDNSZone. To enable DNSSEC support, add the parameter 'signed=1' to the AddDNSZone command.
@@ -106,33 +108,50 @@ All our servers are DNSSEC capable. To find out more about our Anycast infrastru
 
 The DNSSEC keys are returned in the command response, if they are already present while the AddDNSZone command is still running. If the signing system is busy at the command runtime, the command finishes with 'code = 200' without returning the keys. In this case, the keys can be obtained by running a StatusDNSZone command for the relevant zone
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command              = AddDNSZone
+:::command[Command]
+
+```text
+command              = AddDNSZone
 dnszone              = test23.com
 rr0                  = @ IN A 1.2.3.4
-signed               = 0 (DEFAULT) | 1 (OPTIONAL)</code></pre></div>
+signed               = 0 (DEFAULT) | 1 (OPTIONAL)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                 = 200
+:::response[Response]
+
+```text
+code                 = 200
 description          = Command completed successfully
 property[dnszone][0] = test23.com
-property[signed][0]  = 1</code></pre></div>
+property[signed][0]  = 1
+```
+
+:::
 
 ## ModifyDNSZone
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command                       = ModifyDNSZone
+:::command[Command]
+
+```text
+command                       = ModifyDNSZone
 dnszone                       = test23.com
 signed                        = 0 (DEFAULT) | 1 (OPTIONAL)
 rollover                      = ZSK|KSK (OPTIONAL)
-finishkskrollover             =  (OPTIONAL)</code></pre></div>
+finishkskrollover             =  (OPTIONAL)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                          = 200
+:::response[Response]
+
+```text
+code                          = 200
 description                   = Command completed successfully
 property[dnszone][0]          = test23.com
 property[signed][0]           = 1
@@ -145,18 +164,28 @@ property[keydsdata sha256][1] = 58374 7 2 89B4292C6989809BDFBA71E746AA65D27F3C5.
 property[status][0]           = active
 property[status][1]           = ready
 property[type][0]             = ZSK
-property[type][1]             = KSK</code></pre></div>
+property[type][1]             = KSK
+```
+
+:::
 
 ## StatusDNSZone
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>ommand                       = statusdnszone
-dnszone                       = test23.com</code></pre></div>
+:::command[Command]
+
+```text
+ommand                       = statusdnszone
+dnszone                       = test23.com
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                          = 200
+:::response[Response]
+
+```text
+code                          = 200
 description                   = Command completed successfully
 property[dnszone][0]          = test23.com
 property[soamname][0]         = ns1.dnsres.net
@@ -173,6 +202,15 @@ property[keydsdata sha256][1] = 58374 7 2 89B4292C6989809BDFBA71E746AA65D27F3C53
 property[status][0]           = active
 property[status][1]           = ready
 property[type][0]             = ZSK
-property[type][1]             = KSK</code></pre></div>
+property[type][1]             = KSK
+```
 
+:::
 
+:::commandlist[Utilized API commands]
+
+- [AddDNSZone](../../../api/api-command/adddnszone/)
+- [ModifyDNSZone](../../../api/api-command/modifydnszone/)
+- [StatusDNSZone](../../../api/api-command/statusdnszone/)
+
+:::

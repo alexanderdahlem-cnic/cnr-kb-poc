@@ -1,26 +1,42 @@
 ---
 title: "StatusTrademark"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ StatusTrademark ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4860
 ---
 
 This command allows you to query trademark status information from our system.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND   = StatusTrademark
+:::command[Command]
+
+```text
+COMMAND   = StatusTrademark
 TRADEMARK = (TEXT)
-STATUSTYPE = SMD|ENC </code></pre></div>
+STATUSTYPE = SMD|ENC 
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[TRADEMARK][0] = (TEXT)
 property[MARKTYPE][0] = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
@@ -73,7 +89,10 @@ property[REGISTRATION_EXPIRATION_DATE][0] = (DATE)
 property[RENEWAL_DATE][0] = (DATE)
 property[JOB_ID][0] = (TEXT)
 property[RENEWALMODE][0] = AUTORENEW|AUTOEXPIRE
-property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1</code></pre></div>
+property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1
+```
+
+:::
 
 ### Attributes
 
@@ -131,3 +150,17 @@ property[X-ACCEPT-ADDITIONAL-LABEL-COST][0] = 0|1</code></pre></div>
 | **JOB\_ID** | Job id |
 | **RENEWALMODE** | Renewalmode |
 | **X-ACCEPT-ADDITIONAL-LABEL-COST** | Determines, TAG for resellers to accept the costs for further labels beyond |
+
+:::commandlist[Trademark commands]
+
+- [AddTrademark](../addtrademark/)
+- [DeleteTrademark](../deletetrademark/)
+- [GetTrademarkLabels](../gettrademarklabels/)
+- [ModifyTrademark](../modifytrademark/)
+- [QueryTrademarkList](../querytrademarklist/)
+- [RenewTrademark](../renewtrademark/)
+- [SetTrademarkRenewalmode](../settrademarkrenewalmode/)
+- [StatusTrademark](./)
+- [TransferTrademark](../transfertrademark/)
+
+:::

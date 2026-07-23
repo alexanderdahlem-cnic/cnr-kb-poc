@@ -1,5 +1,7 @@
 ---
 title: "cPanel"
+sidebar:
+  order: 1010
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
@@ -18,6 +20,18 @@ cPanel offers hosting providers and users the ability to automate server managem
 -   MySQL 5.7 (phpmyadmin)
 -   MultiPHP Manager
 -   and much more...
+
+:::commandlist[Related API Commands]
+
+- [CheckHosting](../../api/api-command/checkhosting/)
+- [DeleteHosting](../../api/api-command/deletehosting/)
+- [ModifyHosting](../../api/api-command/modifyhosting/)
+- [QueryHostingList](../../api/api-command/queryhostinglist/)
+- [RenewHosting](../../api/api-command/renewhosting/)
+- [RestoreHosting](../../api/api-command/restorehosting/)
+- [StatusHosting](../../api/api-command/statushosting/)
+
+:::
 
 <CardGrid>
   <LinkCard title={"Use cases"} href={"use-cases/"} />

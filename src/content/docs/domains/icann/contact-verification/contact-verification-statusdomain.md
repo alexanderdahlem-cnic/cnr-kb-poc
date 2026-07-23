@@ -1,14 +1,22 @@
 ---
 title: "Contact Verification: StatusDomain"
+sidebar:
+  order: 870
+  label: "StatusDomain"
 ---
 
 ## StatusDomain
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>...
+:::response[Response]
+
+```text
+...
 property[x-time-to-suspension][0] = [DateTime]
 property[status][0]               = clientHold
-property[status][1]               = serverHold</code></pre></div>
+property[status][1]               = serverHold
+```
+
+:::
 
 ### Attributes
 

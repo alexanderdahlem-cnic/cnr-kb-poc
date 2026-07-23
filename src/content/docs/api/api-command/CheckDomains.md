@@ -1,14 +1,23 @@
 ---
 title: "CheckDomains"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckDomains ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3060
 ---
 
 _(Related EPP Command » [Domain:Check](../../epp-command/domain-check/ "Domain:Check"))_
 
 This is exactly the same as CheckDomain, however with a multiple domain name check. CheckDomains for up to 32 domain names. Simply enter the respective domains with the TLD.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 -   [Default handling](#)
 -   [Premium features](#)
@@ -17,17 +26,27 @@ This is exactly the same as CheckDomain, however with a multiple domain name che
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomains
-domain[0-31]=YOURDOMAIN.TLD</code></pre></div>
+:::command[Command]
+
+```text
+command=CheckDomains
+domain[0-31]=YOURDOMAIN.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                          = (CODE)
+:::response[Response]
+
+```text
+code                          = (CODE)
 description                   = (TEXT)
 property[domaincheck][0-31]      = (CODE) (TEXT)
-property[domainchecktime][0-31]  = (RUNTIME)</code></pre></div>
+property[domainchecktime][0-31]  = (RUNTIME)
+```
+
+:::
 
 ### Attributes
 
@@ -40,21 +59,31 @@ property[domainchecktime][0-31]  = (RUNTIME)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomains
+:::command[Command]
+
+```text
+command=CheckDomains
 domain[0-31]=YOURDOMAIN.TLD
 X-IDN-LANGUAGE = (TEXT)
-X-ALLOCATION-TOKEN=0|1</code></pre></div>
+X-ALLOCATION-TOKEN=0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[X-ALLOCATION-TOKEN][0] = (TEXT)
 property[AFTERMARKET_PRICE][0] = (DECIMAL)
 property[AFTERMARKET_CURRENCY][0] = (TEXT)
-property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
+property[AFTERMARKET_INFO][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -69,20 +98,27 @@ property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
 
 The following premium parameters are standard for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomains
+:::command[Command]
+
+```text
+command=CheckDomains
 domain[0-31]=YOURDOMAIN.TLD
 X-FEE-COMMAND[0-31]=(TEXT)
 X-FEE-DOMAIN[0-31]=(TEXT)
 X-FEE-PERIOD[0-31]=(INT)
 X-FEE-PERIODTYPE[0-31]=(TEXT)
 X-FEE-CURRENCY[0-31]=(TEXT)
-X-FEE-LAUNCHPHASE[0-31]=(TEXT)</code></pre></div>
+X-FEE-LAUNCHPHASE[0-31]=(TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[DOMAINCHECK][n] = (TEXT)
 property[DOMAINCHECKTIME][n] = (DECIMAL)
@@ -98,7 +134,10 @@ property[X-FEE-COMMAND][n] = (TEXT)
 property[X-FEE-DOMAIN][n] = (TEXT)
 property[X-FEE-LAUNCHPHASE][n] = (TEXT)
 property[X-FEE-PERIOD][n] = (TEXT)
-property[X-FEE-PERIODTYPE][n] = (TEXT)</code></pre></div>
+property[X-FEE-PERIODTYPE][n] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -113,3 +152,41 @@ property[X-FEE-PERIODTYPE][n] = (TEXT)</code></pre></div>
 | **X-FEE-PERIOD\[0-31\]** | The period for the prices. |
 | **X-FEE-PERIODTYPE\[0-31\]** | The periodtype for the prices. |
 | **X-ALLOCATION-TOKEN** | Allocation Token |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](./)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

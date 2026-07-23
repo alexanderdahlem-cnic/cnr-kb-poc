@@ -1,5 +1,7 @@
 ---
 title: "Newsletters, Maintenances, Status"
+sidebar:
+  order: 2180
 ---
 
 ## Newsletters
@@ -26,8 +28,8 @@ You can manage your subscriptions for Newsletters and Maintenances inside your C
 
 To ensure you're receiving these mails properly, please make sure you have relevant email addresses inserted.
 
-![WI-Settings-Info](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_wi_settings.png)
+![WI-Settings-Info](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_wi_settings.png)
 
-![newsletter-info](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_newsletter.png)
+![newsletter-info](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_newsletter.png)
 
-![Maintenance-Info](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_maintenance.png)
+![Maintenance-Info](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_maintenance.png)

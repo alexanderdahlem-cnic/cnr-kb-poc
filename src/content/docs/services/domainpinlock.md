@@ -1,6 +1,8 @@
 ---
 title: "DomainPinLock"
 description: "Secure a domain through a PIN token procedure by SMS. The registrar can activate a security procedure to protect his domain by a new API command (SetDomainPinLo"
+sidebar:
+  order: 1530
 ---
 
 A new service to secure a domain through a PIN token procedure by SMS.  
@@ -33,3 +35,11 @@ This API command is used to activate the pinlock service
 
 -   only possible, if domain exists, Pinlock is already activated and the domain belongs to the requesting account
 -   Pin can only be requested every 10 minutes (The token will be valid for a period of 30 minutes before it expires)
+
+:::commandlist[DomainPinLock Command]
+
+- [SetDomainPinLock](../../api/api-command/setdomainpinlock/)
+- [RequestDomainPin](../../api/api-command/requestdomainpin/)
+- [QueryDomainPinLockList](../../api/api-command/querydomainpinlocklist/)
+
+:::

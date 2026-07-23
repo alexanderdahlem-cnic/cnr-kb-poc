@@ -1,6 +1,8 @@
 ---
 title: "Reseller Settings"
 description: "Example API Command for Reseller Settings ➥ Learn more!"
+sidebar:
+  order: 560
 ---
 
 | **ICANNTRANSFER-ownerchange-mode** | Choose between FOA Mode (default) and Designated Agent Mode. |
@@ -14,8 +16,10 @@ description: "Example API Command for Reseller Settings ➥ Learn more!"
 
 ## Example API Command for Reseller Settings
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code> command=setproperty
+:::command[Command]
+
+```text
+ command=setproperty
  ICANNTRANSFER-ownerchange-mode = FOA|DESIGNATED_AGENT
  ICANNTRANSFER-ownerchange-transferlock = 0|1
  ICANNTRANSFER-ownerchange-transferlock-override = 0|1
@@ -24,6 +28,7 @@ description: "Example API Command for Reseller Settings ➥ Learn more!"
  ICANNTRANSFER-ownerchange-confirmationlink = https://icann-transfers.key-systems.net/
  ICANNTRANSFER-ownerchange-infopagelink = https://www.icann.org/resources/pages/transfer-policy-2016-06-01-en#II.A
  ICANNTRANSFER-ownerchange-freetext0..2 =
- ICANNTRANSFER-ownerchange-footer0..2 = Your ICANN accredited registrar</code></pre></div>
+ ICANNTRANSFER-ownerchange-footer0..2 = Your ICANN accredited registrar
+```
 
-
+:::

@@ -1,6 +1,9 @@
 ---
 title: "Implementation of Expired Registration Recovery Policy"
 description: "ICANN is pleased to announce the implementation of the Expired Registration Recovery Policy (\"ERRP\"). This policy was developed from the Generic Name Supporting"
+sidebar:
+  order: 720
+  label: "Implementation Policy"
 ---
 
 ICANN is pleased to announce the implementation of the Expired Registration Recovery Policy ("ERRP"). This policy was developed from the Generic Name Supporting Organization ("GNSO")'s Post Expiration Domain Name Recovery ("PEDNR") recommendations, which were adopted by ICANN's Board of Directors on 28 October 2011. The policy was drafted in consultation with the GNSO's PEDNR Implementation Review Team and was posted for public comment on 11 October 2012.

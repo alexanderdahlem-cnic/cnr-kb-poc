@@ -1,6 +1,8 @@
 ---
 title: "DeleteCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ DeleteCertificate ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2740
 ---
 
 This command allows the user to cancel or revoke orders without implementing the complete handling of orders by just using the certificate ID instead of the order ID.  
@@ -8,23 +10,59 @@ For the parameter "action", with the value "Revoke" executes the API command Rev
 For the attributes description, please refer to the SSL 2.0 API Documentation.  
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND         = DeleteCertificate
+:::command[Command]
+
+```text
+COMMAND         = DeleteCertificate
 CERTIFICATE	= (TEXT)
 ACTION 		= REVOKE|CANCELORDER|REVOKEORDER
-APIVERSION 	= 1|2</code></pre></div>
+APIVERSION 	= 1|2
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code 		= (INT)
-description 	= (TEXT)</code></pre></div>
+:::response[Response]
 
+```text
+code 		= (INT)
+description 	= (TEXT)
+```
 
+:::
+
+:::commandlist[Certificate commands]
+
+- [AddCertificate](../addcertificate/)
+- [CheckCertificate](../checkcertificate/)
+- [DeleteCertificate](./)
+- [GetCertificateInfo](../getcertificateinfo/)
+- [QueryCertificateList](../querycertificatelist/)
+- [ReissueCertificate](../reissuecertificate/)
+- [RenewCertificate](../renewcertificate/)
+- [StatusCertificate](../statuscertificate/)
+- [RevokeCertificate](../revokecertificate/)
+- [RevokeCertificateOrder](../revokecertificateorder/)
+- [CancelCertificateOrder](../cancelcertificateorder/)
+- [StatusCertificateOrder](../statuscertificateorder/)
+- [QueryCertificateOrderList](../querycertificateorderlist/)
+- [AddCertificateContact](../addcertificatecontact/)
+- [StatusCertificateContact](../statuscertificatecontact/)
+- [QueryCertificateContactList](../querycertificatecontactlist/)
+
+:::

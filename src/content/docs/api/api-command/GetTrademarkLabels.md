@@ -1,31 +1,50 @@
 ---
 title: "GetTrademarkLabels"
 description: "CentralNic Reseller API Command Reference  ➤ Trademark ➤ GetTrademarkLabels ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4810
 ---
 
 This command returns the labels of a trademark name.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = GetTrademarkLabels
+:::command[Command]
+
+```text
+COMMAND = GetTrademarkLabels
 MARKNAME = (TEXT)
 MARKTYPE = REGISTERED_MARK|COURT_VALIDATED_MARK|STATUTE_OR_TREATY
-COUNTRY = (WIPOST3)</code></pre></div>
+COUNTRY = (WIPOST3)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[MARKNAME][0] = (TEXT)
 property[LABEL#][n] = (TEXT)
-property[ALABEL#][n] = (TEXT)</code></pre></div>
+property[ALABEL#][n] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -35,3 +54,17 @@ property[ALABEL#][n] = (TEXT)</code></pre></div>
 | **COUNTRY** | Country code or jurisdiction |
 | **LABEL#** | Label ##NUM## |
 | **ALABEL#** | ALabel ##NUM## |
+
+:::commandlist[Trademark commands]
+
+- [AddTrademark](../addtrademark/)
+- [DeleteTrademark](../deletetrademark/)
+- [GetTrademarkLabels](./)
+- [ModifyTrademark](../modifytrademark/)
+- [QueryTrademarkList](../querytrademarklist/)
+- [RenewTrademark](../renewtrademark/)
+- [SetTrademarkRenewalmode](../settrademarkrenewalmode/)
+- [StatusTrademark](../statustrademark/)
+- [TransferTrademark](../transfertrademark/)
+
+:::

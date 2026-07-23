@@ -1,6 +1,8 @@
 ---
 title: "Premium domains for OT&E"
 description: "Note: Every premium domain from LIVE System can be used for testing in OTE"
+sidebar:
+  order: 380
 ---
 
 This article contains premium domain names that can be used for testing purposes in the OT&E.

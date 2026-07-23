@@ -1,26 +1,64 @@
 ---
 title: "AddAftermarketAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ AddAftermarketAccount ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2500
 ---
 
 This command adds an Aftermarket Account.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=AddAftermarketAccount
-accountkey=&lt;TEXT&gt;                 (mandatory, your Aftermarket Account key)
-description=&lt;TEXT&gt;                (optional, freetext for easier identification)
-provider=sedo|&lt;NULL&gt;              (defaults to "sedo")</code></pre></div>
+:::command[Command]
+
+```text
+command=AddAftermarketAccount
+accountkey=<TEXT>                 (mandatory, your Aftermarket Account key)
+description=<TEXT>                (optional, freetext for easier identification)
+provider=sedo|<NULL>              (defaults to "sedo")
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>property[aftermarketaccount][0] = &lt;TEXT&gt;    (The Aftermarket Account ID, an alphanumerical random string of 10 characters)</code></pre></div>
+:::response[Response]
 
+```text
+property[aftermarketaccount][0] = <TEXT>    (The Aftermarket Account ID, an alphanumerical random string of 10 characters)
+```
 
+:::
+
+:::commandlist[Aftermarket commands]
+
+- [AddAftermarketAccount](./)
+- [AddAftermarketDomain](../addaftermarketdomain/)
+- [AftermarketBid](../aftermarketbid/)
+- [BuyDomain](../buydomain/)
+- [DeleteAftermarketAccount](../deleteaftermarketaccount/)
+- [DeleteAftermarketDomain](../deleteaftermarketdomain/)
+- [ModifyAftermarketAccount](../modifyaftermarketaccount/)
+- [ModifyAftermarketDomain](../modifyaftermarketdomain/)
+- [QueryAftermarketAccountList](../queryaftermarketaccountlist/)
+- [QueryAftermarketBid](../queryaftermarketbid/)
+- [QueryAftermarketBidList](../queryaftermarketbidlist/)
+- [QueryAftermarketDomainList](../queryaftermarketdomainlist/)
+- [QueryAftermarketList](../queryaftermarketlist/)
+- [ReserveDomain](../reservedomain/)
+- [StatusAftermarketAccount](../statusaftermarketaccount/)
+- [StatusAftermarketDomain](../statusaftermarketdomain/)
+
+:::

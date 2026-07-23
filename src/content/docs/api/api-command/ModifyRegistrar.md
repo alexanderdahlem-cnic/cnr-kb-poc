@@ -1,19 +1,28 @@
 ---
 title: "ModifyRegistrar"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ ModifyRegistrar ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2200
 ---
 
+:::gateways[Possible Gateways]
 
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND               = ModifyRegistrar
+:::command[Command]
+
+```text
+COMMAND               = ModifyRegistrar
 REGISTRAR             = (TEXT)
 URL                   = (TEXT)
 WHOIS                 = (TEXT)
@@ -95,13 +104,21 @@ BANNER0               = (TEXT)
 BANNER1               = (TEXT)
 BANNER2               = (TEXT)
 BANNER3               = (TEXT)
-BANNER4               = (TEXT)</code></pre></div>
+BANNER4               = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code        = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code        = (INT)
+description = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -188,3 +205,16 @@ description = (TEXT)</code></pre></div>
 | **BANNER2** | This text will be shown in the whois (optional) |
 | **BANNER3** | This text will be shown in the whois (optional) |
 | **BANNER4** | This text will be shown in the whois (optional) |
+
+:::commandlist[Account commands]
+
+- [ActivateAppendix](../activateappendix/)
+- [ModifyRegistrar](./)
+- [ModifyRegistrarCurrency](../modifyregistrarcurrency/)
+- [PushObject](../pushobject/)
+- [QueryAppendixList](../queryappendixlist/)
+- [QueryRegistrarStatisticList](../queryregistrarstatisticlist/)
+- [StatusAccount](../statusaccount/)
+- [StatusRegistrar](../statusregistrar/)
+
+:::

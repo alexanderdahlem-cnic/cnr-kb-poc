@@ -22,9 +22,14 @@ While we do not recommend disabling this feature, two opt-out options are availa
 
 A Registrar Property called `GENERAL-DEFAULT-CLIENTTRANSFERPROHIBITED` controls the default lock behavior for your entire account. It is set (enabled) by default for all customers. To disable the default lock for all new domains, unset this property with following API command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = SetProperty
-GENERAL-DEFAULT-CLIENTTRANSFERPROHIBITED = 0</code></pre></div>
+:::command[Command]
+
+```text
+command = SetProperty
+GENERAL-DEFAULT-CLIENTTRANSFERPROHIBITED = 0
+```
+
+:::
 
 ### Per-domain override
 

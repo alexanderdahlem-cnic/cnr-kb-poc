@@ -1,25 +1,39 @@
 ---
 title: "StatusRegistrar"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ StatusRegistrar ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2260
 ---
 
+:::gateways[Possible Gateways]
 
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = StatusRegistrar
-REGISTRAR = (TEXT)</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = StatusRegistrar
+REGISTRAR = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[BANK_CODE][0] = (TEXT)
 property[CURRENT][0] = (TEXT)
@@ -135,7 +149,10 @@ property[SUBFREEACCOUNTS][0] = (INT)
 property[SUBMAXLAYERS][0] = (INT)
 property[CREATED_DATE][0] = (DATE)
 property[UPDATED_DATE][0] = (DATE)
-property[RAM_ACTIVE][0] = (TEXT)</code></pre></div>
+property[RAM_ACTIVE][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -225,3 +242,16 @@ property[RAM_ACTIVE][0] = (TEXT)</code></pre></div>
 | **CREATED\_DATE** | When the registrar was created |
 | **UPDATED\_DATE** | When was the last modification to the account - data being made |
 | **RAM\_ACTIVE** | A flag that shows if there are current active registry account management systems active. |
+
+:::commandlist[Account commands]
+
+- [ActivateAppendix](../activateappendix/)
+- [ModifyRegistrar](../modifyregistrar/)
+- [ModifyRegistrarCurrency](../modifyregistrarcurrency/)
+- [PushObject](../pushobject/)
+- [QueryAppendixList](../queryappendixlist/)
+- [QueryRegistrarStatisticList](../queryregistrarstatisticlist/)
+- [StatusAccount](../statusaccount/)
+- [StatusRegistrar](./)
+
+:::

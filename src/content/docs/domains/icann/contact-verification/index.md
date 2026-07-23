@@ -1,6 +1,9 @@
 ---
 title: "Contact validation and verification requirements"
 description: "As part of the ongoing effort to improve contact quality, ICANN requires contact validation for each registrant contact registering a generic TLD. ➥ Learn more!"
+sidebar:
+  order: 760
+  label: "Requirements"
 ---
 
 As part of the ongoing effort to improve contact quality, ICANN requires contact validation for each registrant contact registering a generic TLD. This is required as of January 1, 2014 for new TLDs and September 2014 for the existing gTLDs. Our system will send a customizable e-mail asking every registrant contact to verify the accuracy of the contact e-mail address. This e-mail confirmation is done once for each registrant contact used with a newly registered domain, whenever the registrant contact of a domain name is updated and whenever the e-mail address of a contact associated with such a domain name is modified. Verification needs to be done once for each e-mail address used in a registrant contact and all other contacts using the same e-mail address will be considered successfully verified.
@@ -19,9 +22,12 @@ We are pleased to inform you that on November 6, 2018 we will introduce an impro
 
 This service is also customizable by API and Control Panel: If you prefer to create your own suspension notification web page you can submit your own nameservers. Please note that the changed DNS records must refer to a website with relevant content that explains the domain's suspension due to non-completion of an ICANN-mandated contact verification.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = SetProperty
+:::command[Command]
+
+```text
+command = SetProperty
 contactverification-interrupt-nameserver0 = ns1.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)
-contactverification-interrupt-nameserver1 = ns2.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)</code></pre></div>
+contactverification-interrupt-nameserver1 = ns2.emailverification.info (DEFAULT) | Your Nameserver (OPTIONAL)
+```
 
-
+:::

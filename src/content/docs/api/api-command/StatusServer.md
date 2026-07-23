@@ -1,25 +1,41 @@
 ---
 title: "StatusServer"
 description: "CentralNic Reseller API Command Reference  ➤ Server ➤ StatusServer ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4720
 ---
 
 Used to query the current status of the server.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = StatusServer
-SERVER  = [Server-ID]</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = StatusServer
+SERVER  = [Server-ID]
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                         = [INT]
+:::response[Response]
+
+```text
+code                         = [INT]
 description                  = [TEXT]
 property[SERVER][0]          = [TEXT]
 property[CLASS][0]           = VSERVER_512|VSERVER_1024|VSERVER_2048
@@ -45,7 +61,10 @@ property[VNCIP][0]           = [IP]
 property[VNCKEYMAP][0]       = [ar|da|de|de-ch|en-gb|en-us|es|...]
 property[VNCPORT][0]         = [INT]
 property[VNCPASS][0]         = [TEXT]
-property[VNCPOINTER][0]      = mouse|tablet</code></pre></div>
+property[VNCPOINTER][0]      = mouse|tablet
+```
+
+:::
 
 ### Attributes
 
@@ -75,3 +94,14 @@ property[VNCPOINTER][0]      = mouse|tablet</code></pre></div>
 | **VNCPORT** | Port of VNC server |
 | **VNCPASS** | Password of VNC server |
 | **VNCPOINTER** | Type of pointer emulation for VNC |
+
+:::commandlist[Server commands]
+
+- [AddServer](../addserver/)
+- [DeleteServer](../deleteserver/)
+- [ModifyServer](../modifyserver/)
+- [QueryServerList](../queryserverlist/)
+- [RenewServer](../renewserver/)
+- [StatusServer](./)
+
+:::

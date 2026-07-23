@@ -1,5 +1,7 @@
 ---
 title: ".AU Validation Service for Natural Persons"
+sidebar:
+  order: 1570
 ---
 
 ## What is it
@@ -270,8 +272,10 @@ If the handle is associated with domains that are coming up for renewal, or if t
 
 ## API Commands
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command   = ValidateContact
+:::command[Command]
+
+```text
+command   = ValidateContact
 contact = (TEXT) (in case the Reseller wants to add validation to an existing handle rather than creating a new one)
 firstname = (TEXT)
 middlename = (TEXT)
@@ -289,15 +293,23 @@ X-AU-OWNER-IDNUMBER =  [TEXT]
 X-AU-OWNER-IDISSUER = [TEXT]
 X-AU-OWNER-IDDATE = YYYY-MM-DD
 X-AU-OWNER-DOB = YYYY-MM-DD
-X-AU-OWNER-ACCEPT-VALIDATION-TERMS = 1 (required. The regulation requires us to obtain explicit consent from the user to validate their data)</code></pre></div>
+X-AU-OWNER-ACCEPT-VALIDATION-TERMS = 1 (required. The regulation requires us to obtain explicit consent from the user to validate their data)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[...]
+:::response[Response]
+
+```text
+[...]
 property[x-au-validated] = [0|1]
 property[x-au-validated-until] = YYYY-MM-DD
-property[x-au-validation-hash] = xxxxxxxxxxxxxxxxxxxxxxxxxxxx</code></pre></div>
+property[x-au-validation-hash] = xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+:::
 
 ## QueryContactList
 

@@ -1,28 +1,44 @@
 ---
 title: "QueryDomainBlockingList"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ QueryDomainBlockingList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2410
 ---
 
 Retrieve all the block and its information managed in the current account. The parameter ServiceTag# is optional. It can be used to look up which blocks are tagged with a specific tag. The # in the parameter needs to be replaced by an integer starting with 0, such as ServiceTag0, ServiceTag1 etc. to look up multiple tags at once.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = QueryDomainBlockingList
+:::command[Command]
+
+```text
+command = QueryDomainBlockingList
 SERVICETAG# = test
 wide    = 1
 history = 0
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]	
+:::response[Response]
+
+```text
+[RESPONSE]	
 code	 			= (INTEGER)
 description 			= (TEXT)
 runtime 			= (INTEGER)
@@ -66,9 +82,30 @@ property[renewal date][0]	= YYYY-MM-DD HH:MM:SS
 property[paid until date][0] 	= YYYY-MM-DD HH:MM:SS
 property[registrar transfer date][0] 	= YYYY-MM-DD HH:MM:SS
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ### Attributes
 
 | **SERVICETAG# - It can be used to look up which AdultBlocks are tagged with a specific tag. (Optional)** |  |
 | --- | --- |
+
+:::commandlist[AdultBlock | AdultBlockPlus commands]
+
+- [AddDomainBlocking](../adddomainblocking/)
+- [CheckDomainBlockingIPRID](../checkdomainblockingiprid/)
+- [DeleteDomainBlocking](../deletedomainblocking/)
+- [ModifyDomainBlocking](../modifydomainblocking/)
+- [QueryDomainBlockingList](./)
+- [RenewDomainBlocking](../renewdomainblocking/)
+- [StatusDomainBlocking](../statusdomainblocking/)
+- [TransferDomainBlocking - Approve](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve)
+- [TransferDomainBlocking - Cancel](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel)
+- [TransferDomainBlocking - Deny](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny)
+- [TransferDomainBlocking - Query](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query)
+- [TransferDomainBlocking - Request](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request)
+- [TransferDomainBlocking - UserTransfer](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer)
+
+:::

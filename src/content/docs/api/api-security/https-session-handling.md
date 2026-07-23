@@ -1,5 +1,7 @@
 ---
 title: "HTTPS Session Handling"
+sidebar:
+  order: 90
 ---
 
 On the HTTPs API, the password is usually given with each request and checked by the API-Server. For security reasons, the password check requires more time, which is slowing down every single request. The use of a persistent session increases the security because the password is sent only at the start of the session and thus speeding up all other request.
@@ -16,19 +18,29 @@ https://api.rrpproxy.net/api/call
 
 followed by the API command below:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = StartSession
+:::command[Command]
+
+```text
+command     = StartSession
 login       = (REGISTRAR)
 password    = (PASSWORD)
 persistent  = 1
-newpassword = (NEW_PASSWORD, optional, it allows you to set a new password during session start)</code></pre></div>
+newpassword = (NEW_PASSWORD, optional, it allows you to set a new password during session start)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
-property[sessionid][0] = 1dac7d5108865ac2a4c54fec04526d69</code></pre></div>
+property[sessionid][0] = 1dac7d5108865ac2a4c54fec04526d69
+```
+
+:::
 
 ## Requests with session ID
 
@@ -40,15 +52,25 @@ or
 
 https://api.rrpproxy.net/api/call?s\_login=<REGISTRAR>&s\_sessionid=1dac7d5108865ac2a4c54fec04526d69
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=StatusAccount</code></pre></div>
+:::command[Command]
+
+```text
+command=StatusAccount
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
-...</code></pre></div>
+...
+```
+
+:::
 
 ## Closing a session
 
@@ -60,13 +82,21 @@ or
 
 https://api.rrpproxy.net/api/call?s\_login=<REGISTRAR>&s\_sessionid=1dac7d5108865ac2a4c54fec04526d69
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=StopSession</code></pre></div>
+:::command[Command]
+
+```text
+command=StopSession
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
-description = Command completed successfully</code></pre></div>
+:::response[Response]
 
+```text
+code = 200
+description = Command completed successfully
+```
 
+:::

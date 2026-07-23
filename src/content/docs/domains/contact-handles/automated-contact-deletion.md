@@ -1,5 +1,7 @@
 ---
 title: "Automated Contact Deletion"
+sidebar:
+  order: 520
 ---
 
 Starting on 19.09.2018 we will begin to automatically delete unused contacts.
@@ -40,8 +42,11 @@ Add optional parameter AUTODELETE=0|1. Default is 1 (YES).
 
 New API call that restores a deleted contact(regardless, if explicitly or automatically deleted).
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=RestoreContact
-contact=(CONTACT)</code></pre></div>
+:::command[Command]
 
+```text
+command=RestoreContact
+contact=(CONTACT)
+```
 
+:::

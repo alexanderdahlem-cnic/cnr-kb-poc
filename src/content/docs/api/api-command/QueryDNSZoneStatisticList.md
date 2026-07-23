@@ -1,12 +1,19 @@
 ---
 title: "QueryDNSZoneStatisticList"
 description: "CentralNic Reseller API Command Reference  ➤ KeyDNS ➤ QueryDNSZoneStatisticList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4350
 ---
 
+:::gateways[Possible Gateways]
 
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::
 
 -   [Default handling](#)
 -   [Premium features](#)
@@ -17,15 +24,22 @@ This command will return DNS zone statistics, such as the total number of querie
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>[COMMAND]
+:::command[Command]
+
+```text
+[COMMAND]
 command = QueryDNSZoneStatisticList
-dnszone = (TEXT)</code></pre></div>
+dnszone = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
+:::response[Response]
+
+```text
+[RESPONSE]
 code.                  = (INTEGER)
 description            = (TEXT)
 runtime                = (INTEGER)
@@ -44,13 +58,42 @@ property[period][#]    = DAY
 property[timestamp][#] = YYYY-MM-DD HH:MM:SS
 property[noerror][#]   = (INTEGER)
 property[nxdomain][#]  = (INTEGER)
-property[notimp][#]    = (INTEGER)</code></pre></div>
+property[notimp][#]    = (INTEGER)
+```
+
+:::
 
 ## Required Parameters (premium)
 
 The following premium parameters are standard for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>PREMIUMDNSSET    = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)</code></pre></div>
+:::command[Command]
 
+```text
+PREMIUMDNSSET    = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)
+```
 
+:::
+
+:::commandlist[KeyDNS commands]
+
+- [AddDNSZone](../adddnszone/)
+- [AddMailFwd](../addmailfwd/)
+- [AddWebFwd](../addwebfwd/)
+- [CheckDNSZone](../checkdnszone/)
+- [DeleteDNSZone](../deletednszone/)
+- [DeleteMailFwd](../deletemailfwd/)
+- [DeleteWebFwd](../deletewebfwd/)
+- [ExportDNSZone](../exportdnszone/)
+- [GetDNSZone](../getdnszone/)
+- [ImportDNSZone](../importdnszone/)
+- [ModifyDNSZone](../modifydnszone/)
+- [QueryDNSZoneList](../querydnszonelist/)
+- [QueryDNSZoneRRList](../querydnszonerrlist/)
+- [QueryDNSZoneStatisticList](./)
+- [QueryDNSZoneSubdomainList](../querydnszonesubdomainlist/)
+- [QueryMailFwdList](../querymailfwdlist/)
+- [QueryWebFwdList](../querywebfwdlist/)
+- [StatusDNSZone](../statusdnszone/)
+
+:::

@@ -1,40 +1,61 @@
 ---
 title: "ModifyContact"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ ModifyContact ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2940
 ---
 
 _(Related EPP Command » [Contact:Update](../../epp-command/contact-update/ "Contact:Update"))_
 
 This command allows you, to change the content of a contact handle. The change will not be propagated to all registries, it may be necessary to send a ModifyDomain command with a different handle to these registries.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>[COMMAND]
+:::command[Command]
+
+```text
+[COMMAND]
 COMMAND     = ModifyContact
 CONTACT     = (CONTACT)
-AUTODELETE  = (0|1)</code></pre></div>
+AUTODELETE  = (0|1)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = &lt;INT&gt;
-description = &lt;TEXT&gt;
+:::response[Response]
+
+```text
+code = <INT>
+description = <TEXT>
 property[VALIDATED][0] = 0|1
 property[VERIFIED][0] = 0|1
-property[VERIFICATION_REQUESTED][0] = 0|1</code></pre></div>
+property[VERIFICATION_REQUESTED][0] = 0|1
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>[COMMAND]
+:::command[Command]
+
+```text
+[COMMAND]
 COMMAND       = ModifyContact
 VALIDATION    = (0|1)
 CHECKONLY     = (0|1)
@@ -56,18 +77,24 @@ FAX           = (TEXT)
 EMAIL         = (TEXT)
 AUTH          = (TEXT)
 STATUS0..4    = (TEXT)
+
 X-VERIFICATION-DATA0..n           = email|phone|name|address
 X-VERIFICATION-TRUSTFAMEWORK0..n  = (TEXT)
 X-VERIFICATION-TIMESTAMP0..n      = YYYY-MM-DDTHH:MM:SS+HH:MM
 X-VERIFICATION-METHOD0..n         = (TEXT)
 X-VERIFICATION-REFERENCE0..n      = (TEXT)
 X-VERIFICATION-EVIDENCE0..n       = (TEXT)
-X-VERIFICATION-RESULT0..n         = Success|failed</code></pre></div>
+X-VERIFICATION-RESULT0..n         = Success|failed
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
+:::response[Response]
+
+```text
+[RESPONSE]
 code                                      = (INTEGER)
 description                               = (TEXT)
 property[VALIDATED][0]                    = (0|1)
@@ -79,7 +106,10 @@ property[x-verification-timestamp][0]     = (DATETIME)
 property[x-verification-method][0]        = (TEXT)
 property[x-verification-reference][0]     = (TEXT)
 property[x-verification-evidence][0]      = (TEXT)
-property[x-verification-result][0]        = Success|failed </code></pre></div>
+property[x-verification-result][0]        = Success|failed 
+```
+
+:::
 
 ### Attributes
 
@@ -121,3 +151,21 @@ property[x-verification-result][0]        = Success|failed </code></pre></div>
 | **STATUS3** | Optional |
 | **STATUS4** | Optional |
 | **AUTODELETE** | Autodelete 0 sets the contact to clientDeleteProhibited, so that it will not get deleted automatically if it is not linked with an object. |
+
+:::commandlist[Contact commands]
+
+- [AddContact](../addcontact/)
+- [CheckContact](../checkcontact/)
+- [CheckContacts](../checkcontacts/)
+- [CloneContact](../clonecontact/)
+- [DeleteContact](../deletecontact/)
+- [ModifyContact](./)
+- [QueryContactList](../querycontactlist/)
+- [RequestToken](../requesttoken/)
+- [RestoreContact](../restorecontact/)
+- [StatusContact](../statuscontact/)
+- [StatusOwnerChange](../statusownerchange/)
+- [StatusUnsyncRegistryContact](../statusunsyncregistrycontact/)
+- [TransferContact](../transfercontact/)
+
+:::

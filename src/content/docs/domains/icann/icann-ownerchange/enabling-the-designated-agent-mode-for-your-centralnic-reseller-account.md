@@ -1,6 +1,8 @@
 ---
 title: "Enabling DA-Mode"
 description: "Enabling the Designated Agent Mode for your CentralNic Reseller account. ➥ Learn more!"
+sidebar:
+  order: 570
 ---
 
 When enabling this option you confirm that:

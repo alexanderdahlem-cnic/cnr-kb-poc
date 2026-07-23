@@ -5,33 +5,57 @@ description: "EPP API Command Reference  ➤ Domain commands ➤ Domain:Delete �
 
 ## Required Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
- &lt;command&gt;
-   &lt;delete&gt;
-     &lt;domain:delete xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-       &lt;domain:name&gt;example50.com&lt;/domain:name&gt;
-     &lt;/domain:delete&gt;
-   &lt;/delete&gt;
-   &lt;clTRID&gt;734ABADA-3015-11DE-A6A7-800000008EDE&lt;/clTRID&gt;
- &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <command>
+   <delete>
+     <domain:delete xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+       <domain:name>example50.com</domain:name>
+     </domain:delete>
+   </delete>
+   <clTRID>734ABADA-3015-11DE-A6A7-800000008EDE</clTRID>
+ </command>
+</epp>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
- &lt;response&gt;
-   &lt;result code="1000"&gt;
-     &lt;msg&gt;Command completed successfully&lt;/msg&gt;
-   &lt;/result&gt;
-   &lt;trID&gt;
-     &lt;clTRID&gt;734ABADA-3015-11DE-A6A7-800000008EDE&lt;/clTRID&gt;
-     &lt;svTRID&gt;77FC94EA-3015-11DE-9878-8D01B5F06CC6&lt;/svTRID&gt;
-   &lt;/trID&gt;
- &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <response>
+   <result code="1000">
+     <msg>Command completed successfully</msg>
+   </result>
+   <trID>
+     <clTRID>734ABADA-3015-11DE-A6A7-800000008EDE</clTRID>
+     <svTRID>77FC94EA-3015-11DE-9878-8D01B5F06CC6</svTRID>
+   </trID>
+ </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Domain commands]
+
+- [Domain:Check](../domain-check/)
+- [Domain:Create](../domain-create/)
+- [Domain:Delete](./)
+- [Domain:Info](../domain-info/)
+- [Domain:OwnerChange](../domain-ownerchange/)
+- [Domain:Push](../domain-push/)
+- [Domain:Renew](../domain-renew/)
+- [Domain:Renewalmode](../domain-renewalmode/)
+- [Domain:Restore](../domain-restore/)
+- [Domain:Trade](../domain-trade/)
+- [Domain:Update](../domain-update/)
+
+:::

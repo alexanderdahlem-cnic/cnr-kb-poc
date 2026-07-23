@@ -1,6 +1,9 @@
 ---
 title: "FAQ ICANN OwnerChange"
 description: "Frequently asked questions about ICANN OwnerChange. ➥ Learn more!"
+sidebar:
+  order: 630
+  label: "FAQ"
 ---
 
 Will another OwnerChange be possible during the 60-day lock phase?

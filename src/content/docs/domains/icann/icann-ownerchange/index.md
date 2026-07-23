@@ -1,6 +1,9 @@
 ---
 title: "ICANN Policy for OwnerChange"
 description: "ICANN has announced the implementation of amendments to the Inter-Registrar Transfer Policy (IRTP), which is being renamed as the \"Transfer Policy.\""
+sidebar:
+  order: 550
+  label: "ICANN Policy"
 ---
 
 ICANN has announced the implementation of amendments to the Inter-Registrar Transfer Policy (IRTP), which is being renamed as the "Transfer Policy." In addition to rules related to inter-registrar transfers, the updated Transfer Policy now sets policy requirements for transfers between registrants, also described as OwnerChanges. It will also impose new conditions for the expiration of the Form of Authorization (FOA) used by registrars in inter-registrar transfers.

@@ -1,5 +1,7 @@
 ---
 title: "Required Documents"
+sidebar:
+  order: 200
 ---
 
 Please submit all needed document types in one single document with only one of the below declarations also if the document contains more than just one type of documents. You can choose any of the required declarations if this document is needed and contained.

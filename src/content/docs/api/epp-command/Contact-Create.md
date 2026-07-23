@@ -7,106 +7,136 @@ The command allows to create a new handle in the system. To be able to order ccT
 
 ## Required Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"&gt;
- &lt;command&gt;
-   &lt;create&gt;
-     &lt;contact:create
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd">
+ <command>
+   <create>
+     <contact:create
       xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
       xsi:schemaLocation="urn:ietf:params:xml:ns:contact-1.0
-      contact-1.0.xsd"&gt;
-       &lt;contact:id&gt;sh8013&lt;/contact:id&gt;
-       &lt;contact:postalInfo type="int"&gt;
-         &lt;contact:name&gt;John Doe&lt;/contact:name&gt;
-         &lt;contact:org&gt;Example Inc.&lt;/contact:org&gt;
-         &lt;contact:addr&gt;
-           &lt;contact:street&gt;123 Example Dr.&lt;/contact:street&gt;
-           &lt;contact:street&gt;Suite 100&lt;/contact:street&gt;
-           &lt;contact:city&gt;Dulles&lt;/contact:city&gt;
-           &lt;contact:sp&gt;VA&lt;/contact:sp&gt;
-           &lt;contact:pc&gt;20166-6503&lt;/contact:pc&gt;
-           &lt;contact:cc&gt;US&lt;/contact:cc&gt;
-         &lt;/contact:addr&gt;
-       &lt;/contact:postalInfo&gt;
-       &lt;contact:voice&gt;+1.7035555555&lt;/contact:voice&gt;
-       &lt;contact:fax&gt;+1.7035555556&lt;/contact:fax&gt;
-       &lt;contact:email&gt;jdoe@example.com&lt;/contact:email&gt;
-       &lt;contact:authInfo&gt;
-         &lt;contact:pw/&gt;
-       &lt;/contact:authInfo&gt;
-     &lt;/contact:create&gt;
-   &lt;/create&gt;
-   &lt;clTRID&gt;30FC8ABC-2FFE-11DE-9786-80000000A8C5&lt;/clTRID&gt;
- &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+      contact-1.0.xsd">
+       <contact:id>sh8013</contact:id>
+       <contact:postalInfo type="int">
+         <contact:name>John Doe</contact:name>
+         <contact:org>Example Inc.</contact:org>
+         <contact:addr>
+           <contact:street>123 Example Dr.</contact:street>
+           <contact:street>Suite 100</contact:street>
+           <contact:city>Dulles</contact:city>
+           <contact:sp>VA</contact:sp>
+           <contact:pc>20166-6503</contact:pc>
+           <contact:cc>US</contact:cc>
+         </contact:addr>
+       </contact:postalInfo>
+       <contact:voice>+1.7035555555</contact:voice>
+       <contact:fax>+1.7035555556</contact:fax>
+       <contact:email>jdoe@example.com</contact:email>
+       <contact:authInfo>
+         <contact:pw/>
+       </contact:authInfo>
+     </contact:create>
+   </create>
+   <clTRID>30FC8ABC-2FFE-11DE-9786-80000000A8C5</clTRID>
+ </command>
+</epp>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
- &lt;response&gt;
-   &lt;result code="1000"&gt;
-     &lt;msg&gt;Command completed successfully&lt;/msg&gt;
-   &lt;/result&gt;
-   &lt;resData&gt;
-     &lt;contact:creData xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"&gt;
-       &lt;contact:id&gt;P-JMD24&lt;/contact:id&gt;
-       &lt;contact:crDate&gt;2009-04-23T11:59:29.0Z&lt;/contact:crDate&gt;
-     &lt;/contact:creData&gt;
-   &lt;/resData&gt;
-   &lt;trID&gt;
-     &lt;clTRID&gt;30FC8ABC-2FFE-11DE-9786-80000000A8C5&lt;/clTRID&gt;
-     &lt;svTRID&gt;331E69A0-2FFE-11DE-B163-D0A51393EAB9&lt;/svTRID&gt;
-   &lt;/trID&gt;
- &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <response>
+   <result code="1000">
+     <msg>Command completed successfully</msg>
+   </result>
+   <resData>
+     <contact:creData xmlns:contact="urn:ietf:params:xml:ns:contact-1.0">
+       <contact:id>P-JMD24</contact:id>
+       <contact:crDate>2009-04-23T11:59:29.0Z</contact:crDate>
+     </contact:creData>
+   </resData>
+   <trID>
+     <clTRID>30FC8ABC-2FFE-11DE-9786-80000000A8C5</clTRID>
+     <svTRID>331E69A0-2FFE-11DE-B163-D0A51393EAB9</svTRID>
+   </trID>
+ </response>
+</epp>
+```
+
+:::
 
 ## Optional Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd"&gt;
-  &lt;command&gt;
-    &lt;create&gt;
-      &lt;contact:create xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
-      xsi:schemaLocation="urn:ietf:params:xml:ns:contact-1.0 contact-1.0.xsd"&gt;
-        &lt;contact:id&gt;sh8013&lt;/contact:id&gt;
-        &lt;contact:postalInfo type="int"&gt;
-          &lt;contact:name&gt;John Doe&lt;/contact:name&gt;
-          &lt;contact:org&gt;Example Inc.&lt;/contact:org&gt;
-          &lt;contact:addr&gt;
-            &lt;contact:street&gt;123 Example Dr.&lt;/contact:street&gt;
-            &lt;contact:street&gt;Suite 100&lt;/contact:street&gt;
-            &lt;contact:city&gt;Dulles&lt;/contact:city&gt;
-            &lt;contact:sp&gt;VA&lt;/contact:sp&gt;
-            &lt;contact:pc&gt;20166-6503&lt;/contact:pc&gt;
-            &lt;contact:cc&gt;US&lt;/contact:cc&gt;
-          &lt;/contact:addr&gt;
-        &lt;/contact:postalInfo&gt;
-        &lt;contact:voice&gt;+1.7035555555&lt;/contact:voice&gt;
-        &lt;contact:fax&gt;+1.7035555556&lt;/contact:fax&gt;
-        &lt;contact:email&gt;jdoe@example.com&lt;/contact:email&gt;
-        &lt;contact:authInfo&gt;
-          &lt;contact:pw/&gt;
-        &lt;/contact:authInfo&gt;
-      &lt;/contact:create&gt;
-    &lt;/create&gt;
-    &lt;extension&gt;
-      &lt;keysys:create xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0"&gt;
-        &lt;keysys:contact&gt;
-          &lt;keysys:forceDuplication&gt;1&lt;/keysys:forceDuplication&gt;
-        &lt;/keysys:contact&gt;
-      &lt;/keysys:create&gt;
-    &lt;/extension&gt;
-    &lt;clTRID&gt;E9AE0746-4DDC-4B6B-8701-AEEEB0EEFF73&lt;/clTRID&gt;
-  &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0 epp-1.0.xsd">
+  <command>
+    <create>
+      <contact:create xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"
+      xsi:schemaLocation="urn:ietf:params:xml:ns:contact-1.0 contact-1.0.xsd">
+        <contact:id>sh8013</contact:id>
+        <contact:postalInfo type="int">
+          <contact:name>John Doe</contact:name>
+          <contact:org>Example Inc.</contact:org>
+          <contact:addr>
+            <contact:street>123 Example Dr.</contact:street>
+            <contact:street>Suite 100</contact:street>
+            <contact:city>Dulles</contact:city>
+            <contact:sp>VA</contact:sp>
+            <contact:pc>20166-6503</contact:pc>
+            <contact:cc>US</contact:cc>
+          </contact:addr>
+        </contact:postalInfo>
+        <contact:voice>+1.7035555555</contact:voice>
+        <contact:fax>+1.7035555556</contact:fax>
+        <contact:email>jdoe@example.com</contact:email>
+        <contact:authInfo>
+          <contact:pw/>
+        </contact:authInfo>
+      </contact:create>
+    </create>
+    <extension>
+      <keysys:create xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0">
+        <keysys:contact>
+          <keysys:forceDuplication>1</keysys:forceDuplication>
+        </keysys:contact>
+      </keysys:create>
+    </extension>
+    <clTRID>E9AE0746-4DDC-4B6B-8701-AEEEB0EEFF73</clTRID>
+  </command>
+</epp>
+```
+
+:::
 
 ### Attributes
 
 | **keysys:forceDuplication** | If there is the necessity to create a new handle with the same information as an already existing one, the CreateContact command has to be extended with this parameter |
 | --- | --- |
+
+:::commandlist[Contact commands]
+
+- [Contact:Check](../contact-check/)
+- [Contact:Create](./)
+- [Contact:Delete](../contact-delete/)
+- [Contact:Info](../contact-info/)
+- [Contact:Info](../contact-info/)
+- [Contact:OwnerChange](../contact-ownerchange/)
+- [Contact:Transfer](../contact-transfer/)
+- [Contact:Update](../contact-update/)
+- [Contact:UpdateCheckonly1](../contact-updatecheckonly1/)
+- [Contact:UpdateTriggerfoa1](../contact-updatetriggerfoa1/)
+
+:::

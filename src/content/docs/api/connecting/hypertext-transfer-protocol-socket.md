@@ -1,6 +1,9 @@
 ---
 title: "Hypertext Transfer Protocol Socket"
 description: "You can connect by using the HTTP(s) call: ➥ Learn more!"
+sidebar:
+  order: 110
+  label: "HTTPS-Software"
 ---
 
 You can connect by using the following HTTP(s) call(the values in square brackets,including those, need to be substituted by your account name and corresponding password):
@@ -9,45 +12,75 @@ You can connect by using the following HTTP(s) call(the values in square bracket
 
 \[<mregpassword>ote\] => accountpassword
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&amp;s_pw=[&lt;mregpassword&gt;ote]</code></pre></div>
+:::command[Command]
+
+```text
+https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&s_pw=[<mregpassword>ote]
+```
+
+:::
 
 The API commands are passed on through the parameters:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&amp;s_pw=[&lt;mregpassword&gt;ote]&amp;command=CheckDomain&amp;domain=example.com</code></pre></div>
+:::command[Command]
+
+```text
+https://api-ote.rrpproxy.net/api/call?s_login=[mregname]&s_pw=[<mregpassword>ote]&command=CheckDomain&domain=example.com
+```
+
+:::
 
 ## Wget
 
 Connect by using the following Wget command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>wget --nv -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&amp;s_login=[mregname]&amp;s_pw=
-[&lt;mregpassword&gt;ote]&amp;command=checkdomain&amp;domain=example.org" --O-</code></pre></div>
+:::command[Command]
+
+```text
+wget --nv -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[mregname]&s_pw=
+[<mregpassword>ote]&command=checkdomain&domain=example.org" --O-
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 210
+:::response[Response]
+
+```text
+code = 210
 description = Domain name available
 queuetime=0
-runtime=0.054</code></pre></div>
+runtime=0.054
+```
+
+:::
 
 ## Curl
 
 Connect by using the following Curl command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>curl -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&amp;s_login=[mregname]&amp;s_pw=
-[&lt;mregpassword&gt;ote]&amp;command=checkdomain&amp;domain=example.org"</code></pre></div>
+:::command[Command]
+
+```text
+curl -"https://api-ote.rrpproxy.net/api/call?s_opmode=OTE&s_login=[mregname]&s_pw=
+[<mregpassword>ote]&command=checkdomain&domain=example.org"
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 211
+:::response[Response]
+
+```text
+code = 211
 description = Domain name not available
 queuetime=0
-runtime=0.15</code></pre></div>
+runtime=0.15
+```
+
+:::
 
 **Operational Test & Evaluation (OT&E)**
 

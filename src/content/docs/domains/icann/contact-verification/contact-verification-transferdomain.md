@@ -1,6 +1,9 @@
 ---
 title: "Contact Verification: TransferDomain"
 description: "After a TransferIN (single or bulk) the contacts will be synced back into the system (via RRP->AddContact) here is a validation and verification check."
+sidebar:
+  order: 850
+  label: "TransferDomain"
 ---
 
 ## TransferDomain

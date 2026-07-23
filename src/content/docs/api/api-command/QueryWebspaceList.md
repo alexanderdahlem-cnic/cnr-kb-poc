@@ -1,19 +1,30 @@
 ---
 title: "QueryWebspaceList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ QueryWebspaceList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4170
 ---
 
 With QueryWebspaceList you can get a detailed overview of all your Webspaces refering to their status and usage.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryWebspaceList
+:::command[Command]
+
+```text
+COMMAND = QueryWebspaceList
 CLASS = (TEXT)
 ORDER = ASC|DESC
 VERSION = (TEXT)
@@ -21,12 +32,17 @@ STATUS = (TEXT)
 ORDERBY = WEBSPACE|CLASS|VERSION|STATUS|IP
 WIDE = 0|1
 FIRST = (INT)
-LIMIT = (INT)</code></pre></div>
+LIMIT = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[WEBSPACE][n] = (TEXT)
 property[IP][n] = (IP)
@@ -36,7 +52,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -57,3 +76,18 @@ property[TOTAL][0] = (INT)</code></pre></div>
 | **LAST** | Pointer to the last shown ID |
 | **LIMIT** | The limit given in the command |
 | **TOTAL** | Total number of webspaces |
+
+:::commandlist[Hosting - Webspace commands]
+
+- [AddWebspace](../addwebspace/)
+- [DeleteWebspace](../deletewebspace/)
+- [ModifyPHPIni](../modifyphpini/)
+- [ModifyWebspace](../modifywebspace/)
+- [QueryPHPIni](../queryphpini/)
+- [QueryWebspaceList](./)
+- [QueryWebspaceTraffic](../querywebspacetraffic/)
+- [RenewWebspace](../renewwebspace/)
+- [SetWebspaceRenewalMode](../setwebspacerenewalmode/)
+- [StatusWebspace](../statuswebspace/)
+
+:::

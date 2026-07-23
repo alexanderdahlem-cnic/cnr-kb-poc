@@ -1,5 +1,8 @@
 ---
 title: "Permissions for ACL Users & Groups"
+sidebar:
+  order: 1730
+  label: "ACL Permissions"
 ---
 
 How does it work?

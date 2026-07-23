@@ -1,5 +1,7 @@
 ---
 title: "Sanction Screening"
+sidebar:
+  order: 540
 ---
 
 ## Automatic Processing of Sanction Lists

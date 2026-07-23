@@ -1,29 +1,46 @@
 ---
 title: "ResendNotification"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ ResendNotification ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3260
 ---
 
+:::gateways[Possible Gateways]
 
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ResendNotification
+:::command[Command]
+
+```text
+COMMAND = ResendNotification
 TYPE = domaintransfer | certificate | trademark | claimsnotice | contactverification | ownerchange
-OBJECT = (TEXT)</code></pre></div>
+OBJECT = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[OWNER][0] = (TEXT)
-property[ADMIN][0] = (TEXT)</code></pre></div>
+property[ADMIN][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -37,21 +54,31 @@ property[ADMIN][0] = (TEXT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ResendNotification
+:::command[Command]
+
+```text
+COMMAND = ResendNotification
 TYPE = domaintransfer | certificate | trademark | claimsnotice | contactverification | ownerchange
 OBJECT = (TEXT)
 SUB = (TEXT)
 REASON = (TEXT)
-RECIPIENT = owner|admin|both</code></pre></div>
+RECIPIENT = owner|admin|both
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[OWNER][0] = (TEXT)
-property[ADMIN][0] = (TEXT)</code></pre></div>
+property[ADMIN][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -59,3 +86,41 @@ property[ADMIN][0] = (TEXT)</code></pre></div>
 | --- | --- |
 | **REASON** | Reason message for resending the notification (optional) |
 | **RECIPIENT** | Who should receive the notify again (optional) |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](./)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

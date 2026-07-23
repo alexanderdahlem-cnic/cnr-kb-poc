@@ -1,30 +1,62 @@
 ---
 title: "StatusMailspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Mailspace ➤ StatusMailspace ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4060
 ---
 
 StatusMailspace
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = StatusMailspace
+:::command[Command]
+
+```text
+COMMAND = StatusMailspace
 LOG = 0|1
-MAILSPACE = (TEXT)</code></pre></div>
+MAILSPACE = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code = (INT)
+description = (TEXT)
+```
+
+:::
 
 ### Attributes
 
 | **LOG** | Optional |
 | --- | --- |
 | **MAILSPACE** | The mailspace id |
+
+:::commandlist[Hosting - Mailspace commands]
+
+- [AddMailspace](../addmailspace/)
+- [CheckMailspaceEmail](../checkmailspaceemail/)
+- [DeleteMailspace](../deletemailspace/)
+- [ModifyMailspace](../modifymailspace/)
+- [QueryMailspaceList](../querymailspacelist/)
+- [RenewMailspace](../renewmailspace/)
+- [SetMailspaceRenewalMode](../setmailspacerenewalmode/)
+- [StatusMailspace](./)
+
+:::

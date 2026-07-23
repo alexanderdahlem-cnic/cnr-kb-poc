@@ -1,5 +1,8 @@
 ---
 title: "Reissue a SSL Certificate Step by Step via API"
+sidebar:
+  order: 1260
+  label: "SSL Reissue via API"
 ---
 
 To reissue an SSL certificate you need:
@@ -13,93 +16,141 @@ To reissue an SSL certificate you need:
 
 No sub is stated, the newest active sub-certificate will be reissued (in this case CZ00001-002).
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=ReissueCertificate
+:::command[Command]
+
+```text
+command=ReissueCertificate
 certificate=CZ00001
-csrX=...</code></pre></div>
+csrX=...
+```
+
+:::
 
 Certificate before the command has been issued (in this case CZ00001-002 ist the newest active sub-certificate):
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Certificate:		CZ00001
+:::command[Command]
+
+```text
+Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
-Sub:			CZ00001-002		ACTIVE	&lt;-- this sub will be reissued</code></pre></div>
+Sub:			CZ00001-002		ACTIVE	<-- this sub will be reissued
+```
+
+:::
 
 Certificate after the command has been issued:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Certificate:		CZ00001
+:::command[Command]
+
+```text
+Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	&lt;-- this is the reissued sub</code></pre></div>
+Sub:			CZ00001-003		ACTIVE	<-- this is the reissued sub
+```
+
+:::
 
 ## API Command Example 2: explicitly stated sub
 
 An explicitly stated sub will be reissued.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=ReissueCertificate
+:::command[Command]
+
+```text
+command=ReissueCertificate
 certificate=CZ00001
 sub=CZ00001-001
-csrX=...</code></pre></div>
+csrX=...
+```
+
+:::
 
 Certificate before the command has been issued:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Certificate:		CZ00001
-Sub:			CZ00001-001		ACTIVE	&lt;-- this sub will be reissued
-Sub:			CZ00001-002		ACTIVE</code></pre></div>
+:::command[Command]
+
+```text
+Certificate:		CZ00001
+Sub:			CZ00001-001		ACTIVE	<-- this sub will be reissued
+Sub:			CZ00001-002		ACTIVE
+```
+
+:::
 
 Certificate after the command has been issued:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Certificate:		CZ00001
+:::command[Command]
+
+```text
+Certificate:		CZ00001
 Sub:			CZ00001-001		ACTIVE
 Sub:			CZ00001-002		ACTIVE
-Sub:			CZ00001-003		ACTIVE	&lt;-- this is the reissued sub</code></pre></div>
+Sub:			CZ00001-003		ACTIVE	<-- this is the reissued sub
+```
+
+:::
 
 ## Obtaining the new CRT
 
 The new CRT can be obtained via StatusCertificate, once the reissue has been finished by the CA. Please note, this is an asynchronous process so it might take a while until the reissue has been completed by the CA.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=StatusCertificate
+:::command[Command]
+
+```text
+command=StatusCertificate
 certificate= CZ00001
-sub=CZ00001-003</code></pre></div>
+sub=CZ00001-003
+```
+
+:::
 
 ## Revoking a certificate
 
 In the context of a certificate reissue the old certificate should be revoked after the new CRT is active. You can do so by sending in a DeleteCertificate command. Please make sure, you're stating the correct sub-certificate ID! (parameter: sub; also referred to as certificate-identifier). If you just use the certificate ID the whole certificate order including all sub-certificates will be revoked! (Certificate ID parameter: certificate; also referred to as order-identifier)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=DeleteCertificate
+:::command[Command]
+
+```text
+command=DeleteCertificate
 certificate=CZ00001
-sub=CZ00001-001</code></pre></div>
+sub=CZ00001-001
+```
+
+:::
 
 ## ReissueCertificate API Command
 
 This command will create a new sub-certificate in a certificate order (parameter "certificate") based on data of the most recent existing sub-certificate and the data given with the command (given values overwrite existing data). The expiration date of the new sub-certificate will not change since the new sub-certificate is only meant to be used as a replacement. Stating the CSR is mandatory. If you want to reissue the certificate order based on a different sub-certificate than the most recent, you have the option to use a specific sub-certificate (parameter "sub").  
 Exemplary command and output:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=ReissueCertificate
-certificate=                               &lt;-- ID of the certificate
+:::command[Command]
+
+```text
+command=ReissueCertificate
+certificate=                               <-- ID of the certificate
 csr0=-----BEGIN CERTIFICATE REQUEST-----
-csr1=                                      &lt;-- The CSR, line by line.
+csr1=                                      <-- The CSR, line by line.
 csr2=
 csr3=
 ...
 csr#=-----END CERTIFICATE REQUEST-----
-sub=                                       &lt;-- Optional. Only necessary, if data of an old sub-certificate shall be used. If not stated, the data of the most recent sub-certificate will be used.
-reissueemail=                              &lt;-- Optional. In case you would like to use a different approval email for the validation process.
-algorithm=                                 &lt;-- Optional. Per default the valid algorithm will be used.</code></pre></div>
+
+sub=                                       <-- Optional. Only necessary, if data of an old sub-certificate shall be used. If not stated, the data of the most recent sub-certificate will be used.
+reissueemail=                              <-- Optional. In case you would like to use a different approval email for the validation process.
+algorithm=                                 <-- Optional. Per default the valid algorithm will be used.
+```
+
+:::
 
 ## StatusCertificate API Command
 
 In particular, for reissuing a certificate the API command StatusCertificate is of help. It returns: - The sub-certificate ID (property\[sub id\]\[0\] = ...) and which is currently active (property\[sub status\]\[0\]=ACTIVE) - The approver email address (property\[approveremail\]\[0\] = ...) - The full CSR (property\[csr\]\[0-X\] = ...) - The full CRT (property\[crt\]\[0-X\] = ...)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>...
+:::command[Command]
+
+```text
+...
 property[approveremail][0]= address@example.com
 property[certificate][0]= AB1234567
 ...
@@ -112,9 +163,15 @@ property[csr][X]=
 property[sub][0]= AB1234567-001
 property[sub id][0]= AB1234567-001
 property[sub status][0]= ACTIVE
-...</code></pre></div>
+...
+```
 
-<div class="api-io api-io--command"><span class="api-io__label">Certificate API-Commands</span>
-<pre class="api-io__code"><code><h2>Certificate API-Commands</h2><table><tbody><tr><th><a href="../../../api/api-command/addcertificate/">AddCertificate</a></th><th>Request SSL certificate</th></tr><tr><td><a href="../../../api/api-command/checkcertificate/">CheckCertificate</a></td><td>Gather information about a certificate request</td></tr><tr><td><a href="../../../api/api-command/deletecertificate/">DeleteCertificate</a></td><td>Delete a certificate</td></tr><tr><td><a href="../../../api/api-command/getcertificateinfo/">GetCertificateInfo</a></td><td>Request general information about a certificate class</td></tr><tr><td><a href="../../../api/api-command/modifycertificate/">ModifyCertificate</a></td><td>Change the approver email address</td></tr><tr><td><a href="../../../api/api-command/querycertificatelist/">QueryCertificateList</a></td><td>List all certificate orders</td></tr><tr><td><a href="../../../api/api-command/reissuecertificate/">ReissueCertificate</a></td><td>Create a new sub-certificate in a certificate order</td></tr><tr><td><a href="../../../api/api-command/renewcertificate/">RenewCertificate</a></td><td>RenewCertificate will create a new sub-certificate in a certificate order</td></tr><tr><td><a href="../../../api/api-command/statuscertificate/">StatusCertificate</a></td><td>Give all information about certificate order</td></tr></tbody></table></code></pre></div>
+:::
 
+:::command[Certificate API-Commands]
 
+```text
+Certificate API-CommandsAddCertificateRequest SSL certificateCheckCertificateGather information about a certificate requestDeleteCertificateDelete a certificateGetCertificateInfoRequest general information about a certificate classModifyCertificateChange the approver email addressQueryCertificateListList all certificate ordersReissueCertificateCreate a new sub-certificate in a certificate orderRenewCertificateRenewCertificate will create a new sub-certificate in a certificate orderStatusCertificateGive all information about certificate order
+```
+
+:::

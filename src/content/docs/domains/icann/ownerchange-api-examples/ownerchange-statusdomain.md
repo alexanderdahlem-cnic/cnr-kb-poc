@@ -1,17 +1,25 @@
 ---
 title: "OwnerChange: StatusDomain"
 description: "StatusDomains responses now additionally show information of a pending OwnerChange..."
+sidebar:
+  order: 660
+  label: "StatusDomain"
 ---
 
 StatusDomains responses now additionally show information of a pending OwnerChange.
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[domain][0] = example.com
 ...
 property[status][0] = pendingUpdate
-property[ownerchange status][0] = REQUESTED</code></pre></div>
+property[ownerchange status][0] = REQUESTED
+```
+
+:::
 
 ### Attributes
 

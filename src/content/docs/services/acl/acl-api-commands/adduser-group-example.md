@@ -1,12 +1,17 @@
 ---
 title: "AddUser - Group Example"
+sidebar:
+  order: 1840
 ---
 
 Create a Group
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = AddUser
+:::command[Command]
+
+```text
+command = AddUser
 username = group1
-type = GROUP</code></pre></div>
+type = GROUP
+```
 
-
+:::

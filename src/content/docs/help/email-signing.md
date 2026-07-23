@@ -1,5 +1,8 @@
 ---
 title: "E-mail signing"
+sidebar:
+  order: 2050
+  label: "Email Signing"
 ---
 
 As part of the CentralNic Reseller service, as a Reseller, you are able to customise the sending e-mail address created by the CentralNic service related to core policies such as Contact Verification, ERRP, WDRP, FOA, etc. In February 2024, Google introduced their policies for what they called "[New Gmail protections for a safer, less spammy inbox](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/)". As a result, any Reseller using a customised sending e-mail address on the CentralNic Reseller system must implement some additional security settings in the domain name in the customised e-mail address. Failure to do so may result in e-mails being sent to their customers not being delivered.
@@ -16,10 +19,15 @@ The sending service must "sign" each outgoing message and this signature must ma
 
 The CentralNic e-mail sending servers will DKIM sign all outgoing mails should there be a corresponding record in the sending domain name zone file. If, for example, the sending e-mail address is _emails@example.com_, then to enable DKIM on the following two records need to be added to the _example.com_ DNS zone:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>ti-a-oveesuingaiye6aoth9i._domainkey IN CNAME ti-a-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
+:::command[DNS CNAME Records]
+
+```text
+ti-a-oveesuingaiye6aoth9i._domainkey IN CNAME ti-a-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
 ti-b-oveesuingaiye6aoth9i._domainkey IN CNAME ti-b-oveesuingaiye6aoth9i.mailrelay.rrpproxy.net.
-            			</code></pre></div>
+            			
+```
+
+:::
 
 ## SPF (Sender Policy Framework)
 
@@ -29,13 +37,23 @@ If you are using customised e-mail addresses for the sending of e-mails by our s
 
 If you do not have an SPF record on the sending e-mail domain name, then you will need to add the following TXT record to the DNS zone:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>@   IN TXT     "v=spf1 include:_spf.mailrelay.rrpproxy.net ~all"</code></pre></div>
+:::command[DNS TXT Records]
+
+```text
+@   IN TXT     "v=spf1 include:_spf.mailrelay.rrpproxy.net ~all"
+```
+
+:::
 
 If you already have an SPF record, you will need to add the following to your SPF record:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>include:_spf.mailrelay.rrpproxy.net ~all</code></pre></div>
+:::command[Additional SPF record]
+
+```text
+include:_spf.mailrelay.rrpproxy.net ~all
+```
+
+:::
 
 ## DMARC (Domain-based Message Authentication, Reporting & Conformance)
 
@@ -43,8 +61,13 @@ DMARC tells receiving servers what to do with messages that don’t pass SPF or 
 
 If you are using customised e-mail addresses for the sending of e-mails by our service, and do not have a DMARC record setup on the sending e-mail address domain name, then, as a minumum, the following TXT record should be added to the zone file:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>_dmarc    IN TXT     "v=DMARC1; p=none;"</code></pre></div>
+:::command[DNS TXT Record]
+
+```text
+_dmarc    IN TXT     "v=DMARC1; p=none;"
+```
+
+:::
 
 This instructs the receiving server to take no action on the message, should it fail DKIM/SPF and deliver it to the intended recipient. It will log messages in a daily report (if a rua parameter is included, e.g. rua=mailto:dmarc@example.net;). It is recommended that you review the logs and modify your DMARC record in line with your businesses, and general best practices, to avoid e-mail spoofing and spamming on your domain name.
 

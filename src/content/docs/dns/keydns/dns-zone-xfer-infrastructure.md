@@ -1,5 +1,8 @@
 ---
 title: "DNS Zone AXFR Infrastructure"
+sidebar:
+  order: 1400
+  label: "DNS Zone Xfer Infrastructure"
 ---
 
 If KeyDNS is used as slave nameserver set, please make sure these IP addresses can connect to your master or hidden master DNS Server for outgoing DNS Zone transfers (Notify).

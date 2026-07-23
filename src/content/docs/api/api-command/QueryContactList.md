@@ -1,26 +1,45 @@
 ---
 title: "QueryContactList"
 description: "CentralNic Reseller API Command Reference  ➤ Contact ➤ QueryContactList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2950
 ---
 
 Search for contact handles, wildcards are allowed for every parameter. Default will show all contacts.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryContactList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryContactList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
-property[CONTACT][n] = (CONTACT)</code></pre></div>
+property[CONTACT][n] = (CONTACT)
+```
+
+:::
 
 ### Attributes
 
@@ -36,8 +55,10 @@ property[CONTACT][n] = (CONTACT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryContactList
+:::command[Command]
+
+```text
+COMMAND = QueryContactList
 CONTACT = (PATTERN)
 TITLE = (PATTERN)
 FIRSTNAME = (TEXT)
@@ -63,12 +84,17 @@ ORDER = ASC|DESC
 ORDERBY = ID|FIRSTNAME|LASTNAME|ORGANIZATION|STREET|CITY|ZIP|COUNTRY|EMAIL|VALIDATED|VERIFIED|CREATEDDATE
 STATUS = LINKED|UNLINKED|CLIENTAUTODELETEPROHIBITED
 FIRST = (INT)
-LIMIT = (INT)</code></pre></div>
+LIMIT = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[CONTACT][n] = (CONTACT)
 property[ROID][n] = (TEXT)
@@ -101,7 +127,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -157,3 +186,21 @@ property[TOTAL][0] = (INT)</code></pre></div>
 | **ORDERBY** | Order the results for the corresponding column. Default is ID. (optional) |
 | **FIRST** | Start the output of results from this item (optional) |
 | **LIMIT** | Show only this many items in the response (optional) |
+
+:::commandlist[Contact commands]
+
+- [AddContact](../addcontact/)
+- [CheckContact](../checkcontact/)
+- [CheckContacts](../checkcontacts/)
+- [CloneContact](../clonecontact/)
+- [DeleteContact](../deletecontact/)
+- [ModifyContact](../modifycontact/)
+- [QueryContactList](./)
+- [RequestToken](../requesttoken/)
+- [RestoreContact](../restorecontact/)
+- [StatusContact](../statuscontact/)
+- [StatusOwnerChange](../statusownerchange/)
+- [StatusUnsyncRegistryContact](../statusunsyncregistrycontact/)
+- [TransferContact](../transfercontact/)
+
+:::

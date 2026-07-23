@@ -1,24 +1,40 @@
 ---
 title: "QueryEventList"
 description: "CentralNic Reseller API Command Reference  ➤ Event ➤ QueryEventList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3470
 ---
 
 Query existing and not yet deleted events in your account. For possible classes and subclasses, please have a look into the table at the beginning of this chapter.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryEventList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryEventList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[EVENT][n] = (INT)
 property[EVENTCLASS][n] = (TEXT)
@@ -31,7 +47,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -53,8 +72,10 @@ property[TOTAL][0] = (INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryEventList
+:::command[Command]
+
+```text
+COMMAND = QueryEventList
 CLASS = (PATTERN)
 SUBCLASS = (PATTERN)
 HISTORY = 0|1
@@ -68,12 +89,17 @@ SHOWALL= 0|1
 MINDATE = (DATE)
 MAXDATE = (DATE)
 ORDERBY = CLASS|SUBCLASS|OBJECTID|DATE
-ORDER = ASC|DESC</code></pre></div>
+ORDER = ASC|DESC
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[EVENT][n] = (INT)
 property[EVENTCLASS][n] = (TEXT)
@@ -87,7 +113,10 @@ property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
 property[TOTAL][0] = (INT)
-property[REGISTRAR][n] = (TEXT)</code></pre></div>
+property[REGISTRAR][n] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -106,3 +135,11 @@ property[REGISTRAR][n] = (TEXT)</code></pre></div>
 | **MAXDATE** | Show events up to this date (optional) |
 | **ORDERBY** | Define event order by CLASS, SUBCLASS, OBJECTID or by DATE (optional) |
 | **ORDER** | Define asc or desc order |
+
+:::commandlist[Event commands]
+
+- [DeleteEvent](../deleteevent/)
+- [QueryEventList](./)
+- [StatusEvent](../statusevent/)
+
+:::

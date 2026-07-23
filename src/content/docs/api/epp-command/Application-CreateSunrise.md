@@ -5,29 +5,31 @@ description: "EPP API Command Reference  ➤ Application commands ➤ Applicatio
 
 ## Required Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;command&gt;
-    &lt;create&gt;
-      &lt;domain:create
-       xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name&gt;example.tld&lt;/domain:name&gt;
-        &lt;domain:registrant&gt;EXAMPLE-0001&lt;/domain:registrant&gt;
-        &lt;domain:contact type="admin"&gt;EXAMPLE-0001&lt;/domain:contact&gt;
-        &lt;domain:contact type="tech"&gt;EXAMPLE-0001&lt;/domain:contact&gt;
-        &lt;domain:contact type="billing"&gt;EXAMPLE-0001&lt;/domain:contact&gt;
-        &lt;domain:authInfo&gt;
-          &lt;domain:pw&gt;2fooBAR!&lt;/domain:pw&gt;
-        &lt;/domain:authInfo&gt;
-      &lt;/domain:create&gt;
-    &lt;/create&gt;
-    &lt;extension&gt;
-      &lt;launch:create
-       xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"&gt;
-        &lt;launch:phase name="TLD-SUNRISE"&gt;custom&lt;/launch:phase&gt;
-        &lt;smd:encodedSignedMark
-         xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0"&gt;
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <command>
+    <create>
+      <domain:create
+       xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name>example.tld</domain:name>
+        <domain:registrant>EXAMPLE-0001</domain:registrant>
+        <domain:contact type="admin">EXAMPLE-0001</domain:contact>
+        <domain:contact type="tech">EXAMPLE-0001</domain:contact>
+        <domain:contact type="billing">EXAMPLE-0001</domain:contact>
+        <domain:authInfo>
+          <domain:pw>2fooBAR!</domain:pw>
+        </domain:authInfo>
+      </domain:create>
+    </create>
+    <extension>
+      <launch:create
+       xmlns:launch="urn:ietf:params:xml:ns:launch-1.0">
+        <launch:phase name="TLD-SUNRISE">custom</launch:phase>
+        <smd:encodedSignedMark
+         xmlns:smd="urn:ietf:params:xml:ns:signedMark-1.0">
 Marks: Example
 smdID: 00000012345678901234567-65535
 U-labels: example
@@ -36,39 +38,58 @@ notAfter: 2018-01-01 00:00:00
 -----BEGIN ENCODED SMD-----
 [base64 encoded signed mark]
 -----END ENCODED SMD-----
-        &lt;/smd:encodedSignedMark&gt;
-      &lt;/launch:create&gt;
-    &lt;/extension&gt;
-    &lt;clTRID&gt;C6A6B9E1-1AF3-44BB-81F0-41CE758FC1CD&lt;/clTRID&gt;
-  &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+        </smd:encodedSignedMark>
+      </launch:create>
+    </extension>
+    <clTRID>C6A6B9E1-1AF3-44BB-81F0-41CE758FC1CD</clTRID>
+  </command>
+</epp>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1001"&gt;
-      &lt;msg&gt;Command completed successfully; action pending&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;resData&gt;
-      &lt;domain:creData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name&gt;example.tld&lt;/domain:name&gt;
-        &lt;domain:crDate&gt;2014-02-11T11:19:52.0Z&lt;/domain:crDate&gt;
-      &lt;/domain:creData&gt;
-    &lt;/resData&gt;
-    &lt;extension&gt;
-      &lt;launch:creData xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"&gt;
-        &lt;launch:phase name="TLD-SUNRISE"&gt;custom&lt;/launch:phase&gt;
-        &lt;launch:applicationID&gt;123&lt;/launch:applicationID&gt;
-      &lt;/launch:creData&gt;
-    &lt;/extension&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;C6A6B9E1-1AF3-44BB-81F0-41CE758FC1CD&lt;/clTRID&gt;
-      &lt;svTRID&gt;25c95d76-2d30-4c2d-b029-17a6a9946da5&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1001">
+      <msg>Command completed successfully; action pending</msg>
+    </result>
+    <resData>
+      <domain:creData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name>example.tld</domain:name>
+        <domain:crDate>2014-02-11T11:19:52.0Z</domain:crDate>
+      </domain:creData>
+    </resData>
+    <extension>
+      <launch:creData xmlns:launch="urn:ietf:params:xml:ns:launch-1.0">
+        <launch:phase name="TLD-SUNRISE">custom</launch:phase>
+        <launch:applicationID>123</launch:applicationID>
+      </launch:creData>
+    </extension>
+    <trID>
+      <clTRID>C6A6B9E1-1AF3-44BB-81F0-41CE758FC1CD</clTRID>
+      <svTRID>25c95d76-2d30-4c2d-b029-17a6a9946da5</svTRID>
+    </trID>
+  </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Application commands]
+
+- [Application:CheckClaims](../application-checkclaims/)
+- [Application:CreateDomainWithClaims](../application-createdomainwithclaims/)
+- [Application:CreateLandrush](../application-createlandrush/)
+- [Application:CreateSunrise](./)
+- [Application:Delete](../application-delete/)
+- [Application:Failed](../application-failed/)
+- [Application:Status](../application-status/)
+- [Application:Successful](../application-successful/)
+
+:::

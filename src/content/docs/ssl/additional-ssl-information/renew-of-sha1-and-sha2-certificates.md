@@ -1,6 +1,9 @@
 ---
 title: "Renew of SHA1 & SHA2 certificates"
 description: "Renew of SHA1 certificates: SHA1 hashing algorithm is not supported if certificate validity end date is beyond 12/31/2016..."
+sidebar:
+  order: 1280
+  label: "Renewal Methods"
 ---
 
 **Renew of SHA1 certificates**
@@ -17,14 +20,19 @@ As of November 3, 2014 all new SSL certificates from Symantec, thawte, GeoTrust 
 
 ### Example for ReissueCertificate:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = ReissueCertificate
+:::command[Command]
+
+```text
+command     = ReissueCertificate
 certificate = fr86fr8r68fe6r8vfze5z
 csr0        = -----BEGIN CERTIFICATE REQUEST-----
 csr1        = MIIE4TCCAskCAQAwgZsxCzAGUOBAYTAkRFMQwwCgYDVQQIDANOUlcxFjAUBgNV
 [...]       =
 csr28       = -----END CERTIFICATE REQUEST-----
-algorithm   = SHA2-256</code></pre></div>
+algorithm   = SHA2-256
+```
+
+:::
 
 **2\. The maximum duration of SSL certificates will be reduced.**  
 From April 1, 2015 and for Comodo certificates already from March 29, 2015 the maximum term of SSL certificates is limited to three years.

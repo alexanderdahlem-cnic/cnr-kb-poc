@@ -1,38 +1,58 @@
 ---
 title: "RenewDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ RenewDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2420
 ---
 
 This command will extend an existing domain blocking product by a set number of years. The expirationDate parameter is the current expiration year on the domain block. The period parameter allows you to set the number of years you wish to extend it by. For AdultBlock, it is between 1 to 10. For GlobalBlock, it is between 1 to 3. To determine the maximum number of years accepted in the period, the rule is the expiration year plus the period cannot exceed the current year plus the period.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND		= RenewDomainBlocking
+:::command[Command]
+
+```text
+COMMAND		= RenewDomainBlocking
 DOMAINBLOCK 	= (Block Order ID)
 EXPIRATIONDATE	= (INTEGER)
-PERIOD		= (INTEGER)</code></pre></div>
+PERIOD		= (INTEGER)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
+:::response[Response]
+
+```text
+[RESPONSE]
 code	 		= (INTEGER)
 description 		= (TEXT)
 runtime 		= (INTEGER)
 queuetime 		= (INTEGER)
 property[domainblock][0] = (TEXT)
 property[registration expiration date][0] = YYYY-MM-DD HH:MM:SS
+
 The following are specific to GlobalBlock:
 property[label][0]  	= (TEXT)
 property[status][0] 	= (TEXT)
 property[type][0] 	= GLOBALBLOCK|GLOBALBLOCKPLUS
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ### Attributes
 
@@ -40,3 +60,21 @@ EOF</code></pre></div>
 | --- | --- |
 | **EXPIRATIONDATE** | This is the current AdultBlock expiration year (YYYY format, i.e. 2022). |
 | **PERIOD** | For AdultBlock, the number of years the order is to be created for is from 1 up to 10. For GlobalBlock, this is 1, 2 or 3. |
+
+:::commandlist[AdultBlock | AdultBlockPlus commands]
+
+- [AddDomainBlocking](../adddomainblocking/)
+- [CheckDomainBlockingIPRID](../checkdomainblockingiprid/)
+- [DeleteDomainBlocking](../deletedomainblocking/)
+- [ModifyDomainBlocking](../modifydomainblocking/)
+- [QueryDomainBlockingList](../querydomainblockinglist/)
+- [RenewDomainBlocking](./)
+- [StatusDomainBlocking](../statusdomainblocking/)
+- [TransferDomainBlocking - Approve](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve)
+- [TransferDomainBlocking - Cancel](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel)
+- [TransferDomainBlocking - Deny](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny)
+- [TransferDomainBlocking - Query](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query)
+- [TransferDomainBlocking - Request](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request)
+- [TransferDomainBlocking - UserTransfer](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer)
+
+:::

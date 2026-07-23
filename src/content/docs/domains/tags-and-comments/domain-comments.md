@@ -1,5 +1,7 @@
 ---
 title: "Domain Comments"
+sidebar:
+  order: 500
 ---
 
 Similar to Tags our system allows to add Comments to single Domains. For Comments, we choose a simple approach: Comments can be added and modified using AddDomain and ModifyDomain. Domain Comments also show up in your domainlist.csv file, available in your new CentralNic Reseller Control Panel at "Downloads" -> "My Downloads" Download, or in your old CentralNic Reseller Control Panel at "Account" -> "FTP". If a Domain is deleted, the Comment is saved so it can be retrieved upon a restore. However, this only applies if the respective Comment has not been deleted in the meantime.
@@ -18,20 +20,28 @@ The following API commands now additionally respond with property\[X-DOMAIN-COMM
 
 AddDomain now supports X-DOMAIN-COMMENT= for the direct assignment of a Comment during the registration request.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND=AddDomain
+:::command[Command]
+
+```text
+COMMAND=AddDomain
 ...
 X-DOMAIN-COMMENT=Some witty comment
-...</code></pre></div>
+...
+```
+
+:::
 
 ## ModifyDomain
 
 ModifyDomain now supports X-DOMAIN-COMMENT= for direct assignment a Comment when modifying a Domain.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND=ModifyDomain
+:::command[Command]
+
+```text
+COMMAND=ModifyDomain
 ...
 X-DOMAIN-COMMENT=Some witty comment
-...</code></pre></div>
+...
+```
 
-
+:::

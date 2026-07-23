@@ -1,5 +1,7 @@
 ---
 title: "FAQs & Troubleshooting"
+sidebar:
+  order: 1450
 ---
 
 ## I am experiencing some issues with intermittent connectivity to my domains and I believe the problem is with the DNS resolution. How can I troubleshoot this type of issue?

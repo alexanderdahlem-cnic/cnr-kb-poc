@@ -1,5 +1,7 @@
 ---
 title: "Marks protected by statute or treaty"
+sidebar:
+  order: 240
 ---
 
 ## General

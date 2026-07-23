@@ -1,5 +1,7 @@
 ---
 title: "Sectigo: Hash Generation"
+sidebar:
+  order: 1200
 ---
 
 As of July 20th 2017 the handling for FILE and DNS based validation for Comodo certificates has changed.

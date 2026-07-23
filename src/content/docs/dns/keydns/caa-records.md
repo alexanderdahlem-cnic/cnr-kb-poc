@@ -1,5 +1,7 @@
 ---
 title: "CAA records"
+sidebar:
+  order: 1430
 ---
 
 As of now KeyDNS is capable of managing CAA records via API and in our CentralNic control panel.
@@ -12,39 +14,64 @@ For reference: [RFC 6844 for CAA records](https://tools.ietf.org/html/rfc6844)
 
 Allow the Certificate Authority DigiCert to issue SSL certificates for example.com:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = adddnszone
+:::command[Command]
+
+```text
+command = adddnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 issue digicert.com</code></pre></div>
+rr0 = @ IN CAA 0 issue digicert.com
+```
+
+:::
 
 Allow the Certificate Authority DigiCert to issue SSL wildcard certificates for example.com:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = modifydnszone
+:::command[Command]
+
+```text
+command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 issuewild digicert.com</code></pre></div>
+rr0 = @ IN CAA 0 issuewild digicert.com
+```
+
+:::
 
 Allow the Certificate Authority DigiCert to issue SSL wildcard certificates for example.com, but disallow single domain SSL certificates:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = modifydnszone
+:::command[Command]
+
+```text
+command = modifydnszone
 dnszone = example.com
 rr0 = @ IN CAA 0 issue ";"
-rr1 = @ IN CAA 0 issuewild digicert.com</code></pre></div>
+rr1 = @ IN CAA 0 issuewild digicert.com
+```
+
+:::
 
 Define email address to send incident reports to:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = modifydnszone
+:::command[Command]
+
+```text
+command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 iodef mailto:info@example.com</code></pre></div>
+rr0 = @ IN CAA 0 iodef mailto:info@example.com
+```
+
+:::
 
 Define URL to send incident reports to:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = modifydnszone
+:::command[Command]
+
+```text
+command = modifydnszone
 dnszone = example.com
-rr0 = @ IN CAA 0 iodef http://www.example.com/script.php</code></pre></div>
+rr0 = @ IN CAA 0 iodef http://www.example.com/script.php
+```
+
+:::
 
 There's currently no standard format for receiving incident reports. And it might not be supported by all Certificate Authorities.
 

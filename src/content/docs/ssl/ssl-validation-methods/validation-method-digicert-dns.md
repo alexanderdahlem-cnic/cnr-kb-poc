@@ -1,26 +1,39 @@
 ---
 title: "Validation Method: DigiCert DNS"
 description: "To use the DNS based authentication for domain-vetted certificates, set the parameter \"AUTHMETHOD\" to \"DNS\" for AddCertificate\", \"RenewCertificate\" and \"Reissue"
+sidebar:
+  order: 1190
+  label: "DigiCert DNS"
 ---
 
 To use the DNS based authentication for domain-vetted certificates, set the parameter "AUTHMETHOD" to "DNS" for AddCertificate", "RenewCertificate" and "ReissueCertificate". If the certificate class is valid for DNS based authentication, you will get one additional property back.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command    = AddCertificate
+:::command[Command]
+
+```text
+command    = AddCertificate
 csrX       = ...
-authmethod = DNS</code></pre></div>
+authmethod = DNS
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                      = 200
+:::response[Response]
+
+```text
+code                      = 200
 description               = Command completed successfully
 runtime                   = 7.872
 property[certificate][0]  = SA4317966
 property[dnsauth name][0] = k5loo039okyyz1jlrde57ku091h1og39uv6enkzo1v265graqw
 property[status][0]       = REQUESTED
 property[sub][0]          = SA4317966-001
-property[sub status][0]   = ORDER_REQUESTED</code></pre></div>
+property[sub status][0]   = ORDER_REQUESTED
+```
+
+:::
 
 The DNS record returned in the API response contains the date and a unique random string derived from the CSR and must be stored in a TXT - record:
 

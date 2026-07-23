@@ -1,5 +1,8 @@
 ---
 title: "Secure a brand name for multiple TLDs"
+sidebar:
+  order: 1680
+  label: "Brand Protection"
 ---
 
 A special service to protect your trademark is offered by several registries. Instead of defensive registrations of your brand name, you can secure your name through this service, prevent cybersquatting and reserve your name for future use. The trademark term is therefore locked from registration for all TLDs supported by that registry operator at a fraction of the cost of defensive registrations.

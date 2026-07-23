@@ -1,6 +1,8 @@
 ---
 title: "Account Settings"
 description: "The following will give you a brief overview of the steps necessary to get started: ➥ Learn more!"
+sidebar:
+  order: 1980
 ---
 
 You want to become a client of CentralNic Reseller and have no access yet?

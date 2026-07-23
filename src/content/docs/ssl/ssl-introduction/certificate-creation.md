@@ -1,14 +1,21 @@
 ---
 title: "Certificate creation"
 description: "SSL certificate creation: ● How to Create a CSR ● Ordering process in Web Interface ● Default Root Certificate for Symantec SSL Certificates ➥ Learn more!"
+sidebar:
+  order: 1130
 ---
 
 ## How to Create a CSR
 
 For ordering a certificate, you need to create a CSR (Certificate Signing Request) on your server. You may create such an CSR by issuing the following command using OpenSSL.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout www_example_com.key -out www_example_com.csr</code></pre></div>
+:::command[Command]
+
+```text
+openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout www_example_com.key -out www_example_com.csr
+```
+
+:::
 
 **Notes**
 
@@ -65,32 +72,45 @@ For Symantec Secure Site Pro you can also use special algorithms as listed below
 
 ### AddCertificate
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Command=AddCertificate
+:::command[Command]
+
+```text
+Command=AddCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...</code></pre></div>
+...
+```
+
+:::
 
 ### RenewCertificate
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Command=RenewCertificate
+:::command[Command]
+
+```text
+Command=RenewCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...</code></pre></div>
+...
+```
+
+:::
 
 ### ReissueCertificate
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Command=ReissueCertificate
+:::command[Command]
+
+```text
+Command=ReissueCertificate
 ...
 ALGORITHM =
 SHA2-256|SHA256-FULL-CHAIN|SHA256-ECC-FULL|SHA256-ECC-HYBRID|PRIVATE-SHA1-PCA3G1|
 PRIVATE-SHA256-PCA3G1|PRIVATE-SHA1-PCA3G2|PRIVATE-SHA256-PCA3G2
-...</code></pre></div>
+...
+```
 
-
+:::

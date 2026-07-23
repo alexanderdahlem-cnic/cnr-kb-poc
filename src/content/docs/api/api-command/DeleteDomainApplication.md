@@ -1,31 +1,50 @@
 ---
 title: "DeleteDomainApplication"
 description: "CentralNic Reseller API Command Reference  ➤ Application ➤ DeleteDomainApplication ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2670
 ---
 
 _(Related EPP Command » [Application:Delete](../../epp-command/application-delete/ "Application:Delete"))_
 
 Delete a domain application
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = DeleteDomainApplication
+:::command[Command]
+
+```text
+command     = DeleteDomainApplication
 domain = YOURDOMAIN.TLD
 class = (TEXT)
-application = (INT)</code></pre></div>
+application = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
-property[DOMAIN][0] = (DOMAIN)</code></pre></div>
+property[DOMAIN][0] = (DOMAIN)
+```
+
+:::
 
 ### Attributes
 
@@ -35,3 +54,14 @@ property[DOMAIN][0] = (DOMAIN)</code></pre></div>
 | **CLASS** | Application class (optional) |
 | **APPLICATION** | The application to be deleted (optional) |
 |  |  |
+
+:::commandlist[Application commands]
+
+- [AddDomainApplication](../adddomainapplication/)
+- [DeleteDomainApplication](./)
+- [ModifyDomainApplication](../modifydomainapplication/)
+- [QueryApplicationList](../queryapplicationlist/)
+- [QueryDomainApplicationList](../querydomainapplicationlist/)
+- [StatusDomainApplication](../statusdomainapplication/)
+
+:::

@@ -1,6 +1,9 @@
 ---
 title: "Extensible Markup Language Remote Procedure Call"
 description: "We provide access to our API via XML-RPC, too. Your username and password needs to be provided with every request, otherwise the authentication will fail."
+sidebar:
+  order: 120
+  label: "XML-RPC"
 ---
 
 We provide access to our API via XML-RPC, too. Your username and password needs to be provided with every request, otherwise the authentication will fail.
@@ -15,134 +18,158 @@ For access using our XML-RPC - API, use the following connection - parameters:
 
 For access using our XML-RPC - API, use the following connection - parameters:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;methodCall&gt;
-  &lt;methodName&gt;Api.xcall&lt;/methodName&gt;
-  &lt;params&gt;
-    &lt;param&gt;
-      &lt;value&gt;
-        &lt;struct&gt;
-          &lt;member&gt;
-            &lt;name&gt;s_login&lt;/name&gt;
-            &lt;value&gt;
-              &lt;string&gt;MyUsername&lt;/string&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;s_pw&lt;/name&gt;
-            &lt;value&gt;
-              &lt;string&gt;MyPassword&lt;/string&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;command&lt;/name&gt;
-            &lt;value&gt;
-              &lt;string&gt;CheckDomain&lt;/string&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;domain&lt;/name&gt;
-            &lt;value&gt;
-              &lt;string&gt;example.com&lt;/string&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-        &lt;/struct&gt;
-      &lt;/value&gt;
-    &lt;/param&gt;
-  &lt;/params&gt;
-&lt;/methodCall&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<methodCall>
+  <methodName>Api.xcall</methodName>
+  <params>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>s_login</name>
+            <value>
+              <string>MyUsername</string>
+            </value>
+          </member>
+          <member>
+            <name>s_pw</name>
+            <value>
+              <string>MyPassword</string>
+            </value>
+          </member>
+          <member>
+            <name>command</name>
+            <value>
+              <string>CheckDomain</string>
+            </value>
+          </member>
+          <member>
+            <name>domain</name>
+            <value>
+              <string>example.com</string>
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+  </params>
+</methodCall>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;methodResponse&gt;
-  &lt;params&gt;
-    &lt;param&gt;
-      &lt;value&gt;
-        &lt;struct&gt;
-          &lt;member&gt;
-            &lt;name&gt;PROPERTY&lt;/name&gt;
-            &lt;value&gt;
-              &lt;struct/&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;DESCRIPTION&lt;/name&gt;
-            &lt;value&gt;
-              &lt;string&gt;Domain name not available&lt;/string&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;CODE&lt;/name&gt;
-            &lt;value&gt;
-              &lt;int&gt;211&lt;/int&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;QUEUETIME&lt;/name&gt;
-            &lt;value&gt;
-              &lt;double&gt;0.084&lt;/double&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-          &lt;member&gt;
-            &lt;name&gt;RUNTIME&lt;/name&gt;
-            &lt;value&gt;
-              &lt;double&gt;0.287&lt;/double&gt;
-            &lt;/value&gt;
-          &lt;/member&gt;
-        &lt;/struct&gt;
-      &lt;/value&gt;
-    &lt;/param&gt;
-  &lt;/params&gt;
-&lt;/methodResponse&gt;</code></pre></div>
+:::response[Response]
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<methodResponse>
+  <params>
+    <param>
+      <value>
+        <struct>
+          <member>
+            <name>PROPERTY</name>
+            <value>
+              <struct/>
+            </value>
+          </member>
+          <member>
+            <name>DESCRIPTION</name>
+            <value>
+              <string>Domain name not available</string>
+            </value>
+          </member>
+          <member>
+            <name>CODE</name>
+            <value>
+              <int>211</int>
+            </value>
+          </member>
+          <member>
+            <name>QUEUETIME</name>
+            <value>
+              <double>0.084</double>
+            </value>
+          </member>
+          <member>
+            <name>RUNTIME</name>
+            <value>
+              <double>0.287</double>
+            </value>
+          </member>
+        </struct>
+      </value>
+    </param>
+  </params>
+</methodResponse>
+```
+
+:::
 
 ## Perl
 
 For access with perl, we recommend using "XMLRPC::Lite", please have a look at the example below.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>#!/usr/bin/perl --w
-use XMLRPC::Lite; #+trace =&gt; debug;
+:::command[Command]
+
+```text
+#!/usr/bin/perl --w
+
+use XMLRPC::Lite; #+trace => debug;
 use Data::Dumper;
 my $xmlrpc = XMLRPC::Lite
---&gt; proxy('Url to xmlrpc gateway')
+--> proxy('Url to xmlrpc gateway')
 ;
+
 my @commands = (
 {
-'s_login' =&gt; '[mregname]',
-'s_pw' =&gt; '[&lt;mregpassword&gt;ote]',
-'s_opmode' =&gt; 'OTE',
-'s_encode' =&gt; 'UTF-8',
-'command' =&gt; 'CheckDomain',
-'domain' =&gt; 'example.com',
+'s_login' => '[mregname]',
+'s_pw' => '[<mregpassword>ote]',
+'s_opmode' => 'OTE',
+'s_encode' => 'UTF-8',
+'command' => 'CheckDomain',
+'domain' => 'example.com',
 },
 );
-my $res = $xmlrpc-&gt;call('Api.xcall', @commands);
-print Dumper($res-&gt;result) . "\n";</code></pre></div>
+
+my $res = $xmlrpc->call('Api.xcall', @commands);
+
+print Dumper($res->result) . "\n";
+```
+
+:::
 
 ## PHP
 
 We recommend using the PEAR "XML-RPC" - package for using our XML-RPC - API with PHP. Please take a look at the example listed below.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?php
+:::command[Command]
+
+```text
+<?php
+
 require_once -'XML/RPC.php';
 $command = array (
-"s_login" =&gt; "[mregname]",
-"s_pw" =&gt; "[&lt;mregpassword&gt;ote]",
-"s_opmode" =&gt; "OTE",
-"s_encode" =&gt; "UFT-8",
-"command" =&gt; "CheckDomain",
-"domain" =&gt; "example.com",
+"s_login" => "[mregname]",
+"s_pw" => "[<mregpassword>ote]",
+"s_opmode" => "OTE",
+"s_encode" => "UFT-8",
+"command" => "CheckDomain",
+"domain" => "example.com",
 );
+
 $client = new XML_RPC_Client('/xmlrpc', 'Url to xmlrpc gateway', 'Port');
 $params = array(XML_RPC_encode($command));
 $msg = new XML_RPC_Message('Api.xcall', $params);
-$response = $client-&gt;send($msg);
-$v = XML_RPC_decode($response-&gt;value());
+$response = $client->send($msg);
+$v = XML_RPC_decode($response->value());
 print_r($v);
-?&gt;</code></pre></div>
+?>
+```
 
-
+:::

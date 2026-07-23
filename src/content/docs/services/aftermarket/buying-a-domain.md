@@ -1,6 +1,8 @@
 ---
 title: "Buying a Domain"
 description: "To buy a domain in the RRPproxy Aftermarket, a search for available domains at Aftermarket Providers must be done to determine the price of a domain."
+sidebar:
+  order: 1620
 ---
 
 To buy a domain in the CentralNic Reseller Aftermarket, a search for available domains at Aftermarket Providers must be done to determine the price of a domain. This can be done using the QueryAftermarketList command. To allow a domain be put into a shopping cart on websites, the command ReserveDomain may be utilised, which reserves a domain exclusively for an Aftermarket Account for 8 hours, and up to 96 hours in total. This step can be skipped and BuyDomain can be used directly to initiate the process of buying a domain from the aftermarket.

@@ -1,6 +1,8 @@
 ---
 title: "X-FEE Parameters"
 description: "Each Fee Block consits of the parameters domain, currency, command, period, periodtype and launchphase. A maximum of 30 X-FEE extensions can be used in one API "
+sidebar:
+  order: 370
 ---
 
 Each Fee Block consits of the parameters domain, currency, command, period, periodtype and launchphase. A maximum of 30 X-FEE extensions can be used in one API call. Default for currency is always the own account currency. If a currency is given that is not the own account currency it will result in an error. Default for period is always 1 and for periodtype is YEAR. Values that are not available will result in an error.
@@ -20,8 +22,10 @@ x-fee-period0=1
 x-fee-periodtype0=YEAR  
 x-fee-launchphase0=GOLIVE_
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomain
+:::command[Command]
+
+```text
+command=CheckDomain
 domain=YOURDOMAIN.TLD
 x-fee-domain0=YOURDOMAIN.TLD
 x-fee-currency0=USD
@@ -29,7 +33,10 @@ x-fee-command0=ADD
 x-fee-period0=1
 x-fee-periodtype0=YEAR
 x-fee-launchphase0=GOLIVE
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ### Attributes
 
@@ -42,12 +49,15 @@ _x-fee-domain0=YOURDOMAIN.TLD
 x-fee-command0=ADD  
 x-fee-period0=1_
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomain
+:::command[Command]
+
+```text
+command=CheckDomain
 domain=YOURDOMAIN.TLD
 x-fee-domain0=domain.TLD
 x-fee-command0=ADD
 x-fee-period0=1
-EOF</code></pre></div>
+EOF
+```
 
-
+:::

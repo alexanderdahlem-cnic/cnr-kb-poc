@@ -1,41 +1,54 @@
 ---
 title: "Contact Verification: EPP server"
 description: "EPP Contact verification: ● Add/ModifyContact ● StatusContact ● StatusDomain ● AddDomain ● ModifyDomain ➥ Learn more!"
+sidebar:
+  order: 910
+  label: "EPP server"
 ---
 
 ## contact:create / contact:update
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>...
-&lt;/create&gt;
-&lt;extension&gt;
-&lt;keysys:create xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0"&gt;
- &lt;keysys:contact&gt;
-  &lt;keysys:checkonly&gt;1&lt;/keysys:checkonly&gt;
-  &lt;keysys:preverify&gt;1&lt;/keysys:preverify&gt;
-  &lt;keysys:validation&gt;1&lt;/keysys:validation&gt;
- &lt;/keysys:contact&gt;
-&lt;/keysys:create&gt;
-&lt;/extension&gt;
-...</code></pre></div>
+:::command[Command]
+
+```text
+...
+</create>
+<extension>
+<keysys:create xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0">
+ <keysys:contact>
+  <keysys:checkonly>1</keysys:checkonly>
+  <keysys:preverify>1</keysys:preverify>
+  <keysys:validation>1</keysys:validation>
+ </keysys:contact>
+</keysys:create>
+</extension>
+...
+```
+
+:::
 
 ## contact:info
 
 add extension to response
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>...
-&lt;/resData&gt;
-&lt;extension&gt;
- &lt;keysys:resData xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0"&gt;
- &lt;keysys:contactInfData&gt;
-  &lt;keysys:validated&gt;1&lt;/keysys:validated&gt;
-  &lt;keysys:verification-requested&gt;1&lt;/keysys:verification-requested&gt;
-  &lt;keysys:verified&gt;0&lt;/keysys:verified&gt;
- &lt;/keysys:contactInfData&gt;
- &lt;/keysys:resData&gt;
-&lt;/extension&gt;
-...</code></pre></div>
+:::command[Command]
+
+```text
+...
+</resData>
+<extension>
+ <keysys:resData xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0">
+ <keysys:contactInfData>
+  <keysys:validated>1</keysys:validated>
+  <keysys:verification-requested>1</keysys:verification-requested>
+  <keysys:verified>0</keysys:verified>
+ </keysys:contactInfData>
+ </keysys:resData>
+</extension>
+...
+```
+
+:::
 
 ## domain:info
 

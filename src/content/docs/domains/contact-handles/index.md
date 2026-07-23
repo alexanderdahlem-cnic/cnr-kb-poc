@@ -1,5 +1,7 @@
 ---
 title: "Managing Contacts"
+sidebar:
+  order: 510
 ---
 
 ## This category contains contact related information and command examples
@@ -13,3 +15,20 @@ Even if the usage of so called role contacts (e.g. Domain Administrator, Hostmas
 Please be aware that if you are creating a contact handle for a private person, the organization field has to remain empty. Should you enter any kind of information (like "private" or "none"), not even is this bogus information but some TLDs might use this information instead of the registrants name to process the domain registration. This can in turn lead to personal information be visible in the WHOIS of that TLD and in the worst case scenario the domain could be suspended/deleted by the corresponding registry because of invalid data.
 
 If you have questions that are not solved through our knowledge base, please contact our [support team](mailto:support@centralnicreseller.com), which will be happy to assist you.
+
+:::commandlist[Related API Commands]
+
+- [CheckContact](../../api/api-command/checkcontact/)
+- [CheckContacts](../../api/api-command/checkcontacts/)
+- [AddContact](../../api/api-command/addcontact/)
+- [ModifyContact](../../api/api-command/modifycontact/)
+- [CloneContact](../../api/api-command/clonecontact/)
+- [StatusContact](../../api/api-command/statuscontact/)
+- [TransferContact](../../api/api-command/transfercontact/)
+- [DeleteContact](../../api/api-command/deletecontact/)
+- [RestoreContact](../../api/api-command/restorecontact/)
+- [QueryContactList](../../api/api-command/querycontactlist/)
+- [StatusOwnerChange](../../api/api-command/statusownerchange/)
+- [QueryOwnerChangeList](../../api/api-command/queryownerchangelist/)
+
+:::

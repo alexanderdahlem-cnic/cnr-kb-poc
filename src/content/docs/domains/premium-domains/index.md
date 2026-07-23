@@ -1,6 +1,8 @@
 ---
 title: "Premium Domain Handling"
 description: "The new premium domain handling will offer the possibility to submit applications and register premium domain names through the automated RRPproxy system."
+sidebar:
+  order: 290
 ---
 
 The premium domain handling described below offers both, the possibility to submit applications and register premium domain names through the automated CentralNic Reseller system by using the EPP-Fee extension. It is a fully automated handshake process between the CentralNic Reseller and the registries on one side and between the CentralNic Reseller and the registrar on the other side.
@@ -23,18 +25,25 @@ The fee extension is more or less a handshake process that ensures correct accou
 
 Example availability check for premium.name with the price request for a 2 year registration.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = CheckDomain
+:::command[Command]
+
+```text
+command = CheckDomain
 domain = premium.name
 x-fee-command0 = create
 x-fee-domain0 = premium.name
 x-fee-period0 = 2
-x-fee-periodtype0 = YEAR</code></pre></div>
+x-fee-periodtype0 = YEAR
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 210
+:::response[Response]
+
+```text
+code = 210
 description = Domain name available
 property[x-fee-amount][0] = 235.0000
 property[x-fee-application][0] = 0.0000
@@ -44,28 +53,41 @@ property[x-fee-currency][0] = USD
 property[x-fee-domain][0] = premium.name
 property[x-fee-launchphase][0] =
 property[x-fee-period][0] = 2
-property[x-fee-periodtype][0] = YEAR</code></pre></div>
+property[x-fee-periodtype][0] = YEAR
+```
+
+:::
 
 Example AddDomain for premium.name with fee extension
 
 If the price at the registry changes between the check and the creation, the handshake will fail to prevent false accountings. For regular domain names, the fee extension handshake will not be required!!
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=AddDomain
+:::command[Command]
+
+```text
+command=AddDomain
 domain=premium.name
 ownercontact0=...
 nameserver0=...
 ...
-x-fee-amount=235.00</code></pre></div>
+x-fee-amount=235.00
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 property[x-fee-amount][0] = 235.0000
 property[x-fee-application][0] = 0.0000
-property[x-fee-periodtype][0] = YEAR</code></pre></div>
+property[x-fee-periodtype][0] = YEAR
+```
+
+:::
 
 We are working with amounts with four decimals!
 

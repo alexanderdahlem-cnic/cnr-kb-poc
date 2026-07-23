@@ -1,27 +1,43 @@
 ---
 title: "StatusWebspace"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webspace ➤ StatusWebspace ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4210
 ---
 
 StatusWebspace
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = StatusWebSpace
+:::command[Command]
+
+```text
+COMMAND = StatusWebSpace
 WIDE = 0|1
 LOG = 0|1
-WEBSPACE = (TEXT)</code></pre></div>
+WEBSPACE = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[CREATED DATE][0] = (DATE)
 property[IP][0] = (TEXT)
@@ -31,7 +47,10 @@ property[STATUS][0] = (TEXT)
 property[UPDATED DATE][0] = (DATE)
 property[USED QUOTA][0] = (INT)
 property[USED TRAFFIC][0] = (INT)
-property[SSO_REDIRECT_LOCATION][0] = (TEXT)</code></pre></div>
+property[SSO_REDIRECT_LOCATION][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -48,3 +67,12 @@ property[SSO_REDIRECT_LOCATION][0] = (TEXT)</code></pre></div>
 | **USED QUOTA** | Quota usage |
 | **USED TRAFFIC** | Traffic usage |
 | **SSO\_REDIRECT\_LOCATION** | SSO Redirect Location (web site builder) |
+
+:::commandlist[Hosting - Webspace commands]
+
+- [AddWebspace](../addwebspace/)
+- [DeleteWebspace](../deletewebspace/)
+- [ModifyPHPIni](../modifyphpini/)
+- [Modify](../modifywebspace/)
+
+:::

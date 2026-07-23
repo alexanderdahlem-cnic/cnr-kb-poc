@@ -1,46 +1,84 @@
 ---
 title: "QueryAftermarketDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketDomainList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2610
 ---
 
 List all Domains currently listed for sale
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>[COMMAND]
+:::command[Command]
+
+```text
+[COMMAND]
 command=QueryAftermarketDomainList
-aftermarketaccount=&lt;TEXT&gt;|&lt;NULL&gt;   (optional, Aftermarket Account ID)
-token=&lt;PATTERN&gt;|&lt;NULL&gt;             (optional, ID of a domain listing)
-domain=&lt;PATTERN&gt;|&lt;NULL&gt;            (optional, full domain name)
-price=&lt;PATTERN&gt;|&lt;NULL&gt;             (optional, price format x.xx without currency)
-status=&lt;PATTERN&gt;|&lt;NULL&gt;            (optional, pending or listed)
-listingtype=&lt;PATTERN&gt;|&lt;NULL&gt;       (optional, buy_now or make_offer. Defaults to buy_now if not stated otherwise.)
-first=&lt;INT&gt;|&lt;NULL&gt;                 (optional)
-limit=&lt;INT&gt;|&lt;NULL&gt;                 (optional)
-orderby=&lt;TEXT&gt;|&lt;NULL&gt;              (optional)
-order=asc|desc|&lt;NULL&gt;              (optional)</code></pre></div>
+aftermarketaccount=<TEXT>|<NULL>   (optional, Aftermarket Account ID)
+token=<PATTERN>|<NULL>             (optional, ID of a domain listing)
+domain=<PATTERN>|<NULL>            (optional, full domain name)
+price=<PATTERN>|<NULL>             (optional, price format x.xx without currency)
+status=<PATTERN>|<NULL>            (optional, pending or listed)
+listingtype=<PATTERN>|<NULL>       (optional, buy_now or make_offer. Defaults to buy_now if not stated otherwise.)
+first=<INT>|<NULL>                 (optional)
+limit=<INT>|<NULL>                 (optional)
+orderby=<TEXT>|<NULL>              (optional)
+order=asc|desc|<NULL>              (optional)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
-property[aftermarketaccount][0] = &lt;TEXT&gt;
-property[token][n] = &lt;TEXT&gt;
-property[domain][n] = &lt;DOMAIN&gt;
-property[price][n] = &lt;DECIMAL&gt;
+:::response[Response]
+
+```text
+[RESPONSE]
+property[aftermarketaccount][0] = <TEXT>
+property[token][n] = <TEXT>
+property[domain][n] = <DOMAIN>
+property[price][n] = <DECIMAL>
 property[status][n] = pending|listed	        (Domain ist known to Aftermarket Provider but not listed for sale|Domain ist listed for sale.)
 property[listingtype][n] = buy_now|make_offer   (Price is fixed|Offers can be made. Defaults to buy_now if not stated otherwise.)
 property[provider][n] = sedo
-property[count][0] = &lt;INT&gt;
-property[first][0] = &lt;INT&gt;
-property[last][0] = &lt;INT&gt;
-property[limit][0] = &lt;INT&gt;
-property[total][0] = &lt;INT&gt;</code></pre></div>
+property[count][0] = <INT>
+property[first][0] = <INT>
+property[last][0] = <INT>
+property[limit][0] = <INT>
+property[total][0] = <INT>
+```
 
+:::
 
+:::commandlist[Aftermarket commands]
+
+- [AddAftermarketAccount](../addaftermarketaccount/)
+- [AddAftermarketDomain](../addaftermarketdomain/)
+- [AftermarketBid](../aftermarketbid/)
+- [BuyDomain](../buydomain/)
+- [DeleteAftermarketAccount](../deleteaftermarketaccount/)
+- [DeleteAftermarketDomain](../deleteaftermarketdomain/)
+- [ModifyAftermarketAccount](../modifyaftermarketaccount/)
+- [ModifyAftermarketDomain](../modifyaftermarketdomain/)
+- [QueryAftermarketAccountList](../queryaftermarketaccountlist/)
+- [QueryAftermarketBid](../queryaftermarketbid/)
+- [QueryAftermarketBidList](../queryaftermarketbidlist/)
+- [QueryAftermarketDomainList](./)
+- [QueryAftermarketList](../queryaftermarketlist/)
+- [ReserveDomain](../reservedomain/)
+- [StatusAftermarketAccount](../statusaftermarketaccount/)
+- [StatusAftermarketDomain](../statusaftermarketdomain/)
+
+:::

@@ -1,6 +1,9 @@
 ---
 title: "OwnerChange: ResendNotification"
 description: "Resend the ICANN OwnerChange FOA Mail to losing, gaining or both owner contacts. The resubmission of the email through the web interface will soon be available."
+sidebar:
+  order: 710
+  label: "ResendNotification"
 ---
 
 ## Notification
@@ -9,11 +12,16 @@ Resend the ICANN OwnerChange FOA Mail to losing, gaining or both owner contacts.
 
 The resubmission of the email through the Control Panel will soon be available.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ResendNotification
+:::command[Command]
+
+```text
+command = ResendNotification
 type = OwnerChange
 object = example.com | P-ABC1
-recipient = losing|gaining|both</code></pre></div>
+recipient = losing|gaining|both
+```
+
+:::
 
 ## Designated agent email
 

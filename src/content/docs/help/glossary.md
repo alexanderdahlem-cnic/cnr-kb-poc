@@ -1,5 +1,8 @@
 ---
 title: "Glossary of terms"
+sidebar:
+  order: 2040
+  label: "Glossary"
 ---
 
 The glossary of domain related abbreviations and terms shall help you to find your way in the complex world of domains.

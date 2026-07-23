@@ -1,24 +1,40 @@
 ---
 title: "QueryZoneList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryZoneList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3570
 ---
 
 The QueryZonelist command enables you to review your prices and for which gTLDs and ccTLDs your MREG-Account has been activated for.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryZoneList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryZoneList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[3RDS][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -31,7 +47,10 @@ property[TRADE][n] = (DECIMAL)
 property[APPLICATION][n] = (DECIMAL)
 property[CURRENCY][n] = (TEXT)
 property[DOMAIN_COUNT][n] = (INT)
-property[ACTIVE][n] = 1|0</code></pre></div>
+property[ACTIVE][n] = 1|0
+```
+
+:::
 
 ### Attributes
 
@@ -52,19 +71,26 @@ property[ACTIVE][n] = 1|0</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryZoneList
+:::command[Command]
+
+```text
+COMMAND = QueryZoneList
 ZONE = (PATTERN)
 INACTIVE = 0|1
 INDIVIDUAL = 0|1
 REGISTRAR = (TEXT)
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)</code></pre></div>
+SENDLISTEMAIL = (EMAILS)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[3RDS][n] = (TEXT)
 property[ZONE][n] = (TEXT)
@@ -77,7 +103,10 @@ property[TRADE][n] = (DECIMAL)
 property[APPLICATION][n] = (DECIMAL)
 property[CURRENCY][n] = (TEXT)
 property[DOMAIN_COUNT][n] = (INT)
-property[ACTIVE][n] = 1|0</code></pre></div>
+property[ACTIVE][n] = 1|0
+```
+
+:::
 
 ### Attributes
 
@@ -88,3 +117,19 @@ property[ACTIVE][n] = 1|0</code></pre></div>
 | **REGISTRAR** | Show the prices for this reseller (optional) |
 | **GENERATELIST** | Show result on screen|Generate a CSV File and upload to ftp (optional) |
 | **SENDLISTEMAIL** | Email address where the CSV will be sent to (optional) |
+
+:::commandlist[Finance commands]
+
+- [ConvertCurrency](../convertcurrency/)
+- [QueryAccountingList](../queryaccountinglist/)
+- [QueryAvailablePromotionList](../queryavailablepromotionlist/)
+- [QueryExchangeRates](../queryexchangerates/)
+- [QueryPremiumDomainList](../querypremiumdomainlist/)
+- [QueryPriceHistoryList](../querypricehistorylist/)
+- [QueryServiceList](../queryservicelist/)
+- [QueryUpcomingAccountingList](../queryupcomingaccountinglist/)
+- [QueryZoneList](./)
+- [QueryZonePriceList](../queryzonepricelist/)
+- [ServicePrice](../serviceprice/)
+
+:::

@@ -1,5 +1,8 @@
 ---
 title: "Bank Accounts"
+sidebar:
+  order: 2030
+  label: "Bank data"
 ---
 
 Please use one of the following bank accounts for payments

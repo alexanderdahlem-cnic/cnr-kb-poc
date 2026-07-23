@@ -1,5 +1,8 @@
 ---
 title: "Password Policy"
+sidebar:
+  order: 1950
+  label: "Account Security"
 ---
 
 Our password policy for CentralNic Reseller accounts and users of CentralNic Reseller accounts requires passwords to match the following criteria:

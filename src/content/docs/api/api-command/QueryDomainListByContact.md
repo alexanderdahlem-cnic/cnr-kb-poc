@@ -1,25 +1,41 @@
 ---
 title: "QueryDomainListByContact"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainListByContact ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3190
 ---
 
 Search all domains using a specific contact handle managed in your account
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryDomainListByContact
-CONTACT = (CONTACT)</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryDomainListByContact
+CONTACT = (CONTACT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (DOMAIN)
 property[TYPE][n] = ADMIN|OWNER|TECH|BILLING
@@ -27,7 +43,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -45,20 +64,27 @@ property[TOTAL][0] = (INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryDomainListByContact
+:::command[Command]
+
+```text
+COMMAND = QueryDomainListByContact
 CONTACT = (CONTACT)
 GENERATELIST = 0|1
 SENDLISTEMAIL = (EMAILS)
 FIRST = (INT)
 LIMIT = (INT)
 ORDER = ASC|DESC
-ORDERBY = DOMAIN|TYPE</code></pre></div>
+ORDERBY = DOMAIN|TYPE
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (DOMAIN)
 property[TYPE][n] = ADMIN|OWNER|TECH|BILLING
@@ -66,7 +92,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -78,3 +107,41 @@ property[TOTAL][0] = (INT)</code></pre></div>
 | **LIMIT** | Show only this many items in the response (optional) |
 | **ORDER** | Optional |
 | **ORDERBY** | Order the results for the corresponding column. Default is DOMAIN. (optional) |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](./)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

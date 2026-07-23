@@ -1,12 +1,21 @@
 ---
 title: "QueryRegisteredPremiumDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryRegisteredPremiumDomainList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3220
 ---
 
 The QueryRegisteredPremiumDomainList command allows you to query the list of premium domains in your portfolio or located in subreseller accounts.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 -   [Default handling](#)
 -   [Premium features](#)
@@ -15,13 +24,20 @@ The QueryRegisteredPremiumDomainList command allows you to query the list of pre
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND     = QueryRegisteredPremiumDomainList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND     = QueryRegisteredPremiumDomainList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                                             = (INT)
+:::response[Response]
+
+```text
+code                                             = (INT)
 description                                      = (TEXT)
 property[DOMAIN][n]                              = (DOMAIN)
 property[REGISTRAR][n]                           = (TEXT)
@@ -29,7 +45,10 @@ property[COUNT][0]                               = (INT)
 property[FIRST][0]                               = (INT)
 property[LAST][0]                                = (INT)
 property[LIMIT][0]                               = (INT)
-property[TOTAL][0]                               = (INT)</code></pre></div>
+property[TOTAL][0]                               = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -56,8 +75,10 @@ property[TOTAL][0]                               = (INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND     = QueryRegisteredPremiumDomainList
+:::command[Command]
+
+```text
+COMMAND     = QueryRegisteredPremiumDomainList
 DOMAIN      = (PATTERN)
 DOMAINIDN   = (TEXT)
 RENEWALMODE = DEFAULT|AUTORENEW|AUTOEXPIRE|AUTODELETE|RENEWONCE|AUTORENEWMONTHLY
@@ -69,12 +90,17 @@ ORDER       = ASC|DESC
 ORDERBY     = DOMAIN|DOMAINIDN|DOMAINCREATEDDATE|DOMAINREGISTRATIONEXPIRATIONDATE|DOMAINRENEWALDATE|DOMAINZONE|ZONE|RENEWALMODE|TRANSFERMODE
 WIDE        = 0|1
 FIRST       = (INT)
-LIMIT       = (INT)</code></pre></div>
+LIMIT       = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                                             = (INT)
+:::response[Response]
+
+```text
+code                                             = (INT)
 description                                      = (TEXT)
 property[DOMAIN][n]                              = (DOMAIN)
 property[REGISTRAR][n]                           = (TEXT)
@@ -94,7 +120,10 @@ property[FIRST][0]                               = (INT)
 property[FIRST][0]                               = (INT)
 property[LAST][0]                                = (INT)
 property[LIMIT][0]                               = (INT)
-property[TOTAL][0]                               = (INT)</code></pre></div>
+property[TOTAL][0]                               = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -115,3 +144,41 @@ property[TOTAL][0]                               = (INT)</code></pre></div>
 ## Required Parameters (premium)
 
 The following premium parameters are standard for this command.
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](./)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

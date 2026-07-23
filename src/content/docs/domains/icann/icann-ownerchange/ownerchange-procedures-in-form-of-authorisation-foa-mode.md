@@ -1,6 +1,8 @@
 ---
 title: "OwnerChange in FOA-Mode"
 description: "OwnerChange Procedures in Form Of Authorisation (FOA) Mode. ➥ Learn more!"
+sidebar:
+  order: 580
 ---
 
 These procedures outline the technical OwnerChange process in FOA Mode.

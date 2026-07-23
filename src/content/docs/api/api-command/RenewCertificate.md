@@ -1,6 +1,8 @@
 ---
 title: "RenewCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ RenewCertificate ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2790
 ---
 
 This command is used to renew a certificate and certificate order.
@@ -21,22 +23,36 @@ For the attributes description, please refer to the SSL 2.0 API Documentation.
 
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND 	= RenewCertificate
+:::command[Command]
+
+```text
+COMMAND 	= RenewCertificate
 CERTIFICATE 	= (TEXT)
-APIVERSION 	= 1|2</code></pre></div>
+APIVERSION 	= 1|2
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code 				= (INT)
+:::response[Response]
+
+```text
+code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[certificateorder][n] 	= (TEXT)
@@ -74,20 +90,47 @@ property[organizationcontact][n]= (TEXT)
 property[evapprovercontact][n] 	= (TEXT)
 property[updated by][n] 	= (TEXT)
 property[updated date][n] 	= (DATE)
-property[vat][n] 		= (DECIMAL)</code></pre></div>
+property[vat][n] 		= (DECIMAL)
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>CSR#          = (TEXT)
+:::command[Command]
+
+```text
+CSR#          = (TEXT)
 DCVMETHOD     = EMAIL|DNS-TXT|DNS-CNAME|HTTP|HTTPS
 DCVSCOPE      = base|fqdn
 DCVTOKEN      = (TEXT)
 CACERTIFICATE = (TEXT)
 ALGORITHM     = (TEXT)
 PERIOD        = (For Sectigo) 1y,365d
-PERIOD        = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d</code></pre></div>
+PERIOD        = (For DigiCert) 1y,7d,14d,21d,28d,35d,42d,49d,56d,63d,70d,77d,84d,91d,98d,105d,112d,119d,126d,133d,140d,147d,154d,161d,168d,175d,182d,189d,196d,203d,210d,217d,224d,231d,238d,245d,252d,259d,266d,273d,280d,287d,294d,301d,308d,315d,322d,329d,336d,343d,350d,357d,364d,365d
+```
 
+:::
 
+:::commandlist[Certificate commands]
+
+- [AddCertificate](../addcertificate/)
+- [CheckCertificate](../checkcertificate/)
+- [DeleteCertificate](../deletecertificate/)
+- [GetCertificateInfo](../getcertificateinfo/)
+- [QueryCertificateList](../querycertificatelist/)
+- [ReissueCertificate](../reissuecertificate/)
+- [RenewCertificate](./)
+- [StatusCertificate](../statuscertificate/)
+- [RevokeCertificate](../revokecertificate/)
+- [RevokeCertificateOrder](../revokecertificateorder/)
+- [CancelCertificateOrder](../cancelcertificateorder/)
+- [StatusCertificateOrder](../statuscertificateorder/)
+- [QueryCertificateOrderList](../querycertificateorderlist/)
+- [AddCertificateContact](../addcertificatecontact/)
+- [StatusCertificateContact](../statuscertificatecontact/)
+- [QueryCertificateContactList](../querycertificatecontactlist/)
+
+:::

@@ -1,5 +1,7 @@
 ---
 title: "Resource records"
+sidebar:
+  order: 1440
 ---
 
 ## A

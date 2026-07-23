@@ -1,12 +1,17 @@
 ---
 title: "GetProperty"
+sidebar:
+  order: 730
 ---
 
+:::command[Command]
 
+```text
+command = GetProperty
+CLASS   = ICANNERRP
+```
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = GetProperty
-CLASS   = ICANNERRP</code></pre></div>
+:::
 
 **Important Note**
 

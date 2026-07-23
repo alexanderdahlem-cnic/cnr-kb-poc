@@ -1,16 +1,23 @@
 ---
 title: "AddAcl Example"
+sidebar:
+  order: 1770
 ---
 
 Allow user1 AddDomain, StatusDomain and ModifyDomain
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = AddAcl
+:::command[Command]
+
+```text
+command = AddAcl
 username = user1
 location = DOMAIN
 acl0 = ADD
 acl1 = STATUS
-acl2 = MODIFY</code></pre></div>
+acl2 = MODIFY
+```
+
+:::
 
 ### Attributes
 

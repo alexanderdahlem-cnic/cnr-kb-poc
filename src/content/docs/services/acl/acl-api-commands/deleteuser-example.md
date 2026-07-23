@@ -1,11 +1,16 @@
 ---
 title: "DeleteUser Example"
+sidebar:
+  order: 1870
 ---
 
 Deletes a user or a group. A group can not be deleted as long as users are allocated to this group.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = DeleteUser
-username = user1|group1</code></pre></div>
+:::command[Command]
 
+```text
+command = DeleteUser
+username = user1|group1
+```
 
+:::

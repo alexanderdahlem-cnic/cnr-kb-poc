@@ -1,25 +1,41 @@
 ---
 title: "QueryPriceHistoryList"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryPriceHistoryList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3540
 ---
 
 QueryPriceHistoryList can be used to show the history of prices for the own account or for subreseller accounts. This is decided by the usage of the registrar/pricescale parameter. If no registrar/pricescale parameter is given, it will show the prices for the own account. Otherwise the prices of the subreseller or pricescale will be shown. Also registrar=\* and status=pending can be used to show all upcoming changes for all pricescales and subresellers at once. QueryPriceHistoryList supports also the usage of zone=\* which will show all zones and services at once.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryPriceHistoryList
-ZONE = (TEXT)</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryPriceHistoryList
+ZONE = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[PRICESCALE][n] = (TEXT)
 property[REGISTRAR][n] = (TEXT)
@@ -43,7 +59,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -75,8 +94,10 @@ property[TOTAL][0] = (INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryPriceHistoryList
+:::command[Command]
+
+```text
+COMMAND = QueryPriceHistoryList
 FIRST = (INT)
 LIMIT = (INT)
 MAXDATE = (DATE)
@@ -93,12 +114,17 @@ TYPE = (TEXT)
 INDIVIDUAL = 0|1
 WIDE = 0|1
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)</code></pre></div>
+SENDLISTEMAIL = (EMAILS)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[PRICESCALE][n] = (TEXT)
 property[REGISTRAR][n] = (TEXT)
@@ -114,7 +140,10 @@ property[STATUS][n] = (TEXT)
 property[SETUP][n] = (DECIMAL)
 property[ANNUAL][n] = (DECIMAL)
 property[TRANSFER][n] = (DECIMAL)
-property[RESTORE][n] = (DECIMAL)</code></pre></div>
+property[RESTORE][n] = (DECIMAL)
+```
+
+:::
 
  property\[TRADE\]\[n\] = (DECIMAL) property\[APPLICATION\]\[n\] = (DECIMAL) property\[CURRENCY\]\[n\] = (TEXT) property\[COUNT\]\[0\] = (INT) property\[FIRST\]\[0\] = (INT) property\[LAST\]\[0\] = (INT) property\[LIMIT\]\[0\] = (INT) property\[TOTAL\]\[0\] = (INT)
 

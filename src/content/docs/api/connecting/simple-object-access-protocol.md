@@ -1,6 +1,9 @@
 ---
 title: "Simple Object Access Protocol"
 description: "Access to our API is also possible with SOAP. This is a standard-compliant interface and accessible with the default SOAP - modules delivered with your language"
+sidebar:
+  order: 140
+  label: "SOAP"
 ---
 
 Access to our API is also possible with SOAP. This is a standard-compliant interface and accessible with the default SOAP - modules delivered with your language of choice. Please note, that you need to provide your username and password with every request.
@@ -19,59 +22,75 @@ Our API's have an Operational Test and Evaluation (OT&E) system, which you may u
 
 For access with perl, we recommend using "SOAP::Lite", please have a look at the example below.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>#!/usr/bin/perl --w
-use SOAP::Lite; #+trace =&gt; debug;
+:::command[Command]
+
+```text
+#!/usr/bin/perl --w
+
+use SOAP::Lite; #+trace => debug;
 use Data::Dumper;'
+
 my $soap = SOAP::Lite
--&gt; uri('urn:Api')
--&gt; proxy('URL to SOAP Gateway')
+-> uri('urn:Api')
+-> proxy('URL to SOAP Gateway')
 ;
+
 my @commands = (
 {
-'s_login' =&gt; '[mregname]',
-'s_pw' =&gt; '[&lt;mregpassword&gt;ote]',
-'s_opmode' =&gt; 'OTE',
-'s_encode' =&gt; 'UTF-8',
-'command' =&gt; 'CheckDomain',
-'domain' =&gt; 'example.com',
+'s_login' => '[mregname]',
+'s_pw' => '[<mregpassword>ote]',
+'s_opmode' => 'OTE',
+'s_encode' => 'UTF-8',
+'command' => 'CheckDomain',
+'domain' => 'example.com',
 },
 );
-my $res = $soap-&gt;xcall(@commands);
-print Dumper($res-&gt;result) . "\n";</code></pre></div>
+
+my $res = $soap->xcall(@commands);
+
+print Dumper($res->result) . "\n";
+```
+
+:::
 
 ## PHP
 
 We recommend to use the PHP-internal SOAP - functions for accessing our SOAP - API with PHP. Please have a look at the example below.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?php
+:::command[Command]
+
+```text
+<?php
 $client = new SoapClient(NULL,
 array(
-"location" =&gt; "URL to SOAP Gateway",
-// "location" =&gt; "URL to SOAP Gateway",
-"uri" =&gt; "urn:Api",
-"style" =&gt; SOAP_RPC,
-"use" =&gt; SOAP_ENCODED,
+"location" => "URL to SOAP Gateway",
+// "location" => "URL to SOAP Gateway",
+"uri" => "urn:Api",
+"style" => SOAP_RPC,
+"use" => SOAP_ENCODED,
 )
 );
+
 $params = array(
 array(
-"s_login" =&gt; "[mregname]",
-"s_pw" =&gt; "[&lt;mregpassword&gt;ote]",
-"s_opmode" =&gt; "OTE",
-"s_encode" =&gt; "UTF-8",
-"command" =&gt; "CheckDomain",
-"domain" =&gt; "example.com"
+"s_login" => "[mregname]",
+"s_pw" => "[<mregpassword>ote]",
+"s_opmode" => "OTE",
+"s_encode" => "UTF-8",
+"command" => "CheckDomain",
+"domain" => "example.com"
 )
 );
-$result = $client-&gt;__call("xcall",
+
+$result = $client->__call("xcall",
 $params,
 array(
-"uri" =&gt; "urn:Api",
-"soapaction" =&gt; "urn:Api#xcall")
+"uri" => "urn:Api",
+"soapaction" => "urn:Api#xcall")
 );
+
 print_r($result);
-?&gt;</code></pre></div>
+?>
+```
 
-
+:::

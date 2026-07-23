@@ -1,5 +1,8 @@
 ---
 title: "CentralNic Reseller Whois Privacy Service"
+sidebar:
+  order: 1560
+  label: "WhoIs Privacy"
 ---
 
 Key-Systems offers WhoisPrivacy services to be used with domain name registrations. This service is charged annually for all names containing the flag „x-whoisprivacy“ flag in the domain properties.

@@ -1,24 +1,40 @@
 ---
 title: "QueryDomainList"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ QueryDomainList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3180
 ---
 
 Query list of domains in account
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryDomainList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryDomainList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 queuetime = (INT)
 runtime = (INT)
@@ -29,7 +45,10 @@ property[first][0]  = (INT)
 property[last][0]   = (INT)
 property[limit][0]  = (INT)
 property[total][0]  = (INT)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ### Attributes
 
@@ -45,8 +64,10 @@ EOF</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryDomainList
+:::command[Command]
+
+```text
+COMMAND = QueryDomainList
 DOMAIN = (PATTERN)
 DOMAINIDN = (TEXT)
 DAYS = (INT)
@@ -63,12 +84,17 @@ FIRST = (INT)
 LIMIT = (INT)
 DOMAINTAG# = (TEXT)
 ZONETAG# = (TEXT)
-NAMESERVER = (PATTERN)</code></pre></div>
+NAMESERVER = (PATTERN)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 code = (INT)
 description = (TEXT)
 queuetime = (INT)
@@ -95,11 +121,15 @@ property[VERIFIED][n] = (TEXT)
 property[X-TIME-TO-SUSPENSION][n] = (TEXT)
 property[X-TRANSFERLOCK-UNTIL][n] = (DATE)
 property[zone][n] = (TEXT)
+
 If type = SHOWGTLDOWNERTRUSTEESERVICE
 property[column][3] = x-gtld-owner-trustee-active
 property[column][4] = x-gtld-owner-trustee-service-start
 property[x-gtld-owner-trustee-active][n] = 1
-property[x-gtld-owner-trustee-service-start][n] = YYYY-MM-DD HH:MM:SS</code></pre></div>
+property[x-gtld-owner-trustee-service-start][n] = YYYY-MM-DD HH:MM:SS
+```
+
+:::
 
 ### Attributes
 
@@ -147,3 +177,41 @@ property[x-gtld-owner-trustee-service-start][n] = YYYY-MM-DD HH:MM:SS</code></pr
 | **X-GLTD-OWNER-TRUSTEE-SERVICE-START** | If type is SHOWGTLDOWNERTRUSTEESERVICE, this shows the date where the charge will begin. If it is empty, no charges will apply. |
 | **TRANSFERMODE** | The current transfer mode of the domain; Will only be returned if TYPE is DEFAULT |
 | **X-TRANSFERLOCK-UNTIL** | Date until the transferlock of the domain name will expire |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](../checkdomain/)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](./)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

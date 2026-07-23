@@ -1,6 +1,8 @@
 ---
 title: "DNSSEC"
 description: "The Domain Name System Security Extensions (DNSSEC) is a suite of Internet Engineering Task Force (IETF) specifications for securing certain kinds of informatio"
+sidebar:
+  order: 1500
 ---
 
 The Domain Name System Security Extensions (DNSSEC) is a suite of Internet Engineering Task Force (IETF) specifications for securing certain kinds of information provided by the Domain Name System (DNS) as used on Internet Protocol (IP) networks. It is a set of extensions to DNS which provide to DNS clients (resolvers) origin authentication of DNS data, authenticated denial of existence, and data integrity, but not availability or confidentiality.
@@ -26,31 +28,51 @@ If you would like to convert your existing KeyData hashed with SHA-1 and have it
 
 1) Send a StatusDomain command to retrieve the current KeyData.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = StatusDomain
-domain = test-dnssec.tld</code></pre></div>
+:::command[Command]
+
+```text
+command = StatusDomain
+domain = test-dnssec.tld
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 ...
-property[dnssec][0]&nbsp;= 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx</code></pre></div>
+property[dnssec][0] = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
+```
+
+:::
 
 2) Issue a ModifyDomain command to remove the existing and insert precisely the same KeyData. Our system will sign it using SHA-256.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ModifyDomain
+:::command[Command]
+
+```text
+command = ModifyDomain
 domain = test-dnssec.tld
 deldnssec0 = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
-adddnssec0 = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx</code></pre></div>
+adddnssec0 = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
-description = Command completed successfully</code></pre></div>
+:::response[Response]
+
+```text
+code = 200
+description = Command completed successfully
+```
+
+:::
 
 ## Required parameters
 
@@ -78,64 +100,104 @@ Here are some command examples that show how DNSSEC could be added or modified:
 
 ## API
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command         = AddDomain
+:::command[Command]
+
+```text
+command         = AddDomain
 domain          = test-dnssec.org
 ownercontact0   = P-JYC21
 admincontact0   = P-JYC21
 billingcontact0 = P-JYC21
 techcontact0    = P-JYC21
 dnssec0         = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
-nameserver0     = ns-dev.domaindiscount24.net</code></pre></div>
+nameserver0     = ns-dev.domaindiscount24.net
+```
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command         = AddDomain
+:::
+
+:::command[Command]
+
+```text
+command         = AddDomain
 domain          = test-dnssec.org
 ownercontact0   = P-JYC21
 admincontact0   = P-JYC21
 billingcontact0 = P-JYC21
 techcontact0    = P-JYC21
 dnssecdsdata0   = 1325 12 2 AWEAADDECAJHATJFSONTY58WCBAH1BX+JHATJ
-nameserver0     = ns.yourdomain.TLD</code></pre></div>
+nameserver0     = ns.yourdomain.TLD
+```
+
+:::
 
 ## StatusDomain
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command             = StatusDomain
-domain              = test-dnssec.org</code></pre></div>
+:::command[Command]
+
+```text
+command             = StatusDomain
+domain              = test-dnssec.org
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                = 200
+:::response[Response]
+
+```text
+code                = 200
 description         = Command completed successfully
 ...
-property[dnssec][0] = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx</code></pre></div>
+property[dnssec][0] = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
+```
+
+:::
 
 ## ModifyDomain
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = ModifyDomain
+:::command[Command]
+
+```text
+command     = ModifyDomain
 domain      = test-dnssec.org
 deldnssec0  = 256 3 8 AwEAAdDECajHaTjfSoNTY58WcBah1Bx
-adddnssec0  = 256 3 8 substitute</code></pre></div>
+adddnssec0  = 256 3 8 substitute
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code        = 200
-description = Command completed successfully</code></pre></div>
+:::response[Response]
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = ModifyDomain
+```text
+code        = 200
+description = Command completed successfully
+```
+
+:::
+
+:::command[Command]
+
+```text
+command     = ModifyDomain
 domain      = test-dnssec.org
-dnssec0     = 256 3 8 different</code></pre></div>
+dnssec0     = 256 3 8 different
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code        = 200
-description = Command completed successfully</code></pre></div>
+:::response[Response]
+
+```text
+code        = 200
+description = Command completed successfully
+```
+
+:::
 
 **Note**
 
@@ -143,48 +205,68 @@ If only "dnssec0" or the alias "dnssec" is used, the values of "dnssec1" and "dn
 
 To remove the complete DNSSEC information use a ModifyDomain command with the parameter DNSSECDELALL, which will delete all entries at the registry:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command      = ModifyDomain
+:::command[Command]
+
+```text
+command      = ModifyDomain
 domain       = test-dnssec.org
-DNSSECDELALL = 1</code></pre></div>
+DNSSECDELALL = 1
+```
+
+:::
 
 ## EPP
 
 Example DS Data Interface and Key Data Interface ( rfc5910#section-4.3 ). Example use of the secDNS-1.1 DS Data Interface for a create:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>  &lt;secDNS:dsData&gt;
-    &lt;secDNS:keyTag&gt;12345&lt;/secDNS:keyTag&gt;
-    &lt;secDNS:alg&gt;3&lt;/secDNS:alg&gt;
-    &lt;secDNS:digestType&gt;1&lt;/secDNS:digestType&gt;
-    &lt;secDNS:digest&gt;49FD46E6C4B45C55D4AC&lt;/secDNS:digest&gt;
-  &lt;/secDNS:dsData&gt;</code></pre></div>
+:::command[Command]
+
+```text
+  <secDNS:dsData>
+    <secDNS:keyTag>12345</secDNS:keyTag>
+    <secDNS:alg>3</secDNS:alg>
+    <secDNS:digestType>1</secDNS:digestType>
+    <secDNS:digest>49FD46E6C4B45C55D4AC</secDNS:digest>
+  </secDNS:dsData>
+```
+
+:::
 
 Example use of secDNS-1.1 DS Data Interface with option key data for a create:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>  &lt;secDNS:dsData&gt;
-    &lt;secDNS:keyTag&gt;12345&lt;/secDNS:keyTag&gt;
-    &lt;secDNS:alg&gt;3&lt;/secDNS:alg&gt;
-    &lt;secDNS:digestType&gt;1&lt;/secDNS:digestType&gt;
-    &lt;secDNS:digest&gt;49FD46E6C4B45C55D4AC&lt;/secDNS:digest&gt;
-    &lt;secDNS:keyData&gt;
-      &lt;secDNS:flags&gt;257&lt;/secDNS:flags&gt;
-      &lt;secDNS:protocol&gt;3&lt;/secDNS:protocol&gt;
-      &lt;secDNS:alg&gt;1&lt;/secDNS:alg&gt;
-      &lt;secDNS:pubKey&gt;AQPJ////4Q==&lt;/secDNS:pubKey&gt;
-    &lt;/secDNS:keyData&gt;
-   &lt;/secDNS:dsData&gt;</code></pre></div>
+:::command[Command]
+
+```text
+  <secDNS:dsData>
+    <secDNS:keyTag>12345</secDNS:keyTag>
+    <secDNS:alg>3</secDNS:alg>
+    <secDNS:digestType>1</secDNS:digestType>
+    <secDNS:digest>49FD46E6C4B45C55D4AC</secDNS:digest>
+    <secDNS:keyData>
+      <secDNS:flags>257</secDNS:flags>
+      <secDNS:protocol>3</secDNS:protocol>
+      <secDNS:alg>1</secDNS:alg>
+      <secDNS:pubKey>AQPJ////4Q==</secDNS:pubKey>
+    </secDNS:keyData>
+   </secDNS:dsData>
+```
+
+:::
 
 Example use of the secDNS-1.1 Key Data Interface for a create:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>   &lt;secDNS:keyData&gt;
-     &lt;secDNS:flags&gt;257&lt;/secDNS:flags&gt;
-     &lt;secDNS:protocol&gt;3&lt;/secDNS:protocol&gt;
-     &lt;secDNS:alg&gt;1&lt;/secDNS:alg&gt;
-     &lt;secDNS:pubKey&gt;AQPJ////4Q==&lt;/secDNS:pubKey&gt;
-   &lt;/secDNS:keyData&gt;</code></pre></div>
+:::command[Command]
+
+```text
+   <secDNS:keyData>
+     <secDNS:flags>257</secDNS:flags>
+     <secDNS:protocol>3</secDNS:protocol>
+     <secDNS:alg>1</secDNS:alg>
+     <secDNS:pubKey>AQPJ////4Q==</secDNS:pubKey>
+   </secDNS:keyData>
+```
+
+:::
 
 **Common errors**
 

@@ -1,33 +1,52 @@
 ---
 title: "ConvertCurrency"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ ConvertCurrency ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3490
 ---
 
 Converts a decimal amount from one currency to another currency with the current exchange rate.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ConvertCurrency
+:::command[Command]
+
+```text
+COMMAND = ConvertCurrency
 AMOUNT = (DECIMAL)
 FROM = (TEXT)
-TO = (TEXT)</code></pre></div>
+TO = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[AMOUNT][0] = (DECIMAL)
 property[FROM][0] = (TEXT)
 property[TO][0] = (TEXT)
 property[CONVERTED_AMOUNT][0] = (DECIMAL)
-property[RATE][0] = (DECIMAL)</code></pre></div>
+property[RATE][0] = (DECIMAL)
+```
+
+:::
 
 ### Attributes
 
@@ -37,3 +56,19 @@ property[RATE][0] = (DECIMAL)</code></pre></div>
 | **TO** | Currency to convert to/The currency the command converted the amount into |
 | **CONVERTED\_AMOUNT** | The amount after the convertion |
 | **RATE** | Convertion rate used to convert the amount |
+
+:::commandlist[Finance commands]
+
+- [ConvertCurrency](./)
+- [QueryAccountingList](../queryaccountinglist/)
+- [QueryAvailablePromotionList](../queryavailablepromotionlist/)
+- [QueryExchangeRates](../queryexchangerates/)
+- [QueryPremiumDomainList](../querypremiumdomainlist/)
+- [QueryPriceHistoryList](../querypricehistorylist/)
+- [QueryServiceList](../queryservicelist/)
+- [QueryUpcomingAccountingList](../queryupcomingaccountinglist/)
+- [QueryZoneList](../queryzonelist/)
+- [QueryZonePriceList](../queryzonepricelist/)
+- [ServicePrice](../serviceprice/)
+
+:::

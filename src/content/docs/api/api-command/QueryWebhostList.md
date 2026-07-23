@@ -1,30 +1,46 @@
 ---
 title: "QueryWebhostList"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webhost ➤ QueryWebhostList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4100
 ---
 
 Returns a list of all webhosts in your account
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryWebhostList
+:::command[Command]
+
+```text
+COMMAND = QueryWebhostList
 WEBSPACE = (TEXT)
 ORDER = ASC|DESC
 ONLYSSL = 0|1
 ORDERBY = WEBSPACE|CLASS|VERSION|STATUS|IP
 FIRST = (INT)
-LIMIT = (INT)</code></pre></div>
+LIMIT = (INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[SSL][n] = (TEXT)
 property[AUTOCERT][n] = (TEXT)
@@ -35,7 +51,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -54,3 +73,13 @@ property[TOTAL][0] = (INT)</code></pre></div>
 | **LAST** | Pointer to the last shown ID |
 | **LIMIT** | The limit given in the command |
 | **TOTAL** | Total number of webhosts |
+
+:::commandlist[Hosting - Webhost commands]
+
+- [AddWebhost](../addwebhost/)
+- [DeleteWebhost](../deletewebhost/)
+- [ModifyWebhost](../modifywebhost/)
+- [QueryWebhostList](./)
+- [StatusWebhost](../statuswebhost/)
+
+:::

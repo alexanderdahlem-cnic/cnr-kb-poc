@@ -1,5 +1,7 @@
 ---
 title: "Contact to an undisclosed entity"
+sidebar:
+  order: 2100
 ---
 
 ### Contact to an undisclosed entity

@@ -1,5 +1,7 @@
 ---
 title: "Subreseller Settings"
+sidebar:
+  order: 2010
 ---
 
 The Settings for your Subresellers only apply to your Subresellers and not to your own CentralNic reseller account. The Settings can be found in the new CentralNic Reseller control panel by clicking in the left menu on Subreseller -> Settings.  

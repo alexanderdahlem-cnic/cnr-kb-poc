@@ -1,6 +1,8 @@
 ---
 title: "Certificate Provider"
 description: "SSL Certificate Provider: ● Symantec ● Thawte ● GeoTrust ● RapidSSL ● Comodo ➥ Learn more!"
+sidebar:
+  order: 1140
 ---
 
 ## Digicert brands Symantec, Thawte, GeoTrust and RapidSSL

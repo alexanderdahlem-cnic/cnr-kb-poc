@@ -1,5 +1,7 @@
 ---
 title: "New Agreements"
+sidebar:
+  order: 2080
 ---
 
 To cover all aspects of GDPR we will publish new agreements that will become effective on May 25th 2018. For better understanding we provide preliminary versions here in our Knowledge Base. Final versions will be published on our websites soon. All these documents will become effective May 25, 2018

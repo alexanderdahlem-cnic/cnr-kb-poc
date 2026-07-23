@@ -1,14 +1,23 @@
 ---
 title: "TransferDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ TransferDomain ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4940
 ---
 
 _(Related EPP Command » [Transfer:Request](../../epp-command/transfer-request/ "Transfer:Request"))_
 
 Simply enter the command and the respective domain name. Please note that in order to initiate a transfer for most domains you need the respective authorization code (auth).
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 -   [Default handling](#)
 -   [Premium features](#)
@@ -17,16 +26,23 @@ Simply enter the command and the respective domain name. Please note that in ord
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST
-auth = (TEXT)</code></pre></div>
+auth = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -34,7 +50,10 @@ property[PROMOTIONS][0] = (TEXT)
 property[RENEWAL_PERIOD][0] = (TEXT)
 property[ROID][0] = (TEXT)
 property[TRANSFER_STATUS][0] = (TEXT)
-property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
+property[TRANSFERSTATUS][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -52,8 +71,10 @@ property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST|APPROVE|DENY|CANCEL|USERTRANSFER|PUSH|TRADE
 auth = (TEXT)
@@ -78,12 +99,17 @@ emailsender = (EMAIL)
 emailsubject = (TEXT)
 emailtac = (TEXT)
 emailurl = (TEXT)
-transferlock = 0|1</code></pre></div>
+transferlock = 0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
@@ -91,7 +117,10 @@ property[PROMOTIONS][0] = (TEXT)
 property[RENEWAL_PERIOD][0] = (TEXT)
 property[ROID][0] = (TEXT)
 property[TRANSFER_STATUS][0] = (TEXT)
-property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
+property[TRANSFERSTATUS][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -115,8 +144,10 @@ property[TRANSFERSTATUS][0] = (TEXT)</code></pre></div>
 
 The following premium parameters are standard for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = TransferDomain
+:::command[Command]
+
+```text
+command = TransferDomain
 domain = YOURDOMAIN.TLD
 action = REQUEST
 auth = (TEXT)
@@ -128,16 +159,24 @@ nameserver# = (NAMESERVER)
 X-FEE-AMOUNT0 = (DECIMAL)
 X-FEE-APPLICATION = (DECIMAL)
 X-FEE-CURRENCY = (TEXT)
-X-ACCEPT-PREMIUMPRICE = 0|1</code></pre></div>
+X-ACCEPT-PREMIUMPRICE = 0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[INFO][0] = (TEXT)
 property[JOB_ID][0] = (TEXT)
-property[PROMOTIONS][0] = (TEXT)</code></pre></div>
+property[PROMOTIONS][0] = (TEXT)
+```
+
+:::
 
  property\[RENEWAL\_PERIOD\]\[0\] = (TEXT) property\[ROID\]\[0\] = (TEXT) property\[TRANSFER\_STATUS\]\[0\] = (TEXT) property\[TRANSFERSTATUS\]\[0\] = (TEXT) property\[X-FEE-AMOUNT\]\[0\] = (DECIMAL) property\[X-FEE-APPLICATION\]\[0\] = (DECIMAL) property\[X-FEE-CURRENCY\]\[0\] = (TEXT)
 

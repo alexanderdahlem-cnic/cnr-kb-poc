@@ -1,25 +1,41 @@
 ---
 title: "ServicePrice"
 description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ ServicePrice ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3590
 ---
 
 The ServicePrice command can be used to get the amount that will be charged for a service for a specific action.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ServicePrice
-SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = ServicePrice
+SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[SERVICE][0] = (TEXT)
 property[TYPE][0] = (TEXT)
@@ -41,7 +57,10 @@ property[PRICE][0] = (DECIMAL)
 property[VAT][0] = (DECIMAL)
 property[NONREFUNDABLE][0] = (DECIMAL)
 property[VATNONREFUNDABLE][0] = (DECIMAL)
-property[PROMOTION][n] = (TEXT)</code></pre></div>
+property[PROMOTION][n] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -72,20 +91,27 @@ property[PROMOTION][n] = (TEXT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ServicePrice
+:::command[Command]
+
+```text
+COMMAND = ServicePrice
 PERIOD = (TEXT)
 PERIODTYPE = (TEXT)
 ACTION = ADD|RENEW|TRANSFER
 SERVICE = TRUSTEE |  APPLICATION | SERVER | MOBILE | CERTIFICATE | WEBSPACE
 TYPE = (TEXT)
 DOMAIN = (TEXT)
-X-PROMOTION-CODE = (TEXT)</code></pre></div>
+X-PROMOTION-CODE = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[SERVICE][0] = (TEXT)
 property[TYPE][0] = (TEXT)
@@ -103,7 +129,10 @@ property[ZONECURRENCY][0] = (TEXT)
 property[EXCHANGERATE][0] = (DECIMAL)
 property[ACTION][0] = (TEXT)
 property[PERIOD][0] = (INT)
-property[PRICE][0] = (DECIMAL)</code></pre></div>
+property[PRICE][0] = (DECIMAL)
+```
+
+:::
 
  property\[VAT\]\[0\] = (DECIMAL) property\[NONREFUNDABLE\]\[0\] = (DECIMAL) property\[VATNONREFUNDABLE\]\[0\] = (DECIMAL) property\[PROMOTION\]\[n\] = (TEXT)
 

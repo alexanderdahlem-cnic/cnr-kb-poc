@@ -1,6 +1,9 @@
 ---
 title: "Realization of the ERRP – what must be done?"
 description: "RRPproxy supports you in the fulfillment of the new requirements. ➥ Learn more!"
+sidebar:
+  order: 740
+  label: "Realization of the ERRP"
 ---
 
 CentralNic Reseller supports you in the fulfillment of the new requirements.

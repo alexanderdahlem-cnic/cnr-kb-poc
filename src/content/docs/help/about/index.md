@@ -1,9 +1,11 @@
 ---
 title: "Imprint"
 description: "Key-Systems Germany: Key-Systems GmbH, Im Oberen Werk 1, 66386 St. Ingbert - Key-Systems USA: Key-Systems USA, Inc., 604 S. King Street - Leesburg, Virginia 201"
+sidebar:
+  order: 2130
 ---
 
-![Key-Systems Worldmap](https://kb.centralnicreseller.com/dist/img/keysystems-worldmap.svg)
+![Key-Systems Worldmap](/cnr-kb-poc/media/dist/img/keysystems-worldmap.svg)
 
 ## Key-Systems Germany
 

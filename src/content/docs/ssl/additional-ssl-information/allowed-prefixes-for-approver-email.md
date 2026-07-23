@@ -1,6 +1,9 @@
 ---
 title: "Allowed prefixes for Approver eMail"
 description: "Allowed prefixes: ● admin@ ● administrator@ ● hostmaster@ ● webmaster@ ● postmaster@ ➥ Learn more!"
+sidebar:
+  order: 1300
+  label: "Approver E-Mail Address"
 ---
 
 Allowed prefixes for the approver e-mail address are:

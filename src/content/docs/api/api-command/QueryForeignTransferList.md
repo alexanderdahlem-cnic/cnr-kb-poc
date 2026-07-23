@@ -1,24 +1,40 @@
 ---
 title: "QueryForeignTransferList"
 description: "CentralNic Reseller API Command Reference  ➤ Transfer ➤ QueryForeignTransferList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4900
 ---
 
 With the QueryForeignTransferList API command, a registrar can query all currently running external transfers, that have one of theses status: FOREIGN\_PENDING, USERTRANSFER, PENDING, INITIATED. For each domain also the available actions are returned that are supported. This could be empty, approve, deny or approve and deny.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryForeignTransferList</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = QueryForeignTransferList
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[REQUESTINGREGISTRAR][n] = (TEXT)
@@ -28,7 +44,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -43,19 +62,26 @@ property[TOTAL][0] = (INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = QueryForeignTransferList
+:::command[Command]
+
+```text
+COMMAND = QueryForeignTransferList
 DOMAIN = (PATTERN)
 FIRST = (INT)
 LIMIT = (INT)
 WIDE = 0|1
 GENERATELIST = 0|1
-SENDLISTEMAIL = (EMAILS)</code></pre></div>
+SENDLISTEMAIL = (EMAILS)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[DOMAIN][n] = (TEXT)
 property[REQUESTINGREGISTRAR][n] = (TEXT)
@@ -65,7 +91,10 @@ property[COUNT][0] = (INT)
 property[FIRST][0] = (INT)
 property[LAST][0] = (INT)
 property[LIMIT][0] = (INT)
-property[TOTAL][0] = (INT)</code></pre></div>
+property[TOTAL][0] = (INT)
+```
+
+:::
 
 ### Attributes
 
@@ -75,3 +104,15 @@ property[TOTAL][0] = (INT)</code></pre></div>
 | **WIDE** | Optional |
 | **GENERATELIST** | Show result on screen|Generate a CSV File and upload to ftp (optional) |
 | **SENDLISTEMAIL** | Email address where the CSV will be sent to (optional) |
+
+:::commandlist[Transfer commands]
+
+- [ActivateTransfer](../activatetransfer/)
+- [CheckDomainTransfer](../checkdomaintransfer/)
+- [QueryForeignTransferList](./)
+- [QueryTransferList](../querytransferlist/)
+- [SetAuthcode](../setauthcode/)
+- [StatusDomainTransfer](../statusdomaintransfer/)
+- [TransferDomain](../transferdomain/)
+
+:::

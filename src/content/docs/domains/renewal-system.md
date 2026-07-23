@@ -1,5 +1,7 @@
 ---
 title: "The CentralNic Reseller Renewal System"
+sidebar:
+  order: 400
 ---
 
 ## Contents
@@ -128,7 +130,7 @@ These modes are only supported by .DE (RenewMonthly) and .NL (RenewMonthly _and_
 
 **G****raphical O****verview (main Modes only):**
 
-![renewal modes centralnic reseller](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_renewal_modes_centralnic_reseller.jpg)
+![renewal modes centralnic reseller](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_renewal_modes_centralnic_reseller.jpg)
 
 **3.2 General Account and Specific Domain Settings**
 
@@ -138,30 +140,42 @@ The renewal mode of a domain will be defined by your general account settings un
 
 Unless specified differently, a newly registered or transferred domain uses your account’s default renewal mode. This mode is accessible in your account settings under Account > Settings > System > Account Data > Renewalmode. Since this affects all domains regardless of TLD, only the three general options are available: AutoRenew, AutoExpire, and AutoDelete.
 
-![Renewalmode account setting](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_renewalmode_account_setting.png)
+![Renewalmode account setting](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_renewalmode_account_setting.png)
 
 You can also set your account’s renewal mode via API using the following command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = ModifyRegistrar
+:::command[Command]
+
+```text
+command     = ModifyRegistrar
 renewalmode = AutoRenew
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 **3.2.2 Domain Specific Settings**
 
 The renewal settings of your account apply to all domains you manage. You can also specify an individual renewal setting for every single domain. This setting will override the general setting of your account. You can do this in the domain’s details in the control panel or via the API using the commands SetDomainRenewalmode or ModifyDomain, please see below. The renewal modes available depend on the TLD.
 
-![Domain Specific Settings](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_domain_specific_settings.png)
+![Domain Specific Settings](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_domain_specific_settings.png)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command     = SetDomainRenewalMode
+:::command[Command]
+
+```text
+command     = SetDomainRenewalMode
 domain      = example.com
 renewalmode = RenewOnceThenAutoExpire
+
 or
+
 command     = ModifyDomain
 domain      = example.com
 renewalmode = RenewOnceThenAutoExpire
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## 4 Explicit Renewals and Domain Auction
 
@@ -178,18 +192,23 @@ For supported TLDs you can get an explicit renewal via the CentralNic Reseller c
 -   Select the renewal period from the drop-down list.
 -   Click _Renew Domain_.
 
-![Explicit Renewal](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_explicit_renewal.png)
+![Explicit Renewal](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_explicit_renewal.png)
 
-![Domain Renewal](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_domain_renewal.png)
+![Domain Renewal](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_domain_renewal.png)
 
 You can reach the same result with the following API command:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command    = RenewDomain
+:::command[Command]
+
+```text
+command    = RenewDomain
 domain     = (DOMAIN)
 period     = (INT)
 expiration = (YEAR of the PAID-UNTIL DATE)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 The following TLDs do NOT support an explicit renewal:
 
@@ -244,10 +263,15 @@ You can manually request a restore through the control panel as follows:
 
 Via API, the command is:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command	= RestoreDomain
+:::command[Command]
+
+```text
+command	= RestoreDomain
 domain	= example.com
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 Some restores may need manual action by our support team and will therefore not be processed in real-time. This is explicitly stated in our Knowledge Base in the TLD’s restore details. You will receive an automated event/poll message once manually processed restores are completed.
 

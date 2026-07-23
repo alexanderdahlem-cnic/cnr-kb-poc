@@ -1,5 +1,8 @@
 ---
 title: "Frequently asked questions"
+sidebar:
+  order: 930
+  label: "FAQ"
 ---
 
 When will the domains be suspended if I use the same unverified contact handle for domain registrations on different days?
@@ -22,19 +25,29 @@ How can I generate an email verification request without registering a domain?
 
 This can be useful either if you want to have a verified contact prior to a domain registration to avoid the domain suspension after 15 days, if, for any reason, the link was not clicked or if you want to update a gTLD with a new contact and not risk the domain suspension due to the aforementioned reason.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command   = ModifyContact
+:::command[Command]
+
+```text
+command   = ModifyContact
 contact   = (CONTACT)
 checkonly = 1
-preverify = 1</code></pre></div>
+preverify = 1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                                = 200
+:::response[Response]
+
+```text
+code                                = 200
 description                         = Command completed successfully; Verification requested
 property[validated][0]              = 1
-property[verification requested][0] = 1</code></pre></div>
+property[verification requested][0] = 1
+```
+
+:::
 
 ### Attributes
 
@@ -67,9 +80,14 @@ Via https API, LIVE - URL you can send the ActivateContact command to verify the
 
 -   https://api.rrpproxy.net/api/call?s\_login=USER&s\_pw=PASSWORD&command=activatecontact&trigger=
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command                                    = SetProperty
-contactverification-email-verification-url = http://your-emailverification-url.example</code></pre></div>
+:::command[Command]
+
+```text
+command                                    = SetProperty
+contactverification-email-verification-url = http://your-emailverification-url.example
+```
+
+:::
 
 How will the events for contact verification look like?
 
@@ -77,51 +95,62 @@ Examples for email and poll as follows:
 
 ## Event example:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>REASON:CONTACTVERIFICATION WITH TRIGGERCODE: xxxxxxxxxx
+:::command[Command]
+
+```text
+REASON:CONTACTVERIFICATION WITH TRIGGERCODE: xxxxxxxxxx
 MESSAGE:CONTACTVERIFICATION WITH TRIGGERCODE: xxxxxxxxxx
-OBJECT:&lt;CONTACTHANDLEID&gt;
+OBJECT:<CONTACTHANDLEID>
 CLASS:CONTACT_REGISTRATION
-SUBCLASS:CONTACT_REGISTRATION_NOTIFY</code></pre></div>
+SUBCLASS:CONTACT_REGISTRATION_NOTIFY
+```
+
+:::
 
 ## EPP Poll:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>EPP Poll:
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1301"&gt;
-      &lt;msg&gt;Command completed successfully; ack to dequeue&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;msgQ count="1" id="15784"&gt;
-      &lt;qDate&gt;2016-06-22T06:50:05.0Z&lt;/qDate&gt;
-      &lt;msg&gt;CONTACT_CONTACT_REGISTRATION_NOTIFY&lt;/msg&gt;
-    &lt;/msgQ&gt;
-    &lt;resData&gt;
-      &lt;contact:panData xmlns:contact="urn:ietf:params:xml:ns:contact-1.0"&gt;
-        &lt;contact:id paResult="false"&gt;P-ABC1234&lt;/contact:id&gt;
-        &lt;contact:paTRID&gt;
-          &lt;svTRID&gt;UNDEF&lt;/svTRID&gt;
-        &lt;/contact:paTRID&gt;
-        &lt;contact:paDate&gt;2016-06-22T06:50:05.0Z&lt;/contact:paDate&gt;
-      &lt;/contact:panData&gt;
-    &lt;/resData&gt;
-    &lt;extension&gt;
-      &lt;keysys:poll xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0"&gt;
-        &lt;keysys:data&gt;
-          &lt;contact&gt;P-ABC1234&lt;/contact&gt;
-          &lt;reason&gt;CONTACTVERIFICATION WITH TRIGGERCODE:MTQ2NjU3ODIwNC41MDg5IzQ0ODEyNTg3MTc0NzIgTA==&lt;/reason&gt;
-        &lt;/keysys:data&gt;
-        &lt;keysys:info&gt;CONTACTVERIFICATION WITH TRIGGERCODE:MTQ2NjU3ODIwNC41MDg5IzQ0ODEyNTg3MTc0NzIgTA==&lt;/keysys:info&gt;
-      &lt;/keysys:poll&gt;
-    &lt;/extension&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;poll-4035830250883638326&lt;/clTRID&gt;
-      &lt;svTRID&gt;00dd4356-12e6-41c0-9573-ec2347cefeeb&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+EPP Poll:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1301">
+      <msg>Command completed successfully; ack to dequeue</msg>
+    </result>
+    <msgQ count="1" id="15784">
+      <qDate>2016-06-22T06:50:05.0Z</qDate>
+      <msg>CONTACT_CONTACT_REGISTRATION_NOTIFY</msg>
+    </msgQ>
+    <resData>
+      <contact:panData xmlns:contact="urn:ietf:params:xml:ns:contact-1.0">
+        <contact:id paResult="false">P-ABC1234</contact:id>
+        <contact:paTRID>
+          <svTRID>UNDEF</svTRID>
+        </contact:paTRID>
+        <contact:paDate>2016-06-22T06:50:05.0Z</contact:paDate>
+      </contact:panData>
+    </resData>
+    <extension>
+      <keysys:poll xmlns:keysys="http://www.key-systems.net/epp/keysys-1.0">
+        <keysys:data>
+          <contact>P-ABC1234</contact>
+          <reason>CONTACTVERIFICATION WITH TRIGGERCODE:MTQ2NjU3ODIwNC41MDg5IzQ0ODEyNTg3MTc0NzIgTA==</reason>
+        </keysys:data>
+        <keysys:info>CONTACTVERIFICATION WITH TRIGGERCODE:MTQ2NjU3ODIwNC41MDg5IzQ0ODEyNTg3MTc0NzIgTA==</keysys:info>
+      </keysys:poll>
+    </extension>
+    <trID>
+      <clTRID>poll-4035830250883638326</clTRID>
+      <svTRID>00dd4356-12e6-41c0-9573-ec2347cefeeb</svTRID>
+    </trID>
+  </response>
+</epp>
+```
+
+:::
 
 How will the link for email verifications look like?
 

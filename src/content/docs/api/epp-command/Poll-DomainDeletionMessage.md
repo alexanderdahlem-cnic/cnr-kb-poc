@@ -7,32 +7,53 @@ Domain deletion message
 
 ## Required Parameters
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
- &lt;response&gt;
-   &lt;result code="1301"&gt;
-     &lt;msg&gt;Command completed successfully; ack to dequeue&lt;/msg&gt;
-   &lt;/result&gt;
-   &lt;msgQ count="2" id="25"&gt;
-     &lt;qDate&gt;2009-04-14T11:53:44.0Z&lt;/qDate&gt;
-     &lt;msg&gt;DOMAIN_DELETION_SUCCESSFUL&lt;/msg&gt;
-   &lt;/msgQ&gt;
-   &lt;resData&gt;
-     &lt;domain:panData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-       &lt;domain:name paResult="1"&gt;xyz.de&lt;/domain:name&gt;
-       &lt;domain:paTRID&gt;
-         &lt;clTRID&gt;UNDEF&lt;/clTRID&gt;
-         &lt;svTRID&gt;UNDEF&lt;/svTRID&gt;
-       &lt;/domain:paTRID&gt;
-       &lt;domain:paDate&gt;2009-04-14T11:53:44.0Z&lt;/domain:paDate&gt;
-     &lt;/domain:panData&gt;
-   &lt;/resData&gt;
-   &lt;trID&gt;
-     &lt;clTRID&gt;388C4A3A-28EF-11DE-ADA2-800000008EA9&lt;/clTRID&gt;
-     &lt;svTRID&gt;D10074DE-28F5-11DE-BF21-FFBEED57AA34&lt;/svTRID&gt;
-   &lt;/trID&gt;
- &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <response>
+   <result code="1301">
+     <msg>Command completed successfully; ack to dequeue</msg>
+   </result>
+   <msgQ count="2" id="25">
+     <qDate>2009-04-14T11:53:44.0Z</qDate>
+     <msg>DOMAIN_DELETION_SUCCESSFUL</msg>
+   </msgQ>
+   <resData>
+     <domain:panData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+       <domain:name paResult="1">xyz.de</domain:name>
+       <domain:paTRID>
+         <clTRID>UNDEF</clTRID>
+         <svTRID>UNDEF</svTRID>
+       </domain:paTRID>
+       <domain:paDate>2009-04-14T11:53:44.0Z</domain:paDate>
+     </domain:panData>
+   </resData>
+   <trID>
+     <clTRID>388C4A3A-28EF-11DE-ADA2-800000008EA9</clTRID>
+     <svTRID>D10074DE-28F5-11DE-BF21-FFBEED57AA34</svTRID>
+   </trID>
+ </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Poll commands]
+
+- [Poll:Ack](../poll-ack/)
+- [Poll:ContactDeletionMessage](../poll-contactdeletionmessage/)
+- [Poll:DomainDeletionMessage](./)
+- [Poll:DomainRegistrationMessage](../poll-domainregistrationmessage/)
+- [Poll:DomainRenewalMessage](../poll-domainrenewalmessage/)
+- [Poll:DomainTradeMessage](../poll-domaintrademessage/)
+- [Poll:DomainTransferStatusMessage](../poll-domaintransferstatusmessage/)
+- [Poll:DomainUpdateMessage](../poll-domainupdatemessage/)
+- [Poll:Request](../poll-request/)
+- [Poll:RestoreFailedMessage](../poll-restorefailedmessage/)
+- [Poll:RestoreNotifyMessage](../poll-restorenotifymessage/)
+- [Poll:RestorePendingMessage](../poll-restorependingmessage/)
+- [Poll:RestoreSuccessfulMessage](../poll-restoresuccessfulmessage/)
+
+:::

@@ -1,37 +1,56 @@
 ---
 title: "QueryAftermarketBidList"
 description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ QueryAftermarketBidList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2600
 ---
 
 Query all initiated aftermarket processes in your CentralNic Reseller account.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND                = QueryAftermarketBidList
-FIRST                  = &lt;INT&gt;
-LIMIT                  = &lt;INT&gt;</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND                = QueryAftermarketBidList
+FIRST                  = <INT>
+LIMIT                  = <INT>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                   = &lt;INT&gt;
-description            = &lt;TEXT&gt;
-property[TOKEN][0]     = &lt;TEXT&gt;
-property[DOMAIN][0]    = &lt;DOMAIN&gt;
-property[BID][0]       = &lt;DECIMAL&gt;
+:::response[Response]
+
+```text
+code                   = <INT>
+description            = <TEXT>
+property[TOKEN][0]     = <TEXT>
+property[DOMAIN][0]    = <DOMAIN>
+property[BID][0]       = <DECIMAL>
 property[BIDSTATUS][0] = INITIATED|FAILED|SUCCESS|WAITINGFORAUTH|INTRANSFER (1)
 property[provider][0]  = sedo
-property[COUNT][0]     = &lt;INT&gt;
-property[FIRST][0]     = &lt;INT&gt;
-property[LAST][0]      = &lt;INT&gt;
-property[LIMIT][0]     = &lt;INT&gt;
-property[TOTAL][0]     = &lt;INT&gt;</code></pre></div>
+property[COUNT][0]     = <INT>
+property[FIRST][0]     = <INT>
+property[LAST][0]      = <INT>
+property[LIMIT][0]     = <INT>
+property[TOTAL][0]     = <INT>
+```
+
+:::
 
 | **TOKEN** | matching token for this bid  
  |
@@ -46,3 +65,24 @@ property[TOTAL][0]     = &lt;INT&gt;</code></pre></div>
 | **LIMIT** | the limit given in the command  
  |
 | **TOTAL** | total number of aftermarket processes |
+
+:::commandlist[Aftermarket commands]
+
+- [AddAftermarketAccount](../addaftermarketaccount/)
+- [AddAftermarketDomain](../addaftermarketdomain/)
+- [AftermarketBid](../aftermarketbid/)
+- [BuyDomain](../buydomain/)
+- [DeleteAftermarketAccount](../deleteaftermarketaccount/)
+- [DeleteAftermarketDomain](../deleteaftermarketdomain/)
+- [ModifyAftermarketAccount](../modifyaftermarketaccount/)
+- [ModifyAftermarketDomain](../modifyaftermarketdomain/)
+- [QueryAftermarketAccountList](../queryaftermarketaccountlist/)
+- [QueryAftermarketBid](../queryaftermarketbid/)
+- [QueryAftermarketBidList](./)
+- [QueryAftermarketDomainList](../queryaftermarketdomainlist/)
+- [QueryAftermarketList](../queryaftermarketlist/)
+- [ReserveDomain](../reservedomain/)
+- [StatusAftermarketAccount](../statusaftermarketaccount/)
+- [StatusAftermarketDomain](../statusaftermarketdomain/)
+
+:::

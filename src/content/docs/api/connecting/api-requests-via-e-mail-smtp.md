@@ -1,6 +1,9 @@
 ---
 title: "API requests via e-mail (SMTP)"
 description: "Please note, that you need to provide your username and password with every request. ➥ Learn more!"
+sidebar:
+  order: 150
+  label: "SMTP"
 ---
 
 API requests can also be submitted to an SMTP-based e-mail address which acts as an API gateway.
@@ -15,12 +18,16 @@ Please note, that you need to provide your username and password with every requ
 
 A basic "CheckDomain" command looks like the following:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>s_login = [mregname]
-s_pw = [&lt;mregpassword&gt;ote]
+:::command[Command]
+
+```text
+s_login = [mregname]
+s_pw = [<mregpassword>ote]
 s_opmode = OTE
+
 [COMMAND]
 command = CheckDomain
-domain = example.com</code></pre></div>
+domain = example.com
+```
 
-
+:::

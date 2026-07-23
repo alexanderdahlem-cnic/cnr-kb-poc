@@ -1,5 +1,7 @@
 ---
 title: "AdultBlock and AdultBlock+ service"
+sidebar:
+  order: 1710
 ---
 
 ## Sunrise B Blocks
@@ -16,7 +18,7 @@ AdultBlock: allows you to block domain registrations with exact match terms acro
 
 AdultBlock+: allows you to block domain registrations with exact match terms and its variants (example: duplicate characters, missing characters or misspelling) across four adult themed TLDs: .ADULT, .PORN, .SEX and .XXX. The level of protection is increased with this option; it adds the ability to block all variants that are confusingly similar to the trademarked term.
 
-![AdultBlock](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_comparison.jpeg)
+![AdultBlock](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_comparison.jpeg)
 
 Please note that this fee is non-refundable, and there is no grace period.
 
@@ -46,3 +48,21 @@ For new customers, how do I obtain an IPR number?
 -   The applicant would need a “Registered Trademark” or “Unregistered Trademark” to continue. If this is available, please share this with our customer support team or account manager. Our team will verify and submit this on their behalf to generate a new IPR number for the applicant to purchase an AdultBlock and AdultBlock+.
 
 Additional information about AdultBlock and AdultBlock+ service can be found at https://adultblock.adult/faqs/
+
+:::commandlist[Domain Blocking command reference]
+
+- [AddDomainBlocking](../../../api/api-command/adddomainblocking/)
+- [CheckDomainBlockingIPRID](../../../api/api-command/checkdomainblockingiprid/)
+- [DeleteDomainBlocking](../../../api/api-command/deletedomainblocking/)
+- [ModifyDomainBlocking](../../../api/api-command/modifydomainblocking/)
+- [QueryDomainBlockingList](../../../api/api-command/querydomainblockinglist/)
+- [RenewDomainBlocking](../../../api/api-command/renewdomainblocking/)
+- [StatusDomainBlocking](../../../api/api-command/statusdomainblocking/)
+- [TransferDomainBlocking - Approve](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve)
+- [TransferDomainBlocking - Cancel](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel)
+- [TransferDomainBlocking - Deny](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny)
+- [TransferDomainBlocking - Query](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query)
+- [TransferDomainBlocking - Request](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request)
+- [TransferDomainBlocking - UserTransfer](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer)
+
+:::

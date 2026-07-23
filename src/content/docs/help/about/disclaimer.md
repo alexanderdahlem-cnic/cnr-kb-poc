@@ -1,6 +1,8 @@
 ---
 title: "Disclaimer"
 description: "By accessing, browsing and/or using this Wiki, you acknowledge that you have read, understood and agree to be bound by these terms and to comply..."
+sidebar:
+  order: 2150
 ---
 
 By accessing, browsing and/or using this Knowledge Base, you acknowledge that you have read, understood and agree to be bound by these terms and to comply with all applicable laws and regulations. If you do not agree to these terms, do not use the Knowledge Base.

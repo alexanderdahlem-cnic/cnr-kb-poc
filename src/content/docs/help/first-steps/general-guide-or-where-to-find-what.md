@@ -1,28 +1,38 @@
 ---
 title: "General Guide or \"where to find what?\""
+sidebar:
+  order: 1990
+  label: "Navigation"
 ---
 
 As mentioned in the "[Account Settings](../)" article, there a 3 different menu bars which lead to different settings, options or operations of the CentralNic Reseller account. By clicking on the main menu you will directly be forwarded to the 1st option/area of the drop down menu. The naming and layout might be subject to changes.
 
 ### Top right Menus(right to left)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>- Username consisting of:
+:::command[Command]
+
+```text
+- Username consisting of:
 	- Settings
-	- Password &amp; Security
+	- Password & Security
 	- User management
 	- Automatic Payments
 - Bell icon showing/listing different system notification concerning several issues
-- Cogwheels icon showing/listing your current/latest jobs</code></pre></div>
+- Cogwheels icon showing/listing your current/latest jobs
+```
+
+:::
 
 ### Top central Menus(left to right)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>- Account Balance: showing your current account balance
+:::command[Command]
+
+```text
+- Account Balance: showing your current account balance
 	- Your current credit line
 	- Accountings
-	- Invoices &amp; Statements
-	- Services &amp; Prices
+	- Invoices & Statements
+	- Services & Prices
 	- Automatic Payments
 	- Charge Your Account
 - API
@@ -36,7 +46,7 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Agreements
 	- Newsletter Archive
 	- Documentation / Software
-	- Forms &amp; Info
+	- Forms & Info
 - Support
 	- Contact
 	- My support tickets
@@ -44,12 +54,17 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Beta Changelog
 	- CentralNic Reseller Wiki(external)
 	- Technical Support phone number
-- Find a product</code></pre></div>
+- Find a product
+```
+
+:::
 
 ### Left border Menus(top to bottom)
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>- Dashboard
+:::command[Command]
+
+```text
+- Dashboard
 - Domains
 	- Domains
 	- Applications
@@ -67,6 +82,7 @@ As mentioned in the "[Account Settings](../)" article, there a 3 different menu 
 	- Subresellers
 	- Pricing
 	- Promotions
-	- Settings</code></pre></div>
+	- Settings
+```
 
-
+:::

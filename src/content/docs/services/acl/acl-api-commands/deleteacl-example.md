@@ -1,13 +1,20 @@
 ---
 title: "DeleteAcl Example"
+sidebar:
+  order: 1780
 ---
 
 Remove location "domain":
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = DeleteAcl
+:::command[Command]
+
+```text
+command = DeleteAcl
 username = user1
-location = DOMAIN</code></pre></div>
+location = DOMAIN
+```
+
+:::
 
 ### Attributes
 

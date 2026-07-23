@@ -1,14 +1,23 @@
 ---
 title: "CheckDomain"
 description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckDomain ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3050
 ---
 
 _(Related EPP Command » [Domain:Check](../../epp-command/domain-check/ "Domain:Check"))_
 
 This command checks, if the desired domain name is available and may be registered at the registry. In case of RAM and (!) premium domains, the checkDomain command will show the premium fee from the registry in the response to enable that you are aware of the registry fees as well. RAM fee will be shown with DomainPrice command.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 -   [Default handling](#)
 -   [Premium features](#)
@@ -17,15 +26,25 @@ This command checks, if the desired domain name is available and may be register
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomain
-domain=YOURDOMAIN.TLD</code></pre></div>
+:::command[Command]
+
+```text
+command=CheckDomain
+domain=YOURDOMAIN.TLD
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code = (INT)
+description = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -36,21 +55,31 @@ description = (TEXT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomain
+:::command[Command]
+
+```text
+command=CheckDomain
 domain=YOURDOMAIN.TLD
 X-IDN-LANGUAGE = (TEXT)
-X-ALLOCATION-TOKEN=0|1</code></pre></div>
+X-ALLOCATION-TOKEN=0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[X-ALLOCATION-TOKEN][0] = (TEXT)
 property[AFTERMARKET_PRICE][0] = (DECIMAL)
 property[AFTERMARKET_CURRENCY][0] = (TEXT)
-property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
+property[AFTERMARKET_INFO][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -65,20 +94,27 @@ property[AFTERMARKET_INFO][0] = (TEXT)</code></pre></div>
 
 The following premium parameters are standard for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command=CheckDomain
+:::command[Command]
+
+```text
+command=CheckDomain
 domain=YOURDOMAIN.TLD
 X-FEE-COMMAND#=(TEXT)
 X-FEE-DOMAIN#=(TEXT)
 X-FEE-PERIOD#=(INT)
 X-FEE-PERIODTYPE#=(TEXT)
 X-FEE-CURRENCY#=(TEXT)
-X-FEE-LAUNCHPHASE#=(TEXT)</code></pre></div>
+X-FEE-LAUNCHPHASE#=(TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 X-FEE-DOMAIN#=(TEXT)
 X-FEE-PERIOD#=(INT)
@@ -87,7 +123,10 @@ X-FEE-CURRENCY#=(TEXT)
 X-FEE-LAUNCHPHASE#=(TEXT)
 X-FEE-CLASS#=(TEXT)
 X-FEE-AMOUNT#=(DECIMAL)
-X-FEE-APPLICATION#=(DECIMAL)</code></pre></div>
+X-FEE-APPLICATION#=(DECIMAL)
+```
+
+:::
 
 ### Attributes
 
@@ -101,3 +140,41 @@ X-FEE-APPLICATION#=(DECIMAL)</code></pre></div>
 | **X-FEE-CLASS#** | The class of the X-FEE-DOMAIN (Premium | Standard) |
 | **X-FEE-AMOUNT#** | The amount that will be charged |
 | **X-FEE-APPLICATION#** | The non-refundable amount that will be charged |
+
+:::commandlist[Domain commands]
+
+- [ActivateClaimsNotice](../activateclaimsnotice/)
+- [AddDomain](../adddomain/)
+- [CheckClaims](../checkclaims/)
+- [CheckDomain](./)
+- [CheckDomains](../checkdomains/)
+- [DeleteDomain](../deletedomain/)
+- [DomainPrice](../domainprice/)
+- [GetZone](../getzone/)
+- [GetZoneInfo](../getzoneinfo/)
+- [ModifyDomain](../modifydomain/)
+- [ParkDomain](../parkdomain/)
+- [PushDomain](../pushdomain/)
+- [QueryActiveServiceList](../queryactiveservicelist/)
+- [QueryClaimsNoticeList](../queryclaimsnoticelist/)
+- [QueryDomainExpireList](../querydomainexpirelist/)
+- [QueryDomainHistoryList](../querydomainhistorylist/)
+- [QueryDomainList](../querydomainlist/)
+- [QueryDomainListByContact](../querydomainlistbycontact/)
+- [QueryDomainRenewList](../querydomainrenewlist/)
+- [QueryIDNTagList](../queryidntaglist/)
+- [QueryRegisteredPremiumDomainList](../queryregisteredpremiumdomainlist/)
+- [QueryTrusteeDomainList](../querytrusteedomainlist/)
+- [RenewDomain](../renewdomain/)
+- [RequestDomainPin](../requestdomainpin/)
+- [ResendNotification](../resendnotification/)
+- [RestoreDomain](../restoredomain/)
+- [SetDomainPinLock](../setdomainpinlock/)
+- [SetDomainRenewalmode](../setdomainrenewalmode/)
+- [SetDomainTransfermode](../setdomaintransfermode/)
+- [StatusClaimsNotice](../statusclaimsnotice/)
+- [StatusDomain](../statusdomain/)
+- [StatusDomainHistory](../statusdomainhistory/)
+- [TradeDomain](../tradedomain/)
+
+:::

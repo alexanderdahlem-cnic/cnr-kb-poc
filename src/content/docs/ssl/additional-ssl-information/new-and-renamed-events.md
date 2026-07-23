@@ -1,5 +1,8 @@
 ---
 title: "New and renamed Events"
+sidebar:
+  order: 1320
+  label: "Events for Certificates"
 ---
 
 All events are used for all SSL certificate products, regardless of the used CA. As of March 13th 2018 we are going to rename and introduce the events for SSL certificates. This is necessary to be able to offer more detailed information about all actions around SSL certificates.

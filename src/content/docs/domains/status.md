@@ -1,5 +1,8 @@
 ---
 title: "EPP Status Codes"
+sidebar:
+  order: 960
+  label: "Status"
 ---
 
 ## What Do They Mean, and Why Should I Know?
@@ -56,3 +59,9 @@ The status codes set by the registry can be identified by the "server" prefix of
 | **transferPeriod / transfer period** | This grace period is provided after the successful transfer of a domain name from one registrar to another. If the new registrar deletes the domain name during this period, the registry provides a credit to the registrar for the cost of the transfer. This is an informative status set for a limited period or your domain's transfer to a new registrar. If you did not request to transfer your domain, you should contact your original registrar. |
 
 _This information has been retrieved from the ICANN website https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en_
+
+:::commandlist[Related API Commands]
+
+- [ModifyDomain](../../api/api-command/modifydomain/)
+
+:::

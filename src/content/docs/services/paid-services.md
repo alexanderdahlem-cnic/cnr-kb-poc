@@ -1,5 +1,8 @@
 ---
 title: "Refunded AGP (Add Grace Period) Deletes"
+sidebar:
+  order: 1930
+  label: "Paid Services"
 ---
 
 Please note that the volume of refundable AGP deletions is limited to a percentage of your registration volume for the respective TLD in the month when the deletions are processed. Please also see the Terms of Service listed at the bottom of this page.
@@ -34,9 +37,9 @@ To navigate to the service follow these steps:
 -   Click _Settings_ to get to Account data.
 -   Click the tab _Paid Services_.
 
-![Settings II](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_settings_ii.jpg)
+![Settings II](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_settings_ii.jpg)
 
-![Paid Services II](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_paid_services_ii.png)
+![Paid Services II](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_paid_services_ii.png)
 
 ## Activation
 
@@ -44,7 +47,7 @@ You can activate the service via the control panel:
 
 Click the button “_Activate Refunded AGP Deletes_”.
 
-![Button Activate Refunded AGP Deletes II](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_button_activate_refunded_agp_deletes_ii.png)
+![Button Activate Refunded AGP Deletes II](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_button_activate_refunded_agp_deletes_ii.png)
 
 ## Deactivation/Reactivation
 
@@ -52,19 +55,19 @@ After activation of the service you can deactivate it at any time and reactivate
 
 The initial button changes accordingly to “Deactivate Refunded AGP Deletes” and after deactivation to “Reactivate Refunded AGP Deletes”.
 
-![Button Dectivate Refunded AGP Deletes III](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_button_dectivate_refunded_agp_deletes_iii.png)
+![Button Dectivate Refunded AGP Deletes III](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_button_dectivate_refunded_agp_deletes_iii.png)
 
-![Button Rectivate Refunded AGP Deletes III](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_button_rectivate_refunded_agp_deletes_ii3.png)
+![Button Rectivate Refunded AGP Deletes III](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_button_rectivate_refunded_agp_deletes_ii3.png)
 
 After pressing the button you will get a message to confirm that you successfully activated/deactivated/reactivated the Refunded AGP Deletes for your account:
 
-![Confirmation Message III](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_confirmation_message_iii.jpg)
+![Confirmation Message III](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_confirmation_message_iii.jpg)
 
 ## Show current AGP Refunds
 
 You can see the status of your refunds by clicking the link _Show current APG Refunds_.
 
-![Show current AGP Refunds](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_show_current_agp_refunds.jpg)
+![Show current AGP Refunds](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_show_current_agp_refunds.jpg)
 
 The table lists your TLDs, the number of registrations, the number of refunded deletes and the remaining deletes. The latter are indicated in red colour.
 
@@ -72,7 +75,7 @@ Additional information is displayed in a tooltip for TLDs which have a different
 
 To see the text please hover with your mouse over the blue information icon (“i”).
 
-![Current AGP refunds July 2021](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_current_agp_refunds_july_2021.png)
+![Current AGP refunds July 2021](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_current_agp_refunds_july_2021.png)
 
 ## Using API Commands
 
@@ -80,13 +83,13 @@ Please enter commands in the “Direct API Console”.
 
 Click _Dashboard_ in the menu bar on the left side to see the console.
 
-![Dashboard III](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_dashboard_iii.jpg)
+![Dashboard III](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_dashboard_iii.jpg)
 
-![Direct API Console III](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_direct_api_console_iii.png)
+![Direct API Console III](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_direct_api_console_iii.png)
 
 You can also select the item _Direct API Console_ in the API menu:
 
-![Direct API Console II](https://kb.centralnicreseller.com/imagetypes/859w/image_manager__859w_direct_api_console_ii.jpg)
+![Direct API Console II](/cnr-kb-poc/media/imagetypes/859w/image_manager__859w_direct_api_console_ii.jpg)
 
 The following commands are available for querying, monitoring and deleting domains:
 

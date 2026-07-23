@@ -1,5 +1,7 @@
 ---
 title: "The Reissue Process"
+sidebar:
+  order: 1250
 ---
 
 When a ReissueCertificate command is issued, either the old CSR is used or a new CSR can be stated. A new CRT will be available after the Reissue has been processed. The new CRT can be retrieved with a StatusCertificate command and needs to be put in place at the respective web server.

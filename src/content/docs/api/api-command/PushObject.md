@@ -1,6 +1,8 @@
 ---
 title: "PushObject"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ PushObject ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2220
 ---
 
 You can now move an object within your own environment respectively hierarchy from one account in a subaccount using the new command "PushObject". Objects are among others: domain, domain block, SSL certificate, web hosting product or mobile account.
@@ -21,27 +23,55 @@ The PushObject command does the following: Besides moving the domain from one ac
 
 The command automatically identifies the SSL system (whether it's legacy or 2.0) based on the provided ID. It will select all Certificates, CertificateOrders, and CertificateContacts linked to the specified Certificate and transfer them collectively. All relationships between these various objects will remain intact. CertificateContacts will be cloned, and all Certificates in the new account will utilize the copied version of the data.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = PushObject
+:::command[Command]
+
+```text
+command = PushObject
 object  = (unique object identifier, e.g. domain name)
 type    = DOMAIN|DOMAINBLOCK|WEBSPACE|CERTIFICATE|SERVER|MOBILE|TRADEMARK
-target  = (target registrar / subreseller)</code></pre></div>
+target  = (target registrar / subreseller)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
+:::response[Response]
+
+```text
+[RESPONSE]
 code = 200
 description = Command completed successfully
 runtime = 0.107
 queuetime = 0
-EOF</code></pre></div>
+EOF
+```
 
+:::
 
+:::commandlist[Account commands]
+
+- [ActivateAppendix](../activateappendix/)
+- [ModifyRegistrar](../modifyregistrar/)
+- [ModifyRegistrarCurrency](../modifyregistrarcurrency/)
+- [PushObject](./)
+- [QueryAppendixList](../queryappendixlist/)
+- [QueryRegistrarStatisticList](../queryregistrarstatisticlist/)
+- [StatusAccount](../statusaccount/)
+- [StatusRegistrar](../statusregistrar/)
+
+:::

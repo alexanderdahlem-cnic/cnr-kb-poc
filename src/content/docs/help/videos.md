@@ -1,5 +1,7 @@
 ---
 title: "Videos"
+sidebar:
+  order: 2160
 ---
 
 The following how-to videos are currently only available in German. English videos will follow soon. While the branding currently shows as our previous brand, RRPproxy, examples and directions apply to CentralNic Reseller.

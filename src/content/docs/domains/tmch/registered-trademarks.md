@@ -1,5 +1,7 @@
 ---
 title: "Registered trademarks"
+sidebar:
+  order: 220
 ---
 
 ## General

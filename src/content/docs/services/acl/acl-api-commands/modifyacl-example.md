@@ -1,15 +1,22 @@
 ---
 title: "ModifyAcl Example"
+sidebar:
+  order: 1790
 ---
 
 Remove AddDomain and ModifyDomain rights
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ModifyAcl
+:::command[Command]
+
+```text
+command = ModifyAcl
 username = user1
 location = DOMAIN
 delacl0 = ADD
-delacl1 = MODIFY</code></pre></div>
+delacl1 = MODIFY
+```
+
+:::
 
 ### Attributes
 

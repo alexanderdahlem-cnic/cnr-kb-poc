@@ -1,5 +1,7 @@
 ---
 title: "List of Rights"
+sidebar:
+  order: 1750
 ---
 
 The following rights can be applied to each location:

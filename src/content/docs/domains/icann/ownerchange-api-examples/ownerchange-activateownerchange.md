@@ -1,6 +1,9 @@
 ---
 title: "OwnerChange: ActivateOwnerChange"
 description: "ActivateOwnerChange is used to finish an OwnerChange using the respective \"action\" parameter..."
+sidebar:
+  order: 650
+  label: "ActivateOwnerChange"
 ---
 
 ActivateOwnerChange is used to finish an OwnerChange using the respective "action" parameter.
@@ -13,28 +16,41 @@ ActivateOwnerChange is used to finish an OwnerChange using the respective "actio
 
 Approve OwnerChange only works with respective trigger code. Transferlock can be set optionally.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ActivateOwnerChange
+:::command[Command]
+
+```text
+command = ActivateOwnerChange
 action = APPROVE
 trigger = 1234567890
-transferlock = 1</code></pre></div>
+transferlock = 1
+```
+
+:::
 
 ### Reject OwnerChange request
 
 Reject OwnerChange request only works with respective trigger code.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ActivateOwnerChange
+:::command[Command]
+
+```text
+command = ActivateOwnerChange
 action = DENY
-trigger = 1234567890</code></pre></div>
+trigger = 1234567890
+```
+
+:::
 
 ### Cancel OwnerChange request
 
 Cancel OwnerChange request only works with respective domain name.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ActivateOwnerChange
+:::command[Command]
+
+```text
+command = ActivateOwnerChange
 domain = example.com
-action = CANCEL</code></pre></div>
+action = CANCEL
+```
 
-
+:::

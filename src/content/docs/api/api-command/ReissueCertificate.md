@@ -1,6 +1,8 @@
 ---
 title: "ReissueCertificate"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ ReissueCertificate ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2780
 ---
 
 This command allows the user to exchange a certificate if the private key was compromised without having to pay for a new certificate.  
@@ -10,22 +12,36 @@ For the attributes description, please refer to the SSL 2.0 API Documentation.
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.  
 Both of these can be found within the page [https://kb.centralnicreseller.com/ssl/ssl-2-0](https://kb.centralnicreseller.com/ssl/ssl-2-0).
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND 	= ReissueCertificate
+:::command[Command]
+
+```text
+COMMAND 	= ReissueCertificate
 CERTIFICATE 	= (TEXT)
-APIVERSION 	= 1|2</code></pre></div>
+APIVERSION 	= 1|2
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code 				= (INT)
+:::response[Response]
+
+```text
+code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[certificateorder][n] 	= (TEXT)
@@ -59,17 +75,44 @@ property[techcontact#][n] 	= (TEXT)
 property[organizationcontact][n]= (TEXT)
 property[evapprovercontact][n] 	= (TEXT)
 property[updated by][n] 	= (TEXT)
-property[updated date][n] 	= (DATE)</code></pre></div>
+property[updated date][n] 	= (DATE)
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>CSR#	 		= (TEXT)
+:::command[Command]
+
+```text
+CSR#	 		= (TEXT)
 DCVSCOPE		= base|fqdn
 DCVTOKEN		= (TEXT)
 CACERTIFICATE		= (TEXT)
-ALGORITHM 		= (TEXT)</code></pre></div>
+ALGORITHM 		= (TEXT)
+```
 
+:::
 
+:::commandlist[Certificate commands]
+
+- [AddCertificate](../addcertificate/)
+- [CheckCertificate](../checkcertificate/)
+- [DeleteCertificate](../deletecertificate/)
+- [GetCertificateInfo](../getcertificateinfo/)
+- [QueryCertificateList](../querycertificatelist/)
+- [ReissueCertificate](./)
+- [RenewCertificate](../renewcertificate/)
+- [StatusCertificate](../statuscertificate/)
+- [RevokeCertificate](../revokecertificate/)
+- [RevokeCertificateOrder](../revokecertificateorder/)
+- [CancelCertificateOrder](../cancelcertificateorder/)
+- [StatusCertificateOrder](../statuscertificateorder/)
+- [QueryCertificateOrderList](../querycertificateorderlist/)
+- [AddCertificateContact](../addcertificatecontact/)
+- [StatusCertificateContact](../statuscertificatecontact/)
+- [QueryCertificateContactList](../querycertificatecontactlist/)
+
+:::

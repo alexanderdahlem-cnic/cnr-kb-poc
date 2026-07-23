@@ -18,19 +18,27 @@ Upgrade to KeyDNS Anycast and benefit from the powerful DNS network of our Centr
 
 Using the parameter PREMIUMDNSSET=ANYCAST1 when Adding or Modifying a DNS Zone activates Anycast for your DNS zone and automatically duplicates and publishes your resource records across the global network of [CentralNic Managed DNS](https://centralnic-dns.com/).
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command              = AddDNSZone | ModifyDNSZone
+:::command[Command]
+
+```text
+command              = AddDNSZone | ModifyDNSZone
 dnszone              = domain.com
-premiumdnsset        = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)</code></pre></div>
+premiumdnsset        = NULL (DEFAULT) | ANYCAST1 (OPTIONAL)
+```
+
+:::
 
 ## Using the Anycast set
 
 The Anycast Nameserver set can be set for the respective domain:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = ModifyDomain
+:::command[Command]
+
+```text
+command = ModifyDomain
 domain = domain.com
 nameserver0 = anycast1.dnsres.net
-nameserver1 = anycast2.dnsres.net</code></pre></div>
+nameserver1 = anycast2.dnsres.net
+```
 
-
+:::

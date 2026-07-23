@@ -1,5 +1,7 @@
 ---
 title: "Registration Directory Services"
+sidebar:
+  order: 940
 ---
 
 In 2009, ICANN and the US Department of Commerce signed the Affirmation of Commitments (AOC), which contains the following commitment regarding WHOIS:

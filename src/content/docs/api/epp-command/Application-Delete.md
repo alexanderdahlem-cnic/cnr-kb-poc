@@ -5,41 +5,62 @@ description: "EPP API Command Reference  ➤ Application commands ➤ Applicatio
 
 ## Required Parameters
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;command&gt;
-    &lt;delete&gt;
-      &lt;domain:delete
-       xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name&gt;example.tld&lt;/domain:name&gt;
-      &lt;/domain:delete&gt;
-    &lt;/delete&gt;
-    &lt;extension&gt;
-     &lt;launch:delete
-      xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"&gt;
-       &lt;launch:phase name="TLD-SUNRISE"&gt;custom&lt;/launch:phase&gt;
-       &lt;launch:applicationID&gt;123&lt;/launch:applicationID&gt;
-     &lt;/launch:delete&gt;
-    &lt;/extension&gt;
-    &lt;clTRID&gt;62CB2558-A467-495E-89BF-3ACF9F1EAF9B&lt;/clTRID&gt;
-  &lt;/command&gt;
-&lt;/epp&gt;</code></pre></div>
+:::command[Command]
+
+```text
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <command>
+    <delete>
+      <domain:delete
+       xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name>example.tld</domain:name>
+      </domain:delete>
+    </delete>
+    <extension>
+     <launch:delete
+      xmlns:launch="urn:ietf:params:xml:ns:launch-1.0">
+       <launch:phase name="TLD-SUNRISE">custom</launch:phase>
+       <launch:applicationID>123</launch:applicationID>
+     </launch:delete>
+    </extension>
+    <clTRID>62CB2558-A467-495E-89BF-3ACF9F1EAF9B</clTRID>
+  </command>
+</epp>
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1000"&gt;
-      &lt;msg&gt;Command completed successfully&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;62CB2558-A467-495E-89BF-3ACF9F1EAF9B&lt;/clTRID&gt;
-      &lt;svTRID&gt;0ee118e6-155e-4ffe-9fb0-1db13d24c5f2&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1000">
+      <msg>Command completed successfully</msg>
+    </result>
+    <trID>
+      <clTRID>62CB2558-A467-495E-89BF-3ACF9F1EAF9B</clTRID>
+      <svTRID>0ee118e6-155e-4ffe-9fb0-1db13d24c5f2</svTRID>
+    </trID>
+  </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Application commands]
+
+- [Application:CheckClaims](../application-checkclaims/)
+- [Application:CreateDomainWithClaims](../application-createdomainwithclaims/)
+- [Application:CreateLandrush](../application-createlandrush/)
+- [Application:CreateSunrise](../application-createsunrise/)
+- [Application:Delete](./)
+- [Application:Failed](../application-failed/)
+- [Application:Status](../application-status/)
+- [Application:Successful](../application-successful/)
+
+:::

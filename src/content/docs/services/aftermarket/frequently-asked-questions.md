@@ -1,6 +1,9 @@
 ---
 title: "FAQ Aftermarket"
 description: "Can Domains outside my RRPproxy account be listed? Can anybody see my domain listings at the respective Aftermarket Provider?..."
+sidebar:
+  order: 1640
+  label: "Frequently asked questions"
 ---
 
 Can Domains outside my CentralNic Reseller account be listed?

@@ -1,19 +1,30 @@
 ---
 title: "AddWebhost"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Webhost ➤ AddWebhost ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4070
 ---
 
 Creates a new Webhost underneath a Webspace. Typically they are named after the domain they are allocated to.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = AddWebhost
+:::command[Command]
+
+```text
+COMMAND = AddWebhost
 WEBSPACE = (TEXT)
 WEBHOST = (DOMAIN)
 QUOTA = (INT)
@@ -26,15 +37,23 @@ DIR = (TEXT)
 GPGLINE# = (TEXT)
 LOGIN = (TEXT)
 FTPPASSWD = (TEXT)
-ERRORLOG = 0|1</code></pre></div>
+ERRORLOG = 0|1
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[IP][0] = (IP)
-property[PRICE][0] = (DECIMAL)</code></pre></div>
+property[PRICE][0] = (DECIMAL)
+```
+
+:::
 
 ### Attributes
 
@@ -54,3 +73,13 @@ property[PRICE][0] = (DECIMAL)</code></pre></div>
 | **ERRORLOG** | Activate apache error logging:/weblogs/\[WEBHOST\]-YYYYMMDD-.error.log |
 | **IP** | IP of the new webhost |
 | **PRICE** | Monthly fee in EUR |
+
+:::commandlist[Hosting - Webhost commands]
+
+- [AddWebhost](./)
+- [DeleteWebhost](../deletewebhost/)
+- [ModifyWebhost](../modifywebhost/)
+- [QueryWebhostList](../querywebhostlist/)
+- [StatusWebhost](../statuswebhost/)
+
+:::

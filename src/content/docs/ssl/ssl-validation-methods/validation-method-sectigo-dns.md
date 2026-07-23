@@ -1,6 +1,9 @@
 ---
 title: "Validation Method: Sectigo DNS"
 description: "To automatically create comodo - certificates (DNS), 2 hashes are needed: ● SHA-1 of the CSR in DER (important!) format ● MD5 of the CSR in DER (important!) for"
+sidebar:
+  order: 1220
+  label: "Sectigo DNS"
 ---
 
 For this validation method you need to create a CNAME record in the DNS settings of your domain.
@@ -9,19 +12,29 @@ To order Comodo SSL Certificates using DNS validation please set the respective 
 
 -   property\[dnsauth name\]\[0\]: needed ressource record
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Command=AddCertificate
-AuthMethod=DNS</code></pre></div>
+:::command[Command]
+
+```text
+Command=AddCertificate
+AuthMethod=DNS
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 property[certificate][0] = CY2757994
 property[dnsauth name][0] = _47cba4dfbe697765f51230e84f04d091.mail.example.com.  CNAME  5b06bda4ffe784373d6616ab8fcbef1.7da4549f0623a25f37e128efb0fbf745d.1f96729172445e721043.comodoca.com.
 property[status][0] = REQUESTED
 property[sub][0] = CY2757994-001
-property[sub status][0] = ORDER_REQUESTED</code></pre></div>
+property[sub status][0] = ORDER_REQUESTED
+```
+
+:::
 
 ## Example
 
@@ -37,22 +50,35 @@ Random Hash: 1f96729172445e721043
 
 The new CNAME record should look as follows:
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>_47cba4dfbe697765f51230e84f04d091.mail.example.com.  CNAME  5b06bda4ffe784373d6616ab8fcbef1.7da4549f0623a25f37e128efb0fbf745d.1f96729172445e721043.comodoca.com.</code></pre></div>
+:::command[Command]
+
+```text
+_47cba4dfbe697765f51230e84f04d091.mail.example.com.  CNAME  5b06bda4ffe784373d6616ab8fcbef1.7da4549f0623a25f37e128efb0fbf745d.1f96729172445e721043.comodoca.com.
+```
+
+:::
 
 ## Order the certificate
 
 After ordering the certificate you can check its status by issuing the StatusCertificate command. The data for DNS Validation will be returned as well.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>Command=StatusCertificate
-Certificate=CY2737994</code></pre></div>
+:::command[Command]
+
+```text
+Command=StatusCertificate
+Certificate=CY2737994
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>property[certificate][0] = CY2737994
+:::response[Response]
+
+```text
+property[certificate][0] = CY2737994
 property[dnsauth name][0] = _47cba4dfbe697765f51230e84f04d091.mail.example.com.  CNAME  5b06bda4ffe784373d6616ab8fcbef1.7da4549f0623a25f37e128efb0fbf745d.1f96729172445e721043.comodoca.com.
-property[status][0] = REQUESTED</code></pre></div>
+property[status][0] = REQUESTED
+```
 
-
+:::

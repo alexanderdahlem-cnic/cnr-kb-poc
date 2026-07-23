@@ -1,6 +1,8 @@
 ---
 title: "List Domains for sale"
 description: "Domains can be offered as direct sale with a fixed price (buy_now) or as bidding (make_offer)..."
+sidebar:
+  order: 1600
 ---
 
 Domains can be offered as direct sale with a fixed price (buy\_now) or as bidding (make\_offer):

@@ -1,31 +1,48 @@
 ---
 title: "StatusAccount"
 description: "CentralNic Reseller API Command Reference  ➤ Account ➤ StatusAccount ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2250
 ---
 
+:::gateways[Possible Gateways]
 
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = StatusAccount
-REGISTRAR = (TEXT)</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND = StatusAccount
+REGISTRAR = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
+:::response[Response]
+
+```text
+code = (INT)
 description = (TEXT)
 property[REGISTRAR][0] = (TEXT)
 property[AMOUNT][0] = (DECIMAL)
 property[CREDIT][0] = (DECIMAL)
 property[CREDIT_THRESHOLD][0] = (DECIMAL)
-property[CURRENCY][0] = (TEXT)</code></pre></div>
+property[CURRENCY][0] = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -35,3 +52,16 @@ property[CURRENCY][0] = (TEXT)</code></pre></div>
 | **CREDIT** | The credit available in the account |
 | **CREDIT\_THRESHOLD** | The credit threshold |
 | **CURRENCY** | currency in which the account is being billed |
+
+:::commandlist[Account commands]
+
+- [ActivateAppendix](../activateappendix/)
+- [ModifyRegistrar](../modifyregistrar/)
+- [ModifyRegistrarCurrency](../modifyregistrarcurrency/)
+- [PushObject](../pushobject/)
+- [QueryAppendixList](../queryappendixlist/)
+- [QueryRegistrarStatisticList](../queryregistrarstatisticlist/)
+- [StatusAccount](./)
+- [StatusRegistrar](../statusregistrar/)
+
+:::

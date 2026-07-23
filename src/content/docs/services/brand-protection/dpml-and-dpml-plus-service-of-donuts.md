@@ -1,5 +1,7 @@
 ---
 title: "DPML and DPML Plus service of Donuts"
+sidebar:
+  order: 1690
 ---
 
 Domains Protected Marks List (DPML) enables brand owners to block their trademarks from registration at the second level across all Donuts TLDs at a fraction of what it would cost to defensively register the terms in all of Donuts TLDs. Donuts applied for the rights to operate 307 new, generic TLD - all open, dictionary terms.

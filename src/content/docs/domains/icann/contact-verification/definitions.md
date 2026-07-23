@@ -1,6 +1,9 @@
 ---
 title: "Definitions ICANN Contact Verification"
 description: "Effective July 21, 2014, we will activate the following optimizations regarding the contact verification e-mails. These notifications are delivered..."
+sidebar:
+  order: 770
+  label: "Definitions"
 ---
 
 Effective July 21, 2014, we will activate the following optimizations regarding the contact verification e-mails. These notifications are delivered to registrants via the CentralNic Reseller system due to the new ICANN requirement to validate each registrant contact registering a generic TLD.
@@ -13,22 +16,32 @@ Effective July 21, 2014, we will activate the following optimizations regarding 
 
 Technical check if the data used in the contact handle has all required fields filled with information and is in compliant format due to the ICANN specifications: postal address to spec UPU S42 Standard, email to spec [RFC 5322](https://tools.ietf.org/html/rfc5322), phone num to spec ITU-T E.164
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>FIRSTNAME &amp; LASTNAME: [NOT EMPTY] or ORGANIZATON: [NOT EMPTY]
+:::command[Command]
+
+```text
+FIRSTNAME & LASTNAME: [NOT EMPTY] or ORGANIZATON: [NOT EMPTY]
 STREET0: [NOT EMPTY]
 ZIP: [NOT EMPTY]
 CITY: [NOT EMPTY]
 COUNTRY: [spec ISO 3166]
-PHONE: [spec ITU-T E.164] Validate international phone numbers in EPP format RFCs 4933 &amp; 5733
-EMAIL: [spec RFC 5322]</code></pre></div>
+PHONE: [spec ITU-T E.164] Validate international phone numbers in EPP format RFCs 4933 & 5733
+EMAIL: [spec RFC 5322]
+```
+
+:::
 
 EPP-style phone numbers use the following format.
 
 C is the 1–3 digit country code, N is up to 14 digits, and E is the (optional) extension.  
 The leading plus sign and the dot following the country code are required. The literal “x” character is required only if an extension is provided.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>+CCC.NNNNNNNNNNxEEEE </code></pre></div>
+:::command[Command]
+
+```text
++CCC.NNNNNNNNNNxEEEE 
+```
+
+:::
 
 ## Countries without a zip code
 

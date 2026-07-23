@@ -1,32 +1,49 @@
 ---
 title: "AddDomainBlocking"
 description: "CentralNic Reseller API Command Reference  ➤ AdultBlock | AdultBlockPlus ➤ AddDomainBlocking ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2370
 ---
 
 This command is used to place a domain block order for a submitted label. The parameters AddServiceTag# is only related to tags, therefore it is optional when purchasing a domain block. A successful command call would mean the creation of a new domain block and new tags being added. The # in the parameter needs to be replaced by an integer starting with 0, such as AddObject0, AddObject1 etc. Multiple entries can be used to apply the same function multiple times.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND			= AddDomainBlocking
+:::command[Command]
+
+```text
+COMMAND			= AddDomainBlocking
 TYPE			= AdultBlock|AdultBlockplus|GlobalBlock|
 			  GlobalBlockplus|DPMLBridge|DPMLBridgePlus
 LABEL			= (TEXT)
 PERIOD			= (INTEGER)
 OWNERCONTACT# 		= (CONTACT ID)
+
 SMDFILE#		= (TEXT)
 X-DOMAIN-BLOCKING-IPR-ID= (TEXT)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>[RESPONSE]
+:::response[Response]
+
+```text
+[RESPONSE]
 code	 					= (INTEGER)
 description 					= (TEXT)
 runtime 					= (INTEGER)
@@ -45,24 +62,34 @@ property[updated by][0] 			= (TEXT)
 property[registration expiration date][0] 	= YYYY-MM-DD HH:MM:SS
 property[renewal date][0]	 		= YYYY-MM-DD HH:MM:SS
 property[ownercontact][0]			= (TEXT)
-EOF</code></pre></div>
+EOF
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND			= AddDomainBlocking
+:::command[Command]
+
+```text
+COMMAND			= AddDomainBlocking
 TYPE			= AdultBlock|AdultBlockplus|GlobalBlock|
 			  GlobalBlockplus|DPMLBridge|DPMLBridgePlus
 LABEL			= (TEXT)
 PERIOD			= (INTEGER)
 OWNERCONTACT# 		= (CONTACT ID)
+
 SMDFILE#		= (TEXT)
 X-DOMAIN-BLOCKING-IPR-ID= (TEXT)
+
 SERVICETAG# 		= (TEXT)
 ADDSERVICETAG# 		= (TEXT)
-DELSERVICETAG# 		= (TEXT)</code></pre></div>
+DELSERVICETAG# 		= (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -70,3 +97,21 @@ DELSERVICETAG# 		= (TEXT)</code></pre></div>
 | --- | --- |
 | **SMDFILE#** | You can decide if you would like to submit the SMD or the IPR. |
 | **X-DOMAIN-BLOCKING-IPR-ID** | You can decide if you would like to submit the SMD or the IPR. |
+
+:::commandlist[AdultBlock | AdultBlockPlus commands]
+
+- [AddDomainBlocking](./)
+- [CheckDomainBlockingIPRID](../checkdomainblockingiprid/)
+- [DeleteDomainBlocking](../deletedomainblocking/)
+- [ModifyDomainBlocking](../modifydomainblocking/)
+- [QueryDomainBlockingList](../querydomainblockinglist/)
+- [RenewDomainBlocking](../renewdomainblocking/)
+- [StatusDomainBlocking](../statusdomainblocking/)
+- [TransferDomainBlocking - Approve](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Approve)
+- [TransferDomainBlocking - Cancel](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Cancel)
+- [TransferDomainBlocking - Deny](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Deny)
+- [TransferDomainBlocking - Query](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Query)
+- [TransferDomainBlocking - Request](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20Request)
+- [TransferDomainBlocking - UserTransfer](https://kb.centralnicreseller.com/api/api-command/TransferDomainBlocking%20-%20UserTransfer)
+
+:::

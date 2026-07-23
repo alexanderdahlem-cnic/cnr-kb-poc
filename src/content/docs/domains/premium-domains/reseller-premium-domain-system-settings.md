@@ -1,5 +1,7 @@
 ---
 title: "Reseller Premium Domain System Settings"
+sidebar:
+  order: 360
 ---
 
 The premium domain system settings can only be set if there is an active subreseller system and if the registrar is either the rootuser (or registry user in KSRegistry) or his parent user has also activated the premium domain system. They can be found in the CP under Subreseller -> Settings -> Premium Domain System.

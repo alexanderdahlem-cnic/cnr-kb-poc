@@ -1,5 +1,7 @@
 ---
 title: "API Security"
+sidebar:
+  order: 80
 ---
 
 ## Set IP addresses/ranges for all connections (IP whitelisting)

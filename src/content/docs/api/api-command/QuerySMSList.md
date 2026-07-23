@@ -1,25 +1,42 @@
 ---
 title: "QuerySMSList"
 description: "CentralNic Reseller API Command Reference  ➤ SMS ➤ QuerySMSList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 4760
 ---
 
 Query details about SMS sent with the given account. Useful for delivery notifications or accountings.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a><a class="gw-badge gw-sms" href="../../../services/sms/">SMS</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+- [SMS](../../../services/sms/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command   = QuerySMSList
-accountid =(TEXT)</code></pre></div>
+:::command[Command]
+
+```text
+command   = QuerySMSList
+accountid =(TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                   =(INT)
+:::response[Response]
+
+```text
+code                   =(INT)
 description            =(TEXT)
 property[smsid][0]     = 1234567
 property[status][0]    = SEND|DELIVERED|BUFFERED|FAILED|EXPIRED|REJECTED|ERROR|UNKNOWN
@@ -29,7 +46,10 @@ property[count][0]     =(INT)
 property[first][0]     =(INT)
 property[last][0]      =(INT)
 property[limit][0]     =(INT)
-property[total][0]     =(INT)</code></pre></div>
+property[total][0]     =(INT)
+```
+
+:::
 
 ### Attributes
 
@@ -52,8 +72,10 @@ property[total][0]     =(INT)</code></pre></div>
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command   = QuerySMSList
+:::command[Command]
+
+```text
+command   = QuerySMSList
 accountid =(TEXT)
 wide      =(0|1)
 recipient =(TEXT)
@@ -61,12 +83,17 @@ mindate   =(DATE)
 maxdate   =(DATE)
 smsid     =(TEXT)
 first     =(INT)
-limit     =(INT)</code></pre></div>
+limit     =(INT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code                   =(INT)
+:::response[Response]
+
+```text
+code                   =(INT)
 description            =(TEXT)
 property[smsid][0]     = 1234567
 property[status][0]    = SEND|DELIVERED|BUFFERED|FAILED|EXPIRED|REJECTED|ERROR|UNKNOWN
@@ -76,7 +103,10 @@ property[count][0]     =(INT)
 property[first][0]     =(INT)
 property[last][0]      =(INT)
 property[limit][0]     =(INT)
-property[total][0]     =(INT)</code></pre></div>
+property[total][0]     =(INT)
+```
+
+:::
 
 ### Attributes
 
@@ -88,3 +118,14 @@ property[total][0]     =(INT)</code></pre></div>
 | **SMSID** | Show only SMS matching with this ID, wildcard allowed (i.e. \*123\*, optional) |
 | **FIRST** | First result to display (optional) |
 | **LIMIT** | Limits the number of results to given number (optional) |
+
+:::commandlist[SMS commands]
+
+- [ChargeMobileAccount](../chargemobileaccount/)
+- [CreateMobileAccount](../createmobileaccount/)
+- [QueryMobileAccountList](../querymobileaccountlist/)
+- [QuerySMSList](./)
+- [SendSMS](../sendsms/)
+- [StatusMobileAccount](../statusmobileaccount/)
+
+:::

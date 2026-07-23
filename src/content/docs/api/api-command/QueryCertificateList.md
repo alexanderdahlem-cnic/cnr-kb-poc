@@ -1,6 +1,8 @@
 ---
 title: "QueryCertificateList"
 description: "CentralNic Reseller API Command Reference  ➤ Certificate ➤ QueryCertificateList ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 2770
 ---
 
 This commands will list all the certificates within the order. This behaves like most Query...List commands, allowing filtering and paging. By default all cancelled certificates are not returned.  
@@ -8,21 +10,35 @@ For the parameters "ServiceTag", the # integer range is 0..100.
 For the attributes description, please refer to the SSL 2.0 API Documentation.  
 For API 1.0 commands, please refer to the SSL Legacy API Documentation.
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND 	= QueryCertificateList
-APIVERSION 	= 1|2</code></pre></div>
+:::command[Command]
+
+```text
+COMMAND 	= QueryCertificateList
+APIVERSION 	= 1|2
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code 				= (INT)
+:::response[Response]
+
+```text
+code 				= (INT)
 description 			= (TEXT)
 property[certificate][n] 	= (TEXT)
 property[class][n] 		= (TEXT)
@@ -43,14 +59,19 @@ property[count][n] 		= (INT)
 property[first][n] 		= (INT)
 property[last][n] 		= (INT)
 property[limit][n] 		= (INT)
-property[total][n] 		= (INT)</code></pre></div>
+property[total][n] 		= (INT)
+```
+
+:::
 
 ## Optional
 
 The following parameters are optional for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>WIDE 		= 0|1
+:::command[Command]
+
+```text
+WIDE 		= 0|1
 CERTIFICATE	= (TEXT)
 CERTIFICATEORDER= (TEXT)
 CREATEDDATE	= (DATE)
@@ -67,6 +88,28 @@ DOMAIN 		= (TEXT)
 INCLUDESUB 	= 0|1
 SERVICETAG# 	= (TEXT)
 SERVERTYPE	= apache|barracuda|weblogic|cisco|citrix|cpanel|f5|ibm|java|lighttpd|lotus|macos|exchange.*2007|exchange.*2010|exchange.*2013|exchange.*2016|forefront|iis56|iis7|iis8|iis10|netscape|iplanet|nginx|novellichain|novellnetware|oracle|qmail|sunone|tomcat|webstar|zeus|other
-CLASS 		= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv</code></pre></div>
+CLASS 		= geotrustflexdv|rapidssldv|securesiteflexov|securesiteflexev|securesiteproov|securesiteproev|ssl123dv|webserverov|webserverev|geotrusttruebizidov|geotrusttruebizidev|instantsslov|premiumov|singledomainev|positivessldv|unifiedcommunicationsdv|unifiedcommunicationsov|multidomainev|multidomainov|multidomaindv
+```
 
+:::
 
+:::commandlist[Certificate commands]
+
+- [AddCertificate](../addcertificate/)
+- [CheckCertificate](../checkcertificate/)
+- [DeleteCertificate](../deletecertificate/)
+- [GetCertificateInfo](../getcertificateinfo/)
+- [QueryCertificateList](./)
+- [ReissueCertificate](../reissuecertificate/)
+- [RenewCertificate](../renewcertificate/)
+- [StatusCertificate](../statuscertificate/)
+- [RevokeCertificate](../revokecertificate/)
+- [RevokeCertificateOrder](../revokecertificateorder/)
+- [CancelCertificateOrder](../cancelcertificateorder/)
+- [StatusCertificateOrder](../statuscertificateorder/)
+- [QueryCertificateOrderList](../querycertificateorderlist/)
+- [AddCertificateContact](../addcertificatecontact/)
+- [StatusCertificateContact](../statuscertificatecontact/)
+- [QueryCertificateContactList](../querycertificatecontactlist/)
+
+:::

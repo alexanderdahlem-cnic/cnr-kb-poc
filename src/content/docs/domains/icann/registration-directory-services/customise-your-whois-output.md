@@ -1,5 +1,7 @@
 ---
 title: "Customise your Whois output"
+sidebar:
+  order: 950
 ---
 
 As CentralNic Reseller you can customise the Whois output coming from our Whois server for your domains you manage through us.
@@ -44,12 +46,15 @@ How does it look like?
 
 This is an exemplary Whois output of the Linux/Unix command line tool "whois" for key-systems.net. First from the registries Whois server, second from our Whois server. Notice the differences in the output. Customisable fields are indicated accordingly.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>$ whois -h whois.rrpproxy.net key-systems.net
+:::command[Command]
+
+```text
+$ whois -h whois.rrpproxy.net key-systems.net
+
 Domain Name: rrpproxy.net
 Registry Domain ID: 69690466_DOMAIN_NET-VRSN
 Registrar WHOIS Server: whois.rrpproxy.net
-Registrar URL: http://www.key-systems.net --&gt; X-WHOIS-URL
+Registrar URL: http://www.key-systems.net --> X-WHOIS-URL
 Updated Date: 2018-01-18T06:56:03Z
 Creation Date: 2001-04-19T18:39:15Z
 Registrar Registration Expiration Date: 2023-04-19T18:39:15Z
@@ -72,7 +77,7 @@ Registrant Phone: REDACTED FOR PRIVACY
 Registrant Phone Ext: REDACTED FOR PRIVACY
 Registrant Fax: REDACTED FOR PRIVACY
 Registrant Fax Ext: REDACTED FOR PRIVACY
-Registrant Email: info@domain-contact.org --&gt; contact email address; can not be changed.
+Registrant Email: info@domain-contact.org --> contact email address; can not be changed.
 Registry Admin ID: REDACTED FOR PRIVACY
 Admin Name: REDACTED FOR PRIVACY
 Admin Organization: REDACTED FOR PRIVACY
@@ -87,7 +92,7 @@ Admin Phone: REDACTED FOR PRIVACY
 Admin Phone Ext: REDACTED FOR PRIVACY
 Admin Fax: REDACTED FOR PRIVACY
 Admin Fax Ext: REDACTED FOR PRIVACY
-Admin Email: info@domain-contact.org --&gt; contact email address; can not be changed.
+Admin Email: info@domain-contact.org --> contact email address; can not be changed.
 Registry Tech ID: REDACTED FOR PRIVACY
 Tech Name: REDACTED FOR PRIVACY
 Tech Organization: REDACTED FOR PRIVACY
@@ -102,7 +107,7 @@ Tech Phone: REDACTED FOR PRIVACY
 Tech Phone Ext: REDACTED FOR PRIVACY
 Tech Fax: REDACTED FOR PRIVACY
 Tech Fax Ext: REDACTED FOR PRIVACY
-Tech Email: info@domain-contact.org --&gt; contact email address; can not be changed.
+Tech Email: info@domain-contact.org --> contact email address; can not be changed.
 Registry Billing ID: REDACTED FOR PRIVACY
 Billing Name: REDACTED FOR PRIVACY
 Billing Organization: REDACTED FOR PRIVACY
@@ -117,22 +122,26 @@ Billing Phone: REDACTED FOR PRIVACY
 Billing Phone Ext: REDACTED FOR PRIVACY
 Billing Fax: REDACTED FOR PRIVACY
 Billing Fax Ext: REDACTED FOR PRIVACY
-Billing Email: info@domain-contact.org --&gt; contact email address; can not be changed.
+Billing Email: info@domain-contact.org --> contact email address; can not be changed.
 Name Server: ns1a.ksregistry.net
 Name Server: ns1b.ksregistry.net
 Name Server: ns2a.ksregistry.com
 Name Server: ns2b.ksregistry.com
 DNSSEC: signedDelegation
 URL of the ICANN WHOIS Data Problem Reporting System: https://wdprs.internic.net/
-Last update of WHOIS database: 2018-06-27T12:08:59Z &lt;&lt;&lt;
+
+Last update of WHOIS database: 2018-06-27T12:08:59Z <<<
+
 For more information on Whois status codes, please visit https://www.icann.org/epp
+
 To contact the registered registrant please proceed to:
-https://www.domain-contact.org --&gt; GDPR-CONTACT-FORM-URL
-Please register your domains at; http://www.key-systems.net --&gt; Whois Banner
-This data is provided by domaindiscount24.com --&gt; X-WHOIS-RSP
+https://www.domain-contact.org --> GDPR-CONTACT-FORM-URL
+
+Please register your domains at; http://www.key-systems.net --> Whois Banner
+This data is provided by domaindiscount24.com --> X-WHOIS-RSP
 for information purposes, and to assist persons obtaining information
 about or related to domain name registration records.
-domaindiscount24.com does not guarantee its accuracy. --&gt; X-WHOIS-RSP
+domaindiscount24.com does not guarantee its accuracy. --> X-WHOIS-RSP
 By submitting a WHOIS query, you agree that you will use this data
 only for lawful purposes and that, under no circumstances, you will
 use this data to
@@ -143,12 +152,14 @@ unsolicited, commercial advertising or solicitations via E-mail
 to this WHOIS server.
 These terms may be changed without prior notice.
 By submitting this query, you agree to abide by this policy.
+
 $ whois key-systems.net
+
 $ whois key-systems.net
 Domain Name: KEY-SYSTEMS.NET
 Registry Domain ID: 30428855_DOMAIN_NET-VRSN
 Registrar WHOIS Server: whois.rrpproxy.net
-Registrar URL: http://www.key-systems.net --&gt; X-WHOIS-URL
+Registrar URL: http://www.key-systems.net --> X-WHOIS-URL
 Updated Date: 2018-02-06T16:36:30Z
 Creation Date: 2000-06-29T07:04:01Z
 Registry Expiry Date: 2023-06-29T07:04:01Z
@@ -168,14 +179,18 @@ Name Server: NS2B.KSREGISTRY.COM
 DNSSEC: signedDelegation
 DNSSEC DS Data: 28726 8 2 03A5DD6A60281A8CAF87E6E43567B88EF3672C415969452A5B22038C7AAEB606
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
-Last update of whois database: 2018-06-27T13:32:26Z &lt;&lt;&lt;
+
+Last update of whois database: 2018-06-27T13:32:26Z <<<
+
 For more information on Whois status codes, please visit https://icann.org/epp
+
 NOTICE: The expiration date displayed in this record is the date the
 registrar's sponsorship of the domain name registration in the registry is
 currently set to expire. This date does not necessarily reflect the expiration
 date of the domain name registrant's agreement with the sponsoring
 registrar. Users may consult the sponsoring registrar's Whois database to
 view the registrar's reported date of expiration for this registration.
+
 TERMS OF USE: You are not authorized to access or query our Whois
 database through the use of electronic processes that are high-volume and
 automated except as reasonably necessary to register domain names or
@@ -199,7 +214,9 @@ to restrict your access to the Whois database in its sole discretion to ensure
 operational stability. VeriSign may restrict or terminate your access to the
 Whois database for failure to abide by these terms of use. VeriSign
 reserves the right to modify these terms at any time.
+
 The Registry database contains ONLY .COM, .NET, .EDU domains and
-Registrars.</code></pre></div>
+Registrars.
+```
 
-
+:::

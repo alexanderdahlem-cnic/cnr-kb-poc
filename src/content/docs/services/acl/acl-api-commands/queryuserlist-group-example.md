@@ -1,17 +1,26 @@
 ---
 title: "QueryUserList - Group Example"
+sidebar:
+  order: 1910
 ---
 
 Shows a list of all groups.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = QueryUserList
-type = GROUP</code></pre></div>
+:::command[Command]
+
+```text
+command = QueryUserList
+type = GROUP
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 runtime = 0.085
 queuetime = 0
@@ -31,6 +40,7 @@ property[type][2] = group
 property[username][3] = group3
 property[type][3] = group
 property[username][4] = group4
-property[type][4] = group</code></pre></div>
+property[type][4] = group
+```
 
-
+:::

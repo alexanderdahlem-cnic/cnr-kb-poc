@@ -7,38 +7,54 @@ Application Successful (allocated)
 
 ## Required Parameters
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
-  &lt;response&gt;
-    &lt;result code="1301"&gt;
-      &lt;msg&gt;Command completed successfully; ack to dequeue&lt;/msg&gt;
-    &lt;/result&gt;
-    &lt;msgQ count="11" id="4"&gt;
-      &lt;qDate&gt;2014-02-18T14:48:47.0Z&lt;/qDate&gt;
-      &lt;msg&gt;DOMAIN_APPLICATION_SUCCESSFUL&lt;/msg&gt;
-    &lt;/msgQ&gt;
-    &lt;resData&gt;
-      &lt;domain:panData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;domain:name paResult="1"&gt;example.tld&lt;/domain:name&gt;
-        &lt;domain:paTRID&gt;
-          &lt;svTRID&gt;UNDEF&lt;/svTRID&gt;
-        &lt;/domain:paTRID&gt;
-        &lt;domain:paDate&gt;2014-02-19T15:50:00.0Z&lt;/domain:paDate&gt;
-      &lt;/domain:panData&gt;
-    &lt;/resData&gt;
-    &lt;extension&gt;
-      &lt;launch:infData xmlns:launch="urn:ietf:params:xml:ns:launch-1.0"&gt;
-        &lt;launch:phase name="TLD-SUNRISE"&gt;custom&lt;/launch:phase&gt;
-        &lt;launch:applicationID&gt;5&lt;/launch:applicationID&gt;
-        &lt;launch:status s="allocated"/&gt;
-      &lt;/launch:infData&gt;
-    &lt;/extension&gt;
-    &lt;trID&gt;
-      &lt;clTRID&gt;KSregistry-12345&lt;/clTRID&gt;
-      &lt;svTRID&gt;d0a912db-719e-4d82-a299-76eb144a6693&lt;/svTRID&gt;
-    &lt;/trID&gt;
-  &lt;/response&gt;
-&lt;/epp&gt;</code></pre></div>
+:::response[Response]
 
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+  <response>
+    <result code="1301">
+      <msg>Command completed successfully; ack to dequeue</msg>
+    </result>
+    <msgQ count="11" id="4">
+      <qDate>2014-02-18T14:48:47.0Z</qDate>
+      <msg>DOMAIN_APPLICATION_SUCCESSFUL</msg>
+    </msgQ>
+    <resData>
+      <domain:panData xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+        <domain:name paResult="1">example.tld</domain:name>
+        <domain:paTRID>
+          <svTRID>UNDEF</svTRID>
+        </domain:paTRID>
+        <domain:paDate>2014-02-19T15:50:00.0Z</domain:paDate>
+      </domain:panData>
+    </resData>
+    <extension>
+      <launch:infData xmlns:launch="urn:ietf:params:xml:ns:launch-1.0">
+        <launch:phase name="TLD-SUNRISE">custom</launch:phase>
+        <launch:applicationID>5</launch:applicationID>
+        <launch:status s="allocated"/>
+      </launch:infData>
+    </extension>
+    <trID>
+      <clTRID>KSregistry-12345</clTRID>
+      <svTRID>d0a912db-719e-4d82-a299-76eb144a6693</svTRID>
+    </trID>
+  </response>
+</epp>
+```
 
+:::
+
+:::commandlist[Application commands]
+
+- [Application:CheckClaims](../application-checkclaims/)
+- [Application:CreateDomainWithClaims](../application-createdomainwithclaims/)
+- [Application:CreateLandrush](../application-createlandrush/)
+- [Application:CreateSunrise](../application-createsunrise/)
+- [Application:Delete](../application-delete/)
+- [Application:Failed](../application-failed/)
+- [Application:Status](../application-status/)
+- [Application:Successful](./)
+
+:::

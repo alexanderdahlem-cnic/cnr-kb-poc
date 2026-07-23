@@ -1,17 +1,26 @@
 ---
 title: "QueryUserList - User Example"
+sidebar:
+  order: 1900
 ---
 
 Shows a list of all users.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = QueryUserList
-type = USER</code></pre></div>
+:::command[Command]
+
+```text
+command = QueryUserList
+type = USER
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = 200
+:::response[Response]
+
+```text
+code = 200
 description = Command completed successfully
 queuetime = 0
 runtime = 0.091
@@ -31,6 +40,7 @@ property[type][2] = user
 property[username][3] = user4
 property[type][3] = user
 property[username][4] = user5
-property[type][4] = user</code></pre></div>
+property[type][4] = user
+```
 
-
+:::

@@ -1,6 +1,8 @@
 ---
 title: "DomainParking"
 description: "We offer you the possibility to automatically park domains via the RRPproxy Metaregistry in your own account with the domain parking provider Parkingcrew and th"
+sidebar:
+  order: 1540
 ---
 
 ## Automatic domain parking via the CentralNic Reseller Metaregistry
@@ -19,11 +21,16 @@ You can connect your CentralNic Reseller account with one (1) Parking provider a
 
 Use the following command to submit your credentials to the CentralNic Reseller system
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>command = SetProperty
+:::command[Command]
+
+```text
+command = SetProperty
 class = PARKING
 parking-parkingcrewpassword = [password = API Key]
-parking-parkingcrewusername = [username = Login Name ]</code></pre></div>
+parking-parkingcrewusername = [username = Login Name ]
+```
+
+:::
 
 ## Advantages of domain parking
 
@@ -38,3 +45,9 @@ Please be aware that you must use the API Key and not the password. The API key 
 It may be beneficial for you to offer your customers domain parking as an additional service, because many domain owners register a domain without developing it for months, others treat it as an investment, waiting for an offer from an interested party. A sale link can be integrated on a parked domain offering potential buyers a fast method to contact the domain owner and thus increasing the sale opportunities.
 
 You can also use the renewal period with the expiry of a domain registration: After informing the customer you can place a parking site on the domain and earn money with every click. At the same time a parking template works as a reminder for the former registrant to renew the registration. Detailed traffic and revenue statistics of the parking phase can help to decide whether a domain qualifies for a profitable domain portfolio.
+
+:::commandlist[API Command]
+
+- [ParkDomain](../../api/api-command/parkdomain/)
+
+:::

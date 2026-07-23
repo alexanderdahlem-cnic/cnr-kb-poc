@@ -1,19 +1,30 @@
 ---
 title: "ModifyDatabase"
 description: "CentralNic Reseller API Command Reference  ➤ Hosting - Database ➤ ModifyDatabase ➥ Learn more about CentralNic Reseller API Commands"
+sidebar:
+  order: 3830
 ---
 
 Modify Database, i.E. alter Quota
 
-<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
+:::gateways[Possible Gateways]
+
+- [MREG](../../connecting/centralnic-reseller-metaregistry/)
+- [HTTPS](../../connecting/hypertext-transfer-protocol-socket/)
+- [SOAP](../../connecting/simple-object-access-protocol/)
+- [XML-RPC](../../connecting/extensible-markup-language-remote-procedure-call/)
+- [SMTP](../../connecting/api-requests-via-e-mail-smtp/)
+
+:::
 
 ## Required Parameters
 
 The following parameters are standard parameters for this command.
 
-<div class="api-io api-io--command"><span class="api-io__label">Command</span>
-<pre class="api-io__code"><code>COMMAND = ModifyDatabase
+:::command[Command]
+
+```text
+COMMAND = ModifyDatabase
 DATABASE = (TEXT)
 PASSWORD = (TEXT)
 X-HOSTING-ONECLICK-WEBHOST = (TEXT)
@@ -22,13 +33,21 @@ QUOTA = (INT)
 X-HOSTING-ADVERT = 0|1
 STATUS = ACTIVE|DISABLED
 LOG = (TEXT)
-NAME = (TEXT)</code></pre></div>
+NAME = (TEXT)
+```
+
+:::
 
  
 
-<div class="api-io api-io--response"><span class="api-io__label">Response</span>
-<pre class="api-io__code"><code>code = (INT)
-description = (TEXT)</code></pre></div>
+:::response[Response]
+
+```text
+code = (INT)
+description = (TEXT)
+```
+
+:::
 
 ### Attributes
 
@@ -42,3 +61,15 @@ description = (TEXT)</code></pre></div>
 | **STATUS** | Modifies the database status (optional) |
 | **LOG** | Appends \[TEXT\] log text to the database "change log", which can be queried with StatusDatabase (optional) |
 | **NAME** | Set mailspace name max. 255 characters |
+
+:::commandlist[Hosting - Database commands]
+
+- [AddDatabase](../adddatabase/)
+- [DeleteDatabase](../deletedatabase/)
+- [ModifyDatabase](./)
+- [QueryDatabaseList](../querydatabaselist/)
+- [RenewDatabase](../renewdatabase/)
+- [SetDatabaseRenewalMode](../setdatabaserenewalmode/)
+- [StatusDatabase](../statusdatabase/)
+
+:::

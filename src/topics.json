@@ -5,12 +5,70 @@
     "link": "/api/",
     "items": [
       {
-        "label": "Application Programming Interface",
+        "label": "API Overview",
         "link": "/api/"
+      },
+      {
+        "label": "Return Codes",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Return Codes",
+            "link": "/api/return-codes/"
+          },
+          {
+            "label": "Events",
+            "link": "/api/return-codes/events/"
+          }
+        ]
       },
       {
         "label": "Name Suggestion",
         "link": "/api/name-suggestion/"
+      },
+      {
+        "label": "API Security",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "API Security",
+            "link": "/api/api-security/"
+          },
+          {
+            "label": "HTTPS Session Handling",
+            "link": "/api/api-security/https-session-handling/"
+          }
+        ]
+      },
+      {
+        "label": "Connecting (Gateway)",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Connecting (Gateway)",
+            "link": "/api/connecting/"
+          },
+          {
+            "label": "HTTPS-Software",
+            "link": "/api/connecting/hypertext-transfer-protocol-socket/"
+          },
+          {
+            "label": "XML-RPC",
+            "link": "/api/connecting/extensible-markup-language-remote-procedure-call/"
+          },
+          {
+            "label": "MREG - Software",
+            "link": "/api/connecting/centralnic-reseller-metaregistry/"
+          },
+          {
+            "label": "SOAP",
+            "link": "/api/connecting/simple-object-access-protocol/"
+          },
+          {
+            "label": "SMTP",
+            "link": "/api/connecting/api-requests-via-e-mail-smtp/"
+          }
+        ]
       },
       {
         "label": "API Command",
@@ -21,20 +79,124 @@
             "link": "/api/api-command/activateappendix/"
           },
           {
-            "label": "ActivateClaimsNotice",
-            "link": "/api/api-command/activateclaimsnotice/"
+            "label": "ModifyRegistrar",
+            "link": "/api/api-command/modifyregistrar/"
           },
           {
-            "label": "ActivateRegistrarEmailAddress",
-            "link": "/api/api-command/activateregistraremailaddress/"
+            "label": "ModifyRegistrarCurrency",
+            "link": "/api/api-command/modifyregistrarcurrency/"
           },
           {
-            "label": "ActivateTransfer",
-            "link": "/api/api-command/activatetransfer/"
+            "label": "PushObject",
+            "link": "/api/api-command/pushobject/"
+          },
+          {
+            "label": "QueryAppendixList",
+            "link": "/api/api-command/queryappendixlist/"
+          },
+          {
+            "label": "QueryRegistrarStatisticList",
+            "link": "/api/api-command/queryregistrarstatisticlist/"
+          },
+          {
+            "label": "StatusAccount",
+            "link": "/api/api-command/statusaccount/"
+          },
+          {
+            "label": "StatusRegistrar",
+            "link": "/api/api-command/statusregistrar/"
           },
           {
             "label": "AddAcl",
             "link": "/api/api-command/addacl/"
+          },
+          {
+            "label": "AddUser",
+            "link": "/api/api-command/adduser/"
+          },
+          {
+            "label": "DeleteAcl",
+            "link": "/api/api-command/deleteacl/"
+          },
+          {
+            "label": "DeleteUser",
+            "link": "/api/api-command/deleteuser/"
+          },
+          {
+            "label": "ModifyAcl",
+            "link": "/api/api-command/modifyacl/"
+          },
+          {
+            "label": "ModifyUser",
+            "link": "/api/api-command/modifyuser/"
+          },
+          {
+            "label": "QueryACLList",
+            "link": "/api/api-command/queryacllist/"
+          },
+          {
+            "label": "QueryUserList",
+            "link": "/api/api-command/queryuserlist/"
+          },
+          {
+            "label": "StatusAcl",
+            "link": "/api/api-command/statusacl/"
+          },
+          {
+            "label": "StatusUser",
+            "link": "/api/api-command/statususer/"
+          },
+          {
+            "label": "AddDomainBlocking",
+            "link": "/api/api-command/adddomainblocking/"
+          },
+          {
+            "label": "CheckDomainBlockingIPRID",
+            "link": "/api/api-command/checkdomainblockingiprid/"
+          },
+          {
+            "label": "DeleteDomainBlocking",
+            "link": "/api/api-command/deletedomainblocking/"
+          },
+          {
+            "label": "ModifyDomainBlocking",
+            "link": "/api/api-command/modifydomainblocking/"
+          },
+          {
+            "label": "QueryDomainBlockingList",
+            "link": "/api/api-command/querydomainblockinglist/"
+          },
+          {
+            "label": "RenewDomainBlocking",
+            "link": "/api/api-command/renewdomainblocking/"
+          },
+          {
+            "label": "StatusDomainBlocking",
+            "link": "/api/api-command/statusdomainblocking/"
+          },
+          {
+            "label": "TransferDomainBlocking - Approve",
+            "link": "/api/api-command/transferdomainblocking-approve/"
+          },
+          {
+            "label": "TransferDomainBlocking - Cancel",
+            "link": "/api/api-command/transferdomainblocking-cancel/"
+          },
+          {
+            "label": "TransferDomainBlocking - Deny",
+            "link": "/api/api-command/transferdomainblocking-deny/"
+          },
+          {
+            "label": "TransferDomainBlocking - Query",
+            "link": "/api/api-command/transferdomainblocking-query/"
+          },
+          {
+            "label": "TransferDomainBlocking - Request",
+            "link": "/api/api-command/transferdomainblocking-request/"
+          },
+          {
+            "label": "TransferDomainBlocking - UserTransfer",
+            "link": "/api/api-command/transferdomainblocking-usertransfer/"
           },
           {
             "label": "AddAftermarketAccount",
@@ -45,44 +207,404 @@
             "link": "/api/api-command/addaftermarketdomain/"
           },
           {
-            "label": "AddCertificate",
-            "link": "/api/api-command/addcertificate/"
+            "label": "AftermarketBid",
+            "link": "/api/api-command/aftermarketbid/"
           },
           {
-            "label": "AddContact",
-            "link": "/api/api-command/addcontact/"
+            "label": "BuyDomain",
+            "link": "/api/api-command/buydomain/"
           },
           {
-            "label": "AddDatabase",
-            "link": "/api/api-command/adddatabase/"
+            "label": "DeleteAftermarketAccount",
+            "link": "/api/api-command/deleteaftermarketaccount/"
           },
           {
-            "label": "AddDNSZone",
-            "link": "/api/api-command/adddnszone/"
+            "label": "DeleteAftermarketDomain",
+            "link": "/api/api-command/deleteaftermarketdomain/"
           },
           {
-            "label": "AddDomain",
-            "link": "/api/api-command/adddomain/"
+            "label": "ModifyAftermarketAccount",
+            "link": "/api/api-command/modifyaftermarketaccount/"
+          },
+          {
+            "label": "ModifyAftermarketDomain",
+            "link": "/api/api-command/modifyaftermarketdomain/"
+          },
+          {
+            "label": "QueryAftermarketAccountList",
+            "link": "/api/api-command/queryaftermarketaccountlist/"
+          },
+          {
+            "label": "QueryAftermarketBid",
+            "link": "/api/api-command/queryaftermarketbid/"
+          },
+          {
+            "label": "QueryAftermarketBidList",
+            "link": "/api/api-command/queryaftermarketbidlist/"
+          },
+          {
+            "label": "QueryAftermarketDomainList",
+            "link": "/api/api-command/queryaftermarketdomainlist/"
+          },
+          {
+            "label": "QueryAftermarketList",
+            "link": "/api/api-command/queryaftermarketlist/"
+          },
+          {
+            "label": "ReserveDomain",
+            "link": "/api/api-command/reservedomain/"
+          },
+          {
+            "label": "StatusAftermarketAccount",
+            "link": "/api/api-command/statusaftermarketaccount/"
+          },
+          {
+            "label": "StatusAftermarketDomain",
+            "link": "/api/api-command/statusaftermarketdomain/"
           },
           {
             "label": "AddDomainApplication",
             "link": "/api/api-command/adddomainapplication/"
           },
           {
-            "label": "AddDomainBlocking",
-            "link": "/api/api-command/adddomainblocking/"
+            "label": "DeleteDomainApplication",
+            "link": "/api/api-command/deletedomainapplication/"
+          },
+          {
+            "label": "ModifyDomainApplication",
+            "link": "/api/api-command/modifydomainapplication/"
+          },
+          {
+            "label": "QueryApplicationList",
+            "link": "/api/api-command/queryapplicationlist/"
+          },
+          {
+            "label": "QueryDomainApplicationList",
+            "link": "/api/api-command/querydomainapplicationlist/"
+          },
+          {
+            "label": "StatusDomainApplication",
+            "link": "/api/api-command/statusdomainapplication/"
+          },
+          {
+            "label": "AddCertificate",
+            "link": "/api/api-command/addcertificate/"
+          },
+          {
+            "label": "CheckCertificate",
+            "link": "/api/api-command/checkcertificate/"
+          },
+          {
+            "label": "DeleteCertificate",
+            "link": "/api/api-command/deletecertificate/"
+          },
+          {
+            "label": "GetCertificateInfo",
+            "link": "/api/api-command/getcertificateinfo/"
+          },
+          {
+            "label": "ModifyCertificate",
+            "link": "/api/api-command/modifycertificate/"
+          },
+          {
+            "label": "QueryCertificateList",
+            "link": "/api/api-command/querycertificatelist/"
+          },
+          {
+            "label": "ReissueCertificate",
+            "link": "/api/api-command/reissuecertificate/"
+          },
+          {
+            "label": "RenewCertificate",
+            "link": "/api/api-command/renewcertificate/"
+          },
+          {
+            "label": "StatusCertificate",
+            "link": "/api/api-command/statuscertificate/"
+          },
+          {
+            "label": "AddContact",
+            "link": "/api/api-command/addcontact/"
+          },
+          {
+            "label": "CheckContact",
+            "link": "/api/api-command/checkcontact/"
+          },
+          {
+            "label": "CheckContacts",
+            "link": "/api/api-command/checkcontacts/"
+          },
+          {
+            "label": "CloneContact",
+            "link": "/api/api-command/clonecontact/"
+          },
+          {
+            "label": "DeleteContact",
+            "link": "/api/api-command/deletecontact/"
+          },
+          {
+            "label": "ModifyContact",
+            "link": "/api/api-command/modifycontact/"
+          },
+          {
+            "label": "QueryContactList",
+            "link": "/api/api-command/querycontactlist/"
+          },
+          {
+            "label": "RequestToken",
+            "link": "/api/api-command/requesttoken/"
+          },
+          {
+            "label": "RestoreContact",
+            "link": "/api/api-command/restorecontact/"
+          },
+          {
+            "label": "StatusContact",
+            "link": "/api/api-command/statuscontact/"
+          },
+          {
+            "label": "StatusOwnerChange",
+            "link": "/api/api-command/statusownerchange/"
+          },
+          {
+            "label": "StatusUnsyncRegistryContact",
+            "link": "/api/api-command/statusunsyncregistrycontact/"
+          },
+          {
+            "label": "TransferContact",
+            "link": "/api/api-command/transfercontact/"
+          },
+          {
+            "label": "ActivateClaimsNotice",
+            "link": "/api/api-command/activateclaimsnotice/"
+          },
+          {
+            "label": "AddDomain",
+            "link": "/api/api-command/adddomain/"
+          },
+          {
+            "label": "CheckClaims",
+            "link": "/api/api-command/checkclaims/"
+          },
+          {
+            "label": "CheckDomain",
+            "link": "/api/api-command/checkdomain/"
+          },
+          {
+            "label": "CheckDomains",
+            "link": "/api/api-command/checkdomains/"
+          },
+          {
+            "label": "DeleteDomain",
+            "link": "/api/api-command/deletedomain/"
+          },
+          {
+            "label": "DomainPrice",
+            "link": "/api/api-command/domainprice/"
+          },
+          {
+            "label": "GetZone",
+            "link": "/api/api-command/getzone/"
+          },
+          {
+            "label": "GetZoneInfo",
+            "link": "/api/api-command/getzoneinfo/"
+          },
+          {
+            "label": "ModifyDomain",
+            "link": "/api/api-command/modifydomain/"
+          },
+          {
+            "label": "ParkDomain",
+            "link": "/api/api-command/parkdomain/"
+          },
+          {
+            "label": "PushDomain",
+            "link": "/api/api-command/pushdomain/"
+          },
+          {
+            "label": "QueryActiveServiceList",
+            "link": "/api/api-command/queryactiveservicelist/"
+          },
+          {
+            "label": "QueryClaimsNoticeList",
+            "link": "/api/api-command/queryclaimsnoticelist/"
+          },
+          {
+            "label": "QueryDomainExpireList",
+            "link": "/api/api-command/querydomainexpirelist/"
+          },
+          {
+            "label": "QueryDomainHistoryList",
+            "link": "/api/api-command/querydomainhistorylist/"
+          },
+          {
+            "label": "QueryDomainList",
+            "link": "/api/api-command/querydomainlist/"
+          },
+          {
+            "label": "QueryDomainListByContact",
+            "link": "/api/api-command/querydomainlistbycontact/"
+          },
+          {
+            "label": "QueryDomainRenewList",
+            "link": "/api/api-command/querydomainrenewlist/"
+          },
+          {
+            "label": "QueryIDNTagList",
+            "link": "/api/api-command/queryidntaglist/"
+          },
+          {
+            "label": "QueryRegisteredPremiumDomainList",
+            "link": "/api/api-command/queryregisteredpremiumdomainlist/"
+          },
+          {
+            "label": "QueryTrusteeDomainList",
+            "link": "/api/api-command/querytrusteedomainlist/"
+          },
+          {
+            "label": "RenewDomain",
+            "link": "/api/api-command/renewdomain/"
+          },
+          {
+            "label": "RequestDomainPin",
+            "link": "/api/api-command/requestdomainpin/"
+          },
+          {
+            "label": "ResendNotification",
+            "link": "/api/api-command/resendnotification/"
+          },
+          {
+            "label": "RestoreDomain",
+            "link": "/api/api-command/restoredomain/"
+          },
+          {
+            "label": "SetDomainPinLock",
+            "link": "/api/api-command/setdomainpinlock/"
+          },
+          {
+            "label": "SetDomainRenewalmode",
+            "link": "/api/api-command/setdomainrenewalmode/"
+          },
+          {
+            "label": "SetDomainTransfermode",
+            "link": "/api/api-command/setdomaintransfermode/"
+          },
+          {
+            "label": "StatusClaimsNotice",
+            "link": "/api/api-command/statusclaimsnotice/"
+          },
+          {
+            "label": "StatusDomain",
+            "link": "/api/api-command/statusdomain/"
+          },
+          {
+            "label": "StatusDomainHistory",
+            "link": "/api/api-command/statusdomainhistory/"
+          },
+          {
+            "label": "TradeDomain",
+            "link": "/api/api-command/tradedomain/"
+          },
+          {
+            "label": "AddTag",
+            "link": "/api/api-command/addtag/"
+          },
+          {
+            "label": "DeleteTag",
+            "link": "/api/api-command/deletetag/"
+          },
+          {
+            "label": "ModifyTag",
+            "link": "/api/api-command/modifytag/"
+          },
+          {
+            "label": "QueryTagList",
+            "link": "/api/api-command/querytaglist/"
+          },
+          {
+            "label": "StatusTag",
+            "link": "/api/api-command/statustag/"
           },
           {
             "label": "AddDynamicDNS",
             "link": "/api/api-command/adddynamicdns/"
           },
           {
-            "label": "AddEmailaddress",
-            "link": "/api/api-command/addemailaddress/"
+            "label": "DeleteDynamicDNS",
+            "link": "/api/api-command/deletedynamicdns/"
           },
           {
-            "label": "AddEmailforwarding",
-            "link": "/api/api-command/addemailforwarding/"
+            "label": "ModifyDynamicDNS",
+            "link": "/api/api-command/modifydynamicdns/"
+          },
+          {
+            "label": "QueryDynamicDNSList",
+            "link": "/api/api-command/querydynamicdnslist/"
+          },
+          {
+            "label": "StatusDynamicDNS",
+            "link": "/api/api-command/statusdynamicdns/"
+          },
+          {
+            "label": "UpdateDynamicDNS",
+            "link": "/api/api-command/updatedynamicdns/"
+          },
+          {
+            "label": "DeleteEvent",
+            "link": "/api/api-command/deleteevent/"
+          },
+          {
+            "label": "QueryEventList",
+            "link": "/api/api-command/queryeventlist/"
+          },
+          {
+            "label": "StatusEvent",
+            "link": "/api/api-command/statusevent/"
+          },
+          {
+            "label": "ConvertCurrency",
+            "link": "/api/api-command/convertcurrency/"
+          },
+          {
+            "label": "QueryAccountingList",
+            "link": "/api/api-command/queryaccountinglist/"
+          },
+          {
+            "label": "QueryAvailablePromotionList",
+            "link": "/api/api-command/queryavailablepromotionlist/"
+          },
+          {
+            "label": "QueryExchangeRates",
+            "link": "/api/api-command/queryexchangerates/"
+          },
+          {
+            "label": "QueryPremiumDomainList",
+            "link": "/api/api-command/querypremiumdomainlist/"
+          },
+          {
+            "label": "QueryPriceHistoryList",
+            "link": "/api/api-command/querypricehistorylist/"
+          },
+          {
+            "label": "QueryServiceList",
+            "link": "/api/api-command/queryservicelist/"
+          },
+          {
+            "label": "QueryUpcomingAccountingList",
+            "link": "/api/api-command/queryupcomingaccountinglist/"
+          },
+          {
+            "label": "QueryZoneList",
+            "link": "/api/api-command/queryzonelist/"
+          },
+          {
+            "label": "QueryZonePriceList",
+            "link": "/api/api-command/queryzonepricelist/"
+          },
+          {
+            "label": "ServicePrice",
+            "link": "/api/api-command/serviceprice/"
           },
           {
             "label": "AddHosting - AddOnDomain",
@@ -141,168 +663,72 @@
             "link": "/api/api-command/addhosting-useraccount/"
           },
           {
-            "label": "AddMailbox",
-            "link": "/api/api-command/addmailbox/"
-          },
-          {
-            "label": "AddMailFwd",
-            "link": "/api/api-command/addmailfwd/"
-          },
-          {
-            "label": "AddMailspace",
-            "link": "/api/api-command/addmailspace/"
-          },
-          {
-            "label": "AddNameserver",
-            "link": "/api/api-command/addnameserver/"
-          },
-          {
-            "label": "AddRegistrarEmailAddress",
-            "link": "/api/api-command/addregistraremailaddress/"
-          },
-          {
-            "label": "AddServer",
-            "link": "/api/api-command/addserver/"
-          },
-          {
-            "label": "AddTag",
-            "link": "/api/api-command/addtag/"
-          },
-          {
-            "label": "AddTrademark",
-            "link": "/api/api-command/addtrademark/"
-          },
-          {
-            "label": "AddUser",
-            "link": "/api/api-command/adduser/"
-          },
-          {
-            "label": "AddWebFwd",
-            "link": "/api/api-command/addwebfwd/"
-          },
-          {
-            "label": "AddWebhost",
-            "link": "/api/api-command/addwebhost/"
-          },
-          {
-            "label": "AddWebspace",
-            "link": "/api/api-command/addwebspace/"
-          },
-          {
-            "label": "AftermarketBid",
-            "link": "/api/api-command/aftermarketbid/"
-          },
-          {
-            "label": "BuyDomain",
-            "link": "/api/api-command/buydomain/"
-          },
-          {
-            "label": "ChargeMobileAccount",
-            "link": "/api/api-command/chargemobileaccount/"
-          },
-          {
-            "label": "CheckCertificate",
-            "link": "/api/api-command/checkcertificate/"
-          },
-          {
-            "label": "CheckClaims",
-            "link": "/api/api-command/checkclaims/"
-          },
-          {
-            "label": "CheckContact",
-            "link": "/api/api-command/checkcontact/"
-          },
-          {
-            "label": "CheckContacts",
-            "link": "/api/api-command/checkcontacts/"
-          },
-          {
-            "label": "CheckDNSZone",
-            "link": "/api/api-command/checkdnszone/"
-          },
-          {
-            "label": "CheckDomain",
-            "link": "/api/api-command/checkdomain/"
-          },
-          {
-            "label": "CheckDomainBlockingIPRID",
-            "link": "/api/api-command/checkdomainblockingiprid/"
-          },
-          {
-            "label": "CheckDomains",
-            "link": "/api/api-command/checkdomains/"
-          },
-          {
-            "label": "CheckDomainTransfer",
-            "link": "/api/api-command/checkdomaintransfer/"
-          },
-          {
             "label": "CheckHosting",
             "link": "/api/api-command/checkhosting/"
           },
           {
-            "label": "CheckMailspaceEmail",
-            "link": "/api/api-command/checkmailspaceemail/"
+            "label": "DeleteHosting",
+            "link": "/api/api-command/deletehosting/"
           },
           {
-            "label": "CheckNameserver",
-            "link": "/api/api-command/checknameserver/"
+            "label": "ModifyHosting",
+            "link": "/api/api-command/modifyhosting/"
           },
           {
-            "label": "CloneContact",
-            "link": "/api/api-command/clonecontact/"
+            "label": "QueryHostingList",
+            "link": "/api/api-command/queryhostinglist/"
           },
           {
-            "label": "ConvertCurrency",
-            "link": "/api/api-command/convertcurrency/"
+            "label": "RenewHosting",
+            "link": "/api/api-command/renewhosting/"
           },
           {
-            "label": "CreateMobileAccount",
-            "link": "/api/api-command/createmobileaccount/"
+            "label": "RestoreHosting",
+            "link": "/api/api-command/restorehosting/"
           },
           {
-            "label": "DeleteAcl",
-            "link": "/api/api-command/deleteacl/"
+            "label": "StatusHosting",
+            "link": "/api/api-command/statushosting/"
           },
           {
-            "label": "DeleteAftermarketAccount",
-            "link": "/api/api-command/deleteaftermarketaccount/"
-          },
-          {
-            "label": "DeleteAftermarketDomain",
-            "link": "/api/api-command/deleteaftermarketdomain/"
-          },
-          {
-            "label": "DeleteCertificate",
-            "link": "/api/api-command/deletecertificate/"
-          },
-          {
-            "label": "DeleteContact",
-            "link": "/api/api-command/deletecontact/"
+            "label": "AddDatabase",
+            "link": "/api/api-command/adddatabase/"
           },
           {
             "label": "DeleteDatabase",
             "link": "/api/api-command/deletedatabase/"
           },
           {
-            "label": "DeleteDNSZone",
-            "link": "/api/api-command/deletednszone/"
+            "label": "ModifyDatabase",
+            "link": "/api/api-command/modifydatabase/"
           },
           {
-            "label": "DeleteDomain",
-            "link": "/api/api-command/deletedomain/"
+            "label": "QueryDatabaseList",
+            "link": "/api/api-command/querydatabaselist/"
           },
           {
-            "label": "DeleteDomainApplication",
-            "link": "/api/api-command/deletedomainapplication/"
+            "label": "RenewDatabase",
+            "link": "/api/api-command/renewdatabase/"
           },
           {
-            "label": "DeleteDomainBlocking",
-            "link": "/api/api-command/deletedomainblocking/"
+            "label": "SetDatabaseRenewalMode",
+            "link": "/api/api-command/setdatabaserenewalmode/"
           },
           {
-            "label": "DeleteDynamicDNS",
-            "link": "/api/api-command/deletedynamicdns/"
+            "label": "StatusDatabase",
+            "link": "/api/api-command/statusdatabase/"
+          },
+          {
+            "label": "AddEmailaddress",
+            "link": "/api/api-command/addemailaddress/"
+          },
+          {
+            "label": "AddEmailforwarding",
+            "link": "/api/api-command/addemailforwarding/"
+          },
+          {
+            "label": "AddMailbox",
+            "link": "/api/api-command/addmailbox/"
           },
           {
             "label": "DeleteEmailaddress",
@@ -313,272 +739,164 @@
             "link": "/api/api-command/deleteemailforwarding/"
           },
           {
-            "label": "DeleteEvent",
-            "link": "/api/api-command/deleteevent/"
-          },
-          {
-            "label": "DeleteHosting",
-            "link": "/api/api-command/deletehosting/"
-          },
-          {
             "label": "DeleteMailbox",
             "link": "/api/api-command/deletemailbox/"
           },
           {
-            "label": "DeleteMailFwd",
-            "link": "/api/api-command/deletemailfwd/"
+            "label": "QueryEmailaddressList",
+            "link": "/api/api-command/queryemailaddresslist/"
+          },
+          {
+            "label": "QueryEmailforwardingList",
+            "link": "/api/api-command/queryemailforwardinglist/"
+          },
+          {
+            "label": "QueryMailboxList",
+            "link": "/api/api-command/querymailboxlist/"
+          },
+          {
+            "label": "StatusEmailaddress",
+            "link": "/api/api-command/statusemailaddress/"
+          },
+          {
+            "label": "StatusMailbox",
+            "link": "/api/api-command/statusmailbox/"
+          },
+          {
+            "label": "AddMailspace",
+            "link": "/api/api-command/addmailspace/"
+          },
+          {
+            "label": "CheckMailspaceEmail",
+            "link": "/api/api-command/checkmailspaceemail/"
           },
           {
             "label": "DeleteMailspace",
             "link": "/api/api-command/deletemailspace/"
           },
           {
-            "label": "DeleteNameserver",
-            "link": "/api/api-command/deletenameserver/"
+            "label": "ModifyMailspace",
+            "link": "/api/api-command/modifymailspace/"
           },
           {
-            "label": "DeleteRegistrarEmailAddress",
-            "link": "/api/api-command/deleteregistraremailaddress/"
+            "label": "QueryMailspaceList",
+            "link": "/api/api-command/querymailspacelist/"
           },
           {
-            "label": "DeleteServer",
-            "link": "/api/api-command/deleteserver/"
+            "label": "RenewMailspace",
+            "link": "/api/api-command/renewmailspace/"
           },
           {
-            "label": "DeleteTag",
-            "link": "/api/api-command/deletetag/"
+            "label": "SetMailspaceRenewalMode",
+            "link": "/api/api-command/setmailspacerenewalmode/"
           },
           {
-            "label": "DeleteTrademark",
-            "link": "/api/api-command/deletetrademark/"
+            "label": "StatusMailspace",
+            "link": "/api/api-command/statusmailspace/"
           },
           {
-            "label": "DeleteUser",
-            "link": "/api/api-command/deleteuser/"
-          },
-          {
-            "label": "DeleteWebFwd",
-            "link": "/api/api-command/deletewebfwd/"
+            "label": "AddWebhost",
+            "link": "/api/api-command/addwebhost/"
           },
           {
             "label": "DeleteWebhost",
             "link": "/api/api-command/deletewebhost/"
           },
           {
+            "label": "ModifyWebhost",
+            "link": "/api/api-command/modifywebhost/"
+          },
+          {
+            "label": "QueryWebhostList",
+            "link": "/api/api-command/querywebhostlist/"
+          },
+          {
+            "label": "StatusWebhost",
+            "link": "/api/api-command/statuswebhost/"
+          },
+          {
+            "label": "AddWebspace",
+            "link": "/api/api-command/addwebspace/"
+          },
+          {
             "label": "DeleteWebspace",
             "link": "/api/api-command/deletewebspace/"
-          },
-          {
-            "label": "DomainPrice",
-            "link": "/api/api-command/domainprice/"
-          },
-          {
-            "label": "ExportDNSZone",
-            "link": "/api/api-command/exportdnszone/"
-          },
-          {
-            "label": "GenerateList",
-            "link": "/api/api-command/generatelist/"
-          },
-          {
-            "label": "GetCertificateInfo",
-            "link": "/api/api-command/getcertificateinfo/"
-          },
-          {
-            "label": "GetDNSZone",
-            "link": "/api/api-command/getdnszone/"
-          },
-          {
-            "label": "GetTrademarkLabels",
-            "link": "/api/api-command/gettrademarklabels/"
-          },
-          {
-            "label": "GetZone",
-            "link": "/api/api-command/getzone/"
-          },
-          {
-            "label": "GetZoneInfo",
-            "link": "/api/api-command/getzoneinfo/"
-          },
-          {
-            "label": "ImportDNSZone",
-            "link": "/api/api-command/importdnszone/"
-          },
-          {
-            "label": "ModifyAcl",
-            "link": "/api/api-command/modifyacl/"
-          },
-          {
-            "label": "ModifyAftermarketAccount",
-            "link": "/api/api-command/modifyaftermarketaccount/"
-          },
-          {
-            "label": "ModifyAftermarketDomain",
-            "link": "/api/api-command/modifyaftermarketdomain/"
-          },
-          {
-            "label": "ModifyCertificate",
-            "link": "/api/api-command/modifycertificate/"
-          },
-          {
-            "label": "ModifyContact",
-            "link": "/api/api-command/modifycontact/"
-          },
-          {
-            "label": "ModifyDatabase",
-            "link": "/api/api-command/modifydatabase/"
-          },
-          {
-            "label": "ModifyDNSZone",
-            "link": "/api/api-command/modifydnszone/"
-          },
-          {
-            "label": "ModifyDomain",
-            "link": "/api/api-command/modifydomain/"
-          },
-          {
-            "label": "ModifyDomainApplication",
-            "link": "/api/api-command/modifydomainapplication/"
-          },
-          {
-            "label": "ModifyDomainBlocking",
-            "link": "/api/api-command/modifydomainblocking/"
-          },
-          {
-            "label": "ModifyDynamicDNS",
-            "link": "/api/api-command/modifydynamicdns/"
-          },
-          {
-            "label": "ModifyHosting",
-            "link": "/api/api-command/modifyhosting/"
-          },
-          {
-            "label": "ModifyMailspace",
-            "link": "/api/api-command/modifymailspace/"
-          },
-          {
-            "label": "ModifyNameserver",
-            "link": "/api/api-command/modifynameserver/"
           },
           {
             "label": "ModifyPHPIni",
             "link": "/api/api-command/modifyphpini/"
           },
           {
-            "label": "ModifyRegistrar",
-            "link": "/api/api-command/modifyregistrar/"
-          },
-          {
-            "label": "ModifyRegistrarCurrency",
-            "link": "/api/api-command/modifyregistrarcurrency/"
-          },
-          {
-            "label": "ModifyRegistrarEmailAddress",
-            "link": "/api/api-command/modifyregistraremailaddress/"
-          },
-          {
-            "label": "ModifyServer",
-            "link": "/api/api-command/modifyserver/"
-          },
-          {
-            "label": "ModifyTag",
-            "link": "/api/api-command/modifytag/"
-          },
-          {
-            "label": "ModifyTrademark",
-            "link": "/api/api-command/modifytrademark/"
-          },
-          {
-            "label": "ModifyUser",
-            "link": "/api/api-command/modifyuser/"
-          },
-          {
-            "label": "ModifyWebhost",
-            "link": "/api/api-command/modifywebhost/"
-          },
-          {
             "label": "ModifyWebspace",
             "link": "/api/api-command/modifywebspace/"
           },
           {
-            "label": "ParkDomain",
-            "link": "/api/api-command/parkdomain/"
+            "label": "QueryPHPIni",
+            "link": "/api/api-command/queryphpini/"
           },
           {
-            "label": "PushDomain",
-            "link": "/api/api-command/pushdomain/"
+            "label": "QueryWebspaceList",
+            "link": "/api/api-command/querywebspacelist/"
           },
           {
-            "label": "PushObject",
-            "link": "/api/api-command/pushobject/"
+            "label": "QueryWebspaceTraffic",
+            "link": "/api/api-command/querywebspacetraffic/"
           },
           {
-            "label": "QueryAccountingList",
-            "link": "/api/api-command/queryaccountinglist/"
+            "label": "RenewWebspace",
+            "link": "/api/api-command/renewwebspace/"
           },
           {
-            "label": "QueryACLList",
-            "link": "/api/api-command/queryacllist/"
+            "label": "SetWebspaceRenewalMode",
+            "link": "/api/api-command/setwebspacerenewalmode/"
           },
           {
-            "label": "QueryActiveServiceList",
-            "link": "/api/api-command/queryactiveservicelist/"
+            "label": "StatusWebspace",
+            "link": "/api/api-command/statuswebspace/"
           },
           {
-            "label": "QueryAftermarketAccountList",
-            "link": "/api/api-command/queryaftermarketaccountlist/"
+            "label": "AddDNSZone",
+            "link": "/api/api-command/adddnszone/"
           },
           {
-            "label": "QueryAftermarketBid",
-            "link": "/api/api-command/queryaftermarketbid/"
+            "label": "AddMailFwd",
+            "link": "/api/api-command/addmailfwd/"
           },
           {
-            "label": "QueryAftermarketBidList",
-            "link": "/api/api-command/queryaftermarketbidlist/"
+            "label": "AddWebFwd",
+            "link": "/api/api-command/addwebfwd/"
           },
           {
-            "label": "QueryAftermarketDomainList",
-            "link": "/api/api-command/queryaftermarketdomainlist/"
+            "label": "CheckDNSZone",
+            "link": "/api/api-command/checkdnszone/"
           },
           {
-            "label": "QueryAftermarketList",
-            "link": "/api/api-command/queryaftermarketlist/"
+            "label": "DeleteDNSZone",
+            "link": "/api/api-command/deletednszone/"
           },
           {
-            "label": "QueryAGPDeleteslist",
-            "link": "/api/api-command/queryagpdeleteslist/"
+            "label": "DeleteMailFwd",
+            "link": "/api/api-command/deletemailfwd/"
           },
           {
-            "label": "QueryAppendixList",
-            "link": "/api/api-command/queryappendixlist/"
+            "label": "DeleteWebFwd",
+            "link": "/api/api-command/deletewebfwd/"
           },
           {
-            "label": "QueryApplicationList",
-            "link": "/api/api-command/queryapplicationlist/"
+            "label": "ExportDNSZone",
+            "link": "/api/api-command/exportdnszone/"
           },
           {
-            "label": "QueryAvailablePromotionList",
-            "link": "/api/api-command/queryavailablepromotionlist/"
+            "label": "GetDNSZone",
+            "link": "/api/api-command/getdnszone/"
           },
           {
-            "label": "QueryCertificateList",
-            "link": "/api/api-command/querycertificatelist/"
+            "label": "ImportDNSZone",
+            "link": "/api/api-command/importdnszone/"
           },
           {
-            "label": "QueryClaimsNoticeList",
-            "link": "/api/api-command/queryclaimsnoticelist/"
-          },
-          {
-            "label": "QueryCommandSyntax",
-            "link": "/api/api-command/querycommandsyntax/"
-          },
-          {
-            "label": "QueryContactList",
-            "link": "/api/api-command/querycontactlist/"
-          },
-          {
-            "label": "QueryDatabaseList",
-            "link": "/api/api-command/querydatabaselist/"
+            "label": "ModifyDNSZone",
+            "link": "/api/api-command/modifydnszone/"
           },
           {
             "label": "QueryDNSZoneList",
@@ -597,96 +915,92 @@
             "link": "/api/api-command/querydnszonesubdomainlist/"
           },
           {
-            "label": "QueryDomainApplicationList",
-            "link": "/api/api-command/querydomainapplicationlist/"
+            "label": "QueryMailFwdList",
+            "link": "/api/api-command/querymailfwdlist/"
           },
           {
-            "label": "QueryDomainBlockingList",
-            "link": "/api/api-command/querydomainblockinglist/"
+            "label": "QueryWebFwdList",
+            "link": "/api/api-command/querywebfwdlist/"
           },
           {
-            "label": "QueryDomainExpireList",
-            "link": "/api/api-command/querydomainexpirelist/"
+            "label": "StatusDNSZone",
+            "link": "/api/api-command/statusdnszone/"
           },
           {
-            "label": "QueryDomainHistoryList",
-            "link": "/api/api-command/querydomainhistorylist/"
+            "label": "AddNameserver",
+            "link": "/api/api-command/addnameserver/"
           },
           {
-            "label": "QueryDomainList",
-            "link": "/api/api-command/querydomainlist/"
+            "label": "CheckNameserver",
+            "link": "/api/api-command/checknameserver/"
           },
           {
-            "label": "QueryDomainListByContact",
-            "link": "/api/api-command/querydomainlistbycontact/"
+            "label": "DeleteNameserver",
+            "link": "/api/api-command/deletenameserver/"
+          },
+          {
+            "label": "ModifyNameserver",
+            "link": "/api/api-command/modifynameserver/"
+          },
+          {
+            "label": "QueryNameserverList",
+            "link": "/api/api-command/querynameserverlist/"
+          },
+          {
+            "label": "StatusNameserver",
+            "link": "/api/api-command/statusnameserver/"
+          },
+          {
+            "label": "ActivateRegistrarEmailAddress",
+            "link": "/api/api-command/activateregistraremailaddress/"
+          },
+          {
+            "label": "AddRegistrarEmailAddress",
+            "link": "/api/api-command/addregistraremailaddress/"
+          },
+          {
+            "label": "DeleteRegistrarEmailAddress",
+            "link": "/api/api-command/deleteregistraremailaddress/"
+          },
+          {
+            "label": "ModifyRegistrarEmailAddress",
+            "link": "/api/api-command/modifyregistraremailaddress/"
+          },
+          {
+            "label": "QueryRegistrarEmailAddressList",
+            "link": "/api/api-command/queryregistraremailaddresslist/"
+          },
+          {
+            "label": "StatusRegistrarEmailAddress",
+            "link": "/api/api-command/statusregistraremailaddress/"
+          },
+          {
+            "label": "QueryAGPDeleteslist",
+            "link": "/api/api-command/queryagpdeleteslist/"
+          },
+          {
+            "label": "StatusAGPdeletes",
+            "link": "/api/api-command/statusagpdeletes/"
+          },
+          {
+            "label": "GenerateList",
+            "link": "/api/api-command/generatelist/"
+          },
+          {
+            "label": "QueryCommandSyntax",
+            "link": "/api/api-command/querycommandsyntax/"
           },
           {
             "label": "QueryDomainPinLockList",
             "link": "/api/api-command/querydomainpinlocklist/"
           },
           {
-            "label": "QueryDomainRenewList",
-            "link": "/api/api-command/querydomainrenewlist/"
-          },
-          {
-            "label": "QueryDynamicDNSList",
-            "link": "/api/api-command/querydynamicdnslist/"
-          },
-          {
-            "label": "QueryEmailaddressList",
-            "link": "/api/api-command/queryemailaddresslist/"
-          },
-          {
-            "label": "QueryEmailforwardingList",
-            "link": "/api/api-command/queryemailforwardinglist/"
-          },
-          {
-            "label": "QueryEventList",
-            "link": "/api/api-command/queryeventlist/"
-          },
-          {
-            "label": "QueryExchangeRates",
-            "link": "/api/api-command/queryexchangerates/"
-          },
-          {
-            "label": "QueryForeignTransferList",
-            "link": "/api/api-command/queryforeigntransferlist/"
-          },
-          {
-            "label": "QueryHostingList",
-            "link": "/api/api-command/queryhostinglist/"
-          },
-          {
-            "label": "QueryIDNTagList",
-            "link": "/api/api-command/queryidntaglist/"
-          },
-          {
             "label": "QueryJobList",
             "link": "/api/api-command/queryjoblist/"
           },
           {
-            "label": "QueryMailboxList",
-            "link": "/api/api-command/querymailboxlist/"
-          },
-          {
-            "label": "QueryMailFwdList",
-            "link": "/api/api-command/querymailfwdlist/"
-          },
-          {
-            "label": "QueryMailspaceList",
-            "link": "/api/api-command/querymailspacelist/"
-          },
-          {
-            "label": "QueryMobileAccountList",
-            "link": "/api/api-command/querymobileaccountlist/"
-          },
-          {
             "label": "QueryMonitoringList",
             "link": "/api/api-command/querymonitoringlist/"
-          },
-          {
-            "label": "QueryNameserverList",
-            "link": "/api/api-command/querynameserverlist/"
           },
           {
             "label": "QueryObjectLogList",
@@ -697,18 +1011,6 @@
             "link": "/api/api-command/queryownerchangelist/"
           },
           {
-            "label": "QueryPHPIni",
-            "link": "/api/api-command/queryphpini/"
-          },
-          {
-            "label": "QueryPremiumDomainList",
-            "link": "/api/api-command/querypremiumdomainlist/"
-          },
-          {
-            "label": "QueryPriceHistoryList",
-            "link": "/api/api-command/querypricehistorylist/"
-          },
-          {
             "label": "QueryPromotionList",
             "link": "/api/api-command/querypromotionlist/"
           },
@@ -717,376 +1019,132 @@
             "link": "/api/api-command/querypromotionregistrarlist/"
           },
           {
-            "label": "QueryRegisteredPremiumDomainList",
-            "link": "/api/api-command/queryregisteredpremiumdomainlist/"
-          },
-          {
             "label": "QueryRegistrarCommentList",
             "link": "/api/api-command/queryregistrarcommentlist/"
-          },
-          {
-            "label": "QueryRegistrarEmailAddressList",
-            "link": "/api/api-command/queryregistraremailaddresslist/"
           },
           {
             "label": "QueryRegistrarList",
             "link": "/api/api-command/queryregistrarlist/"
           },
           {
-            "label": "QueryRegistrarStatisticList",
-            "link": "/api/api-command/queryregistrarstatisticlist/"
-          },
-          {
-            "label": "QueryServerList",
-            "link": "/api/api-command/queryserverlist/"
-          },
-          {
-            "label": "QueryServiceList",
-            "link": "/api/api-command/queryservicelist/"
-          },
-          {
-            "label": "QuerySMSList",
-            "link": "/api/api-command/querysmslist/"
-          },
-          {
-            "label": "QueryTagList",
-            "link": "/api/api-command/querytaglist/"
-          },
-          {
-            "label": "QueryTrademarkList",
-            "link": "/api/api-command/querytrademarklist/"
-          },
-          {
-            "label": "QueryTransferList",
-            "link": "/api/api-command/querytransferlist/"
-          },
-          {
-            "label": "QueryTrusteeDomainList",
-            "link": "/api/api-command/querytrusteedomainlist/"
-          },
-          {
             "label": "QueryTrusteeLogList",
             "link": "/api/api-command/querytrusteeloglist/"
-          },
-          {
-            "label": "QueryUpcomingAccountingList",
-            "link": "/api/api-command/queryupcomingaccountinglist/"
-          },
-          {
-            "label": "QueryUserList",
-            "link": "/api/api-command/queryuserlist/"
-          },
-          {
-            "label": "QueryWebFwdList",
-            "link": "/api/api-command/querywebfwdlist/"
-          },
-          {
-            "label": "QueryWebhostList",
-            "link": "/api/api-command/querywebhostlist/"
-          },
-          {
-            "label": "QueryWebspaceList",
-            "link": "/api/api-command/querywebspacelist/"
-          },
-          {
-            "label": "QueryWebspaceTraffic",
-            "link": "/api/api-command/querywebspacetraffic/"
-          },
-          {
-            "label": "QueryZoneList",
-            "link": "/api/api-command/queryzonelist/"
-          },
-          {
-            "label": "QueryZonePriceList",
-            "link": "/api/api-command/queryzonepricelist/"
-          },
-          {
-            "label": "ReissueCertificate",
-            "link": "/api/api-command/reissuecertificate/"
-          },
-          {
-            "label": "RenewCertificate",
-            "link": "/api/api-command/renewcertificate/"
-          },
-          {
-            "label": "RenewDatabase",
-            "link": "/api/api-command/renewdatabase/"
-          },
-          {
-            "label": "RenewDomain",
-            "link": "/api/api-command/renewdomain/"
-          },
-          {
-            "label": "RenewDomainBlocking",
-            "link": "/api/api-command/renewdomainblocking/"
-          },
-          {
-            "label": "RenewHosting",
-            "link": "/api/api-command/renewhosting/"
-          },
-          {
-            "label": "RenewMailspace",
-            "link": "/api/api-command/renewmailspace/"
-          },
-          {
-            "label": "RenewServer",
-            "link": "/api/api-command/renewserver/"
-          },
-          {
-            "label": "RenewTrademark",
-            "link": "/api/api-command/renewtrademark/"
-          },
-          {
-            "label": "RenewWebspace",
-            "link": "/api/api-command/renewwebspace/"
-          },
-          {
-            "label": "RequestDomainPin",
-            "link": "/api/api-command/requestdomainpin/"
-          },
-          {
-            "label": "RequestToken",
-            "link": "/api/api-command/requesttoken/"
-          },
-          {
-            "label": "ResendNotification",
-            "link": "/api/api-command/resendnotification/"
-          },
-          {
-            "label": "ReserveDomain",
-            "link": "/api/api-command/reservedomain/"
-          },
-          {
-            "label": "RestoreContact",
-            "link": "/api/api-command/restorecontact/"
-          },
-          {
-            "label": "RestoreDomain",
-            "link": "/api/api-command/restoredomain/"
-          },
-          {
-            "label": "RestoreHosting",
-            "link": "/api/api-command/restorehosting/"
-          },
-          {
-            "label": "SendSMS",
-            "link": "/api/api-command/sendsms/"
-          },
-          {
-            "label": "ServicePrice",
-            "link": "/api/api-command/serviceprice/"
-          },
-          {
-            "label": "SetAuthcode",
-            "link": "/api/api-command/setauthcode/"
-          },
-          {
-            "label": "SetDatabaseRenewalMode",
-            "link": "/api/api-command/setdatabaserenewalmode/"
-          },
-          {
-            "label": "SetDomainPinLock",
-            "link": "/api/api-command/setdomainpinlock/"
-          },
-          {
-            "label": "SetDomainRenewalmode",
-            "link": "/api/api-command/setdomainrenewalmode/"
-          },
-          {
-            "label": "SetDomainTransfermode",
-            "link": "/api/api-command/setdomaintransfermode/"
-          },
-          {
-            "label": "SetMailspaceRenewalMode",
-            "link": "/api/api-command/setmailspacerenewalmode/"
-          },
-          {
-            "label": "SetTrademarkRenewalmode",
-            "link": "/api/api-command/settrademarkrenewalmode/"
-          },
-          {
-            "label": "SetWebspaceRenewalMode",
-            "link": "/api/api-command/setwebspacerenewalmode/"
-          },
-          {
-            "label": "StatusAccount",
-            "link": "/api/api-command/statusaccount/"
-          },
-          {
-            "label": "StatusAcl",
-            "link": "/api/api-command/statusacl/"
-          },
-          {
-            "label": "StatusAftermarketAccount",
-            "link": "/api/api-command/statusaftermarketaccount/"
-          },
-          {
-            "label": "StatusAftermarketDomain",
-            "link": "/api/api-command/statusaftermarketdomain/"
-          },
-          {
-            "label": "StatusAGPdeletes",
-            "link": "/api/api-command/statusagpdeletes/"
-          },
-          {
-            "label": "StatusCertificate",
-            "link": "/api/api-command/statuscertificate/"
-          },
-          {
-            "label": "StatusClaimsNotice",
-            "link": "/api/api-command/statusclaimsnotice/"
-          },
-          {
-            "label": "StatusContact",
-            "link": "/api/api-command/statuscontact/"
-          },
-          {
-            "label": "StatusDatabase",
-            "link": "/api/api-command/statusdatabase/"
-          },
-          {
-            "label": "StatusDNSZone",
-            "link": "/api/api-command/statusdnszone/"
-          },
-          {
-            "label": "StatusDomain",
-            "link": "/api/api-command/statusdomain/"
-          },
-          {
-            "label": "StatusDomainApplication",
-            "link": "/api/api-command/statusdomainapplication/"
-          },
-          {
-            "label": "StatusDomainBlocking",
-            "link": "/api/api-command/statusdomainblocking/"
-          },
-          {
-            "label": "StatusDomainHistory",
-            "link": "/api/api-command/statusdomainhistory/"
-          },
-          {
-            "label": "StatusDomainTransfer",
-            "link": "/api/api-command/statusdomaintransfer/"
-          },
-          {
-            "label": "StatusDynamicDNS",
-            "link": "/api/api-command/statusdynamicdns/"
-          },
-          {
-            "label": "StatusEmailaddress",
-            "link": "/api/api-command/statusemailaddress/"
-          },
-          {
-            "label": "StatusEvent",
-            "link": "/api/api-command/statusevent/"
-          },
-          {
-            "label": "StatusHosting",
-            "link": "/api/api-command/statushosting/"
-          },
-          {
-            "label": "StatusMailbox",
-            "link": "/api/api-command/statusmailbox/"
-          },
-          {
-            "label": "StatusMailspace",
-            "link": "/api/api-command/statusmailspace/"
-          },
-          {
-            "label": "StatusMobileAccount",
-            "link": "/api/api-command/statusmobileaccount/"
-          },
-          {
-            "label": "StatusNameserver",
-            "link": "/api/api-command/statusnameserver/"
           },
           {
             "label": "StatusObjectLog",
             "link": "/api/api-command/statusobjectlog/"
           },
           {
-            "label": "StatusOwnerChange",
-            "link": "/api/api-command/statusownerchange/"
+            "label": "AddServer",
+            "link": "/api/api-command/addserver/"
           },
           {
-            "label": "StatusRegistrar",
-            "link": "/api/api-command/statusregistrar/"
+            "label": "DeleteServer",
+            "link": "/api/api-command/deleteserver/"
           },
           {
-            "label": "StatusRegistrarEmailAddress",
-            "link": "/api/api-command/statusregistraremailaddress/"
+            "label": "ModifyServer",
+            "link": "/api/api-command/modifyserver/"
+          },
+          {
+            "label": "QueryServerList",
+            "link": "/api/api-command/queryserverlist/"
+          },
+          {
+            "label": "RenewServer",
+            "link": "/api/api-command/renewserver/"
           },
           {
             "label": "StatusServer",
             "link": "/api/api-command/statusserver/"
           },
           {
-            "label": "StatusTag",
-            "link": "/api/api-command/statustag/"
+            "label": "ChargeMobileAccount",
+            "link": "/api/api-command/chargemobileaccount/"
+          },
+          {
+            "label": "CreateMobileAccount",
+            "link": "/api/api-command/createmobileaccount/"
+          },
+          {
+            "label": "QueryMobileAccountList",
+            "link": "/api/api-command/querymobileaccountlist/"
+          },
+          {
+            "label": "QuerySMSList",
+            "link": "/api/api-command/querysmslist/"
+          },
+          {
+            "label": "SendSMS",
+            "link": "/api/api-command/sendsms/"
+          },
+          {
+            "label": "StatusMobileAccount",
+            "link": "/api/api-command/statusmobileaccount/"
+          },
+          {
+            "label": "AddTrademark",
+            "link": "/api/api-command/addtrademark/"
+          },
+          {
+            "label": "DeleteTrademark",
+            "link": "/api/api-command/deletetrademark/"
+          },
+          {
+            "label": "GetTrademarkLabels",
+            "link": "/api/api-command/gettrademarklabels/"
+          },
+          {
+            "label": "ModifyTrademark",
+            "link": "/api/api-command/modifytrademark/"
+          },
+          {
+            "label": "QueryTrademarkList",
+            "link": "/api/api-command/querytrademarklist/"
+          },
+          {
+            "label": "RenewTrademark",
+            "link": "/api/api-command/renewtrademark/"
+          },
+          {
+            "label": "SetTrademarkRenewalmode",
+            "link": "/api/api-command/settrademarkrenewalmode/"
           },
           {
             "label": "StatusTrademark",
             "link": "/api/api-command/statustrademark/"
           },
           {
-            "label": "StatusUnsyncRegistryContact",
-            "link": "/api/api-command/statusunsyncregistrycontact/"
-          },
-          {
-            "label": "StatusUser",
-            "link": "/api/api-command/statususer/"
-          },
-          {
-            "label": "StatusWebhost",
-            "link": "/api/api-command/statuswebhost/"
-          },
-          {
-            "label": "StatusWebspace",
-            "link": "/api/api-command/statuswebspace/"
-          },
-          {
-            "label": "TradeDomain",
-            "link": "/api/api-command/tradedomain/"
-          },
-          {
-            "label": "TransferContact",
-            "link": "/api/api-command/transfercontact/"
-          },
-          {
-            "label": "TransferDomain",
-            "link": "/api/api-command/transferdomain/"
-          },
-          {
-            "label": "TransferDomainBlocking - Approve",
-            "link": "/api/api-command/transferdomainblocking-approve/"
-          },
-          {
-            "label": "TransferDomainBlocking - Cancel",
-            "link": "/api/api-command/transferdomainblocking-cancel/"
-          },
-          {
-            "label": "TransferDomainBlocking - Deny",
-            "link": "/api/api-command/transferdomainblocking-deny/"
-          },
-          {
-            "label": "TransferDomainBlocking - Query",
-            "link": "/api/api-command/transferdomainblocking-query/"
-          },
-          {
-            "label": "TransferDomainBlocking - Request",
-            "link": "/api/api-command/transferdomainblocking-request/"
-          },
-          {
-            "label": "TransferDomainBlocking - UserTransfer",
-            "link": "/api/api-command/transferdomainblocking-usertransfer/"
-          },
-          {
             "label": "TransferTrademark",
             "link": "/api/api-command/transfertrademark/"
           },
           {
-            "label": "UpdateDynamicDNS",
-            "link": "/api/api-command/updatedynamicdns/"
+            "label": "ActivateTransfer",
+            "link": "/api/api-command/activatetransfer/"
+          },
+          {
+            "label": "CheckDomainTransfer",
+            "link": "/api/api-command/checkdomaintransfer/"
+          },
+          {
+            "label": "QueryForeignTransferList",
+            "link": "/api/api-command/queryforeigntransferlist/"
+          },
+          {
+            "label": "QueryTransferList",
+            "link": "/api/api-command/querytransferlist/"
+          },
+          {
+            "label": "SetAuthcode",
+            "link": "/api/api-command/setauthcode/"
+          },
+          {
+            "label": "StatusDomainTransfer",
+            "link": "/api/api-command/statusdomaintransfer/"
+          },
+          {
+            "label": "TransferDomain",
+            "link": "/api/api-command/transferdomain/"
           }
         ]
       },
@@ -1097,50 +1155,6 @@
           {
             "label": "CentralNic Reseller API Command Reference",
             "link": "/api/api-commands/api-command-reference/"
-          }
-        ]
-      },
-      {
-        "label": "API Security",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "API Security",
-            "link": "/api/api-security/"
-          },
-          {
-            "label": "HTTPS Session Handling",
-            "link": "/api/api-security/https-session-handling/"
-          }
-        ]
-      },
-      {
-        "label": "Connecting",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Connecting",
-            "link": "/api/connecting/"
-          },
-          {
-            "label": "API requests via e-mail (SMTP)",
-            "link": "/api/connecting/api-requests-via-e-mail-smtp/"
-          },
-          {
-            "label": "CentralNic Reseller Metaregistry",
-            "link": "/api/connecting/centralnic-reseller-metaregistry/"
-          },
-          {
-            "label": "Extensible Markup Language Remote Procedure Call",
-            "link": "/api/connecting/extensible-markup-language-remote-procedure-call/"
-          },
-          {
-            "label": "Hypertext Transfer Protocol Socket",
-            "link": "/api/connecting/hypertext-transfer-protocol-socket/"
-          },
-          {
-            "label": "Simple Object Access Protocol",
-            "link": "/api/connecting/simple-object-access-protocol/"
           }
         ]
       },
@@ -1371,30 +1385,16 @@
         "collapsed": true,
         "items": [
           {
-            "label": "EPP Command Reference Manual",
+            "label": "EPP API Commands",
             "link": "/api/epp-server/epp-command-reference/"
           },
           {
-            "label": "EPP Server Extensions",
-            "link": "/api/epp-server/extensions/"
-          },
-          {
-            "label": "FAQ EPP Server",
+            "label": "Frequently asked questions",
             "link": "/api/epp-server/frequently-asked-questions/"
-          }
-        ]
-      },
-      {
-        "label": "Return Codes",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Return Codes",
-            "link": "/api/return-codes/"
           },
           {
-            "label": "Events",
-            "link": "/api/return-codes/events/"
+            "label": "Extensions",
+            "link": "/api/epp-server/extensions/"
           }
         ]
       }
@@ -1406,24 +1406,130 @@
     "link": "/domains/",
     "items": [
       {
-        "label": "Domains",
+        "label": "Domains Overview",
         "link": "/domains/"
       },
       {
-        "label": "Application Systems",
-        "link": "/domains/applications/"
+        "label": "TMCH",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Trademark Clearinghouse",
+            "link": "/domains/tmch/"
+          },
+          {
+            "label": "Required Documents",
+            "link": "/domains/tmch/required-documents/"
+          },
+          {
+            "label": "Adding a trademark",
+            "link": "/domains/tmch/adding-a-trademark/"
+          },
+          {
+            "label": "Registered trademarks",
+            "link": "/domains/tmch/registered-trademarks/"
+          },
+          {
+            "label": "Court validated marks",
+            "link": "/domains/tmch/court-validated-marks/"
+          },
+          {
+            "label": "Marks protected by statute or treaty",
+            "link": "/domains/tmch/marks-protected-by-statute-or-treaty/"
+          },
+          {
+            "label": "Labels (Domain names)",
+            "link": "/domains/tmch/labels-domain-names/"
+          },
+          {
+            "label": "API Commands",
+            "link": "/domains/tmch/api-commands/"
+          },
+          {
+            "label": "FAQ for ModifyTrademark",
+            "link": "/domains/tmch/faq-for-modifytrademark/"
+          }
+        ]
       },
       {
         "label": "Claim Notification",
         "link": "/domains/claim-notification/"
       },
       {
-        "label": "EPP Status Codes",
-        "link": "/domains/status/"
+        "label": "Premium Domains",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Premium Domain Handling",
+            "link": "/domains/premium-domains/"
+          },
+          {
+            "label": "API Commands",
+            "link": "/domains/premium-domains/api-command-reference-for-premium-domains/"
+          },
+          {
+            "label": "EPP Commands",
+            "link": "/domains/premium-domains/epp-command-reference-for-premium-domains/"
+          },
+          {
+            "label": "EPP Server Examples",
+            "link": "/domains/premium-domains/epp-server-examples/"
+          },
+          {
+            "label": "Applications",
+            "link": "/domains/premium-domains/applications/"
+          },
+          {
+            "label": "Account Premium Domain Settings",
+            "link": "/domains/premium-domains/account-premium-domain-settings/"
+          },
+          {
+            "label": "RAM",
+            "link": "/domains/premium-domains/registry-account-management-system/"
+          },
+          {
+            "label": "Reseller Premium Domain System Settings",
+            "link": "/domains/premium-domains/reseller-premium-domain-system-settings/"
+          },
+          {
+            "label": "X-FEE Parameters",
+            "link": "/domains/premium-domains/x-fee-parameters/"
+          },
+          {
+            "label": "Premium domains for OT&E",
+            "link": "/domains/premium-domains/premium-domains-for-otande/"
+          }
+        ]
+      },
+      {
+        "label": "Applications",
+        "link": "/domains/applications/"
       },
       {
         "label": "The CentralNic Reseller Renewal System",
         "link": "/domains/renewal-system/"
+      },
+      {
+        "label": "Tags And Comments",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Domain Tags",
+            "link": "/domains/tags-and-comments/"
+          },
+          {
+            "label": "Additional Parameters",
+            "link": "/domains/tags-and-comments/additional-parameters-and-responses-for-commands/"
+          },
+          {
+            "label": "API-Commands",
+            "link": "/domains/tags-and-comments/api-commands-for-tag-management/"
+          },
+          {
+            "label": "Domain Comments",
+            "link": "/domains/tags-and-comments/domain-comments/"
+          }
+        ]
       },
       {
         "label": "Contact Handles",
@@ -1444,6 +1550,10 @@
         ]
       },
       {
+        "label": "Status",
+        "link": "/domains/status/"
+      },
+      {
         "label": "ICANN",
         "collapsed": true,
         "items": [
@@ -1452,89 +1562,91 @@
             "link": "/domains/icann/"
           },
           {
-            "label": "Contact Verification",
+            "label": "ICANN Policy",
             "collapsed": true,
             "items": [
               {
-                "label": "Contact validation and verification requirements",
-                "link": "/domains/icann/contact-verification/"
+                "label": "ICANN Policy",
+                "link": "/domains/icann/icann-ownerchange/"
               },
               {
-                "label": "Contact Verification: ActivateContact",
-                "link": "/domains/icann/contact-verification/contact-verification-activatecontact/"
+                "label": "Reseller Settings",
+                "link": "/domains/icann/icann-ownerchange/reseller-settings/"
               },
               {
-                "label": "Contact Verification: AddContact",
-                "link": "/domains/icann/contact-verification/contact-verification-addcontact/"
+                "label": "Enabling DA-Mode",
+                "link": "/domains/icann/icann-ownerchange/enabling-the-designated-agent-mode-for-your-centralnic-reseller-account/"
               },
               {
-                "label": "Contact Verification: AddDomain",
-                "link": "/domains/icann/contact-verification/contact-verification-adddomain/"
+                "label": "OwnerChange in FOA-Mode",
+                "link": "/domains/icann/icann-ownerchange/ownerchange-procedures-in-form-of-authorisation-foa-mode/"
               },
               {
-                "label": "Contact Verification: CloneContact",
-                "link": "/domains/icann/contact-verification/contact-verification-clonecontact/"
+                "label": "OwnerChange in DA-Mode",
+                "link": "/domains/icann/icann-ownerchange/ownerchange-procedures-in-designated-agent-mode/"
               },
               {
-                "label": "Contact Verification: Email templates",
-                "link": "/domains/icann/contact-verification/contact-verification-email-templates/"
+                "label": "Metaregistry API Examples",
+                "link": "/domains/icann/icann-ownerchange/metaregistry-api-examples/"
               },
               {
-                "label": "Contact Verification: EPP server",
-                "link": "/domains/icann/contact-verification/contact-verification-epp-server/"
+                "label": "Events",
+                "link": "/domains/icann/icann-ownerchange/events/"
               },
               {
-                "label": "Contact Verification: ModifyContact",
-                "link": "/domains/icann/contact-verification/contact-verification-modifycontact/"
+                "label": "Mail Templates",
+                "link": "/domains/icann/icann-ownerchange/mail-templates/"
               },
               {
-                "label": "Contact Verification: ModifyDomain",
-                "link": "/domains/icann/contact-verification/contact-verification-modifydomain/"
-              },
-              {
-                "label": "Contact Verification: QueryContactList",
-                "link": "/domains/icann/contact-verification/contact-verification-querycontactlist/"
-              },
-              {
-                "label": "Contact Verification: QueryDomainList",
-                "link": "/domains/icann/contact-verification/contact-verification-querydomainlist/"
-              },
-              {
-                "label": "Contact Verification: ResendNotification",
-                "link": "/domains/icann/contact-verification/contact-verification-resendnotification/"
-              },
-              {
-                "label": "Contact Verification: StatusContact",
-                "link": "/domains/icann/contact-verification/contact-verification-statuscontact/"
-              },
-              {
-                "label": "Contact Verification: StatusDomain",
-                "link": "/domains/icann/contact-verification/contact-verification-statusdomain/"
-              },
-              {
-                "label": "Contact Verification: TransferDomain",
-                "link": "/domains/icann/contact-verification/contact-verification-transferdomain/"
-              },
-              {
-                "label": "Definitions ICANN Contact Verification",
-                "link": "/domains/icann/contact-verification/definitions/"
-              },
-              {
-                "label": "Frequently asked questions",
-                "link": "/domains/icann/contact-verification/frequently-asked-questions/"
-              },
-              {
-                "label": "SetProperty: ContactVerification",
-                "link": "/domains/icann/contact-verification/setproperty-contactverification/"
+                "label": "FAQ",
+                "link": "/domains/icann/icann-ownerchange/frequently-asked-questions/"
               }
             ]
           },
           {
-            "label": "ERRP",
+            "label": "Modify Domain",
             "collapsed": true,
             "items": [
               {
-                "label": "Implementation of Expired Registration Recovery Policy",
+                "label": "Modify Domain",
+                "link": "/domains/icann/ownerchange-api-examples/"
+              },
+              {
+                "label": "ActivateOwnerChange",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-activateownerchange/"
+              },
+              {
+                "label": "StatusDomain",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statusdomain/"
+              },
+              {
+                "label": "QueryOwnerChangeList",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-queryownerchangelist/"
+              },
+              {
+                "label": "StatusOwnerChange",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statusownerchange/"
+              },
+              {
+                "label": "ModifyContact",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-modifycontact/"
+              },
+              {
+                "label": "StatusContact",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statuscontact/"
+              },
+              {
+                "label": "ResendNotification",
+                "link": "/domains/icann/ownerchange-api-examples/ownerchange-resendnotification/"
+              }
+            ]
+          },
+          {
+            "label": "Implementation Policy",
+            "collapsed": true,
+            "items": [
+              {
+                "label": "Implementation Policy",
                 "link": "/domains/icann/errp/"
               },
               {
@@ -1542,7 +1654,7 @@
                 "link": "/domains/icann/errp/getproperty/"
               },
               {
-                "label": "Realization of the ERRP – what must be done?",
+                "label": "Realization of the ERRP",
                 "link": "/domains/icann/errp/realization-of-the-errp-what-must-be-done/"
               },
               {
@@ -1552,82 +1664,80 @@
             ]
           },
           {
-            "label": "ICANN Ownerchange",
+            "label": "Requirements",
             "collapsed": true,
             "items": [
               {
-                "label": "ICANN Policy for OwnerChange",
-                "link": "/domains/icann/icann-ownerchange/"
+                "label": "Requirements",
+                "link": "/domains/icann/contact-verification/"
               },
               {
-                "label": "Enabling DA-Mode",
-                "link": "/domains/icann/icann-ownerchange/enabling-the-designated-agent-mode-for-your-centralnic-reseller-account/"
+                "label": "Definitions",
+                "link": "/domains/icann/contact-verification/definitions/"
               },
               {
-                "label": "FAQ ICANN OwnerChange",
-                "link": "/domains/icann/icann-ownerchange/frequently-asked-questions/"
+                "label": "AddContact",
+                "link": "/domains/icann/contact-verification/contact-verification-addcontact/"
               },
               {
-                "label": "ICANN OwnerChange Events",
-                "link": "/domains/icann/icann-ownerchange/events/"
+                "label": "ModifyContact",
+                "link": "/domains/icann/contact-verification/contact-verification-modifycontact/"
               },
               {
-                "label": "Mail Templates for ICANN OwnerChange procedure",
-                "link": "/domains/icann/icann-ownerchange/mail-templates/"
+                "label": "ActivateContact",
+                "link": "/domains/icann/contact-verification/contact-verification-activatecontact/"
               },
               {
-                "label": "OwnerChange in DA-Mode",
-                "link": "/domains/icann/icann-ownerchange/ownerchange-procedures-in-designated-agent-mode/"
+                "label": "StatusContact",
+                "link": "/domains/icann/contact-verification/contact-verification-statuscontact/"
               },
               {
-                "label": "OwnerChange in FOA-Mode",
-                "link": "/domains/icann/icann-ownerchange/ownerchange-procedures-in-form-of-authorisation-foa-mode/"
+                "label": "CloneContact",
+                "link": "/domains/icann/contact-verification/contact-verification-clonecontact/"
               },
               {
-                "label": "OwnerChange: Metaregistry API Examples",
-                "link": "/domains/icann/icann-ownerchange/metaregistry-api-examples/"
+                "label": "QueryContactList",
+                "link": "/domains/icann/contact-verification/contact-verification-querycontactlist/"
               },
               {
-                "label": "Reseller Settings",
-                "link": "/domains/icann/icann-ownerchange/reseller-settings/"
-              }
-            ]
-          },
-          {
-            "label": "Ownerchange API Examples",
-            "collapsed": true,
-            "items": [
-              {
-                "label": "OwnerChange: Modify Domain",
-                "link": "/domains/icann/ownerchange-api-examples/"
+                "label": "AddDomain",
+                "link": "/domains/icann/contact-verification/contact-verification-adddomain/"
               },
               {
-                "label": "OwnerChange: ActivateOwnerChange",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-activateownerchange/"
+                "label": "TransferDomain",
+                "link": "/domains/icann/contact-verification/contact-verification-transferdomain/"
               },
               {
-                "label": "OwnerChange: ModifyContact",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-modifycontact/"
+                "label": "ModifyDomain",
+                "link": "/domains/icann/contact-verification/contact-verification-modifydomain/"
               },
               {
-                "label": "OwnerChange: QueryOwnerChangeList",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-queryownerchangelist/"
+                "label": "StatusDomain",
+                "link": "/domains/icann/contact-verification/contact-verification-statusdomain/"
               },
               {
-                "label": "OwnerChange: ResendNotification",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-resendnotification/"
+                "label": "QueryDomainList",
+                "link": "/domains/icann/contact-verification/contact-verification-querydomainlist/"
               },
               {
-                "label": "OwnerChange: StatusContact",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statuscontact/"
+                "label": "ResendNotification",
+                "link": "/domains/icann/contact-verification/contact-verification-resendnotification/"
               },
               {
-                "label": "OwnerChange: StatusDomain",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statusdomain/"
+                "label": "SetProperty: ContactVerification",
+                "link": "/domains/icann/contact-verification/setproperty-contactverification/"
               },
               {
-                "label": "OwnerChange: StatusOwnerChange",
-                "link": "/domains/icann/ownerchange-api-examples/ownerchange-statusownerchange/"
+                "label": "EPP server",
+                "link": "/domains/icann/contact-verification/contact-verification-epp-server/"
+              },
+              {
+                "label": "Email templates",
+                "link": "/domains/icann/contact-verification/contact-verification-email-templates/"
+              },
+              {
+                "label": "FAQ",
+                "link": "/domains/icann/contact-verification/frequently-asked-questions/"
               }
             ]
           },
@@ -1648,74 +1758,6 @@
         ]
       },
       {
-        "label": "Premium Domains",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Premium Domain Handling",
-            "link": "/domains/premium-domains/"
-          },
-          {
-            "label": "Account Premium Domain Settings",
-            "link": "/domains/premium-domains/account-premium-domain-settings/"
-          },
-          {
-            "label": "API Command reference for premium domains",
-            "link": "/domains/premium-domains/api-command-reference-for-premium-domains/"
-          },
-          {
-            "label": "Applications",
-            "link": "/domains/premium-domains/applications/"
-          },
-          {
-            "label": "EPP Command reference for premium domains",
-            "link": "/domains/premium-domains/epp-command-reference-for-premium-domains/"
-          },
-          {
-            "label": "EPP Server Examples",
-            "link": "/domains/premium-domains/epp-server-examples/"
-          },
-          {
-            "label": "Premium domains for OT&E",
-            "link": "/domains/premium-domains/premium-domains-for-otande/"
-          },
-          {
-            "label": "Registry account management system",
-            "link": "/domains/premium-domains/registry-account-management-system/"
-          },
-          {
-            "label": "Reseller Premium Domain System Settings",
-            "link": "/domains/premium-domains/reseller-premium-domain-system-settings/"
-          },
-          {
-            "label": "X-FEE Parameters",
-            "link": "/domains/premium-domains/x-fee-parameters/"
-          }
-        ]
-      },
-      {
-        "label": "Tags And Comments",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Domain Tags",
-            "link": "/domains/tags-and-comments/"
-          },
-          {
-            "label": "Additional Parameters and Responses for Commands",
-            "link": "/domains/tags-and-comments/additional-parameters-and-responses-for-commands/"
-          },
-          {
-            "label": "API Commands for Tag Management",
-            "link": "/domains/tags-and-comments/api-commands-for-tag-management/"
-          },
-          {
-            "label": "Domain Comments",
-            "link": "/domains/tags-and-comments/domain-comments/"
-          }
-        ]
-      },
-      {
         "label": "TLD List",
         "collapsed": true,
         "items": [
@@ -1726,72 +1768,12 @@
         ]
       },
       {
-        "label": "TLDs",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "International Domain Extensions",
-            "link": "/domains/tlds/"
-          }
-        ]
-      },
-      {
-        "label": "TMCH",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Trademark Clearinghouse",
-            "link": "/domains/tmch/"
-          },
-          {
-            "label": "Adding a trademark",
-            "link": "/domains/tmch/adding-a-trademark/"
-          },
-          {
-            "label": "API Commands",
-            "link": "/domains/tmch/api-commands/"
-          },
-          {
-            "label": "Court validated marks",
-            "link": "/domains/tmch/court-validated-marks/"
-          },
-          {
-            "label": "FAQ for ModifyTrademark",
-            "link": "/domains/tmch/faq-for-modifytrademark/"
-          },
-          {
-            "label": "Labels (Domain names)",
-            "link": "/domains/tmch/labels-domain-names/"
-          },
-          {
-            "label": "Marks protected by statute or treaty",
-            "link": "/domains/tmch/marks-protected-by-statute-or-treaty/"
-          },
-          {
-            "label": "Registered trademarks",
-            "link": "/domains/tmch/registered-trademarks/"
-          },
-          {
-            "label": "Required Documents",
-            "link": "/domains/tmch/required-documents/"
-          }
-        ]
-      },
-      {
         "label": "Transfers",
         "collapsed": true,
         "items": [
           {
             "label": "Transfer",
             "link": "/domains/transfers/"
-          },
-          {
-            "label": "GDPR",
-            "link": "/domains/transfers/gdpr/"
-          },
-          {
-            "label": "Transfer Lock",
-            "link": "/domains/transfers/transfer-lock/"
           },
           {
             "label": "Internal Transfers",
@@ -1808,20 +1790,32 @@
             ]
           },
           {
-            "label": "Transfer Response Changelog",
+            "label": "Response Changelog",
             "collapsed": true,
             "items": [
               {
-                "label": "Transfer Response Changelog",
+                "label": "Response Changelog",
                 "link": "/domains/transfers/transfer-response-changelog/"
               },
               {
-                "label": "Events for internal and external transfers",
+                "label": "Changed Events",
                 "link": "/domains/transfers/transfer-response-changelog/events-for-internal-and-external-transfers/"
               }
             ]
+          },
+          {
+            "label": "GDPR",
+            "link": "/domains/transfers/gdpr/"
+          },
+          {
+            "label": "Transfer Lock",
+            "link": "/domains/transfers/transfer-lock/"
           }
         ]
+      },
+      {
+        "label": "TLDs",
+        "link": "/domains/tlds/"
       }
     ]
   },
@@ -1831,12 +1825,8 @@
     "link": "/hosting/",
     "items": [
       {
-        "label": "Hosting",
+        "label": "Hosting Overview",
         "link": "/hosting/"
-      },
-      {
-        "label": "VServer",
-        "link": "/hosting/vserver/"
       },
       {
         "label": "cPanel",
@@ -1945,6 +1935,10 @@
             ]
           }
         ]
+      },
+      {
+        "label": "VServer",
+        "link": "/hosting/vserver/"
       }
     ]
   },
@@ -1954,79 +1948,19 @@
     "link": "/ssl/",
     "items": [
       {
-        "label": "SSL Certificates",
+        "label": "SSL Overview",
         "link": "/ssl/"
       },
       {
-        "label": "SSL 2.0 - Introduction",
+        "label": "New SSL API 2.0",
         "link": "/ssl/ssl-2-0/"
       },
       {
-        "label": "SSL Pricing Adjustments",
-        "link": "/ssl/ssl-pricing-adjustments/"
-      },
-      {
-        "label": "Technical Changes for SAN Certificates",
-        "link": "/ssl/technical-changes-for-san-certificates/"
-      },
-      {
-        "label": "Additional SSL Information",
+        "label": "Introduction - How it works",
         "collapsed": true,
         "items": [
           {
-            "label": "Additional SSL Information",
-            "link": "/ssl/additional-ssl-information/"
-          },
-          {
-            "label": "Allowed prefixes for Approver eMail",
-            "link": "/ssl/additional-ssl-information/allowed-prefixes-for-approver-email/"
-          },
-          {
-            "label": "Allowed prefixes for Approver eMail",
-            "link": "/ssl/additional-ssl-information/crl-extensions-and-ocsp/"
-          },
-          {
-            "label": "DigiCert ICA Rollover",
-            "link": "/ssl/additional-ssl-information/digicert-ica-rollover/"
-          },
-          {
-            "label": "Extended Validation (EV) Certificates Examples",
-            "link": "/ssl/additional-ssl-information/extended-validation-ev-certificates-examples/"
-          },
-          {
-            "label": "New and renamed Events",
-            "link": "/ssl/additional-ssl-information/new-and-renamed-events/"
-          },
-          {
-            "label": "New Public Key Infrastructur for DigiCert SSL Certificates as of December 1st 2017",
-            "link": "/ssl/additional-ssl-information/new-public-key-infrastructur-for-digicert-ssl-certificates-as-of-december-1st-2017/"
-          },
-          {
-            "label": "Renew of SHA1 & SHA2 certificates",
-            "link": "/ssl/additional-ssl-information/renew-of-sha1-and-sha2-certificates/"
-          }
-        ]
-      },
-      {
-        "label": "SSL API Commands",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "SSL API Command Reference",
-            "link": "/ssl/ssl-api-commands/"
-          },
-          {
-            "label": "Workflow Examples",
-            "link": "/ssl/ssl-api-commands/workflow-examples/"
-          }
-        ]
-      },
-      {
-        "label": "SSL Introduction",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "SSL Introduction - How it works",
+            "label": "Introduction - How it works",
             "link": "/ssl/ssl-introduction/"
           },
           {
@@ -2044,22 +1978,82 @@
         ]
       },
       {
+        "label": "API command reference",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "API command reference",
+            "link": "/ssl/ssl-api-commands/"
+          },
+          {
+            "label": "Workflow Examples",
+            "link": "/ssl/ssl-api-commands/workflow-examples/"
+          }
+        ]
+      },
+      {
         "label": "SSL Reissue",
         "collapsed": true,
         "items": [
           {
-            "label": "SSL Certificate Reissue",
+            "label": "SSL Reissue",
             "link": "/ssl/ssl-reissue/"
-          },
-          {
-            "label": "Reissue a SSL Certificate Step by Step via API",
-            "link": "/ssl/ssl-reissue/reissue-a-ssl-certificate-step-by-step-via-api/"
           },
           {
             "label": "The Reissue Process",
             "link": "/ssl/ssl-reissue/the-reissue-process/"
+          },
+          {
+            "label": "SSL Reissue via API",
+            "link": "/ssl/ssl-reissue/reissue-a-ssl-certificate-step-by-step-via-api/"
           }
         ]
+      },
+      {
+        "label": "Technical Changes for SAN Certificates",
+        "link": "/ssl/technical-changes-for-san-certificates/"
+      },
+      {
+        "label": "Additional SSL Information",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Additional SSL Information",
+            "link": "/ssl/additional-ssl-information/"
+          },
+          {
+            "label": "Renewal Methods",
+            "link": "/ssl/additional-ssl-information/renew-of-sha1-and-sha2-certificates/"
+          },
+          {
+            "label": "Extended Validation",
+            "link": "/ssl/additional-ssl-information/extended-validation-ev-certificates-examples/"
+          },
+          {
+            "label": "Approver E-Mail Address",
+            "link": "/ssl/additional-ssl-information/allowed-prefixes-for-approver-email/"
+          },
+          {
+            "label": "New PKI for Symantec",
+            "link": "/ssl/additional-ssl-information/new-public-key-infrastructur-for-digicert-ssl-certificates-as-of-december-1st-2017/"
+          },
+          {
+            "label": "Events for Certificates",
+            "link": "/ssl/additional-ssl-information/new-and-renamed-events/"
+          },
+          {
+            "label": "DigiCert ICA Rollover",
+            "link": "/ssl/additional-ssl-information/digicert-ica-rollover/"
+          },
+          {
+            "label": "Allowed prefixes for Approver eMail",
+            "link": "/ssl/additional-ssl-information/crl-extensions-and-ocsp/"
+          }
+        ]
+      },
+      {
+        "label": "SSL Pricing Adjustments",
+        "link": "/ssl/ssl-pricing-adjustments/"
       },
       {
         "label": "SSL Validation Methods",
@@ -2070,28 +2064,28 @@
             "link": "/ssl/ssl-validation-methods/"
           },
           {
-            "label": "Change of Validation Method",
-            "link": "/ssl/ssl-validation-methods/change-of-validation-method/"
+            "label": "DigiCert FILE",
+            "link": "/ssl/ssl-validation-methods/validation-method-digicert-file/"
+          },
+          {
+            "label": "DigiCert DNS",
+            "link": "/ssl/ssl-validation-methods/validation-method-digicert-dns/"
           },
           {
             "label": "Sectigo: Hash Generation",
             "link": "/ssl/ssl-validation-methods/sectigo-hash-generation/"
           },
           {
-            "label": "Validation Method: DigiCert DNS",
-            "link": "/ssl/ssl-validation-methods/validation-method-digicert-dns/"
+            "label": "Sectigo FILE",
+            "link": "/ssl/ssl-validation-methods/validation-method-sectigo-file/"
           },
           {
-            "label": "Validation Method: DigiCert FILE",
-            "link": "/ssl/ssl-validation-methods/validation-method-digicert-file/"
-          },
-          {
-            "label": "Validation Method: Sectigo DNS",
+            "label": "Sectigo DNS",
             "link": "/ssl/ssl-validation-methods/validation-method-sectigo-dns/"
           },
           {
-            "label": "Validation Method: Sectigo FILE",
-            "link": "/ssl/ssl-validation-methods/validation-method-sectigo-file/"
+            "label": "Change of Validation Method",
+            "link": "/ssl/ssl-validation-methods/change-of-validation-method/"
           }
         ]
       }
@@ -2103,12 +2097,8 @@
     "link": "/dns/",
     "items": [
       {
-        "label": "DNS",
+        "label": "DNS Overview",
         "link": "/dns/"
-      },
-      {
-        "label": "DNSSEC",
-        "link": "/dns/dnssec/"
       },
       {
         "label": "KeyDNS",
@@ -2119,32 +2109,32 @@
             "link": "/dns/keydns/"
           },
           {
-            "label": "CAA records",
-            "link": "/dns/keydns/caa-records/"
+            "label": "KeyDNS Upgrade to Anycast",
+            "link": "/dns/keydns/keydns-upgrade-to-anycast/"
+          },
+          {
+            "label": "DNS Zone Xfer Infrastructure",
+            "link": "/dns/keydns/dns-zone-xfer-infrastructure/"
           },
           {
             "label": "Command reference",
             "link": "/dns/keydns/command-reference/"
           },
           {
-            "label": "DNS Zone AXFR Infrastructure",
-            "link": "/dns/keydns/dns-zone-xfer-infrastructure/"
-          },
-          {
             "label": "Enable DNSSEC for KeyDNS zones",
             "link": "/dns/keydns/enable-dnssec-for-keydns-zones/"
           },
           {
-            "label": "FAQs & Troubleshooting",
-            "link": "/dns/keydns/faqs-and-troubleshooting/"
-          },
-          {
-            "label": "KeyDNS Upgrades",
-            "link": "/dns/keydns/keydns-upgrade-to-anycast/"
+            "label": "CAA records",
+            "link": "/dns/keydns/caa-records/"
           },
           {
             "label": "Resource records",
             "link": "/dns/keydns/resource-records/"
+          },
+          {
+            "label": "FAQs & Troubleshooting",
+            "link": "/dns/keydns/faqs-and-troubleshooting/"
           },
           {
             "label": "The Anycast Infrastructure",
@@ -2165,18 +2155,22 @@
             "link": "/dns/usage-scenarios/"
           },
           {
-            "label": "Example: Using KeyDNS as Primary and a own Nameserver as Secondary",
-            "link": "/dns/usage-scenarios/example-using-keydns-as-primary-and-a-own-nameserver-as-secondary/"
+            "label": "Example: No own Nameserver",
+            "link": "/dns/usage-scenarios/example-you-have-no-own-nameserver/"
           },
           {
-            "label": "Example: You have an own Master Nameserver",
+            "label": "Example: Own Master Nameserver",
             "link": "/dns/usage-scenarios/example-you-have-an-own-master-nameserver/"
           },
           {
-            "label": "Example: You have no own Nameserver",
-            "link": "/dns/usage-scenarios/example-you-have-no-own-nameserver/"
+            "label": "Example: KeyDNS as primary, Own as secondary nameserver",
+            "link": "/dns/usage-scenarios/example-using-keydns-as-primary-and-a-own-nameserver-as-secondary/"
           }
         ]
+      },
+      {
+        "label": "DNSSEC",
+        "link": "/dns/dnssec/"
       }
     ]
   },
@@ -2186,44 +2180,84 @@
     "link": "/services/",
     "items": [
       {
-        "label": "Additional Services",
+        "label": "Additional Services Overview",
         "link": "/services/"
-      },
-      {
-        "label": ".AU Validation Service for Natural Persons",
-        "link": "/services/au-validation-service-for-natural-persons/"
-      },
-      {
-        "label": "CentralNic Reseller Whois Privacy Service",
-        "link": "/services/whois-privacy/"
-      },
-      {
-        "label": "DomainParking",
-        "link": "/services/domainparking/"
-      },
-      {
-        "label": "DomainPinLock",
-        "link": "/services/domainpinlock/"
       },
       {
         "label": "Expire Auction",
         "link": "/services/expire-auction/"
       },
       {
-        "label": "RDAP",
-        "link": "/services/rdap/"
-      },
-      {
-        "label": "Refunded AGP (Add Grace Period) Deletes",
-        "link": "/services/paid-services/"
-      },
-      {
         "label": "RegistryLock",
         "link": "/services/registrylock/"
       },
       {
-        "label": "SMS Gateway",
+        "label": "DomainPinLock",
+        "link": "/services/domainpinlock/"
+      },
+      {
+        "label": "DomainParking",
+        "link": "/services/domainparking/"
+      },
+      {
+        "label": "SMS",
         "link": "/services/sms/"
+      },
+      {
+        "label": "WhoIs Privacy",
+        "link": "/services/whois-privacy/"
+      },
+      {
+        "label": ".AU Validation Service for Natural Persons",
+        "link": "/services/au-validation-service-for-natural-persons/"
+      },
+      {
+        "label": "Plugins",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Plugins",
+            "link": "/services/plugins/"
+          },
+          {
+            "label": "WHMCS Module",
+            "link": "/services/plugins/whmcs/"
+          }
+        ]
+      },
+      {
+        "label": "Brand Protection",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Brand Protection",
+            "link": "/services/brand-protection/"
+          },
+          {
+            "label": "DPML and DPML Plus service of Donuts",
+            "link": "/services/brand-protection/dpml-and-dpml-plus-service-of-donuts/"
+          },
+          {
+            "label": "MPML service of Minds + Machines",
+            "link": "/services/brand-protection/mpml-service-of-minds-machines/"
+          },
+          {
+            "label": "AdultBlock and AdultBlock+ service",
+            "link": "/services/brand-protection/adultblock-and-adultblock-service/"
+          },
+          {
+            "label": "GlobalBlock and GlobalBlock+ service",
+            "link": "/services/brand-protection/globalblock-and-globalblock-plus-service/"
+          }
+        ]
+      },
+      {
+        "label": "RDAP",
+        "link": "/services/rdap/"
+      },
+      {
+        "label": "Paid Services",
+        "link": "/services/paid-services/"
       },
       {
         "label": "ACL",
@@ -2238,11 +2272,29 @@
             "link": "/services/acl/acl-users-and-groups/"
           },
           {
+            "label": "ACL Permissions",
+            "collapsed": true,
+            "items": [
+              {
+                "label": "ACL Permissions",
+                "link": "/services/acl/acl-permissions/"
+              },
+              {
+                "label": "List of Locations",
+                "link": "/services/acl/acl-permissions/list-of-locations/"
+              },
+              {
+                "label": "List of Rights",
+                "link": "/services/acl/acl-permissions/list-of-rights/"
+              }
+            ]
+          },
+          {
             "label": "ACL API Commands",
             "collapsed": true,
             "items": [
               {
-                "label": "List of API commands associated to ACL Management",
+                "label": "ACL API Commands",
                 "link": "/services/acl/acl-api-commands/"
               },
               {
@@ -2250,32 +2302,16 @@
                 "link": "/services/acl/acl-api-commands/addacl-example/"
               },
               {
-                "label": "AddUser - Group Example",
-                "link": "/services/acl/acl-api-commands/adduser-group-example/"
-              },
-              {
-                "label": "AddUser - User Example",
-                "link": "/services/acl/acl-api-commands/adduser-user-example/"
-              },
-              {
                 "label": "DeleteAcl Example",
                 "link": "/services/acl/acl-api-commands/deleteacl-example/"
-              },
-              {
-                "label": "DeleteUser Example",
-                "link": "/services/acl/acl-api-commands/deleteuser-example/"
               },
               {
                 "label": "ModifyAcl Example",
                 "link": "/services/acl/acl-api-commands/modifyacl-example/"
               },
               {
-                "label": "ModifyUser - Group Example",
-                "link": "/services/acl/acl-api-commands/modifyuser-group-example/"
-              },
-              {
-                "label": "ModifyUser - User Example",
-                "link": "/services/acl/acl-api-commands/modifyuser-user-example/"
+                "label": "StatusAcl Example",
+                "link": "/services/acl/acl-api-commands/statusacl-example/"
               },
               {
                 "label": "QueryAclList - Group Example",
@@ -2286,42 +2322,40 @@
                 "link": "/services/acl/acl-api-commands/queryacllist-user-example/"
               },
               {
-                "label": "QueryUserList - Group Example",
-                "link": "/services/acl/acl-api-commands/queryuserlist-group-example/"
+                "label": "AddUser - User Example",
+                "link": "/services/acl/acl-api-commands/adduser-user-example/"
               },
               {
-                "label": "QueryUserList - User Example",
-                "link": "/services/acl/acl-api-commands/queryuserlist-user-example/"
+                "label": "AddUser - Group Example",
+                "link": "/services/acl/acl-api-commands/adduser-group-example/"
               },
               {
-                "label": "StatusAcl Example",
-                "link": "/services/acl/acl-api-commands/statusacl-example/"
+                "label": "ModifyUser - User Example",
+                "link": "/services/acl/acl-api-commands/modifyuser-user-example/"
+              },
+              {
+                "label": "ModifyUser - Group Example",
+                "link": "/services/acl/acl-api-commands/modifyuser-group-example/"
+              },
+              {
+                "label": "DeleteUser Example",
+                "link": "/services/acl/acl-api-commands/deleteuser-example/"
+              },
+              {
+                "label": "StatusUser - User Example",
+                "link": "/services/acl/acl-api-commands/statususer-user-example/"
               },
               {
                 "label": "StatusUser - Group Example",
                 "link": "/services/acl/acl-api-commands/statususer-group-example/"
               },
               {
-                "label": "StatusUser - User Example",
-                "link": "/services/acl/acl-api-commands/statususer-user-example/"
-              }
-            ]
-          },
-          {
-            "label": "ACL Permissions",
-            "collapsed": true,
-            "items": [
-              {
-                "label": "Permissions for ACL Users & Groups",
-                "link": "/services/acl/acl-permissions/"
+                "label": "QueryUserList - User Example",
+                "link": "/services/acl/acl-api-commands/queryuserlist-user-example/"
               },
               {
-                "label": "List of Locations",
-                "link": "/services/acl/acl-permissions/list-of-locations/"
-              },
-              {
-                "label": "List of Rights",
-                "link": "/services/acl/acl-permissions/list-of-rights/"
+                "label": "QueryUserList - Group Example",
+                "link": "/services/acl/acl-api-commands/queryuserlist-group-example/"
               }
             ]
           }
@@ -2336,28 +2370,12 @@
             "link": "/services/aftermarket/"
           },
           {
-            "label": "Aftermarket Account Management",
-            "link": "/services/aftermarket/aftermarket-account-management/"
-          },
-          {
-            "label": "Aftermarket Events",
-            "link": "/services/aftermarket/aftermarket-events/"
-          },
-          {
-            "label": "Aftermarket Introduction - How it works",
+            "label": "Introduction - How it works",
             "link": "/services/aftermarket/introduction-how-it-works/"
           },
           {
-            "label": "API Commands",
-            "link": "/services/aftermarket/api-commands/"
-          },
-          {
-            "label": "Buying a Domain",
-            "link": "/services/aftermarket/buying-a-domain/"
-          },
-          {
-            "label": "FAQ Aftermarket",
-            "link": "/services/aftermarket/frequently-asked-questions/"
+            "label": "Account Management",
+            "link": "/services/aftermarket/aftermarket-account-management/"
           },
           {
             "label": "List Domains for sale",
@@ -2366,46 +2384,22 @@
           {
             "label": "The Selling Process",
             "link": "/services/aftermarket/the-selling-process/"
-          }
-        ]
-      },
-      {
-        "label": "Brand Protection",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Secure a brand name for multiple TLDs",
-            "link": "/services/brand-protection/"
           },
           {
-            "label": "AdultBlock and AdultBlock+ service",
-            "link": "/services/brand-protection/adultblock-and-adultblock-service/"
+            "label": "Buying a Domain",
+            "link": "/services/aftermarket/buying-a-domain/"
           },
           {
-            "label": "DPML and DPML Plus service of Donuts",
-            "link": "/services/brand-protection/dpml-and-dpml-plus-service-of-donuts/"
+            "label": "Aftermarket Events",
+            "link": "/services/aftermarket/aftermarket-events/"
           },
           {
-            "label": "GlobalBlock and GlobalBlock+ service",
-            "link": "/services/brand-protection/globalblock-and-globalblock-plus-service/"
+            "label": "Frequently asked questions",
+            "link": "/services/aftermarket/frequently-asked-questions/"
           },
           {
-            "label": "MPML service of Minds + Machines",
-            "link": "/services/brand-protection/mpml-service-of-minds-machines/"
-          }
-        ]
-      },
-      {
-        "label": "Plugins",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Plugins",
-            "link": "/services/plugins/"
-          },
-          {
-            "label": "WHMCS Module",
-            "link": "/services/plugins/whmcs/"
+            "label": "API Commands",
+            "link": "/services/aftermarket/api-commands/"
           }
         ]
       }
@@ -2421,53 +2415,15 @@
         "link": "/help/"
       },
       {
-        "label": "E-mail signing",
-        "link": "/help/email-signing/"
-      },
-      {
-        "label": "Glossary of terms",
-        "link": "/help/glossary/"
-      },
-      {
-        "label": "Newsletters, Maintenances, Status",
-        "link": "/help/newsletters-maintenances-status/"
-      },
-      {
         "label": "Sanction Screening",
         "link": "/help/sanction-screening/"
-      },
-      {
-        "label": "Sitemap",
-        "link": "/help/sitemap/"
-      },
-      {
-        "label": "Videos",
-        "link": "/help/videos/"
-      },
-      {
-        "label": "About",
-        "collapsed": true,
-        "items": [
-          {
-            "label": "Imprint",
-            "link": "/help/about/"
-          },
-          {
-            "label": "Bank Accounts",
-            "link": "/help/about/bank-accounts/"
-          },
-          {
-            "label": "Disclaimer",
-            "link": "/help/about/disclaimer/"
-          }
-        ]
       },
       {
         "label": "Account Security",
         "collapsed": true,
         "items": [
           {
-            "label": "Password Policy",
+            "label": "Account Security",
             "link": "/help/account-security/"
           },
           {
@@ -2489,12 +2445,8 @@
             "link": "/help/first-steps/"
           },
           {
-            "label": "General Guide or \"where to find what?\"",
+            "label": "Navigation",
             "link": "/help/first-steps/general-guide-or-where-to-find-what/"
-          },
-          {
-            "label": "Payment Settings",
-            "link": "/help/first-steps/payment-settings/"
           },
           {
             "label": "Registrar Properties",
@@ -2503,8 +2455,20 @@
           {
             "label": "Subreseller Settings",
             "link": "/help/first-steps/subreseller-settings/"
+          },
+          {
+            "label": "Payment Settings",
+            "link": "/help/first-steps/payment-settings/"
           }
         ]
+      },
+      {
+        "label": "Glossary",
+        "link": "/help/glossary/"
+      },
+      {
+        "label": "Email Signing",
+        "link": "/help/email-signing/"
       },
       {
         "label": "GDPR",
@@ -2515,11 +2479,7 @@
             "link": "/help/gdpr/"
           },
           {
-            "label": "Contact to an undisclosed entity",
-            "link": "/help/gdpr/contact-to-an-undisclosed-entity/"
-          },
-          {
-            "label": "Frequently Asked Questions",
+            "label": "FAQ",
             "link": "/help/gdpr/frequently-asked-questions/"
           },
           {
@@ -2531,10 +2491,44 @@
             "link": "/help/gdpr/reduced-publication-and-transmission-of-whois-data/"
           },
           {
+            "label": "Contact to an undisclosed entity",
+            "link": "/help/gdpr/contact-to-an-undisclosed-entity/"
+          },
+          {
             "label": "Transfers from and to other Registrars",
             "link": "/help/gdpr/transfers-from-and-to-other-registrars/"
           }
         ]
+      },
+      {
+        "label": "Sitemap",
+        "link": "/help/sitemap/"
+      },
+      {
+        "label": "About",
+        "collapsed": true,
+        "items": [
+          {
+            "label": "Imprint",
+            "link": "/help/about/"
+          },
+          {
+            "label": "Bank data",
+            "link": "/help/about/bank-accounts/"
+          },
+          {
+            "label": "Disclaimer",
+            "link": "/help/about/disclaimer/"
+          }
+        ]
+      },
+      {
+        "label": "Videos",
+        "link": "/help/videos/"
+      },
+      {
+        "label": "Newsletters, Maintenances, Status",
+        "link": "/help/newsletters-maintenances-status/"
       }
     ]
   }

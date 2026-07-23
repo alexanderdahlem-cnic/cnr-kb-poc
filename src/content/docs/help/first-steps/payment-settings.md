@@ -1,5 +1,7 @@
 ---
 title: "Payment Settings"
+sidebar:
+  order: 2020
 ---
 
 ## Application Auto Payment
