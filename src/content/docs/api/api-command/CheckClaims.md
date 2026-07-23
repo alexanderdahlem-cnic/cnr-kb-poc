@@ -6,7 +6,7 @@ description: "CentralNic Reseller API Command Reference  ➤ Domain ➤ CheckCla
 The CheckClaims Command is used to determine whether or not there are any matching trademarks, in the specified launch phase, for each domain name passed in the command. If there is at least one matching trademark that exists for the domain name, a "claim key", "claim url" and "claim validator id" property is returned. You can specify a maximum of 32 domains.
 
 <div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
+<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
 
 ## Required Parameters
 

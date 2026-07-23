@@ -6,7 +6,7 @@ description: "CentralNic Reseller API Command Reference  ➤ Finance ➤ QueryPr
 QueryPriceHistoryList can be used to show the history of prices for the own account or for subreseller accounts. This is decided by the usage of the registrar/pricescale parameter. If no registrar/pricescale parameter is given, it will show the prices for the own account. Otherwise the prices of the subreseller or pricescale will be shown. Also registrar=\* and status=pending can be used to show all upcoming changes for all pricescales and subresellers at once. QueryPriceHistoryList supports also the usage of zone=\* which will show all zones and services at once.
 
 <div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
+<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
 
 ## Required Parameters
 

@@ -6,7 +6,7 @@ description: "CentralNic Reseller API Command Reference  âž¤ Hosting - cPanel âž
 This command is used to query a specific type of object and return all the information stored on it. More customisation are possible with the use of the optional parameters. Such as returning multiple results, setting further search criteria or sorting can be done. For example, in a single request, the object parameter can accept one or multiple values. Please see the below attributes section to understand the combination of required and optional parameters.
 
 <div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
+<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
 
 ## Required Parameters
 

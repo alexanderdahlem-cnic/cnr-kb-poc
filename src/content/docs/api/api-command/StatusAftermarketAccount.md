@@ -6,7 +6,7 @@ description: "CentralNic Reseller API Command Reference  ➤ Aftermarket ➤ Sta
 StatusAftermarketAccount shows the total number of domains currently listed, Account Key, Description, Aftermarket Provider of an Aftermarket Account. Furthermore it shows if the Login to the Aftermarket Provider was successful (1) or unsuccessful (0). The Login will be shown as unsuccessful if the Account Key has been changed, for example directly at the Aftermarket Provider.
 
 <div class="gw-list"><span class="gw-list__label">Possible Gateways</span>
-<div class="gw-badges"><span class="gw-badge gw-mreg">MREG</span><span class="gw-badge gw-https">HTTPS</span><span class="gw-badge gw-soap">SOAP</span><span class="gw-badge gw-xmlrpc">XML-RPC</span><span class="gw-badge gw-smtp">SMTP</span></div></div>
+<div class="gw-badges"><a class="gw-badge gw-mreg" href="../../connecting/centralnic-reseller-metaregistry/">MREG</a><a class="gw-badge gw-https" href="../../connecting/hypertext-transfer-protocol-socket/">HTTPS</a><a class="gw-badge gw-soap" href="../../connecting/simple-object-access-protocol/">SOAP</a><a class="gw-badge gw-xmlrpc" href="../../connecting/extensible-markup-language-remote-procedure-call/">XML-RPC</a><a class="gw-badge gw-smtp" href="../../connecting/api-requests-via-e-mail-smtp/">SMTP</a></div></div>
 
 ## Required Parameters
 

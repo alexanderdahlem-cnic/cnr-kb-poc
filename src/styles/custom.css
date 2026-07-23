@@ -88,6 +88,14 @@
   color: #fff;
   border: 1px solid transparent;
   white-space: nowrap;
+  text-decoration: none;
+  transition: filter 0.12s ease, transform 0.12s ease;
+}
+a.gw-badge:hover,
+a.gw-badge:focus-visible {
+  color: #fff;
+  filter: brightness(1.12);
+  transform: translateY(-1px);
 }
 .gw-mreg   { background: #7c3aed; }              /* MREG   – violet */
 .gw-https  { background: #16a34a; }              /* HTTPS  – green  */

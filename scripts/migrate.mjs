@@ -275,7 +275,13 @@ function convert(bladePath) {
     $el.find('li').each((_, li) => {
       const type = ($(li).attr('class') || 'default').trim().split(/\s+/)[0] || 'default';
       const label = $(li).text().replace(/\s+/g, ' ').trim();
-      if (label) badges.push(`<span class="gw-badge gw-${escapeHtml(type)}">${escapeHtml(label)}</span>`);
+      if (!label) return;
+      const href = $(li).find('a[href]').first().attr('href'); // already rewritten
+      badges.push(
+        href
+          ? `<a class="gw-badge gw-${escapeHtml(type)}" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`
+          : `<span class="gw-badge gw-${escapeHtml(type)}">${escapeHtml(label)}</span>`
+      );
     });
     if (!badges.length) return;
     const idx = apiBlocks.length;
