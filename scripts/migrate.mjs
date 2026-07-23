@@ -1,13 +1,20 @@
 /**
  * CNR KB migration: legacy Laravel Blade (HTML) -> Starlight Markdown.
  *
- * POC scope: migrates the editorial content sections listed in INCLUDE.
- * Skips the 1298 data-driven TLD pages (domains/tlds) — those are a
- * phase-2, generated-from-data concern.
+ * Migrates the editorial content sections (INCLUDE) plus TLD pages
+ * (domains/tlds). For the phase-1 checkpoint only a representative sample of
+ * TLDs is migrated (TLD_SAMPLE); pass MIGRATE_ALL_TLDS=1 to pull every TLD.
+ *
+ * Presentation is emitted as clean Markdown container directives
+ * (:::command / :::response / :::exception / :::gateways / :::commandlist /
+ * :::tldnav) handled by src/plugins/kb-directives.js — the `.md` stays clean.
+ * Images are copied into public/media and referenced locally.
  *
  * Usage: node scripts/migrate.mjs /path/to/gcus-cnr-kb-static
  */
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
+import {
+  readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync, copyFileSync,
+} from 'node:fs';
 import { join, dirname, relative, basename, posix } from 'node:path';
 import * as cheerio from 'cheerio';
 import TurndownService from 'turndown';
@@ -19,27 +26,41 @@ if (!SRC_REPO) {
   process.exit(1);
 }
 const KB_ROOT = join(SRC_REPO, 'resources/views/cnr/kb');
+const SHARED_ROOT = join(SRC_REPO, 'resources/views/cnr/_shared');
+const PUBLIC_SRC = join(SRC_REPO, 'public');
 const OUT_ROOT = join(process.cwd(), 'src/content/docs');
+const MEDIA_OUT = join(process.cwd(), 'public/media');
 
-// Sections to migrate for the POC. Everything else (esp. domains/tlds) skipped.
+// GitHub Pages project-site base (matches astro.config.mjs `base`). Media is
+// referenced root-absolute WITH the base so it resolves under the sub-path.
+const BASE = '/cnr-kb-poc';
+
+// Sections to migrate. `domains/tlds` is handled specially (see TLD section).
 const INCLUDE = ['help', 'dns', 'ssl', 'services', 'domains', 'api', 'hosting'];
-// Within domains, skip the mass TLD pages.
-const SKIP_DIRS = ['domains/tlds'];
+const TLDS_REL = 'domains/tlds';
 
-// Any host serving the legacy KB — used as the fallback target for links to
-// pages we did NOT migrate (so there are no dead internal links in the POC).
+// Phase-1 checkpoint: migrate only these representative TLDs (filenames without
+// .blade.php). Covers gTLD/new-gTLD/ccTLD, 2nd-level (`_`->`.`), pages with
+// Exception boxes + NIS2 + IDN + country flags. Set MIGRATE_ALL_TLDS=1 to pull all.
+const TLD_SAMPLE = [
+  'com', 'net', 'org', 'info', 'careers', 'academy', 'shop', 'online', 'xyz',
+  'app', 'dev', 'io', 'ai', 'me', 'tv', 'co', 'de', 'sk', 'us', 'eu', 'fr',
+  'nl', 'at', 'ch', 'es', 'it', 'pt', 'ca', 'ac', 'uk', 'co_uk', 'com_pt',
+];
+const MIGRATE_ALL_TLDS = process.env.MIGRATE_ALL_TLDS === '1';
+
 const LEGACY_ORIGIN = 'https://kb.centralnicreseller.com';
 
 // old-URL-path -> new-slug, populated before conversion (see run section).
 let LINK_MAP = new Map();
+// lowercased legacy path (no .html) -> { order, label } from the legacy nav.
+let NAV_ORDER = new Map();
 
 const td = new TurndownService({
   headingStyle: 'atx',
   codeBlockStyle: 'fenced',
   bulletListMarker: '-',
 });
-// GFM plugin: converts <table> to Markdown pipe tables, plus strikethrough etc.
-// (Header promotion for header-less legacy tables is done in cheerio, below.)
 td.use(gfm);
 td.addRule('stripAnchors', {
   filter: (node) => node.nodeName === 'A' && !node.getAttribute('href'),
@@ -57,7 +78,6 @@ function listBladeFiles(dir) {
   return out;
 }
 
-/** Decode HTML entities (&quot; &amp; &#039; …) to their real characters. */
 function decodeEntities(s) {
   if (!s || !s.includes('&')) return s;
   return cheerio.load(`<x>${s}</x>`)('x').text();
@@ -69,22 +89,20 @@ function extractParam(header, key) {
   return m ? decodeEntities(m[1].replace(/\\'/g, "'")).trim() : '';
 }
 
-function escapeHtml(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
-
 function frontmatterEscape(s) {
-  return '"' + String(s).replace(/"/g, '\\"') + '"';
+  return '"' + String(s).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
 }
 
-/**
- * Make a path segment URL-safe. Legacy filenames contain spaces and special
- * chars (e.g. "AddHosting - AddOnDomain") that produce broken (%20) slugs.
- * We collapse anything non-alphanumeric to a single hyphen (keeping case).
- */
+/** github-slugger-compatible heading id (matches Starlight autolink slugs). */
+function slugifyHeading(s) {
+  return String(s)
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
 function sanitizeSegment(s) {
   if (s === 'index') return s;
   return (
@@ -97,12 +115,18 @@ function sanitizeSegment(s) {
   );
 }
 
+const isTldBlade = (bladePath) =>
+  relative(KB_ROOT, bladePath).replace(/\\/g, '/').startsWith(TLDS_REL + '/');
+
 /** Map legacy blade path -> Starlight markdown output path (sanitised slugs). */
 function outPathFor(bladePath) {
   let rel = relative(KB_ROOT, bladePath).replace(/\.blade\.php$/, '');
-  // A section landing file (e.g. "help") becomes "help/index" so the
-  // autogenerated sidebar directory has a proper index page. (Uses the
-  // original path for the directory-existence check.)
+  // TLD pages: keep the legacy slug, mapping `_` -> `.` (com_sg -> com.sg) and
+  // never hyphen-sanitising, so /domains/tlds/com.sg matches the old URL.
+  if (isTldBlade(bladePath)) {
+    const tld = basename(rel).replace(/_/g, '.');
+    return join(OUT_ROOT, TLDS_REL, tld + '.md');
+  }
   const dirExistsForLeaf = (() => {
     try {
       return statSync(join(KB_ROOT, rel)).isDirectory();
@@ -115,47 +139,35 @@ function outPathFor(bladePath) {
   return join(OUT_ROOT, safe + '.md');
 }
 
-/** Legacy URL path a blade file was served at, e.g. '/api/api-command/AddCertificate'. */
 function oldPathFor(bladePath) {
-  return '/' + relative(KB_ROOT, bladePath).replace(/\.blade\.php$/, '');
+  return '/' + relative(KB_ROOT, bladePath).replace(/\.blade\.php$/, '').replace(/\\/g, '/');
 }
 
-/**
- * New Starlight route slug for a blade file, e.g. 'api/api-command/addcertificate'.
- * Astro lowercases route slugs, so we lowercase here too — otherwise links keep
- * the original file casing and 404 on case-sensitive hosts (GitHub Pages). '' = home.
- */
 function slugFor(bladePath) {
   return relative(OUT_ROOT, outPathFor(bladePath))
+    .replace(/\\/g, '/')
     .replace(/\.md$/, '')
     .replace(/\/index$/, '')
     .replace(/^index$/, '')
     .toLowerCase();
 }
 
-/**
- * Resolve a legacy href against the current page and rewrite it:
- *  - migrated target -> a correct RELATIVE link to the new route (base-independent)
- *  - un-migrated internal target -> absolute link to the legacy origin (no dead links)
- *  - external / mailto / same-page anchor -> left as-is
- */
 function resolveLink(pageOld, pageSlug, href) {
   if (!href) return href;
   if (/^(https?:|mailto:|tel:|data:)/i.test(href)) return href;
-  if (href.startsWith('#')) return href; // same-page anchor
+  if (href.startsWith('#')) return href;
 
   const hashIdx = href.indexOf('#');
   const frag = hashIdx >= 0 ? href.slice(hashIdx) : '';
   let pathPart = (hashIdx >= 0 ? href.slice(0, hashIdx) : href).split('?')[0];
   pathPart = pathPart.replace(/index\.html$/i, '').replace(/\.html$/i, '');
 
-  // Absolute legacy path this link points to.
   let abs = pathPart.startsWith('/')
     ? posix.normalize(pathPart)
     : posix.normalize(posix.join(posix.dirname(pageOld), pathPart || '.'));
   abs = abs.replace(/\/+$/, '') || '/';
 
-  const candidates = [abs];
+  const candidates = [abs, abs.toLowerCase()];
   if (abs.endsWith('/index')) candidates.push(abs.replace(/\/index$/, ''));
   if (abs === '/') candidates.push('/index');
 
@@ -164,176 +176,165 @@ function resolveLink(pageOld, pageSlug, href) {
       const targetSlug = LINK_MAP.get(c);
       let rel = posix.relative('/' + pageSlug, '/' + targetSlug);
       if (rel === '') rel = '.';
-      return rel.replace(/\/?$/, '/') + frag; // trailing slash for Starlight routes
+      return rel.replace(/\/?$/, '/') + frag;
     }
   }
-  // Not migrated -> keep it working by pointing at the legacy origin.
   return LEGACY_ORIGIN + abs + frag;
 }
 
+// --- media self-hosting ---------------------------------------------------
+const copiedMedia = new Set();
+/** Copy a legacy public asset into public/media and return its local URL, or null. */
+function localizeImg(src) {
+  if (!src) return null;
+  const m = src.match(/(imagetypes\/|images\/|dist\/img\/|files\/)(.+)$/);
+  if (!m) return null;
+  const rel = (m[1] + m[2]).split('?')[0].split('#')[0];
+  const from = join(PUBLIC_SRC, rel);
+  if (!existsSync(from)) return null;
+  if (!copiedMedia.has(rel)) {
+    const to = join(MEDIA_OUT, rel);
+    mkdirSync(dirname(to), { recursive: true });
+    copyFileSync(from, to);
+    copiedMedia.add(rel);
+  }
+  return `${BASE}/media/${rel}`;
+}
+
+// --- directive builders ---------------------------------------------------
+const kbBlocks = [];
+function pushBlock(md) {
+  const idx = kbBlocks.length;
+  kbBlocks.push(md);
+  return `\n\nKBBLOCK${idx}KBEND\n\n`;
+}
+function directiveBox(kind, label, codeText) {
+  const safeLabel = String(label).replace(/[\[\]]/g, '').trim() || kind;
+  const code = String(codeText).replace(/\r/g, '').replace(/\n{3,}/g, '\n\n').replace(/^\n+|\n+$/g, '');
+  return `:::${kind}[${safeLabel}]\n\n\`\`\`text\n${code}\n\`\`\`\n\n:::`;
+}
+function directiveLinkList(name, label, links) {
+  // links: [{href, text}]
+  const items = links.map((l) => `- [${l.text.replace(/[\[\]]/g, '')}](${l.href})`).join('\n');
+  const head = label ? `:::${name}[${label.replace(/[\[\]]/g, '')}]` : `:::${name}`;
+  return `${head}\n\n${items}\n\n:::`;
+}
+
+/**
+ * Replace .cmd / .cmd.exception / .rsp / .gateways inside `scope` with directive
+ * placeholders. Links inside were already rewritten. Returns nothing (mutates).
+ */
+function extractApiBlocks($, scope, pageOld, pageSlug) {
+  scope.find('.cmd, .rsp').each((_, el) => {
+    const $el = $(el);
+    const kind = $el.hasClass('rsp') ? 'response' : $el.hasClass('exception') ? 'exception' : 'command';
+    const defLabel = kind === 'response' ? 'Response' : kind === 'exception' ? 'Exception' : 'Command';
+    const labelEl = $el.find('strong, h1, h2, h3, h4, h5').first();
+    const label = (labelEl.text() || defLabel).trim() || defLabel;
+    const codeEl = $el.find('pre code').first().length ? $el.find('pre code').first() : $el.find('pre').first();
+    const code = (codeEl.length ? codeEl.text() : $el.text()) || '';
+    $el.replaceWith(pushBlock(directiveBox(kind, label, code)));
+  });
+
+  scope.find('.gateways').each((_, el) => {
+    const $el = $(el);
+    const links = [];
+    $el.find('li').each((_, li) => {
+      const a = $(li).find('a[href]').first();
+      const text = $(li).text().replace(/\s+/g, ' ').trim();
+      if (!text) return;
+      links.push({ href: a.attr('href') || '#', text });
+    });
+    if (!links.length) {
+      $el.remove();
+      return;
+    }
+    $el.replaceWith(pushBlock(directiveLinkList('gateways', 'Possible Gateways', links)));
+  });
+}
+
+/** Build a :::commandlist placeholder from a <ul>/<nav> of links (mutates: removes source). */
+function commandListFrom($, listEl, label, anchorMap) {
+  const links = [];
+  listEl.find('a[href]').each((_, a) => {
+    const $a = $(a);
+    let href = $a.attr('href') || '#';
+    if (href.startsWith('#') && anchorMap && anchorMap.has(href)) href = anchorMap.get(href);
+    const text = $a.text().replace(/\s+/g, ' ').trim();
+    if (text) links.push({ href, text });
+  });
+  if (!links.length) return null;
+  return directiveLinkList('commandlist', label || '', links);
+}
+
+// --- editorial page conversion --------------------------------------------
 function convert(bladePath) {
   const pageOld = oldPathFor(bladePath);
   const pageSlug = slugFor(bladePath);
   const raw = readFileSync(bladePath, 'utf8');
 
-  // Header of the @extends(...) call holds the meta.
   const header = raw.slice(0, raw.indexOf('@section') === -1 ? 400 : raw.indexOf('@section'));
   let title = extractParam(header, 'documentTitle');
   const description = extractParam(header, 'metaDescription');
   title = title
     .replace(/\s*[-–|]\s*CentralNic Reseller Knowledge Base\s*$/i, '')
     .replace(/\s*[-–|]\s*CentralNic Reseller\s*$/i, '')
-    .replace(/\s*[-–|]\s*(API|EPP)\s+Command\s*$/i, '') // "AddCertificate - API Command"
+    .replace(/\s*[-–|]\s*(API|EPP)\s+Command\s*$/i, '')
     .replace(/\s{2,}/g, ' ')
     .trim();
 
-  // Content section.
   const secStart = raw.indexOf("@section('content')");
   if (secStart === -1) return null;
   let body = raw.slice(secStart + "@section('content')".length);
   body = body.replace(/@endsection[\s\S]*$|@stop[\s\S]*$/, '');
-
-  // Drop blade directives / comments / components we can't render without Laravel.
-  body = body
-    .replace(/\{\{--[\s\S]*?--\}\}/g, '') // {{-- blade comments --}}
-    .replace(/@php[\s\S]*?@endphp/g, '')
-    .replace(/@(include|extends|section|endsection|stop|yield|component|endcomponent|slot|endslot|if|elseif|else|endif|foreach|endforeach|for|endfor|isset|endisset)\b[^\n]*/g, '')
-    .replace(/\{\{[^}]*\}\}/g, '') // {{ $echo }} expressions
-    .replace(/<\/?x-[^>]*>/g, '');
+  body = stripBlade(body);
 
   const $ = cheerio.load(body, null, false);
-  // Remove repeated page furniture + Font Awesome icons (no FA font shipped).
+
+  // nav.related lives in the <aside>, a sibling of .main — extract before scoping.
+  let trailing = '';
+  const relatedNav = $('nav.related').first();
+  if (relatedNav.length) {
+    relatedNav.find('a[href]').each((_, el) => {
+      $(el).attr('href', resolveLink(pageOld, pageSlug, $(el).attr('href')));
+    });
+    const cat = (relatedNav.find('h4, h3, h2').first().text() || '').trim();
+    const block = commandListFrom($, relatedNav, cat);
+    if (block) trailing = '\n\n' + pushBlock(block).trim() + '\n';
+  }
+
+  // Remove page furniture + icons.
   $('.breadcrumb, aside, .box.help, nav, .rel_nav').remove();
   $('i.fa, i[class*="fa-"]').remove();
-  // Prefer the main content column if present.
   let scope = $('.main').first();
   if (!scope.length) scope = $.root();
-  // Drop leftover empty anchor spans.
   scope.find('span.anchor').remove();
 
-  // Normalise tables so the GFM plugin emits proper Markdown tables:
-  //  - unwrap <span> inside cells (turndown keeps them otherwise)
-  //  - if a table has no <th>, promote its first row's <td> cells to <th>
-  scope.find('table').each((_, table) => {
-    const $t = $(table);
-    $t.find('td span, th span').each((_, s) => $(s).replaceWith($(s).html() || ''));
-    if ($t.find('th').length === 0) {
-      const firstRow = $t.find('tr').first();
-      firstRow.find('td').each((_, td) => {
-        const $td = $(td);
-        const th = $('<th>').html($td.html() || '');
-        $td.replaceWith(th);
-      });
-    }
-  });
+  normalizeTables($, scope);
+  rewriteLinks($, scope, pageOld, pageSlug);
+  rewriteImages($, scope);
+  extractApiBlocks($, scope, pageOld, pageSlug);
 
-  // Rewrite internal links (map-based; falls back to the legacy origin).
-  scope.find('a[href]').each((_, el) => {
-    $(el).attr('href', resolveLink(pageOld, pageSlug, $(el).attr('href')));
-  });
-
-  // Rewrite image sources to root-absolute public paths; drop unknown ones.
-  // Legacy assets live under public/{imagetypes,images,dist/img} on the old site.
-  scope.find('img[src]').each((_, el) => {
-    const src = $(el).attr('src') || '';
-    if (/^https?:/i.test(src)) return;
-    const m = src.match(/(imagetypes\/|images\/|dist\/img\/)(.*)$/);
-    if (m) {
-      // Point at the existing live KB so assets are path-independent
-      // (works under a GitHub Pages sub-path). Phase 2: self-host these.
-      $(el).attr('src', 'https://kb.centralnicreseller.com/' + m[1] + m[2]);
-      $(el).removeAttr('srcset');
-      $(el).removeAttr('width');
-      $(el).removeAttr('height');
-    } else {
-      $(el).remove();
-    }
-  });
-
-  // Command (.cmd) / Response (.rsp) blocks -> styled coloured boxes.
-  // Kept as raw HTML (with a colour class + flag label) so CSS can style them;
-  // substituted back after turndown via placeholder tokens.
-  const apiBlocks = [];
-  scope.find('.cmd, .rsp').each((_, el) => {
-    const $el = $(el);
-    const kind = $el.hasClass('rsp') ? 'response' : 'command';
-    const label = ($el.find('h1, h2, h3, h4, h5').first().text() || (kind === 'response' ? 'Response' : 'Command')).trim();
-    const codeEl = $el.find('pre code').first().length ? $el.find('pre code').first() : $el.find('pre').first();
-    let code = (codeEl.length ? codeEl.html() : $el.html()) || '';
-    code = code.replace(/\n\s*\n+/g, '\n').replace(/^\n+|\n+$/g, ''); // no blank lines (keeps it one HTML block)
-    const idx = apiBlocks.length;
-    apiBlocks.push(
-      `<div class="api-io api-io--${kind}"><span class="api-io__label">${escapeHtml(label)}</span>\n<pre class="api-io__code"><code>${code}</code></pre></div>`
-    );
-    $el.replaceWith(`\n\nAPIIOBLOCK${idx}ENDBLOCK\n\n`);
-  });
-
-  // "Possible Gateways" lists -> small coloured badges (one colour per gateway).
-  scope.find('.gateways').each((_, el) => {
-    const $el = $(el);
-    const badges = [];
-    $el.find('li').each((_, li) => {
-      const type = ($(li).attr('class') || 'default').trim().split(/\s+/)[0] || 'default';
-      const label = $(li).text().replace(/\s+/g, ' ').trim();
-      if (!label) return;
-      const href = $(li).find('a[href]').first().attr('href'); // already rewritten
-      badges.push(
-        href
-          ? `<a class="gw-badge gw-${escapeHtml(type)}" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`
-          : `<span class="gw-badge gw-${escapeHtml(type)}">${escapeHtml(label)}</span>`
-      );
-    });
-    if (!badges.length) return;
-    const idx = apiBlocks.length;
-    apiBlocks.push(
-      `<div class="gw-list"><span class="gw-list__label">Possible Gateways</span>\n<div class="gw-badges">${badges.join('')}</div></div>`
-    );
-    $el.replaceWith(`\n\nAPIIOBLOCK${idx}ENDBLOCK\n\n`);
-  });
-
-  // Overview/teaser pages: turn the ".box" link cards into Starlight <LinkCard>s.
-  // (Links inside were already rewritten by the loop above.)
-  const cards = [];
-  scope.find('.box').each((_, box) => {
-    const $box = $(box);
-    const a = $box.find('a[href]').first();
-    if (!a.length) return;
-    const href = a.attr('href');
-    const cardTitle = ($box.find('h2, h3, h4').first().text() || a.attr('title') || '').trim();
-    const cardDesc = $box.find('em').first().text().trim();
-    if (href && cardTitle) cards.push({ href, title: cardTitle, description: cardDesc });
-  });
-  // Drop the teaser containers so turndown doesn't mangle them into text soup.
+  // Overview/teaser pages: ".box" link cards -> Starlight <LinkCard>s.
+  const cards = collectCards($, scope);
   scope.find('.teaser, .boxes').remove();
   scope.find('.box').remove();
 
-  // Remove the first <h1> (Starlight renders the frontmatter title as h1).
   const firstH1 = scope.find('h1').first();
   const h1Text = firstH1.text().trim();
   firstH1.remove();
   if (!title && h1Text) title = h1Text;
 
-  const html = scope.html() || '';
-  let md = td.turndown(html).trim();
-  // Collapse excessive blank lines.
+  let md = td.turndown(scope.html() || '').trim();
   md = md.replace(/\n{3,}/g, '\n\n');
-  // Substitute the Command/Response boxes back in as raw HTML blocks.
-  md = md.replace(/APIIOBLOCK(\d+)ENDBLOCK/g, (_, i) => '\n\n' + apiBlocks[Number(i)] + '\n\n');
-  md = md.replace(/\n{3,}/g, '\n\n');
+  md = substituteBlocks(md);
+  if (trailing) md += substituteBlocks(trailing);
+  md = md.replace(/\n{3,}/g, '\n\n').trim();
 
   if (!title) title = basename(bladePath).replace(/\.blade\.php$/, '').replace(/[-_]/g, ' ');
 
-  const fm =
-    [
-      '---',
-      `title: ${frontmatterEscape(title)}`,
-      description ? `description: ${frontmatterEscape(description.slice(0, 160))}` : null,
-      '---',
-    ]
-      .filter(Boolean)
-      .join('\n') + '\n\n';
+  const fm = frontmatter(bladePath, title, description);
 
-  // Build the file. Pages with link cards become .mdx (need components).
   if (cards.length) {
     const grid =
       '<CardGrid>\n' +
@@ -347,17 +348,282 @@ function convert(bladePath) {
         .join('\n') +
       '\n</CardGrid>';
     const imp = "import { CardGrid, LinkCard } from '@astrojs/starlight/components';\n\n";
-    const content = fm + imp + (md ? md + '\n\n' : '') + grid + '\n';
-    return { content, ext: '.mdx' };
+    return { content: fm + imp + (md ? md + '\n\n' : '') + grid + '\n', ext: '.mdx' };
   }
-
   return { content: fm + md + '\n', ext: '.md' };
 }
 
-// --- run ---
+// --- TLD page conversion ---------------------------------------------------
+function convertTld(bladePath) {
+  const pageOld = oldPathFor(bladePath);
+  const pageSlug = slugFor(bladePath);
+  const raw = readFileSync(bladePath, 'utf8');
+
+  const header = raw.slice(0, raw.indexOf('@section') === -1 ? 400 : raw.indexOf('@section'));
+  const description = extractParam(header, 'metaDescription');
+
+  const secStart = raw.indexOf("@section('content')");
+  if (secStart === -1) return null;
+  let body = raw.slice(secStart + "@section('content')".length);
+  body = body.replace(/@endsection[\s\S]*$|@stop[\s\S]*$/, '');
+  body = stripBlade(body);
+
+  const $ = cheerio.load(body, null, false);
+  $('i.fa, i[class*="fa-"]').remove();
+
+  const title = ($('h1').first().text() || '.' + basename(bladePath).replace(/\.blade\.php$/, '').replace(/_/g, '.')).trim();
+
+  // --- specs panel (right column) ---
+  const specs = $('aside .tldspecs').first();
+  let tldspecsHtml = '';
+  if (specs.length) {
+    specs.find('.box.userrating, form, script').remove();
+    specs.find('a[href]').each((_, el) => {
+      $(el).attr('href', resolveLink(pageOld, pageSlug, $(el).attr('href')));
+    });
+    specs.find('img[src]').each((_, el) => {
+      const local = localizeImg($(el).attr('src') || '');
+      if (local) $(el).attr('src', local);
+      else $(el).remove();
+    });
+    specs.find('*').each((_, el) => {
+      // Drop empty class attrs? keep classes for styling. Remove title spam kept.
+    });
+    tldspecsHtml = (specs.html() || '').replace(/\s+/g, ' ').trim();
+  }
+
+  const main = $('.main').first();
+  if (!main.length) return null;
+  main.find('.breadcrumb, .rel_nav, nav.related').remove();
+  main.find('h1').first().remove();
+  main.find('span.anchor').each((_, el) => $(el).remove()); // ids captured below first
+
+  // Build anchor map from the command headings (id -> Starlight slug) BEFORE removing spans.
+  // (span.anchor removed above, so re-derive from the raw body instead.)
+
+  // Re-parse to capture anchor ids -> heading slug (spans were removed above; do it fresh).
+  const anchorMap = buildAnchorMap(body);
+
+  // Section tabs -> tldnav button row (omit "Related TLDs").
+  const tabRow = main.find('.anchors.tldpage').first();
+  const sections = []; // {label, id}
+  if (tabRow.length) {
+    tabRow.find('li a').each((_, a) => {
+      const id = ($(a).attr('id') || '').trim();
+      const label = $(a).text().replace(/\s+/g, ' ').trim();
+      if (!id || /related/i.test(id) || /related/i.test(label)) return;
+      sections.push({ label, id });
+    });
+  }
+  tabRow.remove();
+
+  // Omit the Related TLDs info block entirely.
+  main.find('#related-t, .infos#related-t').remove();
+  main.find('[id="related-t"]').remove();
+
+  // Rewrite links/images in the main content.
+  rewriteLinks($, main, pageOld, pageSlug);
+  main.find('img[src]').each((_, el) => {
+    const local = localizeImg($(el).attr('src') || '');
+    if (local) $(el).attr('src', local);
+    else $(el).remove();
+  });
+
+  // Convert the command anchor list (ul.anchors) -> :::commandlist, hrefs remapped.
+  main.find('ul.anchors').each((_, ul) => {
+    const block = commandListFrom($, $(ul), '', anchorMap);
+    $(ul).replaceWith(block ? pushBlock(block) : '');
+  });
+
+  // Command / Exception / Response boxes + gateways -> directives.
+  extractApiBlocks($, main, pageOld, pageSlug);
+
+  normalizeTables($, main);
+
+  // Determine per-section h2 text so the tldnav buttons link to real heading slugs.
+  // Section info divs: id="<tabid>-t". Map tab id -> its <h2> text.
+  const navLinks = [];
+  for (const s of sections) {
+    const info = main.find(`[id="${s.id}-t"]`).first();
+    const h2 = info.length ? info.find('h2').first().text().trim() : '';
+    const slug = h2 ? slugifyHeading(h2) : slugifyHeading(s.label);
+    navLinks.push({ href: `#${slug}`, text: s.label });
+  }
+  const navBlock = navLinks.length ? pushBlock(directiveLinkList('tldnav', '', navLinks)) : '';
+
+  let md = td.turndown(main.html() || '').trim();
+  md = md.replace(/\n{3,}/g, '\n\n');
+  md = substituteBlocks(md);
+  const navMd = navBlock ? substituteBlocks(navBlock).trim() + '\n\n' : '';
+  md = md.replace(/\n{3,}/g, '\n\n').trim();
+
+  // Astro/Starlight strips dots from generated slugs; for multi-part TLDs set an
+  // explicit slug so they keep the dotted legacy URL (com_pt -> /domains/tlds/com.pt).
+  // Single-label TLDs already slug correctly, so leave them alone (an explicit
+  // slug equal to the auto id would trip a duplicate-id warning).
+  const stem = basename(bladePath).replace(/\.blade\.php$/, '');
+  const extra = { tldspecsHtml };
+  if (stem.includes('_')) extra.slug = TLDS_REL + '/' + stem.replace(/_/g, '.');
+  const fm = frontmatter(bladePath, title, description, extra);
+  return { content: fm + navMd + md + '\n', ext: '.md' };
+}
+
+/** Parse anchor ids from the raw blade body -> map '#Id' -> '#heading-slug'. */
+function buildAnchorMap(body) {
+  const $ = cheerio.load(body, null, false);
+  $('i.fa, i[class*="fa-"]').remove();
+  const map = new Map();
+  $('h2, h3, h4, h5').each((_, h) => {
+    const $h = $(h);
+    const span = $h.find('span.anchor[id]').first();
+    if (!span.length) return;
+    const id = span.attr('id');
+    const clone = $h.clone();
+    clone.find('span.anchor').remove();
+    const text = clone.text().trim();
+    if (id && text) map.set('#' + id, '#' + slugifyHeading(text));
+  });
+  return map;
+}
+
+// --- shared helpers --------------------------------------------------------
+function stripBlade(body) {
+  return body
+    .replace(/\{\{--[\s\S]*?--\}\}/g, '')
+    .replace(/@php[\s\S]*?@endphp/g, '')
+    .replace(
+      /@(include|extends|section|endsection|stop|yield|component|endcomponent|slot|endslot|if|elseif|else|endif|foreach|endforeach|for|endfor|isset|endisset)\b[^\n]*/g,
+      ''
+    )
+    .replace(/\{\{[^}]*\}\}/g, '')
+    .replace(/<\/?x-[^>]*>/g, '');
+}
+
+function normalizeTables($, scope) {
+  scope.find('table').each((_, table) => {
+    const $t = $(table);
+    $t.find('td span, th span').each((_, s) => $(s).replaceWith($(s).html() || ''));
+    if ($t.find('th').length === 0) {
+      const firstRow = $t.find('tr').first();
+      firstRow.find('td').each((_, td) => {
+        const $td = $(td);
+        const th = $('<th>').html($td.html() || '');
+        $td.replaceWith(th);
+      });
+    }
+  });
+}
+
+function rewriteLinks($, scope, pageOld, pageSlug) {
+  scope.find('a[href]').each((_, el) => {
+    $(el).attr('href', resolveLink(pageOld, pageSlug, $(el).attr('href')));
+  });
+}
+
+function rewriteImages($, scope) {
+  scope.find('img[src]').each((_, el) => {
+    const src = $(el).attr('src') || '';
+    if (/^https?:/i.test(src) && !src.includes('kb.centralnicreseller.com')) return;
+    const local = localizeImg(src);
+    if (local) {
+      $(el).attr('src', local);
+      $(el).removeAttr('srcset').removeAttr('width').removeAttr('height');
+    } else {
+      // Unknown asset: point at the live origin so it still renders.
+      const m = src.match(/(imagetypes\/|images\/|dist\/img\/|files\/)(.*)$/);
+      if (m) $(el).attr('src', LEGACY_ORIGIN + '/' + m[1] + m[2]);
+      else $(el).remove();
+    }
+  });
+}
+
+function collectCards($, scope) {
+  const cards = [];
+  scope.find('.box').each((_, box) => {
+    const $box = $(box);
+    const a = $box.find('a[href]').first();
+    if (!a.length) return;
+    const href = a.attr('href');
+    const cardTitle = ($box.find('h2, h3, h4').first().text() || a.attr('title') || '').trim();
+    const cardDesc = $box.find('em').first().text().trim();
+    if (href && cardTitle) cards.push({ href, title: cardTitle, description: cardDesc });
+  });
+  return cards;
+}
+
+function substituteBlocks(md) {
+  return md.replace(/KBBLOCK(\d+)KBEND/g, (_, i) => '\n\n' + kbBlocks[Number(i)] + '\n\n');
+}
+
+function frontmatter(bladePath, title, description, extra = {}) {
+  const nav = NAV_ORDER.get(oldPathFor(bladePath).toLowerCase());
+  const lines = ['---', `title: ${frontmatterEscape(title)}`];
+  if (extra.slug) lines.push(`slug: ${extra.slug}`);
+  if (description) lines.push(`description: ${frontmatterEscape(description.slice(0, 160))}`);
+  if (nav) {
+    lines.push('sidebar:');
+    if (Number.isFinite(nav.order)) lines.push(`  order: ${nav.order}`);
+    if (nav.label && nav.label !== title) lines.push(`  label: ${frontmatterEscape(nav.label)}`);
+  }
+  if (extra.tldspecsHtml) {
+    // Block scalar keeps the HTML readable and quote-safe.
+    const indented = extra.tldspecsHtml.replace(/\n/g, ' ').trim();
+    lines.push('tldspecsHtml: ' + frontmatterEscape(indented));
+  }
+  lines.push('---');
+  return lines.join('\n') + '\n\n';
+}
+
+// --- nav-order extraction --------------------------------------------------
+function normalizeNavPath(href) {
+  if (!href) return null;
+  if (/^(https?:|mailto:|tel:)/i.test(href.replace(/^\//, ''))) return null;
+  if (/^https?:/i.test(href)) return null;
+  let p = href.split('#')[0].split('?')[0];
+  p = p.replace(/\.html$/i, '').replace(/\/index$/i, '');
+  if (!p.startsWith('/')) p = '/' + p;
+  p = p.replace(/\/+$/, '') || '/';
+  return p.toLowerCase();
+}
+
+function buildNavOrder() {
+  const map = new Map();
+  let counter = 0;
+  // 1) mobile_nav.blade.php — the deep curated central tree.
+  const mnav = join(SHARED_ROOT, 'mobile_nav.blade.php');
+  if (existsSync(mnav)) {
+    const $ = cheerio.load(readFileSync(mnav, 'utf8'), null, false);
+    $('a[href]').each((_, a) => {
+      const path = normalizeNavPath($(a).attr('href'));
+      const label = $(a).text().replace(/\s+/g, ' ').trim();
+      if (!path || path === '/') return;
+      counter += 10;
+      if (!map.has(path)) map.set(path, { order: counter, label });
+    });
+  }
+  // 2) api-command-reference.blade.php — ordering for the ~345 API command pages.
+  const apiRef = join(KB_ROOT, 'api/api-commands/api-command-reference.blade.php');
+  if (existsSync(apiRef)) {
+    const $ = cheerio.load(readFileSync(apiRef, 'utf8'), null, false);
+    $('a[href*="api-command/"]').each((_, a) => {
+      const href = $(a).attr('href') || '';
+      const m = href.match(/api-command\/(.+?)(?:\.html)?(?:[#?]|$)/i);
+      if (!m) return;
+      const path = ('/api/api-command/' + decodeURIComponent(m[1])).toLowerCase();
+      const label = $(a).text().replace(/\s+/g, ' ').trim();
+      counter += 10;
+      if (!map.has(path)) map.set(path, { order: counter, label });
+    });
+  }
+  return map;
+}
+
+// --- run -------------------------------------------------------------------
 let written = 0,
   skipped = 0,
-  empty = 0;
+  empty = 0,
+  tldWritten = 0;
+
 const sections = INCLUDE.filter((s) => {
   try {
     return statSync(join(KB_ROOT, s)).isDirectory() || statSync(join(KB_ROOT, s + '.blade.php')).isFile();
@@ -368,42 +634,59 @@ const sections = INCLUDE.filter((s) => {
 
 const files = [];
 for (const s of sections) {
-  // section landing file
   const landing = join(KB_ROOT, s + '.blade.php');
   try {
     if (statSync(landing).isFile()) files.push(landing);
   } catch {}
-  // section directory
   try {
     if (statSync(join(KB_ROOT, s)).isDirectory()) files.push(...listBladeFiles(join(KB_ROOT, s)));
   } catch {}
 }
 
-// Files we will actually migrate (after SKIP filtering).
-const toMigrate = files.filter((f) => {
-  const rel = relative(KB_ROOT, f);
-  return !SKIP_DIRS.some((d) => rel.startsWith(d + '/'));
-});
-skipped += files.length - toMigrate.length;
-
-// Build the link map BEFORE converting, so links can resolve to real targets.
-LINK_MAP = new Map();
-for (const f of toMigrate) LINK_MAP.set(oldPathFor(f), slugFor(f));
-LINK_MAP.set('/index', ''); // homepage
-LINK_MAP.set('/', '');
-
-for (const f of toMigrate) {
-  const result = convert(f);
-  if (!result) {
-    skipped++;
-    continue;
-  }
-  if (result.content.replace(/---[\s\S]*?---/, '').trim().length < 8) empty++;
-  const outPath = outPathFor(f).replace(/\.md$/, result.ext);
-  mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, result.content, 'utf8');
-  written++;
+// Split editorial vs TLD. The TLD-list landing (domains/tlds.blade.php) is a
+// generated table page — we provide a hand-authored landing (with the search
+// widget) at domains/tlds/index.mdx instead, so skip the legacy landing.
+const editorialFiles = files.filter(
+  (f) => !isTldBlade(f) && relative(KB_ROOT, f).replace(/\\/g, '/') !== TLDS_REL + '.blade.php'
+);
+let tldFiles = files.filter((f) => isTldBlade(f));
+if (!MIGRATE_ALL_TLDS) {
+  const sample = new Set(TLD_SAMPLE.map((n) => n.toLowerCase()));
+  tldFiles = tldFiles.filter((f) => sample.has(basename(f).replace(/\.blade\.php$/, '').toLowerCase()));
 }
 
-console.log(`Migrated: ${written} pages | skipped: ${skipped} | near-empty: ${empty}`);
+NAV_ORDER = buildNavOrder();
+
+// Build the link map BEFORE converting (editorial + selected TLDs).
+LINK_MAP = new Map();
+for (const f of [...editorialFiles, ...tldFiles]) LINK_MAP.set(oldPathFor(f).toLowerCase(), slugFor(f));
+LINK_MAP.set('/index', '');
+LINK_MAP.set('/', '');
+
+function write(bladePath, result) {
+  if (!result) {
+    skipped++;
+    return;
+  }
+  if (result.content.replace(/---[\s\S]*?---/, '').trim().length < 8) empty++;
+  const outPath = outPathFor(bladePath).replace(/\.md$/, result.ext);
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, result.content, 'utf8');
+}
+
+for (const f of editorialFiles) {
+  const r = convert(f);
+  write(f, r);
+  if (r) written++;
+}
+for (const f of tldFiles) {
+  const r = convertTld(f);
+  write(f, r);
+  if (r) tldWritten++;
+}
+
+console.log(
+  `Editorial: ${written} pages | TLDs: ${tldWritten}${MIGRATE_ALL_TLDS ? '' : ' (sample)'} | ` +
+    `media: ${copiedMedia.size} files | skipped: ${skipped} | near-empty: ${empty}`
+);
 console.log(`Output -> ${OUT_ROOT}`);

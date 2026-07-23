@@ -1,0 +1,17 @@
+---
+// Right-hand column. On TLD pages (frontmatter `tldspecsHtml` present) we render
+// the "TLD Specifications" property panel there — matching the legacy live site —
+// and skip the table of contents. Every other page keeps Starlight's default TOC.
+import Default from '@astrojs/starlight/components/PageSidebar.astro';
+
+const { entry } = Astro.locals.starlightRoute;
+const specs = /** @type {any} */ (entry.data).tldspecsHtml;
+---
+
+{
+  specs ? (
+    <div class="tldspecs" set:html={specs} />
+  ) : (
+    <Default><slot /></Default>
+  )
+}

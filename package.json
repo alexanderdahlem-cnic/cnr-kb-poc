@@ -18,7 +18,11 @@
   },
   "devDependencies": {
     "cheerio": "^1.2.0",
+    "mdast-util-to-string": "^4.0.0",
+    "puppeteer-core": "^25.3.0",
+    "remark-directive": "^4.0.0",
     "turndown": "^7.2.4",
-    "turndown-plugin-gfm": "^1.0.2"
+    "turndown-plugin-gfm": "^1.0.2",
+    "unist-util-visit": "^5.1.0"
   }
 }

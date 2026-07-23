@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
+import remarkDirective from 'remark-directive';
+import kbDirectives from './src/plugins/kb-directives.js';
 // Topics power the horizontal main nav + per-section sidebar. Generated from
 // the content tree by scripts/gen-sidebar.mjs (run after migration).
 import topics from './src/topics.json' with { type: 'json' };
@@ -19,6 +21,12 @@ export default defineConfig({
   // remove `base` (or set base: '/').
   site: 'https://alexanderdahlem-cnic.github.io',
   base: '/cnr-kb-poc',
+  // Clean-Markdown presentation layer: `:::command`/`:::response`/`:::exception`/
+  // `:::gateways`/`:::commandlist`/`:::tldnav` directives -> the `.api-io` / `.gw-*`
+  // / `.cmd-*` markup styled in src/styles/custom.css. (See src/plugins/kb-directives.js.)
+  markdown: {
+    remarkPlugins: [remarkDirective, kbDirectives],
+  },
   integrations: [
     starlight({
       title: 'CentralNic Reseller',
@@ -44,6 +52,9 @@ export default defineConfig({
         // Horizontal topic nav in the header; sidebar shows only topic items.
         Header: './src/components/Header.astro',
         Sidebar: './src/components/Sidebar.astro',
+        // Right column: render the TLD Specifications panel on TLD pages,
+        // otherwise fall back to the default table-of-contents sidebar.
+        PageSidebar: './src/components/PageSidebar.astro',
       },
       customCss: ['./src/styles/custom.css'],
     }),

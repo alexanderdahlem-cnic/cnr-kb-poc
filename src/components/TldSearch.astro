@@ -1,0 +1,100 @@
+---
+// Homepage / TLD-landing search widget. Client-side autocomplete over the
+// build-time TLD index (src/tlds.json). Typing a TLD (".com", "co.uk") and
+// pressing Enter — or clicking a suggestion — navigates to its page.
+import tlds from '../tlds.json';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// Precompute absolute (base-aware) URLs + a lowercase search key.
+const data = tlds.map((t) => ({
+  name: t.name,
+  type: t.type || '',
+  href: base + t.url,
+  key: t.name.replace(/^\./, '').toLowerCase(),
+}));
+---
+
+<div class="tld-search" data-tld-search>
+  <label class="tld-search__label" for="tld-search-input">Find a TLD</label>
+  <div class="tld-search__box">
+    <input
+      id="tld-search-input"
+      type="text"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="Search a TLD — e.g. .com, co.uk, .de"
+      aria-label="Search for a TLD"
+      aria-expanded="false"
+      aria-controls="tld-search-list"
+      role="combobox"
+    />
+    <ul id="tld-search-list" class="tld-search__list" role="listbox" hidden></ul>
+  </div>
+  <p class="tld-search__hint">{data.length} TLDs indexed · press Enter to open the first match</p>
+  <script type="application/json" data-tld-data set:html={JSON.stringify(data)} />
+</div>
+
+<script>
+  // Progressive-enhancement autocomplete; one instance per widget on the page.
+  document.querySelectorAll('[data-tld-search]').forEach((root) => {
+    const input = root.querySelector('input');
+    const list = root.querySelector('.tld-search__list');
+    const dataEl = root.querySelector('[data-tld-data]');
+    if (!input || !list || !dataEl) return;
+    /** @type {{name:string,type:string,href:string,key:string}[]} */
+    const data = JSON.parse(dataEl.textContent || '[]');
+    let matches = [];
+    let active = -1;
+
+    const go = (href) => { if (href) window.location.href = href; };
+
+    function render() {
+      if (!matches.length) {
+        list.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      list.innerHTML = matches
+        .map(
+          (m, i) =>
+            `<li role="option" class="tld-search__item${i === active ? ' is-active' : ''}"` +
+            ` data-href="${m.href}" id="tld-opt-${i}">` +
+            `<span class="tld-search__name">${m.name}</span>` +
+            (m.type ? `<span class="tld-search__type">${m.type}</span>` : '') +
+            `</li>`
+        )
+        .join('');
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    function search(q) {
+      const term = q.trim().replace(/^\./, '').toLowerCase();
+      if (!term) { matches = []; active = -1; render(); return; }
+      const starts = [];
+      const contains = [];
+      for (const d of data) {
+        if (d.key.startsWith(term)) starts.push(d);
+        else if (d.key.includes(term)) contains.push(d);
+      }
+      matches = [...starts, ...contains].slice(0, 10);
+      active = matches.length ? 0 : -1;
+      render();
+    }
+
+    input.addEventListener('input', () => search(input.value));
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); active = Math.min(active + 1, matches.length - 1); render(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); active = Math.max(active - 1, 0); render(); }
+      else if (e.key === 'Enter') { e.preventDefault(); if (matches[active]) go(matches[active].href); }
+      else if (e.key === 'Escape') { matches = []; render(); }
+    });
+    list.addEventListener('mousedown', (e) => {
+      const li = e.target.closest('[data-href]');
+      if (li) go(li.getAttribute('data-href'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target)) { matches = []; render(); }
+    });
+  });
+</script>
