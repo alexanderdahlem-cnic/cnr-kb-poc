@@ -18,6 +18,11 @@ export default defineConfig({
       description:
         'CentralNic Reseller Knowledge Base — guides, API reference and TLD information.',
       tagline: 'Knowledge Base',
+      // Brand logo (wordmark) top-left; replaces the text title to avoid duplication.
+      logo: {
+        src: './src/assets/logo-centralnicreseller.svg',
+        replacesTitle: true,
+      },
       // Full-text search (Pagefind) ships with Starlight by default.
       social: [
         {

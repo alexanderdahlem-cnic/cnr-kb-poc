@@ -10,6 +10,17 @@
   --sl-color-accent-high: #0b3a63;
 }
 
+/* Brand logo (top-left) — scale the wide wordmark to fit the header nicely. */
+.site-title img {
+  height: 1.9rem;
+  width: auto;
+}
+@media (max-width: 50rem) {
+  .site-title img {
+    height: 1.6rem;
+  }
+}
+
 /* Header account links (replace the theme toggle, top right). */
 .header-links {
   align-items: center;
