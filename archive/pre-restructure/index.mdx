@@ -1,0 +1,53 @@
+---
+title: CentralNic Reseller Knowledge Base
+description: Guides, API reference and TLD information for CentralNic Reseller partners — everything your integration needs in one place.
+# Topic-less landing: main navigation is the horizontal header nav.
+template: splash
+hero:
+  tagline: Build, sell and manage domains, DNS, SSL and more on the CentralNic Reseller platform. Hands-on guides and a complete API reference — everything your integration needs, in one place.
+  actions:
+    - text: Get started
+      link: help/first-steps/
+      icon: right-arrow
+      variant: primary
+    - text: API reference
+      link: api/
+      icon: open-book
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Why build with CentralNic Reseller?
+
+<CardGrid>
+	<Card title="1,000+ TLDs" icon="star">
+		One account and one API to register, transfer and manage domains across more than a thousand TLDs worldwide.
+	</Card>
+	<Card title="Automation-first API" icon="setting">
+		A battle-tested API and EPP interface with a fully documented command reference — automate everything from provisioning to billing.
+	</Card>
+	<Card title="DNS, SSL & more" icon="approve-check">
+		Managed anycast DNS, DNSSEC, SSL certificates and value-added services — all from a single reseller platform.
+	</Card>
+	<Card title="Built for resellers" icon="rocket">
+		Sub-reseller management, flexible pricing and white-label workflows designed for scaling a domain business.
+	</Card>
+</CardGrid>
+
+## First steps
+
+<CardGrid>
+	<LinkCard title="Getting started" href="help/first-steps/" description="Set up your account — verification, payments and your first steps on the platform." />
+	<LinkCard title="Account security" href="help/account-security/" description="Passwords, two-factor authentication and keeping your account secure." />
+</CardGrid>
+
+## Reference & guides
+
+<CardGrid>
+	<LinkCard title="API Reference" href="api/" description="The complete command reference for the CentralNic Reseller API and EPP." />
+	<LinkCard title="Domains" href="domains/" description="Registration, transfers, ICANN policies, ownerchange and premium domains." />
+	<LinkCard title="DNS & KeyDNS" href="dns/" description="Zone management, DNSSEC and our anycast/unicast nameserver infrastructure." />
+	<LinkCard title="SSL Certificates" href="ssl/" description="Ordering, validation methods, reissue and the full certificate lifecycle." />
+	<LinkCard title="Services" href="services/" description="ACL, aftermarket, brand protection, SMS and platform plugins." />
+</CardGrid>
