@@ -27,7 +27,11 @@ export default defineConfig({
         },
       ],
       sidebar,
-      // Silence missing-favicon etc. during POC; safe defaults.
+      // Force dark mode + replace the theme toggle with account links.
+      components: {
+        ThemeProvider: './src/components/ThemeProvider.astro',
+        ThemeSelect: './src/components/ThemeSelect.astro',
+      },
       customCss: ['./src/styles/custom.css'],
     }),
   ],

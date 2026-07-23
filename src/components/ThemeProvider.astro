@@ -1,0 +1,11 @@
+---
+// Override of Starlight's ThemeProvider: force dark mode everywhere.
+// The theme toggle is replaced by header links (see ThemeSelect.astro).
+---
+
+<script is:inline>
+  document.documentElement.dataset.theme = 'dark';
+  try {
+    localStorage.setItem('starlight-theme', 'dark');
+  } catch (e) {}
+</script>

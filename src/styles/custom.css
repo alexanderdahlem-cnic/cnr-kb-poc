@@ -10,6 +10,42 @@
   --sl-color-accent-high: #0b3a63;
 }
 
+/* Header account links (replace the theme toggle, top right). */
+.header-links {
+  align-items: center;
+  gap: 1.25rem;
+  font-size: var(--sl-text-sm);
+  font-weight: 500;
+}
+.header-links a {
+  color: var(--sl-color-white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header-links a:hover {
+  color: var(--sl-color-text-accent);
+}
+.header-links .signup-button {
+  background: var(--sl-color-accent);
+  color: var(--sl-color-white);
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+.header-links .signup-button:hover {
+  background: var(--sl-color-accent-high);
+  color: var(--sl-color-white);
+}
+/* On narrow screens keep only the highlighted Sign up button. */
+@media (max-width: 50rem) {
+  .header-links {
+    gap: 0.75rem;
+  }
+  .header-links a:not(.signup-button) {
+    display: none;
+  }
+}
+
 /* Homepage hero has no image, so the default two-column (text | image) grid
    would leave it half-wide. Use the full content width instead. */
 .hero {

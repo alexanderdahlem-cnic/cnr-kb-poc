@@ -1,0 +1,15 @@
+---
+// Override of Starlight's ThemeSelect (top-right). Instead of a theme toggle
+// we render account links; "Sign up" is a highlighted button.
+// NOTE: URLs are placeholders — confirm/replace with the real CNR endpoints.
+const links = [
+  { label: 'Support', href: 'https://www.centralnicreseller.com/support' },
+  { label: 'Log in', href: 'https://cp.rrpproxy.net/' },
+];
+const signup = { label: 'Sign up', href: 'https://www.centralnicreseller.com/signup' };
+---
+
+<div class="header-links sl-flex">
+  {links.map((l) => <a href={l.href}>{l.label}</a>)}
+  <a class="signup-button" href={signup.href}>{signup.label}</a>
+</div>
