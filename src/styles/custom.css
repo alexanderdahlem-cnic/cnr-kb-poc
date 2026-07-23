@@ -298,6 +298,29 @@
   color: var(--sl-color-gray-4);
 }
 
+/* Compact variant — for the Domains left-sidebar submenu. */
+.tld-search--compact {
+  margin: 0;
+  max-width: none;
+}
+.tld-search--compact .tld-search__label {
+  margin-bottom: 0.3rem;
+}
+.tld-search--compact input {
+  padding: 0.45rem 0.7rem;
+  font-size: var(--sl-text-sm);
+}
+.tld-search--compact .tld-search__list {
+  max-height: 15rem;
+}
+.tld-search--compact .tld-search__item {
+  padding: 0.35rem 0.55rem;
+  gap: 0.5rem;
+}
+.tld-search--compact .tld-search__name {
+  font-size: var(--sl-text-sm);
+}
+
 /* "Possible Gateways" -> coloured badges, one colour per gateway type. */
 .gw-list {
   margin: 1rem 0;

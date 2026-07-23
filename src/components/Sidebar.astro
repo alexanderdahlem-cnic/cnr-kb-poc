@@ -1,7 +1,29 @@
 ---
 // Override: render only the (current topic's) sidebar items. The topic list
 // itself lives in the horizontal header nav (see Header.astro), not here.
+//
+// On the Domains topic we prepend a compact TLD search widget so partners can
+// jump straight to a TLD page from the left submenu.
 import Default from '@astrojs/starlight/components/Sidebar.astro';
+import TldSearch from './TldSearch.astro';
+
+const { topics = [] } = Astro.locals.starlightSidebarTopics ?? {};
+// The plugin's route data exposes label/link/isCurrent (no id) — match the
+// Domains topic by its link path so it survives label/locale tweaks.
+const isDomains = topics.some((t) => t.isCurrent && /\/domains\/?$/.test(t.link));
 ---
 
+{isDomains && (
+  <div class="sidebar-tld-search">
+    <TldSearch variant="compact" />
+  </div>
+)}
 <Default><slot /></Default>
+
+<style>
+  .sidebar-tld-search {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+</style>
