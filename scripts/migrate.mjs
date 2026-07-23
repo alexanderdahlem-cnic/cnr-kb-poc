@@ -43,9 +43,16 @@ const TLDS_REL = 'domains/tlds';
 // .blade.php). Covers gTLD/new-gTLD/ccTLD, 2nd-level (`_`->`.`), pages with
 // Exception boxes + NIS2 + IDN + country flags. Set MIGRATE_ALL_TLDS=1 to pull all.
 const TLD_SAMPLE = [
-  'com', 'net', 'org', 'info', 'careers', 'academy', 'shop', 'online', 'xyz',
-  'app', 'dev', 'io', 'ai', 'me', 'tv', 'co', 'de', 'sk', 'us', 'eu', 'fr',
-  'nl', 'at', 'ch', 'es', 'it', 'pt', 'ca', 'ac', 'uk', 'co_uk', 'com_pt',
+  'com',    // gTLD
+  'careers',// new gTLD (layout reference)
+  'xyz',    // new gTLD
+  'de',     // ccTLD — Exception boxes + NIS2 + country flag (layout reference)
+  'sk',     // ccTLD (layout reference)
+  'us',     // ccTLD
+  'io',     // ccTLD
+  'ac',     // ccTLD
+  'co_uk',  // dotted 2nd-level ccTLD (_ -> .)
+  'com_pt', // dotted 2nd-level + NIS2 (_ -> .)
 ];
 const MIGRATE_ALL_TLDS = process.env.MIGRATE_ALL_TLDS === '1';
 
